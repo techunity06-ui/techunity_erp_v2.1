@@ -275,70 +275,86 @@ else {
 			echo json_encode($row);
 		}
 		else if(strtolower($POST['mode']) == "load_supplier_quotation"){
-			$query = "select rtrn.po_quotationtrn_id,pro.product_name,rtrn.product_qty,rtrn.product_conv_qty,unit.unit_name as base_unit,cunit.unit_name as conv_unit, ain.approve_no, rtrn.remark,rtrn.product_rate, ain.approve_date, req.indent_no,req.indent_date,rtrn.unit_id,rtrn.delivery_date,rtrn.payment_days, rtrn.conv_unit_id from po_quotationtrn_ref as rtrn 
-			left join product_mst as pro on pro.product_id = rtrn.product_id
-			left join unit_mst as unit on unit.unitid = rtrn.unit_id
-			left join unit_mst as cunit on cunit.unitid = rtrn.conv_unit_id
-			left join approve_indent as ain on ain.approve_indent_id = rtrn.approve_indent_id
-			left join tbl_request_product as req on req.rp_id = ain.rp_id
-			where rtrn.ref_name='supplier_quotation' and rtrn.ref_id=".$POST['quotation_ref_id']." and rtrn.vender_id = ".$POST['vender_id']." and rtrn.po_quotationtrn_status=0";
-			$str='';
-			$str.= '<table class="display table table-bordered table-striped" >
-			<thead>
-				<tr>
-					<th class="text-center editmode1"><input type="checkbox" id="all_chk_box12" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_all_item_req12();"></th>
-					<th class="text-center">Approve No</th>
-					<th class="text-center">Approve Date</th>
-					<th class="text-center">Indent No</th>
-					<th class="text-center">Indent Date</th>
-					<th class="text-center">Product Name</th>
-					<th class="text-center">Product Qty</th>
-					<th class="text-center">Product Rate</th>
-					<th class="text-center">Delivery Date</th>
-					<th class="text-center">Payment Days</th>
-					<th class="text-center">Product Remark</th>
-				</tr>
-			</thead>
-			<tbody>';
-			$result = $dbcon->query($query);
-			$i=1;
-			if(brp_mysqli_num_rows($result)>0){
-				while($row = brp_mysqli_fetch_array($result)){
-					if($row['unit_id']!=$row['conv_unit_id']){
-						$product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span><br><span style="color:orange">'.$row['product_conv_qty'].' '.$row['conv_unit'];
-					}else{
-						$product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span>';
-					}
-					$delivery_date = ''; 
-					if($row['delivery_date']!='0000-00-00' && $row['delivery_date'] !='' && $row['delivery_date']!='1970-01-01'){
-						$delivery_date = date('d-m-Y',strtotime($row['delivery_date']));
-					}
+    // Validate and sanitize input parameters
+    $quotation_ref_id = isset($POST['quotation_ref_id']) && !empty($POST['quotation_ref_id']) ? $dbcon->real_escape_string($POST['quotation_ref_id']) : 0;
+    $vender_id = isset($POST['vender_id']) && !empty($POST['vender_id']) ? $dbcon->real_escape_string($POST['vender_id']) : 0;
+    
+    // Build query with proper validation
+    $query = "SELECT rtrn.po_quotationtrn_id, pro.product_name, rtrn.product_qty, rtrn.product_conv_qty, 
+                     unit.unit_name as base_unit, cunit.unit_name as conv_unit, ain.approve_no, 
+                     rtrn.remark, rtrn.product_rate, ain.approve_date, req.indent_no, req.indent_date,
+                     rtrn.unit_id, rtrn.delivery_date, rtrn.payment_days, rtrn.conv_unit_id 
+              FROM po_quotationtrn_ref as rtrn 
+              LEFT JOIN product_mst as pro ON pro.product_id = rtrn.product_id
+              LEFT JOIN unit_mst as unit ON unit.unitid = rtrn.unit_id
+              LEFT JOIN unit_mst as cunit ON cunit.unitid = rtrn.conv_unit_id
+              LEFT JOIN approve_indent as ain ON ain.approve_indent_id = rtrn.approve_indent_id
+              LEFT JOIN tbl_request_product as req ON req.rp_id = ain.rp_id
+              WHERE rtrn.ref_name = 'supplier_quotation' 
+                AND rtrn.ref_id = " . $quotation_ref_id . " 
+                AND rtrn.vender_id = " . $vender_id . " 
+                AND rtrn.po_quotationtrn_status = 0";
+    
+    $str = '';
+    $str .= '<table class="display table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th class="text-center editmode1"><input type="checkbox" id="all_chk_box12" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_all_item_req12();"></th>
+            <th class="text-center">Approve No</th>
+            <th class="text-center">Approve Date</th>
+            <th class="text-center">Indent No</th>
+            <th class="text-center">Indent Date</th>
+            <th class="text-center">Product Name</th>
+            <th class="text-center">Product Qty</th>
+            <th class="text-center">Product Rate</th>
+            <th class="text-center">Delivery Date</th>
+            <th class="text-center">Payment Days</th>
+            <th class="text-center">Product Remark</th>
+        </tr>
+    </thead>
+    <tbody>';
+    
+    $result = $dbcon->query($query);
+    $i = 1;
+    
+    if($result && brp_mysqli_num_rows($result) > 0){
+        while($row = brp_mysqli_fetch_array($result)){
+            if($row['unit_id'] != $row['conv_unit_id']){
+                $product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span><br><span style="color:orange">'.$row['product_conv_qty'].' '.$row['conv_unit'].'</span>';
+            } else {
+                $product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span>';
+            }
+            
+            $delivery_date = ''; 
+            if($row['delivery_date'] != '0000-00-00' && $row['delivery_date'] != '' && $row['delivery_date'] != '1970-01-01'){
+                $delivery_date = date('d-m-Y', strtotime($row['delivery_date']));
+            }
 
-					$str .='<tr>
-						<td class="editmode1"><input type="checkbox" name="chk_box_item_req12[]" class="chk_box_item_req12" id="chk_box_item_req12'.$i.'" value="'.$row['po_quotationtrn_id'].'" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_box_limit_item_req12(this.id);"></td>
-						<td>'.$row['approve_no'].'</td>
-						<td>'.date('d-m-Y',strtotime($row['approve_date'])).'</td>
-						<td>'.$row['indent_no'].'</td>
-						<td>'.date('d-m-Y',strtotime($row['indent_date'])).'</td>
-						<td>'.$row['product_name'].'</td>
-						<td>'.$product_qty.'</td>
-						<td>'.$row['product_rate'].'</td>
-						<td>'.$delivery_date.'</td>
-						<td>'.$row['payment_days'].'</td>
-						<td>'.$row['remark'].'</td>
-					</tr>';
-					$i++;
-				}
-			}else{
-				$str.='<tr>
-					<td colspan="11" class="text-center">No Data Yet...!!</td>
-				</tr>';
-			}
-			
-			$str.='</tbody>
-			</table>';
-			echo $str;
-		}
+            $str .= '<tr>
+                <td class="editmode1"><input type="checkbox" name="chk_box_item_req12[]" class="chk_box_item_req12" id="chk_box_item_req12'.$i.'" value="'.$row['po_quotationtrn_id'].'" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_box_limit_item_req12(this.id);"></td>
+                <td>'.$row['approve_no'].'</td>
+                <td>'.date('d-m-Y', strtotime($row['approve_date'])).'</td>
+                <td>'.$row['indent_no'].'</td>
+                <td>'.date('d-m-Y', strtotime($row['indent_date'])).'</td>
+                <td>'.$row['product_name'].'</td>
+                <td>'.$product_qty.'</td>
+                <td>'.$row['product_rate'].'</td>
+                <td>'.$delivery_date.'</td>
+                <td>'.$row['payment_days'].'</td>
+                <td>'.$row['remark'].'</td>
+            </tr>';
+            $i++;
+        }
+    } else {
+        $str .= '<tr>
+            <td colspan="11" class="text-center">No Data Yet...!!</td>
+        </tr>';
+    }
+    
+    $str .= '</tbody>
+    </table>';
+    echo $str;
+}
 		else if(strtolower($POST['mode']) == "request_quotation_data"){
 			$supplier_id = array_filter($_POST['supplier_id']);
 			$vender_id = trim(implode(",", @$POST['supplier_id']),","); 

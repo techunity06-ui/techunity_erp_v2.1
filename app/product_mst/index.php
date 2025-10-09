@@ -793,6 +793,7 @@ else if(strtolower($POST['mode']) == "add_product_stage") {
 	}
 	echo "1";
 }
+
 else if(strtolower($POST['mode']) == "load_stage_purchase") {
 	if(strtolower($POST['form_mode']) == "edit"){
 		$query="select mst.*,sm.stage_name from tbl_product_stage as mst 

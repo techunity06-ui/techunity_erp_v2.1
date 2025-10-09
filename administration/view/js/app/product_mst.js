@@ -5,7 +5,7 @@ $(document).ready(function() {
 	show_images_data();
 	show_party_purchase();
 	show_accessories_product();
-	show_stage_purchase();
+	// show_stage_purchase();
 	show_product_param();
 	show_product_process();
 	show_job_party_purchase();
@@ -1637,7 +1637,7 @@ function add_product_stage()
 				$("#edit_id_product_stage").val('')
 				$("#add_stage_btn").val("Add");
 				Unloading();
-				show_stage_purchase();
+				// show_stage_purchase();
 			}
 			
 		}
@@ -1680,21 +1680,21 @@ function show_make_data()
 	});
 }
 
-function show_stage_purchase()
-{
-	var form_mode=$('#form_mode').val();
-	var product_id=$('#pid').val();
-	Loading();
-	$.ajax({
-		type: "POST",
-		url: root_domain+administration_domain+'app/product_mst/',
-		data: { mode : "load_stage_purchase", product_id:product_id,form_mode:form_mode },
-		success: function(data){
-			$('#table_stage_purchase').html(data);				
-			Unloading();
-		}		
-	});
-}
+// function show_stage_purchase()
+// {
+// 	var form_mode=$('#form_mode').val();
+// 	var product_id=$('#pid').val();
+// 	Loading();
+// 	$.ajax({
+// 		type: "POST",
+// 		url: root_domain+administration_domain+'app/product_mst/',
+// 		data: { mode : "load_stage_purchase", product_id:product_id,form_mode:form_mode },
+// 		success: function(data){
+// 			$('#table_stage_purchase').html(data);				
+// 			Unloading();
+// 		}		
+// 	});
+// }
 
 
 function edit_data_party_purchase(id)
@@ -1835,7 +1835,7 @@ function delete_data_stage(id)
 				var response=data.res;
 				if(response.trim() == "1") {
 					toastr.success("DATA DELETE SUCCESSFULLY", "SUCCESS");
-					show_stage_purchase();
+					// show_stage_purchase();
 					Unloading();
 				}
 				else if(response.trim() == "0") {

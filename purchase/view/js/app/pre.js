@@ -609,3 +609,87 @@ function so_to_workorder_load(id,wid){
 		});	
 	}
 }
+function open_inq_email(inquiry_id,indent_no, cust_email) {
+	$('#send_email_modal').modal("show");
+	$('#email_ref_id').val(inquiry_id);
+
+
+	Loading(true);
+	$.ajax({
+		type: "POST",
+		url: root_domain+purchase_domain+'app/pre/',
+		data: { mode: "open_inq_email", inquiry_id: inquiry_id, indent_no:indent_no,cust_email: cust_email },
+		success: function (response) {
+			
+			var obj = jQuery.parseJSON(response);
+			$('#to_email_id').val(obj.to_email_id);
+			$('#ccemail_id').val("");
+			$('#bccemail_id').val("");
+			CKEDITOR.instances['email_content'].setData(obj.email_content)
+			$('#email_subject').val("Thank You.");
+			Unloading();
+		}
+	});
+}
+
+
+$("#send_email_add").on('submit', function (e) {
+	var form = this;
+	e.preventDefault();
+	e.stopPropagation();
+	if (!$("#send_email_add").valid()) {
+		return false;
+	}
+
+	for (instance in CKEDITOR.instances) {
+		CKEDITOR.instances[instance].updateElement();
+	}
+
+	form.submitted = true;
+	Loading(true);
+	$(this).attr("disabled", "disabled");
+	$('#send_mail_btn').prop('disabled', true);
+	var form_data = new FormData(this);
+
+	$.ajax({
+		cache: false,
+		url: root_domain+purchase_domain+'app/pre/',
+		type: "POST",
+		data: form_data,
+		contentType: false,
+		processData: false,
+		success: function (response) {
+			////console.log(response);	
+			var arr = jQuery.parseJSON(response);
+			if(arr.msg == '1') {
+				toastr.success("MAIL SENT SUCCESSFULLY", "SUCCESS");
+				$('#send_email_via_po_modal').modal('hide');
+				load_po_datatable();
+			}
+			else if(arr.msg == '0') {
+				toastr.warning(arr.error, "ERROR");
+			}
+			Unloading();
+			$('#send_mail_btn').prop('disabled', false);
+			$('#send_email_add').trigger('reset');
+		},
+		error: function (jqXHR, textStatus, errorThrown) {
+			//console.log(textStatus, errorThrown);
+		}
+	});
+
+});
+
+function load_invoiceno(id) {
+	$.ajax({
+		type: "POST",
+		url: root_domain + purchase_domain + 'app/pre/',
+		data: { mode: "load_invoiceno", typeid: id },
+		success: function (data) {
+			//console.log(data);
+			var no = jQuery.parseJSON(data);
+			$('#pre_no').val(no.invoiceno);
+
+		}
+	});
+}

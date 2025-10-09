@@ -70,7 +70,7 @@
 			<?php 
 			$fieldd = ($_SESSION['user_type'] == '2') ? 'is_read_by_admin' : 'is_read';
 			// $wheres = ($_SESSION['user_type'] != '2') ? " and task.assign_user_ids = ".$_SESSION['user_id'] : "";
-			$fis1=" and FIND_IN_SET (".$_SESSION['user_id'].",task.show_user_ids)";
+			$fis1=" and FIND_IN_SET(".$_SESSION['user_id'].",task.show_user_ids)";
 			$todoqrys='SELECT task.*, inq.inquiry_no, cust.cust_name, mcd.mcd_name from tbl_task as task left join tbl_master_category_detail as mcd on mcd.mcd_id=task.task_type_id LEFT JOIN tbl_inquiry as inq ON inq.inquiry_id = task.inquiry_id LEFT JOIN tbl_customer as cust ON cust.cust_id = inq.cust_id where task.task_status = 0 and task.task_type_id != "'.GENERAL_TASK_TYPE.'" AND task.task_type_id != "0" and task.company_id='.$_SESSION['company_id'].$fis1.' AND task.alert_date_time <= "'.date("Y-m-d 23:59:59").'" ORDER BY task.task_id DESC';
 			$result_todos=$dbcon->query($todoqrys);
 			$notifys=mysqli_num_rows($result_todos);

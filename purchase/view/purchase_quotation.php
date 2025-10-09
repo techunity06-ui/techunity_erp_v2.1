@@ -4,15 +4,26 @@ include('../include/urlfile.php');
 $form = "Request For Quotation";
 $company_config = getCompanyConfiguration($dbcon);
  error_reporting(E_ALL);
-if (strpos($_SERVER['REQUEST_URI'], "purchase_quotation") == true) {
-	$quotation_ref_id = $dbcon->real_escape_string($_REQUEST['id']);
-	$query = "select * from po_quotation_ref where quotation_ref_id=" . $quotation_ref_id;
-	$result = $dbcon->query($query);
-	$row = brp_mysqli_fetch_array($result);
-	$suppliers_detail = "select group_concat(l_name) as suppliers from tbl_ledger where l_id in (" . $row['vender_id'] . ") ";
-	$supplier_result = $dbcon->query($suppliers_detail);
-	$supplier_data = brp_mysqli_fetch_array($supplier_result);
+if (strpos($_SERVER['REQUEST_URI'], "purchase_quotation") !== false) {
+    $quotation_ref_id = $dbcon->real_escape_string($_REQUEST['id']);
+    $query = "SELECT * FROM po_quotation_ref WHERE quotation_ref_id = " . $quotation_ref_id;
+    $result = $dbcon->query($query);
+
+    if ($result && $row = brp_mysqli_fetch_array($result)) {
+        if (!empty($row['vender_id'])) {
+            $suppliers_detail = "
+                SELECT GROUP_CONCAT(l_name) AS suppliers 
+                FROM tbl_ledger 
+                WHERE l_id IN (" . $row['vender_id'] . ")";
+            $supplier_result = $dbcon->query($suppliers_detail);
+            $supplier_data = brp_mysqli_fetch_array($supplier_result);
+        } else {
+            // No vendor IDs
+            $supplier_data['suppliers'] = '';
+        }
+    }
 }
+
 
 $companyConfiguration = getCompanyConfiguration($dbcon);
 $purchase_party_show = $companyConfiguration['purchase_party_show'];

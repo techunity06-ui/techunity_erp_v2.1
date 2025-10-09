@@ -1,39 +1,52 @@
 <?php 
-	session_start();
-	include('../include/urlfile.php');	
-	
-	$bulkAccessArray = canCheckPermissionAccess($dbcon, [
-		PRE_VIEW
-    ]);
-    if(!in_array(PRE_VIEW,$bulkAccessArray)){
-        header("Location: ".DOMAIN."permission_access");
-    }
-	
-	if(strpos($_SERVER['REQUEST_URI'], "pre_edit") == true) {
-       if(!in_array(PRE_VIEW,$bulkAccessArray)){
-           header("Location: ".DOMAIN."permission_access");
-       }
-       
-       $mode = "Edit";
-       $pre_id = $dbcon->real_escape_string($_REQUEST['id']);
+session_start();
+include('../include/urlfile.php');	
+
+// Initialize variables to prevent undefined warnings
+$vender_id = $_REQUEST['vender_id'] ?? '';
+$disable = $disable ?? '';
+$rel = $rel ?? [];
+
+$bulkAccessArray = canCheckPermissionAccess($dbcon, [
+    PRE_VIEW
+]);
+if(!in_array(PRE_VIEW,$bulkAccessArray)){
+    header("Location: ".DOMAIN."permission_access");
+}
+
+// FIX: Use strict comparison for strpos()
+if(strpos($_SERVER['REQUEST_URI'], "pre_edit") !== false) {
+   if(!in_array(PRE_VIEW,$bulkAccessArray)){
+       header("Location: ".DOMAIN."permission_access");
+   }
    
-       $query = "select * from tbl_pre where pre_id=".$pre_id;
-	   $rel = mysqli_fetch_assoc($dbcon->query($query));
-	   $pre_no = $rel['pre_no'];
-	   $remark = $rel['remark'];
-	   $date = date('d-m-Y',strtotime($rel['pre_date']));
-	   $branch_id = $rel['branch_id'];
-    }else{
-		$mode = 'Add';
-		$pre_no=load_common_no($dbcon,21);
-		$date = date("d-m-Y");
-		$branch_id = $_SESSION['branch_id'];
-	}	
-	$form="Indent";
-	$setconf="select * from tbl_company_configuration where company_id=".$_SESSION['company_id'];
-	$set_conf=mysqli_fetch_assoc($dbcon->query($setconf));
-	$purchase_party_show = $set_conf['purchase_party_show'];
-	$getspecialConfiguration=getspecialConfiguration($dbcon);
+   $mode = "Edit";
+   $pre_id = $dbcon->real_escape_string($_REQUEST['id']);
+
+   $query = "select * from tbl_pre where pre_id=".$pre_id;
+   $rel = mysqli_fetch_assoc($dbcon->query($query));
+   $invoicetype_id = $rel['invoicetype_id'] ?? '';
+   $invoicetype_id_dis='disabled';
+   $pre_no = $rel['pre_no'] ?? '';
+   $remark = $rel['remark'] ?? '';
+   $date = date('d-m-Y',strtotime($rel['pre_date'] ?? 'now'));
+   $branch_id = $rel['branch_id'] ?? '';
+}else{
+    $mode = 'Add';
+    $pre_no='';
+    $invoicetype_id='';
+    $invoicetype_id_dis='';
+    $date = date("d-m-Y");
+    $branch_id = $_SESSION['branch_id'] ?? '';
+}	
+$form="Indent";
+$setconf="select * from tbl_company_configuration where company_id=".$_SESSION['company_id'];
+
+$set_conf=mysqli_fetch_assoc($dbcon->query($setconf));
+
+$purchase_party_show = $set_conf['purchase_party_show'] ?? '';
+$getspecialConfiguration=getspecialConfiguration($dbcon);
+$companyConfiguration=getCompanyConfiguration($dbcon);
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +87,18 @@
 									<form class="form-horizontal" role="form" id="pre_add" action="javascript:;" method="post" name="pre_add">
 									<div class="row">
 										<div class="col-md-12">	
+    										<div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Series * </label>
+                                                    <div class="col-md-8 col-xs-11">
+                                                       <select class="select2" name="invoicetype_id" id="invoicetype_id" onchange="load_invoiceno(this.value)" required <?= $invoicetype_id_dis; ?>>
+                                                            <option value="">--Select Series--</option>
+                                                            <?=get_invoice_type_list($dbcon,MANUAL_INDENT_SERIES,$invoicetype_id)?>
+                                                       </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="col-md-3 control-label">Pre No*</label>
@@ -91,24 +116,26 @@
 													</div>
 												</div>
 											</div>
-											
-											<div class="col-md-6">
-												 <?php echo getBranchBox($dbcon, $branch_id, isset($rel['branch_id']) ? $rel['branch_id'] : '', false, true,'','3','6'); ?>
-											</div>
+											<?php if(($companyConfiguration['branch_wise_manage'] ?? '')=='1'){ ?>
+												<div class="col-md-6">
+													<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'] ?? '', false, true,'','3','6'); ?>
+												</div>
+											<?php } ?>
 										</div>
 										
 										<div class="col-md-12" style="margin-top:30px">
 											<div class="form-group">
 												<table cellspacing="10" style="border-collapse:inherit; " id="product_list" class="display table table-bordered table-striped">
 													<tr>
-														<?php if($getspecialConfiguration['oilfield_permission']==1) { ?>
-															<th width="10%"></th>
-														<?php } ?>
-														<?php if($set_conf['po_work_order_wise']==1) { ?>
+														<?php if(($getspecialConfiguration['oilfield_permission'] ?? 0)==1){ ?>
+														<th width="10%"></th>
+													<?php } ?>
+														<?php if($set_conf['po_work_order_wise']==1){?>
 															<th width="15%">Choose Sales Order</th>
 															<th width="15%">Choose Work Order</th>
 														<?php }?>
 														
+
 														<th width="15%">Choose Item</th>
 														<th width="10%">Qty</th>
 														<th width="15%">Vender</th>
@@ -118,12 +145,12 @@
 													</tr>
 													
 													<tr>
-														<?php if($getspecialConfiguration['oilfield_permission']==1) { ?>
-															<td>
-																<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
-															</td>
-														<?php } ?>
-														<?php if($set_conf['po_work_order_wise']==1) { ?>
+														<?php if(($getspecialConfiguration['oilfield_permission'] ?? 0)==1){ ?>
+														<td>
+															<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
+														</td>
+													<?php } ?>
+														<?php if(($set_conf['po_work_order_wise'] ?? 0)==1){?>
 															<td  style="max-width:0px">
 																<select class="select2"  title="Select Sales Order" name="sales_order_id" id="sales_order_id" onChange="so_to_workorder_load(this.value,'');" >
 																	<?=get_sales_order_indent($dbcon)?>
@@ -229,10 +256,24 @@
 
 			});	
 			
-			$('.default-date-picker').datepicker({
-				format: 'dd-mm-yyyy',
-				autoclose: true
-			});
+			var today = new Date();
+            
+            // Get the same date from last month
+            var lastMonth = new Date(today);
+            lastMonth.setMonth(lastMonth.getMonth() - 1);
+        
+            // Adjust for months with fewer days (e.g., Feb 30th → Feb 28th)
+            if (lastMonth.getDate() !== today.getDate()) {
+                lastMonth.setDate(0); // go to last day of previous month
+            }
+        
+            $('.default-date-picker').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true,
+                endDate: today,
+                startDate: lastMonth,
+                todayHighlight: true
+            });
 			function cb(start, end) {
 				$('.datepikerdemo span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
 			}
@@ -261,3 +302,4 @@
 		</script>
 	</body>
 </html>
+

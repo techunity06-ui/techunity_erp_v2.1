@@ -2,7 +2,8 @@
 session_start();
 $AJAX = true;
 include('../../include/urlfileinner.php');
-// error_reporting(E_ALL);
+include_once("../../include/common_send_email.php");
+
 if($_POST != NULL) {
 	$POST = bulk_filter($dbcon,$_POST);
 }
@@ -31,19 +32,18 @@ else {
 
 			//$where.=" $where_user";
 
-			$date = " and pre.indent_date between '" . date('Y-m-d', strtotime($s_date[0])) . "' AND '" . date('Y-m-d', strtotime($s_date[1])) . "'";
+			$date = " and pr.pre_date between '" . date('Y-m-d', strtotime($s_date[0])) . "' AND '" . date('Y-m-d', strtotime($s_date[1])) . "'";
 			$where.=" $where_db ".$date;
 
 			$appData = array();
 			$i=1;
-			$aColumns = array('pre.rp_id','pre.indent_no','pre.indent_date','pre.pre_trn_id','bms.branch_name','pre.branch_id','us.user_name','pre.rp_req_type','pre_trn.pre_id');
+			$aColumns = array('pre.rp_id','pr.pre_no','pre.indent_no','pr.pre_date','pre.pre_trn_id','bms.branch_name','pre.branch_id','us.user_name','pre.rp_req_type','pre_trn.pre_id','tl.l_name','tl.cust_mobile','tl.cust_email','pr.pre_id');
 			$sIndexColumn = "pre.rp_id";
 			$isWhere = array("pre.indent_status in (1,3) and status=0".$where);
 			$sTable = "tbl_request_product as pre";			
-			$isJOIN = array('left join tbl_pre_trn as pre_trn on pre_trn.pre_trn_id=pre.pre_trn_id','left join tbl_pre as pr on pr.pre_id=pre_trn.pre_id','left join branch_mst as bms on bms.branch_id=pr.branch_id','left join users as us on us.user_id=pre.user_id');
-			$hOrder = "pre.rp_id desc";
-			$hGroupby = array("pre.rp_id");
-			$having_clause  ='';
+			$isJOIN = array('left join tbl_pre_trn as pre_trn on pre_trn.pre_trn_id=pre.pre_trn_id','left join tbl_pre as pr on pr.pre_id=pre_trn.pre_id','left join branch_mst as bms on bms.branch_id=pr.branch_id','left join users as us on us.user_id=pre.user_id','left join tbl_ledger as tl on tl.l_id=pre_trn.vender_id');
+			$hOrder = "pr.pre_date desc";
+			$hGroupby = array("pr.pre_id");
 			include($include.'pagging.php');
 			//echo $squery;
 			$appData = array();
@@ -52,8 +52,9 @@ else {
 			foreach($sqlReturn as $row) {
 				$row_data = array();
 				$row_data[] = $id;
-				$row_data[] = $row['indent_no'];
-				$row_data[] = date('d M, Y',strtotime($row['indent_date']));
+				$row_data[] = $row['pre_no'];
+				// $row_data[] = $row['indent_no'];
+				$row_data[] = date('d M, Y',strtotime($row['pre_date']));
 				
 				if($row['branch_id'] == '10000'){
 					$row_data[] = 'All Branch';
@@ -66,45 +67,53 @@ else {
 				$edit = ''; $delete = '';$indent_view='';
 				if(in_array(PRE_VIEW,$bulkAccessArray)){
 					if($row['rp_req_type'] == 'direct'){
-						$edit='<a class="btn btn-xs btn-warning" data-original-title="Edit Pre" data-toggle="tooltip" data-placement="top" href="'.ROOT.PURCHASE_ROOT.'pre_edit/'.$row['pre_id'].'"><i class="fa fa-pencil"></i></a>';
-					
+						
 						$menusql = $dbcon->query("SELECT * FROM `print_permission` WHERE `status` = '0' AND `company_id`='".$_SESSION['company_id']."'");
 						$rels=mysqli_fetch_assoc($menusql);
 						$menu_show_permissions = explode(",",$rels['print_permission']);
 						$sql=$dbcon->query("SELECT * FROM print_setup_mst WHERE print_type = 17 AND approve_status = 1 AND status = 0 ORDER BY priority");
 						while($res = mysqli_fetch_assoc($sql)){
+							$page_path = $res['page_path'];
 							if(in_array($res['id'],$menu_show_permissions)) {
-								$indent_view.='<a class="btn btn-xs btn-primary" data-original-title="'.$res['print_name'].'" data-toggle="tooltip" data-placement="top" target="_blank"  href="'.ROOT.PRINT_ROOT.$res['page_path'].'/'.$row['pre_id'].'?'.time().'" style="background: '.$res['icon_color'].'; border-color: '.$res['icon_color'].';"><i class="'.$res['fa_icon'].'"></i></a>';
+								$indent_view.='<a class="btn btn-xs btn-primary" data-original-title="'.$res['print_name'].'" data-toggle="tooltip" data-placement="top" target="_blank"  href="'.ROOT.PRINT_ROOT.$page_path.'/'.$row['pre_id'].'?'.time().'" style="background: '.$res['icon_color'].'; border-color: '.$res['icon_color'].';"><i class="'.$res['fa_icon'].'"></i></a>';
 							}
 						}
 					}
 
-					$inde_c = "SELECT pre.pre_id,trn.pre_trn_id,req.rp_id,used_qty,req.indent_status,round(IFNULL(sum(used_qty),0),4) as preqty from tbl_pre as pre
+					$inde_c = "select pre.pre_id,trn.pre_trn_id,req.rp_id,used_qty,req.indent_status,round(IFNULL(sum(used_qty),0),4) as preqty from tbl_pre as pre
 					left join tbl_pre_trn as trn on trn.pre_id = pre.pre_id
 					left join tbl_request_product as req on req.pre_trn_id = trn.pre_trn_id
 					left join (select round(IFNULL(sum(req.approve_qty),0),4) as used_qty,req.rp_id from approve_indent as req where req.approve_indent_status=0 group by req.rp_id) as rereq on rereq.rp_id=req.rp_id 
 
-					where pre.pre_status=0 AND pre.user_id=".$_SESSION['user_id']." AND pre.pre_id='".$row['pre_id']."' GROUP BY pre.pre_id";
+					where pre.pre_status=0 and pre.user_id=".$_SESSION['user_id']." and pre.pre_id=".$row['pre_id']." Group by pre.pre_id";
 					
 					
 					$inde_q = $dbcon->query($inde_c);
-					
 					
 					$inde_r = mysqli_fetch_array($inde_q);
 					
 					//var_dump($inde_c);
 					//$a = $inde_c;
-					$indent_tracking='<a class="btn btn-xs btn-primary" data-original-title="Edit Pre" data-toggle="tooltip" data-placement="top" href="'.ROOT.PURCHASE_ROOT.'indent_tracking/'.$row['rp_id'].'"><i class="fa fa-history"></i> Indent Tracking Report</a>';
+					$indent_tracking='<a class="btn btn-xs btn-primary" data-original-title="Pre Tracking" data-toggle="tooltip" data-placement="top" href="'.ROOT.PURCHASE_ROOT.'indent_tracking/'.$row['pre_id'].'"><i class="fa fa-history"></i> Indent Tracking Report</a>';
 
-					if($inde_r && $row['rp_req_type'] == 'direct'){
+					$customer_mobile = '+91' . $row['cust_mobile']; 
+					$indent_link = DOMAIN . PRINT_ROOT . $page_path . '/' . $row['pre_id'] . '?' . time();
+					$text = "Thank you.\nI am From Aero Engineers.\n\n" . $indent_link;
+					$encoded_text = urlencode($text);
+					$send_whatsapp_new = '<a data-link="'.$indent_link.'" title="Send to Whatsapp" type="button" class="btn btn-xs btn-success" href="https://web.whatsapp.com/send?phone=' . $customer_mobile . '&text=' . $encoded_text . '" target="_blank"> <i class="fa fa-whatsapp"></i></a> ';
+					
+					$send_email = '<button class="btn btn-xs btn-primary" data-original-title="Send Email" data-toggle="tooltip" data-placement="top" onClick="open_inq_email(' . $row['pre_id'] . ',\'' . $row['pre_no'] . '\',\'' . $row['cust_email'] . '\')"><i class="fa fa-envelope"></i></button>';
+
+					if($row['rp_req_type'] == 'direct'){
 						if($inde_r['preqty'] == '0.0000' && $inde_r['indent_status'] !=3){
+						    $edit='<a class="btn btn-xs btn-warning" data-original-title="Edit Pre" data-toggle="tooltip" data-placement="top" href="'.ROOT.PURCHASE_ROOT.'pre_edit/'.$row['pre_id'].'"><i class="fa fa-pencil"></i></a>';
 							$delete = '<button type="button" class="btn btn-round btn-danger btn-xs" onclick="delete_row('.$row['pre_id'].');" ><i class="fa fa-times"></i></button>';
 						}
 					}
 				}
 					
-				$row_data[] = $edit." ".$delete." ".$indent_view." ".$indent_tracking;
-			 
+				$row_data[] = $edit." ".$delete." ".$indent_view." ".$indent_tracking." ".$send_whatsapp_new." ".$send_email;
+				
 			$appData[] = $row_data;
 			$id++;
 			}
@@ -364,7 +373,7 @@ else {
 				left join tbl_set_main_process as sm on sm.sp_id = mst.sp_id
 				left join tbl_sales_order as tso on tso.sales_order_id = mst.so_id
 				left join tbl_purchasecardtrn as crtrn on crtrn.purchasecardtrn_id=mst.purchasecardtrn_id
-				where mst.pre_trn_status=0 and pre_id=".$POST['pre_id'];
+				where mst.pre_trn_status=0 and pre_id=".$POST['pre_id']." Order By pre_id Desc";
 			}else{
 				$query = "select pro.product_name, pro.product_icode, dr.drawing_number, pro.product_alias_name,ven.l_name,mst.*, cat.unit_name, cat_con.unit_name as conv_unit_name, crtrn.price, crtrn.rate_tolerance, sm.po_req_no,tso.sales_order_no, pro.product_alias_name from tbl_pre_trn as mst 
 				left join product_mst as pro on pro.product_id=mst.product_id
@@ -375,14 +384,14 @@ else {
 				left join tbl_set_main_process as sm on sm.sp_id = mst.sp_id
 				left join tbl_sales_order as tso on tso.sales_order_id = mst.so_id
 				left join tbl_purchasecardtrn as crtrn on crtrn.purchasecardtrn_id=mst.purchasecardtrn_id
-				where mst.pre_trn_status=3 and mst.user_id=".$_SESSION['user_id'];
+				where mst.pre_trn_status=3 and mst.user_id=".$_SESSION['user_id']." Order By pre_id Desc";
 			}
 
 			$data_e = $dbcon->query($query);
 			//$str.=$query;
-			$str='';
 			$str.='<table class="display table table-bordered table-striped" style="width:100%;">
 					<tr>';
+						$str .='<th width="10%" class="text-center">Sr. No</th>';
 						if($companyConfiguration['po_work_order_wise']==1){
 							$str .='<th width="20%" class="text-center">Sales Order No</th>';
 							$str .='<th width="20%" class="text-center">Work Order No</th>';
@@ -395,6 +404,7 @@ else {
 						<th width="3%" class="text-center">Action</th>
 					</tr>
 					<tbody>';
+			$i=1;
 			if(mysqli_num_rows($data_e) > 0 ){
 				while($row = brp_mysqli_fetch_array($data_e)){
 					if(in_array('drawing',$pro_search)){
@@ -424,6 +434,7 @@ else {
 					}
 					
 					$str .='<tr>';
+						$str .='<td class="text-center">'.$i.'</td>';
 						if($companyConfiguration['po_work_order_wise']==1){
 							$str .='<td>'.$row['sales_order_no'].'</td>';
 							$str .='<td>'.$row['po_req_no'].'</td>';
@@ -457,6 +468,8 @@ else {
 						
 					$str .='</td>
 					</tr>';
+					
+					$i++;
 				}
 			}else{
 				$str.= '<tr><td colspan="6" class="text-center">NO DATA FOUND</td></tr>';
@@ -477,16 +490,9 @@ else {
 		}
 		else if(strtolower($POST['mode']) == "load_rate") {
 			$rate = get_po_card_rate($dbcon,$_POST['product_id'],$_POST['vender_id'],$_POST['unit_id']);
-			// $row['rate'] = $rate['price'];
-			// $row['purchasecardtrn_id']   = $rate['purchasecardtrn_id'];
-			// var_dump($row);
-			if (!empty($rate) && is_array($rate)) {
-				$row['rate'] = $rate['price'];
-				$row['purchasecardtrn_id'] = $rate['purchasecardtrn_id'];
-			} else {
-				$row['rate'] = null;
-				$row['purchasecardtrn_id'] = null;
-			}
+			$row['rate'] = $rate['price'];
+			$row['purchasecardtrn_id']   = $rate['purchasecardtrn_id'];
+			//var_dump($row);
 			echo json_encode($row);
 		}
 		else if(strtolower($POST['mode'])== "delete_data") {
@@ -510,9 +516,8 @@ else {
 			if(empty($products)){
 				$arr['msg'] = "2";
 			} else {
-				$pre_no  		   	= load_common_no($dbcon, MANUAL_INDENT_SERIES);
-				update_common_no($dbcon, MANUAL_INDENT_SERIES);
-				
+			    $pre_no	= load_common_no($dbcon, MANUAL_INDENT_SERIES, $POST['invoicetype_id']);
+				update_common_no($dbcon, MANUAL_INDENT_SERIES, $POST['invoicetype_id']);
 				$info['pre_no']		= $pre_no;
 				$info['pre_date']	= date('Y-m-d',strtotime($POST['pre_date']));
 				$info['remark']		= $_POST['remark'];
@@ -744,6 +749,118 @@ else {
 				}
 				echo $str;
 			}
+		} else if (strtolower($POST['mode']) == "open_inq_email") {
+			// $set = "select inq_email_content from tbl_company where company_id=" . $_SESSION['company_id'];
+			// $set_head = mysqli_fetch_assoc($dbcon->query($set));
+			$email_content = 'Hello Sir, <br> Your Indent No. : '.$POST['indent_no'];
+			$resp['email_content']    = $email_content;
+			$resp['to_email_id']    = strtolower($POST['cust_email']);
+		
+			echo json_encode($resp);
+
+		} 
+		
+		else if (strtolower($POST['mode']) == "send_mail") {
+// 			echo '<pre>';
+// 			print_r($_SESSION);
+// 			echo '</pre>';exit;
+            $cur_user_id = $_SESSION['user_id'];
+			$cur_user = getUserDetailById($dbcon, $cur_user_id);
+			$user['user_name'] = $cur_user['user_name'];
+			$user['user_email'] = $cur_user['user_mail'] ? $cur_user['user_mail'] : $cur_user['common_email_id'];
+			$email_subject = $_POST['email_subject'];
+			$email_content = $_POST['email_content'];
+			$to = $_POST['to_email_id'];
+
+			// CC 
+			$query = "select website as email,company_name from tbl_company where company_id=" . $_SESSION['company_id'];
+			$company = mysqli_fetch_assoc($dbcon->query($query));
+			$ccemails = [];
+			$ccemails[] = array('email' => $company['email'], 'name' => $company['company_name']);
+			if ($_POST['ccemail_id']) {
+				$ccemail_id_d = explode(';', $_POST['ccemail_id']);
+				foreach ($ccemail_id_d as $val) {
+					$ccemails[]['email'] = $val;
+				}
+			}
+
+			// BCC
+			$bccemail[] = array('email' => $user['user_email'], 'name' => $user['user_name']);
+			if ($_POST['bccemail_id']) {
+				$bccemail_id_d = explode(';', $_POST['bccemail_id']);
+				foreach ($bccemail_id_d as $val) {
+					$ccemails[]['email'] = $val;
+				}
+			}
+            $files = array();
+			array_push($files, $file);
+			$res = common_print_send_email($to, $user, $email_subject, $email_content, $attachment_path, $files, $ccemails, $bccemail);
+			unlink(MAIL_ATTACH_UPING . $file);
+
+			echo $res;
+			
+// 			$inquiry_id = strtolower($POST['email_ref_id']);
+// 			$from_email = strtolower($POST['from_email']);
+// 			$to_email_id = strtolower($POST['to_email_id']);
+// 			$ccemail_id = strtolower($POST['ccemail_id']);
+// 			$bccemail_id = strtolower($POST['bccemail_id']);
+// 			$email_subject = $_POST['email_subject'];
+// 			$email_content = $_POST['email_content'];
+// 			if (!empty($_FILES['email_attach']['tmp_name'])) {
+// 				$file = upload_mail_attch_file($_FILES, $dbcon);
+// 			}
+
+			
+// 			$set = "SELECT user_email FROM `users` where user_id=" . $_SESSION['user_id'];
+// 			$set_head = mysqli_fetch_assoc($dbcon->query($set));
+
+// 			$files = array();
+// 			array_push($files, $file);
+// 			$resp = final_send_email($set_head['user_email'],$to_email_id, $ccemail_id, $bccemail_id, $email_subject, $email_content, $files);
+// 			unlink(MAIL_ATTACH_UPING . $file);
+		
+// 			$arr['msg'] = array();
+// 			if ($resp['code'] == 'success') {
+// 				$arr['msg'] = '1';
+// 			} else {
+// 				$arr['msg'] = '0';
+// 			}
+// 			echo json_encode($arr);
+		} else if (brp_strtolower($POST['mode'] == 'send_quotation_whatsapp')) {
+			$email_page_path = $_POST['email_page_path'];
+		
+			include('../../../print/view/quotation_print_whatsapp.php');
+			// include('../../../print/view/'.$email_page_path.'.php');
+		
+			$pre_id = $_POST['pre_id'];
+			$query  = "select quot_subject,quot_header, quotation_no from tbl_quotation where quotation_id=" . $quotation_id;
+			$result = $dbcon->query($query);
+			$row = brp_mysqli_fetch_array($result);
+		
+			$quot_header_msg = $row['quot_header'];
+			$mobile_no = str_replace('-', '', $_POST['cust_mobile']);
+		
+			$save_file = 'Yes';
+			$file_name = whatsapp_quotation_print($dbcon, $quotation_id, $save_file);
+			$attachment_path  = DOMAIN . 'upload/mail_attach/' . $file_name;
+			$template_name = "quotation_sharing";
+			$res = send_whatsapp_message($dbcon, $mobile_no, $attachment_path, $template_name);
+			unlink($attachment_path);
+		
+			$arr = array();
+			$arr['msg'] = $res;
+			echo json_encode($arr);
+		} else if (strtolower($POST['mode']) == "get_series_no") {
+			$query = "select * from tbl_invoicetype where status=0 and type_id=" . trim($POST['type_id']) . " and company_id=" . $_SESSION['company_id'] . " AND financial_year_id = " . $_SESSION['financial_year_id'];
+			$result = $dbcon->query($query);
+			$row = brp_mysqli_fetch_assoc($result);
+			echo $row['invoicetype_id'];
+		} else if (strtolower($POST['mode']) == "load_invoiceno") {
+		    $typeid = $POST['typeid'];
+			$row = array();
+			$purchase_order_no = load_common_no($dbcon, MANUAL_INDENT_SERIES,$typeid);
+			$row['invoiceno'] = $purchase_order_no;
+			echo json_encode($row);
 		}
 	
 function upload_attch_file($FILES){

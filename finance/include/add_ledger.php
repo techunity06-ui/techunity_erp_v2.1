@@ -137,7 +137,7 @@ function get_tax_category_new($dbcon,$eid='')
 													<label class="col-md-4 control-label">Choose Branch *</label>
 													<div class="col-md-8 col-xs-11">
 														<select class="select2" name="branch_id" id="branch_id">
-															<?=getBranchBox_new($dbcon,'');?>
+															<?=getBranchBox($dbcon,'');?>
 														</select>
 													</div>
 												</div>	
