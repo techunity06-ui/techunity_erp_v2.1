@@ -98,7 +98,7 @@
                               $counter++;
                            } ?>
                            <input type="hidden" name="dynamic_field" id="dynamic_field" value="<?=$field-1?>">
-                        <?} ?>
+                        <?php } ?>
                         
             <br><br><br>
             <div class="col-md-12 margin_row">
