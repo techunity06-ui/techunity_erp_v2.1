@@ -1,4 +1,4 @@
-<?
+<?php
 $path = "../../";
 $include = "../../include";
 $include1 = "../include/";

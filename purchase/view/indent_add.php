@@ -23,11 +23,7 @@ if(strpos($_SERVER['REQUEST_URI'], "indent_approve")==true)
 	where rp_id=".$workorder_id;
 	$rel=mysqli_fetch_assoc($dbcon->query($query));	
 
-	if(!empty($rel['product_remark'])){
-		$rel['product_desc'] = $rel['product_remark'];
-	}else{
-		$rel['product_desc'] = $rel['product_desc'];
-	}
+	$rel['product_desc'] = !empty($rel['product_remark']) ? $rel['product_remark'] : (isset($rel['product_desc']) ? $rel['product_desc'] : '');
 
 	$ret_req_conv = '';
 	if($rel['product_base_unit'] != $rel['product_conv_unit']){
@@ -129,11 +125,11 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 													</div>
 												</div>
 											</div>
-											<?if($companyConfiguration['branch_wise_manage']==1){?>
+											<?php if($companyConfiguration['branch_wise_manage']==1) { ?>
 												<div class="col-md-4">
 													<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, false, ''); ?>
 												</div>
-											<?php} ?>
+											<?php } ?>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="col-md-4 control-label">Category Name </label>
@@ -241,9 +237,9 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 													</div>
 												</div>
 											</div>
-										<?php} ?>
+										<?php } ?>
 									</div>
-									<?if($companyConfiguration['po_work_order_wise']==1){?>
+									<?php if($companyConfiguration['po_work_order_wise']==1) { ?>
 										<div class="col-md-12">
 											<div class="form-group">
 												<label for="Product Description" class="col-md-4 control-label" style="text-align : left">Description</label>
@@ -252,7 +248,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												</div>
 											</div>
 										</div>
-									<?php} ?>
+									<?php } ?>
 									<div class="clearfix"></div>
 									<div class="col-md-12">
 										<center>

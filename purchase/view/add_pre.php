@@ -101,10 +101,10 @@
 											<div class="form-group">
 												<table cellspacing="10" style="border-collapse:inherit; " id="product_list" class="display table table-bordered table-striped">
 													<tr>
-														<?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
-														<th width="10%"></th>
-													<?php} ?>
-														<?if($set_conf['po_work_order_wise']==1){?>
+														<?php if($getspecialConfiguration['oilfield_permission']==1) { ?>
+															<th width="10%"></th>
+														<?php } ?>
+														<?php if($set_conf['po_work_order_wise']==1) { ?>
 															<th width="15%">Choose Sales Order</th>
 															<th width="15%">Choose Work Order</th>
 														<?}?>
@@ -118,12 +118,12 @@
 													</tr>
 													
 													<tr>
-														<?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
-														<td>
-															<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
-														</td>
-													<?php} ?>
-														<?if($set_conf['po_work_order_wise']==1){?>
+														<?php if($getspecialConfiguration['oilfield_permission']==1) { ?>
+															<td>
+																<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
+															</td>
+														<?php } ?>
+														<?php if($set_conf['po_work_order_wise']==1) { ?>
 															<td  style="max-width:0px">
 																<select class="select2"  title="Select Sales Order" name="sales_order_id" id="sales_order_id" onChange="so_to_workorder_load(this.value,'');" >
 																	<?=get_sales_order_indent($dbcon)?>

@@ -1,5 +1,5 @@
 <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
-<?php//error_reporting(E_ALL) ?>
+<?php //error_reporting(E_ALL) ?>
 <?php include("dashboard_common_functions.php"); ?>
 <?php include("common_functions/common_production_functions.php"); ?>
 <style type="text/css">
@@ -182,7 +182,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 					</div>
 				</div>
 				<div class="col-md-12" id="sdiv1"></div>
-			<?php} ?>
+			<?php } ?>
 
 
 		<!--div1 code end-->
@@ -200,7 +200,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 					</div>
 				</div>
 				<div class="col-md-12" id="sdiv10"></div>
-		<?php} ?>
+		<?php } ?>
 
 		<!--div10 code end-->
 
@@ -217,9 +217,9 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 					</div>
 				</div>
 				<div class="col-md-12" id="sdiv2"></div>
-		<?
+		<?php
 			}
-			} ?>
+		} ?>
 		<!--div2 code end-->
 
 		<!-- div3 code start-->
@@ -231,7 +231,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv3"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div3 code end-->
 
 		<!-- div4 code start-->
@@ -243,7 +243,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv4"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div4 code end-->
 
 		<!-- div5 code start-->
@@ -255,7 +255,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv5"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div5 code end-->
 
 		<!-- div6 code start-->
@@ -267,7 +267,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv6"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div6 code end-->
 
 		<!-- div7 code start-->
@@ -279,7 +279,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv7"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div7 code end-->
 
 		<!-- div8 code start-->
@@ -291,7 +291,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv8"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div8 code end-->
 	
 		<!-- div9 code start-->
@@ -303,7 +303,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv9"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div9 code end-->
 
 		<!-- div10 code start-->
@@ -315,7 +315,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 				</div>
 				<div class="col-md-12" id="sdiv11"></div>
 
-		<?php} ?>
+		<?php } ?>
 		<!-- div9 code end-->
 		
 		

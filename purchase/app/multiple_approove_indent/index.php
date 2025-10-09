@@ -364,19 +364,19 @@ else {
 		
 	}
 	else if(strtolower($POST['mode']) == "work_order_no") {
-		$branch_id=$POST['branch_id'];				
-		echo get_pending_work_order($dbcon,$branch_id);
+		$branch_id = isset($POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];				
+		echo get_pending_work_order($dbcon, $branch_id);
 	}
 	else if(strtolower($POST['mode']) == "sales_order_no"){
-		$branch_id=$POST['branch_id'];				
-		echo get_pending_sales_order($dbcon,$branch_id);
+		$branch_id = isset($POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];				
+		echo get_pending_sales_order($dbcon, $branch_id);
 	}
 	else if(strtolower($POST['mode']) == "get_indent_no") {
-		$branch_id=$POST['branch_id'];				
-		echo get_pending_indent_no($dbcon,$branch_id);
+		$branch_id = isset($POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];				
+		echo get_pending_indent_no($dbcon, $branch_id);
 	}else if(strtolower($POST['mode']) == "get_pro") {
-		$branch_id=$POST['branch_id'];				
-		echo get_indent_pending_product($dbcon,$branch_id);
+		$branch_id = isset($POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];				
+		echo get_indent_pending_product($dbcon, $branch_id);
 	}else if(strtolower($POST['mode']) == "get_work_o_no") {
 		$sp_id=$POST['id'];			
 

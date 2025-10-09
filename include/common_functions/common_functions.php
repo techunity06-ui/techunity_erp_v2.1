@@ -91,22 +91,32 @@ function get_first_name($dbcon, $id)
     }
     return $str;
 }
-function get_surface_area($dbcon, $id)
+function get_surface_area($dbcon, $id = null)
 {
-    $str = '';
-    $query = "Select * from mst_surface_area where surface_area_status=0 and company_id=" . $_SESSION['company_id'];
+    $str = '<option value="" >--Choose Surface Area Name--</option>';
+    if (!$dbcon || !isset($_SESSION['company_id'])) {
+        return $str;
+    }
+
+    $company_id = intval($_SESSION['company_id']);
+    $query = "SELECT * FROM mst_surface_area WHERE surface_area_status = 0 AND company_id = " . $company_id;
     $rs_type = $dbcon->query($query);
 
-    $str = '<option value="" >--Choose Surface Area Name--</option>';
-    while ($row = brp_mysqli_fetch_assoc($rs_type))
-    {
-        $sel = '';
-        if ($row['surface_area_id'] == $id)
-        {
-            $sel = 'selected="selected"';
-        }
+    if ($rs_type) {
+        while ($row = brp_mysqli_fetch_assoc($rs_type)) {
+            if (!is_array($row)) continue;
+            
+            $sel = '';
+            if ($row['surface_area_id'] == $id) {
+                $sel = 'selected="selected"';
+            }
 
-        $str .= '<option ' . $sel . ' value="' . $row['surface_area_id'] . '" data-pcode="' . $row['code'] . '">' . $row['surface_area_name'] . '</option>';
+            $surface_area_id = isset($row['surface_area_id']) ? htmlspecialchars($row['surface_area_id']) : '';
+            $code = isset($row['code']) ? htmlspecialchars($row['code']) : '';
+            $surface_area_name = isset($row['surface_area_name']) ? htmlspecialchars($row['surface_area_name']) : '';
+
+            $str .= '<option ' . $sel . ' value="' . $surface_area_id . '" data-pcode="' . $code . '">' . $surface_area_name . '</option>';
+        }
     }
     return $str;
 }

@@ -85,13 +85,13 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 									</div>
 								</div>
 								<div class="col-md-24"></div>
-								<?if($companyConfiguration['branch_wise_manage']==1){?>
+								<?php if($companyConfiguration['branch_wise_manage']==1) { ?>
 									<div class="col-md-6">
 										
 										<?php echo getBranchBox($dbcon, $branch_id, '', false, true, 'reload_data(this.value)','4','8'); ?>	
 									
 									</div>
-								<?php} ?>
+								<?php } ?>
 								<div class="col-md-6">	
 									<span class="tools pull-right">
 										<a href="<?=ROOT.PURCHASE_ROOT.'multiple_approove_indent'?>" ><button class="btn btn-success btn-flat" >Multiple <?=$form?></button></a>

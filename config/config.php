@@ -6,8 +6,8 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 header("Expires: 0");
 
-// error_reporting(E_ALL);
-error_reporting(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 date_default_timezone_set('Asia/Kolkata');	
 $authenticate = true;    
 

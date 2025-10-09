@@ -1,11 +1,15 @@
 <?php 
 	session_start();
 	include('../include/urlfile.php');
-	$form="Approval Indent";
-	$branch_id = $_SESSION['branch_id'];
+	$form = "Approval Indent";
+	$mode = "";  // Initialize mode variable
+	$branch_id = isset($_SESSION['branch_id']) ? $_SESSION['branch_id'] : '';
 	$bulkAccessArray = canCheckPermissionAccess($dbcon, [
             INDENT_APPROVE
     ]);
+
+	// Get company configuration
+	$companyConfiguration = getCompanyConfiguration($dbcon);
     $start_date=date("01-m-Y");
 	$end_date=date("d-m-Y");
     if(!in_array(INDENT_APPROVE,$bulkAccessArray)){
@@ -21,20 +25,22 @@
 	</head>
 	<body>
 		<section id="container" class="sidebar-closed">
-			<?php include_once($include.'/include_top_menu.php');?>
-			<?php include_once($include.'/left_menu.php');?>
+			<?php 
+			include_once($include.'/include_top_menu.php');
+			include_once($include.'/left_menu.php');
+			?>
 			<section id="main-content">
 				<section class="wrapper">
 					<div class="row">
 						<div class="col-lg-12">
 							<section class="panel">
 								<header class="panel-heading">
-								  <h3><?=$mode.' '.$form?></h3>
+								  <h3><?php echo $mode.' '.$form; ?></h3>
 								</header>	
 								<div class="">
 									<ul class="breadcrumb">
-									  <li><a href="<?=ROOT.'dashboard'?>"><i class="fa fa-home"></i> Home</a></li>
-									  <li><a href="<?=ROOT.PURCHASE_ROOT.'indent_list'?>"><?=$form?> List</a></li>
+									  <li><a href="<?php echo ROOT.'dashboard'; ?>"><i class="fa fa-home"></i> Home</a></li>
+									  <li><a href="<?php echo ROOT.PURCHASE_ROOT.'indent_list'; ?>"><?php echo $form; ?> List</a></li>
 									</ul>
 								</div>
 							</section>
@@ -54,7 +60,7 @@
 													<div class="form-group"> 
 														<label class="col-md-4 control-label" > Start Date </label>
 														<div class="col-md-8 col-xs-11">
-															<input id="start_date" name="start_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?=$start_date?>" placeholder="Start Date" autocomplete="off" onchange="load_pending_indent()">
+															<input id="start_date" name="start_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php echo $start_date; ?>" placeholder="Start Date" autocomplete="off" onchange="load_pending_indent()">
 														</div>
 													</div>
 												</div>
@@ -63,15 +69,15 @@
 													<div class="form-group"> 
 														<label class="col-md-4 control-label" > End Date </label>
 														<div class="col-md-8 col-xs-11">
-															<input id="end_date" name="end_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?=$end_date?>" placeholder="Start Date" autocomplete="off" onchange="load_pending_indent()">
+															<input id="end_date" name="end_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php echo $end_date; ?>" placeholder="End Date" autocomplete="off" onchange="load_pending_indent()">
 														</div>
 													</div>
 												</div>
-												<?if($companyConfiguration['branch_wise_manage']==1){?>
+												<?php if($companyConfiguration['branch_wise_manage']==1) { ?>
 												<div class="col-md-4">
 													<?php echo getBranchBox($dbcon, $branch_id, '', false, false, 'get_pending_work_order_no(this.value);load_pending_indent();get_pending_indent_no(this.value);get_pending_product(this.value);load_pending_indent()'); ?>	
 												</div>
-											<?php} ?>
+											<?php } ?>
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="col-md-4 control-label" > Sales Order No </label>
@@ -129,7 +135,7 @@
 											</div>
 											<div class="clearfix"></div>
 											<button type="submit" class="btn btn-success" id="save" name="save">Approve All </button>
-											<a href="<?=ROOT.PURCHASE_ROOT.'indent_list'?>" type="button" class="btn btn-danger">Cancel</a>
+											<a href="<?php echo ROOT.PURCHASE_ROOT.'indent_list'; ?>" type="button" class="btn btn-danger">Cancel</a>
 											<div class="col-md-4"></div>					
 										</div>
 										<input type='hidden' name='mode' id='mode' value='multiple_indent_approove' />
@@ -143,7 +149,7 @@
 			<?php include_once($include.'/footer.php');?>
 		</section>
 		<?php include_once($include.'/include_js_file.php');?>   
-		<script src="<?=ROOT.PURCHASE_ROOT?>js/app/multiple_approove_indent.js?<?=time()?>"></script>
+		<script src="<?php echo ROOT.PURCHASE_ROOT; ?>js/app/multiple_approove_indent.js?<?php echo time(); ?>"></script>
 <script>
 
 

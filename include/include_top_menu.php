@@ -23,7 +23,7 @@
 			 $notify=mysqli_num_rows($result_todo);
 			
 			?>
-			<a data-toggle="dropdown" <?phpif($notify!='0'){?>id="pulsate-regular"<?}?> class="dropdown-toggle" href="#" aria-expanded="false">
+			<a data-toggle="dropdown" <?php if($notify!='0'){ echo 'id=\"pulsate-regular\"'; } ?> class="dropdown-toggle" href="#" aria-expanded="false">
 				<i class="fa fa-bell-o"></i>
                 <span class="badge bg-important"><?=$notify?></span>
             </a>
@@ -71,12 +71,12 @@
 			$fieldd = ($_SESSION['user_type'] == '2') ? 'is_read_by_admin' : 'is_read';
 			// $wheres = ($_SESSION['user_type'] != '2') ? " and task.assign_user_ids = ".$_SESSION['user_id'] : "";
 			$fis1=" and FIND_IN_SET (".$_SESSION['user_id'].",task.show_user_ids)";
-			$todoqrys='SELECT task.*, inq.inquiry_no, cust.cust_name, mcd.mcd_name from tbl_task as task left join tbl_master_category_detail as mcd on mcd.mcd_id=task.task_type_id LEFT JOIN tbl_inquiry as inq ON inq.inquiry_id = task.inquiry_id LEFT JOIN tbl_customer as cust ON cust.cust_id = inq.cust_id where task.task_status = 0 and task.task_type_id != "'.GENERAL_TASK_TYPE.'" AND task.task_type_id != "0" and task.company_id='.$_SESSION['company_id'].$fis1.' AND task.alert_date_time <= "'.date("Y-m-d 23:59:59").'" ORDER BY task.task_id '.@$com_conf['crm_task_order'];
+			$todoqrys='SELECT task.*, inq.inquiry_no, cust.cust_name, mcd.mcd_name from tbl_task as task left join tbl_master_category_detail as mcd on mcd.mcd_id=task.task_type_id LEFT JOIN tbl_inquiry as inq ON inq.inquiry_id = task.inquiry_id LEFT JOIN tbl_customer as cust ON cust.cust_id = inq.cust_id where task.task_status = 0 and task.task_type_id != "'.GENERAL_TASK_TYPE.'" AND task.task_type_id != "0" and task.company_id='.$_SESSION['company_id'].$fis1.' AND task.alert_date_time <= "'.date("Y-m-d 23:59:59").'" ORDER BY task.task_id DESC';
 			$result_todos=$dbcon->query($todoqrys);
 			$notifys=mysqli_num_rows($result_todos);
 
 			?>
-			<a data-toggle="dropdown" <?phpif($notifys!='0'){?>id="pulsate-regular"<?}?> class="dropdown-toggle" href="#">
+			<a data-toggle="dropdown" <?php if($notifys!='0'){ echo 'id="pulsate-regular"'; } ?> class="dropdown-toggle" href="#">
 				<i class="fa fa-tasks"></i>
 				<span class="badge bg-success"><?=$notifys?></span>
 			</a>
@@ -85,7 +85,7 @@
 				<li>
 					<p class="green">You have <?=$notifys?> pending tasks</p>
 				</li>
-				<?
+				<?php
 				if(mysqli_num_rows($result_todos)>0)
 				{
 					$i=1;
@@ -93,15 +93,15 @@
 					{
 						?>
 						<li class="task_list_<?=$rel_todo['task_id']?>">
-							<?if($rel_todo['task_type_id']==15){ ?>
+							<?php if($rel_todo['task_type_id']==15){ ?>
 								<a href="<?=ROOT.CRM_ROOT.'inq_to_quot/'.$rel_todo['inquiry_id']?>" title="<?= $rel_todo['mcd_name'] ?>">
-							<?php} else if($rel_todo['task_type_id']==20){
+							<?php } else if($rel_todo['task_type_id']==20){
 								$chk = $dbcon->query("SELECT inquiry_id,approve_status,quotation_id FROM `tbl_quotation` WHERE quotation_status=0 and revise_status=0 AND inquiry_id=".$rel_todo['inquiry_id']);
-								$get = brp_mysqli_fetch_assoc($chk);?>
+								$get = brp_mysqli_fetch_assoc($chk); ?>
 								<a href="<?=ROOT.CRM_ROOT.'quotation_revise/'.$get['quotation_id']?>" title="<?= $rel_todo['mcd_name'] ?>">
-							<?php} else { ?>
+							<?php } else { ?>
 								<a href="<?=ROOT.CRM_ROOT.'task_add/'.$rel_todo['inquiry_id']?>" title="<?= $rel_todo['mcd_name'] ?>">
-							<?php} ?>
+							<?php } ?>
 								<span class="subject">
 									<span class="from"><?= $rel_todo['mcd_name'] ?><br><?=$rel_todo['cust_name']?></span>
 									<span class="time"><?=date("d-M-Y",strtotime($rel_todo['task_due_date']))?></span>
@@ -111,7 +111,7 @@
 								</span>
 							</a>
 						</li>
-						<?
+						<?php
 					}
 				}
 				?>
@@ -127,7 +127,8 @@
 			$notify=mysqli_num_rows($result_todo);
 
 			?>
-			<a data-toggle="dropdown" <?phpif($notify!='0'){?>id="pulsate-regular"<?}?> class="dropdown-toggle" href="#" aria-expanded="false">
+			<a data-toggle="dropdown" <?php if($notify != '0') { ?> id="pulsate-regular" <?php } ?> class="dropdown-toggle" href="#" aria-expanded="false">
+
 				<i class="fa fa-bell-o"></i>
 				<span class="badge bg-important gt_count"><?=$notify?></span>
 			</a>
@@ -162,13 +163,13 @@
 			</ul>
 		</li>
 		<li id="header_inbox_bar" style="float:left;margin-left:50px;" class="dropdown">
-			<?php$todays = date("Y-m-d 00:00:00");
+			<?php $todays = date("Y-m-d 00:00:00");
 			$ends = date("Y-m-d 23:59:59");
 			$notesqry=$dbcon->query("SELECT * FROM director_working_notes WHERE notes_status!=2 AND notes_date >= '".$todays."' AND notes_date <= '".$ends."'");
 			$count_notes=mysqli_num_rows($notesqry);
 
 			?>
-			<a data-toggle="dropdown" <?phpif($count_notes!='0'){?>id="pulsate-regular"<?}?> class="dropdown-toggle" href="#" aria-expanded="false">
+			<a data-toggle="dropdown" <?php if($count_notes!='0'){ echo 'id=\"pulsate-regular\"'; } ?> class="dropdown-toggle" href="#" aria-expanded="false">
 				<i class="fa fa-bell-o"></i>
 				<span class="badge bg-warning"><?=$count_notes?></span>
 			</a>
