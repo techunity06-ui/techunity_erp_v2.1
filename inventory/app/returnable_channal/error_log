@@ -1,0 +1,15 @@
+[23-Feb-2022 15:41:59 Asia/Kolkata] PHP Notice:  Undefined variable: where in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 28
+[23-Feb-2022 15:41:59 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 15:41:59 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 15:41:59 Asia/Kolkata] PHP Notice:  Undefined variable: str in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 421
+[23-Feb-2022 15:41:59 Asia/Kolkata] PHP Notice:  Undefined variable: j in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 497
+[23-Feb-2022 15:42:04 Asia/Kolkata] PHP Notice:  Undefined variable: str in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 421
+[23-Feb-2022 15:42:04 Asia/Kolkata] PHP Notice:  Undefined variable: j in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 497
+[02-Mar-2022 12:19:03 Asia/Kolkata] PHP Notice:  Undefined variable: where in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 28
+[02-Mar-2022 12:19:03 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[02-Mar-2022 12:19:03 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[02-Mar-2022 12:19:03 Asia/Kolkata] PHP Notice:  Undefined variable: str in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 421
+[02-Mar-2022 12:19:03 Asia/Kolkata] PHP Notice:  Undefined variable: j in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 497
+[02-Mar-2022 12:19:17 Asia/Kolkata] PHP Notice:  Undefined variable: str in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 421
+[02-Mar-2022 12:19:17 Asia/Kolkata] PHP Notice:  Undefined variable: j in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 497
+[02-Mar-2022 12:19:40 Asia/Kolkata] PHP Notice:  Undefined index: product_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/returnable_channal/index.php on line 676

@@ -1,0 +1,362 @@
+TRUNCATE TABLE `tbl_sale_return`;
+TRUNCATE TABLE `tbl_sale_return_transaction`;
+TRUNCATE TABLE `tbl_tcs_reverse`;
+TRUNCATE TABLE `tbl_tcs_reverse_transaction`;
+TRUNCATE TABLE `tbl_cost_center_transaction`;
+TRUNCATE TABLE `tbl_bill_sundry_transaction`;
+TRUNCATE TABLE `tbl_transport_transaction`;
+TRUNCATE TABLE `tbl_ewaybill_transaction`;
+TRUNCATE TABLE `tbl_tax_trn`;
+TRUNCATE TABLE `tbl_invoice`;
+TRUNCATE TABLE `tbl_invoicetrn`;
+TRUNCATE TABLE `tbl_salesman_transaction`;
+TRUNCATE TABLE `tbl_general_book`;
+TRUNCATE TABLE `tbl_debitnote`;
+TRUNCATE TABLE `tbl_debitnote_trn`;
+TRUNCATE TABLE `mst_hsn_code`;
+TRUNCATE TABLE `tbl_tax_category`;
+TRUNCATE TABLE `tbl_tax_category_details`;
+TRUNCATE TABLE `tbl_tds_tax_category`;
+TRUNCATE TABLE `tbl_tds_tax_category_detail`;
+
+
+update `tbl_ledger` set l_status='1',l_name='cgst1'  WHERE `l_name` LIKE 'cgst';
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9870', 'CGST', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+update `tbl_ledger` set l_status='1',l_name='sgst1'  WHERE `l_name` LIKE 'sgst';
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9880', 'SGST', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+update `tbl_ledger` set l_status='1',l_name='igst1'  WHERE `l_name` LIKE 'igst';
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9890', 'IGST', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+update `tbl_ledger` set l_status='1',l_name='tds1'  WHERE `l_name` LIKE 'tds';
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9891', 'TDS', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9893', 'CESS', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9894', 'ADD.CESS', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`,`default_ledger`) VALUES ('9892', 'TCS', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '1', '0', '0', '0', '1', '0','1');
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24240', 'SALES ACCOUNT', '', '', '25', '0', '101', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '2', '1', '2021-01-29 11:01:34', '1', '1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '1');
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24430', 'Purchase ACCOUNT', '', '', '25', '0', '101', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '2', '1', '2021-01-29 11:01:34', '1', '1', '0', '0', '0', '0', '0', '0', '0', '1', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '1');
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24449', 'RENT OF PLANT & MACHINERY', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24450', 'Rent of land building furniture etc', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24451', 'Interest other than from a banking Co', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24452', 'Interest from a banking company', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24453', 'Gross Pymt/Purc', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24454', 'FEES FOR TECHNICAL SERVICES', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24455', 'FEES FOR PROFESSIONAL SERVICES', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24456', 'FEES FOR PROFESSIONAL OR TECH.SERVICES', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24457', 'CONTRACTS TO TRANSPORTER', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24458', 'Contracts to others', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24459', 'CONTRACTS AND INDIVIDUALS/HUF', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+INSERT INTO `tbl_ledger` (`l_id`, `l_name`, `ledger_code`, `emp_profile_img`, `l_group`, `l_form`, `countryid`, `stateid`, `cityid`, `cust_pincode`, `m_name`, `m_address`, `m_pan`, `company_name`, `cust_cont_name`, `cust_mobile`, `cust_email`, `cust_website`, `zone_id`, `cust_assign_user`, `branch_id_customer`, `party_sez`, `branch_id_employee`, `cust_remark`, `gst_no`, `party_type`, `cust_gst_reg`, `pay_terms`, `pay_method`, `bill_type`, `balance_typeid`, `acc_type`, `bankid`, `branch_name`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `emp_mobile`, `emp_email`, `emp_password`, `emp_zone_id`, `emp_user_type`, `tax_value`, `opn_balance`, `usertype_terr`, `alloc_stateid`, `alloc_cityid`, `report_to_user_type`, `report_to_user_id`, `cdate`, `user_id`, `company_id`, `l_status`, `print_priority`, `cust_id`, `employee_id`, `branch_id`, `credit_limit`, `credit_days`, `is_deletable`, `ledger_alias`, `enable_multi_currency_opening`, `enable_branch_opening`, `ledger_opening_balance_type`, `enable_cost_center`, `enable_tds`, `party_pay_cat`, `enable_tcs`, `enable_depreciation`, `enable_monthly_budget`, `ledger_Tax_type`, `ledger_gst_applicable`, `ledger_tax_category`, `ledger_hsn`, `ledger_itc`, `ledger_rcm`, `enable_bill_sunfry`, `enable_sez`, `enable_cheque_deposit`, `enable_billbybill_opening`, `default_sundry`, `enable_salesman`, `default_ledger`) VALUES ('24460', 'COMMISSION AND BROKRAGE', '', '', '31', 'tax_form', '101', '1', '1', '380015', '0', '0', 'CXNSHSSD', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0.00', '0', '0', '0', '0', '0', '0', '9', '0.00', '0', '0', '0', '0', '0', '2021-01-26 14:35:03', '1', '1', '0', '2', '0', '0', '0', '0', '0', '0', '', '0', '0', '0', '0', '0', '7', '0', '0', '0', '1673', '0', '0', '', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+INSERT INTO `branch_mst` (`branch_id`, `branch_user_id`, `branch_name`, `branch_email`, `branch_password`, `branch_address`, `zoneid`, `countryid`, `stateid`, `cityid`, `branch_pincode`, `branch_status`, `cdate`, `user_id`, `usertype_id`, `company_id`) VALUES ('1000', '0', 'All Branch', '', '', 'Address BRANCH 1', '0', '101', '1', '1', '380015', '0', '2021-03-01 20:59:07', '125', '2', '4');
+
+
+INSERT INTO `tbl_tax_category` (`tax_cat_id`, `tax_cat_name`, `tax_gst`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`, `is_deletable`) VALUES
+(17, 'GST 0%', 0.00, 1, '2021-09-23 10:27:11', 1, 1, 2, 1),
+(18, 'GST 5%', 5.00, 0, '2021-09-23 10:27:22', 1, 1, 2, 1),
+(19, 'GST 12%', 12.00, 0, '2021-09-23 10:27:34', 1, 1, 2, 1),
+(20, 'GST 18%', 18.00, 0, '2021-10-11 10:07:11', 1, 1, 2, 1),
+(21, 'GST 28%', 28.00, 1, '2021-09-24 09:12:04', 1, 1, 2, 1),
+(22, 'GST NILL RATED', 0.00, 0, '2021-09-23 10:28:18', 1, 1, 2, 1),
+(23, 'NON GST', 0.00, 0, '2021-09-23 10:28:30', 1, 1, 2, 1),
+(24, 'GST EXEMPTED', 0.00, 0, '2021-09-23 10:28:47', 1, 1, 2, 1),
+(25, 'GST ZERO RATED', 0.00, 0, '2021-09-23 10:30:46', 1, 1, 2, 1);
+
+
+
+INSERT INTO `tbl_tax_category_details` (`tax_cat_details_id`, `tax_cat`, `tax_id`, `tax_per`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`, `tax_additional`) VALUES
+(1, 17, 9870, 0.00, 1, '2021-09-23 10:27:11', 1, 1, 2, 0),
+(2, 17, 9880, 0.00, 1, '2021-09-23 10:27:11', 1, 1, 2, 0),
+(3, 17, 9890, 0.00, 1, '2021-09-23 10:27:11', 1, 1, 2, 0),
+(4, 18, 9870, 2.5, 0, '2021-09-23 10:27:22', 1, 1, 2, 0),
+(5, 18, 9880, 2.5, 0, '2021-09-23 10:27:22', 1, 1, 2, 0),
+(6, 18, 9890, 5.00, 0, '2021-09-23 10:27:22', 1, 1, 2, 0),
+(7, 19, 9870, 6.00, 0, '2021-09-23 10:27:34', 1, 1, 2, 0),
+(8, 19, 9880, 6.00, 0, '2021-09-23 10:27:34', 1, 1, 2, 0),
+(9, 19, 9890, 12.00, 0, '2021-09-23 10:27:34', 1, 1, 2, 0),
+(10, 20, 9870, 9.00, 0, '2021-10-11 10:07:11', 1, 1, 2, 0),
+(11, 20, 9880, 9.00, 0, '2021-10-11 10:07:11', 1, 1, 2, 0),
+(12, 20, 9890, 18.00, 0, '2021-10-11 10:07:11', 1, 1, 2, 0),
+(13, 21, 9870, 14.00, 1, '2021-09-24 09:12:04', 1, 1, 2, 0),
+(14, 21, 9880, 14.00, 1, '2021-09-24 09:12:04', 1, 1, 2, 0),
+(15, 21, 9890, 28.00, 1, '2021-09-24 09:12:04', 1, 1, 2, 0),
+(16, 22, 9870, 0.00, 0, '2021-09-23 10:28:18', 1, 1, 2, 0),
+(17, 22, 9880, 0.00, 0, '2021-09-23 10:28:18', 1, 1, 2, 0),
+(18, 22, 9890, 0.00, 0, '2021-09-23 10:28:18', 1, 1, 2, 0),
+(19, 23, 9870, 0.00, 0, '2021-09-23 10:28:30', 1, 1, 2, 0),
+(20, 23, 9880, 0.00, 0, '2021-09-23 10:28:30', 1, 1, 2, 0),
+(21, 23, 9890, 0.00, 0, '2021-09-23 10:28:30', 1, 1, 2, 0),
+(22, 24, 9870, 0.00, 0, '2021-09-23 10:28:47', 1, 1, 2, 0),
+(23, 24, 9880, 0.00, 0, '2021-09-23 10:28:47', 1, 1, 2, 0),
+(24, 24, 9890, 0.00, 0, '2021-09-23 10:28:47', 1, 1, 2, 0),
+(25, 25, 9870, 0.00, 0, '2021-09-23 10:30:46', 1, 1, 2, 0),
+(26, 25, 9880, 0.00, 0, '2021-09-23 10:30:46', 1, 1, 2, 0),
+(27, 25, 9890, 0.00, 0, '2021-09-23 10:30:46', 1, 1, 2, 0);
+
+
+
+INSERT INTO `tbl_tds_tax_category` (`tds_cat_id`, `tds_cat_name`, `effected_ledger_id`, `tds_section`, `tds_date`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`, `is_deletable`) VALUES
+(12, 'COMMISSION AND BROKRAGE ', 24460, '194H', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(13, 'CONTRACTS AND INDIVIDUALS/HUF', 24459, '194C', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(14, 'CONTRACTS TO OTHERS ', 24458, '194C', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(15, 'CONTRACTS TO TRANSPORTER ', 24457, '194C', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(16, 'FEES FOR PROFESSIONAL OR TECH.SERVICES ', 24456, '194J', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(17, 'FEES FOR PROFESSIONAL SERVICES ', 24456, '194JB', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(18, 'FEES FOR TECHNICAL SERVICES ', 24454, '194JA', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(19, 'GROSS PYMT./PURC.', 24453, '194Q', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(20, 'INTEREST FROM A BANKING COMPANY ', 24452, '194A', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(21, 'INTEREST OTHER THAN FROM A BANKING CO.', 24451, '194A', '2021-08-18', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(22, 'RENT OF LAND, BUILDING, FURNITURE, ETC.,', 0, '194IB', '2021-08-23', 0, '2021-09-30 18:30:00', 0, 0, 0, 1),
+(23, 'RENT OF PLANT & MACHINERY ', 0, '194I', '2021-08-20', 0, '2021-09-30 18:30:00', 0, 0, 0, 1);
+
+
+
+
+INSERT INTO `tbl_tds_tax_category_detail` (`tds_cat_detail_id`, `tds_cat_id`, `tds_payee`, `tds_thresold_limit`, `tds_with_pan`, `tds_without_pan`, `tds_surcharge`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`) VALUES
+(1, 1, 7, 3.00, 4.00, 23.00, 2.00, 0, '2021-06-24 11:16:22', 2, 1, 2),
+(2, 1, 7, 5000.00, 2.00, 2.00, 1.00, 1, '2021-08-18 10:12:46', 2, 1, 2),
+(3, 1, 6, 5.00, 4.00, 34.00, 3.00, 1, '2021-06-24 11:20:39', 2, 1, 2),
+(4, 1, 7, 6.00, 4.00, 4.00, 4.00, 0, '2021-06-24 11:21:04', 2, 1, 2),
+(5, 1, 7, 54.00, 3.00, 2.00, 3.00, 0, '2021-06-24 11:21:53', 2, 1, 2),
+(6, 1, 7, 45.00, 45.00, 45.00, 54.00, 0, '2021-06-24 11:22:14', 2, 1, 2),
+(7, 1, 7, 35.00, 3.00, 3.00, 3.00, 0, '2021-06-24 11:23:10', 2, 1, 2),
+(8, 1, 7, 45.00, 23.00, 43.00, 34.00, 0, '2021-06-24 11:28:47', 2, 1, 2),
+(9, 2, 7, 6000.00, 560.00, 560.00, 560.00, 0, '2021-06-24 13:17:58', 2, 1, 2),
+(10, 2, 7, 6.00, 56.00, 56.00, 56.00, 0, '2021-06-24 13:09:58', 2, 1, 2),
+(11, 2, 7, 6000.00, 560.00, 560.00, 560.00, 0, '2021-06-24 13:17:58', 2, 1, 2),
+(12, 3, 7, 454.00, 45.00, 45.00, 45.00, 0, '2021-06-24 13:18:47', 2, 1, 2),
+(13, 3, 7, 454.00, 45.00, 45.00, 45.00, 0, '2021-06-24 13:18:47', 2, 1, 2),
+(14, 0, 7, 54600.00, 54670.00, 5460.00, 5460.00, 1, '2021-06-24 13:19:44', 2, 1, 2),
+(15, 0, 6, 65.00, 56.00, 56.00, 34.00, 1, '2021-06-24 13:24:36', 2, 1, 2),
+(16, 4, 6, 111.00, 222.00, 333.00, 444.00, 1, '2021-06-25 07:17:35', 2, 1, 2),
+(17, 5, 6, 546.00, 46.00, 6.00, 346.00, 0, '2021-06-25 05:27:55', 2, 1, 2),
+(18, 6, 6, 547.00, 547.00, 57.00, 56.00, 0, '2021-06-25 05:30:33', 2, 1, 2),
+(19, 6, 8, 56.00, 546.00, 56.00, 6.00, 0, '2021-06-25 05:30:57', 2, 1, 2),
+(20, 7, 7, 56.00, 6.00, 56.00, 56.00, 0, '2021-06-25 05:31:48', 2, 1, 2),
+(21, 0, 7, 33.00, 33.00, 33.00, 33.00, 1, '2021-06-25 07:18:40', 2, 1, 2),
+(22, 4, 8, 22.00, 22.00, 22.00, 22.00, 0, '2021-06-25 07:26:38', 2, 1, 2),
+(23, 4, 7, 44.00, 44.00, 44.00, 44.00, 0, '2021-06-25 07:27:10', 2, 1, 2),
+(24, 8, 7, 50.00, 50.00, 50.00, 25.00, 0, '2021-07-14 07:21:20', 2, 1, 2),
+(25, 9, 7, 55.00, 55.00, 55.00, 55.00, 0, '2021-07-14 07:23:57', 2, 1, 2),
+(26, 9, 6, 55.00, 44.00, 44.00, 44.00, 0, '2021-07-14 07:24:12', 2, 1, 2),
+(27, 10, 7, 3322.00, 33.00, 33.00, 33.00, 0, '2021-07-14 07:27:29', 2, 1, 2),
+(28, 10, 8, 66.00, 66.00, 66.00, 66.00, 0, '2021-07-14 07:27:10', 2, 1, 2),
+(29, 11, 7, 25000.00, 5.00, 25.00, 1.00, 0, '2021-07-23 11:56:58', 2, 1, 2),
+(30, 0, 7, 15000.00, 5.00, 20.00, 0.00, 1, '2021-08-18 10:15:04', 2, 1, 2),
+(31, 1, 8, 1500.00, 5.00, 5.00, 0.00, 1, '2021-08-18 10:24:02', 2, 1, 2),
+(32, 0, 8, 2000.00, 5.00, 5.00, 0.00, 1, '2021-08-18 10:28:14', 2, 1, 2),
+(33, 12, 102, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:34:28', 2, 1, 2),
+(34, 12, 103, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:34:47', 2, 1, 2),
+(35, 12, 6, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:35:01', 2, 1, 2),
+(36, 12, 109, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:35:20', 2, 1, 2),
+(37, 12, 104, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:35:42', 2, 1, 2),
+(38, 12, 7, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:36:02', 2, 1, 2),
+(39, 12, 105, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:36:20', 2, 1, 2),
+(40, 12, 106, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:36:39', 2, 1, 2),
+(41, 12, 107, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:37:20', 2, 1, 2),
+(42, 12, 108, 15000.00, 5.00, 20.00, 0.00, 0, '2021-08-18 10:37:38', 2, 1, 2),
+(43, 13, 6, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:40:31', 2, 1, 2),
+(44, 13, 7, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:40:43', 2, 1, 2),
+(45, 13, 8, 30000.00, 1.00, 20.00, 0.00, 1, '2021-08-18 10:41:03', 2, 1, 2),
+(46, 13, 102, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:41:14', 2, 1, 2),
+(47, 13, 103, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:41:27', 2, 1, 2),
+(48, 13, 104, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:41:36', 2, 1, 2),
+(49, 13, 105, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:41:50', 2, 1, 2),
+(50, 13, 106, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:42:04', 2, 1, 2),
+(51, 13, 107, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:42:14', 2, 1, 2),
+(52, 13, 108, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:42:28', 2, 1, 2),
+(53, 13, 109, 30000.00, 1.00, 20.00, 0.00, 0, '2021-08-18 10:42:38', 2, 1, 2),
+(54, 14, 6, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:45:33', 2, 1, 2),
+(55, 14, 7, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:45:41', 2, 1, 2),
+(56, 14, 8, 30000.00, 2.00, 20.00, 0.00, 1, '2021-08-18 10:45:49', 2, 1, 2),
+(57, 14, 102, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:45:58', 2, 1, 2),
+(58, 14, 103, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:46:11', 2, 1, 2),
+(59, 14, 104, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:46:20', 2, 1, 2),
+(60, 14, 105, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:46:31', 2, 1, 2),
+(61, 14, 106, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:46:40', 2, 1, 2),
+(62, 14, 107, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:47:07', 2, 1, 2),
+(63, 14, 108, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:47:16', 2, 1, 2),
+(64, 14, 109, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 10:47:27', 2, 1, 2),
+(65, 15, 6, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:51:10', 2, 1, 2),
+(66, 15, 7, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:51:20', 2, 1, 2),
+(67, 15, 8, 30000.00, 0.00, 20.00, 0.00, 1, '2021-08-18 10:51:32', 2, 1, 2),
+(68, 15, 102, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:51:49', 2, 1, 2),
+(69, 15, 103, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:52:09', 2, 1, 2),
+(70, 15, 104, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:52:29', 2, 1, 2),
+(71, 15, 105, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:52:42', 2, 1, 2),
+(72, 15, 106, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:52:51', 2, 1, 2),
+(73, 15, 107, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:53:02', 2, 1, 2),
+(74, 15, 108, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:53:17', 2, 1, 2),
+(75, 15, 109, 30000.00, 0.00, 20.00, 0.00, 0, '2021-08-18 10:53:30', 2, 1, 2),
+(76, 16, 6, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:56:25', 2, 1, 2),
+(77, 16, 7, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:56:35', 2, 1, 2),
+(78, 16, 8, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:56:46', 2, 1, 2),
+(79, 16, 102, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:57:05', 2, 1, 2),
+(80, 16, 103, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:57:14', 2, 1, 2),
+(81, 16, 104, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:57:26', 2, 1, 2),
+(82, 16, 105, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:57:47', 2, 1, 2),
+(83, 16, 106, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:58:00', 2, 1, 2),
+(84, 16, 107, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:58:09', 2, 1, 2),
+(85, 16, 108, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:58:27', 2, 1, 2),
+(86, 16, 109, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 10:59:06', 2, 1, 2),
+(87, 17, 6, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:00:44', 2, 1, 2),
+(88, 17, 7, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:00:51', 2, 1, 2),
+(89, 17, 8, 30000.00, 10.00, 20.00, 0.00, 1, '2021-08-18 11:00:59', 2, 1, 2),
+(90, 17, 102, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:01:11', 2, 1, 2),
+(91, 17, 103, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:01:59', 2, 1, 2),
+(92, 17, 104, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:02:08', 2, 1, 2),
+(93, 17, 105, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:02:18', 2, 1, 2),
+(94, 17, 106, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:02:33', 2, 1, 2),
+(95, 17, 107, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:02:44', 2, 1, 2),
+(96, 17, 108, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:02:56', 2, 1, 2),
+(97, 17, 109, 30000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 11:03:08', 2, 1, 2),
+(98, 18, 6, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:15:58', 2, 1, 2),
+(99, 18, 7, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:16:05', 2, 1, 2),
+(100, 18, 8, 30000.00, 2.00, 20.00, 0.00, 1, '2021-08-18 11:16:15', 2, 1, 2),
+(101, 18, 102, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:16:26', 2, 1, 2),
+(102, 18, 103, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:16:35', 2, 1, 2),
+(103, 18, 104, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:16:55', 2, 1, 2),
+(104, 18, 105, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:17:04', 2, 1, 2),
+(105, 18, 106, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:17:12', 2, 1, 2),
+(106, 18, 107, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:21:40', 2, 1, 2),
+(107, 18, 108, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:21:49', 2, 1, 2),
+(108, 18, 109, 30000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 11:22:00', 2, 1, 2),
+(109, 0, 6, 5000000.00, 0.00, 5.00, 0.00, 1, '2021-08-18 11:30:57', 2, 1, 2),
+(110, 0, 7, 5000000.00, 0.00, 5.00, 0.00, 1, '2021-08-18 11:32:09', 2, 1, 2),
+(111, 19, 6, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:34:46', 2, 1, 2),
+(112, 19, 7, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:39:06', 2, 1, 2),
+(113, 0, 8, 5000000.00, 0.10, 5.00, 0.00, 1, '2021-08-18 11:45:35', 2, 1, 2),
+(114, 19, 102, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:45:51', 2, 1, 2),
+(115, 19, 103, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:50:15', 2, 1, 2),
+(116, 19, 104, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:50:30', 2, 1, 2),
+(117, 19, 105, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:50:42', 2, 1, 2),
+(118, 19, 106, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:50:53', 2, 1, 2),
+(119, 19, 107, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:51:04', 2, 1, 2),
+(120, 19, 108, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:51:23', 2, 1, 2),
+(121, 19, 109, 5000000.00, 0.10, 5.00, 0.00, 0, '2021-08-18 11:51:33', 2, 1, 2),
+(122, 20, 6, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:06', 2, 1, 2),
+(123, 20, 7, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:15', 2, 1, 2),
+(124, 20, 102, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:25', 2, 1, 2),
+(125, 20, 103, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:34', 2, 1, 2),
+(126, 20, 104, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:42', 2, 1, 2),
+(127, 20, 105, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:51', 2, 1, 2),
+(128, 20, 106, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:07:59', 2, 1, 2),
+(129, 20, 107, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:08:09', 2, 1, 2),
+(130, 20, 108, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:08:20', 2, 1, 2),
+(131, 20, 109, 10000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:08:29', 2, 1, 2),
+(132, 21, 6, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:19:07', 2, 1, 2),
+(133, 21, 7, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:19:17', 2, 1, 2),
+(134, 21, 102, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:19:26', 2, 1, 2),
+(135, 21, 103, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:20:17', 2, 1, 2),
+(136, 21, 104, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:20:27', 2, 1, 2),
+(137, 21, 105, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:20:36', 2, 1, 2),
+(138, 21, 106, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:20:46', 2, 1, 2),
+(139, 21, 107, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:21:14', 2, 1, 2),
+(140, 21, 108, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:21:22', 2, 1, 2),
+(141, 21, 109, 5000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:21:38', 2, 1, 2),
+(142, 22, 6, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:23:22', 2, 1, 2),
+(143, 22, 7, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:23:29', 2, 1, 2),
+(144, 22, 102, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:23:38', 2, 1, 2),
+(145, 22, 103, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:23:49', 2, 1, 2),
+(146, 22, 104, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:23:57', 2, 1, 2),
+(147, 22, 105, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:24:06', 2, 1, 2),
+(148, 22, 106, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:24:40', 2, 1, 2),
+(149, 22, 107, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:24:50', 2, 1, 2),
+(150, 22, 108, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:24:59', 2, 1, 2),
+(151, 22, 109, 180000.00, 10.00, 20.00, 0.00, 0, '2021-08-18 12:25:09', 2, 1, 2),
+(152, 23, 6, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:28:36', 2, 1, 2),
+(153, 23, 7, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:28:48', 2, 1, 2),
+(154, 23, 102, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:28:57', 2, 1, 2),
+(155, 23, 103, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:29:06', 2, 1, 2),
+(156, 23, 104, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:29:15', 2, 1, 2),
+(157, 23, 105, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:29:56', 2, 1, 2),
+(158, 23, 106, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:30:05', 2, 1, 2),
+(159, 23, 107, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:30:16', 2, 1, 2),
+(160, 23, 108, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:30:28', 2, 1, 2),
+(161, 23, 109, 180000.00, 2.00, 20.00, 0.00, 0, '2021-08-18 12:30:38', 2, 1, 2),
+(164, 0, 102, 12.00, 12.00, 12.00, 1.00, 1, '2021-10-01 09:39:13', 1, 1, 2),
+(165, 0, 102, 12.00, 12.00, 2.00, 1.00, 1, '2021-10-01 09:39:32', 1, 1, 2),
+(172, 0, 104, 111.00, 2.00, 1.00, 1.00, 1, '2021-10-12 06:35:23', 1, 1, 2),
+(173, 0, 102, 33.00, 3.00, 3.00, 3.00, 1, '2021-10-12 06:24:28', 1, 1, 2),
+(174, 0, 8, 1.00, 1.00, 1.00, 1.00, 1, '2021-10-12 06:26:53', 1, 1, 2),
+(175, 0, 7, 1.00, 1.00, 1.00, 1.00, 1, '2021-10-12 06:53:44', 1, 1, 2),
+(176, 0, 7, 1.00, 1.00, 1.00, 1.00, 1, '2021-10-12 07:57:57', 1, 1, 2),
+(177, 0, 6, 10.00, 10.00, 10.00, 10.00, 0, '2021-10-20 12:59:57', 1, 1, 2);
+
+
+INSERT INTO `tbl_financial_year` (`financial_year_id`, `finance_year_type`, `fiancial_year`, `financial_start_date`, `financial_end_date`, `current_status`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`) VALUES
+(1, 2, '2021-22', '2021-01-01', '2022-12-31', 1, 0, '2021-07-14 12:59:48', 1, 1, 1);
+
+
+

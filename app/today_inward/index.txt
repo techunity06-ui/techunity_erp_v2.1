@@ -1,0 +1,66 @@
+<?php
+
+session_start();
+$AJAX = true;
+include("../../config/config.php");
+//error_reporting(E_ALL);
+include("../../config/session.php");
+include("../../include/function_database_query.php");
+include_once("../../include/common_functions.php");
+
+if($_POST != NULL) {
+	$POST = bulk_filter($dbcon,$_POST);
+}
+else {
+	$POST = bulk_filter($dbcon,$_GET);
+}
+		
+	if(strtolower($POST['mode']) == "fetch") {
+		//$bulkAccessArray = canCheckPermissionAccess($dbcon, [
+				//PO_QUOTATION_VIEW, PO_QUOTATION_ADD, PO_QUOTATION_READ, PO_QUOTATION_UPDATE, PO_QUOTATION_DELETE, PO_QUOTATION_APPROVE, PO_QUOTATION_FINAL_APPROVE
+		//]);
+
+		$s_date=explode(' - ',$POST['date']);
+		$_SESSION['start']=$s_date[0];
+		$_SESSION['end']=$s_date[1];
+		//$branch=$_SESSION['branch_id'];
+		    
+			$branch_id = ($_SESSION['user_type'] == '2' && isset($POST['branch_id']) && $POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];
+			$where_db = check_branch('pod', $branch_id);
+			$where.=" $where_db and pod.company_id=".$_SESSION['company_id'];
+			$today_date = date('Y-m-d');
+			
+			$appData = array();
+			$i=1;
+			$aColumns = array('pod.delivery_date', 'pod.product_qty','po.purchaseorder_no','po.purchaseorder_date','bms.branch_name','pmst.product_name', 'tc.cat_name', 'unit.unit_name');
+			$sIndexColumn = "pod.po_delivery_date_id";
+			$isWhere = array("pod.po_delivery_date_status=0 and delivery_date<'$today_date'".$where);
+			$sTable = "tbl_purchaseorder_delivery_date as pod";			
+			$isJOIN = array('left join tbl_purchaseordertrn as trn on trn.purchaseordertrn_id=pod.purchaseordertrn_id','left join tbl_purchaseorder as po on po.purchaseorder_id=trn.purchaseorder_id','left join branch_mst as bms on bms.branch_id=pod.branch_id','left join product_mst as pmst on pmst.product_id=trn.product_id','left join tbl_category as tc on pmst.product_category=tc.cat_id','left join unit_mst as unit on unit.unitid=trn.unit_id');
+			$hOrder = "pod.delivery_date desc";
+			$hGroupby = array("pod.po_delivery_date_id");
+			include('../../include/pagging.php');
+			//echo $squery;
+			$appData = array();
+			$id=1;
+			//print_r($sqlReturn);
+			foreach($sqlReturn as $row) {
+				$row_data = array();
+				$row_data[] = $id;
+				$row_data[] = $row['purchaseorder_no'];
+				$row_data[] = date('d M, Y',strtotime($row['purchaseorder_date']));
+				$row_data[] = $row['product_name'];
+				$row_data[] = ($row['cat_name']!=null) ? $row['cat_name'] : 'PRIMARY';
+				$row_data[] = $row['branch_name'];
+				$row_data[] = $row['product_qty'];
+				$row_data[] = $row['unit_name'];
+				$row_data[] = date('d M, Y',strtotime($row['delivery_date']));
+				$row_data[] = "";
+				
+			$appData[] = $row_data;
+			$id++;
+			}
+			$output['aaData'] = $appData;
+			echo json_encode( $output );
+		}
+?>

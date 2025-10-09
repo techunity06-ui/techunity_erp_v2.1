@@ -1,0 +1,80 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 01, 2021 at 07:30 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `bigdatas_umaboy_erp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_common_category_mst`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_common_category_mst` (
+  `common_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `common_category_name` varchar(255) NOT NULL,
+  `isactive` tinyint(4) NOT NULL DEFAULT '1',
+  `isdelete` tinyint(4) NOT NULL DEFAULT '0',
+  `cdate` timestamp NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `usertype_id` int(11) NOT NULL,
+  PRIMARY KEY (`common_category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+
+--
+-- Dumping data for table `tbl_common_category_mst`
+--
+
+INSERT INTO `tbl_common_category_mst` (`common_category_id`, `common_category_name`, `isactive`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`) VALUES
+(1, 'AAA', 1, 1, '2021-06-23 08:54:18', 2, 1, 2),
+(2, 'BBB', 1, 1, '2021-06-23 08:54:22', 2, 1, 2),
+(3, 'VOUCHER', 1, 0, '2021-06-23 09:02:33', 2, 1, 2),
+(4, 'GENERAL', 1, 0, '2021-06-23 09:02:43', 2, 1, 2),
+(5, 'AACC', 1, 1, '2021-06-23 11:55:00', 2, 1, 2),
+(6, 'TDS PAYEE', 1, 0, '2021-06-24 06:40:55', 2, 1, 2),
+(7, 'AAA', 1, 1, '2021-07-06 05:27:46', 2, 1, 2),
+(8, 'AAA', 1, 1, '2021-07-06 05:28:45', 2, 1, 2),
+(9, 'AAAB', 1, 1, '2021-07-06 05:38:41', 2, 1, 2),
+(10, 'AACCY', 1, 1, '2021-07-06 10:11:40', 2, 1, 2),
+(11, 'LLL', 1, 1, '2021-07-06 10:23:28', 2, 1, 2),
+(12, 'PAYMENT MODE', 1, 0, '2021-07-08 05:53:59', 2, 1, 2),
+(13, 'RCM NATURE', 1, 0, '2021-07-08 05:57:04', 2, 1, 2),
+(14, 'TAX CATEGORY', 1, 0, '2021-07-08 12:14:19', 2, 1, 2),
+(15, 'ITC ELIGIBLITY', 1, 0, '2021-07-08 12:16:30', 2, 1, 2),
+(16, 'AAABBB', 1, 1, '2021-07-14 05:53:09', 2, 1, 2),
+(17, 'AAABBB', 1, 1, '2021-07-14 06:02:37', 2, 1, 2),
+(18, 'YYY', 1, 0, '2021-07-14 06:17:41', 2, 1, 2),
+(19, 'DEMO1', 1, 1, '2021-07-23 11:12:23', 2, 1, 2),
+(20, 'DEMO', 1, 0, '2021-07-23 11:13:11', 2, 1, 2),
+(21, 'SUB TYPE', 1, 0, '2021-08-03 05:39:29', 2, 1, 2),
+(22, 'TRANSACTION TYPE', 1, 0, '2021-08-03 05:41:19', 2, 1, 2),
+(23, 'TRANSPORT MODE', 1, 0, '2021-08-05 04:54:01', 2, 1, 2),
+(24, 'TRANSPORT NAME', 1, 0, '2021-08-05 06:29:29', 2, 1, 2),
+(25, 'EWAY BILL OUTWARD SUB TYPE', 1, 0, '2021-08-09 07:13:59', 2, 1, 2),
+(26, 'OUTWARD EWAY BILL SUB TYPE', 1, 1, '2021-08-09 12:06:53', 2, 1, 2),
+(27, 'EWAY BILL INWARD SUB TYPE', 1, 0, '2021-08-09 12:09:15', 2, 1, 2),
+(28, 'GST NATURE', 1, 0, '2021-08-12 10:27:28', 2, 1, 2),
+(29, 'GST NATURE PAYMENT', 1, 0, '2021-08-18 06:00:09', 2, 1, 2),
+(30, 'GST NATURE RECEIPT', 1, 0, '2021-08-18 06:00:25', 2, 1, 2),
+(31, 'GST NATURE JV', 1, 0, '2021-08-18 06:00:37', 2, 1, 2),
+(32, 'GST NATURE CONTRA', 1, 0, '2021-08-18 06:00:43', 2, 1, 2),
+(33, 'GST NATURE CR NOTE', 1, 0, '2021-08-18 06:00:52', 2, 1, 2),
+(34, 'GST NATURE DR. NOTE', 1, 0, '2021-08-18 07:10:08', 2, 1, 2),
+(35, 'ADVANCE RECEIPT ', 1, 1, '2021-08-18 07:23:58', 2, 1, 2),
+(36, 'SALE PURCHASE RETURN REASON', 1, 0, '2021-09-13 05:24:55', 2, 1, 2),
+(37, 'NATURE OF TRANSACTION', 1, 0, '2021-09-13 05:37:26', 2, 1, 2),
+(38, ' DEMO 123456', 1, 1, '2021-09-22 07:00:03', 1, 1, 2),
+(39, 'ASD', 1, 0, '2021-09-23 07:01:36', 1, 1, 2),
+(40, 'ASDASDASDASDASD', 1, 1, '2021-09-23 09:47:23', 1, 1, 2),
+(41, 'TEST', 1, 0, '2021-09-30 13:40:32', 1, 1, 2);

@@ -1,0 +1,672 @@
+$(document).ready(function() {
+	load_pending_sales_order_list_datatable();
+}); 
+
+function reload_data()
+{
+	load_pending_sales_order_list_datatable();
+}
+
+function load_pending_sales_order_list_datatable(){
+	//var status=$('input[name=approved_status]:Checked').val();
+	var po_type_status=$('#type_id').val();
+	var date=$('#rep_date').val();
+	//alert("dsa");
+	$("#order-confirm-datatable").dataTable({
+		"bAutoWidth" : false,
+		"bFilter" : true,
+		"bSort" : true,
+		"bProcessing": true,
+		"bDestroy": true,
+		"bServerSide" : true,
+		"oLanguage": {
+			"sLengthMenu": "_MENU_",
+			"sProcessing": "<img src='"+root_domain+"img/loading.gif'/> Loading ...",
+			"sEmptyTable": "NO DATA ADDED YET !"
+		},
+		"aLengthMenu": [[ 10, 20, 50, 100, -1], [ 10, 20, 50, 100, "All"]],
+		"iDisplayLength": 10,
+		"sAjaxSource": root_domain+'app/pending_so_approve_list/',
+		"fnServerParams": function ( aoData ) {
+			aoData.push( {"name": "mode", "value": "fetch" }, {"name": "date", "value": date }, {"name": "po_type_status", "value": po_type_status } );
+		},
+		"fnDrawCallback": function( oSettings ) {
+			$('.ttip, [data-toggle="tooltip"]').tooltip();
+		}
+	}).fnSetFilteringDelay();
+	
+	//Search input style
+	$('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+	$('.dataTables_length select').addClass('form-control');
+}
+function attch_po_dtl(quotation_id,quotation_no){
+	
+	Loading();
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_so_approve_list/',
+		data: { mode : "attch_po_dtl", quotation_id:quotation_id },
+		success: function(resp){
+			//console.log(resp);
+			var resp=JSON.parse(resp);
+			$('#po_dtl_modal').modal('show');
+			$('#head_po_qt_no').html(quotation_no);
+			$('#qt_po_ref_id').val(quotation_id);
+			$('#qt_company_name').val(resp.qt_company_name);
+			$('#qt_com_mno').val(resp.qt_com_mno);
+                        $('#qt_po_amount').val(resp.g_total);
+			$('#qt_com_gstno').val(resp.qt_com_gstno);
+			$('#qt_com_addr').val(resp.qt_com_addr);
+			$('#qt_add_country').select2("val",resp.qt_add_country);
+			load_state(resp.qt_add_country,'qt_add_state',resp.qt_add_state);
+			load_city(resp.qt_add_state,'qt_add_city',resp.qt_add_city);
+			
+			$('#qt_po_no').val(resp.qt_po_no);
+			
+			if(resp.qt_po_date){
+				$("#qt_po_date").datepicker("setDate", resp.qt_po_date);
+			}
+			else{
+				$("#qt_po_date").val("");
+			}
+			
+			if(resp.qt_delivery_date){
+				$("#qt_delivery_date").datepicker("setDate", resp.qt_delivery_date);
+			}
+			else{
+				$("#qt_delivery_date").val("");
+			}
+			
+			//$('#qt_po_amount').val(resp.qt_po_amount);
+			$('#qt_po_attch').val("");
+			if(resp.qt_po_attch){
+				$('#qt_po_attch_view').show().attr("href",resp.qt_po_attch);
+			}
+			else{
+				$('#qt_po_attch_view').hide();
+			}
+			Unloading();
+		}		 
+	});
+	
+}
+function add_attch_po_dtl(){
+	if(!$("#qt_company_name").val()){		
+		toastr.warning("Enter Company Name.", "ERROR");
+		$("#qt_company_name").focus();
+		return false;
+	}
+	else if(!$("#qt_add_country").val()){		
+		toastr.warning("Select Country", "ERROR");
+		$("#qt_add_country").select2('focus');
+		return false;
+	}
+	else if(!$("#qt_add_state").val()){		
+		toastr.warning("Select State", "ERROR");
+		$("#qt_add_state").select2('focus');
+		return false;
+	}
+	else if(!$("#qt_add_city").val()){		
+		toastr.warning("Select City", "ERROR");
+		$("#qt_add_city").select2('focus');
+		return false;
+	}
+	else if(!$("#qt_po_no").val()){		
+		toastr.warning("Enter PO No.", "ERROR");
+		$("#qt_po_no").focus();
+		return false;
+	}
+	else if(!$("#qt_po_date").val()){		
+		toastr.warning("Enter PO Date", "ERROR");
+		$("#qt_po_date").focus();
+		return false;
+	}
+	else if(!$("#qt_po_amount").val()){		
+		toastr.warning("Enter PO Amount", "ERROR");
+		$("#qt_po_amount").focus();
+		return false;
+	}
+	else if(!$("#qt_po_attch").val()){		
+		toastr.warning("Choose P.O. Attachment", "ERROR");
+		$("#qt_po_attch").focus();
+		return false;
+	}
+	else if(!$("#qt_delivery_date").val()){		
+		toastr.warning("Enter Delivery Date", "ERROR");
+		$("#qt_delivery_date").focus();
+		return false;
+	}
+	
+	$('#add_attch_po_dtl_btn').prop("disabled",true);
+	Loading();
+	var form_data = new FormData();
+	form_data.append('mode', "add_attch_po_dtl");
+	form_data.append('quotation_id', $("#qt_po_ref_id").val());
+	form_data.append('qt_po_no', $("#qt_po_no").val());
+	form_data.append('qt_po_date', $("#qt_po_date").val());
+	form_data.append('qt_po_amount', $("#qt_po_amount").val());
+	form_data.append('qt_delivery_date', $("#qt_delivery_date").val());
+	form_data.append("qt_po_attch", document.getElementById('qt_po_attch').files[0]);
+	form_data.append('qt_company_name', $("#qt_company_name").val());
+	form_data.append('qt_com_mno', $("#qt_com_mno").val());
+	form_data.append('qt_com_gstno', $("#qt_com_gstno").val());
+	form_data.append('qt_com_addr', $("#qt_com_addr").val());
+	form_data.append('qt_add_country', $("#qt_add_country").val());
+	form_data.append('qt_add_state', $("#qt_add_state").val());
+	form_data.append('qt_add_city', $("#qt_add_city").val());
+	
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_so_approve_list/',
+		data: form_data,
+		contentType: false,
+		processData:false,
+		success: function(resp){
+			//console.log(resp);
+			var resp=jQuery.parseJSON(resp);
+			var response=resp.msg;
+			if(response.trim() == "1") {
+				toastr.success("DATA ADDED SUCCESSFULLY", "SUCCESS");
+				$('#po_dtl_modal').modal('hide');
+				$('#add_attch_po_dtl_btn').prop("disabled",false);
+				load_pending_sales_order_list_datatable();
+			}
+			else if(response.trim() == "0") {
+				toastr.warning("SOMETHING WRONG", "WARNING");
+			}
+			Unloading();
+		}		 
+	});
+}
+function attch_order_conf_dtl(quotation_id,quotation_no){
+
+	Loading();
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_sales_order_list/',
+		data: { mode : "attch_order_conf_dtl", quotation_id:quotation_id },
+		success: function(resp){
+			//console.log(resp);
+			var resp=JSON.parse(resp);
+			$('#order_conf_dtl_modal').modal('show');
+			$('#head_ord_qt_no').html(quotation_no);
+			$('#qt_ord_ref_id').val(quotation_id);
+		
+			$('#qt_order_conf_attch').val("");
+			if(resp.qt_order_conf_attch){
+				$('#qt_order_conf_attch_view').show().attr("href",resp.qt_order_conf_attch);
+			}
+			else{
+				$('#qt_order_conf_attch_view').hide();
+			}
+			Unloading();
+		}		 
+	});
+}
+function add_order_conf_dtl(){
+	if(!$("#qt_order_conf_attch").val()){		
+		toastr.warning("Upload Order Confirmation Attachment", "ERROR");
+		$("#qt_order_conf_attch").focus();
+		return false;
+	}
+	
+	$('#add_attch_order_conf_dtl_btn').prop("disabled",true);
+	Loading();
+	var form_data = new FormData();
+	form_data.append('mode', "add_order_conf_dtl");
+	form_data.append('quotation_id', $("#qt_ord_ref_id").val());
+	form_data.append("qt_order_conf_attch", document.getElementById('qt_order_conf_attch').files[0]);
+	
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_sales_order_list/',
+		data: form_data,
+		contentType: false,
+		processData:false,
+		success: function(resp){
+			//console.log(resp);
+			var resp=jQuery.parseJSON(resp);
+			var response=resp.msg;
+			if(response.trim() == "1") {
+				toastr.success("DATA ADDED SUCCESSFULLY", "SUCCESS");
+				$('#order_conf_dtl_modal').modal('hide');
+				$('#add_attch_order_conf_dtl_btn').prop("disabled",false);
+				load_pending_sales_order_list_datatable();
+			}
+			else if(response.trim() == "0") {
+				toastr.warning("SOMETHING WRONG", "WARNING");
+			}
+			Unloading();
+		}
+	});
+}
+function open_payment_dtl(quotation_id,quotation_no){
+	Loading();
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_sales_order_list/',
+		data: { mode : "open_payment_dtl", quotation_id:quotation_id },
+		success: function(resp){
+			//console.log(resp);
+			var resp=JSON.parse(resp);
+			$('#pay_dtl_modal').modal('show');
+			$('#head_pay_qt_no').html(quotation_no);
+			$('#qt_pay_ref_id').val(quotation_id);
+			$('#due_amt').val(resp.due_amt);
+			
+			/*$('#referenceno').val("");
+			$('#paid_amt').attr("max",resp.due_amt).val("");*/
+			Unloading();
+			view_payment_dtl();
+		}		 
+	});
+}
+function add_pay_dtl(){
+	if(!$("#payment_mode_id").val()){		
+		toastr.warning("Choose Payment Mode", "ERROR");
+		$("#payment_mode_id").focus();
+		return false;
+	}
+	else if(!$("#paid_amt").val() || $("#paid_amt").val()=='0'){		
+		toastr.warning("Enter Paid Amount", "ERROR");
+		$("#paid_amt").focus();
+		return false;
+	}
+	
+	$('#add_pay_dtl_btn').prop("disabled",true);
+	Loading();
+	var form_data = new FormData();
+	form_data.append('mode', "add_pay_dtl");
+	form_data.append('quotation_id', $("#qt_pay_ref_id").val());
+	form_data.append('payment_mode_id', $("#payment_mode_id").val());
+	form_data.append('referenceno', $("#referenceno").val());
+	form_data.append('paid_amt', $("#paid_amt").val());
+	
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_sales_order_list/',
+		data: form_data,
+		contentType: false,
+		processData:false,
+		success: function(resp){
+			//console.log(resp);
+			var resp=jQuery.parseJSON(resp);
+			var response=resp.msg;
+			if(response.trim() == "1") {
+				toastr.success("DATA ADDED SUCCESSFULLY", "SUCCESS");
+				//$('#pay_dtl_modal').modal('hide');
+				$('#add_pay_dtl_btn').prop("disabled",false);
+				$("#payment_mode_id").val("");
+				$("#referenceno").val("");
+				$("#paid_amt").val("");
+				
+				view_payment_dtl();
+				load_pending_sales_order_list_datatable();
+			}
+			else if(response.trim() == "0") {
+				toastr.warning("SOMETHING WRONG", "WARNING");
+			}
+			Unloading();
+		}
+	});
+}
+function view_payment_dtl(){
+	var quotation_id = $('#qt_pay_ref_id').val();
+	
+	$("#pay-dtl-modal-datatable").dataTable({
+		"bAutoWidth" : false,
+		"bFilter" : true,
+		"bSort" : true,
+		"bProcessing": true,
+		"bDestroy": true,
+		"bServerSide" : true,
+		"oLanguage": {
+			"sLengthMenu": "_MENU_",
+			"sProcessing": "<img src='"+root_domain+"img/loading.gif'/> Loading ...",
+			"sEmptyTable": "NO DATA ADDED YET !",
+		},
+		"aLengthMenu": [[5, 10, 20, -1], [5, 10, 20,"All"]],
+		"iDisplayLength": 5,
+		"sAjaxSource": root_domain+'app/pending_sales_order_list/',
+		"fnServerParams": function ( aoData ) {
+			aoData.push( { "name": "mode", "value": "view_payment_dtl" }, { "name": "quotation_id", "value": quotation_id }  );
+		},
+		"fnDrawCallback": function( oSettings ) {
+			$('.ttip, [data-toggle="tooltip"]').tooltip();
+		}
+	}).fnSetFilteringDelay();
+	
+	//Search input style
+	$('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+	$('.dataTables_length select').addClass('form-control');
+	// validate the comment form when it is submitted 
+	
+	//Check Due Qt Payment
+	upd_qt_due_amt();
+}
+function upd_qt_due_amt(){
+	var quotation_id = $('#qt_pay_ref_id').val();
+	Loading();
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_sales_order_list/',
+		data: { mode : "open_payment_dtl", quotation_id:quotation_id },
+		success: function(resp){
+			//console.log(resp);
+			var resp=JSON.parse(resp);
+			$('#due_amt').val(resp.due_amt);
+			if(resp.due_amt==0){
+				$('#entry_pay_dtl_modal_div').hide();
+			}
+			else{
+				$('#entry_pay_dtl_modal_div').show();
+			}
+			Unloading();
+		}		 
+	});
+}
+function open_approv_payment(quot_paytrn_id,quotation_no){
+	$('#preview_approval_hist_modal').modal('show');
+	$('#apprv_ref_no').html(quotation_no);
+	$('#ref_quotation_id').val(quot_paytrn_id);
+	load_pay_hist_datatable();
+}
+function add_apprv_hist(){
+	
+	var form_data = {
+		mode:"add_apprv_hist",
+		assign_user_ids:$('#assign_user_ids').val(),
+		approve_status:$('#approve_status').val(),
+		approve_remark:$('#approve_remark').val(),
+		quot_paytrn_id:$('#ref_quotation_id').val()
+	};
+	
+	Loading(true);
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/pending_so_approve_list/',
+		data: form_data,
+		success: function(response)
+		{
+			$('#assign_user_ids').select2("val","");
+			$('#approve_status').select2("val","0");
+			$('#approve_remark').val("");
+			load_pay_hist_datatable();
+			view_payment_dtl();
+			load_pending_sales_order_list_datatable();
+			Unloading();
+		}
+	});	
+}
+function load_pay_hist_datatable(){
+	var quot_paytrn_id = $('#ref_quotation_id').val();
+	
+	$("#sales-order-history-datatable").dataTable({
+		"bAutoWidth" : false,
+		"bFilter" : true,
+		"bSort" : true,
+		"bProcessing": true,
+		"bDestroy": true,
+		"bServerSide" : true,
+		"oLanguage": {
+			"sLengthMenu": "_MENU_",
+			"sProcessing": "<img src='"+root_domain+"img/loading.gif'/> Loading ...",
+			"sEmptyTable": "NO DATA ADDED YET !",
+		},
+		"aLengthMenu": [[5, 10, 20, -1], [5, 10, 20,"All"]],
+		"iDisplayLength": 5,
+		"sAjaxSource": root_domain+'app/pending_sales_order_list/',
+		"fnServerParams": function ( aoData ) {
+			aoData.push( { "name": "mode", "value": "load_pay_hist_datatable" }, { "name": "quot_paytrn_id", "value": quot_paytrn_id }  );
+		},
+		"fnDrawCallback": function( oSettings ) {
+			$('.ttip, [data-toggle="tooltip"]').tooltip();
+		}
+	}).fnSetFilteringDelay();
+	
+	//Search input style
+	$('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+	$('.dataTables_length select').addClass('form-control');
+	// validate the comment form when it is submitted  
+}
+function open_po_approv_payment(sales_order_id,sales_order_no){
+    $('#preview_po_approval_hist_modal').modal('show');
+	$('#apprv_po_ref_no').html(sales_order_no);
+	$('#ref_ord_id').val(sales_order_id);
+	$('#eid').val(sales_order_id);
+	load_po_hist_datatable();
+	load_party_po_dtl();
+	show_document_attach();
+	$(".add_so_apprv_hist").css("display","block");
+	$(".add_oa_apprv_hist").css("display","none");
+}
+function add_po_apprv_hist(){
+	
+	var form_data = {
+		mode:"add_po_apprv_hist",
+		approve_status:$('#po_approve_status').val(),
+		approve_remark:$('#po_approve_remark').val(),
+		sales_order_id:$('#ref_ord_id').val()
+	};
+	
+	Loading(true);
+	$.ajax({
+		type: "POST",
+		url: root_domain + crm_domain +'app/sales_order/',
+		data: form_data,
+		success: function(response)
+		{
+			var arr = jQuery.parseJSON(response);
+			if(arr.msg == '1') {
+				$('#po_approve_status').select2("val","0");
+				$('#po_approve_remark').val("");
+				toastr.success("APROOVE SUCCESSFULLY", "SUCCESS");
+				load_po_hist_datatable();
+				$('#preview_po_approval_hist_modal').modal('hide');
+				//load_order_confirm_datatable();
+				load_pending_sales_order_list_datatable();
+				Unloading();
+			}else{
+				$('#po_approve_status').select2("val","0");
+				$('#po_approve_remark').val("");
+				toastr.success("REJECT SUCCESSFULLY", "SUCCESS");
+				load_po_hist_datatable();
+				$('#preview_po_approval_hist_modal').modal('hide');
+				//load_order_confirm_datatable();
+				load_pending_sales_order_list_datatable();
+				Unloading();
+			}
+		}
+	});	
+}
+function load_po_hist_datatable(){
+	var sales_order_id = $('#ref_ord_id').val();
+	
+	$("#order-po-history-datatable").dataTable({
+		"bAutoWidth" : false,
+		"bFilter" : true,
+		"bSort" : true,
+		"bProcessing": true,
+		"bDestroy": true,
+		"bServerSide" : true,
+		"oLanguage": {
+			"sLengthMenu": "_MENU_",
+			"sProcessing": "<img src='"+root_domain+"img/loading.gif'/> Loading ...",
+			"sEmptyTable": "NO DATA ADDED YET !",
+		},
+		"aLengthMenu": [[5, 10, 20, -1], [5, 10, 20,"All"]],
+		"iDisplayLength": 5,
+		"sAjaxSource": root_domain+crm_domain +'app/sales_order/',
+		"fnServerParams": function ( aoData ) {
+			aoData.push( { "name": "mode", "value": "load_po_hist_datatable" }, { "name": "sales_order_id", "value": sales_order_id }  );
+		},
+		"fnDrawCallback": function( oSettings ) {
+			$('.ttip, [data-toggle="tooltip"]').tooltip();
+		}
+	}).fnSetFilteringDelay();
+	
+	//Search input style
+	$('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+	$('.dataTables_length select').addClass('form-control');
+	// validate the comment form when it is submitted  
+	
+}
+function load_state(parentid,control,val1)
+{	
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/customer/',
+		data: { mode : "load_state",  id : parentid},
+		success: function(responce){
+			//console.log(responce);
+			$('#'+control).html(responce);
+			$("#"+control).select2("val",val1);
+		}
+	});
+	
+}
+function load_city(parentid,control,val1)
+{	
+	//alert(parentid);
+	$.ajax({
+		type: "POST",
+		url: root_domain+'app/vender/',
+		data: { mode : "load_city",  id : parentid},
+		success: function(responce){
+			//console.log(responce);
+			//alert(responce);
+			$('#'+control).html(responce);
+			$("#"+control).select2("val",val1);
+		}
+	});
+	
+}
+function load_party_po_dtl(){
+	var sales_order_id = $('#ref_ord_id').val();
+	$.ajax({
+		type: "POST",
+		url: root_domain + crm_domain +'app/sales_order/',
+		data: { mode : "load_party_po_dtl", sales_order_id:sales_order_id },
+		success: function(resp){
+			var resp=JSON.parse(resp);
+			
+			$('#mod_so_comp_div_sec').html(resp.mod_so_comp_div_sec);
+			$('#mod_so_pro_div_sec').html(resp.mod_so_pro_div_sec);
+		}		 
+	});
+}
+
+function delete_approve_log(sales_order_id,approve_id,approve_status,type){
+	var r= confirm(" Are you want to delete this log?");
+	if(r) {
+		Loading(true);
+		$.ajax({
+			type: "POST",
+			url: root_domain+crm_domain +'app/order_acceptance/',
+			data: { mode : "delete_approve_log",  sales_order_id : sales_order_id, approve_id: approve_id,approve_status:approve_status,type:type },
+			success: function(response)
+			{
+				if(response.trim() == "1") {
+					toastr.success("DELETE SUCCESSFULLY", "SUCCESS");
+					if(type==1){
+						load_po_hist_datatable();
+					}else{
+						load_po_hist_datatables();
+					}
+						Unloading();
+				}
+				else if(response.trim() == "0") {
+					toastr.warning("SOMETHING WRONG", "WARNING");
+				}
+				$('#preview_po_approval_hist_modal').modal('hide');
+				load_pending_sales_order_list_datatable();							
+			}
+		});	
+	}
+}
+
+
+function show_document_attach() {
+	var eid = $('#eid').val();
+	Loading();
+	$.ajax({
+		type: "POST",
+		url: root_domain+'crm/app/sales_order/',
+		data: { mode : "show_document_attach", sales_order_id:eid },
+		success: function(resp){
+			//console.log(resp);
+			$('#po_doc_list').html(resp);
+			Unloading();
+		}		 
+	}); 
+}
+
+function delete_document_attach(id)
+{
+	var r= confirm(" Are you want to delete ?");
+	if(r) {
+		Loading();
+		$.ajax({
+			type: "POST",
+			url: root_domain+'crm/app/sales_order/',
+			data: { mode:"delete_document_attach", attach_id:id },
+			success: function(response)
+			{
+				//console.log(response);
+				var data=jQuery.parseJSON(response);
+				var response=data.res;
+				if(response.trim() == "1") {
+					toastr.success("DATA DELETE SUCCESSFULLY", "SUCCESS");
+					show_document_attach();
+				}
+				else if(response.trim() == "0") {
+					toastr.warning("SOMETHING WRONG", "WARNING");
+				}	
+				Unloading();						
+			}
+		});	
+	}
+}
+
+function add_document_attach()
+{
+	var ext = $('#doc_attach').val().split('.').pop().toLowerCase();
+	// if($.inArray(ext, ['pdf','doc','docx']) === -1) {
+	// 	toastr.warning("Only image type pdf/doc/docx is allowed", "ERROR");
+	// 	$("#doc_attach").focus();
+	// 	return false;
+	// }
+
+	if(!$("#doc_attach").val()){
+		toastr.warning("Choose File", "ERROR");
+		$("#doc_attach").focus();
+		return false;
+	}
+	
+	Loading();
+	var form_data = new FormData();
+	form_data.append('mode', "add_document_attach");
+	form_data.append('doc_name', $("#doc_name").val());
+	form_data.append('sales_order_id', $("#eid").val());
+	form_data.append("doc_attach", document.getElementById('doc_attach').files[0]);
+	
+	$.ajax({
+		type: "POST",
+		url: root_domain+'crm/app/sales_order/',
+		data: form_data,
+		contentType: false,
+		processData: false,
+		success: function(response)
+		{
+			//console.log(response);
+			$("#doc_name").val("").focus();
+			$("#doc_attach").val("").focus();
+			$('#dfd_attch_btn').val('Add');
+			Unloading();
+			show_document_attach();
+			var cnt = $('#po_document_count').val();
+			cnt = parseInt(cnt) + parseInt(1);
+			$('#po_document_count').val(cnt);
+		}
+	});
+}

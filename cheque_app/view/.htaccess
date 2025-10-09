@@ -1,0 +1,30 @@
+<ifModule mod_headers.c>
+	# YEAR
+	<filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf)$">
+	  Header set Cache-Control "max-age=29030400"
+	</filesMatch>
+	# WEEK
+	<filesMatch ".(js|css|swf)$">
+	  Header set Cache-Control "max-age=604800"
+	</filesMatch>
+	# 45 MIN
+	<filesMatch ".(html|htm|txt|php)$">
+	  Header set Cache-Control "max-age=2700"
+	</filesMatch>
+</ifModule>
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	Options -Indexes +FollowSymLinks -MultiViews
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}\.php -f
+	RewriteRule ^(.*)$ $1.php
+	
+	RewriteRule ^preview-design/([^/]*)$ preview.php?id=$1 [L]
+        RewriteRule ^edit-design/([^/]*)$ preview-edit.php?id=$1 [L]
+        RewriteRule ^voucher/([^/]*)$ print_voucher.php?id=$1 [L]
+	RewriteRule ^generate-cheque/([^/]*)$ new-cheque.php?id=$1 [L]
+	
+
+</ifModule>
+
+                            

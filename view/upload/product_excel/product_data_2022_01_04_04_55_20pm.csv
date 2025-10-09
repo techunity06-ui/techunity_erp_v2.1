@@ -1,0 +1,6 @@
+Product Type,Product Category,Item Code,Product Name,Branch,Hsn Code,Base Unit,Base Qty,Conv Unit,Conv Qty,Product Material,Product Valuation,Product Barcode,Net weight,Making time,Lead time,Gst type,Sale rate,Purchase Rate,Weight,Minimum stock,Maximum stock,Grn required,Reorder qty,Self life days,Warranty period,Model no,Item type,Material Center,Stock Count,Bom required,Item Status,Batch wise stock manage
+FINISH PRODUCT,blower,f1,Blower-manual,BRANCH 1,11,NOS,1,NOS,1,0,,,,,,excluding,,,,,,yes,,,,,,D,yes,yes,,no
+raw material,ms,r1,MS Flate 32x 32,BRANCH 1,11,MM,1000,KG,10,0,,,,,,excluding,,,,,,yes,,,,,,D,yes,yes,,no
+BOI,bolt,b1,bolt,BRANCH 1,11,NOS,1,NOS,1,0,,,,,,excluding,,,,,,yes,,,,,,D,yes,yes,,no
+Sub Assembly,bolt,s1,mobile-body,BRANCH 1,11,NOS,1,NOS,1,0,,,,,,excluding,,,,,,yes,,,,,,D,yes,yes,,no
+Consumable,bolt,c1,oil,BRANCH 1,11,NOS,1,NOS,1,0,,,,,,excluding,,,,,,yes,,,,,,D,yes,yes,,no

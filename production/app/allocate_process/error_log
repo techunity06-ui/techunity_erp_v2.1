@@ -1,0 +1,4 @@
+[15-Feb-2022 17:40:53 Asia/Kolkata] PHP Notice:  Undefined variable: ser in /home/brperp/public_html/hermettic_sw_v12/production/app/allocate_process/index.php on line 58
+[15-Feb-2022 17:40:59 Asia/Kolkata] PHP Notice:  Undefined index: process_id in /home/brperp/public_html/hermettic_sw_v12/production/app/allocate_process/index.php on line 27
+[15-Feb-2022 17:40:59 Asia/Kolkata] PHP Notice:  Undefined index: process_type in /home/brperp/public_html/hermettic_sw_v12/production/app/allocate_process/index.php on line 28
+[15-Feb-2022 17:40:59 Asia/Kolkata] PHP Notice:  Undefined variable: ser in /home/brperp/public_html/hermettic_sw_v12/production/app/allocate_process/index.php on line 58

@@ -1,0 +1,21 @@
+Notes:,,,,,,,
+Please do not change the template headings,,,,,,,
+"Status should be one of these values: Present, Absent, On Leave, Half Day, Work From Home",,,,,,,
+"If you are overwriting existing attendance records, 'ID' column mandatory",,,,,,,
+ID,Employee,Employee Name,Date,Status,Leave Type,Company,Naming Series
+HR-ATT-2020-00002,HR-EMP-00001,Nikunj M Patel,02-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,02-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,03-10-2020,XYZ,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,03-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,04-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,04-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,05-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,05-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,06-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,06-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,07-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,07-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,08-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,08-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00001,Nikunj M Patel,09-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-
+,HR-EMP-00002,Rakesh M Soni,09-10-2020,Present,,Codebrick,HR-ATT-.YYYY.-

@@ -1,0 +1,3456 @@
+SET @ORIGINAL_FOREIGN_KEY_CHECKS = @@FOREIGN_KEY_CHECKS,
+    FOREIGN_KEY_CHECKS = 0;
+SET @ORIGINAL_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
+SET @ORIGINAL_SQL_MODE = @@SQL_MODE,
+    SQL_MODE = 'ALLOW_INVALID_DATES,NO_AUTO_VALUE_ON_ZERO';
+USE brperp_umiya_cutter_sw_v12_db;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN cgst_tax_per DOUBLE(22, 0) NOT NULL AFTER product_hp;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN cgst_tax_rate DOUBLE(22, 0) NOT NULL AFTER cgst_tax_per;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN sgst_tax_per DOUBLE(22, 0) NOT NULL AFTER cgst_tax_rate;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN sgst_tax_rate DOUBLE(22, 0) NOT NULL AFTER sgst_tax_per;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN igst_tax_per DOUBLE(22, 0) NOT NULL AFTER sgst_tax_rate;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN igst_tax_rate DOUBLE(22, 0) NOT NULL AFTER igst_tax_per;
+
+ALTER TABLE tbl_quotation_trn
+   ADD COLUMN product_tax_cat INT(11) NOT NULL;
+
+ALTER TABLE tbl_stock_trn
+   ADD COLUMN batch_no INT(11) NOT NULL;
+
+CREATE TABLE tbl_tds_tax_category
+(
+   tds_cat_id            INT(11) NOT NULL AUTO_INCREMENT,
+   tds_cat_name          VARCHAR(255)
+                           CHARACTER SET latin1
+                           COLLATE latin1_swedish_ci
+                           NOT NULL,
+   effected_ledger_id    INT(11) NOT NULL,
+   tds_section           VARCHAR(200)
+                           CHARACTER SET latin1
+                           COLLATE latin1_swedish_ci
+                           NOT NULL,
+   tds_date              DATE NOT NULL,
+   isdelete              TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                 TIMESTAMP(0) NOT NULL,
+   user_id               INT(11) NOT NULL,
+   company_id            INT(11) NOT NULL,
+   usertype_id           INT(11) NOT NULL,
+   PRIMARY KEY(tds_cat_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_grn_trn
+   MODIFY COLUMN po_ref_id VARCHAR(110)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_grn_trn
+   MODIFY COLUMN product_conv_qty VARCHAR(200)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_grn_trn
+   MODIFY COLUMN purchaseordertrn_id VARCHAR(111)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN purchaseorder_id VARCHAR(110)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER grn_trn_id;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN sqr_ft VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER product_qty;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN product_amount VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER unit_id;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN product_landing_price INT(11) NOT NULL AFTER product_amount;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN product_discount VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER product_landing_price;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN discount_per VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER product_discount;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN formulaid INT(11) NOT NULL AFTER discount_per;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN tax_name1 VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER formulaid;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN tax_amount1 VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER tax_name1;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN tax_name2 VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER tax_amount1;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN tax_amount2 VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER tax_name2;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN tax_name3 VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER tax_amount2;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN tax_amount3 VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER tax_name3;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN total VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER tax_amount3;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN product_des TEXT
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER pro_exp_date;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN product_rate VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER product_des;
+
+ALTER TABLE tbl_grn_trn
+   ADD COLUMN product_disc VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER product_rate;
+
+ALTER TABLE pro_so_asssign_bom_version
+   MODIFY COLUMN cdate DATE NOT NULL;
+
+ALTER TABLE pro_so_asssign_bom_version
+   ADD COLUMN bom_version_id INT(11) NOT NULL AFTER bom_id;
+
+ALTER TABLE pro_so_asssign_bom_version
+   ADD COLUMN so_trans_id INT(11) NOT NULL;
+
+ALTER TABLE tbl_bomtrn
+   MODIFY COLUMN p_bom_version_id VARCHAR(11)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL
+                   COMMENT 'parent bom version id';
+
+ALTER TABLE tbl_bomtrn
+   MODIFY COLUMN p_bom_id INT(11) NOT NULL COMMENT 'Product bom id';
+
+ALTER TABLE tbl_quotation
+   ADD COLUMN basic_total DOUBLE(22, 0) NOT NULL;
+
+CREATE TABLE tbl_ledger_salesman
+(
+   salesman_id                      INT(11) NOT NULL AUTO_INCREMENT,
+   salesman_ledger_id               INT(11) NOT NULL,
+   salesman_parent                  INT(11) NOT NULL,
+   salesman_commision_mode          DOUBLE(22, 0)
+                                      NOT NULL
+                                      COMMENT '0:Percentage,1:lmpshum amount , 2: per qty',
+   salesman_commision_percentage    DOUBLE(22, 0) NOT NULL,
+   isdelete                         INT(11) NOT NULL,
+   cdate                            TIMESTAMP(0) NOT NULL,
+   user_id                          INT(11) NOT NULL,
+   company_id                       INT(11) NOT NULL,
+   usertype_id                      INT(11) NOT NULL,
+   PRIMARY KEY(salesman_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_jobcard_product_process
+(
+   pr_process_id       INT(11) NOT NULL AUTO_INCREMENT,
+   product_id          INT(11) NOT NULL,
+   rp_id               INT(11) NOT NULL,
+   process_priority    INT(11) NOT NULL,
+   process_time        VARCHAR(100)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   process_type        INT(11) NOT NULL COMMENT '1:Inhouse , 2:Outside',
+   process_opening     VARCHAR(100)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   process_id          INT(11) NOT NULL,
+   cdate               DATE NOT NULL,
+   user_id             INT(11) NOT NULL,
+   company_id          INT(11) NOT NULL,
+   branch_id           INT(11) NULL DEFAULT 0,
+   PRIMARY KEY(pr_process_id),
+   INDEX branch_id (branch_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+
+CREATE TABLE tbl_receipt_payment_trn
+(
+   receipt_payment_trn_id    INT(11) NOT NULL AUTO_INCREMENT,
+   receipt_id                INT(11) NOT NULL,
+   entry_type                TINYINT(4) NOT NULL,
+   ledger_id                 INT(11) NOT NULL,
+   amount                    DOUBLE(22, 0) NOT NULL,
+   payment_type              TINYINT(4)
+                               NOT NULL
+                               COMMENT '0-jv, 1-payment, 2- receipt, 3-contra',
+   isdelete                  TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                     TIMESTAMP(0) NOT NULL,
+   user_id                   INT(11) NOT NULL,
+   company_id                INT(11) NOT NULL,
+   usertype_id               INT(11) NOT NULL,
+   currency_id               INT(11) NOT NULL,
+   currency_rate             DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(receipt_payment_trn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_invoicetype
+   MODIFY COLUMN type_id INT(11)
+                   NOT NULL
+                   COMMENT '1:Complaint,  2:Inq, 3: Quot,  5: BOM ,  6 : PO ,  7: Planning,  8: GRN ,  9: MIN_MAX ,  10: PO-REQ ,  16: PC ,  29:Sale Return ,  12 : purchase 30 : BATCH';
+
+ALTER TABLE opening_stock_mst
+   MODIFY COLUMN approve_status INT(11)
+                   NOT NULL
+                   COMMENT '1 - approve,  0 - not approve, 2 - reject';
+
+CREATE TABLE tbl_product_base_mst
+(
+   product_base_id    INT(11) NOT NULL AUTO_INCREMENT,
+   product_id         INT(11) NULL,
+   base_id            INT(11) NULL,
+   status             INT(11) NOT NULL DEFAULT 0,
+   cdate              TIMESTAMP(0)
+                        NOT NULL
+                        DEFAULT CURRENT_TIMESTAMP
+                        ON UPDATE CURRENT_TIMESTAMP,
+   user_id            INT(11) NOT NULL,
+   company_id         INT(11) NOT NULL,
+   branch_id          INT(11) NOT NULL,
+   PRIMARY KEY(product_base_id)
+)
+ENGINE INNODB
+COLLATE 'utf8_general_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_ledger_month_budget
+(
+   budget_id           INT(11) NOT NULL AUTO_INCREMENT,
+   budget_ledger_id    INT(11) NOT NULL,
+   annual_budget       INT(11) NOT NULL,
+   budget_status       TINYINT(4) NOT NULL DEFAULT 0,
+   isdelete            TINYINT(4) NOT NULL DEFAULT 0,
+   cdate               TIMESTAMP(0) NOT NULL,
+   user_id             INT(11) NOT NULL,
+   company_id          INT(11) NOT NULL,
+   usertype_id         INT(11) NOT NULL,
+   PRIMARY KEY(budget_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_gin_attch
+(
+   grn_attch_id    INT(11) NOT NULL AUTO_INCREMENT,
+   grn_id          INT(11) NOT NULL,
+   grn_file        VARCHAR(150)
+                     CHARACTER SET latin1
+                     COLLATE latin1_swedish_ci
+                     NOT NULL,
+   cdate           TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id         INT(11) NOT NULL,
+   company_id      INT(11) NOT NULL,
+   PRIMARY KEY(grn_attch_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_company_settings
+   MODIFY COLUMN quotation_print_content LONGTEXT
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_company_settings
+   MODIFY COLUMN iso_no TEXT
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_company_settings
+   MODIFY COLUMN nsic_no VARCHAR(250)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_company_settings
+   MODIFY COLUMN sales_order_print LONGTEXT
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_company_settings
+   MODIFY COLUMN ssi_no VARCHAR(250)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+CREATE TABLE tbl_tcs_reverse_transaction
+(
+   sale_return_trn_id        INT(11) NOT NULL AUTO_INCREMENT,
+   sale_return_id            INT(11)
+                               NOT NULL
+                               COMMENT 'get from tcs_reverse auto id ',
+   sale_invoice_id           INT(11)
+                               NOT NULL
+                               COMMENT 'get from sale return auto id ',
+   sale_ledger_id            INT(11) NOT NULL,
+   sale_ref_no               INT(11) NOT NULL,
+   sale_amt_reversed         DOUBLE(22, 0) NOT NULL,
+   sale_amt_tcs_collected    DATE NOT NULL,
+   sale_tcs_amt              DOUBLE(22, 0) NOT NULL,
+   sale_sur_amt              DOUBLE(22, 0) NOT NULL,
+   sale_total_tax            DOUBLE(22, 0) NOT NULL,
+   sale_return_trn_status    INT(11)
+                               NOT NULL
+                               DEFAULT 0
+                               COMMENT '0:normal,1:approved,2:delete',
+   isdelete                  INT(11) NOT NULL,
+   cdate                     TIMESTAMP(0) NOT NULL,
+   user_id                   INT(11) NOT NULL,
+   company_id                INT(11) NOT NULL,
+   usertype_id               INT(11) NOT NULL,
+   currency_id               INT(11) NOT NULL,
+   currency_rate             DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(sale_return_trn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_sales_ordertrn
+   MODIFY COLUMN bom_status INT(11)
+                   NOT NULL
+                   COMMENT '0: bom allocation pending ,1 : bom allocation done';
+
+ALTER TABLE tbl_sales_ordertrn
+   MODIFY COLUMN with_out_stock_invoice TINYINT(4) NOT NULL DEFAULT 0;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN isallocated TINYINT(4) NOT NULL DEFAULT 0 COMMENT '0-no,1-yes'
+   AFTER product_delivery_date;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN remaning_invoice_qty DOUBLE(22, 0) NOT NULL AFTER isallocated;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN product_tax_cat INT(11) NOT NULL AFTER remaning_invoice_qty;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN cgst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER product_tax_cat;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN cgst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER cgst_tax_per;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN sgst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER cgst_tax_rate;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN sgst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER sgst_tax_per;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN igst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER sgst_tax_rate;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN igst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER igst_tax_per;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN currency_enable TINYINT(4) NOT NULL DEFAULT 0
+   AFTER igst_tax_rate;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_sales_ordertrn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL;
+
+CREATE TABLE tbl_jobcard_material_trn
+(
+   jobcard_material_trn_id        INT(11) NOT NULL AUTO_INCREMENT,
+   sp_id                          INT(11) NOT NULL,
+   rp_id                          INT(11) NOT NULL,
+   product_id                     INT(11) NOT NULL,
+   material_parameter_id          INT(11) NOT NULL,
+   material_parameter_value       VARCHAR(255)
+                                    CHARACTER SET latin1
+                                    COLLATE latin1_swedish_ci
+                                    NOT NULL,
+   jobcard_material_trn_status    INT(11) NOT NULL,
+   user_id                        INT(11) NOT NULL,
+   company_id                     INT(11) NOT NULL,
+   branch_id                      INT(11) NOT NULL,
+   PRIMARY KEY(jobcard_material_trn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_opening_product_stock_trn
+(
+   opening_product_stock_trn_id    INT(11) NOT NULL AUTO_INCREMENT,
+   opening_product_stock_id        INT(11) NOT NULL,
+   stock_type                      INT(11) NOT NULL,
+   product_id                      INT(11) NOT NULL,
+   product_qty                     VARCHAR(110)
+                                     CHARACTER SET latin1
+                                     COLLATE latin1_swedish_ci
+                                     NOT NULL,
+   base_unit_id                    INT(11) NOT NULL,
+   product_conv_qty                VARCHAR(112)
+                                     CHARACTER SET latin1
+                                     COLLATE latin1_swedish_ci
+                                     NOT NULL,
+   conv_unit_id                    INT(11) NOT NULL,
+   product_rate                    VARCHAR(111)
+                                     CHARACTER SET latin1
+                                     COLLATE latin1_swedish_ci
+                                     NOT NULL,
+   total_amount                    VARCHAR(112)
+                                     CHARACTER SET latin1
+                                     COLLATE latin1_swedish_ci
+                                     NOT NULL,
+   godown_id                       INT(11) NOT NULL,
+   vender_id                       INT(11) NOT NULL,
+   branch_id                       INT(11) NOT NULL,
+   status                          INT(11) NOT NULL,
+   user_id                         INT(11) NOT NULL,
+   cdate                           DATETIME(0)
+                                     NOT NULL
+                                     DEFAULT CURRENT_TIMESTAMP,
+   company_id                      INT(11) NOT NULL,
+   PRIMARY KEY(opening_product_stock_trn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_ledger_cheque_opening
+(
+   cheque_id                    INT(11) NOT NULL AUTO_INCREMENT,
+   cheque_ledger                INT(11) NOT NULL,
+   cheque_date                  DATE NOT NULL,
+   cheque_voucher_no            VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   cheque_account               INT(11) NOT NULL,
+   cheque_amount                INT(11) NOT NULL,
+   cheque_narration             TEXT
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   cheque_pay_mode              TINYINT(4) NOT NULL,
+   cheque_transaction_number    VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   cheque_entry_type            TINYINT(4) NOT NULL,
+   cheque_status                TINYINT(4) NOT NULL,
+   isdelete                     TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                        TIMESTAMP(0) NOT NULL,
+   user_id                      INT(11) NOT NULL,
+   company_id                   INT(11) NOT NULL,
+   usertype_id                  INT(11) NOT NULL,
+   PRIMARY KEY(cheque_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_journal_trn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER branch_id;
+
+ALTER TABLE tbl_journal_trn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_id;
+
+ALTER TABLE tbl_journal_trn
+   ADD COLUMN trn_entry_type TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-JV,1-CR,2-DR';
+
+ALTER TABLE tbl_tax_trn
+   MODIFY COLUMN cdate DATE NOT NULL;
+
+ALTER TABLE tbl_tax_trn
+   MODIFY COLUMN tx_tran_type_id INT(11)
+                   NOT NULL
+                   COMMENT 'not use in finance module';
+
+ALTER TABLE tbl_tax_trn
+   MODIFY COLUMN tx_status INT(11)
+                   NOT NULL
+                   COMMENT '0-active,2-delete,3-hold';
+
+ALTER TABLE tbl_tax_trn
+   ADD COLUMN tx_trn_ref_id INT(11)
+                NOT NULL
+                COMMENT 'invoice id ,purchase id'
+   AFTER branch_id;
+
+ALTER TABLE tbl_tax_trn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER tx_trn_ref_id;
+
+ALTER TABLE tbl_tax_trn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL DEFAULT 0;
+
+ALTER TABLE tbl_invoicetrn
+   MODIFY COLUMN total DOUBLE(22, 0) NOT NULL;
+
+ALTER TABLE tbl_invoicetrn
+   MODIFY COLUMN trancation_status INT(11)
+                   NOT NULL
+                   COMMENT '0-confim,1-pending,2-delete';
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN cgst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER with_out_stock_invoice;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN cgst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER cgst_tax_per;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN sgst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER cgst_tax_rate;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN sgst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER sgst_tax_per;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN igst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER sgst_tax_rate;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN igst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER igst_tax_per;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN transaction_type TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-invoice,1-SO,2-allocate'
+   AFTER igst_tax_rate;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN so_allocation_id INT(11)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-normal,1- so id,2-allocation id'
+   AFTER transaction_type;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER so_allocation_id;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_id;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN edit_trn INT(11) NOT NULL COMMENT '0:normal,1:edited'
+   AFTER currency_rate;
+
+ALTER TABLE tbl_invoicetrn
+   ADD COLUMN product_tax_cat INT(11) NOT NULL;
+
+CREATE TABLE tbl_store_request_aprv_log
+(
+   store_aprv_log_id        INT(11) NOT NULL AUTO_INCREMENT,
+   store_request_id         INT(11) NOT NULL,
+   approve_remark           MEDIUMTEXT
+                              CHARACTER SET latin1
+                              COLLATE latin1_swedish_ci
+                              NOT NULL,
+   approve_status           INT(11) NOT NULL,
+   store_aprv_log_status    INT(11) NOT NULL,
+   created_at               TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id                  INT(11) NOT NULL,
+   company_id               INT(11) NOT NULL,
+   branch_id                INT(11) NOT NULL,
+   PRIMARY KEY(store_aprv_log_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_product_process
+   MODIFY COLUMN process_rate DOUBLE(20, 2) NOT NULL DEFAULT 0.00;
+
+CREATE TABLE tbl_tcs_deduction_transaction
+(
+   tcs_deduct_id                INT(11) NOT NULL AUTO_INCREMENT,
+   tcs_sale_id                  INT(11) NOT NULL COMMENT 'invoice id',
+   tcs_sale_ledger              INT(11) NOT NULL,
+   tcs_cust_ledger              INT(11) NOT NULL,
+   tcs_lower_rate               DOUBLE(22, 0) NOT NULL COMMENT '1-no,2-yes',
+   tcs_lower_rate_reason        VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   tcs_section                  VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   tcs_collection_code          VARCHAR(200)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   tcs_ref_no                   INT(11) NOT NULL,
+   tcs_amt                      DOUBLE(22, 0) NOT NULL,
+   tcs_collected_on             DATE NOT NULL,
+   tcs_invoice_date             DATE NOT NULL,
+   tcs_percentage               DOUBLE(22, 0) NOT NULL,
+   tcs_amount                   DOUBLE(22, 0) NOT NULL,
+   tcs_sur_percentage           DOUBLE(22, 0) NOT NULL,
+   tcs_sur_percentage_amount    DOUBLE(22, 0) NOT NULL,
+   tcs_total_tax                DOUBLE(22, 0) NOT NULL,
+   tcs_entry_type               INT(11) NOT NULL,
+   tcs_status                   INT(11) NOT NULL,
+   tcs_return_type              INT(11) NOT NULL,
+   tcs_sale_return_id           INT(11) NOT NULL,
+   isdelete                     TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                        TIMESTAMP(0) NOT NULL,
+   user_id                      INT(11) NOT NULL,
+   company_id                   INT(11) NOT NULL,
+   usertype_id                  INT(11) NOT NULL,
+   currency_id                  INT(11) NOT NULL,
+   currency_rate                DOUBLE(22, 0) NOT NULL,
+   PRIMARY KEY(tcs_deduct_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_so_attch
+(
+   so_attach_id       INT(11) NOT NULL AUTO_INCREMENT,
+   attach_doc_name    VARCHAR(250)
+                        CHARACTER SET latin1
+                        COLLATE latin1_swedish_ci
+                        NOT NULL,
+   attach_file        VARCHAR(250)
+                        CHARACTER SET latin1
+                        COLLATE latin1_swedish_ci
+                        NOT NULL,
+   attach_status      INT(11) NOT NULL,
+   sales_order_id     INT(11) NOT NULL,
+   user_id            INT(11) NOT NULL,
+   company_id         INT(11) NOT NULL,
+   branch_id          INT(11) NOT NULL,
+   PRIMARY KEY(so_attach_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_ledger_branch_opening
+(
+   branch_opening_id         INT(11) NOT NULL AUTO_INCREMENT,
+   branch_id                 INT(11) NOT NULL,
+   branch_ledger_id          INT(11) NOT NULL,
+   branch_entry_type         INT(11) NOT NULL,
+   branch_opening_balance    INT(11) NOT NULL,
+   branch_status             INT(11) NOT NULL,
+   isdelete                  TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                     TIMESTAMP(0) NOT NULL,
+   user_id                   INT(11) NOT NULL,
+   company_id                INT(11) NOT NULL,
+   usertype_id               INT(11) NOT NULL,
+   PRIMARY KEY(branch_opening_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_salesman_master
+(
+   salesman_id            INT(11) NOT NULL AUTO_INCREMENT,
+   salesman_name          VARCHAR(255)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   salesman_allias        VARCHAR(200)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NULL,
+   salesman_print_name    VARCHAR(255)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NULL,
+   salesman_address       TEXT
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   salesman_mobile        INT(11) NOT NULL,
+   salesman_whatsup       INT(11) NOT NULL,
+   salesman_email         VARCHAR(255)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   salesman_comm_type     INT(11) NOT NULL COMMENT '1-On Bill,2-Fixed',
+   salesman_commision     INT(11) NOT NULL,
+   isdelete               TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                  TIMESTAMP(0) NOT NULL,
+   user_id                INT(11) NOT NULL,
+   company_id             INT(11) NOT NULL,
+   usertype_id            INT(11) NOT NULL,
+   PRIMARY KEY(salesman_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_workorder_aprv_log
+(
+   wo_aprv_log_id    INT(11) NOT NULL AUTO_INCREMENT,
+   rp_id             INT(11) NOT NULL,
+   approve_remark    MEDIUMTEXT
+                       CHARACTER SET latin1
+                       COLLATE latin1_swedish_ci
+                       NOT NULL,
+   approve_status    INT(11) NOT NULL,
+   created_at        TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id           INT(11) NOT NULL,
+   company_id        INT(11) NOT NULL,
+   branch_id         INT(11) NOT NULL,
+   PRIMARY KEY(wo_aprv_log_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_opening_product_stock
+(
+   opening_product_stock_id    INT(11) NOT NULL AUTO_INCREMENT,
+   branch_id                   INT(11) NOT NULL,
+   opening_stock_no            VARCHAR(110)
+                                 CHARACTER SET latin1
+                                 COLLATE latin1_swedish_ci
+                                 NOT NULL,
+   opening_stock_date          DATE NOT NULL,
+   status                      INT(11) NOT NULL,
+   user_id                     INT(11) NOT NULL,
+   cdate                       DATETIME(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   company_id                  INT(11) NOT NULL,
+   PRIMARY KEY(opening_product_stock_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_salesman_transaction
+(
+   salesman_trans_id           INT(11) NOT NULL AUTO_INCREMENT,
+   salesman_id                 INT(11) NOT NULL,
+   sales_bill_amt              DOUBLE(22, 0) NOT NULL,
+   sales_comm_type             INT(11) NOT NULL,
+   sales_commision_per         DOUBLE(22, 0) NOT NULL,
+   sales_tot_qty               DOUBLE(22, 0) NOT NULL,
+   sales_comm_bag              DOUBLE(22, 0) NOT NULL,
+   sales_commision             DOUBLE(22, 0) NOT NULL,
+   sales_commision_status      INT(11) NOT NULL,
+   transaction_entry_type      INT(11) NOT NULL,
+   transaction_table           VARCHAR(255)
+                                 CHARACTER SET latin1
+                                 COLLATE latin1_swedish_ci
+                                 NOT NULL,
+   transaction_table_id        INT(11) NOT NULL,
+   transaction_voucher_type    INT(11) NOT NULL,
+   isdelete                    TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                       TIMESTAMP(0) NOT NULL,
+   user_id                     INT(11) NOT NULL,
+   company_id                  INT(11) NOT NULL,
+   usertype_id                 INT(11) NOT NULL,
+   currency_id                 INT(11) NOT NULL,
+   currency_rate               DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(salesman_trans_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_customer
+   ADD COLUMN cust_owner INT(11) NOT NULL;
+
+ALTER TABLE tbl_reserve_stock
+   ADD COLUMN approve_base_stock VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER base_stock;
+
+ALTER TABLE tbl_reserve_stock
+   ADD COLUMN approve_convert_stock VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER convert_stock;
+
+ALTER TABLE tbl_ledger
+   MODIFY COLUMN tax_value DOUBLE(22, 0) NOT NULL;
+
+ALTER TABLE tbl_ledger
+   MODIFY COLUMN cust_gst_reg VARCHAR(255)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL
+                   COMMENT '0:Registered,1:Unregistered,2:Composition,3:Govt.body,4:UIN Holder';
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_code VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER l_name;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_alias VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER is_deletable;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_multi_currency_opening TINYINT(4) NOT NULL DEFAULT 0
+   AFTER ledger_alias;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_branch_opening TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_multi_currency_opening;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_opening_balance_type TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_branch_opening;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_cost_center TINYINT(4) NOT NULL DEFAULT 0
+   AFTER ledger_opening_balance_type;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_tds INT(11) NOT NULL AFTER enable_cost_center;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN party_pay_cat INT(11) NOT NULL AFTER enable_tds;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_tcs TINYINT(4) NOT NULL DEFAULT 0 AFTER party_pay_cat;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_depreciation TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_tcs;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_monthly_budget TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_depreciation;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN `ledger_Tax_type` INT(11) NOT NULL AFTER enable_monthly_budget;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_gst_applicable TINYINT(4) NOT NULL DEFAULT 0
+   AFTER `ledger_Tax_type`;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_tax_category INT(11) NOT NULL
+   AFTER ledger_gst_applicable;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_hsn VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER ledger_tax_category;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_itc INT(11) NOT NULL AFTER ledger_hsn;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN ledger_rcm INT(11) NOT NULL AFTER ledger_itc;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_bill_sunfry TINYINT(4) NOT NULL DEFAULT 0
+   AFTER ledger_rcm;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_sez TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_bill_sunfry;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_cheque_deposit TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_sez;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_billbybill_opening TINYINT(4) NOT NULL DEFAULT 0
+   AFTER enable_cheque_deposit;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN default_sundry INT(11) NOT NULL DEFAULT 0
+   AFTER enable_billbybill_opening;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN enable_salesman INT(11) NOT NULL AFTER default_sundry;
+
+ALTER TABLE tbl_ledger
+   ADD COLUMN default_ledger INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE currency_mst
+   ADD COLUMN currency_symbl VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER currency_rate;
+
+ALTER TABLE currency_mst
+   ADD COLUMN isbasecrncy TINYINT(4) NOT NULL DEFAULT 0 COMMENT '0-no,1-yes'
+   AFTER currency_status;
+
+ALTER TABLE tbl_job_work_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN financial_year_id INT(11) NOT NULL AFTER branch_id;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN total INT(11) NOT NULL AFTER financial_year_id;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN currency_enable INT(11) NOT NULL AFTER total;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN enable_cost_center INT(11) NOT NULL AFTER currency_rate;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN enable_ewaybill INT(11) NOT NULL AFTER enable_cost_center;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN eway_bill_no VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER enable_ewaybill;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN eway_bill_date DATE NOT NULL AFTER eway_bill_no;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN purchase_material_center INT(11) NOT NULL AFTER eway_bill_date;
+
+ALTER TABLE tbl_pono
+   ADD COLUMN enable_salesman INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE menu_master_access_routes
+   MODIFY COLUMN access_type ENUM('V',
+                                  'C',
+                                  'R',
+                                  'U',
+                                  'D',
+                                  'A',
+                                  'FA',
+                                  'O',
+                                  'CL')
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_proforma_trntemp
+   MODIFY COLUMN product_disc DOUBLE(5, 2) NOT NULL;
+
+CREATE TABLE tbl_cost_center
+(
+   cost_center_id      INT(11) NOT NULL AUTO_INCREMENT,
+   cost_group_id       INT(11) NOT NULL,
+   cost_center_name    VARCHAR(255)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   isactive            TINYINT(4) NOT NULL DEFAULT 1,
+   isdelete            TINYINT(4) NOT NULL DEFAULT 0,
+   cdate               TIMESTAMP(0) NOT NULL,
+   user_id             INT(11) NOT NULL,
+   company_id          INT(11) NOT NULL,
+   usertype_id         INT(11) NOT NULL,
+   PRIMARY KEY(cost_center_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_sales_order_dispatch_trn
+(
+   sales_order_dispatch_trn_id        INT(11) NOT NULL AUTO_INCREMENT,
+   sales_order_dispatch_id            INT(11) NOT NULL,
+   sales_order_id                     INT(11) NOT NULL,
+   sales_ordertrn_id                  INT(11) NOT NULL,
+   product_id                         INT(11) NOT NULL,
+   so_req_qty                         VARCHAR(255)
+                                        CHARACTER SET latin1
+                                        COLLATE latin1_swedish_ci
+                                        NOT NULL,
+   dispatch_req_qty                   VARCHAR(255)
+                                        CHARACTER SET latin1
+                                        COLLATE latin1_swedish_ci
+                                        NOT NULL,
+   actual_dispatch_qty                VARCHAR(255)
+                                        CHARACTER SET latin1
+                                        COLLATE latin1_swedish_ci
+                                        NOT NULL,
+   heat_no                            VARCHAR(255)
+                                        CHARACTER SET latin1
+                                        COLLATE latin1_swedish_ci
+                                        NOT NULL,
+   sales_order_dispatch_trn_status    INT(11) NOT NULL,
+   user_id                            INT(11) NOT NULL,
+   cdate                              DATETIME(0) NOT NULL,
+   branch_id                          INT(11) NOT NULL,
+   company_id                         INT(11) NOT NULL,
+   PRIMARY KEY(sales_order_dispatch_trn_id),
+   INDEX company_id (company_id) USING BTREE,
+   INDEX sales_order_dispatch_id (sales_order_dispatch_id,
+                                  sales_order_id,
+                                  sales_ordertrn_id,
+                                  heat_no,
+                                  sales_order_dispatch_trn_status,
+                                  user_id,
+                                  branch_id) USING BTREE,
+   INDEX product_id (product_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE users
+   ADD COLUMN temp_otp INT(11) NOT NULL AFTER menu_show_permission;
+
+ALTER TABLE users
+   ADD COLUMN device_id VARCHAR(250)
+                CHARACTER SET utf8
+                COLLATE utf8_general_ci
+                NOT NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN test_certificate_code VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN dimension_inspected VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN process_checked VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN material_inspected VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN qty_verified VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN inspection_report VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_grn
+   MODIFY COLUMN test_certificate VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+CREATE TABLE mst_hsn_code
+(
+   hsn_id          INT(11) NOT NULL AUTO_INCREMENT,
+   hsn_code        VARCHAR(50)
+                     CHARACTER SET latin1
+                     COLLATE latin1_swedish_ci
+                     NOT NULL,
+   hsn_desc        VARCHAR(250)
+                     CHARACTER SET latin1
+                     COLLATE latin1_swedish_ci
+                     NOT NULL,
+   sale_gst        INT(11) NOT NULL,
+   hsn_status      INT(11) NOT NULL DEFAULT 0 COMMENT '0- available,2-delete',
+   cdate           TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id         INT(11) NOT NULL,
+   company_id      INT(11) NOT NULL,
+   branch_id       INT(11) NOT NULL,
+   is_deletable    INT(11) NOT NULL,
+   PRIMARY KEY(hsn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_sales_order
+   MODIFY COLUMN with_out_stock_invoice INT(11) NOT NULL;
+
+ALTER TABLE tbl_sales_order
+   ADD COLUMN install_type INT(11) NOT NULL AFTER project_name;
+
+ALTER TABLE tbl_sales_order
+   ADD COLUMN billing_type TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '1-SO wise,2-allocation wise'
+   AFTER delivery_type;
+
+ALTER TABLE tbl_sales_order
+   ADD COLUMN currency_enable TINYINT(4) NOT NULL DEFAULT 0
+   AFTER billing_type;
+
+ALTER TABLE tbl_sales_order
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL;
+
+CREATE TABLE tbl_sale_return_transaction
+(
+   sale_return_transaction_id    INT(11) NOT NULL AUTO_INCREMENT,
+   sale_return_id                INT(11) NOT NULL,
+   sale_return_invoice_no        INT(11) NOT NULL,
+   sale_return_product           INT(11) NOT NULL,
+   sale_return_qty               DOUBLE(22, 0) NOT NULL,
+   sale_return_rate              DOUBLE(22, 0) NOT NULL,
+   sale_return_unit              INT(11) NOT NULL,
+   sale_return_amount            DOUBLE(22, 0) NOT NULL,
+   sale_return_cgst_tax_per      DOUBLE(22, 0) NOT NULL,
+   sale_return_cgst_tax_amt      DOUBLE(22, 0) NOT NULL,
+   sale_return_igst_tax_per      DOUBLE(22, 0) NOT NULL,
+   sale_return_igst_tax_amt      DOUBLE(22, 0) NOT NULL,
+   sale_return_total_amount      DOUBLE(22, 0) NOT NULL,
+   isactive                      INT(11) NOT NULL,
+   isdelete                      INT(11) NOT NULL,
+   cdate                         DATE NOT NULL,
+   user_id                       INT(11) NOT NULL,
+   company_id                    INT(11) NOT NULL,
+   usertype_id                   INT(11) NOT NULL,
+   sale_return_sgst_tax_per      DOUBLE(10, 2) NOT NULL,
+   sale_return_sgst_tax_amt      DOUBLE(10, 2) NOT NULL,
+   trancation_status             INT(11)
+                                   NOT NULL
+                                   DEFAULT 0
+                                   COMMENT '0:active,1:confirm,2:delete',
+   currency_id                   INT(11) NOT NULL,
+   currency_rate                 DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   product_tax_cat               INT(11) NOT NULL,
+   PRIMARY KEY(sale_return_transaction_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_cost_center_group
+(
+   cost_group_id      INT(11) NOT NULL AUTO_INCREMENT,
+   cost_group_name    VARCHAR(255)
+                        CHARACTER SET latin1
+                        COLLATE latin1_swedish_ci
+                        NOT NULL,
+   isactive           TINYINT(4) NOT NULL DEFAULT 1,
+   isdelete           TINYINT(4) NOT NULL DEFAULT 0,
+   cdate              INT(11) NOT NULL,
+   user_id            INT(11) NOT NULL,
+   company_id         INT(11) NOT NULL,
+   usertype_id        INT(11) NOT NULL,
+   PRIMARY KEY(cost_group_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_common_category_mst
+(
+   common_category_id      INT(11) NOT NULL AUTO_INCREMENT,
+   common_category_name    VARCHAR(255)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   isactive                TINYINT(4) NOT NULL DEFAULT 1,
+   isdelete                TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                   TIMESTAMP(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   usertype_id             INT(11) NOT NULL,
+   PRIMARY KEY(common_category_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_cost_center_transaction
+(
+   costcenter_transaction_id    INT(11) NOT NULL AUTO_INCREMENT,
+   costcenter_id                INT(11) NOT NULL,
+   costcenter_amount            DOUBLE(22, 0) NOT NULL,
+   costcenter_entry_type        INT(11) NOT NULL,
+   cost_center_voucher_type     INT(11) NOT NULL,
+   cost_center_ledger_id        INT(11) NOT NULL,
+   cost_center_table            VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   cost_center_table_id         INT(11) NOT NULL,
+   costcenter_status            INT(11)
+                                  NOT NULL
+                                  DEFAULT 0
+                                  COMMENT '0-active,2-delete',
+   isdelete                     TINYINT(4) NOT NULL,
+   cdate                        TIMESTAMP(0) NOT NULL,
+   user_id                      INT(11) NOT NULL,
+   company_id                   INT(11) NOT NULL,
+   usertype_id                  INT(11) NOT NULL,
+   currency_id                  INT(11) NOT NULL,
+   currency_rate                DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(costcenter_transaction_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL DEFAULT 1
+   AFTER currency_id;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN taxable_value DOUBLE(22, 0) NOT NULL AFTER total;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN cgst_tax_rate DOUBLE(22, 0) NOT NULL AFTER tax_total_amount;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN sgst_tax_rate DOUBLE(22, 0) NOT NULL AFTER cgst_tax_rate;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN igst_tax_rate DOUBLE(22, 0) NOT NULL AFTER sgst_tax_rate;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN cgst_tax_per DOUBLE(22, 0) NOT NULL AFTER igst_tax_rate;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN sgst_tax_per DOUBLE(22, 0) NOT NULL AFTER cgst_tax_per;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN igst_tax_per DOUBLE(22, 0) NOT NULL AFTER sgst_tax_per;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN product_tax_cat INT(11) NOT NULL AFTER igst_tax_per;
+
+ALTER TABLE tbl_potrancation
+   ADD COLUMN purchaseorder_id INT(11) NOT NULL;
+
+CREATE TABLE tbl_cr_dr_adjustment
+(
+   adjustment_id                INT(11) NOT NULL AUTO_INCREMENT,
+   voucher_type                 INT(11) NOT NULL,
+   voucher_id                   INT(11) NOT NULL,
+   voucher_table                VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   bill_type                    TINYINT(4) NOT NULL COMMENT '1-invoice,2-purchase',
+   adjust_reason                INT(11) NOT NULL,
+   adjust_invoice               INT(11) NOT NULL,
+   adjust_invoice_date          DATE NOT NULL,
+   adjust_date                  DATE NOT NULL,
+   adjust_hsn                   INT(11) NOT NULL,
+   adjust_unit                  INT(11) NOT NULL,
+   adjsut_diff                  DOUBLE(22, 0) NOT NULL,
+   adjust_gst                   DOUBLE(22, 0) NOT NULL,
+   adjust_cgst                  DOUBLE(22, 0) NOT NULL,
+   adjust_sgst                  DOUBLE(22, 0) NOT NULL,
+   adjust_igst                  DOUBLE(22, 0) NOT NULL,
+   adjust_itc                   INT(11) NOT NULL,
+   adjust_nature_transaction    INT(11) NOT NULL,
+   isdelete                     TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                        TIMESTAMP(0) NOT NULL,
+   user_id                      INT(11) NOT NULL,
+   company_id                   INT(11) NOT NULL,
+   usertype_id                  INT(11) NOT NULL,
+   entry_type                   TINYINT(4)
+                                  NOT NULL
+                                  DEFAULT 0
+                                  COMMENT '0-JV,1-CR,2-DR',
+   currency_id                  INT(11) NOT NULL,
+   currency_rate                DOUBLE(22, 0) NOT NULL,
+   PRIMARY KEY(adjustment_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_request_product
+   MODIFY COLUMN product_version VARCHAR(120)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_request_product
+   MODIFY COLUMN finish_status INT(11) NOT NULL;
+
+ALTER TABLE tbl_request_product
+   ADD COLUMN work_order_no VARCHAR(150)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER shortclose_remark;
+
+ALTER TABLE tbl_request_product
+   ADD COLUMN work_order_date DATE NOT NULL AFTER work_order_no;
+
+ALTER TABLE tbl_request_product
+   ADD COLUMN work_order_status INT(11) NOT NULL AFTER work_order_date;
+
+ALTER TABLE tbl_request_product
+   ADD COLUMN approval_status INT(11) NOT NULL;
+
+ALTER TABLE tbl_sales_order_production_trn
+   ADD COLUMN invoice_status TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-not done,1-done'
+   AFTER branch_id;
+
+ALTER TABLE tbl_sales_order_production_trn
+   ADD COLUMN invoice_qty INT(11) NOT NULL AFTER invoice_status;
+
+ALTER TABLE tbl_sales_order_production_trn
+   ADD COLUMN remaning_invoice_qty DOUBLE(22, 0) NOT NULL;
+
+ALTER TABLE menu_master_access
+   ADD COLUMN menu_image_url TEXT
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER menu_fa_icon;
+
+ALTER TABLE tbl_general_book
+   MODIFY COLUMN entry_type INT(11) NOT NULL COMMENT '1-credit,2debit';
+
+ALTER TABLE tbl_general_book
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER branch_id;
+
+ALTER TABLE tbl_general_book
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL DEFAULT 1;
+
+ALTER TABLE tbl_purchasecardtrn
+   ADD COLUMN party_purchase_id INT(11) NOT NULL AFTER purchasecardtrn_id;
+
+ALTER TABLE tbl_grn_attch
+   ADD COLUMN grn_attch_status INT(11) NOT NULL AFTER grn_file;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN sales_ledger_id INT(11) NOT NULL AFTER debitnote_id;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN basic_total DOUBLE(22, 0) NOT NULL AFTER round_off;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN is_without_item TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER company_id;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN material_center INT(11) NOT NULL AFTER is_without_item;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN currency_enable INT(11) NOT NULL AFTER material_center;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN cost_center_enable INT(11) NOT NULL DEFAULT 0
+   AFTER currency_enable;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN eway_enable INT(11) NOT NULL DEFAULT 0 AFTER cost_center_enable;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN salesman_enable INT(11) NOT NULL DEFAULT 0 AFTER eway_enable;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN eway_bill_date DATE NOT NULL AFTER salesman_enable;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN narration LONGTEXT
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER eway_bill_date;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER narration;
+
+ALTER TABLE tbl_debitnote
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL;
+
+CREATE TABLE tbl_payment_to_govt_trn
+(
+   govt_trn_id          INT(11) NOT NULL AUTO_INCREMENT,
+   payment_trn_id       INT(11) NOT NULL,
+   receipt_id           INT(11) NOT NULL,
+   govt_cgst            DOUBLE(22, 0) NOT NULL,
+   govt_sgst            DOUBLE(22, 0) NOT NULL,
+   govt_igst            DOUBLE(22, 0) NOT NULL,
+   govt_cess            DOUBLE(22, 0) NOT NULL,
+   govt_add_cess        DOUBLE(22, 0) NOT NULL,
+   govt_payment_type    INT(11)
+                          NOT NULL
+                          COMMENT '0:tax amount , 1:interest , 2 : penalty , 3 : late fee',
+   isdelete             TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                TIMESTAMP(0) NOT NULL,
+   user_id              INT(11) NOT NULL,
+   company_id           INT(11) NOT NULL,
+   usertype_id          INT(11) NOT NULL,
+   PRIMARY KEY(govt_trn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_ewaybill_transaction
+(
+   eway_id                               INT(11) NOT NULL AUTO_INCREMENT,
+   eway_distance_km                      INT(11) NOT NULL,
+   eway_transport_mode                   INT(11) NOT NULL,
+   eway_sub_type                         INT(11) NOT NULL,
+   eway_transaction_type                 INT(11) NOT NULL,
+   eway_bill_number                      VARCHAR(255)
+                                           CHARACTER SET latin1
+                                           COLLATE latin1_swedish_ci
+                                           NOT NULL,
+   eway_bill_date                        DATE NOT NULL,
+   eway_bill_voucher_type                INT(11) NOT NULL,
+   eway_bill_status                      INT(11)
+                                           NOT NULL
+                                           COMMENT '0:pending,1:generated,2:failed',
+   eway_bill_transport_transaction_id    INT(11) NOT NULL,
+   eway_bill_voucher_id                  INT(11) NOT NULL,
+   eway_bill_voucher_table               VARCHAR(200)
+                                           CHARACTER SET latin1
+                                           COLLATE latin1_swedish_ci
+                                           NOT NULL,
+   isdelete                              TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                                 TIMESTAMP(0) NOT NULL,
+   user_id                               INT(11) NOT NULL,
+   company_id                            INT(11) NOT NULL,
+   usertype_id                           INT(11) NOT NULL,
+   currency_id                           INT(11) NOT NULL,
+   currency_rate                         DOUBLE(22, 0) NULL DEFAULT 1,
+   eway_rejection_reason                 LONGTEXT
+                                           CHARACTER SET latin1
+                                           COLLATE latin1_swedish_ci
+                                           NOT NULL,
+   PRIMARY KEY(eway_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE pro_ms_document_type
+(
+   document_type_id        INT(11) NOT NULL AUTO_INCREMENT,
+   document_type_name      VARCHAR(400)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   document_type_status    INT(11) NOT NULL,
+   cdate                   TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   branch_id               INT(11) NOT NULL DEFAULT 0,
+   PRIMARY KEY(document_type_id),
+   INDEX process_type_id_2 (document_type_id,
+                            document_type_name,
+                            document_type_status,
+                            user_id,
+                            company_id) USING BTREE,
+   INDEX process_type_id (document_type_id,
+                          document_type_name,
+                          document_type_status,
+                          user_id,
+                          company_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_jobwork_main
+   ADD COLUMN return_date DATE NULL AFTER remark;
+
+ALTER TABLE tbl_jobwork_main
+   ADD COLUMN mode_of_transport VARCHAR(250)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER return_date;
+
+ALTER TABLE tbl_jobwork_main
+   ADD COLUMN freight VARCHAR(250)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER mode_of_transport;
+
+ALTER TABLE tbl_jobwork_main
+   ADD COLUMN l_r_no VARCHAR(250)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER freight;
+
+ALTER TABLE tbl_jobwork_main
+   ADD COLUMN transporter VARCHAR(250)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER l_r_no;
+
+CREATE TABLE tbl_financial_year
+(
+   financial_year_id       INT(11) NOT NULL AUTO_INCREMENT,
+   finance_year_type       INT(11)
+                             NOT NULL
+                             COMMENT '1: march-april , 2 : janu-dec',
+   fiancial_year           VARCHAR(255)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   financial_start_date    DATE NOT NULL,
+   financial_end_date      DATE NOT NULL,
+   current_status          TINYINT(4) NOT NULL DEFAULT 0,
+   isdelete                TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                   TIMESTAMP(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   usertype_id             INT(11) NOT NULL,
+   PRIMARY KEY(financial_year_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_purchaseordertrn
+   MODIFY COLUMN shortclose_status INT(11)
+                   NOT NULL
+                   COMMENT '0.pending  1.close';
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_id;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN prev_purchaseordertrn_id INT(11) NOT NULL AFTER branch_id;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN process_id INT(11) NOT NULL AFTER prev_purchaseordertrn_id;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN cgst_tax_per DOUBLE(22, 0) NOT NULL AFTER process_id;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN cgst_tax_rate DOUBLE(22, 0) NOT NULL AFTER cgst_tax_per;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN sgst_tax_per DOUBLE(22, 0) NOT NULL AFTER cgst_tax_rate;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN sgst_tax_rate DOUBLE(22, 0) NOT NULL AFTER sgst_tax_per;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN igst_tax_per DOUBLE(22, 0) NOT NULL AFTER sgst_tax_rate;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN igst_tax_rate DOUBLE(22, 0) NOT NULL AFTER igst_tax_per;
+
+ALTER TABLE tbl_purchaseordertrn
+   ADD COLUMN product_tax_cat INT(11) NOT NULL;
+
+ALTER TABLE tbl_salesorder_project_trn
+   ADD COLUMN currency_enable TINYINT(4) NOT NULL DEFAULT 0
+   AFTER product_spec;
+
+ALTER TABLE tbl_salesorder_project_trn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_salesorder_project_trn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL;
+
+CREATE TABLE product_mst_chemiteck
+(
+   product_id                   INT(11) NOT NULL AUTO_INCREMENT,
+   product_type                 INT(11) NOT NULL,
+   product_name                 VARCHAR(500)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_desc                 LONGTEXT
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_spec                 TEXT
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NULL
+                                  COMMENT 'Product Specification',
+   product_icode                VARCHAR(100)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_hsn                  VARCHAR(100)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_purchase_rate        DOUBLE(11, 2) NOT NULL,
+   product_sale_rate            DOUBLE(11, 2) NOT NULL,
+   product_base_unit            INT(11) NOT NULL,
+   product_base_qty             VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_conv_unit            INT(11) NOT NULL,
+   product_conv_qty             VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_gst                  VARCHAR(100)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_sale_gst             INT(11) NOT NULL,
+   product_purchase_gst         INT(11) NOT NULL,
+   product_opening              INT(11) NOT NULL,
+   product_opening_valuation    INT(11) NOT NULL,
+   product_min_stock            INT(11) NOT NULL,
+   product_max_stock            VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_category             INT(11) NOT NULL,
+   product_barcode              INT(11) NOT NULL,
+   product_making_time          VARCHAR(100)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   multi_branch                 INT(11) NOT NULL,
+   product_status               INT(11) NOT NULL,
+   count_stock                  INT(11) NOT NULL,
+   cdate                        DATE NOT NULL,
+   user_id                      INT(11) NOT NULL,
+   company_id                   INT(11) NOT NULL,
+   drawing_id                   INT(11) NOT NULL COMMENT 'tbl_drawing ref id',
+   revision_id                  INT(11)
+                                  NOT NULL
+                                  COMMENT 'tbl_revision ref id',
+   branch_id                    INT(11) NOT NULL,
+   product_check                LONGTEXT
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_setting_check        LONGTEXT
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_width                VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_height               VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_thickness            VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_density              VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_kg                   VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_specification        INT(11) NOT NULL,
+   product_net_weight           VARCHAR(100)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL
+                                  DEFAULT '0',
+   ledger_id                    INT(11) NOT NULL,
+   tolerance                    INT(11) NOT NULL,
+   minimum_tolerance            VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   maximum_tolerance            VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   image_name                   VARCHAR(255)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NULL,
+   material_issue_weight        VARCHAR(111)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   product_scrap_id             INT(11) NOT NULL,
+   scrap_desc                   TEXT
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   scrap_qty                    VARCHAR(111)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   PRIMARY KEY(product_id),
+   INDEX product_width (product_width,
+                        product_height,
+                        product_thickness,
+                        product_density,
+                        product_kg,
+                        product_specification,
+                        ledger_id,
+                        tolerance,
+                        minimum_tolerance,
+                        maximum_tolerance) USING BTREE,
+   INDEX product_opening (product_opening,
+                          product_opening_valuation,
+                          product_min_stock,
+                          product_max_stock,
+                          product_category,
+                          product_barcode,
+                          product_making_time,
+                          multi_branch,
+                          product_status,
+                          count_stock,
+                          user_id,
+                          company_id,
+                          revision_id,
+                          branch_id) USING BTREE,
+   INDEX product_id (product_id,
+                     product_type,
+                     product_name,
+                     product_icode,
+                     product_hsn,
+                     product_purchase_rate,
+                     product_sale_rate,
+                     product_base_unit,
+                     product_base_qty,
+                     product_conv_unit,
+                     product_conv_qty,
+                     product_gst,
+                     product_sale_gst,
+                     product_purchase_gst) USING BTREE,
+   INDEX product_net_weight_2 (product_net_weight) USING BTREE,
+   INDEX product_id_2 (product_id,
+                       product_type,
+                       product_name,
+                       product_icode,
+                       product_hsn,
+                       product_purchase_rate,
+                       product_sale_rate,
+                       product_base_unit,
+                       product_base_qty,
+                       product_conv_unit,
+                       product_conv_qty,
+                       product_gst,
+                       product_sale_gst,
+                       product_purchase_gst) USING BTREE,
+   INDEX drawing_id (drawing_id, revision_id) USING BTREE,
+   INDEX product_net_weight (product_net_weight) USING BTREE,
+   INDEX product_width_2 (product_width,
+                          product_height,
+                          product_thickness,
+                          product_density,
+                          product_kg,
+                          product_specification,
+                          ledger_id,
+                          tolerance,
+                          minimum_tolerance,
+                          maximum_tolerance) USING BTREE,
+   INDEX product_opening_2 (product_opening,
+                            product_opening_valuation,
+                            product_min_stock,
+                            product_max_stock,
+                            product_category,
+                            product_barcode,
+                            product_making_time,
+                            multi_branch,
+                            product_status,
+                            count_stock,
+                            user_id,
+                            company_id,
+                            revision_id,
+                            branch_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_tax_category_details
+(
+   tax_cat_details_id    INT(11) NOT NULL AUTO_INCREMENT,
+   tax_cat               INT(11) NOT NULL,
+   tax_id                INT(11) NOT NULL,
+   tax_per               DOUBLE(22, 0) NOT NULL,
+   isdelete              TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                 TIMESTAMP(0) NOT NULL,
+   user_id               INT(11) NOT NULL,
+   company_id            INT(11) NOT NULL,
+   usertype_id           INT(11) NOT NULL,
+   tax_additional        INT(11) NOT NULL DEFAULT 0,
+   PRIMARY KEY(tax_cat_details_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE pro_ms_bom_version
+   MODIFY COLUMN bom_version_status INT(10) NOT NULL;
+
+ALTER TABLE pro_ms_bom_version
+   MODIFY COLUMN is_default_bom INT(10) NOT NULL;
+
+ALTER TABLE pro_ms_bom_version
+   ADD INDEX product_id (product_id) USING BTREE;
+
+ALTER TABLE pro_ms_bom_version
+   ADD INDEX product_id_2 (product_id) USING BTREE;
+
+ALTER TABLE tbl_journal
+   ADD COLUMN currency_enable TINYINT(4) NOT NULL COMMENT '0-no,1-yes'
+   AFTER branch_id;
+
+ALTER TABLE tbl_journal
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_journal
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_id;
+
+ALTER TABLE tbl_journal
+   ADD COLUMN gst_nature INT(11) NOT NULL AFTER currency_rate;
+
+ALTER TABLE tbl_journal
+   ADD COLUMN entry_type TINYINT(4) NOT NULL COMMENT '0-JV,1-CR,2-DR';
+
+ALTER TABLE mst_godown
+   MODIFY COLUMN show_in_list INT(11) NOT NULL COMMENT '1 yes, 0 - no';
+
+CREATE TABLE pro_ms_item_status
+(
+   product_item_status_id        INT(11) NOT NULL AUTO_INCREMENT,
+   product_item_status_name      VARCHAR(400)
+                                   CHARACTER SET latin1
+                                   COLLATE latin1_swedish_ci
+                                   NOT NULL,
+   product_item_status_status    INT(11) NOT NULL,
+   cdate                         TIMESTAMP(0)
+                                   NOT NULL
+                                   DEFAULT CURRENT_TIMESTAMP,
+   user_id                       INT(11) NOT NULL,
+   company_id                    INT(11) NOT NULL,
+   branch_id                     INT(11) NOT NULL DEFAULT 0,
+   PRIMARY KEY(product_item_status_id),
+   INDEX process_type_id_2 (product_item_status_id,
+                            product_item_status_name,
+                            product_item_status_status,
+                            user_id,
+                            company_id) USING BTREE,
+   INDEX process_type_id (product_item_status_id,
+                          product_item_status_name,
+                          product_item_status_status,
+                          user_id,
+                          company_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_product_job_party_purchase
+   MODIFY COLUMN job_party_rate DOUBLE(20, 2) NOT NULL;
+
+CREATE TABLE tbl_sale_return
+(
+   sale_return_id                    INT(11) NOT NULL AUTO_INCREMENT,
+   sales_ledger_id                   INT(11) NOT NULL,
+   sale_return_branch                INT(11) NOT NULL,
+   sal_return_voucher_no             VARCHAR(255)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   sale_return_material_center       INT(11) NOT NULL,
+   sale_return_date                  DATE NOT NULL,
+   sale_return_customer              INT(11) NOT NULL,
+   sale_return_currency_enable       INT(11) NOT NULL,
+   sale_return_currency_conv         INT(11) NOT NULL,
+   sale_return_currency_conv_rate    DOUBLE(22, 0) NOT NULL,
+   sale_return_sale_invoice_no       INT(11) NOT NULL,
+   sale_return_total                 DOUBLE(22, 0) NOT NULL,
+   sale_return_gtotal                DOUBLE(22, 0) NOT NULL,
+   sale_return_tcs_enable            INT(11) NOT NULL,
+   sale_return_cost_center_enable    INT(11) NOT NULL,
+   sale_return_salesman_enable       INT(11) NOT NULL,
+   sale_return_billbybill_enable     INT(11) NOT NULL,
+   sale_return_transport_enable      INT(11) NOT NULL,
+   sale_return_eway_enable           INT(11) NOT NULL,
+   sale_return_eway_bill_no          VARCHAR(255)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   sale_return_eway_bill_date        DATE NOT NULL,
+   sale_return_narration             LONGTEXT
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   isactive                          INT(11) NOT NULL,
+   isdelete                          INT(11) NOT NULL DEFAULT 0,
+   cdate                             DATE NOT NULL,
+   user_id                           INT(11) NOT NULL,
+   company_id                        INT(11) NOT NULL,
+   usertype_id                       INT(11) NOT NULL,
+   currency_id                       INT(11) NOT NULL,
+   currency_rate                     DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   is_without_item                   TINYINT(4)
+                                       NOT NULL
+                                       DEFAULT 0
+                                       COMMENT '0-no,1-yes',
+   PRIMARY KEY(sale_return_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_ledger_month_budget_details
+(
+   budget_detail_id       INT(11) NOT NULL AUTO_INCREMENT,
+   budget_id              INT(11) NOT NULL,
+   budget_month           TEXT
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   budget_month_amount    INT(11) NOT NULL,
+   isdelete               TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                  TIMESTAMP(0) NOT NULL,
+   user_id                INT(11) NOT NULL,
+   company_id             INT(11) NOT NULL,
+   usertype_id            INT(11) NOT NULL,
+   PRIMARY KEY(budget_detail_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_proforma_trn
+   MODIFY COLUMN product_disc DOUBLE(5, 2) NOT NULL;
+
+ALTER TABLE tbl_proforma_trn
+   MODIFY COLUMN description MEDIUMTEXT
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN product_tax_cat INT(11) NOT NULL AFTER user_id;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN cgst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER product_tax_cat;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN cgst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER cgst_tax_per;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN sgst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER cgst_tax_rate;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN sgst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER sgst_tax_per;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN igst_tax_per DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER sgst_tax_rate;
+
+ALTER TABLE tbl_proforma_trn
+   ADD COLUMN igst_tax_rate DOUBLE(22, 0) NOT NULL DEFAULT 0;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN invoice_due_date DATE NOT NULL AFTER invoice_date;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN basic_total DOUBLE(22, 0) NOT NULL AFTER round_off;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN due_amount DOUBLE(22, 0) NOT NULL AFTER paid_amount;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN financial_year_id INT(11) NOT NULL AFTER lr_date;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN dc_enable TINYINT(4) NOT NULL DEFAULT 0 COMMENT '0-no,1-yes'
+   AFTER financial_year_id;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN po_enable TINYINT(4) NOT NULL DEFAULT 0 COMMENT '0-no,1-yes'
+   AFTER dc_enable;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN currency_enable TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER po_enable;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_id;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN sale_material_center INT(11) NOT NULL AFTER currency_rate;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN is_sales_order TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER sale_material_center;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN enable_cost_center TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER is_sales_order;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN enable_tcs_details TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER enable_cost_center;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN enable_ewaybill TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER enable_tcs_details;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN eway_bill_no VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER enable_ewaybill;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN eway_bill_date TIMESTAMP(0) NOT NULL AFTER eway_bill_no;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN payment_status TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-due,1-paid'
+   AFTER eway_bill_date;
+
+ALTER TABLE tbl_invoice
+   ADD COLUMN sale_return_status INT(11)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0:not return , 1 : return';
+
+CREATE TABLE tbl_advacne_receipt_trn
+(
+   transaction_id          INT(11) NOT NULL AUTO_INCREMENT,
+   trn_voucher_type        INT(11) NOT NULL,
+   trn_table               VARCHAR(255)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   trn_voucher_id          INT(11) NOT NULL,
+   cust_id                 INT(11) NOT NULL,
+   trn_type                INT(11) NOT NULL,
+   trn_ref                 VARCHAR(255)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   trn_amount              DOUBLE(22, 0) NOT NULL,
+   trn_gst                 DOUBLE(22, 0) NOT NULL,
+   trn_cgst                DOUBLE(22, 0) NOT NULL,
+   trn_sgst                DOUBLE(22, 0) NOT NULL,
+   trn_igst                DOUBLE(22, 0) NOT NULL,
+   trn_total               DOUBLE(22, 0) NOT NULL,
+   isdelete                TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                   TIMESTAMP(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   usertype_id             INT(11) NOT NULL,
+   currency_id             INT(11) NOT NULL,
+   currency_rate           DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   advance_receipt_type    INT(11)
+                             NULL
+                             DEFAULT 0
+                             COMMENT '0: receipt , 1 : refund',
+   is_refund_done          TINYINT(4) NOT NULL DEFAULT 0 COMMENT '0-no,1-yes',
+   PRIMARY KEY(transaction_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_contra_trn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER branch_id;
+
+ALTER TABLE tbl_contra_trn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL DEFAULT 1;
+
+CREATE TABLE tbl_payment_to_govt
+(
+   payment_id          INT(11) NOT NULL AUTO_INCREMENT,
+   voucher_type        INT(11) NOT NULL,
+   voucher_table       VARCHAR(200)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   voucher_id          INT(11) NOT NULL,
+   receipt_id          INT(11) NOT NULL,
+   gst_payment_type    INT(11) NOT NULL,
+   period_ending       DATE NOT NULL,
+   chalan_number       VARCHAR(255)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   chalan_date         DATE NOT NULL,
+   cheque_no           VARCHAR(255)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   cheque_date         DATE NOT NULL,
+   bank_name           VARCHAR(255)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   bank_code           VARCHAR(255)
+                         CHARACTER SET latin1
+                         COLLATE latin1_swedish_ci
+                         NOT NULL,
+   isdelete            TINYINT(4) NOT NULL DEFAULT 0,
+   cdate               TIMESTAMP(0) NOT NULL,
+   user_id             INT(11) NOT NULL,
+   company_id          INT(11) NOT NULL,
+   usertype_id         INT(11) NOT NULL,
+   currency_id         INT(11) NOT NULL,
+   currency_rate       DOUBLE(22, 0) NOT NULL,
+   PRIMARY KEY(payment_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_company_configuration
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_company_configuration
+   MODIFY COLUMN sales_time_load_pro INT(11)
+                   NOT NULL
+                   COMMENT '0:Product Load Wise 1: Product Dropdown Wise';
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN enable_billby_bill_blnc INT(11) NOT NULL AFTER enable_transport;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN gsp_username VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER enable_gst_filling;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN gsp_password VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER gsp_username;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN service_pro_type VARCHAR(150)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER item_mst_pro_type;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN service_pro_search VARCHAR(150)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER item_mst_pro_search;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN item_code_generate INT(11) NOT NULL AFTER usertype_id;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN common_item_diff_company INT(11) NOT NULL
+   AFTER item_code_generate;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN party_code_generate INT(11) NOT NULL
+   AFTER common_item_diff_company;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN multiple_make_item_master INT(11) NOT NULL
+   AFTER party_code_generate;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN enable_consolidate_so_item INT(11) NOT NULL
+   AFTER multiple_make_item_master;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN trading_stock INT(11) NOT NULL COMMENT '0:no,1:yes'
+   AFTER enable_assing_user;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN ledger_code INT(11) NOT NULL COMMENT '0.Manual 1.Automatic'
+   AFTER trading_stock;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN enable_consolidate_item INT(11) NOT NULL AFTER ledger_code;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN gross_balance_limit DOUBLE(22, 0) NOT NULL DEFAULT 0
+   AFTER enable_consolidate_item;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN batch_wise_stock INT(11) NOT NULL AFTER gross_balance_limit;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN batch_no_stock INT(11)
+                NOT NULL
+                COMMENT '0- General Wise,1- Product Wise'
+   AFTER batch_wise_stock;
+
+ALTER TABLE tbl_company_configuration
+   ADD COLUMN store_approval INT(11) NOT NULL;
+
+ALTER TABLE tbl_inquiry
+   MODIFY COLUMN won_date TIMESTAMP(0)
+                   NOT NULL
+                   DEFAULT '0000-00-00 00:00:00'
+                   COMMENT 'stores date when inquiry won';
+
+ALTER TABLE tbl_inquiry
+   MODIFY COLUMN project_name VARCHAR(255)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+CREATE TABLE tbl_common_mst
+(
+   common_mst_id         INT(11) NOT NULL AUTO_INCREMENT,
+   common_category_id    INT(11) NOT NULL,
+   common_mst_name       VARCHAR(255)
+                           CHARACTER SET latin1
+                           COLLATE latin1_swedish_ci
+                           NOT NULL,
+   common_mst_desc       VARCHAR(255)
+                           CHARACTER SET latin1
+                           COLLATE latin1_swedish_ci
+                           NOT NULL,
+   isactive              TINYINT(4) NOT NULL DEFAULT 1,
+   isdelete              TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                 TIMESTAMP(0) NOT NULL,
+   user_id               INT(11) NOT NULL,
+   company_id            INT(11) NOT NULL,
+   usertype_id           INT(11) NOT NULL,
+   PRIMARY KEY(common_mst_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE pro_gir
+(
+   pro_gir_id       INT(11) NOT NULL AUTO_INCREMENT,
+   gir_type         ENUM('I', 'O')
+                      CHARACTER SET latin1
+                      COLLATE latin1_swedish_ci
+                      NOT NULL
+                      COMMENT 'I = inward , O = outward',
+   gir_bill_type    ENUM('PO',
+                         'JW',
+                         'SA',
+                         'SR',
+                         'RC')
+                      CHARACTER SET latin1
+                      COLLATE latin1_swedish_ci
+                      NOT NULL
+                      COMMENT 'PO = PURCHASE ORDER , JW = JOBWORK , SA = SALE ,SR = SERVICE , RC = RETURN CHALAN  ',
+   gir_no           VARCHAR(255)
+                      CHARACTER SET latin1
+                      COLLATE latin1_swedish_ci
+                      NOT NULL,
+   vender_id        INT(11) NOT NULL,
+   gir_chalan_no    VARCHAR(255)
+                      CHARACTER SET latin1
+                      COLLATE latin1_swedish_ci
+                      NOT NULL,
+   gir_image        VARCHAR(255)
+                      CHARACTER SET latin1
+                      COLLATE latin1_swedish_ci
+                      NOT NULL,
+   gir_status       INT(11) NOT NULL,
+   cdate            TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id          INT(11) NOT NULL,
+   company_id       INT(11) NOT NULL,
+   branch_id        INT(11) NOT NULL DEFAULT 0,
+   PRIMARY KEY(pro_gir_id),
+   INDEX process_type_id_2 (pro_gir_id,
+                            gir_status,
+                            user_id,
+                            company_id) USING BTREE,
+   INDEX process_type_id (pro_gir_id,
+                          gir_status,
+                          user_id,
+                          company_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE product_mst
+   MODIFY COLUMN product_sale_rate DOUBLE(11, 2) NOT NULL;
+
+ALTER TABLE product_mst
+   MODIFY COLUMN product_purchase_rate DOUBLE(11, 2) NOT NULL;
+
+ALTER TABLE product_mst
+   ADD COLUMN product_min_order DECIMAL(10, 2) NOT NULL
+   AFTER product_max_stock;
+
+ALTER TABLE product_mst
+   ADD COLUMN product_max_order DECIMAL(10, 2) NOT NULL
+   AFTER product_min_order;
+
+ALTER TABLE product_mst
+   ADD COLUMN minimum_tolerance_value DECIMAL(10, 2) NOT NULL
+   AFTER maximum_tolerance;
+
+ALTER TABLE product_mst
+   ADD COLUMN maximum_tolerance_value DECIMAL(10, 2) NOT NULL
+   AFTER minimum_tolerance_value;
+
+ALTER TABLE product_mst
+   ADD COLUMN enable_stockbalance INT(11) NOT NULL DEFAULT 0
+   AFTER maximum_tolerance_value;
+
+ALTER TABLE product_mst
+   ADD COLUMN enable_negative_stock INT(11) NOT NULL DEFAULT 0
+   AFTER enable_stockbalance;
+
+ALTER TABLE product_mst
+   ADD COLUMN is_grn VARCHAR(5)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER scrap_qty;
+
+ALTER TABLE product_mst
+   ADD COLUMN reorder_qty VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER is_grn;
+
+ALTER TABLE product_mst
+   ADD COLUMN self_life_days INT(11) NULL AFTER reorder_qty;
+
+ALTER TABLE product_mst
+   ADD COLUMN warrenty_period INT(11) NULL AFTER self_life_days;
+
+ALTER TABLE product_mst
+   ADD COLUMN weight DECIMAL(10, 5) NULL AFTER warrenty_period;
+
+ALTER TABLE product_mst
+   ADD COLUMN model_no VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER weight;
+
+ALTER TABLE product_mst
+   ADD COLUMN item_type VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER model_no;
+
+ALTER TABLE product_mst
+   ADD COLUMN item_status INT(11) NOT NULL AFTER item_type;
+
+ALTER TABLE product_mst
+   ADD COLUMN item_status_date DATE NULL AFTER item_status;
+
+ALTER TABLE product_mst
+   ADD COLUMN item_status_reason LONGTEXT
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NULL
+   AFTER item_status_date;
+
+ALTER TABLE product_mst
+   ADD COLUMN product_mat_center INT(11) NOT NULL AFTER item_status_reason;
+
+ALTER TABLE product_mst
+   ADD COLUMN ref_csv_file VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER bom_required;
+
+ALTER TABLE product_mst
+   ADD COLUMN product_stock_count VARCHAR(10)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+                DEFAULT 'yes'
+   AFTER ref_csv_file;
+
+ALTER TABLE product_mst
+   ADD COLUMN taxinvoice_start INT(11) NOT NULL DEFAULT 0
+   AFTER product_stock_count;
+
+ALTER TABLE product_mst
+   ADD COLUMN invoice_format INT(11) NOT NULL DEFAULT 3
+   AFTER taxinvoice_start;
+
+ALTER TABLE product_mst
+   ADD COLUMN format_value VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+                DEFAULT 'PROD/'
+   AFTER invoice_format;
+
+ALTER TABLE product_mst
+   ADD COLUMN end_format_value VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+                DEFAULT '/2020-21';
+
+ALTER TABLE tbl_erpmodule_mst
+   MODIFY COLUMN `Cdate` TIMESTAMP(0) NOT NULL;
+
+CREATE TABLE tbl_wo_material_trn
+(
+   wo_material_trn_id          INT(11) NOT NULL AUTO_INCREMENT,
+   sp_id                       INT(11) NOT NULL,
+   rp_id                       INT(11) NOT NULL,
+   product_id                  INT(11) NOT NULL,
+   material_parameter_id       INT(11) NOT NULL,
+   material_parameter_value    VARCHAR(255)
+                                 CHARACTER SET latin1
+                                 COLLATE latin1_swedish_ci
+                                 NOT NULL,
+   wo_material_trn_status      INT(11) NOT NULL,
+   user_id                     INT(11) NOT NULL,
+   company_id                  INT(11) NOT NULL,
+   branch_id                   INT(11) NOT NULL,
+   PRIMARY KEY(wo_material_trn_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE unit_mst
+   ADD COLUMN unit_code VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER unit_name;
+
+CREATE TABLE tbl_ledger_depreciation
+(
+   depreciate_id             INT(11) NOT NULL AUTO_INCREMENT,
+   depreciate_ledger_id      INT(11) NOT NULL DEFAULT 0,
+   depreciate_annual_rate    INT(11) NOT NULL,
+   depreciate_half_rate      INT(11) NOT NULL,
+   depreciate_opening        INT(11) NOT NULL,
+   depreciate_rate_wdv       INT(11) NOT NULL,
+   depreciation_status       INT(11) NOT NULL,
+   isdelete                  TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                     TIMESTAMP(0) NOT NULL,
+   user_id                   INT(11) NOT NULL,
+   company_id                INT(11) NOT NULL,
+   usertype_id               INT(11) NOT NULL,
+   PRIMARY KEY(depreciate_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_bill_sundry_transaction
+(
+   sundry_id               INT(11) NOT NULL AUTO_INCREMENT,
+   sundry_ledger_id        INT(11) NOT NULL,
+   sundry_amount           DOUBLE(22, 0) NOT NULL,
+   sundry_voucher_id       INT(11) NOT NULL,
+   sundry_voucher_type     INT(11) NOT NULL,
+   sundry_voucher_table    VARCHAR(255)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   isdelete                TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                   TIMESTAMP(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   usertype_id             INT(11) NOT NULL,
+   currency_id             INT(11) NOT NULL,
+   currency_rate           DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(sundry_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN transporter VARCHAR(250)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN mode_of_transport VARCHAR(250)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN freight VARCHAR(250)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN l_r_no VARCHAR(250)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NULL;
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN return_date DATE NULL;
+
+CREATE TABLE tbl_ledger_bill_sundry
+(
+   bill_sundry_id          INT(11) NOT NULL AUTO_INCREMENT,
+   sundry_ledger_id        INT(11) NOT NULL,
+   sundry_type             TINYINT(4) NOT NULL,
+   sundry_nature           INT(11) NOT NULL,
+   sundry_default_value    DOUBLE(22, 0) NOT NULL,
+   sundry_amount_of        TINYINT(4)
+                             NOT NULL
+                             COMMENT '1:absolute , 2 : percentage',
+   sundry_calculate_on     TINYINT(4) NOT NULL,
+   isdelete                TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                   TIMESTAMP(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   usertype_id             INT(11) NOT NULL,
+   PRIMARY KEY(bill_sundry_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_company
+   MODIFY COLUMN cust_key VARCHAR(150)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_company
+   MODIFY COLUMN vatno VARCHAR(50)
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL
+                   COMMENT 'GSTIN NO';
+
+ALTER TABLE tbl_company
+   ADD COLUMN city_name VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER stateid;
+
+ALTER TABLE tbl_company
+   ADD COLUMN pincode INT(11) NOT NULL AFTER city_name;
+
+CREATE TABLE pro_gir_attch
+(
+   gir_attch_id    INT(11) NOT NULL AUTO_INCREMENT,
+   gir_id          INT(11) NOT NULL,
+   gir_file        VARCHAR(150)
+                     CHARACTER SET latin1
+                     COLLATE latin1_swedish_ci
+                     NOT NULL,
+   cdate           TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id         INT(11) NOT NULL,
+   company_id      INT(11) NOT NULL,
+   PRIMARY KEY(gir_attch_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_tcs_reverse
+(
+   sale_return_id              INT(11) NOT NULL AUTO_INCREMENT,
+   sale_return_voucher_id      INT(11) NOT NULL,
+   sale_return_ledger_id       INT(11) NOT NULL,
+   sale_return_section_code    VARCHAR(255)
+                                 CHARACTER SET latin1
+                                 COLLATE latin1_swedish_ci
+                                 NOT NULL,
+   sale_return_cat_code        VARCHAR(255)
+                                 CHARACTER SET latin1
+                                 COLLATE latin1_swedish_ci
+                                 NOT NULL,
+   sale_return_status          INT(11) NOT NULL,
+   isdelete                    INT(11) NOT NULL,
+   cdate                       TIMESTAMP(0) NOT NULL,
+   user_id                     INT(11) NOT NULL,
+   company_id                  INT(11) NOT NULL,
+   usertype_id                 INT(11) NOT NULL,
+   currency_id                 INT(11) NOT NULL,
+   currency_rate               DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(sale_return_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_receipt
+   MODIFY COLUMN payment_type INT(11)
+                   NOT NULL
+                   COMMENT '1-make payment,2-recieved payment';
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN enable_billby_bill_show TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER branch_id;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN enable_cost_center TINYINT(4)
+                NOT NULL
+                DEFAULT 0
+                COMMENT '0-no,1-yes'
+   AFTER enable_billby_bill_show;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN gst_nature INT(11) NOT NULL AFTER enable_cost_center;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN is_pdc INT(11) NOT NULL DEFAULT 0 COMMENT '0:regular , 1 : PDC'
+   AFTER gst_nature;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN currency_enable TINYINT(4) NOT NULL COMMENT '0-no,1-yes'
+   AFTER is_pdc;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN pdc_date DATE NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER pdc_date;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL DEFAULT 1
+   AFTER currency_id;
+
+ALTER TABLE tbl_receipt
+   ADD COLUMN balance_typeid TINYINT(4) NOT NULL COMMENT '1-credit,2-debit';
+
+CREATE TABLE tbl_product_alternative_product
+(
+   product_alternative_product_id    INT(11) NOT NULL AUTO_INCREMENT,
+   alternative_product_id            INT(11) NOT NULL,
+   product_id                        INT(11) NOT NULL,
+   cdate                             DATE NOT NULL,
+   user_id                           INT(11) NOT NULL,
+   company_id                        INT(11) NOT NULL,
+   branch_id                         INT(11) NOT NULL,
+   PRIMARY KEY(product_alternative_product_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE mst_material_spec
+   ADD COLUMN m_type_width VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER ms_name;
+
+ALTER TABLE mst_material_spec
+   ADD COLUMN m_type_height VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER m_type_width;
+
+ALTER TABLE mst_material_spec
+   ADD COLUMN m_type_thick VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER m_type_height;
+
+ALTER TABLE mst_material_spec
+   ADD COLUMN m_type_density VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER m_type_thick;
+
+CREATE TABLE tbl_tds_tax_category_detail
+(
+   tds_cat_detail_id     INT(11) NOT NULL AUTO_INCREMENT,
+   tds_cat_id            INT(11) NOT NULL,
+   tds_payee             INT(11) NOT NULL,
+   tds_thresold_limit    DOUBLE(22, 0) NOT NULL,
+   tds_with_pan          DOUBLE(22, 0) NOT NULL,
+   tds_without_pan       DOUBLE(22, 0) NOT NULL,
+   tds_surcharge         DOUBLE(22, 0) NOT NULL,
+   isdelete              TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                 TIMESTAMP(0) NOT NULL,
+   user_id               INT(11) NOT NULL,
+   company_id            INT(11) NOT NULL,
+   usertype_id           INT(11) NOT NULL,
+   PRIMARY KEY(tds_cat_detail_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_set_main_process
+   ADD COLUMN bom_version_id INT(11) NOT NULL;
+
+CREATE TABLE pro_ms_document_extensions
+(
+   document_extension_id        INT(11) NOT NULL AUTO_INCREMENT,
+   document_extension_name      VARCHAR(400)
+                                  CHARACTER SET latin1
+                                  COLLATE latin1_swedish_ci
+                                  NOT NULL,
+   document_extension_status    INT(11) NOT NULL,
+   cdate                        TIMESTAMP(0)
+                                  NOT NULL
+                                  DEFAULT CURRENT_TIMESTAMP,
+   user_id                      INT(11) NOT NULL,
+   company_id                   INT(11) NOT NULL,
+   branch_id                    INT(11) NOT NULL DEFAULT 0,
+   PRIMARY KEY(document_extension_id),
+   INDEX process_type_id_2 (document_extension_id,
+                            document_extension_name,
+                            document_extension_status,
+                            user_id,
+                            company_id) USING BTREE,
+   INDEX process_type_id (document_extension_id,
+                          document_extension_name,
+                          document_extension_status,
+                          user_id,
+                          company_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_job_work_sub_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+CREATE TABLE tbl_store_release
+(
+   release_id           INT(11) NOT NULL AUTO_INCREMENT,
+   store_request_id     INT(11) NOT NULL,
+   p_id                 INT(11) NOT NULL,
+   rp_id                INT(11) NOT NULL,
+   release_qty          VARCHAR(100)
+                          CHARACTER SET latin1
+                          COLLATE latin1_swedish_ci
+                          NOT NULL,
+   release_unit         INT(11) NOT NULL,
+   release_conv_qty     VARCHAR(100)
+                          CHARACTER SET latin1
+                          COLLATE latin1_swedish_ci
+                          NOT NULL,
+   release_conv_unit    INT(11) NOT NULL,
+   cdate                DATETIME(0) NOT NULL,
+   user_id              INT(11) NOT NULL,
+   company_id           INT(11) NOT NULL,
+   branch_id            INT(11) NOT NULL,
+   PRIMARY KEY(release_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_process_stock_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+CREATE TABLE tbl_ledger_billbybill_opening
+(
+   bill_opening_id      INT(11) NOT NULL AUTO_INCREMENT,
+   bill_ledger_id       INT(11) NOT NULL,
+   bill_ref_no          VARCHAR(255)
+                          CHARACTER SET latin1
+                          COLLATE latin1_swedish_ci
+                          NOT NULL,
+   bill_opening_date    DATE NOT NULL,
+   bill_amount          INT(11) NOT NULL,
+   paid_amount          DOUBLE(22, 0) NOT NULL,
+   due_amount           DOUBLE(22, 0) NOT NULL,
+   bill_entry_type      TINYINT(4) NOT NULL,
+   bill_due_date        DATE NOT NULL,
+   payment_status       TINYINT(4) NOT NULL DEFAULT 0 COMMENT '0-due,1-paid',
+   isdelete             TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                TIMESTAMP(0) NOT NULL,
+   user_id              INT(11) NOT NULL,
+   company_id           INT(11) NOT NULL,
+   usertype_id          INT(11) NOT NULL,
+   PRIMARY KEY(bill_opening_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_product_party_purchase
+   MODIFY COLUMN party_rate DOUBLE(20, 2) NOT NULL;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN card_type INT(11) NOT NULL AFTER party_purchase_id;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN pur_card_no VARCHAR(50)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER card_type;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN product_id INT(11) NOT NULL AFTER party_id;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN product_party_purchase_status INT(11) NOT NULL
+   AFTER party_product;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN pur_card_date DATE NOT NULL AFTER product_party_purchase_status;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN valid_date DATE NOT NULL AFTER pur_card_date;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN effective_date DATE NOT NULL AFTER valid_date;
+
+ALTER TABLE tbl_product_party_purchase
+   ADD COLUMN card_status INT(11) NOT NULL AFTER effective_date;
+
+CREATE TABLE pro_ms_item_type
+(
+   product_item_type_id        INT(11) NOT NULL AUTO_INCREMENT,
+   product_item_type_name      VARCHAR(400)
+                                 CHARACTER SET latin1
+                                 COLLATE latin1_swedish_ci
+                                 NOT NULL,
+   product_item_type_status    INT(11) NOT NULL,
+   cdate                       TIMESTAMP(0)
+                                 NOT NULL
+                                 DEFAULT CURRENT_TIMESTAMP,
+   user_id                     INT(11) NOT NULL,
+   company_id                  INT(11) NOT NULL,
+   branch_id                   INT(11) NOT NULL DEFAULT 0,
+   PRIMARY KEY(product_item_type_id),
+   INDEX process_type_id_2 (product_item_type_id,
+                            product_item_type_name,
+                            product_item_type_status,
+                            user_id,
+                            company_id) USING BTREE,
+   INDEX process_type_id (product_item_type_id,
+                          product_item_type_name,
+                          product_item_type_status,
+                          user_id,
+                          company_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_registered_expense
+(
+   regd_expense_id            INT(11) NOT NULL AUTO_INCREMENT,
+   voucher_type               INT(11) NOT NULL,
+   voucher_table              VARCHAR(200)
+                                CHARACTER SET latin1
+                                COLLATE latin1_swedish_ci
+                                NOT NULL,
+   voucher_id                 INT(11) NOT NULL DEFAULT 0,
+   receipt_id                 INT(11) NOT NULL,
+   gst_report_basis           INT(11) NOT NULL,
+   regd_party_id              INT(11) NOT NULL,
+   regd_party_name            VARCHAR(255)
+                                CHARACTER SET latin1
+                                COLLATE latin1_swedish_ci
+                                NOT NULL,
+   regd_type_of_dealer        INT(11) NOT NULL,
+   regd_state                 INT(11) NOT NULL,
+   regd_gstin                 VARCHAR(255)
+                                CHARACTER SET latin1
+                                COLLATE latin1_swedish_ci
+                                NOT NULL,
+   regd_account               INT(11) NOT NULL,
+   regd_purchase_inv_no       VARCHAR(255)
+                                CHARACTER SET latin1
+                                COLLATE latin1_swedish_ci
+                                NOT NULL,
+   regd_purchase_bill_date    DATE NOT NULL,
+   regd_hsn                   VARCHAR(255)
+                                CHARACTER SET latin1
+                                COLLATE latin1_swedish_ci
+                                NOT NULL,
+   regd_unit                  INT(11) NOT NULL,
+   regd_taxable_amount        DOUBLE(22, 0) NOT NULL,
+   regd_gst                   DOUBLE(22, 0) NOT NULL,
+   regd_cgst                  DOUBLE(22, 0) NOT NULL,
+   regd_sgst                  DOUBLE(22, 0) NOT NULL,
+   regd_igst                  DOUBLE(22, 0) NOT NULL,
+   regd_itc                   INT(11) NOT NULL,
+   isdelete                   TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                      TIMESTAMP(0) NOT NULL,
+   user_id                    INT(11) NOT NULL,
+   company_id                 INT(11) NOT NULL,
+   usertype_id                INT(11) NOT NULL,
+   currency_id                INT(11) NOT NULL,
+   currency_rate              DOUBLE(22, 0) NOT NULL,
+   PRIMARY KEY(regd_expense_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_process_reserve_stock
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_process_reserve_stock
+   ADD COLUMN approve_base_stock VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER base_stock;
+
+ALTER TABLE tbl_process_reserve_stock
+   ADD COLUMN approve_convert_stock VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER conv_stock;
+
+CREATE TABLE tbl_transport_transaction
+(
+   transport_transaction_id          INT(11) NOT NULL AUTO_INCREMENT,
+   transport_id                      INT(11) NOT NULL,
+   transport_gr_no                   VARCHAR(255)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   transport_gr_date                 DATE NOT NULL,
+   distance_km                       INT(11) NOT NULL,
+   transport_mode                    TINYINT(4) NOT NULL,
+   transport_vehicle_no              VARCHAR(255)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   transport_station                 VARCHAR(255)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   transport_pincode                 INT(11) NOT NULL,
+   transport_doc_no                  VARCHAR(200)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   transport_doc_date                DATE NOT NULL,
+   transport_voucher                 INT(11) NOT NULL,
+   transport_transaction_table       VARCHAR(255)
+                                       CHARACTER SET latin1
+                                       COLLATE latin1_swedish_ci
+                                       NOT NULL,
+   transport_transaction_table_id    INT(11) NOT NULL,
+   transportation_status             INT(11) NOT NULL,
+   transport_eway_bill_status        INT(11) NOT NULL DEFAULT 0,
+   trasport_einvoice_status          INT(11) NOT NULL DEFAULT 0,
+   isdelete                          INT(11) NOT NULL,
+   cdate                             TIMESTAMP(0) NOT NULL,
+   user_id                           INT(11) NOT NULL,
+   company_id                        INT(11) NOT NULL,
+   usertype_id                       INT(11) NOT NULL,
+   currency_id                       INT(11) NOT NULL,
+   currency_rate                     DOUBLE(22, 0) NOT NULL,
+   PRIMARY KEY(transport_transaction_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_contra
+   ADD COLUMN currency_enable TINYINT(4) NOT NULL DEFAULT 0 AFTER branch_id;
+
+ALTER TABLE tbl_contra
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_contra
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL;
+
+CREATE TABLE tbl_bill_by_bill_adjustment_transaction
+(
+   bill_transaction_id    INT(11) NOT NULL AUTO_INCREMENT,
+   bill_method            INT(11) NOT NULL,
+   bill_ref               VARCHAR(255)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   bill_ref_type          TINYINT(4) NOT NULL COMMENT '0-invoice,1-ledger',
+   bill_amount            DOUBLE(22, 0) NOT NULL,
+   bill_due_date          DATE NOT NULL,
+   bill_entry_type        INT(11) NOT NULL,
+   bill_voucher_type      INT(11) NOT NULL,
+   bill_ledger_id         INT(11) NOT NULL,
+   bill_table             VARCHAR(255)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   bill_table_id          INT(11) NOT NULL,
+   bill_status            INT(11) NOT NULL DEFAULT 0,
+   isdelete               TINYINT(4) NOT NULL,
+   cdate                  TIMESTAMP(0) NOT NULL,
+   user_id                INT(11) NOT NULL,
+   company_id             INT(11) NOT NULL,
+   usertype_id            INT(11) NOT NULL,
+   currency_id            INT(11) NOT NULL,
+   currency_rate          DOUBLE(22, 0) NOT NULL DEFAULT 1,
+   PRIMARY KEY(bill_transaction_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_sales_order_dispatch
+(
+   sales_order_dispatch_id        INT(11) NOT NULL AUTO_INCREMENT,
+   cust_id                        INT(11) NOT NULL,
+   sales_order_id                 INT(11) NOT NULL,
+   sales_order_dispatch_status    INT(11) NOT NULL,
+   sales_order_date               DATE NOT NULL,
+   user_id                        INT(11) NOT NULL,
+   cdate                          DATETIME(0) NOT NULL,
+   branch_id                      INT(11) NOT NULL,
+   company_id                     INT(11) NOT NULL,
+   PRIMARY KEY(sales_order_dispatch_id),
+   INDEX cust_id (cust_id,
+                  sales_order_id,
+                  sales_order_dispatch_status,
+                  user_id,
+                  branch_id,
+                  company_id) USING BTREE
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_product_code_series_old
+(
+   co_id             INT(11) NOT NULL AUTO_INCREMENT,
+   pr_type           INT(11) NOT NULL,
+   pr_code_short     VARCHAR(255)
+                       CHARACTER SET latin1
+                       COLLATE latin1_swedish_ci
+                       NOT NULL,
+   pr_code_series    INT(11) NOT NULL,
+   PRIMARY KEY(co_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_allocate_process
+   MODIFY COLUMN product_version TEXT
+                   CHARACTER SET latin1
+                   COLLATE latin1_swedish_ci
+                   NOT NULL;
+
+ALTER TABLE tbl_allocate_process
+   ADD COLUMN perent_id INT(11) NOT NULL;
+
+CREATE TABLE tbl_ledger_currency_opening
+(
+   currency_opening_id             INT(11) NOT NULL AUTO_INCREMENT,
+   currency_id                     INT(11) NOT NULL,
+   currency_ledger_id              INT(11) NOT NULL,
+   currency_opening_balance        INT(11) NOT NULL,
+   currency_entry_type             INT(11) NOT NULL,
+   curreency_opening_balance_rs    INT(11) NOT NULL,
+   currency_status                 TINYINT(4) NOT NULL DEFAULT 0,
+   isdelete                        TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                           TIMESTAMP(0) NOT NULL,
+   user_id                         INT(11) NOT NULL,
+   company_id                      INT(11) NOT NULL,
+   usertype_id                     INT(11) NOT NULL,
+   PRIMARY KEY(currency_opening_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_tax_category
+(
+   tax_cat_id      INT(11) NOT NULL AUTO_INCREMENT,
+   tax_cat_name    VARCHAR(255)
+                     CHARACTER SET latin1
+                     COLLATE latin1_swedish_ci
+                     NOT NULL,
+   tax_gst         DOUBLE(22, 0) NOT NULL,
+   isdelete        TINYINT(4) NOT NULL DEFAULT 0,
+   cdate           TIMESTAMP(0) NOT NULL,
+   user_id         INT(11) NOT NULL,
+   company_id      INT(11) NOT NULL,
+   usertype_id     INT(11) NOT NULL,
+   PRIMARY KEY(tax_cat_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+CREATE TABLE tbl_store_request
+(
+   store_request_id        INT(11) NOT NULL AUTO_INCREMENT,
+   p_id                    INT(11) NOT NULL,
+   rp_id                   INT(11) NOT NULL,
+   base_qty                VARCHAR(100)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   base_unit               INT(11) NOT NULL,
+   conv_unit               INT(11) NOT NULL,
+   conv_qty                VARCHAR(100)
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   remark                  TEXT
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   store_request_status    INT(11) NOT NULL,
+   cdate                   DATETIME(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   branch_id               INT(11) NOT NULL,
+   PRIMARY KEY(store_request_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_group
+   ADD COLUMN group_start_series INT(11) NOT NULL AFTER branch_id;
+
+ALTER TABLE tbl_group
+   ADD COLUMN group_format INT(11) NOT NULL AFTER group_start_series;
+
+ALTER TABLE tbl_group
+   ADD COLUMN format_value VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER group_format;
+
+ALTER TABLE tbl_group
+   ADD COLUMN end_format_value VARCHAR(200)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL;
+
+CREATE TABLE tbl_narration_mst
+(
+   narration_id            INT(11) NOT NULL AUTO_INCREMENT,
+   narration_voucher_id    INT(11) NOT NULL,
+   narration_detail        TEXT
+                             CHARACTER SET latin1
+                             COLLATE latin1_swedish_ci
+                             NOT NULL,
+   isdelete                TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                   TIMESTAMP(0) NOT NULL,
+   user_id                 INT(11) NOT NULL,
+   company_id              INT(11) NOT NULL,
+   usertype_id             INT(11) NOT NULL,
+   PRIMARY KEY(narration_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN debitnote_invoice_no INT(11) NOT NULL AFTER user_id;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_cgst_tax_per DOUBLE(22, 0) NOT NULL
+   AFTER debitnote_invoice_no;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_cgst_tax_amt DOUBLE(22, 0) NOT NULL
+   AFTER purchase_return_cgst_tax_per;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_sgst_tax_per DOUBLE(22, 0) NOT NULL
+   AFTER purchase_return_cgst_tax_amt;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_sgst_tax_amt DOUBLE(22, 0) NOT NULL
+   AFTER purchase_return_sgst_tax_per;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_igst_tax_per DOUBLE(22, 0) NOT NULL
+   AFTER purchase_return_sgst_tax_amt;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_igst_tax_amt DOUBLE(22, 0) NOT NULL
+   AFTER purchase_return_igst_tax_per;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN company_id INT(11) NOT NULL AFTER purchase_return_igst_tax_amt;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN purchase_return_total_amount DOUBLE(22, 0) NOT NULL
+   AFTER company_id;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN currency_id INT(11) NOT NULL AFTER purchase_return_total_amount;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_id;
+
+ALTER TABLE tbl_debitnote_trn
+   ADD COLUMN product_tax_cat INT(11) NOT NULL;
+
+ALTER TABLE pro_bom_process
+   ADD CONSTRAINT pro_bom_process_ibfk_2 FOREIGN KEY(product_id)
+          REFERENCES product_mst (product_id)
+             ON UPDATE CASCADE
+             ON DELETE CASCADE;
+
+ALTER TABLE pro_bom_process
+   ADD CONSTRAINT pro_bom_process_ibfk_3 FOREIGN KEY(pr_process_id)
+          REFERENCES tbl_product_process (pr_process_id)
+             ON UPDATE CASCADE
+             ON DELETE CASCADE;
+
+ALTER TABLE pro_bom_process
+   ADD CONSTRAINT pro_bom_process_ibfk_5 FOREIGN KEY(product_id)
+          REFERENCES product_mst (product_id)
+             ON UPDATE CASCADE
+             ON DELETE CASCADE;
+
+ALTER TABLE pro_bom_process
+   ADD CONSTRAINT pro_bom_process_ibfk_6 FOREIGN KEY(pr_process_id)
+          REFERENCES tbl_product_process (pr_process_id)
+             ON UPDATE CASCADE
+             ON DELETE CASCADE;
+
+ALTER TABLE tbl_purchaseorder
+   MODIFY COLUMN po_approval_status INT(11)
+                   NOT NULL
+                   COMMENT '0:NO, 1:Approved';
+
+ALTER TABLE tbl_purchaseorder
+   MODIFY COLUMN adate TIMESTAMP(0) NOT NULL DEFAULT '0000-00-00 00:00:00';
+
+ALTER TABLE tbl_purchaseorder
+   ADD COLUMN currency_enable INT(11) NOT NULL COMMENT '0-no,1-yes'
+   AFTER consignee_id;
+
+ALTER TABLE tbl_purchaseorder
+   ADD COLUMN currency_rate DOUBLE(22, 0) NOT NULL AFTER currency_enable;
+
+ALTER TABLE tbl_purchaseorder
+   ADD COLUMN revise_status INT(11) NOT NULL COMMENT '1=Yes,0=No'
+   AFTER purchase_status;
+
+ALTER TABLE tbl_purchaseorder
+   ADD COLUMN start_purchaseorder_id INT(11) NOT NULL AFTER revise_status;
+
+ALTER TABLE tbl_purchaseorder
+   ADD COLUMN prev_purchaseorder_id INT(11) NOT NULL
+   AFTER start_purchaseorder_id;
+
+ALTER TABLE tbl_purchaseorder
+   ADD COLUMN po_type INT(11) NOT NULL COMMENT '0.goods 1.services 2.jobwork';
+
+ALTER TABLE tbl_purchasetrntemp
+   MODIFY COLUMN pending_approve_status INT(11) NOT NULL;
+
+DROP TABLE IF EXISTS product_mst_old CASCADE;
+
+ALTER TABLE tbl_qc_trn
+   DROP COLUMN heat_no;
+
+ALTER TABLE tbl_purchasetrntemp
+   MODIFY COLUMN pending_approve_status INT(11) NOT NULL;
+
+ALTER TABLE tbl_followup
+   MODIFY COLUMN branch_id INT(11) NOT NULL;
+
+ALTER TABLE tbl_mrn
+   DROP COLUMN reject_product_id;
+
+ALTER TABLE tbl_customer_wise_product
+   DROP COLUMN dia_allocate_id;
+
+DROP TABLE IF EXISTS tbl_scrap_product_entry CASCADE;
+SET FOREIGN_KEY_CHECKS = @ORIGINAL_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS = @ORIGINAL_UNIQUE_CHECKS;
+SET SQL_MODE = @ORIGINAL_SQL_MODE;
+
+ALTER TABLE `tbl_grn_trn`  ADD `pro_entry_date` DATE NULL DEFAULT NULL  AFTER `purchaseorder_id`;
+
+ALTER TABLE `tbl_grn_trn` ADD `pro_mfg_date` DATE NULL DEFAULT NULL AFTER `product_conv_qty`;
+
+ALTER TABLE `tbl_grn_trn` ADD `pro_exp_date` DATE NULL DEFAULT NULL AFTER `pro_mfg_date`;
+
+CREATE TABLE tbl_company_special_field_permission
+(
+   sp_field_permission_id    INT(11) NOT NULL AUTO_INCREMENT,
+   hermattic_permission      INT(11) NOT NULL,
+   elcon_permission          INT(11) NOT NULL,
+   maruti_permission         INT(11) NOT NULL,
+   rb_auto_permission        INT(11) NOT NULL,
+   cdate                     TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   user_id                   INT(11) NOT NULL,
+   company_id                INT(11) NOT NULL,
+   usertype_id               INT(11) NOT NULL,
+   PRIMARY KEY(sp_field_permission_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_grn_sub_trn
+   ADD COLUMN process_allocate_id INT(11) NOT NULL AFTER job_work_sub_trn_id;

@@ -1,0 +1,14 @@
+	modified:   app/company/index.php
+        modified:   app/companylogin/index.php
+        modified:   app/setting/index.php
+        modified:   config/config.php
+        modified:   view/.htaccess
+        modified:   view/create_company.php
+        modified:   view/js/app/companylogin.js
+        modified:   view/js/app/login.js
+        modified:   view/setting.php
+      
+		app/key_api.php
+        app/licence/
+        view/js/app/licence.js
+        view/licence.php

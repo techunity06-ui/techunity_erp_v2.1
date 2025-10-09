@@ -1,0 +1,7 @@
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Warning:  include_once(../../include/common_functions.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 8
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../../include/common_functions.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 8
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 668
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 670
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Notice:  Undefined index: cust_id in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 671
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Notice:  Undefined index: product_id in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 672
+[23-Feb-2022 18:54:16 Asia/Kolkata] PHP Fatal error:  Call to undefined function get_product_detail() in /home/brperp/public_html/hermettic_sw_v12/app/stockreport/index.php on line 674

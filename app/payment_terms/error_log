@@ -1,0 +1,3 @@
+[15-Feb-2022 10:42:56 Asia/Kolkata] PHP Notice:  Use of undefined constant user_id - assumed 'user_id' in /home/brperp/public_html/hermettic_sw_v12/app/payment_terms/index.php on line 82
+[16-Feb-2022 17:23:32 Asia/Kolkata] PHP Notice:  Use of undefined constant user_id - assumed 'user_id' in /home/brperp/public_html/hermettic_sw_v12/app/payment_terms/index.php on line 82
+[19-Feb-2022 12:55:50 Asia/Kolkata] PHP Notice:  Use of undefined constant user_id - assumed 'user_id' in /home/brperp/public_html/hermettic_sw_v12/app/payment_terms/index.php on line 82

@@ -1,0 +1,3 @@
+party_purchase_id,card_type,pur_card_no,party_id,product_id,party_rate,party_product,product_party_purchase_status,pur_card_date,valid_date,effective_date,card_status,is_aproove,is_active,cdate,user_id,company_id,branch_id
+1,0,PC/001/21-22,24464,0,0,0,0,24-01-2022,0000-00-00,0000-00-00,0,1,0,24-01-2022 17:30,1,1,1
+,,,,,,,,,,,,,,,,,

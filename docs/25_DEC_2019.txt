@@ -1,0 +1,14 @@
+first time add admin assign issue
+add task => add follow up
+add time inquiry flp 2 nd time same user not adding
+assign user required
+add quotation time assign task
+PO attach time display party details for confirm party creation
+display time default pending-> task list
+Quotation PO wise Approval
+multiple time entry for payment-> in separate trn table
+
+in stock show delivery date wise display in stock status                                                                            
+Invoice ->
+Quot to Invoice product wise track
+Multiple serial number wise entry

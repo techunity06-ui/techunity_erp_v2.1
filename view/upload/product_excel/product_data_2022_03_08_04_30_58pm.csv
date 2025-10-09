@@ -1,0 +1,217 @@
+Product Type,Product Category,Item Code,Product Name,Branch,Hsn Code,Base Unit,Base Qty,Conv Unit,Conv Qty,Product Material,Product Valuation,Product Barcode,Net weight,Making time,Lead time,Gst type,Sale rate,Purchase Rate,Weight,Minimum stock,Maximum stock,Grn required,Reorder qty,Self life days,Warranty period,Model no,Item type,Material Center,Stock Count,Bom required,Item Status,Batch wise stock manage
+Finish Product,LASER CUTTING,FP00001,UPS 3200B,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00002,UBS 3200 AUTO,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00003,UBS 3200 MANUAL,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00004,UPS 3200A,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00005,UPS 3200C,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00006,UPS 3200A+/HEAVY SLIDER,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00007,UPS 3200A++,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00008,EXPERT 2300,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00009,EXPERT 2600,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00010,EXPERT 3600,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00011,EXPERT 3800/NC,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00012,EXPERT 3800/PUR,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00013,EXPERT 4600 WOOD,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00014,EXPERT 4800 WOOD,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00015,UPF 1000,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00016,U1004/SLIDER,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00017,U1004A/FIXED,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00018,UI006,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00019,UR1008,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00020,URP 01,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00021,URP 02,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00022,UCP 1001,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00023,UCP 1004,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00024,UCP 1005,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00025,UCP 1003,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00026,UHP 1002,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00027,UMB 21,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00028,UMB 42,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00029,UMB 63,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00030,UVP 1012,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00031,UVP 1011,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00032,UFM 4,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00033,UFM 4+1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00034,UFM 5,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00035,UFM 5+1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00036,UFM 6,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00037,UFM 6+1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00038,UBS 13,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00039,UCR1325A,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00040,UCR1325A SERVO,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00041,UCR1325B,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00042,UCR1325A-EASY SERVO,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00043,UD001,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00044,UD002,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00045,UD003,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00046,DUST COLLECTOR-UD 001,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00047,DUST COLLECTOR- UD 002,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00048,DUST COLLECTOR-UD 003,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00049,PNEUMATIC CLAMP-6 CYLINDER,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00050,UVP HEATER SIDE TROLLY,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00051,Trial BOM,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00052,pathik demo,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00053,1  FROSTY WHITE  2.0 X 22,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00054,pathikp,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00055,maulik_pro,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00056,030 ivory 0.45 x 22,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00057,036 LILAC 0.45 X 22 ,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00058,Frost White,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00059,200616045015 IMPELLER CMPF-45 PFA,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00060,12122,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00061,abc,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00062,harshil Product,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00063,CASTING12,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00064,ascending ,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00065,ac,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00066,stabilzer,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00067,Product Test,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00068,M S Flat 21x9mm,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00069,M S Flat 25x8,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00070,UMAIR,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00071,Mobile,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00072,xfasd,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00073,asda,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00074,Orange peel Electro hydraulic grab (2.5CUMTR),BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00075,Orange peel Electro hydraulic grab (2.5CUMTR),BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00076,Maulik Demo-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00077,Maulik Demo-2,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00078,Maulik Demo - 3,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00079,HDG AVG 66 MIC PTCT 50 x 50 x 2 MM THK (2.5 MTR LONG),BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00080,Blower Automatic,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00081,Demo test,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00082,demo bom,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00083,Demo Sanat ,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00084,Testing 123,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00085,Blower(manual),BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00086,Blow Down Vessel,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00087,TEST MACHINE ,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00088,maulik test,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00089,SCREW AND BARRAL FG,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00090,test new,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00091,hsn demo,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00092,Bhargav,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00093,Maulik-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00094,maulik-2,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00095,test,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00096,jamesdemo,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00097,test image,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00098,tests demo sss,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00099,D2H ADAPTOR,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00100,ms circle,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00101,maulik,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00102,dm1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00103,tesmau,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00104,testmal,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00105,mauliktes1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00106,testing,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00107,testing 2,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00108,mates-123,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00109,matel-123,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00110,treewrmaulik,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00111,shanatbhamauliktest-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00112,shmate-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00113,maulik-123test,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00114,Petrol,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00115,GST Exempt,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00116,gst zero rated,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00117,3.5mm Locking Cortex Screw,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00118,altertest-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00119,maltestex-7,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00120,maltestex-9,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00121,maltestex-11,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00122,maltestex-13,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00123,maltestex-15,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00124,abcas,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00125,1234,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00126,ballpen,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00127,maltestex-50,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00128,maltestex-52,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00129,test_popup_14,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00130,test_popup_17,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00131,test_popup_51,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00132,test_popup_52,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00133,matesrt-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00134,matesrt-2,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00135,dhruv-1,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00136,dhruv-2,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00137,matesrt-3,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00138,matesrt-4,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00139,matesrt-5,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00140,matesrt-6,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00141,matesrt-7,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00142,matesrt-8,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00143,matesrt-9,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00144,matesrt-10,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00145,matesrt-11,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00146,matesrt-12,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00147,matesrt-13,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00148,matesrt-14,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00149,matesrt-15,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00150,matesrt-16,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00151,matesrt-17,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00152,matesrt-18,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00153,matesrt-19,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00154,matesrt-20,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00155,test_popup_3009,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00156,matesrt-21,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00157,matesrt-22,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00158,matesrt-23,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00159,matesrt-24,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00160,matesrt-0013,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00161,12xw2,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00162,12ds,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00163,as34,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00164,as56,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00165,asd-3,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00166,a-3,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00167,as-4,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00168,122vdv,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00169,asda-23,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,LASER CUTTING,FP00170,asd-5,BRANCH 1,1212,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00171,sasdf-2143,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00172,zda-123,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00173,asas-1232,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00174,asd-33,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00175,ad213,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00176,Test hardi,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00177,ass,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00178,czsacwe,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00179,sdslosf,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00180,sadasasd@13243,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00181,asdasd-w13,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00182,asdadsw-3-4543,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00183,test_for_pack,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00184,asas,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Finish Product,FABRICATION,FP00185,Test RB Product,BRANCH 1,56890,NOS,1,NOS,1,,1,,1,1,1,excluding,1,1,1,1,1,YES,1,1 days,1 days,12,,,YES,YES,,NO
+Raw Material,MAULIK,RM00001,MS PLATE 2500 X 1500 X 4 MM-H.R,BRANCH 1,1235,MM,1000,KG,12.2,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00002,MS PLATE 2500 X 1500 X 5 MM-H.R,BRANCH 1,1235,MM,1000,KG,8,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00003,MS PLATE 2560 X 1305 X 20 MM,BRANCH 1,1235,MM,1000,KG,5,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00004,MS PLATE 205X 205 X 25 MM,BRANCH 1,1235,MM,1000,KG,4,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00005,MS PLATE 205X 195 X25 MM,BRANCH 1,1235,MM,1000,KG,3,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00006,MS PLATE 50X 10 X 350 MM,BRANCH 1,1235,MM,1000,KG,2,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00007,MS PLATE 2500 X 1400 X 16 MM,BRANCH 1,1235,MM,1000,KG,1,TEST MAT,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00008,I BEAM 300 X 140,BRANCH 1,1235,MM,1000,KG,9,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00009,I BEAM 400 X 140,BRANCH 1,1235,MM,1000,KG,8,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00010,I BEAM 100 X 50,BRANCH 1,1235,MM,1000,KG,8.1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Raw Material,MAULIK,RM00011,I BEAM ?200 X 100,BRANCH 1,1235,MM,1000,KG,2.122,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00001,GROOVE ROLLER WHEEL (UVP) WITH BEARING 6203,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00002,VACUUM PUMP-SP 40,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00003,HYD.CYLINDER:-125 X 80 X 1025 MM,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00004,PEDESTAL BEARING UCP-205,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00005,PEDESTAL BEARING UCP-206,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00006,PEDESTAL BEARING UCP-208,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00007,PEDESTAL BEARING UCF-208,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00008,PEDESTAL BEARING UCF-210,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00009,PEDESTAL BEARING FL-208,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+BOI,,BOI00010,PEDESTAL BEARING UCFL-206,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Sub Assembly,,SA00001,MECHENICAL CLAMP,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Sub Assembly,,SA00002,TOOL KIT FOR PANEL SAW ASSEMBLY,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Sub Assembly,,SA00003,MAIN SAW HOUSING ASSEMBLY-UPS 3200B,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Sub Assembly,,SA00004,SCORRER HOUSING ASSEMBLY-UPS 3200B,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+Sub Assembly,,SA00005,C.I.J BRACKET ASSEMBLY-UPS 3200B,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+CONSUMABLE,,CO00001,TAPE ABRO 1,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+CONSUMABLE,,CO00002,Hss Taper Drill 32mm,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+CONSUMABLE,,CO00003,HSS HOLSAW CUTTER 23MM,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+CONSUMABLE,,CO00004,HSS HOLSAW CUTTER 32MM,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO
+CONSUMABLE,,CO00005,MAROON PAD,BRANCH 1,1235,NOS,1,NOS,1,,,,,,,excluding,,,,,,YES,,,,,,,YES,NO,,NO

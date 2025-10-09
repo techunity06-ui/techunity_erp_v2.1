@@ -1,0 +1,139 @@
+<ifModule mod_headers.c>
+	# YEAR
+	<filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf)$">
+	  Header set Cache-Control "max-age=29030400"
+	</filesMatch>
+	# WEEK
+	<filesMatch ".(js|css|swf)$">
+	  Header set Cache-Control "max-age=604800"
+	</filesMatch>
+	# 45 MIN
+	<filesMatch ".(html|htm|txt|php)$">
+	  Header set Cache-Control "max-age=2700"
+	</filesMatch>
+</ifModule>
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+<ifmodule mod_deflate.c>
+#AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/x-javascript application/javascript
+#AddHandler application/x-httpd-php56 .php
+</ifmodule>
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	#RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+	#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/sw/$1 [R=301,L]
+	Options -Indexes +FollowSymLinks -MultiViews		
+
+		# Finance Master Links
+	RewriteRule ^request_product/([^/]*)$ request_product.php?id=$1 [L]
+	RewriteRule ^solid_extrusion_entry/([^/]*)$ solid_extrusion_entry.php?id=$1 [L]
+	RewriteRule ^solid_printing_entry/([^/]*)$ solid_printing_entry.php?id=$1 [L]
+	RewriteRule ^sorequesproduct/([^/]*)/([0-9]+)$ request_product.php?id=$1&so_trn_id=$2 [L]
+	RewriteRule ^bom_print/([^/]*)$ bom_print.php?id=$1 [L]
+	RewriteRule ^bom_extra_no_add/([^/]*)$ bom_extra_no_add_print.php?id=$1 [L]
+	RewriteRule ^bom_allocate/([^/]*)$ bom_add_sub_product.php?id=$1 [L]
+	RewriteRule ^bom_clone/([^/]*)$ bom_add.php?id=$1 [L]
+	RewriteRule ^bom_edit/([^/]*)$ bom_add.php?id=$1 [L]
+	RewriteRule ^bom_edit/([^/]*)/([^/]*)$ bom_add.php?id=$1&bom_version=$2 [L]
+	RewriteRule ^bom_assign/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ bom_add.php?id=$1&id2=$2&id3=$3&id4=$4 [L]
+	RewriteRule ^bom_assign_store_order/([0-9]+)/([^/]*)/([^/]*)$ bom_add.php?id=$1&id2=$2&id3=$3 [L]
+	RewriteRule ^bom_allocate/([^/]*)/([0-9]+)/([^/]*)/([^/]*)$ bom_add.php?id=$1&id2=$2&id3=$3&id4=$4 [L]
+
+	RewriteRule ^bom_to_po_req/([^/]*)$ bom_add.php?id=$1 [L]
+	RewriteRule ^bom_add/([^/]*)$ bom_add.php?main_id=$1 [L]
+	RewriteRule ^bom_po_request/([^/]*)$ bom_po_request.php?id=$1 [L]
+	RewriteRule ^bom_allocate/([^/]*)/([0-9]+)$ bom_add.php?id=$1&id2=$2 [L]
+	RewriteRule ^bom_allocate/([^/]*)/([0-9]+)/([^/]*)$ bom_add.php?id=$1&id2=$2&id3=$3 [L]
+	RewriteRule ^rejectrequestproduct/([^/]*)$ request_product.php?id=$1 [L]
+	
+	RewriteRule ^direct_workorder/([^/]*)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)$ request_product.php?id=$1&branch_id=$2&version_id=$3&qty=$4&sp_id=$5 [L]
+	RewriteRule ^direct_jobcard/([^/]*)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)$ request_product.php?id=$1&branch_id=$2&version_id=$3&qty=$4&jobcard_rp_id=$5 [L]
+	RewriteRule ^jobcardedit/([^/]*)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)$ request_product.php?id=$1&branch_id=$2&version_id=$3&qty=$4&jobcard_rp_id=$5 [L]
+	#RewriteRule ^jobcardedit/([^/]*)/([0-9]+)$ direct_jobcard.php?id=$1&rp_id=$2 [L]
+	RewriteRule ^get_stock_detail/([^/]*)$ get_stock_detail.php?id=$1 [L]
+	RewriteRule ^store_order_request/([^/]*)$ store_order_request.php?id=$1 [L]
+	RewriteRule ^edit_jobwork/([^/]*)$ edit_job_work.php?job_work_id=$1 [L]
+	
+	RewriteRule ^edit_workorder/([^/]*)$ request_product.php?edit_id=$1 [L]	
+	RewriteRule ^workorder_permission/([^/]*)$ request_product.php?edit_id=$1 [L]	
+	RewriteRule ^store_order_workorder_request/([^/]*)/([0-9]+)$ request_product.php?id=$1&order_id=$2 [L]	
+	
+	RewriteRule ^jobworkratecardedit/([^/]*)$ jobwork_rate_card.php?jobcardid=$1 [L]
+	RewriteRule ^grn_edit/([^/]*)$ grn_add.php?id=$1 [L]
+	RewriteRule ^grn_view/([^/]*)$ grn_view.php?id=$1 [L]
+	RewriteRule ^grn_add_job/([^/]*)$ grn_add.php?id=$1 [L]
+	RewriteRule ^grn_add_reprocess_job/([^/]*)$ grn_add.php?id=$1 [L]
+	#RewriteRule ^jobcardedit/([^/]*)$ job_card_add.php?id=$1 [L]
+	RewriteRule ^jobsheet_print/([^/]*)$ jobsheet_print.php?id=$1 [L]
+	RewriteRule ^work_order_new_print/([^/]*)$ work_order_new_print.php?id=$1 [L]
+	RewriteRule ^create_job_work/([0-9]+)/([^/]*)/([^/]*)$ create_job_work.php?process_id=$1&product_id=$2&vendor_id=$2 [L]
+	RewriteRule ^create_job_work/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ create_job_work.php?process_id=$1&product_id=$2&vendor_id=$3&branch_id=$4 [L]
+	RewriteRule ^jobworkreceipt/([^/]*)$ jobworkreceipt.php?id=$1 [L]	
+	RewriteRule ^process_detail_list/([0-9]+)/([^/]*)$ process_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^warehouse_print/([^/]*)$ warehouse_print.php?id=$1 [L]
+	RewriteRule ^process_history/([^/]*)$ process_history.php?id=$1 [L]
+	RewriteRule ^working_process_detail_list/([0-9]+)/([^/]*)$ working_process_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^working_reprocess_detail_list/([0-9]+)/([^/]*)$ working_reprocess_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^jobcard_tracking_report/([^/]*)$ work_order_new_print.php?id=$1 [L]
+	
+	RewriteRule ^create_job_work_new/([0-9]+)/([^/]*)/([^/]*)$ create_job_work_new.php?process_id=$1&product_id=$2&vendor_id=$2 [L]
+	RewriteRule ^create_job_work_new/([0-9]+)/([^/]*)/([^/]*)/([^/]*)/([^/]*)$ create_job_work_new.php?process_id=$1&product_id=$2&vendor_id=$3&branch_id=$4&p_id=$5 [L]
+	RewriteRule ^job_work_edit_new/([0-9]+)/([^/]*)$ create_job_work_new.php?job_work_id=$1&vendor_id=$2 [L]
+	RewriteRule ^create_jobwork_chalan/([0-9]+)$ create_jobwork_chalan.php?job_work_id=$1 [L]
+	RewriteRule ^create_reprocess_jobwork_chalan/([0-9]+)$ create_reprocess_jobwork_chalan.php?job_work_id=$1 [L]
+	RewriteRule ^create_reprocess_jobwork/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)$ create_reprocess_jobwork.php?job_work_id=$1&p_id=$2&product_id=$3&process_id=$4 [L]
+
+	#PRODUCTION MODULE START
+		
+	# RewriteRule ^production_process_end/([^/]*)$ production_process_end.php?id=$1 [L]Z
+	RewriteRule ^production_process_end/([^/]*)$ production_process_end.php?id=$1 [L]
+	
+	RewriteRule ^production_process_start/([^/]*)$ production_process_start.php?id=$1 [L]
+	RewriteRule ^production_store_request/([^/]*)$ production_store_request.php?id=$1 [L]
+	RewriteRule ^production_store_approve/([^/]*)$ production_store_approve.php?id=$1 [L]
+	RewriteRule ^purchase_qc_all$ qc_all.php [L]
+	RewriteRule ^process_counter_detail_list/([^/]*)$ process_counter_detail_list.php?type=$1 [L]
+	
+	RewriteRule ^store_release_pending_list/([^/]*)$ store_release_pending_list.php?id=$1 [L]
+	RewriteRule ^working_store_process_details_list/([0-9]+)/([^/]*)$ working_store_process_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^working_reprocess_detail_list/([0-9]+)/([^/]*)$ working_reprocess_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^working_process_store_approval_detail_list/([0-9]+)/([^/]*)$ working_process_store_approval_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^store_request_detail_list/([0-9]+)/([^/]*)$ store_request_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^batch_create_list/([0-9]+)/([^/]*)$ batch_create_list.php?id=$1&type=$2 [L]
+
+
+	# RewriteRule ^bom_list/([0-9]+)/([^/]*)$ bom_list.php?id=$1&type=$2 [L]
+		
+	#PRODUCTION MODULE END
+	
+	RewriteRule ^reprocess_detail_list/([0-9]+)/([^/]*)$ reprocess_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^parts_qc_pending_list/([^/]*)$ parts_qc_pending_list.php?process_id=$1 [L]
+	RewriteRule ^reprocess_qc_pending_list/([^/]*)$ reprocess_qc_pending_list.php?process_id=$1 [L]
+	RewriteRule ^poqc_add/([^/]*)$ qc_add.php?id=$1 [L]
+	RewriteRule ^joqc_add/([^/]*)$ qc_add.php?id=$1 [L]
+	RewriteRule ^joqc_add/([^/]*)/([0-9]+)$ qc_add.php?id=$1&process_id=$2 [L]
+	RewriteRule ^end_process_allocation_repocess/([^/]*)$ end_process_allocation_repocess.php?id=$1 [L]
+	RewriteRule ^end_process_allocation_repocess/([0-9]+)/([^/]*)/([^/]*)$ end_process_allocation_repocess.php?id=$1&type=$2&process=$3&page_name=$4 [L]
+	
+	RewriteRule ^grn_sticker_print/([^/]*)$ grn_sticker_print.php?id=$1 [L]
+
+	RewriteRule ^bom_costing_edit/([^/]*)$ bom_costing.php?id=$1 [L]
+
+	RewriteRule ^workorder_packing/([^/]*)$ workorder_packing.php?id=$1 [L]
+	RewriteRule ^workorderpackingprint/([^/]*)$ workorder_package_print.php?id=$1 [L]
+	RewriteRule ^libra_workorder_print_filed_add/([^/]*)$ libra_workorder_print_filed_add.php?id=$1 [L]
+	
+	# RewriteRule ^production_report_list/([^/]*)$ production_report_list.php?id=$1 [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}\.php -f
+	RewriteRule ^(.*)$ $1.php
+</ifModule>

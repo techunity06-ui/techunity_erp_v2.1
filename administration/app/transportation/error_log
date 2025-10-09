@@ -1,0 +1,12 @@
+[15-Feb-2022 12:01:26 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[15-Feb-2022 12:01:26 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[15-Feb-2022 12:01:35 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[15-Feb-2022 12:01:35 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[16-Feb-2022 17:27:53 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[16-Feb-2022 17:27:53 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[16-Feb-2022 17:28:48 Asia/Kolkata] PHP Notice:  Undefined index: transportation_model in /home/brperp/public_html/hermettic_sw_v12/administration/app/transportation/index.php on line 89
+[16-Feb-2022 17:28:48 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[16-Feb-2022 17:28:48 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[16-Feb-2022 17:29:11 Asia/Kolkata] PHP Notice:  Undefined index: transportation_model in /home/brperp/public_html/hermettic_sw_v12/administration/app/transportation/index.php on line 89
+[16-Feb-2022 17:29:11 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[16-Feb-2022 17:29:11 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169

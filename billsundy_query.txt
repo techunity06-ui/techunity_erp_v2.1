@@ -1,0 +1,67 @@
+INSERT INTO tbl_pono (po_no,vender_id,purchase_ledger_id,po_date,total,remark,g_total,round_of,currency_enable,currency_id,currency_rate,enable_salesman,enable_cost_center,enable_ewaybill,enable_transport,eway_bill_no,eway_bill_date,order_no,order_date,print_status,grn_id,service_id,financial_year_id,cdate,mdate,userid,muserid,company_id,usertype_id,branch_id,purchase_material_center,tds_amount,tds_per,enable_bill_adjustment,sales_type) VALUES ('P/011/19-20','5','24430','2022-05-11','10000','','11800.00','0.00','','','1','1','','','','','','1010','2022-05-11','1','','','1','2022-05-11 13:01:47','2022-05-11 13:01:47','1','1','1','2','','','','','','1')
+
+INSERT INTO tbl_trnsaction_dashbord (type,transaction_no,transaction_id,description,amount,branch_id,user_id,company_id,cdate,show_date) VALUES ('Purchase','P/011/19-20','31','A.K GLASS','11800.00','','1','1','2022-05-11 13:01:48','2022-05-11')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('1','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('112','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('116','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('117','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('118','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('124','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('126','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('127','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('128','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('129','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('135','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('136','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('142','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('144','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('145','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('147','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('149','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('150','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('151','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('155','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('156','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('157','1048','1')
+
+INSERT INTO tbl_trnsaction_dashbord_user (user_id,trn_dashbord_id,company_id) VALUES ('161','1048','1')
+
+INSERT INTO tbl_general_book (table_name,table_id,entry_type,ref_date,ledger_id,amount,user_id,cdate,company_id,currency_id,currency_rate) VALUES ('tbl_pono','31','2','2022-05-11','24430','10000','1','2022-05-11 13:01:48','1','','1')
+
+INSERT INTO tbl_general_book (table_name,table_id,entry_type,ref_date,ledger_id,amount,user_id,cdate,company_id,currency_id,currency_rate) VALUES ('tbl_pono','31','1','2022-05-11','5','11800.00','1','2022-05-11 13:01:49','1','','1')
+
+INSERT INTO tbl_bill_sundry_transaction (sundry_ledger_id,sundry_amount,sundry_voucher_id,sundry_voucher_type,sundry_voucher_table,cdate,user_id,company_id,currency_id,currency_rate) VALUES ('9870','900','31','2','tbl_pono','2022-05-11 13:01:49','1','1','','1')
+
+INSERT INTO tbl_general_book (table_name,table_id,entry_type,ref_date,ledger_id,amount,user_id,cdate,company_id,currency_id,currency_rate) VALUES ('tbl_bill_sundry_transaction','221','2','2022-05-11','9870','900','1','2022-05-11 13:01:49','1','','1')
+
+INSERT INTO tbl_bill_sundry_transaction (sundry_ledger_id,sundry_amount,sundry_voucher_id,sundry_voucher_type,sundry_voucher_table,cdate,user_id,company_id,currency_id,currency_rate) VALUES ('9880','900','31','2','tbl_pono','2022-05-11 13:01:49','1','1','','1')
+
+INSERT INTO tbl_general_book (table_name,table_id,entry_type,ref_date,ledger_id,amount,user_id,cdate,company_id,currency_id,currency_rate) VALUES ('tbl_bill_sundry_transaction','222','2','2022-05-11','9880','900','1','2022-05-11 13:01:49','1','','1')
+
+INSERT INTO tbl_bill_sundry_transaction (sundry_ledger_id,sundry_amount,sundry_voucher_id,sundry_voucher_type,sundry_voucher_table,cdate,user_id,company_id,currency_id,currency_rate) VALUES ('24453','','31','2','tbl_pono','2022-05-11 13:01:49','1','1','','1')
+
+INSERT INTO tbl_general_book (table_name,table_id,entry_type,ref_date,ledger_id,amount,user_id,cdate,company_id,currency_id,currency_rate) VALUES ('tbl_bill_sundry_transaction','223','2','2022-05-11','24453','','1','2022-05-11 13:01:49','1','','1')
+
+INSERT INTO tbl_general_book (table_name,table_id,entry_type,ref_date,ledger_id,amount,user_id,cdate,company_id,currency_id,currency_rate) VALUES ('tbl_potrancation','57','2','2022-05-11','','10000.00','1','2022-05-11 13:01:49','1','','1')

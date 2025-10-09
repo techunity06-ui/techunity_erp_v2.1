@@ -1,0 +1,305 @@
+<ifModule mod_headers.c>
+	# YEAR
+	<filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf)$">
+	  Header set Cache-Control "max-age=29030400"
+	</filesMatch>
+	# WEEK
+	<filesMatch ".(js|css|swf)$">
+	  Header set Cache-Control "max-age=604800"
+	</filesMatch>
+	# 45 MIN
+	<filesMatch ".(html|htm|txt|php)$">
+	  Header set Cache-Control "max-age=2700"
+	</filesMatch>
+</ifModule>
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+<ifmodule mod_deflate.c>
+#AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/x-javascript application/javascript
+#AddHandler application/x-httpd-php56 .php
+</ifmodule>
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	#RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+    #RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/brp_erp_v14/$1 [R=301,L]
+
+	Options -Indexes +FollowSymLinks -MultiViews
+	
+	RewriteRule ^licence/([^/]*)$ licence.php?id=$1 [L]
+	
+	RewriteRule ^sorequesproduct/([^/]*)/([0-9]+)$ request_product.php?id=$1&so_trn_id=$2 [L]
+	RewriteRule ^direct_workorder/([^/]*)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)$ request_product.php?id=$1&branch_id=$2&version_id=$3&qty=$4&sp_id=$5 [L]
+	RewriteRule ^edit_workorder/([^/]*)$ request_product.php?edit_id=$1 [L]	
+	RewriteRule ^workorder_permission/([^/]*)$ request_product.php?edit_id=$1 [L]	
+
+	RewriteRule ^designdepartmentsorequesproduct/([^/]*)/([0-9]+)$ design_department_request_product.php?id=$1&so_trn_id=$2 [L]
+	
+	RewriteRule ^parts_qc_pending_list/([^/]*)$ parts_qc_pending_list.php?process_id=$1 [L]
+	RewriteRule ^qc_add_new/([^/]*)$ qc_add_new.php?id=$1 [L]
+	RewriteRule ^poqc_add/([^/]*)$ qc_add_new.php?id=$1 [L]
+	RewriteRule ^purchase_quotation/([^/]*)$ purchase_quotation.php?id=$1 [L]
+	RewriteRule ^joqc_add/([^/]*)$ qc_add_new.php?id=$1 [L]
+	RewriteRule ^joqc_add/([^/]*)/([0-9]+)$ qc_add_new.php?id=$1&process_id=$2 [L]
+	RewriteRule ^reprocess_qc_add/([^/]*)$ reprocess_qc_add.php?id=$1 [L]
+	RewriteRule ^reprocess_qc_add/([^/]*)/([0-9]+)$ reprocess_qc_add.php?id=$1&process_id=$2 [L]
+	RewriteRule ^end_process_allocation_repocess/([^/]*)$ end_process_allocation_repocess.php?id=$1 [L]
+	RewriteRule ^end_process_allocation_repocess/([0-9]+)/([^/]*)/([^/]*)$ end_process_allocation_repocess.php?id=$1&type=$2&process=$3&page_name=$4 [L]
+	
+	RewriteRule ^stock_pending_product/([^/]*)$ request_product.php?id=$1 [L]
+	RewriteRule ^rejectrequestproduct/([^/]*)$ request_product.php?id=$1 [L]
+	
+	RewriteRule ^po_quotation_vendor_list/([^/]*)$ po_quotation_vendor_list.php?id=$1 [L]
+	RewriteRule ^po_quotation_edit/([0-9]+)/([^/]*)$ po_quotation_add.php?id=$1&poid=$2 [L]
+	RewriteRule ^quotation_vendorprint/([0-9]+)/([^/]*)$ quotation_vendorprint.php?id=$1&poid=$2 [L]
+	
+	RewriteRule ^grn_view/([^/]*)$ grn_view.php?id=$1 [L]
+	RewriteRule ^stock_detai/([^/]*)/([0-9]+)$ stock_detai.php?month=$1&product_id=$2 [L]
+	RewriteRule ^jobcardedit/([^/]*)$ job_card_add.php?id=$1 [L]
+	RewriteRule ^work_order_new_print/([^/]*)$ work_order_new_print.php?id=$1 [L]
+	RewriteRule ^purchase_bill_pending/([^/]*)$ purchase_add.php?id=$1 [L]
+	RewriteRule ^purchase_bill_pending/([^/]*)/([0-9]+)$ purchase_add.php?id=$1&branch_id=$2 [L]
+	RewriteRule ^purchase_bill_service_pending/([^/]*)/([0-9]+)$ purchase_add.php?id=$1&branch_id=$2 [L]
+
+	RewriteRule ^debitnote_add_qc/([^/]*)$ debitnote_add.php?id=$1 [L]
+	RewriteRule ^grn_add_po/([^/]*)$ grn_add.php?id=$1 [L]
+	RewriteRule ^grn_add_job/([^/]*)$ grn_add.php?id=$1 [L]
+        RewriteRule ^receipt_purchase/([^/]*)$ receipt_purchase.php?id=$1 [L]
+	RewriteRule ^receipt_sales/([^/]*)$ receipt_sales.php?id=$1 [L]
+	RewriteRule ^debitnote_edit/([^/]*)$ debitnote_add.php?id=$1 [L]
+	RewriteRule ^stcok_adjustment_edit/([^/]*)$ stcok_adjustment.php?id=$1 [L]
+	RewriteRule ^pocardedit/([^/]*)$ purchase_card_mer.php?id=$1 [L]
+	RewriteRule ^order_confirm_list/([^/]*)$ order_confirm_list.php?id=$1 [L]
+	RewriteRule ^bill_of_supply_print/([^/]*)$ bill_of_supply_print.php?id=$1 [L]
+	RewriteRule ^bill_of_supply_edit/([^/]*)$ bill_of_supply_add.php?id=$1 [L]
+	RewriteRule ^spare_to_bos/([^/]*)$ bill_of_supply_add.php?id=$1 [L]
+	RewriteRule ^inquiry_view/([^/]*)$ inquiry_view.php?id=$1 [L]
+	RewriteRule ^pending_task_list/([^/]*)$ pending_task_list.php?id=$1 [L]
+	RewriteRule ^pending_task_list/([^/]*)/([0-9]+)$ pending_task_list.php?id=$1&userid=$2 [L]
+	RewriteRule ^indent_approve/([^/]*)$ indent_add.php?id=$1 [L]
+	RewriteRule ^po_quotation_add/([^/]*)$ po_quotation_add.php?id=$1 [L]
+	RewriteRule ^po_quotation_approve/([^/]*)$ po_quotation_approve.php?id=$1 [L]
+	RewriteRule ^salesorderedit/([^/]*)$ sales_order.php?id=$1 [L]
+	RewriteRule ^salesorder_quotation/([^/]*)$ sales_order.php?id=$1 [L]
+	RewriteRule ^sales_order_stage/([^/]*)$ sales_order_stage.php?id=$1 [L]
+	RewriteRule ^sales_order_print/([^/]*)$ sales_order_print.php?id=$1 [L]
+	
+	RewriteRule ^jobsheet_print/([^/]*)$ jobsheet_print.php?id=$1 [L]
+	RewriteRule ^job_card_print/([^/]*)$ job_card_print.php?id=$1 [L]
+	RewriteRule ^materialissueedit/([^/]*)$ materialissue.php?id=$1 [L]
+	RewriteRule ^upload_document/([^/]*)$ upload_document.php?id=$1 [L]
+
+	RewriteRule ^service_add_po/([^/]*)$ service_add.php?id=$1 [L]
+	
+	RewriteRule ^pending_task_list_one/([^/]*)$ pending_task_list_one.php?id=$1 [L]
+	
+	RewriteRule ^pending_task_list_one/([^/]*)/([0-9]+)$ pending_task_list_one.php?id=$1&userid=$2 [L]
+	
+	RewriteRule ^forecast_byuser_pro_edit/([^/]*)$ forecast_byuser_pro_add.php?id=$1 [L]
+	RewriteRule ^forecast_byuser_edit/([^/]*)$ forecast_byuser_add.php?id=$1 [L]
+	RewriteRule ^forecast_view/([^/]*)$ forecast_view.php?id=$1 [L]
+	RewriteRule ^forecast_edit/([^/]*)$ forecast_add.php?id=$1 [L]
+	RewriteRule ^inq_to_quot/([^/]*)$ quotation_add.php?id=$1 [L] 
+	RewriteRule ^quotation_revise/([^/]*)$ quotation_add.php?id=$1 [L] 
+	RewriteRule ^quotation_edit/([^/]*)$ quotation_add.php?id=$1 [L] 
+	RewriteRule ^appointment_add/([^/]*)$ appointment_add.php?id=$1 [L]
+	RewriteRule ^appointment_edit/([^/]*)$ appointment_add.php?id=$1 [L] 
+	RewriteRule ^task_add/([^/]*)$ task_add.php?id=$1 [L]
+	RewriteRule ^task_flp/([^/]*)$ task_add.php?id=$1 [L]
+	RewriteRule ^task_edit/([^/]*)$ task_add.php?id=$1 [L] 
+	RewriteRule ^inquiry_edit/([^/]*)$ inquiry_add.php?id=$1 [L] 
+	RewriteRule ^pre_edit/([^/]*)$ add_pre.php?id=$1 [L] 
+	RewriteRule ^indent_tracking/([^/]*)$ indent_tracking.php?id=$1 [L] 
+	RewriteRule ^po_tracking/([^/]*)$ po_tracking.php?id=$1 [L] 
+	RewriteRule ^annexure_detail_edit/([^/]*)$ annexure_detail.php?id=$1 [L] 
+	RewriteRule ^terms_edit/([^/]*)$ terms_add.php?id=$1 [L] 
+	RewriteRule ^customeraddedit/([^/]*)$ customer.php?id=$1 [L] 
+	
+	RewriteRule ^employee_edit/([^/]*)$ employee_add.php?id=$1 [L] 
+	RewriteRule ^useredit/([^/]*)$ useradd.php?id=$1 [L] 
+	RewriteRule ^changepassword/([^/]*)$ changepassword.php?id=$1 [L]
+	RewriteRule ^product_view/([^/]*)$ product_view.php?id=$1 [L]
+	
+	RewriteRule ^customer_view/([^/]*)$ customer_view.php?id=$1 [L]
+	RewriteRule ^setting/([^/]*)$ setting.php?id=$1 [L]
+	RewriteRule ^setting_new/([^/]*)$ setting_new.php?id=$1 [L]
+	RewriteRule ^product_edit/([^/]*)$ product_add.php?id=$1 [L] 
+	RewriteRule ^product_copy/([^/]*)$ product_add.php?id=$1 [L] 
+	RewriteRule ^product_clone/([^/]*)$ product_clone.php?id=$1 [L] 
+	RewriteRule ^stage_edit/([^/]*)$ stage_add.php?id=$1 [L] 
+	RewriteRule ^customer_edit/([^/]*)$ customer.php?id=$1 [L]
+	RewriteRule ^tds_tax_category_edit/([^/]*)$ tds_tax_category_create.php?id=$1 [L]
+	RewriteRule ^ledger_edit/([^/]*)$ ledger_create.php?id=$1 [L]
+	RewriteRule ^company_pref/([^/]*)$ company_pref.php?id=$1 [L]
+	RewriteRule ^spare_to_inv/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^quot_to_inv/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^invoiceso/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^invoiceedit/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^invoicereceipt/([^/]*)/([0-9]+)$ invoicereceipt.php?id=$1&printstatus=$2 [L]
+	RewriteRule ^invoicereceipt/([^/]*)$ invoicereceipt.php?id=$1 [L]
+	RewriteRule ^invoicechalan/([^/]*)$ invoicechalan.php?id=$1 [L]
+	RewriteRule ^dispath_form/([^/]*)$ dispath_form.php?id=$1 [L]
+	RewriteRule ^account-voucher-update/([^/]*)$ account-voucher-entry.php?id=$1 [L]
+	RewriteRule ^income-update/([^/]*)$ income-entry.php?id=$1 [L]
+	RewriteRule ^receipt_invoicepayment/([^/]*)$ invoicepaymentreceiptprint.php?&id=$1 [L]
+	
+	RewriteRule ^bom_print/([^/]*)$ bom_print.php?id=$1 [L]
+	RewriteRule ^bom_print_new/([^/]*)$ bom_print_new.php?id=$1 [L]
+	RewriteRule ^po_req/([^/]*)$ po.php?id=$1 [L]
+	RewriteRule ^po_req/([^/]*)$ po.php?id=$1 [L]
+	RewriteRule ^po_req/([0-9]+)/([^/]*)$ po.php?id=$1&branch_id=$2 [L]
+	RewriteRule ^bom_allocate/([^/]*)$ bom_add_sub_product.php?id=$1 [L]
+	RewriteRule ^bom_clone/([^/]*)$ bom_add.php?id=$1 [L]
+	RewriteRule ^bom_edit/([^/]*)$ bom_add.php?id=$1 [L]
+	RewriteRule ^bom_to_po_req/([^/]*)$ bom_add.php?id=$1 [L]
+	RewriteRule ^bom_add/([^/]*)$ bom_add.php?main_id=$1 [L]
+	RewriteRule ^purchaseedit/([^/]*)$ purchase_add.php?id=$1 [L]
+	RewriteRule ^purchase_view/([^/]*)$ purchase_view.php?id=$1 [L]
+        RewriteRule ^receiptedit/([^/]*)$ recipt.php?id=$1 [L]
+        RewriteRule ^paymentedit/([^/]*)$ payment_new.php?id=$1 [L]
+	
+	RewriteRule ^planning_print/([^/]*)$ planning_print.php?id=$1 [L]
+	RewriteRule ^bom_po_request/([^/]*)$ bom_po_request.php?id=$1 [L]
+	RewriteRule ^po_req_add/([0-9]+)/([^/]*)$ po_req_add.php?id=$1&type=$2 [L]
+	RewriteRule ^po_req_add/([^/]*)/([0-9]+)/([^/]*)$ po_req_add.php?id=$1&type=$2&branch_id=$3 [L]
+	RewriteRule ^po_req_add/([^/]*)/([0-9]+)/([^/]*)/([^/]*)$ po_req_add.php?id=$1&type=$2&branch_id=$3&rp_id=$4 [L]
+	RewriteRule ^planning_edit/([^/]*)$ planning_add.php?id=$1 [L]
+	RewriteRule ^qc_add/([^/]*)$ qc_add.php?id=$1 [L]
+	RewriteRule ^bom_allocate/([^/]*)/([0-9]+)$ bom_add.php?id=$1&id2=$2 [L]
+	RewriteRule ^bom_allocate/([^/]*)/([0-9]+)/([^/]*)$ bom_add.php?id=$1&id2=$2&id3=$3 [L]
+	
+	RewriteRule ^companyedit/([^/]*)$ create_company.php?id=$1 [L]
+	RewriteRule ^expense_edit/([^/]*)$ expense-entry.php?id=$1 [L]
+	RewriteRule ^receipt-update/([^/]*)$ invoicepayment.php?&id=$1 [L]
+	RewriteRule ^expense_status/([^/]*)$ expense_entry_apprrove.php?&id=$1 [L]
+	RewriteRule ^expense_request/([^/]*)$ expense_request.php?&id=$1 [L]
+	RewriteRule ^poedit/([^/]*)$ po.php?id=$1 [L]
+	RewriteRule ^poemend/([^/]*)$ po.php?id=$1 [L]
+	RewriteRule ^poprint/([^/]*)$ poprint.php?id=$1 [L]
+	RewriteRule ^send_spare_part/([^/]*)$ spare_list_pending_send.php?id=$1 [L]
+	
+	RewriteRule ^grn_edit/([^/]*)$ grn_add.php?id=$1 [L]
+	RewriteRule ^qc_edit/([^/]*)$ qc_add.php?id=$1 [L]
+	RewriteRule ^debit_note_print/([^/]*)$ debit_note_print.php?id=$1 [L]
+	RewriteRule ^allocate_process/([^/]*)$ allocate_process.php?id=$1 [L]
+	RewriteRule ^process_detail_list/([0-9]+)/([^/]*)$ process_detail_list.php?id=$1&type=$2 [L]
+	
+	RewriteRule ^reprocess_detail_list/([0-9]+)/([^/]*)$ reprocess_detail_list.php?id=$1&type=$2 [L]
+	RewriteRule ^get_stock_detail/([^/]*)$ get_stock_detail.php?id=$1 [L]
+	RewriteRule ^request_product/([^/]*)$ request_product.php?id=$1 [L]
+	RewriteRule ^jobcard_detail/([^/]*)$ jobcard_detail.php?id=$1 [L]
+	RewriteRule ^ledger_detail/([^/]*)$ ledger_detail_report.php?id=$1 [L]
+	RewriteRule ^ledger_form/([^/]*)$ ledger_detail_report_form.php?id=$1 [L]
+	RewriteRule ^start_process/([^/]*)$ start_allocate_process.php?id=$1 [L]
+	RewriteRule ^start_process/([0-9]+)/([^/]*)/([^/]*)$ start_allocate_process.php?id=$1&type=$2&process=$3 [L]
+	RewriteRule ^start_process/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ start_allocate_process.php?id=$1&type=$2&process=$3&page_name=$4 [L]
+	
+	RewriteRule ^start_process/([0-9]+)/([^/]*)/([^/]*)/([^/]*)/([^/]*)$ start_allocate_process.php?id=$1&type=$2&process=$3&page_name=$4&branch_id=$5 [L]
+	
+	RewriteRule ^end_process_allocation/([0-9]+)/([^/]*)/([^/]*)$ end_process_allocation.php?id=$1&type=$2&process=$3 [L]
+	RewriteRule ^end_process_allocation/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ end_process_allocation.php?id=$1&type=$2&process=$3&branch_id=$4 [L]
+	
+	RewriteRule ^start_process_opening/([^/]*)$ start_allocate_process_opening.php?id=$1 [L]
+	RewriteRule ^end_process_allocation/([^/]*)$ end_process_allocation.php?id=$1 [L]
+	RewriteRule ^end_process_allocation_opening/([^/]*)$ end_process_allocation_opening.php?id=$1 [L]
+	RewriteRule ^start_reprocess/([^/]*)$ start_allocate_reprocess.php?id=$1 [L]
+	RewriteRule ^start_reprocess/([0-9]+)/([^/]*)/([^/]*)$ start_allocate_reprocess.php?id=$1&type=$2&process=$3 [L]
+	RewriteRule ^start_reprocess/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ start_allocate_reprocess.php?id=$1&type=$2&process=$3&page_name=$4 [L]
+
+	RewriteRule ^chalan_print/([^/]*)$ chalan_print.php?id=$1 [L]
+	RewriteRule ^warehouse_print/([^/]*)$ warehouse_print.php?id=$1 [L]
+	RewriteRule ^warehouse_print/([^/]*)$ warehouse_print.php?id=$1 [L]
+	RewriteRule ^process_history/([^/]*)$ process_history.php?id=$1 [L]
+	RewriteRule ^opening_detail_list/([0-9]+)/([^/]*)$ opening_detail_list.php?id=$1&type=$2 [L]
+
+	RewriteRule ^pcedit/([^/]*)$ purchase_card.php?id=$1 [L]
+	RewriteRule ^drawingedit/([^/]*)$ drawing.php?id=$1 [L]
+	RewriteRule ^emailtemplateedit/([^/]*)$ email_template.php?id=$1 [L]
+	RewriteRule ^create_job_work/([0-9]+)/([^/]*)/([^/]*)$ create_job_work.php?process_id=$1&product_id=$2&vendor_id=$2 [L]
+	RewriteRule ^create_job_work/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ create_job_work.php?process_id=$1&product_id=$2&vendor_id=$3&branch_id=$4 [L]
+	RewriteRule ^jobworkreceipt/([^/]*)$ jobworkreceipt.php?id=$1 [L]
+	
+	
+	RewriteRule ^hrms_attendance_tools_edit/([^/]*)$ hrms_attendance_tools_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_edit/([^/]*)$ hrms_employee_add.php?id=$1 [L]
+	RewriteRule ^holiday_edit/([^/]*)$ holiday_add.php?id=$1 [L]
+	RewriteRule ^leave_type_edit/([^/]*)$ hrms_leave_type_add.php?id=$1 [L]
+	RewriteRule ^hrms_leave_application_edit/([^/]*)$ hrms_leave_application_add.php?id=$1 [L]
+	RewriteRule ^hrms_leave_allocation_edit/([^/]*)$ hrms_leave_allocation_add.php?id=$1 [L]
+	RewriteRule ^hrms_comp_leave_request_edit/([^/]*)$ hrms_comp_leave_request_add.php?id=$1 [L]
+	RewriteRule ^hrms_leave_block_edit/([^/]*)$ hrms_leave_block_add.php?id=$1 [L]
+	RewriteRule ^hrms_attendance_edit/([^/]*)$ hrms_attendance_add.php?id=$1 [L]
+	RewriteRule ^hrms_attendance_request_edit/([^/]*)$ hrms_attendance_request_add.php?id=$1 [L]
+	RewriteRule ^hrms_settings_edit/([^/]*)$ hrms_settings_add.php?id=$1 [L]
+	RewriteRule ^hrms_email_template_edit/([^/]*)$ hrms_email_template_add.php?id=$1 [L]
+	RewriteRule ^hrms_sms_template_edit/([^/]*)$ hrms_sms_template_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_advance_edit/([^/]*)$ hrms_employee_advance_add.php?id=$1 [L]
+	RewriteRule ^hrms_expense_claim_edit/([^/]*)$ hrms_expense_claim_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_separation_template_edit/([^/]*)$ hrms_employee_separation_template_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_onboarding_template_edit/([^/]*)$ hrms_employee_onboarding_template_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_separation_edit/([^/]*)$ hrms_employee_separation_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_onboarding_edit/([^/]*)$ hrms_employee_onboarding_add.php?id=$1 [L]
+	RewriteRule ^hrms_daily_work_summary_group_edit/([^/]*)$ hrms_daily_work_summary_group_add.php?id=$1 [L]
+	RewriteRule ^hrms_employee_skill_map_edit/([^/]*)$ hrms_employee_skill_map_add.php?id=$1 [L]
+
+	RewriteRule ^create_internal_chalan/([^/]*)$ create_internal_chalan.php?id=$1 [L]
+	RewriteRule ^edit_internal_chalan/([^/]*)$ create_internal_chalan.php?id=$1 [L]
+	RewriteRule ^print_internal_chalan/([^/]*)$ print_internal_chalan.php?id=$1 [L]
+	RewriteRule ^report_internal_chalan/([^/]*)$ report_internal_chalan.php?id=$1 [L]
+	
+	RewriteRule ^quotation_template2_print/([^/]*)$ quotation_template2_print.php?id=$1 [L]
+	RewriteRule ^quotation_print/([^/]*)$ quotation_print.php?id=$1 [L]
+	RewriteRule ^quotation_pdf_print/([^/]*)$ quotation_pdf_print.php?&type=$1 [L]
+	RewriteRule ^journal_entry_edit/([^/]*)$ journal_entry.php?id=$1 [L]
+	RewriteRule ^contra_entry_edit/([^/]*)$ contra_entry.php?id=$1 [L]
+
+	RewriteRule ^resource_report/([^/]*)$ resource_report.php?id=$1 [L]
+	
+	RewriteRule ^backup/([^/]*)$ backup.php?flag=$1 [L]
+	RewriteRule ^menu_master_access_edit/([^/]*)$ menu_master_access_add.php?id=$1 [L]
+	RewriteRule ^menu_master_access_list/([^/]*)$ menu_master_access_list.php?id=$1 [L]
+	RewriteRule ^menu_master_access_add/([^/]*)$ menu_master_access_add.php?id=$1 [L]
+	RewriteRule ^template_access_permission_edit/([^/]*)$ template_access_permission_add.php?id=$1 [L]
+
+	RewriteRule ^store_accept_edit/([^/]*)$ store_accept_add.php?id=$1 [L]
+	RewriteRule ^store_accept_view/([^/]*)$ store_accept_view.php?id=$1 [L]
+	
+	RewriteRule ^machine_configuration_edit/([^/]*)$ machine_configuration_add.php?id=$1 [L]
+	RewriteRule ^machine_configuration_view/([^/]*)$ machine_configuration_view.php?id=$1 [L]
+	RewriteRule ^proformaedit/([^/]*)$ proforma.php?id=$1 [L]
+	RewriteRule ^proformareceipt/([^/]*)/([0-9]+)$ proformareceipt.php?id=$1&printstatus=$2 [L]
+	RewriteRule ^proformareceipt/([^/]*)$ proformareceipt.php?id=$1 [L]
+
+	RewriteRule ^quotation_print_new/([^/]*)$ quotation_print_new.php?id=$1 [L]
+
+	RewriteRule ^purchase_qc_pending_list/([^/]*)$ purchase_qc_pending_list.php?process_id=$1 [L]
+	
+	#PRODUCTION MODULE START
+		
+		RewriteRule ^production_process_end/([^/]*)$ production_process_end.php?id=$1 [L]
+		RewriteRule ^production_process_start/([^/]*)$ production_process_start.php?id=$1 [L]
+		RewriteRule ^working_process_detail_list/([0-9]+)/([^/]*)$ working_process_detail_list.php?id=$1&type=$2 [L]
+		
+	#PRODUCTION MODULE END
+
+    RewriteRule ^unadjusted_advance/([^/]*)$ unadjusted_advance.php?id=$1 [L]
+    RewriteRule ^vendor_unadjusted_advance/([^/]*)$ vendor_unadjusted_advance.php?id=$1 [L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}\.php -f
+	RewriteRule ^(.*)$ $1.php
+	
+	#GIR START
+	RewriteRule ^gir_view/([^/]*)$ gir_view.php?id=$1 [L]
+	RewriteRule ^gir_add_po/([^/]*)$ gir_add.php?id=$1 [L]
+	RewriteRule ^gir_add_job/([^/]*)$ gir_add.php?id=$1 [L]
+	RewriteRule ^gir_edit/([^/]*)$ gir_add.php?id=$1 [L]	
+	#GIR END
+	
+</ifModule>

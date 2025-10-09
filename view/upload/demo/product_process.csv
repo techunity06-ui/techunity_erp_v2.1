@@ -1,0 +1,3 @@
+Product Name,Process Name,Priority,Type,Rate,Time,Resource Name,Loss(%),Scrap(+),Scrap(-)
+maltestex-8,extruder,1,inhouse,100,60,lath machine,5,5,5
+maltestex-8,printing,2,Outside,105,120,mixing machine,6,6,6

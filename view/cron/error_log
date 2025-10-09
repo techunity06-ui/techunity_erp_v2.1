@@ -1,0 +1,4 @@
+[10-Nov-2021 12:02:04 UTC] PHP Parse error:  syntax error, unexpected 'send_mail' (T_STRING) in /home/brperp/public_html/brp_testing/view/cron/so_delivery_date.php on line 57
+[10-Nov-2021 12:02:33 UTC] PHP Parse error:  syntax error, unexpected 'send_mail' (T_STRING) in /home/brperp/public_html/brp_testing/view/cron/so_delivery_date.php on line 57
+[10-Nov-2021 12:03:37 UTC] PHP Parse error:  syntax error, unexpected 'send_mail' (T_STRING) in /home/brperp/public_html/brp_testing/view/cron/so_delivery_date.php on line 57
+[10-Nov-2021 14:01:17 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/brperp/public_html/brp_testing/view/cron/so_delivery_date.php on line 54

@@ -1,0 +1,742 @@
+commit b6a94354ce371391b2dd5e0d5d8fa89b8799803f
+Author: BRP07 <BRP07@BRP.COM>
+Date:   Wed Jun 2 18:55:00 2021 +0530
+
+    import opening stock data using csv
+
+diff --git a/app/import_product_opening_stock/index.php b/app/import_product_opening_stock/index.php
+index 3cc2090d..7464d6c3 100644
+--- a/app/import_product_opening_stock/index.php
++++ b/app/import_product_opening_stock/index.php
+@@ -109,7 +109,7 @@ else {
+ 						{
+ 							$csv_product_name	=$data['0'];
+ 							$csv_branch_name	=$data['1'];
+-							$csv_godown_name	=$data['2'];
++							$csv_godown_name=$data['2'];
+ 							$csv_base_unit		=$data['3'];
+ 							$csv_base_stock		=$data['4'];
+ 							$csv_conv_unit		=$data['5'];
+@@ -133,7 +133,7 @@ else {
+ 							}
+ 							
+ 							if(!empty($csv_godown_name)){
+-								$qstate_1="SELECT `gd_id`,`gd_name` FROM `mst_godown` WHERE g_status=0 and `gd_name` ='".$csv_godown_name."'";
++								$qstate_1="SELECT `gd_id`,`gd_name` FROM `mst_godown` WHERE g_status=0 and `gd_name`='".$csv_godown_name."'";
+ 								$tr_state_1 = brp_mysqli_fetch_array($dbcon -> query($qstate_1));
+ 								if(!empty($tr_state_1))
+ 								{
+@@ -166,7 +166,7 @@ else {
+ 								array_push($error_array,1);
+ 							}
+ 							
+-							if(!empty($csv_conv_unit)){
++							/* if(!empty($csv_conv_unit)){
+ 								$qstate_3="SELECT `unitid`,`unit_name` FROM `unit_mst` WHERE unit_status=0 and `unit_name` ='".$csv_conv_unit."'";
+ 								$tr_state_3 = brp_mysqli_fetch_array($dbcon -> query($qstate_3));
+ 								if(!empty($tr_state_3))
+@@ -181,23 +181,21 @@ else {
+ 							}else{
+ 								$error='Conv Unit Name Not Add In Excel File';
+ 								array_push($error_array,1);
+-							}
++							} */
+ 							
+ 							if(!empty($csv_branch_name)){
+-								$qstate_3="SELECT `unitid`,`unit_name` FROM `unit_mst` WHERE unit_status=0 and `unit_name` ='".$csv_branch_name."'";
+-								$tr_state_3 = brp_mysqli_fetch_array($dbcon -> query($qstate_3));
+-								if(!empty($tr_state_3))
++								$qstate_4="SELECT `branch_id`,`branch_name` FROM `branch_mst` WHERE unit_status=0 and `branch_name` ='".$csv_branch_name."'";
++								$tr_state_4 = brp_mysqli_fetch_array($dbcon -> query($qstate_4));
++								if(!empty($tr_state_4))
+ 								{
+-									$csv_base_unit_id=$tr_state_3['unitid'];
++									$csv_branch_id=$tr_state_3['branch_id'];
+ 								}				
+ 								else
+ 								{
+-									$error='Conv Unit Not Found';
+-									array_push($error_array,1);
++									$csv_branch_id="10000";
+ 								}
+ 							}else{
+-								$error='Conv Unit Name Not Add In Excel File';
+-								array_push($error_array,1);
++								$csv_branch_id="10000";
+ 							}
+ 							
+ 							
+@@ -229,7 +227,7 @@ else {
+ 								$updateid_stock=update_record("tbl_stock_trn", $info_st,"godown_id=".$info['branch_id']." and product_id=".$csv_product_id." and ref_name='".$ref_name."'" , $dbcon);
+ 							if(!empty($info['product_stock'])){
+ 								if($info['product_stock']!="0.00"){
+-									add_stock($dbcon,$csv_product_id,$csv_base_unit_id,$date1,$ref_name,$ref_id,$info['branch_id'],$info['product_stock'],1,);
++									add_stock($dbcon,$csv_product_id,$csv_base_unit_id,$date1,$ref_name,$ref_id,$info['branch_id'],$info['product_stock'],1,$csv_branch_id);
+ 								}
+ 							}
+ 							
+diff --git a/config/constants.php b/config/constants.php
+index ee559554..41559d7f 100644
+--- a/config/constants.php
++++ b/config/constants.php
+@@ -941,4 +941,8 @@ define('ADMINISTRATOR_MATERIAL_PARAMETER_LIST', 'administrator-material-paramete
+ define('ADMINISTRATOR_MATERIAL_PARAMETER_CREATE', 'administrator-material-parameter-list');
+ define('ADMINISTRATOR_MATERIAL_PARAMETER_UPDATE', 'administrator-material-parameter-update');
+ define('ADMINISTRATOR_MATERIAL_PARAMETER_DELETE', 'administrator-material-parameter-delete');
+-define('ADMINISTRATOR_MATERIAL_PARAMETER_EXCEL', 'administrator-material-parameter-excel');
+\ No newline at end of file
++define('ADMINISTRATOR_MATERIAL_PARAMETER_EXCEL', 'administrator-material-parameter-excel');
++
++
++//csv upload
++define('PRODUCT_OPENING_STOCK_CSV_UPLOAD', 'product-opening-stock-csv-upload');
+diff --git a/update/import opening stock using csv/app/import_product_opening_stock/index.php b/update/import opening stock using csv/app/import_product_opening_stock/index.php
+new file mode 100644
+index 00000000..7464d6c3
+--- /dev/null
++++ b/update/import opening stock using csv/app/import_product_opening_stock/index.php	
+@@ -0,0 +1,339 @@
++<?php
++session_start();
++$AJAX = true;
++include("../../config/config.php");
++include("../../config/session.php");
++include("../../include/common_functions.php");
++include("../../include/function_database_query.php"); 
++
++if($_POST != NULL) {
++	$POST = bulk_filter($dbcon,$_POST);
++}
++else {
++	$POST = bulk_filter($dbcon,$_GET);
++}
++	
++	if(strtolower($POST['mode']) == "fetch") {
++		$edit_btn_per=check_permission($_SESSION['page'],$_SESSION['user_id'],'edit',$dbcon);
++		$delete_btn_per=check_permission($_SESSION['page'],$_SESSION['user_id'],'delete',$dbcon);
++		 
++		$where='';
++		if($POST['party_type']){
++			$where.=' and cust.party_type='.$POST['party_type'];
++		}
++		
++		$appData = array();
++		$i=1;
++		$aColumns = array('cust_id', 'cc.cc_name', 'party_type', 'cust_name', 'cust_email', 'cust_mobile', 'cust_gst', 'cust_status','cust.cdate','cust.user_id');
++		$sIndexColumn = "cust_id";
++		$isWhere = array("cust_status = 0 ".$where."  and cust.company_id in (0,$_SESSION[company_id])");
++		$sTable = " tbl_customer as cust";			
++		$isJOIN = array('left join  tbl_customer_category as cc on cc.cc_id=cust.cust_cat');
++		$hOrder = "cust.cust_id desc";
++		include('../../include/pagging.php');
++		$appData = array();
++		$id=1;
++		foreach($sqlReturn as $row) {
++			$row_data = array();
++			$row_data[] = $row['sr'];
++			
++			/*if($row['party_type']=='1'){
++				$row_data[] = "Customer";
++			}
++			else if($row['party_type']=='2'){
++				$row_data[] = "Vendor";
++			}
++			else{
++				$row_data[] = "Both";
++			}*/
++			
++			$row_data[] = $row['cc_name'];
++			$row_data[] = $row['cust_name'];
++			$row_data[] = $row['cust_email'];
++			$row_data[] = $row['cust_mobile'];
++			$row_data[] = $row['cust_gst'];
++			
++			
++			$edit_btn=''; $delete_btn=''; 
++			
++			$view_cust_btn=' <a class="btn btn-xs btn-info" data-original-title="View Customer" data-toggle="tooltip" data-placement="top" href="'.ROOT.'customer_view/'.$row['cust_id'].'"><i class="fa fa-eye"></i></a>';
++			
++			if($edit_btn_per){ 
++				$edit_btn=' <a class="btn btn-xs btn-warning" data-original-title="Edit" data-toggle="tooltip" data-placement="top" href="'.ROOT.'customeraddedit/'.$row['cust_id'].'"><i class="fa fa-pencil"></i></a>'; 
++			}
++			if($delete_btn_per){
++				$delete_btn=' <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip" data-placement="top" onClick="delete_cust('.$row['cust_id'].')"><i class="fa fa-trash-o"></i></button>'; 
++			}
++			
++			$row_data[] = $printcheckbox.' '.$edit_btn.' '.$delete_btn;
++			$appData[] = $row_data;
++			$id++;
++		}
++		$output['aaData'] = $appData;
++		echo json_encode( $output );
++	}else if(strtolower($POST['mode']) == "check_data"){
++				$row[] ='';
++				if(!empty($_FILES['excel_file']['tmp_name']))
++				{
++					$file_name = $_FILES['excel_file']['name'];
++					$err = $_FILES["excel_file"]["tmp_name"];
++					$exts = array('csv'); 
++					if(in_array(end(explode('.', $file_name)), $exts))
++					{
++						move_uploaded_file($err,CUSTOMER_UPING.$file_name);
++						$handle = fopen(CUSTOMER_UPING.$file_name, "r");
++						$row = check_data($file_name,$dbcon);
++					}
++					else
++					{
++						$row['res'] = "-1";
++					}
++			}
++			else
++				$row['res'] ='0';
++				echo json_encode($row);
++		}
++		else if(strtolower($POST['mode']) == "import_data"){
++				if(!empty($_FILES['excel_file']['tmp_name']))
++				{
++					$file_name = $_FILES['excel_file']['name'];
++					$err = $_FILES["excel_file"]["tmp_name"];
++					move_uploaded_file($err,CUSTOMER_UPING.$file_name);
++					$handle = fopen(CUSTOMER_UPING.$file_name, "r");
++					($data = fgetcsv($handle,","));//get field rows
++					$i=1;$error_array=array();
++					while (($data = fgetcsv($handle,",")) !== FALSE) //get all data one by one
++					{
++						$error='';
++						if(!empty($data['0']))
++						{
++							$csv_product_name	=$data['0'];
++							$csv_branch_name	=$data['1'];
++							$csv_godown_name=$data['2'];
++							$csv_base_unit		=$data['3'];
++							$csv_base_stock		=$data['4'];
++							$csv_conv_unit		=$data['5'];
++							$csv_conv_stock		=$data['6'];
++							
++							if(!empty($csv_product_name)){
++								$qstate="SELECT `product_id`,`product_name` FROM `product_mst` WHERE product_status=0 and `product_name` ='".$csv_product_name."'";
++								$tr_state = brp_mysqli_fetch_array($dbcon -> query($qstate));
++								if(!empty($tr_state))
++								{
++									$csv_product_id=$tr_state['product_id'];
++								}				
++								else
++								{
++									$error='Product Not Found';
++									array_push($error_array,1);
++								}
++							}else{
++								$error='Product Name Not Add In Excel File';
++								array_push($error_array,1);
++							}
++							
++							if(!empty($csv_godown_name)){
++								$qstate_1="SELECT `gd_id`,`gd_name` FROM `mst_godown` WHERE g_status=0 and `gd_name`='".$csv_godown_name."'";
++								$tr_state_1 = brp_mysqli_fetch_array($dbcon -> query($qstate_1));
++								if(!empty($tr_state_1))
++								{
++									$csv_godown_id=$tr_state_1['gd_id'];
++								}				
++								else
++								{
++									$error='Godown Not Found';
++									array_push($error_array,1);
++								}
++							}else{
++								$error='Godown Name Not Add In Excel File';
++								array_push($error_array,1);
++							}
++							
++							if(!empty($csv_base_unit)){
++								$qstate_2="SELECT `unitid`,`unit_name` FROM `unit_mst` WHERE unit_status=0 and `unit_name` ='".$csv_base_unit."'";
++								$tr_state_2 = brp_mysqli_fetch_array($dbcon -> query($qstate_2));
++								if(!empty($tr_state_2))
++								{
++									$csv_base_unit_id=$tr_state_2['unitid'];
++								}				
++								else
++								{
++									$error='Base Unit Not Found';
++									array_push($error_array,1);
++								}
++							}else{
++								$error='Base Unit Name Not Add In Excel File';
++								array_push($error_array,1);
++							}
++							
++							/* if(!empty($csv_conv_unit)){
++								$qstate_3="SELECT `unitid`,`unit_name` FROM `unit_mst` WHERE unit_status=0 and `unit_name` ='".$csv_conv_unit."'";
++								$tr_state_3 = brp_mysqli_fetch_array($dbcon -> query($qstate_3));
++								if(!empty($tr_state_3))
++								{
++									$csv_base_unit_id=$tr_state_3['unitid'];
++								}				
++								else
++								{
++									$error='Conv Unit Not Found';
++									array_push($error_array,1);
++								}
++							}else{
++								$error='Conv Unit Name Not Add In Excel File';
++								array_push($error_array,1);
++							} */
++							
++							if(!empty($csv_branch_name)){
++								$qstate_4="SELECT `branch_id`,`branch_name` FROM `branch_mst` WHERE unit_status=0 and `branch_name` ='".$csv_branch_name."'";
++								$tr_state_4 = brp_mysqli_fetch_array($dbcon -> query($qstate_4));
++								if(!empty($tr_state_4))
++								{
++									$csv_branch_id=$tr_state_3['branch_id'];
++								}				
++								else
++								{
++									$csv_branch_id="10000";
++								}
++							}else{
++								$csv_branch_id="10000";
++							}
++							
++							
++							$q=$dbcon->query("select branch_id,product_id from tbl_branch_product_stock where branch_id='".$csv_godown_id."' and product_id='".$csv_product_id."'");
++							$count=brp_mysqli_num_rows($q);
++							$roq=brp_mysqli_fetch_assoc($q);
++							
++									$info['product_stock']	=$csv_base_stock;
++									$info['branch_id']		=$csv_godown_id;
++									$info['priority']		="0";
++									$info['user_id']		=$_SESSION['user_id'];
++									$info['cdate']			=date("Y-m-d h:i:s");
++									$info['company_id']		=$_SESSION['company_id'];
++									
++									$info['product_id']=$csv_product_id;
++							//var_dump($info);
++							$table='tbl_branch_product_stock';$tableid='branch_product_stock_id';
++							
++							if(!empty($info['product_stock'])){
++								if($info['product_stock']!="0.00"){
++									$inserid=add_record($table, $info, $dbcon);
++								}
++							}
++								$ref_id=$inserid;
++							
++							$date1=date("Y-m-d");
++							$ref_name="opening_stock";
++							$info_st['stock_status']=2;
++								$updateid_stock=update_record("tbl_stock_trn", $info_st,"godown_id=".$info['branch_id']." and product_id=".$csv_product_id." and ref_name='".$ref_name."'" , $dbcon);
++							if(!empty($info['product_stock'])){
++								if($info['product_stock']!="0.00"){
++									add_stock($dbcon,$csv_product_id,$csv_base_unit_id,$date1,$ref_name,$ref_id,$info['branch_id'],$info['product_stock'],1,$csv_branch_id);
++								}
++							}
++							
++							
++					/* $q="SELECT `cust_name`,`company_name` FROM `tbl_customer` WHERE cust_status=0 and `company_id` ='".$_SESSION['company_id']."' and `company_name` ='".$info['company_name']."' ";
++							$tr = $dbcon -> query($q);
++							$cnt=mysqli_num_rows($tr);
++							if($cnt>0 ) {
++								$error='Company Already Added';
++								array_push($error_array,1);
++							}
++							else if(!empty($error))
++							{
++								$err='error';
++								array_push($error_array,1);
++							}
++							else
++							{
++								add_record('tbl_customer', $info, $dbcon);
++							} */
++							 
++						}
++						else
++						{
++							$error='Blank Row';
++							array_push($error_array,1);
++						}
++						if(!empty($error))
++						{
++								
++								$info1['line_num']=$i;
++								$info1['error']=$error;
++								$info1['company_id']=$_SESSION['company_id'];
++								add_record('cust_tempdata', $info1, $dbcon);
++						}
++					$i++;	
++					}
++						if(in_array(1,$error_array))
++						{
++							$result['res']='5';
++						}
++						else
++						{
++							$result['res']='4';
++						}	
++				fclose($handle);//close file reading
++				
++			}
++			else
++			{$result['res']='0';}
++			echo  json_encode($result);
++		}
++		else if(strtolower($POST['mode']) == "show_importedcustdata") {
++			$temp_custqry='select * from cust_tempdata where company_id='.$_SESSION['company_id'];
++			$temp_result=$dbcon->query($temp_custqry);
++			if(mysqli_num_rows($temp_result)>0)
++			{
++			echo '<table  class="display table table-bordered table-striped">
++								<tr>
++								<td>Line Number</td>
++								<td>Error</td>
++								</tr>';
++			 
++		 
++			while($temp_rel=mysqli_fetch_assoc($temp_result))
++			{
++				echo '<tr>';
++				echo '<td>'.$temp_rel['line_num'].'</td>'; 
++				echo '<td>'.$temp_rel['error'].'</td>'; 
++				echo '</tr>';
++			}
++				echo '</table>';
++			}
++		}
++
++function check_data($filename,$dbcon)
++{
++	$error=array();
++	$arr = explode(".", $filename);
++	$fp = fopen(CUSTOMER_UPING.$filename, 'r');
++	$frow = fgetcsv($fp);
++	if(count($frow)==5) // Define coulmn count Here
++	{
++		$msg='';
++		foreach($frow as $i)
++		if ( !in_array($i, array('Product Name','Branch Name','Godown Name','Unit','Stock'), true ) ) 
++		{
++			$msg='error';
++		}
++		
++		if(!empty($msg))
++		{
++			$error['res']="3";
++		}
++		else
++		{
++			delete_record('cust_tempdata', 'company_id='.$_SESSION['company_id'], $dbcon);
++			$error['res']="1";
++		}
++	}
++	else
++	{
++		$error['res']="0";
++	}
++	//$error['res']=count($frow);
++	return $error;
++	
++}
++?>
+\ No newline at end of file
+diff --git a/update/import opening stock using csv/extra/constants.txt b/update/import opening stock using csv/extra/constants.txt
+new file mode 100644
+index 00000000..b0b977d4
+--- /dev/null
++++ b/update/import opening stock using csv/extra/constants.txt	
+@@ -0,0 +1,2 @@
++//csv upload
++define('PRODUCT_OPENING_STOCK_CSV_UPLOAD', 'product-opening-stock-csv-upload');
+\ No newline at end of file
+diff --git a/update/import opening stock using csv/js/import_product_opening_stock.js b/update/import opening stock using csv/js/import_product_opening_stock.js
+new file mode 100644
+index 00000000..3062b6f9
+--- /dev/null
++++ b/update/import opening stock using csv/js/import_product_opening_stock.js	
+@@ -0,0 +1,107 @@
++//var datatable;
++$(document).ready(function() {
++	$("#import_customer").validate({
++		rules: {
++			excel_file: {
++				required: true			
++			}
++		},
++		messages: {
++			excel_file: {
++				required: "Select CSV File"			
++			}
++		}
++	});
++});
++
++$("#import_customer").on('submit',function(e) {
++	var form = this;
++	e.preventDefault();
++	e.stopPropagation();	
++	
++	if (!$("#import_customer").valid()) {
++		return false;
++	}
++	
++	form.submitted = true;	
++	Loading();	
++	$(this).attr("disabled","disabled");		
++	var token	=  $("#token").val();	
++	var form_data=new FormData(this);	
++	$.ajax({
++		cache:false,
++		url: root_domain+'app/import_product_opening_stock/',
++		type: "POST",
++		data: form_data,
++		contentType: false,
++		processData:false,
++		success: function(response)
++		{	
++			console.log(response);
++			var data = JSON.parse(response);
++			var response=data.res;
++			Unloading();
++			if(response == '1') {
++				$('#msg').html('<span style="color:green">Data Cheked Successfully</span>');
++				$('#check_button').hide();
++				$('#mode').val('import_data');
++				$('#import_button').show();
++			}
++			else if(response == '-1')
++			{
++				toastr.info("SELECT WRONG FILE", "INFO")
++				$('#import_customer').trigger('reset');
++				Unloading();				
++			}
++			else if(response == '0')
++			{
++				$('#msg').html('<span style="color:red"> Coloums Does Not Match Please Check With demo File</span>');
++				$('#import_customer').trigger('reset');
++				Unloading();				
++			}
++			else if(response == '3')
++			{
++				$('#msg').html('<span style="color:red"> Coloum Name Does Not Match Please Check With demo File</span>');
++				$('#import_customer').trigger('reset');
++				Unloading();				
++			}
++			else if(response == '4')
++			{
++				toastr.success("CUSTOMER IMPORT SUCCESSFULLY", "SUCCESS");
++				window.location=root_domain+'customer_list';		
++				$('#import_customer').trigger('reset');
++				Unloading();				
++			}
++			else if(response == '5')
++			{
++				$('#import_customer').trigger('reset');
++				 $('#check_button').show();
++				$('#mode').val('check_data');
++				$('#import_button').hide();
++				show_importedcust_data();
++				Unloading();				
++			}
++		},
++		error: function(jqXHR, textStatus, errorThrown) {
++			console.log(textStatus, errorThrown);
++		}
++	});
++	
++});
++function show_importedcust_data(total)
++{
++	Loading();
++	$.ajax({
++	type: "POST",
++	url: root_domain+'app/import_product_opening_stock/',
++	data: { mode : "show_importedcustdata"},
++	success: function(responce){
++				console.log(responce);
++				Unloading();
++				 $('#imported_data_section').show();
++				$('#temp_custdata').html(responce);
++				 
++			}
++	});
++				
++}
+\ No newline at end of file
+diff --git a/update/import opening stock using csv/view/import_product_opening_stock.php b/update/import opening stock using csv/view/import_product_opening_stock.php
+new file mode 100644
+index 00000000..7c3ecff9
+--- /dev/null
++++ b/update/import opening stock using csv/view/import_product_opening_stock.php	
+@@ -0,0 +1,108 @@
++<?php 
++	session_start();
++	include_once("../config/config.php");
++	include_once("../config/session.php");
++	include_once("../include/common_functions.php");
++	$token = md5(rand(1000,9999));
++	$_SESSION['token'] = $token;
++	$form="Import Opening Stock";
++	$mode="Add";
++	
++	$bulkAccessArray = canCheckPermissionAccess($dbcon, [
++		PRODUCT_OPENING_STOCK_CSV_UPLOAD
++	]);
++	
++		if(!in_array(PRODUCT_OPENING_STOCK_CSV_UPLOAD,$bulkAccessArray)){
++                        header("Location: ".DOMAIN."permission_access");
++                }
++	
++?>
++
++<!DOCTYPE html>
++<html lang="en">
++	<head>
++		<?php include_once('../include/include_css_file.php');?>
++	</head>
++	<body>
++		<section id="container" >
++			<?php include_once('../include/include_top_menu.php');?>
++			<?php include_once('../include/left_menu.php');?>
++			<section id="main-content">
++				<section class="wrapper">		
++					<div class="row">
++						<div class="col-lg-12">
++							<section class="panel">
++								<header class="panel-heading">
++									<h3><?=$form?></h3>
++								</header>	
++								<div class="">
++									<ul class="breadcrumb">
++										<li><a href="<?=ROOT.'dashboard'?>"><i class="fa fa-home"></i> Home</a></li>
++										<!--<li><a href="<?//=ROOT.'customer_list'?>">Customer List</a></li>-->
++									</ul>
++								</div>
++							</section>
++						</div>	
++					</div>
++					<div class="row">			
++						<div class="col-sm-12">
++							<section class="panel">
++								<header class="panel-heading">
++									New <?=$form?>
++								</header>	
++								<div class="panel-body ">
++									<form class="form-horizontal" role="form" id="import_customer" action="javascript:;" method="post" name="import_customer" enctype="multipart/form-data">
++										<div class="row">
++											<div class="col-md-10">
++												<div class="form-group">
++													<label class="col-md-3 control-label">Import Stock.csv File</label>
++													<div class="col-md-4 col-xs-11">
++														<input type="file" id="excel_file" name="excel_file" class="form-control"   title="Select File"/>
++														<div id="msg"></div>
++													</div>
++												</div>
++												<div class="form-group">
++													<label class="col-md-3 control-label">File Formate</label>
++													<div class="col-md-6 col-xs-11">
++														<a href="<?=ROOT.CUSTOMER_VWING.'stock.csv'?>" target="_blank" class="btn btn-info">Click to View Csv File Formate  </a>
++													</div>
++												</div>
++												<button type="submit" class="btn btn-success">Submit</button> &nbsp;
++												<a href="<?=ROOT.'dashboard'?>" type="button" class="btn btn-danger">Cancel</a>
++												<div class="col-md-3"></div>	
++											</div>
++										</div>	
++										<input type='hidden' name='mode' id='mode' value='check_data' />
++										<input type='hidden' name='eid' id='eid' value='<?=$rel['festival_id']?>' />
++										<input type='hidden' name='token' id='token' value='<?php echo $token; ?>' />				  
++									</form>
++								</div>	
++							</section>
++							<section class="panel" id="imported_data_section" style="display:none">
++								<header class="panel-heading">
++									Error In Import Data Record
++								</header>
++								<div class="panel-body">
++									<div id="temp_custdata"></div>
++								</div>						
++							</section>
++						</div>
++					</div>
++				</section>
++			</section>
++			<?php include_once('../include/footer.php');?>
++		</section>
++		<?php include_once('../include/include_js_file.php');?>   
++		<script src="<?=ROOT?>js/app/import_product_opening_stock.js?<?=time()?>"></script>
++		  <script>
++	
++	$(".select2").select2({
++		width: '100%'
++	});
++	$('.default-date-picker').datepicker({
++            format: 'dd-mm-yyyy',
++            autoclose: true
++        });
++</script>
++	</body>
++</html>
+diff --git a/update/import opening stock using csv/view/upload/customer_excel/stock.csv b/update/import opening stock using csv/view/upload/customer_excel/stock.csv
+new file mode 100644
+index 00000000..6281dd9e
+--- /dev/null
++++ b/update/import opening stock using csv/view/upload/customer_excel/stock.csv	
+@@ -0,0 +1,2 @@
++Product Name,Branch Name,Godown Name,Unit,Stock
++150X100X4 REC. PIPE,10000,C-STORE,Nos,500
+diff --git a/view/import_product_opening_stock.php b/view/import_product_opening_stock.php
+index 140d1b3e..7c3ecff9 100644
+--- a/view/import_product_opening_stock.php
++++ b/view/import_product_opening_stock.php
+@@ -8,6 +8,14 @@
+ 	$form="Import Opening Stock";
+ 	$mode="Add";
+ 	
++	$bulkAccessArray = canCheckPermissionAccess($dbcon, [
++		PRODUCT_OPENING_STOCK_CSV_UPLOAD
++	]);
++	
++		if(!in_array(PRODUCT_OPENING_STOCK_CSV_UPLOAD,$bulkAccessArray)){
++                        header("Location: ".DOMAIN."permission_access");
++                }
++	
+ ?>
+ 
+ <!DOCTYPE html>
+@@ -30,7 +38,7 @@
+ 								<div class="">
+ 									<ul class="breadcrumb">
+ 										<li><a href="<?=ROOT.'dashboard'?>"><i class="fa fa-home"></i> Home</a></li>
+-										<li><a href="<?=ROOT.'customer_list'?>">Customer List</a></li>
++										<!--<li><a href="<?//=ROOT.'customer_list'?>">Customer List</a></li>-->
+ 									</ul>
+ 								</div>
+ 							</section>
+@@ -47,7 +55,7 @@
+ 										<div class="row">
+ 											<div class="col-md-10">
+ 												<div class="form-group">
+-													<label class="col-md-3 control-label">Import Customer .csv File</label>
++													<label class="col-md-3 control-label">Import Stock.csv File</label>
+ 													<div class="col-md-4 col-xs-11">
+ 														<input type="file" id="excel_file" name="excel_file" class="form-control"   title="Select File"/>
+ 														<div id="msg"></div>
+@@ -56,11 +64,11 @@
+ 												<div class="form-group">
+ 													<label class="col-md-3 control-label">File Formate</label>
+ 													<div class="col-md-6 col-xs-11">
+-														<a href="<?=ROOT.CUSTOMER_VWING.'demo_customer_import.csv'?>" target="_blank" class="btn btn-info">Click to View Csv File Formate  </a>
++														<a href="<?=ROOT.CUSTOMER_VWING.'stock.csv'?>" target="_blank" class="btn btn-info">Click to View Csv File Formate  </a>
+ 													</div>
+ 												</div>
+ 												<button type="submit" class="btn btn-success">Submit</button> &nbsp;
+-												<a href="<?=ROOT.'customer_list'?>" type="button" class="btn btn-danger">Cancel</a>
++												<a href="<?=ROOT.'dashboard'?>" type="button" class="btn btn-danger">Cancel</a>
+ 												<div class="col-md-3"></div>	
+ 											</div>
+ 										</div>	
+diff --git a/view/upload/customer_excel/stock.csv b/view/upload/customer_excel/stock.csv
+index 264d2969..6281dd9e 100644
+--- a/view/upload/customer_excel/stock.csv
++++ b/view/upload/customer_excel/stock.csv
+@@ -1 +1,2 @@
+-Product Name,Branch Name,Godown Name,Base Unit,Base Stock,Conv Unit,Conv Stock
++Product Name,Branch Name,Godown Name,Unit,Stock
++150X100X4 REC. PIPE,10000,C-STORE,Nos,500

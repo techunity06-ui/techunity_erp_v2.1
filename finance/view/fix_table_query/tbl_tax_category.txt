@@ -1,0 +1,50 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 01, 2021 at 07:34 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `bigdatas_umaboy_erp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tax_category`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_tax_category` (
+  `tax_cat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tax_cat_name` varchar(255) NOT NULL,
+  `tax_gst` double(22,0) NOT NULL,
+  `isdelete` tinyint(4) NOT NULL DEFAULT '0',
+  `cdate` timestamp NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `usertype_id` int(11) NOT NULL,
+  PRIMARY KEY (`tax_cat_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+
+--
+-- Dumping data for table `tbl_tax_category`
+--
+
+INSERT INTO `tbl_tax_category` (`tax_cat_id`, `tax_cat_name`, `tax_gst`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`) VALUES
+(17, 'GST 0%', 0, 0, '2021-09-23 10:27:11', 1, 1, 2),
+(18, 'GST 5%', 5, 0, '2021-09-23 10:27:22', 1, 1, 2),
+(19, 'GST 12%', 12, 0, '2021-09-23 10:27:34', 1, 1, 2),
+(20, 'GST 18%', 18, 0, '2021-09-23 10:27:48', 1, 1, 2),
+(21, 'GST 28%', 28, 0, '2021-09-24 09:12:04', 1, 1, 2),
+(22, 'GST NILL RATED', 0, 0, '2021-09-23 10:28:18', 1, 1, 2),
+(23, 'NON GST', 0, 0, '2021-09-23 10:28:30', 1, 1, 2),
+(24, 'GST EXEMPTED', 0, 0, '2021-09-23 10:28:47', 1, 1, 2),
+(25, 'GST ZERO RATED', 0, 0, '2021-09-23 10:30:46', 1, 1, 2),
+(26, 'GST 5% WITH CESS', 5, 0, '2021-09-23 11:05:36', 1, 1, 2),
+(27, 'GST', 0, 0, '2021-09-24 09:12:01', 1, 1, 2);

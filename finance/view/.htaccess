@@ -1,0 +1,85 @@
+<ifModule mod_headers.c>
+	# YEAR
+	<filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf)$">
+	  Header set Cache-Control "max-age=29030400"
+	</filesMatch>
+	# WEEK
+	<filesMatch ".(js|css|swf)$">
+	  Header set Cache-Control "max-age=604800"
+	</filesMatch>
+	# 45 MIN
+	<filesMatch ".(html|htm|txt|php)$">
+	  Header set Cache-Control "max-age=2700"
+	</filesMatch>
+</ifModule>
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+<ifmodule mod_deflate.c>
+#AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/x-javascript application/javascript
+#AddHandler application/x-httpd-php56 .php
+</ifmodule>
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	#RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+	#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/sw/$1 [R=301,L]
+	Options -Indexes +FollowSymLinks -MultiViews
+	
+	
+
+		# Finance Master Links
+	RewriteRule ^terms_edit/([^/]*)$ terms_add.php?id=$1 [L]
+	RewriteRule ^debitnote_add_qc/([^/]*)$ debit_note_create.php?id=$1 [L]
+	RewriteRule ^customeraddedit/([^/]*)$ customer.php?id=$1 [L]
+
+	RewriteRule ^ledger_edit/([^/]*)$ ledger_create.php?id=$1 [L]
+	RewriteRule ^salesman_edit/([^/]*)$ salesman_create.php?id=$1 [L]
+	RewriteRule ^tds_tax_category_edit/([^/]*)$ tds_tax_category_create.php?id=$1 [L]
+	RewriteRule ^invoiceedit/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^invoicereceipt/([^/]*)/([0-9]+)$ invoicereceipt.php?id=$1&printstatus=$2 [L]
+	RewriteRule ^invoicereceipt/([^/]*)$ invoicereceipt.php?id=$1 [L]
+	RewriteRule ^salereturnedit/([^/]*)$ sale_return_create.php?id=$1 [L]
+	RewriteRule ^purchaseedit/([^/]*)$ purchase_add.php?id=$1 [L]
+	RewriteRule ^contra_entry_edit/([^/]*)$ contra_entry.php?id=$1 [L]
+	RewriteRule ^debitnoteedit/([^/]*)$ debit_note_create.php?id=$1 [L]
+	RewriteRule ^journal_entry_edit/([^/]*)$ journal_entry.php?id=$1 [L]
+	RewriteRule ^debit_note_without_itm_edit/([^/]*)$ debit_note_without_itm.php?id=$1 [L]
+	RewriteRule ^credit_note_without_itm_edit/([^/]*)$ credit_note_without_itm.php?id=$1 [L]
+
+	RewriteRule ^recipt_edit/([^/]*)$ recipt.php?id=$1 [L]
+	RewriteRule ^payment_edit/([^/]*)$ payment_new.php?id=$1 [L]
+
+	RewriteRule ^invoicechalan/([^/]*)$ invoicechalan.php?id=$1 [L]
+	RewriteRule ^ledger_detail/([^/]*)$ ledger_detail_report.php?id=$1 [L]
+	RewriteRule ^ledger_form/([^/]*)$ ledger_detail_report_form.php?id=$1 [L]
+	RewriteRule ^invoiceso/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^spare_to_inv/([^/]*)$ invoice.php?id=$1 [L]
+	RewriteRule ^cost_detail/([^/]*)/([0-9]+)/([0-9]+)$ price_list_detail.php?id=$1&id2=$2&id3=$3 [L]
+	RewriteRule ^cost_detail/([^/]*)/([0-9]+)/([^/]*)/([^/]*)$ price_list_detail.php?id=$1&id2=$2&id3=$3&id4=$4 [L]
+	RewriteRule ^cost_allocate/([^/]*)/([0-9]+)/([^/]*)/([^/]*)/([^/]*)$ price_list_detail.php?id=$1&id2=$2&id3=$3&id4=$4&id5=$5 [L]
+	RewriteRule ^price_list_product/([^/]*)/([^/]*)$ price_list_create.php?id=$1&id2=$2 [L]
+	
+	
+	RewriteRule ^price_list_view/([^/]*)$ price_list_view.php?id=$1 [L]
+	RewriteRule ^linkreceipt_sales/([^/]*)$ linkreceipt_sales.php?id=$1 [L]
+	RewriteRule ^receipt_sales/([^/]*)$ receipt_sales.php?id=$1 [L]
+	RewriteRule ^receipt_purchase/([^/]*)$ receipt_purchase.php?id=$1 [L]
+	RewriteRule ^linkreceipt_purchase/([^/]*)$ linkreceipt_purchase.php?id=$1 [L]
+	RewriteRule ^price_list_edit/([^/]*)$ price_list_create.php?id=$1 [L]
+	RewriteRule ^aging_receive_details/([^/]*)$ aging_receive_details.php?id=$1 [L]
+	RewriteRule ^cash_flow_report_by_group/([^/]*)$ cash_flow_report_by_group.php?id=$1 [L]
+
+	RewriteRule ^socardedit/([^/]*)$ sales_card_add.php?id=$1 [L]
+	RewriteRule ^elconsocardedit/([^/]*)$ elcon_sales_card_add.php?id=$1 [L]
+	
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}\.php -f
+	RewriteRule ^(.*)$ $1.php
+</ifModule>

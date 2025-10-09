@@ -1,0 +1,14 @@
+common function update
+	count_pend_disp
+	count_so_procuct_req
+	deduct_so_reseve_stock
+	
+	
+	
+	
+	
+	ALTER TABLE `tbl_sales_order` ADD `with_out_stock_invoice` INT NOT NULL COMMENT '0 : with stock, 1: with out stock invoice' AFTER `order_accept_status`;
+	
+	ALTER TABLE `tbl_sales_ordertrn` ADD `with_out_stock_invoice` INT NOT NULL COMMENT '0 : with stock, 1: with out stock invoice' AFTER `product_spec`;
+	
+	ALTER TABLE `tbl_invoicetrn` ADD `with_out_stock_invoice` INT NOT NULL COMMENT '0 : with stock, 1: with out stock invoice' AFTER `sales_ordertrn_id`;

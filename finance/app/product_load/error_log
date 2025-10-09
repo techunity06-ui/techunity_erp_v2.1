@@ -1,0 +1,398 @@
+[22-Feb-2022 13:06:15 Asia/Kolkata] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 34
+[22-Feb-2022 13:06:15 Asia/Kolkata] PHP Notice:  Undefined variable: row1 in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 48
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[22-Feb-2022 13:06:21 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:13:05 Asia/Kolkata] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 34
+[23-Feb-2022 14:13:05 Asia/Kolkata] PHP Notice:  Undefined variable: row1 in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 48
+[23-Feb-2022 14:14:06 Asia/Kolkata] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 34
+[23-Feb-2022 14:14:06 Asia/Kolkata] PHP Notice:  Undefined variable: row1 in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 48
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 36
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Notice:  Undefined variable: pro_search in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39
+[23-Feb-2022 14:14:10 Asia/Kolkata] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/brperp/public_html/hermettic_sw_v12/finance/app/product_load/index.php on line 39

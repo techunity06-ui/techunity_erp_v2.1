@@ -1,0 +1,4 @@
+Product Name,Process Name,Priority,Type,Rate,Time,Resource Name,Loss(%),Scrap(+),Scrap(-)
+bt-2,DRILING,1,inhouse,100,60,lath machine,5,5,5
+bt-2,ROLLING,2,Outside,105,120,mixing machine,6,6,6
+bt-2,ASSEMBLY,3,inhouse,100,60,lath machine,5,5,5

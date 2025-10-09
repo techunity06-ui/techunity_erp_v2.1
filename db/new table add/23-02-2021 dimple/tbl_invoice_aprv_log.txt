@@ -1,0 +1,10 @@
+CREATE TABLE `bigdatas_umaboy_erp`.`tbl_invoice_aprv_log` ( 
+`invoice_aprv_log_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+`invoice_id` INT NOT NULL , 
+`approve_remark` LONGTEXT NOT NULL , 
+`approve_status` INT NOT NULL , 
+`invoice_aprv_log_status` INT NOT NULL , 
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+`user_id` INT NOT NULL , 
+`company_id` INT NOT NULL , 
+`branch_id` INT NOT NULL ) ENGINE = InnoDB;

@@ -1,0 +1,55 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 01, 2021 at 07:32 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `bigdatas_umaboy_erp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tds_tax_category`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_tds_tax_category` (
+  `tds_cat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tds_cat_name` varchar(255) NOT NULL,
+  `effected_ledger_id` int(11) NOT NULL,
+  `tds_section` varchar(200) NOT NULL,
+  `tds_date` date NOT NULL,
+  `isdelete` tinyint(4) NOT NULL DEFAULT '0',
+  `cdate` timestamp NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `usertype_id` int(11) NOT NULL,
+  PRIMARY KEY (`tds_cat_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `tbl_tds_tax_category`
+--
+
+INSERT INTO `tbl_tds_tax_category` (`tds_cat_id`, `tds_cat_name`, `effected_ledger_id`, `tds_section`, `tds_date`, `isdelete`, `cdate`, `user_id`, `company_id`, `usertype_id`) VALUES
+(12, 'COMMISSION AND BROKRAGE ', 24460, '194H', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(13, 'CONTRACTS AND INDIVIDUALS/HUF', 24459, '194C', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(14, 'CONTRACTS TO OTHERS ', 24458, '194C', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(15, 'CONTRACTS TO TRANSPORTER ', 24457, '194C', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(16, 'FEES FOR PROFESSIONAL OR TECH.SERVICES ', 24456, '194J', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(17, 'FEES FOR PROFESSIONAL SERVICES ', 24456, '194JB', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(18, 'FEES FOR TECHNICAL SERVICES ', 24454, '194JA', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(19, 'GROSS PYMT./PURC.', 24453, '194Q', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(20, 'INTEREST FROM A BANKING COMPANY ', 24452, '194A', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(21, 'INTEREST OTHER THAN FROM A BANKING CO.', 24451, '194A', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(22, 'RENT OF LAND, BUILDING, FURNITURE, ETC.,', 24450, '194IB', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(23, 'RENT OF PLANT & MACHINERY ', 24449, '194I', '2021-08-18', 0, '0000-00-00 00:00:00', 0, 0, 0),
+(24, 'TEST', 0, '123', '2021-08-06', 1, '0000-00-00 00:00:00', 0, 0, 0),
+(25, 'test', 24431, '194c', '2021-10-14', 1, '0000-00-00 00:00:00', 0, 0, 0);

@@ -1,0 +1,24 @@
+[19-Feb-2022 14:43:25 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[19-Feb-2022 14:43:25 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[19-Feb-2022 14:43:25 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[19-Feb-2022 14:43:46 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[19-Feb-2022 14:43:46 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[19-Feb-2022 14:43:46 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[23-Feb-2022 16:12:00 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[23-Feb-2022 16:12:00 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[23-Feb-2022 16:12:00 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[23-Feb-2022 16:29:13 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[23-Feb-2022 16:29:13 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[23-Feb-2022 16:29:13 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[25-Feb-2022 16:17:30 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[25-Feb-2022 16:17:30 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[25-Feb-2022 16:17:30 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[01-Mar-2022 18:15:46 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[01-Mar-2022 18:15:46 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[01-Mar-2022 18:15:46 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[01-Mar-2022 18:16:10 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[01-Mar-2022 18:16:10 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[01-Mar-2022 18:16:10 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291
+[01-Mar-2022 18:17:31 Asia/Kolkata] PHP Notice:  A non well formed numeric value encountered in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 280
+[01-Mar-2022 18:17:31 Asia/Kolkata] PHP Warning:  Division by zero in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 285
+[01-Mar-2022 18:17:31 Asia/Kolkata] PHP Fatal error:  Call to a member function fetch_object() on a non-object in /home/brperp/public_html/hermettic_sw_v12/app/monitoring_dashboard/index.php on line 291

@@ -1,0 +1,17 @@
+[19-Feb-2022 13:36:02 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 132
+[19-Feb-2022 13:36:02 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 157
+[19-Feb-2022 13:36:02 Asia/Kolkata] PHP Warning:  implode(): Invalid arguments passed in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 188
+[19-Feb-2022 13:36:02 Asia/Kolkata] PHP Notice:  Undefined index: eid in /home/brperp/public_html/hermettic_sw_v12/administration/app/tax_category/index.php on line 403
+[22-Feb-2022 15:57:09 Asia/Kolkata] PHP Notice:  Undefined index: eid in /home/brperp/public_html/hermettic_sw_v12/administration/app/tax_category/index.php on line 403
+[22-Feb-2022 15:57:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 132
+[22-Feb-2022 15:57:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 157
+[22-Feb-2022 15:57:09 Asia/Kolkata] PHP Warning:  implode(): Invalid arguments passed in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 188
+[22-Feb-2022 15:57:14 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 132
+[22-Feb-2022 15:57:14 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 157
+[22-Feb-2022 15:57:14 Asia/Kolkata] PHP Warning:  implode(): Invalid arguments passed in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 188
+[22-Feb-2022 15:57:14 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 132
+[22-Feb-2022 15:57:14 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 157
+[22-Feb-2022 15:57:14 Asia/Kolkata] PHP Warning:  implode(): Invalid arguments passed in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 188
+[22-Feb-2022 15:57:25 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 132
+[22-Feb-2022 15:57:25 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 157
+[22-Feb-2022 15:57:25 Asia/Kolkata] PHP Warning:  implode(): Invalid arguments passed in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 188

@@ -1,0 +1,2 @@
+//csv upload
+define('PRODUCT_OPENING_STOCK_CSV_UPLOAD', 'product-opening-stock-csv-upload');

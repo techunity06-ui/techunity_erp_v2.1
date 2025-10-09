@@ -1,0 +1,4 @@
+config/ignorefile.txt
+config/db_config.php
+inventory/view/temp/
+view/upload/workorder_attachmen/

@@ -1,0 +1,19 @@
+reserve stock time unit conversation 
+grn trn entry time unit conversation
+purchase order trn used status update
+qc time check stock effects
+
+
+
+job work convert qty add
+jobwork grn convert qty add
+
+job work qc test
+
+
+common function 
+
+grn_po_sub_trn
+get_po_details_for_grn_trn
+purchase_order_grn_used_status_update
+count_min_max

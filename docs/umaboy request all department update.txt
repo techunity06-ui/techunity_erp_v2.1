@@ -1,0 +1,52 @@
+add new database table
+	tbl_all_department_request_product
+
+
+update query app/dashbord/index.php
+$c_new_spare="Select count(s_id) as spare_p_new from tbl_complain_spare_part where s_fl_status!=0 and sp_sent_status='no'".$where1;
+	
+$count_new_spare=mysqli_fetch_assoc($dbcon->query($c_new_spare));
+
+update mode app/spare_list_pending/index.php
+
+fetch mode
+	$isWhere = array("c.complaint_status = 0 and s_fl_status!=0".$where);
+
+
+
+update app/complaint/index
+mode : add_complain_status
+	//new update 23-10-2020
+			if($POST['change_status']=='4' || $POST['change_status']=='5')
+			{
+				$get_qry1="select * from tbl_complain_spare_part where and s_fl_status=0 and s_comp_id=".$POST['comp_id_hid'];
+				$redd=$dbcon->query($get_qry1);
+				while($get_rel1=mysqli_fetch_assoc($redd)){
+					$info_all['product_id']       	= $get_rel1['s_product'];
+					$info_all['qty']        		= $get_rel1['s_qty'];
+					$info_all['unit_id']        	= $get_rel1['unit_id'];
+					$info_all['request_type']       = "tbl_complain_spare_part";
+					$info_all['s_id']        		= $get_rel1['s_id'];
+					$info_all['cdate']        		= date("Y-m-d H:i:s");
+					$info_all['user_id']			= $_SESSION['user_id'];
+					$info_all['company_id']			= $_SESSION['company_id'];
+				
+					$inserimgid=add_record('tbl_all_department_request_product', $info_all, $dbcon);
+				}
+				
+				$infofo['s_fl_status']	= $POST['change_status'];
+				$where="";
+				$where.=" and s_fl_status=0";
+				$updatetrnid1=update_record('tbl_complain_spare_part', $infofo,"s_comp_id=".$POST['comp_id_hid'].$where,$dbcon);
+			}
+			
+update commanfunction 
+	count_stock_procuct_req()
+	
+new add commanfunction
+	all_request_data_use();
+
+update app/request_product/index.php
+	replace full file
+	
+	

@@ -1,0 +1,6 @@
+ALTER TABLE `tbl_cust_month_consumption`
+ADD `isdelete` TINYINT NOT NULL DEFAULT '0' ,
+ADD `cdate` TIMESTAMP NOT NULL ,
+ADD `user_id` INT NOT NULL ,
+ADD `company_id` INT NOT NULL ,
+ADD `usertype_id` INT NOT NULL ;

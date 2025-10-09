@@ -1,0 +1,42 @@
+ALTER TABLE `tbl_inquiry_project_trn` CHANGE `tax_name1` `cgst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount1` `cgst_tax_rate` DOUBLE NOT NULL, CHANGE `tax_name2` `sgst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount2` `sgst_tax_rate` DOUBLE NOT NULL, CHANGE `tax_name3` `igst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount3` `igst_tax_rate` DOUBLE NOT NULL;
+
+
+ALTER TABLE `tbl_quotation_project_trn` CHANGE `tax_name1` `cgst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount1` `cgst_tax_rate` DOUBLE NOT NULL, CHANGE `tax_name2` `sgst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount2` `sgst_tax_rate` DOUBLE NOT NULL, CHANGE `tax_name3` `igst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount3` `igst_tax_rate` DOUBLE NOT NULL;
+
+ALTER TABLE `tbl_salesorder_project_trn` CHANGE `tax_name1` `cgst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount1` `cgst_tax_rate` DOUBLE NOT NULL, CHANGE `tax_name2` `sgst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount2` `sgst_tax_rate` DOUBLE NOT NULL, CHANGE `tax_name3` `igst_tax_per` DOUBLE NOT NULL, CHANGE `tax_amount3` `igst_tax_rate` DOUBLE NOT NULL;
+
+
+
+///////////////////////////////////
+29-7-2022 (Done) Push On 1-8-2022
+ALTER TABLE `tbl_company_special_field_permission` ADD `smpl_permission` INT NOT NULL AFTER `atlas_permission`;
+////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////
+
+ALTER TABLE `tbl_company_configuration` ADD `smpl_batch_prefix` VARCHAR(100) NOT NULL AFTER `store_relese_first_process`;
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+SELECT pro_brand.prod_brand, pro.product_id,product_name,sum(product_stock),sum(minimum_stock),sum(purchaseqty),sum(todaypurchaseqty),sum(invoiceqty),sum(todayinvoiceqty) FROM `product_brand` as pro_brand 
+		
+        left join tbl_product as pro on pro.prod_brand=pro_brand.prod_brand_id
+        
+        left join (select sum(purtrn.product_qty) as purchaseqty,purtrn.product_id from  tbl_potrancation as purtrn inner join tbl_pono as po on po.po_id=purtrn.po_id where purtrn.potrancation_status=0 and po.po_date < '2022-08-08' and po.company_id=4 
+		group by purtrn.product_id) as purchase on purchase.product_id=pro.product_id
+		
+		left join (select sum(purtrn.product_qty) as todaypurchaseqty,purtrn.product_id from  tbl_potrancation as purtrn inner join tbl_pono as po on po.po_id=purtrn.po_id where purtrn.potrancation_status=0 and po.po_date = '2022-08-08' and po.company_id=4 
+		group by purtrn.product_id) as purchase1 on purchase1.product_id=pro.product_id
+		
+		left join (select sum(invtrn.product_qty) as invoiceqty,invtrn.product_id from  tbl_invoicetrn as invtrn inner join tbl_invoice as invmst on invmst.invoice_id=invtrn.invoice_id where invtrn.trancation_status=0 and invmst.company_id=4 and invoice_date<'2022-08-08'  
+		group by invtrn.product_id) as invoice on invoice.product_id=pro.product_id
+		
+		left join (select sum(invtrn.product_qty) as todayinvoiceqty,invtrn.product_id from  tbl_invoicetrn as invtrn inner join tbl_invoice as invmst on invmst.invoice_id=invtrn.invoice_id where invtrn.trancation_status=0 and invmst.company_id=4 and invoice_date='2022-08-08'  
+		group by invtrn.product_id) as invoice1 on invoice1.product_id=pro.product_id
+		
+		where pro.product_status!=2 and pro.product_type=0  group by   pro_brand.prod_brand order by product_name
+
+
+

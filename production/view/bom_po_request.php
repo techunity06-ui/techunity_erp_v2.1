@@ -1,0 +1,358 @@
+<?php 
+	session_start();
+	include('../include/urlfile.php');	
+	$token = md5(rand(1000,9999));
+	$_SESSION['token'] = $token;
+	$_SESSION['contents']='';
+	$form="Po Request";
+	$mode="Print";
+	$bom_id = $dbcon->real_escape_string($_REQUEST['id']);
+	$query="select * from tbl_planning where pl_order_id=$bom_id";
+	$rel=mysqli_fetch_assoc($dbcon->query($query));	
+	
+	$set="select * from tbl_company where company_id=".$rel['company_id'];
+	$set_head=mysqli_fetch_assoc($dbcon->query($set));
+	
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BOM PO Request</title>
+<?php include_once($include.'include_css_file.php');?>
+<style>
+body {
+    color: #000000;
+}
+.con ul 
+{
+	padding-left:0px;
+}
+.con ul li 
+{
+	margin-left:22px;
+	list-style: disc !important;
+}
+/*td, th {
+    padding: 0px 2px !important;
+}*/
+
+.td1
+{
+	text-align:left;
+	vertical-align:center;
+	border-right:1px solid;
+	border-left:1px solid;
+	border-bottom:1px solid;
+	font-size:14px;
+}
+.td2
+{
+	padding-left:5px;
+	border-bottom-color:#FFFFFF; 
+	border-right:1px solid;
+	border-bottom:1px solid;
+	vertical-align:center;
+	font-size:14px;
+}
+.td3
+{
+	text-align:center;
+	padding-right:10px;
+	vertical-align:center;
+	border-bottom-color:#FFFFFF; 
+	border-right:1px solid;
+	border-bottom:1px solid;
+	font-size:14px;
+}
+.td4
+{
+	text-align:center;
+	padding-right:10px;
+	vertical-align:center;
+	border-bottom-color:#FFFFFF; 
+	border-right:1px solid;
+	border-bottom:1px solid;
+	font-size:14px;
+	padding-top: 10px;
+}
+</style>
+</head>
+<body>
+<section id="container" >
+    <?php include_once($include.'include_top_menu.php');?>
+      <!--sidebar start-->
+      <?php include_once($include.'left_menu.php');?>
+      <!--sidebar end-->
+      <!--main content start-->
+         <section id="main-content">
+          <section class="wrapper">
+			<div class="row">
+			  <div class="col-lg-12">
+				  <!--breadcrumbs start -->
+					<section class="panel">
+						<header class="panel-heading">
+						  <h3><?=$mode.' '.$form?></h3>
+						</header>	
+						<div class="">
+							<ul class="breadcrumb">
+							  <li><a href="<?=ROOT.'dashboard'?>"><i class="fa fa-home"></i> Home</a></li>
+							  <li><a href="<?=ROOT.PRODUCTION_ROOT.'planning_list'?>">Work Order List</a></li>
+							</ul>
+						</div>
+					</section>
+				  <!--breadcrumbs end -->
+			  </div>	
+             </div>
+          <!--state overview start-->
+		<div class="row">			
+			<div class="col-sm-12 ">
+				<section class="panel">
+					<header class="panel-heading">
+					  <?=$form?> <?=$mode?>
+					</header>	
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="col-md-6">
+								 <div class="form-group">
+								  <label class="col-md-4 control-label">Work Order No </label>
+								  <div class="col-md-6 col-xs-11">
+									
+									<input type="hidden" name="planning_id" id="planning_id" value="<?=$rel['pl_order_id']?>" />
+									<strong><?=$rel['pl_order_no']?></strong>
+									
+									<input type="hidden" name="pl_bom_id" id="pl_bom_id" value="" />
+									
+								  </div>
+								 </div>	
+								</div>	
+								
+								<div class="col-md-6">
+								 <div class="form-group">
+								  <label class="col-md-4 control-label">Work Order Date </label>
+								  <div class="col-md-6 col-xs-11">
+									<strong><?=date('d/m/Y',strtotime($rel['pl_order_date']))?></strong>
+								  </div>
+								 </div>	
+								</div>	
+							</div>
+							
+							<div class="col-md-12" style="margin-top:10px;">
+								<div class="col-md-6">
+								 <div class="form-group">
+								  <label class="col-md-4 control-label">Select Product </label>
+								  <div class="col-md-6 col-xs-11">
+									<select class="form-control" name="pl_product" id="pl_product" onchange="get_bom_by_product(this.value);get_bom_id_by_product(this.value);">
+										<?=get_product_by_planning($dbcon,$bom_id);?>
+									</select>
+								  </div>
+								 </div>	
+								</div>	
+								
+								<div class="col-md-6">
+								 <div class="form-group">
+								  <label class="col-md-4 control-label"> Quantity </label>
+								  <div class="col-md-6 col-xs-11">
+									<strong><?=$rel['product_qty'];?></strong>
+									<input type="hidden" name="pl_qty_id" id="pl_qty_id" value="" />
+									<strong id="pqty"><?=$rel['product_qty'];?></strong>
+								  </div>
+								 </div>	
+								</div>	
+								
+							</div>
+						</div>
+						
+						<div class="row" style="margin-top:20px">
+							<div class="col-md-12">
+					<!-- Multi Page Challan Start -->				
+					<table width="100%" class="table table-bordered" >
+						<thead>
+							
+							<tr height="30px" style="font-size:14px;">					
+								<th  width="5%" style="text-align:center;border:1px solid;border-top:none;">
+									<strong>SR. NO.</strong>
+								</th>
+								<th width="25%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Item Description</strong></th>
+								
+								<th width="10%" style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;"><strong>Current Stock</strong></th>
+								<th width="10%" style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;"><strong>Reserved Stock</strong></th>
+								<th width="10%" style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;"><strong>Required Qty</strong></th>
+								<th width="10%" style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;"><strong>Out of Stock</strong></th>
+								<th width="10%" style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;">
+									<button type="button" onclick="bom_req_po()" class="btn btn-primary" title="Request PO for Due Products">PO <i class="fa fa-send"></i></button> 
+											<input type="checkbox" id="all_chk_box" onclick="load_chk_box()" style="width: 23px;height: 23px;margin-top: 0px;">
+								</th>
+								
+							</tr>
+						</thead>
+						<tbody style="border: 1px solid;" id="product_bom_table">
+							
+						</tbody>	
+					</table>
+				
+							</div>
+						</div>
+					<div id="print2"></div>
+					<div id="print3"></div>
+						
+</div>
+		<?php  
+		$contents = ob_get_contents();
+		$_SESSION['contents']=$contents;
+		$_SESSION['file_name']='Challan-#';
+		$_SESSION['page_size']='A5';
+		echo "<script> function make_pdf()
+		{ window.open('".ROOT."export/print','_blank');
+		}</script>";  
+		?>
+		</div>	
+					</section>
+				</div>
+			  </div>
+			  <!--state overview end-->
+          </section>
+      </section>
+      <!--main content end-->
+      <!--footer start-->
+	<?php include_once($include.'footer.php');?>
+      <!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+	<?php include_once($include.'include_js_file.php');?>   
+  <script src="<?=ROOT.PRODUCTION_ROOT?>js/app/bom.js?<?php echo time(); ?>"></script>
+    <!--<script src="js/count.js"></script>-->
+		<script>
+$(".select2").select2({
+		width: '100%'
+	});
+	$('.default-date-picker').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true
+        });
+function paymentmode(id)
+{
+	if(id=="2")
+	{	
+		$('#cheque_dtl').val('');
+		$('#cheque_data').show();
+	}
+	else
+		$('#cheque_data').hide();
+}
+
+</script>
+<script type="text/javascript"> 
+function print_receipt()
+{
+	var originalContents = document.body.innerHTML;
+	//var duplicate = $("#invoiceprint").clone().prepend("<hr style='border-color:#000; border-style:dashed; margin:10px 0' />").appendTo("#invoiceprint");
+	 var printContents = document.getElementById('receipt_print').innerHTML;     
+     document.body.innerHTML = printContents;
+     window.print();
+     document.body.innerHTML = originalContents;
+}
+
+function PrintMe(DivID) {
+
+if($('#print_status').val()=='')
+{
+alert('Select PrintType');
+}
+else
+{
+
+
+if($('#print_status').val()<=3)
+{	
+for(var i=1;i<$('#print_status').val();i++)
+{	
+	if($("#invoice").val()==2)
+	{
+		$("#print"+i+" .data_title").html('Performance');
+		$("#type").html("Performance Invoice");
+	}
+	if($("#invoice").val()==1)
+	{
+		$("#print"+i+" .data_title").html('ORIGINAL');
+		$("#type").html($("#typename").val());
+	}
+	if(i<$('#print_status').val())
+	{
+		$("#print"+i).after('<div class="page"></div>');
+	}
+	$("#print"+(i+1)).html($("#print1").clone());
+	if((i+1)==2)
+	{
+		$("#print"+(i+1)+" .data_title").html('DUPLICATE');
+	}
+	if((i+1)==3)
+	{
+		$("#print"+(i+1)+" .data_title").html('TRIPLICATE');
+	}
+	
+}
+}
+else
+{
+	$("#print1 .data_title").html('EXTRA');
+}
+  //var duplicate = $("#receipt_data").clone().appendTo("#receipt_duplicate");
+  var disp_setting="toolbar=yes,location=no,";
+  disp_setting+="directories=yes,menubar=yes,";
+  disp_setting+="scrollbars=yes,width=800, height=600, left=100, top=25";
+  var content_vlue = document.getElementById(DivID).innerHTML;
+  var docprint=window.open("","",disp_setting);
+  docprint.document.open();
+  docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
+  docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
+  docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
+  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
+  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
+  docprint.document.write('<style type="text/css">');
+	if ($('input[name=logo]:Checked').val() == "1") {
+	   
+		$('#table_head').show();
+		$('#table_foot').show();
+		docprint.document.write(' @media print{ @page { size:A4; margin: 0.2in <?=$set_head['letter_head_right_margin']?>in 0.2in <?=$set_head['letter_head_left_margin']?>in; } }   ');
+		
+	}
+	else{
+		docprint.document.write(' @media print{ @page { size:A4; margin: <?=$set_head['letter_head_top_margin']?>in <?=$set_head['letter_head_right_margin']?>in <?=$set_head['letter_head_bottom_margin']?>in <?=$set_head['letter_head_left_margin']?>in; } }  #table_head, #table_foot { display:none }');
+		//$('#invoice_type').css('margin-top','1.7in');	
+		
+	}
+ 
+  docprint.document.write('body { font-family:Tahoma;color:#000;');
+  docprint.document.write('font-family:Tahoma,Verdana; font-size:10px;} .dataTables_length, .dataTables_filter , .dataTables_paginate { display:none; }');
+  docprint.document.write('a{color:#000;text-decoration:none;} h1 {font-size:25px; line-height:5px;} b { font-weight:normal; } div.page { page-break-after: always; page-break-inside: avoid; } tr { page-break-inside: avoid } .maintable tbody tr { border-bottom:0.5px #ccc solid; }');
+  docprint.document.write(' .maintable table { page-break-inside:auto } .maintable tr{ page-break-inside:avoid; page-break-after:auto } .maintable thead { display:table-header-group }  .maintable tfoot tr{ /*display:table-footer-group;*/ page-break-inside:avoid; page-break-before:always; } footer-table{ page-break-inside:avoid; page-break-before:always;  } #table_foot{position:fixed;bottom:0}</style>');
+  docprint.document.write('</head><body onLoad="self.print()">');
+  docprint.document.write(content_vlue);
+  docprint.document.write('</body></html>');
+  docprint.document.close();
+  docprint.focus();
+	$('#table_head').show();
+	//$('#invoice_type').css('margin-top','0px');
+
+  }
+  location.reload();
+}
+function load_chk_box(){
+	//alert('OK');
+	if($("#all_chk_box").prop("checked")==true){
+		$(".chk_box").prop('checked', true);
+	}
+	else{
+		$(".chk_box").prop('checked', false);
+	}
+}
+</script>
+
+
+  </body>
+</html>

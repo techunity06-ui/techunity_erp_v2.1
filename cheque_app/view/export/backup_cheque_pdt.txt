@@ -1,0 +1,42 @@
+<div id="date" >'. str_replace("-","",date("d-m-Y",strtotime($r['cheque_date']))).'</div>
+			<div id="amount-number" class="ui-widget-content cheque-item">'.indian_number($r['cheque_amount'],2).'/-</div>
+			<div id="amount-text" class="ui-widget-content cheque-item"></div>';
+				switch($r['cheque_mode']) {
+					case 1:
+						//nothing to do ;)
+						break;
+					case 2:
+						$html.='<div id="bearer" class="ui-widget-content cheque-item">*************</div>';
+						$html.='<img src="'.DOMAIN.'cheque_marks/ac_payee_e.png" id="img_ac_e" />';
+						break;
+					case 3:
+						$html.='<div id="bearer" class="ui-widget-content cheque-item">*************</div>';
+						$html.='<div id="img_ac_f" class="cmark mark">A/C PAYEE ONLY</div>';
+						break;
+					case 4:
+						$html.='<div id="bearer" class="ui-widget-content cheque-item">*************</div>';
+						$html.='<div id="img_nn" class="cmark mark">NOT NEGOTIABLE<br>A/C PAYEE ONLY</div>';
+						break;
+				}								
+				if($r['cheque_morethen']) {
+					$html.='<div id="not_more_than" class="ui-widget-content cheque-item"><b>NOT OVER THAN '.indian_number($r['cheque_amount'],2).'/-</b></div>';
+				}
+				
+				/*$mpdf=new mPDF('c', 'A4-L');
+		
+		$mpdf->SetDisplayMode('fullpage');
+		$mpdf->defaultheaderfontsize = 10; /* in pts */
+		//$mpdf->defaultheaderfontstyle = B; /* blank, B, I, or BI */
+		//$mpdf->defaultheaderline = 1; /* 1 to include line below header/above footer */
+		//$mpdf->defaultfooterfontsize = 10; /* in pts */
+		//$mpdf->defaultfooterfontstyle = B; /* blank, B, I, or BI */
+		//$mpdf->defaultfooterline = 1; /* 1 to include line below header/above footer */
+		//$mpdf->SetHeader('{DATE j-m-Y}|{PAGENO}/2| List of banks');
+		//$mpdf->SetFooter(COMPANY);
+		//$mpdf->SetWatermarkText(COMPANY);
+		//$mpdf->showWatermarkText = true;		
+		//$mpdf->WriteHTML($html);
+		//$mpdf->WriteHTML($stylesheet,1);
+		//$mpdf->WriteHTML($html,2);
+		//$mpdf->SetJS('this.print();');
+		//$mpdf->Output();		

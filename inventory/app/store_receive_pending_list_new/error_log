@@ -1,0 +1,282 @@
+[21-Feb-2022 12:33:29 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 12:33:29 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 12:33:29 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 12:33:29 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 12:33:34 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 12:33:34 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 12:34:06 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 12:34:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:09 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 12:34:27 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:27 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 12:34:27 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:28 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 12:34:28 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 12:34:28 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 12:34:28 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 12:34:30 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:30 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 12:34:45 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 12:34:47 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 12:34:47 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:57 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:57 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 12:34:57 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 12:34:58 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 12:34:58 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 12:34:58 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 12:34:58 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 14:27:40 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 14:27:40 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 14:27:40 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 14:27:40 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 14:27:43 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 14:27:43 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:34:53 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 14:34:53 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 14:34:53 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 14:34:53 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 14:34:58 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 14:34:58 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 14:35:18 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 14:35:21 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 14:35:21 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:31 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:31 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 14:35:31 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:32 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 14:35:32 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 14:35:32 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 14:35:32 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[21-Feb-2022 14:35:34 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[21-Feb-2022 14:35:34 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[21-Feb-2022 14:35:44 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:09:19 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:09:19 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:09:19 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:09:19 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:09:36 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:09:36 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:09:55 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:09:57 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:09:57 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:05 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:05 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:10:05 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:06 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:10:06 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:10:06 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:10:06 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:10:07 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:10:07 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:10:18 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:10:20 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:10:20 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:10:32 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:10:34 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:10:34 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:10:42 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:10:44 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:10:44 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:10:51 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[23-Feb-2022 14:10:53 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[23-Feb-2022 14:10:53 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[23-Feb-2022 14:11:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:57:37 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:57:37 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:57:37 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:57:37 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:57:41 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:57:41 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:57:57 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:57:59 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:57:59 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:58:11 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:58:13 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:58:13 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:22 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:22 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:58:22 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:23 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:58:23 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:58:23 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:58:23 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:58:25 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:58:25 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:37 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:37 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:58:37 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:38 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:58:38 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:58:38 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:58:38 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:58:39 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:58:39 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:58:48 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:58:50 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:58:50 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:58:59 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:59:01 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:59:01 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:59:25 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:59:28 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:59:28 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 13:59:45 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 13:59:48 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 13:59:48 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 14:00:05 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 14:00:07 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[01-Mar-2022 14:00:07 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 14:00:26 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[02-Mar-2022 12:14:56 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[02-Mar-2022 12:14:56 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[02-Mar-2022 12:14:56 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[02-Mar-2022 12:14:56 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[02-Mar-2022 12:15:01 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[02-Mar-2022 12:15:01 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[02-Mar-2022 12:15:21 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[02-Mar-2022 12:15:24 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[02-Mar-2022 12:15:24 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[02-Mar-2022 12:15:35 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[02-Mar-2022 12:15:37 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[02-Mar-2022 12:15:37 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[02-Mar-2022 12:15:47 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[04-Mar-2022 15:12:44 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[04-Mar-2022 15:12:44 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[04-Mar-2022 15:12:44 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[04-Mar-2022 15:12:44 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[04-Mar-2022 15:12:46 Asia/Kolkata] PHP Notice:  Undefined variable: total_used_qty in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 174
+[04-Mar-2022 15:12:46 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/include/function_database_query.php on line 209
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/brperp/public_html/hermettic_sw_v12/config/core_functions.php on line 27
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Notice:  Undefined index: date in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 20
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/brperp/public_html/hermettic_sw_v12/inventory/app/store_receive_pending_list_new/index.php on line 22
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[04-Mar-2022 15:13:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169

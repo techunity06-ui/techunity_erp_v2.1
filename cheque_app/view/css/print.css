@@ -1,0 +1,51 @@
+#cheque {
+	margin:0px;
+	padding:0px;
+	font-family: 'Roboto', sans-serif;
+	/*background:rgba(255,255,255,0.5) url(upload/check/hdfc_bank.png) no-repeat;*/
+	width:763.46px;
+	height:294.80px;
+}
+.cheque-item {
+	display: inline-block;
+	margin:0px;
+	padding:0px;
+	/*background:rgba(0,0,0,0.2);
+	cursor:pointer;
+	color:#fff;*/
+	background:rgba(0,0,0,0);
+	color:#000;
+	
+}
+
+#amount-number {
+	font-size:16px;
+}
+
+.vertical {
+	top:220px;
+	/* FF Chrome Opera etc */
+	-webkit-transform: rotate(90deg); 
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	/* IE */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+#img_nn {
+	position: absolute;
+	top : 15px;
+	left : 300px;
+}
+
+#img_ac_f {
+	position: absolute;
+	top : 15px;
+	left : 300px;
+}
+
+#img_ac_e {
+	position: absolute;
+	top : 0px;
+	left : 0px;
+}

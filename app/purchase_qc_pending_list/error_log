@@ -1,0 +1,8 @@
+[01-Mar-2022 18:17:09 Asia/Kolkata] PHP Warning:  include_once(../../include/common_functions.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/app/purchase_qc_pending_list/index.php on line 8
+[01-Mar-2022 18:17:09 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../../include/common_functions.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/app/purchase_qc_pending_list/index.php on line 8
+[01-Mar-2022 18:17:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 18:17:09 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169
+[01-Mar-2022 18:17:13 Asia/Kolkata] PHP Warning:  include_once(../../include/common_functions.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/app/purchase_qc_pending_list/index.php on line 8
+[01-Mar-2022 18:17:13 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../../include/common_functions.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/app/purchase_qc_pending_list/index.php on line 8
+[01-Mar-2022 18:17:13 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 144
+[01-Mar-2022 18:17:13 Asia/Kolkata] PHP Notice:  Undefined variable: having_clause in /home/brperp/public_html/hermettic_sw_v12/include/pagging.php on line 169

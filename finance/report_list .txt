@@ -1,0 +1,20 @@
+GST R -1 
+	
+	Credit / debot note - debit note created against invoice edit in sales acct 
+	nil rate , exempter - https://www.zoho.com/in/books/kb/gst/difference-bet-nil-exempt.html
+	document type - invoice , credit note - debit note with sales account , advance receipt 
+	cancel invoice system 
+	
+	build check list - > voucher statistics (get from busy -> display -> chek list )
+	
+	
+GSTR 3-B 
+	Ineligible ITC -> ITC NONE 
+	
+	
+
+reports		 -  
+print format	 -
+edit transaction - working 
+dashboard	 - 
+bug solving	 - 

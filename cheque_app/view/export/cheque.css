@@ -1,0 +1,84 @@
+	body {
+			display: block;
+			padding-top: 0px;
+			height: 705px;
+			width: 320px;
+			margin:0px auto;
+		}		
+		.hidden {
+				display:none;
+		}
+		#cheque {
+			display: inline-block;
+			margin:0px;
+			padding:0px;
+			font-family: "Roboto", sans-serif;
+			width:705px;
+			height:320px;
+			vertical-align: middle;
+			border:solid 1px #000;
+		}
+		.cheque-item {
+			position: absolute;
+			display:block;
+			margin:0px;
+			padding:0px;
+			background:rgba(0,0,0,0);
+			color:#000;
+			font-size: 12px;
+			line-height: 12px;
+		}
+		
+		#date {
+			font-size: 12px;
+			line-height: 12px;
+		}
+		
+		#amount-number {
+			font-size:16px;
+			line-height: 16px;
+		}
+		
+		.vertical {
+			top:208px;
+			/* FF Chrome Opera etc */
+			-webkit-transform: rotate(90deg); 
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			/* IE */
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+		}
+		
+		#img_nn {
+			position: absolute;
+			top : 15px;
+			left : 300px;
+		}
+		
+		#img_ac_f {
+			position: absolute;
+			top : 15px;
+			left : 300px;
+		}
+		
+		#img_ac_e {
+			position: absolute;
+			top : 0px;
+			left : 5px;
+		}
+		
+		#not_more_than {
+			position: absolute;
+			font-size:12px;
+		}
+		
+		.ui-widget-content {
+			border: none;
+		}
+		
+		.cmark {
+			border-top:solid 1px #000;border-bottom:solid 1px #000;
+			font-size:12px;
+			line-height: 13px;
+			text-align:center;
+		}

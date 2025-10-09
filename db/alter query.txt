@@ -1,0 +1,822 @@
+date : 16-03-2021 	user : dimple panchal
+ALTER TABLE `tbl_invoice` ADD `tcs_total` DOUBLE(10,2) NOT NULL COMMENT 'TCS tax Total' AFTER `taxvalue3`;
+--------------------------------------------------------------------------------------------------------------------------
+date : 27-2-2021 	user : dimple panchal
+ALTER TABLE `tbl_sales_order` ADD `order_by` VARCHAR(100) NOT NULL COMMENT 'App, Email, Call, Whatsapp' AFTER `so_terms_and_condition`;
+--------------------------------------------------------------------------------------------------------------------------------------
+date : 25-2-2021 	user : dimple panchal
+ALTER TABLE `tbl_quotation` ADD `with_bom_flag` INT NOT NULL AFTER `payment_mstid`;
+--------------------------------------------------------------------------------------------------------------------------------
+date : 21-1-2021 	user : dimple panchal
+ALTER TABLE `tbl_quotation_trn` ADD `product_other_desc` TEXT NOT NULL COMMENT 'Other Details of Products' AFTER `product_spec`;
+--------------------------------------------------------------------------------------------------------------------------
+date : 20-1-2021 	user : dimple panchal
+ALTER TABLE `tbl_inquiry` ADD `owner_user_id` INT NOT NULL COMMENT 'Owner of inquiry' AFTER `user_id`;
+-------------------------------------------------------------------------------------------------------------------------
+date : 29-12-2020       user : dimple panchal
+ALTER TABLE `tbl_company` ADD `quot_validity` INT NOT NULL COMMENT 'Quoataion Valid Upto Days' AFTER `quot_content`;
+-------------------------------------------------------------------------------------------------------------------------
+date : 12-12-2020       user : dimple panchal
+ALTER TABLE `tbl_pono` ADD `purchase_ledger_id` INT NOT NULL COMMENT 'Purchase account number' AFTER `vender_id`;
+----------------------------------------------------------------------------------------------------------------------------
+date : 06-11-2020       user : dimple panchal
+
+ALTER TABLE `tbl_company` ADD `tcs_applicable` INT NOT NULL COMMENT 'is TCS tax applicable?';
+ALTER TABLE `formula_mst` ADD `tax_type` INT NOT NULL COMMENT '0-on product, 1-on total' AFTER `tax_id`;
+----------------------------------------------------------------------------------------------------------------------------------
+date : 06-11-2020       user : pathik
+
+ALTER TABLE `tbl_menu` ADD `report_status` INT NOT NULL AFTER `fa_icon`;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+date : 24-11-2020      user : umair
+
+ALTER TABLE `tbl_product_process` ADD `resource_id` INT NOT NULL COMMENT 'resource table ref' AFTER `product_id`, ADD INDEX (`resource_id`) ;
+
+ALTER TABLE `tbl_allocate_process` ADD `resource_id` INT NOT NULL COMMENT 'tbl_resource ref id' AFTER `process_id`, ADD INDEX (`resource_id`) ;
+
+ALTER TABLE `tbl_allocate_process_trn` ADD `resource_id` INT NOT NULL COMMENT 'tbl_resource ref id' AFTER `pt_process_id`, ADD INDEX (`resource_id`) ;
+
+ALTER TABLE `tbl_allocate_process_trn` ADD `parent_pt_id` INT NOT NULL COMMENT 'tbl_allocate_process_trn ref id' AFTER `pt_id`, ADD INDEX (`parent_pt_id`) ;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+date : 26-11-20       user : pathik
+
+ALTER TABLE `tbl_sales_ordertrn` ADD `quotation_id` INT NOT NULL AFTER `user_id`;
+ALTER TABLE `tbl_ledger` ADD `cust_id` INT NOT NULL AFTER `print_priority`;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+date : 26-11-2020      user : umair
+
+ALTER TABLE `users` CHANGE `employee_id` `employee_id` INT(11) NOT NULL COMMENT 'tbl_ledger ref id';
+
+ALTER TABLE `tbl_pono` CHANGE `round_off` `round_off` VARCHAR(100) NOT NULL, CHANGE `purchase_expense` `purchase_expense` VARCHAR(100) NOT NULL, CHANGE `exp_total` `exp_total` VARCHAR(100) NOT NULL, CHANGE `misc_charges` `misc_charges` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_potrancation` CHANGE `product_qty` `product_qty` VARCHAR(100) NOT NULL, CHANGE `sqr_ft` `sqr_ft` VARCHAR(100) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(100) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(100) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(100) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(100) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(100) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(100) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(100) NOT NULL, CHANGE `po_landing_cost` `po_landing_cost` VARCHAR(100) NOT NULL;ALTER TABLE `tbl_bom` CHANGE `product_base_qty` `product_base_qty` VARCHAR(100) NOT NULL, CHANGE `product_conv_qty` `product_conv_qty` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_bomtrn` CHANGE `product_base_qty` `product_base_qty` VARCHAR(255) NOT NULL, CHANGE `product_conv_qty` `product_conv_qty` VARCHAR(255) NOT NULL, CHANGE `product_width` `product_width` VARCHAR(255) NOT NULL, CHANGE `product_height` `product_height` VARCHAR(255) NOT NULL, CHANGE `product_thickness` `product_thickness` VARCHAR(255) NOT NULL, CHANGE `product_kg` `product_kg` VARCHAR(255) NOT NULL, CHANGE `product_density` `product_density` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_request_product` CHANGE `rp_req_qty` `rp_req_qty` VARCHAR(100) NOT NULL, CHANGE `req_qty_one` `req_qty_one` VARCHAR(100) NOT NULL, CHANGE `rp_po_qty` `rp_po_qty` VARCHAR(100) NOT NULL, CHANGE `in_process_qty` `in_process_qty` VARCHAR(100) NOT NULL, CHANGE `out_process_qty` `out_process_qty` VARCHAR(100) NOT NULL, CHANGE `used_rp_req_qty` `used_rp_req_qty` VARCHAR(100) NOT NULL, CHANGE `reserve_stock` `reserve_stock` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_allocate_process` CHANGE `p_qty` `p_qty` VARCHAR(255) NOT NULL, CHANGE `pen_qty` `pen_qty` VARCHAR(255) NOT NULL, CHANGE `start_qty` `start_qty` VARCHAR(255) NOT NULL, CHANGE `process_stock` `process_stock` VARCHAR(255) NOT NULL, CHANGE `process_used_stock` `process_used_stock` VARCHAR(255) NOT NULL;
+
+
+ALTER TABLE `tbl_allocate_process_trn` CHANGE `pt_qty` `pt_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_allocate_re_process` CHANGE `p_qty` `p_qty` VARCHAR(255) NOT NULL, CHANGE `pen_qty` `pen_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_allocate_re_process_trn` CHANGE `pt_qty` `pt_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_godown_stock_trn` CHANGE `gst_qty` `gst_qty` VARCHAR(255) NOT NULL; 
+
+
+ALTER TABLE `tbl_grn_trn` CHANGE `product_qty` `product_qty` VARCHAR(255) NOT NULL, CHANGE `sqr_ft` `sqr_ft` VARCHAR(255) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(255) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(255) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(255) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(255) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(255) NOT NULL, CHANGE `total` `total` VARCHAR(255) NOT NULL, CHANGE `tolerance` `tolerance` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_jobwork` CHANGE `j_qty` `j_qty` VARCHAR(255) NOT NULL, CHANGE `used_qty` `used_qty` VARCHAR(255) NOT NULL, CHANGE `pr_rate` `pr_rate` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_jobworktrn` CHANGE `outward_product_rate` `outward_product_rate` VARCHAR(255) NOT NULL, CHANGE `outward_product_amt` `outward_product_amt` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_jobwork_history` CHANGE `p_qty` `p_qty` VARCHAR(255) NOT NULL, CHANGE `pen_qty` `pen_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_purchasedebitnote` CHANGE `debit_amount` `debit_amount` VARCHAR(255) NOT NULL, CHANGE `debit_paidamount` `debit_paidamount` VARCHAR(255) NOT NULL, CHANGE `taxvalue1` `taxvalue1` VARCHAR(255) NOT NULL, CHANGE `taxvalue2` `taxvalue2` VARCHAR(255) NOT NULL, CHANGE `taxvalue3` `taxvalue3` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_purchasedebitnotetrn` CHANGE `product_qty` `product_qty` VARCHAR(255) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(255) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `discount` `discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(255) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(255) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(255) NOT NULL, CHANGE `total` `total` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_purchaseorder` CHANGE `round_off` `round_off` VARCHAR(255) NOT NULL, CHANGE `po_qty` `po_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_purchaseordertrn` CHANGE `product_qty` `product_qty` VARCHAR(255) NOT NULL, CHANGE `used_qty` `used_qty` VARCHAR(255) NOT NULL, CHANGE `sqr_ft` `sqr_ft` VARCHAR(255) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(255) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(255) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `product_amount_tax` `product_amount_tax` VARCHAR(255) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(255) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(255) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(255) NOT NULL, CHANGE `total` `total` VARCHAR(255) NOT NULL, CHANGE `product_alloc_qty` `product_alloc_qty` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_purchaseorder_req_trn` CHANGE `used_qty` `used_qty` VARCHAR(255) NOT NULL;
+
+
+ALTER TABLE `tbl_purchasetrntemp` CHANGE `product_qty` `product_qty` VARCHAR(100) NOT NULL, CHANGE `sqr_ft` `sqr_ft` VARCHAR(100) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(100) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(100) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(100) NOT NULL, CHANGE `product_amount_tax` `product_amount_tax` VARCHAR(100) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(100) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(100) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(100) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(100) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(100) NOT NULL, CHANGE `total` `total` VARCHAR(100) NOT NULL, CHANGE `product_alloc_qty` `product_alloc_qty` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_qc_param_trn` CHANGE `qc_pr_actual` `qc_pr_actual` VARCHAR(100) NOT NULL, CHANGE `qc_pr_tested` `qc_pr_tested` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_qc_trn` CHANGE `qc_product_qty` `qc_product_qty` VARCHAR(100) NOT NULL, CHANGE `qc_accepted` `qc_accepted` VARCHAR(100) NOT NULL, CHANGE `qc_rejected` `qc_rejected` VARCHAR(100) NOT NULL, CHANGE `qc_rejected_used` `qc_rejected_used` VARCHAR(100) NOT NULL, CHANGE `qty_reprocess` `qty_reprocess` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_set_main_process` CHANGE `rp_req_qty` `rp_req_qty` VARCHAR(100) NOT NULL, CHANGE `in_process_qty_main` `in_process_qty_main` VARCHAR(100) NOT NULL, CHANGE `rp_po_qty` `rp_po_qty` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_stock_trn` CHANGE `base_stock` `base_stock` VARCHAR(100) NOT NULL, CHANGE `convert_stock` `convert_stock` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_allocate_process_material` CHANGE `qty_need_for_single` `qty_need_for_single` VARCHAR(100) NOT NULL, CHANGE `total_req_qty` `total_req_qty` VARCHAR(100) NOT NULL, CHANGE `used_qty` `used_qty` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_reserve_stock` CHANGE `base_stock` `base_stock` VARCHAR(100) NOT NULL, CHANGE `convert_stock` `convert_stock` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_mrn_trn` CHANGE `rejected_qty` `rejected_qty` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_grn_sub_trn` CHANGE `product_qty` `product_qty` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_jobwork_process` CHANGE `qty` `qty` VARCHAR(100) NOT NULL, CHANGE `used_qty` `used_qty` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `tbl_wororder_product_process` CHANGE `process_time` `process_time` VARCHAR(100) NOT NULL, CHANGE `process_opening` `process_opening` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `approve_indent` CHANGE `approve_qty` `approve_qty` VARCHAR(100) NOT NULL; 
+
+ALTER TABLE `po_quotation` CHANGE `product_rate` `product_rate` VARCHAR(100) NOT NULL;  
+
+ALTER TABLE `tbl_pono` CHANGE `round_off` `round_off` VARCHAR(100) NOT NULL, CHANGE `purchase_expense` `purchase_expense` VARCHAR(100) NOT NULL, CHANGE `exp_total` `exp_total` VARCHAR(100) NOT NULL, CHANGE `misc_charges` `misc_charges` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_potrancation` CHANGE `product_qty` `product_qty` VARCHAR(100) NOT NULL, CHANGE `sqr_ft` `sqr_ft` VARCHAR(100) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(100) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(100) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(100) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(100) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(100) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(100) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(100) NOT NULL, CHANGE `po_landing_cost` `po_landing_cost` VARCHAR(100) NOT NULL;
+
+ALTER TABLE `tbl_purchaseorder` CHANGE `g_total` `g_total` VARCHAR(100) NOT NULL; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+date : 27-11-2020      user : umair
+
+
+ALTER TABLE `product_mst`  ADD `drawing_id` INT NOT NULL COMMENT 'tbl_drawing ref id'  AFTER `company_id`,  ADD `revision_id` INT NOT NULL COMMENT 'tbl_revision ref id'  AFTER `drawing_id`,  ADD   INDEX  (`drawing_id`, `revision_id`) ;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date : 28-11-2020     user : pathik
+
+ALTER TABLE `tbl_quotation` ADD `sales_order_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_sales_order` ADD `approve_status` INT NOT NULL AFTER `so_terms_and_condition`;
+ALTER TABLE `tbl_sales_order` ADD `quotation_id` INT NOT NULL AFTER `approve_status`;
+ALTER TABLE `tbl_sales_ordertrn` CHANGE `quotation_id` `quot_trn_id` INT(11) NOT NULL;
+ALTER TABLE `tbl_purchasetrntemp` ADD `po_quotation_id` INT NOT NULL AFTER `tax_name`;
+ALTER TABLE `tbl_sales_ordertrn` ADD `production_status` INT NOT NULL AFTER `quot_trn_id`;
+ALTER TABLE `tbl_sales_ordertrn` ADD `work_order_qty` DOUBLE(10,2) NOT NULL AFTER `production_status`;
+ALTER TABLE `tbl_request_product` ADD `sales_order_trn_id` INT NOT NULL AFTER `reject_status`;
+ALTER TABLE `tbl_reserve_stock` ADD `sales_order_trn_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_invoice` ADD `sales_order_id` INT NOT NULL AFTER `company_id`;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+date : 30-11-2020      user : umair
+
+
+ALTER TABLE `tbl_company` CHANGE `letter_head_top_margin` `letter_head_top_margin` VARCHAR(255) NOT NULL, CHANGE `letter_head_bottom_margin` `letter_head_bottom_margin` VARCHAR(255) NOT NULL, CHANGE `letter_head_left_margin` `letter_head_left_margin` VARCHAR(255) NOT NULL, CHANGE `letter_head_right_margin` `letter_head_right_margin` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_f_grp_trn` CHANGE `grp_target_amt` `grp_target_amt` VARCHAR(255) NOT NULL, CHANGE `grp_target_qty` `grp_target_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_f_ter_trn` CHANGE `ter_target_amt` `ter_target_amt` VARCHAR(255) NOT NULL, CHANGE `ter_target_qty` `ter_target_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_invoice` CHANGE `packing` `packing` VARCHAR(255) NOT NULL, CHANGE `cutting` `cutting` VARCHAR(255) NOT NULL, CHANGE `freight` `freight` VARCHAR(255) NOT NULL, CHANGE `discount` `discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `taxvalue1` `taxvalue1` VARCHAR(255) NOT NULL, CHANGE `taxvalue2` `taxvalue2` VARCHAR(255) NOT NULL, CHANGE `taxvalue3` `taxvalue3` VARCHAR(255) NOT NULL, CHANGE `round_off` `round_off` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_invoicetrn` CHANGE `product_qty` `product_qty` VARCHAR(255) NOT NULL, CHANGE `sqr_ft` `sqr_ft` VARCHAR(255) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(255) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(255) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(255) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(255) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(255) NOT NULL, CHANGE `total` `total` VARCHAR(255) NOT NULL, CHANGE `user_id` `user_id` VARCHAR(255) NOT NULL, CHANGE `bill_value` `bill_value` VARCHAR(255) NOT NULL, CHANGE `bill_black_value` `bill_black_value` VARCHAR(255) NOT NULL, CHANGE `taxable_value` `taxable_value` TEXT NOT NULL;
+
+ALTER TABLE `tbl_f_user_trn` CHANGE `usr_target_amt` `usr_target_amt` VARCHAR(255) NOT NULL, CHANGE `usr_target_qty` `usr_target_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_potrancation` CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `total` `total` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_product` CHANGE `product_base_qty` `product_base_qty` VARCHAR(255) NOT NULL, CHANGE `product_conv_qty` `product_conv_qty` VARCHAR(255) NOT NULL, CHANGE `product_max_stock` `product_max_stock` VARCHAR(255) NOT NULL, CHANGE `product_width` `product_width` VARCHAR(255) NOT NULL, CHANGE `product_height` `product_height` VARCHAR(255) NOT NULL, CHANGE `product_thickness` `product_thickness` VARCHAR(255) NOT NULL, CHANGE `product_density` `product_density` VARCHAR(255) NOT NULL, CHANGE `product_kg` `product_kg` VARCHAR(255) NOT NULL, CHANGE `minimum_tolerance` `minimum_tolerance` VARCHAR(255) NOT NULL, CHANGE `maximum_tolerance` `maximum_tolerance` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_qc_process_trn` CHANGE `accept_qty` `accept_qty` VARCHAR(255) NOT NULL, CHANGE `reject_qty` `reject_qty` VARCHAR(255) NOT NULL, CHANGE `reject_used_qty` `reject_used_qty` VARCHAR(255) NOT NULL, CHANGE `reprocess_qty` `reprocess_qty` VARCHAR(255) NOT NULL, CHANGE `total_qty` `total_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_receipt` CHANGE `acc_id` `acc_id` VARCHAR(255) NOT NULL, CHANGE `total_paid_amount` `total_paid_amount` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_receipt_trn` CHANGE `tds_per` `tds_per` VARCHAR(255) NOT NULL, CHANGE `tds` `tds` VARCHAR(255) NOT NULL, CHANGE `kasar` `kasar` VARCHAR(255) NOT NULL, CHANGE `paid_amount` `paid_amount` VARCHAR(255) NOT NULL, CHANGE `total_amount` `total_amount` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_sales_order` CHANGE `taxvalue1` `taxvalue1` VARCHAR(255) NOT NULL, CHANGE `taxvalue2` `taxvalue2` VARCHAR(255) NOT NULL, CHANGE `taxvalue3` `taxvalue3` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `discount` `discount` VARCHAR(255) NOT NULL, CHANGE `packing` `packing` VARCHAR(255) NOT NULL, CHANGE `freight` `freight` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_used_tax` CHANGE `tax_per` `tax_per` VARCHAR(255) NOT NULL, CHANGE `tax_amount` `tax_amount` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_quotation` CHANGE `g_total` `g_total` VARCHAR(255) NOT NULL, CHANGE `paid_amount` `paid_amount` VARCHAR(255) NOT NULL, CHANGE `qt_po_amount` `qt_po_amount` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_quotation_trn` CHANGE `product_qty` `product_qty` VARCHAR(255) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(255) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(255) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(255) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(255) NOT NULL, CHANGE `product_total` `product_total` VARCHAR(255) NOT NULL, CHANGE `budget_trn_ttl` `budget_trn_ttl` VARCHAR(255) NOT NULL, CHANGE `budget_margin_per` `budget_margin_per` VARCHAR(255) NOT NULL, CHANGE `budget_margin_amt` `budget_margin_amt` VARCHAR(255) NOT NULL, CHANGE `budget_trn_g_total` `budget_trn_g_total` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `model_pro_alloc_mst` CHANGE `req_product_qty` `req_product_qty` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `mst_material_spec` CHANGE `m_type_width` `m_type_width` VARCHAR(255) NOT NULL, CHANGE `m_type_height` `m_type_height` VARCHAR(255) NOT NULL, CHANGE `m_type_thick` `m_type_thick` VARCHAR(255) NOT NULL, CHANGE `m_type_density` `m_type_density` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `product_mst` CHANGE `product_base_qty` `product_base_qty` VARCHAR(255) NOT NULL, CHANGE `product_conv_qty` `product_conv_qty` VARCHAR(255) NOT NULL, CHANGE `product_max_stock` `product_max_stock` VARCHAR(255) NOT NULL, CHANGE `product_width` `product_width` VARCHAR(255) NOT NULL, CHANGE `product_height` `product_height` VARCHAR(255) NOT NULL, CHANGE `product_thickness` `product_thickness` VARCHAR(255) NOT NULL, CHANGE `product_density` `product_density` VARCHAR(255) NOT NULL, CHANGE `product_kg` `product_kg` VARCHAR(255) NOT NULL, CHANGE `minimum_tolerance` `minimum_tolerance` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `product_mst` CHANGE `maximum_tolerance` `maximum_tolerance` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_bill_of_supply` CHANGE `packing` `packing` VARCHAR(255) NOT NULL, CHANGE `cutting` `cutting` VARCHAR(255) NOT NULL, CHANGE `freight` `freight` VARCHAR(255) NOT NULL, CHANGE `discount` `discount` VARCHAR(255) NOT NULL, CHANGE `discount_per` `discount_per` VARCHAR(255) NOT NULL, CHANGE `taxvalue1` `taxvalue1` VARCHAR(255) NOT NULL, CHANGE `taxvalue2` `taxvalue2` VARCHAR(255) NOT NULL, CHANGE `taxvalue3` `taxvalue3` VARCHAR(255) NOT NULL, CHANGE `round_off` `round_off` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_bill_of_supplytrn` CHANGE `product_qty` `product_qty` VARCHAR(255) NOT NULL, CHANGE `product_rate` `product_rate` VARCHAR(255) NOT NULL, CHANGE `product_disc` `product_disc` VARCHAR(255) NOT NULL, CHANGE `product_amount` `product_amount` VARCHAR(255) NOT NULL, CHANGE `product_discount` `product_discount` VARCHAR(255) NOT NULL, CHANGE `tax_amount1` `tax_amount1` VARCHAR(255) NOT NULL, CHANGE `tax_amount2` `tax_amount2` VARCHAR(255) NOT NULL, CHANGE `tax_amount3` `tax_amount3` VARCHAR(255) NOT NULL, CHANGE `total` `total` VARCHAR(255) NOT NULL, CHANGE `bill_value` `bill_value` VARCHAR(255) NOT NULL, CHANGE `bill_black_value` `bill_black_value` VARCHAR(255) NOT NULL, CHANGE `taxable_value` `taxable_value` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `tbl_custmer_consignee` CHANGE `opening_balance` `opening_balance` VARCHAR(255) NOT NULL; 
+
+ALTER TABLE `tbl_cust_sold_pro` CHANGE `sold_inv_rate` `sold_inv_rate` VARCHAR(255) NOT NULL; 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 26-12-2020      user : pathik
+
+ALTER TABLE `tbl_indiamart_api` ADD `source_id` INT NOT NULL AFTER `i_status`;
+ALTER TABLE `tbl_indiamart_data` ADD `source_id` INT NOT NULL AFTER `user_ids`; 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 28-12-2020      user : Amish Soni
+
+
+
+ALTER TABLE `email_sms_template` CHANGE `email_module_type_id` `email_module_type_id` INT(11) NULL DEFAULT NULL COMMENT 'email_module_type_list ref id';
+ALTER TABLE `email_sms_template` ADD `email_subject` TEXT NOT NULL AFTER `template_title`;
+ALTER TABLE `email_sms_template` ADD `task_id` INT NULL DEFAULT NULL AFTER `email_module_type_id`, ADD `stage_id` INT NULL DEFAULT NULL AFTER `task_id`;
+ALTER TABLE `email_sms_template` ADD `mdate` DATETIME NULL DEFAULT NULL AFTER `cdate`;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 29-12-2020      user : Amish Soni
+
+ALTER TABLE `email_merge_fields` CHANGE `field_value` `module_id` INT NOT NULL;
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 31-12-2020      user : Umair
+
+ALTER TABLE `tbl_jobwork` ADD `jobwork_main_id` INT NOT NULL COMMENT 'tbl_jobwork_main ref id' AFTER `jobwork_id`, ADD INDEX (`jobwork_main_id`) ; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 2-01-2020      user : Umair (Indexing)
+
+ALTER TABLE `tbl_pono` ADD INDEX(`po_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`purchase_type`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`purchase_bill_type`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`vender_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`purchase_ledger_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`purchaseorder_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`grn_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`consignee_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`po_no`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`branch_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`usertype_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`conversion_rate`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`gst_type`);
+ALTER TABLE `tbl_pono` ADD INDEX(`currency_id`);
+ALTER TABLE `tbl_pono` ADD INDEX(`bill_status`);
+ALTER TABLE `tbl_pono` ADD INDEX(`bill_tax`);
+ALTER TABLE `tbl_pono` ADD INDEX(`tax_type`);
+ALTER TABLE `tbl_pono` ADD INDEX(`itc_type`);
+ALTER TABLE `tbl_pono` ADD INDEX(`order_no`);
+ALTER TABLE `tbl_pono` ADD INDEX(`bill_booking_no`);
+ALTER TABLE `tbl_pono` ADD INDEX(`supply_type_main`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`purchase_type_secondary`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`purchase_type_main`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`reverse_charge`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`gst_type`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`reverse_charge`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`supply_type_secondary`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`round_off`);
+ALTER TABLE `tbl_pono` ADD INDEX(`purchase_expense`);
+ALTER TABLE `tbl_pono` ADD INDEX(`exp_total`);
+ALTER TABLE `tbl_pono` ADD INDEX(`g_total`);
+ALTER TABLE `tbl_pono` ADD INDEX(`paid_amount`);
+ALTER TABLE `tbl_pono` ADD INDEX(`igst_amount`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`formulaid`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`packing`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`misc_charges`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`discount`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`status`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`approve_status`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`userid`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`muserid`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`auserid`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`company_id`); 
+ALTER TABLE `tbl_pono` ADD INDEX(`usertype_id`); 
+
+
+
+ALTER TABLE `tbl_purchasetrntemp` ADD INDEX(`purchaseordertrn_id`);
+ALTER TABLE `tbl_purchasetrntemp` ADD INDEX(`product_type`); 
+ALTER TABLE `tbl_purchasetrntemp` ADD INDEX( `product_id`, `po_ref_id`, `po_ref_type`, `po_bom_id`, `po_bom_trn_id`, `parent_pro`, `purchaseorder_id`, `product_qty`, `sqr_ft`, `product_hsn_code`, `product_rate`, `product_disc`, `unit_id`, `product_amount`, `product_amount_tax`); 
+ALTER TABLE `tbl_purchasetrntemp` ADD INDEX( `product_discount`, `discount_per`, `formulaid`, `tax_name1`, `tax_amount1`, `tax_name2`, `tax_amount2`, `tax_name3`, `tax_amount3`, `total`, `purchaseordertrn_status`, `po_trn_req_status`, `main_pro_status`, `use_purchase_status`, `user_id`);
+ALTER TABLE `tbl_purchasetrntemp` ADD INDEX( `usertype_id`, `company_id`, `sel_tax`, `formula_tax_id`, `product_base_unit`, `product_uom`, `product_alloc_qty`, `po_quotation_id`);
+
+
+
+ALTER TABLE `tbl_purchaseordertrn` ADD INDEX( `purchaseordertrn_id`, `product_type`, `product_id`, `po_ref_id`, `po_ref_type`, `po_bom_id`, `po_bom_trn_id`, `temptrn_ref_id`, `parent_pro`, `purchaseorder_id`, `product_qty`, `used_qty`, `used_status`, `sqr_ft`, `product_hsn_code`);
+ALTER TABLE `tbl_purchaseordertrn` ADD INDEX( `product_rate`, `product_disc`, `unit_id`, `product_amount`, `product_amount_tax`, `conversion_rate`, `product_currency_rate`, `product_currency_amount`, `product_currency_amount_tax`, `product_discount`, `discount_per`, `formulaid`, `tax_name1`, `tax_amount1`, `tax_name2`);
+ALTER TABLE `tbl_purchaseordertrn` ADD INDEX( `tax_amount2`, `tax_name3`, `tax_amount3`, `total`, `purchaseordertrn_status`, `po_trn_req_status`, `main_pro_status`, `use_purchase_status`, `user_id`, `usertype_id`, `company_id`, `sel_tax`, `formula_tax_id`, `product_base_unit`, `product_uom`);
+ALTER TABLE `tbl_purchaseordertrn` ADD INDEX( `product_alloc_qty`);
+
+
+
+ALTER TABLE `tbl_purchaseorder` ADD INDEX( `purchaseorder_id`, `po_type_status`, `purchase_ledger_id`, `vender_id`, `consignee_id`, `purchaseorder_no`, `purchaseorder_date`, `purchaseorder_due_date`, `mode_of_dispatch`, `payment_terms`, `round_off`, `g_total`, `paid_amount`, `formulaid`, `packing`);
+ALTER TABLE `tbl_purchaseorder` ADD INDEX( `discount`, `tax1_name`, `tax2_name`, `tax3_name`, `taxvalue1`, `taxvalue2`, `taxvalue3`, `status`, `po_req_mode`, `po_ref_id`, `po_qty`, `po_ref_type`, `po_bom_id`, `po_req_status`, `purchase_status`);
+ALTER TABLE `tbl_purchaseorder` ADD INDEX( `used_purchase_id`, `product_ref_id`, `po_approval_status`, `userid`, `quotation_no`, `supply_type`, `gst_type`, `print_status`, `company_id`, `usertype_id`, `branch_id`, `used_status`);
+
+
+
+ALTER TABLE `tbl_allocate_process` ADD INDEX( `p_id`, `process_id`, `p_qty`, `pen_qty`, `start_qty`, `p_status`, `task_status`, `p_ref_id`, `p_ref_type`, `p_product_id`, `pr_process_type`, `process_priority`, `previous_process_id`, `process_stock`);
+ALTER TABLE `tbl_allocate_process` ADD INDEX( `process_used_stock`, `user_id`, `company_id`, `process_type_data`, `process_unit`);
+
+
+
+ALTER TABLE `tbl_allocate_process_material` ADD INDEX( `process_material_id`, `allocate_process_id`, `product_id`, `qty_need_for_single`, `total_req_qty`, `unit_id`, `used_qty`, `user_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_allocate_process_trn` ADD INDEX( `pt_id`, `pt_alloc_id`, `pt_ref_id`, `pt_product_id`, `pt_process_id`, `pt_qty`, `p_status`, `user_id`, `company_id`, `grn_id`);
+
+
+
+ALTER TABLE `tbl_allocate_re_process` ADD INDEX( `p_id`, `process_id`, `pt_alloc_id`, `p_qty`, `pen_qty`, `p_status`, `p_ref_id`, `p_ref_type`, `p_product_id`, `pr_process_type`, `user_id`, `company_id`, `pr_process_id`, `process_unit`);
+
+
+
+ALTER TABLE `tbl_allocate_re_process_trn` ADD INDEX( `pt_id`, `pt_alloc_id`, `pt_ref_id`, `pt_product_id`, `pt_process_id`, `pt_qty`, `p_status`, `user_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_jobwork` ADD INDEX( `jobwork_id`, `jobwork_no`, `pr_jobwork_no`, `j_vendor`, `j_chalan_no`, `j_product_id`, `j_qty`, `used_qty`, `j_pr_process_id`, `j_alloc_process_id`, `j_process_type`, `j_pr_process_no`, `j_reprocess`, `j_reprocess_id`);
+ALTER TABLE `tbl_jobwork` ADD INDEX(`j_ref_id`, `process_unit`, `job_close_status`, `status`, `userid`, `company_id`, `pr_rate`);
+
+
+
+ALTER TABLE `tbl_jobworktrn` ADD INDEX( `jobworktrn_id`, `product_type`, `raw_product_id`, `jobwork_id`, `outward_product_qty`, `outward_product_rate`, `outward_product_amt`, `jobworktrn_status`, `user_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_jobwork_history` ADD INDEX( `p_id`, `process_id`, `p_qty`, `pen_qty`, `p_status`, `p_ref_id`, `j_alloc_process_id`, `p_ref_type`, `p_product_id`, `pr_process_type`, `user_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_jobwork_process` ADD INDEX( `jobwork_process_id`, `jobwork_id`, `p_id`, `qty`, `used_qty`, `status`, `userid`, `company_id`);
+
+
+
+ALTER TABLE `tbl_work_order_stock_transfer` ADD INDEX( `work_order_transfer_id`, `work_order_transfer_no`, `work_order_transfer_status`, `userid`, `usertype_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_work_order_stock_transfer_trn` ADD INDEX( `work_order_transfer_trn_id`, `work_order_transfer_id`, `product_id`, `request_id`, `transfer_request_id`, `transfer_qty`, `work_order_stock_transfer_trn_status`, `user_id`, `usertype_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_product` ADD INDEX( `product_id`, `product_type`, `product_name`, `product_icode`, `product_hsn`, `product_purchase_rate`, `product_sale_rate`, `product_base_unit`, `product_base_qty`, `product_conv_unit`, `product_conv_qty`, `product_gst`, `product_sale_gst`, `product_purchase_gst`);
+ALTER TABLE `tbl_product` ADD INDEX( `product_opening`, `product_opening_valuation`, `product_min_stock`, `product_max_stock`, `product_category`, `product_barcode`, `product_making_time`, `multi_branch`, `product_status`, `count_stock`, `user_id`, `company_id`, `branch_id`, `product_width`);
+ALTER TABLE `tbl_product` ADD INDEX( `product_height`, `product_thickness`, `product_density`, `product_kg`, `product_specification`, `ledger_id`, `tolerance`, `minimum_tolerance`, `maximum_tolerance`);
+
+
+
+ALTER TABLE `tbl_invoicetype` ADD INDEX( `invoicetype_id`, `invoice_type`, `taxinvoice_start`, `exciseinvoice_start`, `type_id`, `invoice_format`, `format_value`, `end_format_value`, `deletable`, `status`, `user_id`, `usertype_id`, `company_id`);
+
+
+
+ALTER TABLE `tbl_grn` ADD INDEX( `grn_id`, `branch_id`, `grn_no`, `gir_no`, `invoice_no`, `challan_no`, `ref_no`, `ref_type`, `vender_id`, `purchaseorder_id`, `grn_file`);
+ALTER TABLE `tbl_grn` ADD INDEX( `grn_status`, `user_id`, `company_id`, `qc_status`, `purchase_id`, `purchase_status`, `product_qc`, `unit_id` );
+
+
+
+ALTER TABLE `tbl_grn_trn` ADD INDEX( `grn_trn_id`, `purchaseorder_id`, `product_id`, `grn_id`, `product_qty`, `sqr_ft`, `product_hsn_code`, `product_rate`, `product_disc`, `unit_id`, `product_amount`, `product_landing_price`, `product_discount`, `discount_per`);
+ALTER TABLE `tbl_grn_trn` ADD INDEX( `formulaid`, `tax_name1`, `tax_amount1`, `tax_name2`, `tax_amount2`, `tax_name3`, `tax_amount3`, `total`, `grn_trn_status`, `branch_id`, `user_id`, `company_id`, `product_qc`);
+ALTER TABLE `tbl_grn_trn` ADD INDEX( `grn_godown`, `tolerance`, `po_ref_id`, `purchaseordertrn_id`);
+
+
+
+ALTER TABLE `tbl_bom` ADD INDEX( `bom_id`, `bom_no`, `bom_group`, `bom_product`, `bom_qty`, `product_base_unit`, `product_base_qty`, `product_conv_unit`, `product_conv_qty`, `bom_status`);
+ALTER TABLE `tbl_bom` ADD INDEX( `bom_actual_add_status`, `user_id`, `usertype_id`, `company_id`, `branch_id`, `bom_close_status`, `tot_standrad_qty` );
+
+
+
+ALTER TABLE `tbl_bomtrn` ADD INDEX( `bom_trn_id`, `bom_id`, `product_id`, `p_bom_id`, `product_base_qty`, `product_base_unit`, `product_conv_unit`, `product_conv_qty`, `bom_trn_status`, `po_req_status`);
+ALTER TABLE `tbl_bomtrn` ADD INDEX( `po_visible_status`, `user_id`, `company_id`, `branch_id`, `product_width`, `product_height`, `product_thickness`, `product_kg`, `product_density`);
+
+
+
+ALTER TABLE `tbl_purchaseorder_req_trn` ADD INDEX( `purchaseordertrn_req__id`, `req_id`, `purchaseordertrn_id`, `used_qty`, `purchaseordertrn_req_status`, `user_id`, `usertype_id`, `company_id`);
+
+
+
+
+
+ALTER TABLE `tbl_qc` ADD INDEX( `qc_id`, `qc_no`, `qc_grn`, `grn_id`, `qc_godown`, `qc_status`, `user_id`, `company_id`, `purchase_id`, `purchase_status`, `po_ref_id`, `grn_trn_id`);
+
+
+ALTER TABLE `tbl_qc_param` ADD INDEX( `p_id`, `p_name`, `p_status`, `user_id`, `company_id`, `is_deletable`);
+
+
+ALTER TABLE `tbl_qc_param_trn` ADD INDEX( `qcpt_id`, `qcpt_qc_id`, `qcpt_grn_id`, `qc_product`, `qc_param`, `qc_pr_actual`, `qc_pr_tested`, `qcpt_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `tbl_qc_process_trn` ADD INDEX( `qc_process_trn_id`, `p_id`, `p_ref_id`, `product_id`, `qc_id`, `accept_qty`, `reject_qty`, `reject_used_qty`, `reprocess_qty`, `total_qty`, `qc_process_status`, `userid`, `company_id`);
+
+
+ALTER TABLE `tbl_qc_trn` ADD INDEX( `qctrn_id`, `qc_id`, `po_id`, `grn_status`, `user_id`, `company_id`, `qc_product`, `qc_unit_id`, `qc_product_qty`, `qc_accepted`, `qc_rejected`, `qc_rejected_used`, `qty_reprocess`, `qc_status`, `stock_status`);
+
+
+ALTER TABLE `tbl_request_product` ADD INDEX( `rp_id`, `sp_id`, `sr_no`, `rp_req_no`, `rp_pid`, `rp_req_qty`, `req_qty_one`, `rp_po_qty`, `in_process_qty`, `out_process_qty`, `rp_req_type`, `rp_po_req_no`, `rp_process_req_no`, `user_id`, `company_id`);
+ALTER TABLE `tbl_request_product` ADD INDEX( `status`, `row_cnt`, `process_unit`, `purchase_unit`, `reserve_status`, `used_rp_req_qty`, `used_status`, `perent_id`, `reserve_stock`, `main_request`, `indent_no`, `indent_status`, `job_card_no`, `job_card_status`, `reject_status`, `sales_order_trn_id`);
+
+
+ALTER TABLE `tbl_reserve_stock` ADD INDEX( `reserve_id`, `reserve_date`, `product_id`, `base_unit`, `base_stock`, `convert_unit`, `convert_stock`, `stock_flage`, `request_id`, `ref_name`, `ref_id`, `stock_status`, `user_id`, `company_id`, `sales_order_trn_id`);
+
+
+ALTER TABLE `tbl_sales_order` ADD INDEX( `sales_order_id`, `sales_order_no`, `sales_order_date`, `ref_no`, `cust_id`, `formulaid`, `tax1_name`, `tax2_name`, `tax3_name`, `taxvalue1`, `taxvalue2`, `taxvalue3`, `discount_per`, `discount`);
+ALTER TABLE `tbl_sales_order` ADD INDEX( `packing`, `freight`, `g_total`, `invoice_status`, `used_invoice_id`, `sales_order_status`, `user_id`, `company_id`, `po_no`, `approve_status`, `quotation_id`);
+
+
+
+ALTER TABLE `tbl_sales_ordertrn` ADD INDEX( `sales_ordertrn_id`, `sales_order_id`, `product_id`, `product_hsn_code`, `product_qty`, `sqr_ft`, `product_rate`, `unit_id`, `product_amount`, `product_discount`, `discount_per`, `formulaid`);
+ALTER TABLE `tbl_sales_ordertrn` ADD INDEX( `tax_name1`, `tax_amount1`, `tax_name2`, `tax_amount2`, `tax_name3`, `tax_amount3`, `total`, `sales_ordertrn_status`, `user_id`, `quot_trn_id`, `production_status`, `work_order_qty`);
+
+
+ALTER TABLE `tbl_purchase_exp` ADD INDEX( `exp_id`, `exp_in_id`, `exp_e_name`, `exp_e_amount`, `company_id`, `branch_id`, `user_id`);
+
+
+ALTER TABLE `tbl_set_main_process` ADD INDEX( `po_req_no`, `rp_req_qty`, `in_process_qty_main`, `rp_po_qty`, `product_id`, `user_id`, `muser_id`, `bom_no`, `sales_order_date`, `company_id`, `sp_status`);
+
+
+ALTER TABLE `tbl_stock_trn` ADD INDEX( `stock_id`, `product_id`, `base_unit`, `base_stock`, `convert_unit`, `convert_stock`, `stock_flage`, `godown_id`, `ref_name`, `ref_id`, `stock_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `tbl_usertype` ADD INDEX( `usertype_id`, `usertype_name`, `status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `unit_mst` ADD INDEX( `unitid`, `unit_name`, `unit_status`, `user_id`, `usertype_id`);
+
+
+ALTER TABLE `zone_mst` ADD INDEX( `zone_id`, `zone_name`, `zone_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `account_mst` ADD INDEX( `acc_id`, `acc_type`, `b_grp`, `bankid`, `branch_name`, `cityid`, `acc_name`, `acc_number`, `acc_chequeno`, `acc_chequeleft`, `opn_balance`, `acc_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `approve_indent` ADD INDEX( `approve_indent_id`, `approve_no`, `rp_id`, `approve_qty`, `approve_unit`, `quotation_requirement`, `quotation_approve_status`, `quotation_approve_id`, `approve_indent_status`, `user_id`, `usertype_id`, `company_id`);
+
+
+ALTER TABLE `bank_mst` ADD INDEX( `bankid`, `bank_name`, `bank_status`, `userid`, `company_id`);
+
+
+ALTER TABLE `branch_mst` ADD INDEX( `branch_id`, `branch_user_id`, `branch_name`, `branch_email`, `branch_password`, `zoneid`, `countryid`, `stateid`, `cityid`, `branch_pincode`, `branch_status`, `user_id`, `usertype_id`, `company_id`);
+
+
+ALTER TABLE `city_mst` ADD INDEX( `cityid`, `city_initial`, `city_name`, `stateid`, `city_status`, `userid`, `usertype_id`);
+
+
+ALTER TABLE `country_mst` ADD INDEX( `countryid`, `country_initital`, `country_name`, `country_code`, `country_status`, `userid`);
+
+
+ALTER TABLE `expense_mst` ADD INDEX( `expense_id`, `expense_head_id`, `expense_name`, `exp_opn_balance`, `expense_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `expense_trn` ADD INDEX( `expense_trnid`, `expense_mstid`, `account_mst_id`, `expense_grp`, `expense_amount`, `hsn_code`, `expense_notes`, `formulaid`, `tax_name1`, `tax_name2`);
+ALTER TABLE `expense_trn` ADD INDEX(`tax_name3`, `tax_amount1`, `tax_amount2`, `tax_amount3`, `total`, `trn_status`, `user_id`, `emp_transfer`, `emp_id` );
+
+
+ALTER TABLE `formula_mst` ADD INDEX( `formulaid`, `tax_per_id`, `tax_cat`, `tax_id`, `tax_type`, `formula_name`, `formula_status`, `user_id`, `usertype_id`, `company_id`);
+
+
+ALTER TABLE `income_master` ADD INDEX( `inc_id`, `inc_name`, `inc_group`, `inc_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `income_mst` ADD INDEX( `incomeid`, `income_date`, `customerid`, `place_of_supply`, `tax_type`, `g_total`, `paid_amount`, `invoice_no`, `payment_id`, `mst_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `income_trn` ADD INDEX( `income_trnid`, `income_mstid`, `account_mst_id`, `income_group`, `income_amount`, `hsn_code`, `income_notes`, `formulaid`, `tax_name1`, `tax_name2`, `tax_name3`, `tax_amount1`, `tax_amount2`, `tax_amount3`, `total`);
+ALTER TABLE `income_trn` ADD INDEX( `trn_status`, `user_id`);
+
+
+ALTER TABLE `login_history` ADD INDEX( `log_id`, `uid`, `ip`, `browser`, `version`, `os`, `city`, `state`, `country`, `lng`, `lat`, `attendance`);
+
+
+ALTER TABLE `model_mst` ADD INDEX( `model_id`, `product_id`, `model_name`, `model_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `model_pro_alloc_mst` ADD INDEX( `model_pro_alloc_mst_id`, `model_id`, `req_product_id`, `req_product_qty`, `model_pro_alloc_mst_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `mode_of_dispatch` ADD INDEX( `mode_dis_id`, `mode_dispatch`, `mode_des_status`, `userid`, `company_id`);
+
+
+ALTER TABLE `po_quotation` ADD INDEX( `po_quotation_id`, `approve_indent_id`, `vender_id`, `quotation_no`, `payment_days`, `product_rate`, `po_quotation_status`, `user_id`, `usertype_id`, `company_id`);
+
+
+ALTER TABLE `process_mst` ADD INDEX( `process_id`, `process_type`, `process_name`, `process_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `process_type_mst` ADD INDEX( `process_type_id`, `process_type_name`, `process_type_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `product_mst` ADD INDEX( `product_id`, `product_type`, `product_name`, `product_icode`, `product_hsn`, `product_purchase_rate`, `product_sale_rate`, `product_base_unit`, `product_base_qty`, `product_conv_unit`, `product_conv_qty`, `product_gst`, `product_sale_gst`, `product_purchase_gst`);
+ALTER TABLE `product_mst` ADD INDEX( `product_opening`, `product_opening_valuation`, `product_min_stock`, `product_max_stock`, `product_category`, `product_barcode`, `product_making_time`, `multi_branch`, `product_status`, `count_stock`, `user_id`, `company_id`, `revision_id`, `branch_id`);
+ALTER TABLE `product_mst` ADD INDEX( `product_width`, `product_height`, `product_thickness`, `product_density`, `product_kg`, `product_specification`, `ledger_id`, `tolerance`, `minimum_tolerance`, `maximum_tolerance`);
+
+
+ALTER TABLE `state_mst` ADD INDEX( `stateid`, `state_initial`, `state_name`, `gst_state_code`, `countryid`, `state_status`, `user_id`, `usertype_id`);
+
+
+ALTER TABLE `mst_accounts` ADD INDEX( `accountid`, `account_name`, `account_code`, `pid`, `acc_type_id`, `edit_status`, `view_status`, `status`, `user_id`, `company_id`, `emp_id`);
+
+
+ALTER TABLE `mst_accounts_balance` ADD INDEX( `account_balanceid`, `accountid`, `balance_amount`, `typeid`, `user_id`, `company_id`);
+
+
+ALTER TABLE `mst_accounts_voucher_type` ADD INDEX( `voucher_typeid`, `voucher_type_name`, `voucher_status`); 
+
+
+ALTER TABLE `mst_acc_type` ADD INDEX( `acc_type_id`, `acc_type_name`, `pid`, `acc_type_status`, `user_id`); 
+
+
+ALTER TABLE `mst_balance_type` ADD INDEX( `balance_typeid`, `balance_type_name`, `shor_name`, `status`, `userid`);
+
+
+ALTER TABLE `mst_godown` ADD INDEX( `gd_id`, `gd_name`, `g_status`, `user_id`, `company_id`); 
+
+
+ALTER TABLE `mst_material_spec` ADD INDEX( `ms_id`, `ms_name`, `m_type_width`, `m_type_height`, `m_type_thick`, `m_type_density`, `ms_status`, `user_id`, `company_id`); 
+
+
+ALTER TABLE `payment_mst` ADD INDEX( `payment_mstid`, `paymentno`, `partyid`, `accountid`, `comp_id`, `payment_mode`, `amount`, `referenceno`);
+ALTER TABLE `payment_mst` ADD INDEX( `used_amount`, `credits`, `notes`, `typeid`, `bank_charges`, `tax_deducted_flag`, `tax_id`, `mst_status`, `user_id`, `company_id`, `emp_id`);
+
+
+ALTER TABLE `tbl_group` ADD INDEX( `g_id`, `g_name`, `g_pid`, `g_type`, `g_open_balance`, `g_status`, `balance_typeid`, `user_id`, `company_id`, `is_deletable`, `emp_id`, `form_id`);
+
+
+ALTER TABLE `tbl_employee_document` ADD INDEX( `ed_id`, `ed_lid`, `ed_doc_type`, `ed_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `tbl_menu` ADD INDEX( `menu_name`, `menuorder`, `page_name`, `incl_per`, `cdate`, `user_id`, `fa_icon`, `report_status`);
+
+
+ALTER TABLE `tbl_cust_sold_pro` ADD INDEX( `cust_sold_pro_id`, `cust_id`, `sold_inv_no`, `sold_inv_rate`, `product_id`, `model_id`, `sold_pro_srl_no`, `cust_sold_pro_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `tbl_purchasebill_aprv_log` ADD INDEX( `p_aprv_log_id`, `sales_order_id`, `po_id`, `assign_user_ids`, `approve_status`, `p_aprv_log_status`, `user_id`, `company_id`);
+
+
+ALTER TABLE `tbl_permission` ADD INDEX( `add_permission`, `edit_permission`, `delete_permission`, `other_permission`, `aprv_permission`, `final_aprv_permission`, `status`, `user_id`);
+
+
+ALTER TABLE `tbl_customer_bank` ADD INDEX( `b_id`, `b_cust`, `bank_ac`, `b_name`, `ac_name`, `bank_ifsc`, `bank_open`, `userid`);
+
+
+ALTER TABLE `tbl_cust_contact_person` ADD INDEX( `cust_contact_person_id`, `cust_id`, `cust_contact_person_name`, `cust_contact_person_no`, `cust_contact_person_email`, `cust_contact_person_status`, `cust_contact_person_direct_status`, `user_id`);
+
+
+
+ALTER TABLE `tbl_log_all` ADD INDEX( `log_id`, `log_form`, `log_mode`, `ref_tbl`, `ref_id`, `user_id`, `log_status`, `company_id`);
+
+
+ALTER TABLE `tbl_product_images` ADD INDEX( `img_id`, `im_product`, `im_status`, `user_id`, `company_id`, `branch_id`);
+
+
+ALTER TABLE `tbl_product_job_party_purchase` ADD INDEX( `job_party_purchase_id`, `job_party_process_id`, `job_party_id`, `job_party_rate`, `job_party_product`, `user_id`, `company_id`, `branch_id`);
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 13-01-2021      user : Amish Soni
+
+ALTER TABLE `email_merge_fields` ADD `table_name` VARCHAR(255) NULL DEFAULT NULL AFTER `field_name`, ADD `replace_with` VARCHAR(255) NULL DEFAULT NULL AFTER `table_name`;
+
+ALTER TABLE `email_merge_fields` ADD `primary_id` VARCHAR(255) NULL DEFAULT NULL AFTER `replace_with`;
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 18-01-2021      user : Amish Soni
+
+ALTER TABLE `tbl_task` ADD `email_template_id` INT NULL DEFAULT NULL ;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 19-01-2021      user : Amish Soni
+
+ALTER TABLE `tbl_inquiry` ADD `email_template_id` INT NULL DEFAULT NULL ;
+
+ALTER TABLE `tbl_indiamart_data` ADD `email_template_id` INT NULL DEFAULT NULL ;
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 04-02-2021      user : Umair
+
+ALTER TABLE `tbl_product_process` ADD `process_loss` INT(111) NOT NULL AFTER `process_id`, ADD INDEX (`process_loss`) ; 
+
+CREATE TABLE IF NOT EXISTS `tbl_make_number` (
+  `make_number_id` int(11) NOT NULL AUTO_INCREMENT,
+  `make_number` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `muser_id` int(11) NOT NULL,
+  `cdate` timestamp NOT NULL,
+  `mdate` timestamp NOT NULL,
+  `make_number_status` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  PRIMARY KEY (`make_number_id`),
+  KEY `revision_number` (`make_number`,`user_id`,`muser_id`,`make_number_status`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+ALTER TABLE `tbl_product_make_purchase` ADD `make_number_id` INT NOT NULL COMMENT 'tbl_make_number' AFTER `make_id`; 
+
+ALTER TABLE `tbl_product_make_purchase` ADD `make_stock` VARCHAR(100) NOT NULL AFTER `make_rate`; 
+
+ALTER TABLE `tbl_product_make_purchase` ADD INDEX(`make_number_id`); 
+
+ALTER TABLE `tbl_product_make_purchase` ADD INDEX(`make_stock`); 
+
+ALTER TABLE `tbl_product_make_purchase` ADD `make_value` VARCHAR(200) NOT NULL AFTER `make_number_id`; 
+
+ALTER TABLE `product_mst` ADD `image_name` VARCHAR(255) NULL DEFAULT NULL ; 
+
+ALTER TABLE `tbl_drawing` CHANGE `cdate` `cdate` DATETIME NOT NULL; 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 08-02-2021      user : Umair
+
+ALTER TABLE `tbl_drawing` CHANGE `cdate` `cdate` DATE NOT NULL; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 10-02-2021      user : Umair
+
+ALTER TABLE `tbl_request_product` ADD `branch_id` INT NOT NULL DEFAULT '0' AFTER `sales_order_trn_id`; 
+
+ALTER TABLE `tbl_set_main_process` ADD `branch_id` INT NOT NULL DEFAULT '0' AFTER `sp_status`; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 11-02-2021      user : Umair
+
+ALTER TABLE `approve_indent` ADD `branch_id` INT NOT NULL DEFAULT '0' AFTER `usertype_id`; 
+
+ALTER TABLE `tbl_purchasetrntemp` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `po_quotation` ADD `branch_id` INT NOT NULL DEFAULT '0' AFTER `company_id`; 
+
+ALTER TABLE `tbl_purchaseordertrn` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_tax_trn` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_purchaseorder_req_trn` ADD `branch_id` INT NOT NULL DEFAULT '0' AFTER `company_id`; 
+
+ALTER TABLE `tbl_jobwork_history` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_grn_sub_trn` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_allocate_process` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_stock_trn` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_allocate_process_material` ADD `branch_id` INT NOT NULL DEFAULT '0' ;
+
+ALTER TABLE `tbl_purchaseorder_aprv_log` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_used_tax` ADD `branch_id` INT NOT NULL DEFAULT '0' ;  
+
+ALTER TABLE `tbl_mrn` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 15-02-2021      user : Umair
+
+ALTER TABLE `tbl_resource` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_resource_allocation_transfer` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_resource_schedule` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+ALTER TABLE `tbl_work_order_resource_allocate` ADD `branch_id` INT NOT NULL DEFAULT '0' ; 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date : 16-02-2021       user : pathik
+
+ALTER TABLE `tbl_work_order_stock_transfer` CHANGE `userid` `user_id` INT(11) NOT NULL;
+ALTER TABLE `tbl_sales_order` ADD `branch_id` INT NOT NULL AFTER `quotation_id`;
+ALTER TABLE `tbl_sales_ordertrn` ADD `branch_id` INT NOT NULL AFTER `work_order_qty`;
+ALTER TABLE `tbl_reserve_stock` ADD `branch_id` INT NOT NULL AFTER `sales_order_trn_id`;
+ALTER TABLE `tbl_qc` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_qc_process_trn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_work_order_stock_transfer_trn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_sales_order_production_trn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_allocate_re_process` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_allocate_re_process_trn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_mrn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_mrn_trn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_qc_trn` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `tbl_jobwork` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+ALTER TABLE `mst_godown` ADD `branch_id` INT NOT NULL AFTER `company_id`;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 17-02-2021      user : Umair
+
+ALTER TABLE `product_mst` ADD `product_net_weight` VARCHAR(100) NOT NULL AFTER `product_specification`; 
+
+ALTER TABLE `product_mst` CHANGE `product_net_weight` `product_net_weight` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '0'; 
+
+ALTER TABLE `product_mst` ADD INDEX(`product_net_weight`); 
+
+CREATE TABLE IF NOT EXISTS `tbl_product_scrap` (
+  `scrap_product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `scrap_product` int(11) NOT NULL,
+  `material_issue_weight` varchar(100) NOT NULL DEFAULT '0',
+  `cdate` date NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  PRIMARY KEY (`scrap_product_id`),
+  KEY `scrap_product` (`scrap_product`,`material_issue_weight`,`user_id`,`company_id`,`branch_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `tbl_product_scrap` ADD `scrap_code_id` INT NOT NULL AFTER `scrap_product`, ADD INDEX (`scrap_code_id`) ; 
+
+
+ALTER TABLE `tbl_product_process` ADD `process_scrap_tolerance_plus` INT NOT NULL DEFAULT '0' AFTER `process_loss`, ADD INDEX (`process_scrap_tolerance_plus`) ; 
+
+ALTER TABLE `tbl_product_process` ADD `process_scrap_tolerance_minus` INT NOT NULL DEFAULT '0' AFTER `process_scrap_tolerance_plus`, ADD INDEX (`process_scrap_tolerance_minus`) ; 
+
+
+
+ALTER TABLE `tbl_invoice` ADD `lrno` VARCHAR(110) NOT NULL AFTER `branch_id`, ADD `transport_id` INT NOT NULL AFTER `lrno`;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 24-02-2021      user : Umair
+
+ALTER TABLE `tbl_wororder_product_process` ADD `branch_id` INT NULL DEFAULT '0' AFTER `company_id`, ADD INDEX (`branch_id`) ; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 25-02-2021      user : Umair
+
+ALTER TABLE `tbl_product_parameter` ADD `tolerance_plus` INT NOT NULL DEFAULT '0' AFTER `param_id`, ADD `tolerance_minus` INT NOT NULL DEFAULT '0' AFTER `tolerance_plus`, ADD `unit_id` INT NULL DEFAULT NULL AFTER `tolerance_minus`, ADD INDEX (`tolerance_plus`, `tolerance_minus`, `unit_id`) ; 
+ALTER TABLE `tbl_product_parameter` ADD `branch_id` INT NULL DEFAULT '0' AFTER `company_id`, ADD INDEX (`branch_id`) ; 
+ALTER TABLE `tbl_product_parameter` CHANGE `param_value` `param_value` VARCHAR(100) NOT NULL; 
+ALTER TABLE `tbl_product_parameter` CHANGE `tolerance_plus` `tolerance_plus` INT(11) NULL DEFAULT NULL; 
+ALTER TABLE `tbl_product_parameter` CHANGE `tolerance_minus` `tolerance_minus` INT(11) NULL DEFAULT NULL; 
+ALTER TABLE `tbl_product_parameter` CHANGE `tolerance_plus` `tolerance_plus` VARCHAR(100) NULL DEFAULT NULL; 
+ALTER TABLE `tbl_product_parameter` CHANGE `tolerance_minus` `tolerance_minus` VARCHAR(100) NULL DEFAULT NULL; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 01-03-2021 - 05-03-2021      user : Umair
+
+CREATE TABLE IF NOT EXISTS `tbl_item_wise_qc` (
+  `item_qc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `grn_trn_id` int(11) NOT NULL,
+  `item_number` int(11) NOT NULL,
+  `qc_work_type` int(11) NOT NULL,
+  `field_key` varchar(100) NOT NULL,
+  `field_value` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `cdate` timestamp NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  PRIMARY KEY (`item_qc_id`),
+  KEY `product_id` (`product_id`,`grn_trn_id`,`item_number`,`qc_work_type`,`user_id`,`company_id`,`branch_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `tbl_item_wise_qc` ADD `pr_param_id` INT NOT NULL COMMENT 'tbl_product_parameter ref id' AFTER `grn_trn_id`, ADD INDEX (`pr_param_id`) ; 
+
+CREATE TABLE IF NOT EXISTS `tbl_item_wise_status` (
+  `item_status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `grn_trn_id` int(11) NOT NULL,
+  `item_number` int(11) NOT NULL,
+  `qc_work_type` int(11) NOT NULL,
+  `status` int(11) NOT NULL COMMENT '1=pass,2=rejected,3=reprocess',
+  `accepted_qty` int(11) NOT NULL,
+  `rejected_qty` int(11) NOT NULL,
+  `reprocess_qty` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `cdate` timestamp NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  PRIMARY KEY (`item_status_id`),
+  KEY `product_id` (`product_id`,`grn_trn_id`,`item_number`,`qc_work_type`,`user_id`,`company_id`,`branch_id`),
+  KEY `status` (`status`,`accepted_qty`,`rejected_qty`,`reprocess_qty`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `tbl_mrn` ADD `qc_reject_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `mrn_status`, ADD `qc_reporcess_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qc_reject_godown`, ADD INDEX (`qc_reject_godown`, `qc_reporcess_godown`) ;
+
+ALTER TABLE `tbl_mrn_trn` ADD `qc_reject_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `mrn_trn_status`, ADD `qc_reporcess_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qc_reject_godown`, ADD INDEX (`qc_reject_godown`, `qc_reporcess_godown`) ;
+
+ALTER TABLE `tbl_qc_process_trn` ADD `qc_reject_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qc_process_status`, ADD `qc_reporcess_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qc_reject_godown`, ADD INDEX (`qc_reject_godown`, `qc_reporcess_godown`) ;
+
+ALTER TABLE `tbl_qc_trn` ADD `qc_reject_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qty_reprocess`, ADD `qc_reporcess_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qc_reject_godown`, ADD INDEX (`qc_reject_godown`, `qc_reporcess_godown`) ;
+
+ALTER TABLE `tbl_allocate_re_process` ADD `qc_reject_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `pr_process_type`, ADD `qc_reporcess_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `qc_reject_godown`, ADD INDEX (`qc_reject_godown`, `qc_reporcess_godown`) ;
+
+ALTER TABLE `tbl_allocate_re_process_trn` ADD `qc_reporcess_godown` INT NOT NULL COMMENT 'mst_godown ref id' AFTER `pt_process_id`, ADD INDEX (`qc_reporcess_godown`) ; 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 23-02-2021      user : Amish Soni
+
+ALTER TABLE `tbl_support_ticket` ADD `emp_id` INT NULL DEFAULT NULL AFTER `upload_document`;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 04-03-2021      user : Amish Soni
+
+ALTER TABLE `tbl_task` ADD `is_read` BOOLEAN NOT NULL DEFAULT FALSE AFTER `email_template_id`;
+ALTER TABLE `tbl_task` ADD `is_read_by_admin` BOOLEAN NOT NULL DEFAULT FALSE ;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 16-03-2021      user : Amish Soni
+
+ALTER TABLE `tbl_company_settings` ADD `quotation_print_content` LONGTEXT NULL AFTER `crm_auto_mail`;
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 22-03-2021      user : Amish Soni
+
+ALTER TABLE `tbl_followup` ADD `branch_id` INT NOT NULL DEFAULT '0' ;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date  : 27-03-2021      user : Umair
+
+ALTER TABLE `tbl_item_wise_status` CHANGE `accepted_qty` `accepted_qty` VARCHAR(255) NOT NULL DEFAULT '0', CHANGE `rejected_qty` `rejected_qty` VARCHAR(255) NOT NULL DEFAULT '0', CHANGE `reprocess_qty` `reprocess_qty` VARCHAR(255) NOT NULL DEFAULT '0';
+
+ALTER TABLE `tbl_request_product` ADD `used_qty` VARCHAR(255) NOT NULL , ADD `finish_status` INT NOT NULL DEFAULT '0' COMMENT '0=Pending,1=Done' ; 
+
+ALTER TABLE `tbl_request_product` CHANGE `used_qty` `finish_used_qty` VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL; 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+date : 28-08-2021      user : Maulik
+
+ALTER TABLE `tbl_salesorder_delivery_date` CHANGE `sales_order_id` `sales_ordertrn_id` INT(11) NOT NULL;

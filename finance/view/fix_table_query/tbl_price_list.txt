@@ -1,0 +1,38 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 03, 2021 at 08:59 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `bigdatas_umaboy_erp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_price_list`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_price_list` (
+  `price_list_id` int(11) NOT NULL AUTO_INCREMENT,
+  `price_list_branch` int(11) NOT NULL,
+  `price_list_effective_date` date NOT NULL,
+  `price_list_exoire_date` date NOT NULL,
+  `price_list_version` varchar(255) NOT NULL,
+  `price_list_allocate_type` int(11) NOT NULL,
+  `price_list_allocate_to` varchar(255) NOT NULL,
+  `price_list_filter_on` varchar(255) NOT NULL,
+  `isdelete` tinyint(4) NOT NULL DEFAULT '0',
+  `cdate` timestamp NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `usertype_id` int(11) NOT NULL,
+  PRIMARY KEY (`price_list_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

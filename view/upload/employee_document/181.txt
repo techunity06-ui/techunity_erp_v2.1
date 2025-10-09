@@ -1,0 +1,316 @@
+
+
+ALTER TABLE tbl_job_work
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_job_work
+   ADD COLUMN g_total VARCHAR(100)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER purchaseordertrn_id;
+
+ALTER TABLE tbl_job_work
+   ADD COLUMN release_status INT(11) NOT NULL AFTER g_total;
+
+ALTER TABLE tbl_job_work
+   ADD COLUMN chalan_no VARCHAR(255)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER release_status;
+
+ALTER TABLE tbl_job_work
+   ADD COLUMN chalan_date DATE NOT NULL AFTER chalan_no;
+
+ALTER TABLE tbl_job_work
+   ADD COLUMN chalan_status INT(11) NOT NULL AFTER chalan_date;
+
+ALTER TABLE tbl_job_work
+   ADD COLUMN request_status INT(11) NOT NULL;
+
+ALTER TABLE tbl_tax_category_details
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_check_master_delete_setting
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_check_master_delete_setting
+   MODIFY COLUMN master_name INT(11)
+                   NOT NULL
+                   COMMENT '1.complaint type list 2.category list 3.drawing 4.godown list 5.item list 6.make 7.make number 8.material parameter 9.material specification 10.process list 11.process type list 12.product type list 13.qc parameter list 14.bank list 15.common category 16.common master 17.cost center 18.cost center group 19.currency list 20.group list 21.hsn master 22.ledger list 23.tax category 24.tds tax category 25.transportation detail 27.branch list 28.city list 29.company configuration 30.country list 31.narration master 32.series type 33.state list 34.unit list 35.zone list,36-bom_version,37-sales order trn,38 - tbl_bom';
+
+ALTER TABLE tbl_tds_tax_category_detail
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_job_work_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_job_work_trn
+   ADD COLUMN release_status INT(11) NOT NULL AFTER rate_unit;
+
+ALTER TABLE tbl_job_work_trn
+   ADD COLUMN request_status INT(11) NOT NULL;
+
+ALTER TABLE tbl_cr_dr_adjustment
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_salesman_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cust_month_consumption
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_tcs_reverse
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_depreciation
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cust_dispatch
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_process_stock_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_process_reserve_stock
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_receipt_payment_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_month_budget
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cost_center_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_common_mst
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_salesman
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_tcs_reverse_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_branch_opening
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN delivery_note VARCHAR(111)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER currency_id;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN supplier_ref VARCHAR(111)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER delivery_note;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN other_reference VARCHAR(111)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER supplier_ref;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN dispatch_document_no VARCHAR(111)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER other_reference;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN dispatch_document_date DATE NOT NULL AFTER dispatch_document_no;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN dispatched_through VARCHAR(111)
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL
+   AFTER dispatch_document_date;
+
+ALTER TABLE tbl_proforma_invoice
+   ADD COLUMN terms_condition TEXT
+                CHARACTER SET latin1
+                COLLATE latin1_swedish_ci
+                NOT NULL;
+
+ALTER TABLE tbl_store_request
+   ADD COLUMN job_work_sub_trn_id INT(11) NOT NULL;
+
+ALTER TABLE tbl_task
+   MODIFY COLUMN entry_type INT(11)
+                   NOT NULL
+                   COMMENT '1:Task, 2:Appointment,3:post crm value task,4:Product wise followup';
+
+ALTER TABLE tbl_cust_relation
+   MODIFY COLUMN gender TINYINT(4) NOT NULL DEFAULT 0;
+
+ALTER TABLE tbl_advacne_receipt_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cust_competitor
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_tax_category
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cust_forecast_pr
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_month_budget_details
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_financial_year
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_bill_sundry_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+CREATE TABLE tbl_cust_price_list
+(
+   price_list_cust_id       INT(11) NOT NULL AUTO_INCREMENT,
+   customer_id              INT(11) NOT NULL,
+   cust_price_month         VARCHAR(255)
+                              CHARACTER SET latin1
+                              COLLATE latin1_swedish_ci
+                              NOT NULL,
+   cust_price_year          VARCHAR(255)
+                              CHARACTER SET latin1
+                              COLLATE latin1_swedish_ci
+                              NOT NULL,
+   cust_price_version_id    INT(11) NOT NULL,
+   isdelete                 TINYINT(4) NOT NULL DEFAULT 0,
+   cdate                    TIMESTAMP(0) NOT NULL,
+   user_id                  INT(11) NOT NULL,
+   company_id               INT(11) NOT NULL,
+   usertype_id              INT(11) NOT NULL,
+   PRIMARY KEY(price_list_cust_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_transport_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_currency_opening
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_salesman_master
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_job_work_sub_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_job_work_sub_trn
+   ADD COLUMN release_status INT(11) NOT NULL AFTER pr_rate;
+
+ALTER TABLE tbl_job_work_sub_trn
+   ADD COLUMN request_status INT(11) NOT NULL;
+
+ALTER TABLE tbl_request_product
+   ADD COLUMN purchaseordertrn_id INT(11) NOT NULL;
+
+ALTER TABLE tbl_ledger_billbybill_opening
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cost_center
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_company_special_field_permission
+   ADD COLUMN umaboy_permission INT(11) NOT NULL AFTER rb_auto_permission;
+
+ALTER TABLE tbl_common_category_mst
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_bill_sundry
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_payment_to_govt
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ledger_cheque_opening
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_price_list
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_cust_comp_product
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_erpmodule_mst
+   MODIFY COLUMN `Cdate` TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_bill_by_bill_adjustment_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_tds_tax_category
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_company_configuration
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_price_list_details
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+CREATE TABLE product_tempdata
+(
+   product_tempdata_id    INT(11) NOT NULL AUTO_INCREMENT,
+   line_num               INT(11) NOT NULL,
+   error                  VARCHAR(200)
+                            CHARACTER SET latin1
+                            COLLATE latin1_swedish_ci
+                            NOT NULL,
+   company_id             INT(11) NOT NULL,
+   PRIMARY KEY(product_tempdata_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_registered_expense
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+CREATE TABLE tbl_batch_stock_tmp
+(
+   batch_stk_id      INT(11) NOT NULL AUTO_INCREMENT,
+   invoice_trn_id    INT(11) NOT NULL,
+   product_id        INT(11) NOT NULL,
+   stock_id          INT(11) NOT NULL,
+   reserve_id        INT(11) NOT NULL,
+   qty               INT(11) NOT NULL,
+   unitid            INT(11) NOT NULL,
+   status            TINYINT(4) NOT NULL,
+   cdate             DATETIME(0) NOT NULL,
+   company_id        INT(11) NOT NULL,
+   user_id           INT(11) NOT NULL,
+   PRIMARY KEY(batch_stk_id)
+)
+ENGINE INNODB
+COLLATE 'latin1_swedish_ci'
+ROW_FORMAT DEFAULT;
+
+ALTER TABLE tbl_narration_mst
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_tcs_deduction_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_ewaybill_transaction
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+ALTER TABLE tbl_payment_to_govt_trn
+   MODIFY COLUMN cdate TIMESTAMP(0) NOT NULL;
+
+DROP TABLE IF EXISTS product_mst_chemiteck CASCADE;
+DROP TABLE IF EXISTS product_mst_old CASCADE;
+
+ALTER TABLE tbl_invoice
+   MODIFY COLUMN eway_bill_date TIMESTAMP(0) NOT NULL;

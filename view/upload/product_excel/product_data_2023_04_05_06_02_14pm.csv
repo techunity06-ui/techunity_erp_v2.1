@@ -1,0 +1,81 @@
+Product Type,Product Category,Item Code,Product Name,Branch,Hsn Code,Base Unit,Base Qty,Conv Unit,Conv Qty,Product Material,Product Valuation,Product Barcode,Net weight,Making time,Lead time,Gst type,Sale rate,Purchase Rate,Weight,Minimum stock,Maximum stock,Grn required,Reorder qty,Self life days,Warranty period,Model no,Item type,Material Center,Stock Count,Bom required,Item Status,Batch wise stock manage
+BOI,primary,BOI00001,Laser Cutting Nozzle,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00002,Ceramic Ring,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00003,Focus Lens,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00004,Collimation Lens,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00005,Activated Carbon Filter (High Pressure),FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00006,Air High Presser Regulator ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00007,Air Regulator,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00008,Airtec Gas Alarm Valve,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00009,Airtec Solenoid Valve,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00010,Aluminum Bar,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00011,Ball Screw ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00012,DPDT Relay,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00013,BCL 4508E,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00014,BCL 4516E,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00015,BCS 100,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00016,BELLOWS ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00017,Carbon Brush,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00018,Cutting Head Electronic Device,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00019,Servo Drive,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00020,Pressure Switch,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00021,Gear box,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00022,HDMI Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00023,Head Cleaning Swab,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00024,Head Mounting Plate (Small),FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00025,High Presser Pre-Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00026,LM Block,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00027,I/O CARD,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00028,Encoder Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00029,Air Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00030,IPG Connector,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00031,IPG Feeding Fiber Replacement,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00032,IPG Power Connection Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00033,IPG Water Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00034,Solenoid Valve.,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00035,Mounting Plate,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00036,Display Stand,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00037,Operating Remote,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00038,PINION,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00039,Lifting Rollers,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00040,Limit Sensor ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00041,Motion Control Card,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00042,Flow Switch,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00043,Cutting Head,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00044,Servo Drive Encoder Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00045,Servo Drive Power Cable ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00046,Precitec Head Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00047,Cutting Head Sensor Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00048,Pressure Regulator,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00049,Pressure Regulator,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00050,Protection Cap,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00051,Protection Window Seal,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00052,PU Pipe,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00053,Cutting Head Amplifier,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00054,Autofocus Encoder Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00055,Autofocus Power Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00056,Cutting Head Conical Part,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00057,Rotary Motor ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00058,Rotary Voltage Control Card,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00059,Sheet Rollers,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00060,Air Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00061,Digital Valve ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00062,SMPS,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00063,Suction Cylinder Assembly,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00064,Air Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00065,Water Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00066,Drag Chain ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00067,Y – Strainer,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00068,Encoder Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00069,Servo Drive,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00070,Servo Drive Encoder Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00071,Servo Drive Power Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00072,Servo Interface Cable,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00073,After Filter,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00074,Air Compressor Drier,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00075,UPS Batteries,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00076,Stabilizer,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00077,UPS,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00078,IPG Power Source ,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00079,Raycus Power Source,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
+BOI,primary,BOI00080,Reci Power Source,FACTROY,85158090,NOS,1,NOS,1,,,,,,,excluding,,,,,,yes,,,,,,,yes,no,,no
