@@ -105,7 +105,7 @@
 							  	<input type="file" class="form-control" placeholder="Logo" name="logo" id="logo" accept="image/*" <?=$mode=="Add" ? "required" : "" ?> title="Select logo" />
 								</div>
 								<div class="col-md-3 col-xs-11">
-								<?
+								<?php 
 									if($mode=="Edit" && !empty($rel['logo']))
 									{
 										echo '<img src="'.ROOT.LOGO.$rel['logo'].'" style="width:120px"/>';

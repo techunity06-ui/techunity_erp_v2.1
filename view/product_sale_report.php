@@ -66,7 +66,7 @@
                                   <div class="col-md-8">
 									<select  name="product_id" class="select2" id="product_id" onChange="reload_data();">
 									<option value="">Choose Product</option>
-									<?
+									<?php 
 									$query="select * from tbl_product where product_status=0";
 									$rs_cat=$dbcon->query($query);	
 									while($rel=mysqli_fetch_assoc($rs_cat))
@@ -95,7 +95,7 @@
                                   <label class="control-label col-md-2" >Choose Date</label>
                                   <div class="col-md-3">
                                     <div class="input-group date form_datetime-component">
-									 <?
+									 <?php 
 									  $start=date('01-m-Y');
 									  ?>
                                          <input type="hidden" id="from_date"  value="<?=$start?>">

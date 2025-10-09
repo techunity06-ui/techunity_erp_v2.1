@@ -206,7 +206,7 @@ function get_tax_category_new($dbcon,$eid='')
 													<div class="col-md-6 col-xs-11">
 														<select class="select2" name="stateid" id="stateid" onChange="load_city(this.value,'cityid','')">
 															<option value="">Select State</option>	
-															<?//=getstate($dbcon,$rel['stateid'])?>
+															<?php //=getstate($dbcon,$rel['stateid'])?>
 														</select>
 													</div>
 													

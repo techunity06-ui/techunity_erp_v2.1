@@ -95,9 +95,9 @@
                             
                               <div class="row">
 								<div class="col-md-12" style="font-size:16px">
-									<?if($mode=='edit'){?>
+									<?php if($mode=='edit'){?>
 										<input type="hidden" name="card_type" value="<?=$rel['card_type']?>">
-									<?}?>
+									<?php }?>
 									<div class="col-md-6" style="text-align:right">
 										<div class="form-group">
                                           <div class="radio">
@@ -108,7 +108,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
                                           <div class="radio">
-												<label><input type="radio" name="card_type" id="prod_wise" value="1" onchange="ven_prod(this.value);item_detail_data();" <?if($rel['card_type']==1){?>checked<?}?> <?=$disable?>><strong>Product Wise</strong></label>
+												<label><input type="radio" name="card_type" id="prod_wise" value="1" onchange="ven_prod(this.value);item_detail_data();" <?php if($rel['card_type']==1){?>checked<?php }?> <?=$disable?>><strong>Product Wise</strong></label>
 										  </div>
 										</div>
 									</div>
@@ -121,9 +121,9 @@
                                              <select class="select2 vendor_class vendor_specified_class" id="vender_id" name="vender_id" title="Select Vender" <?=$disable?>>
                                              <?=getcust($dbcon,$rel['party_id'],$purchase_party_show);?> 
                                              </select>
-											 <?if($mode == 'edit'){?>
+											 <?php if($mode == 'edit'){?>
 												<input type="hidden" name="vender_id" value="<?=$rel['party_id']?>">
-											 <?}?>
+											 <?php }?>
                                           </div>
                                           <div class="col-md-1">   
                                             <button accesskey="n" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showledger();" title="Short-Cut To Open PopUp, Shift + Alt + n" ><i class="fa fa-plus"></i> Add Vendor</button>
@@ -142,9 +142,9 @@
 											 <option value="">Choose Product</option>
                                              <?=getproduct_typewise($dbcon,$rel['product_id'],$type_conf);?>
                                              </select>
-											 <?if($mode == 'edit'){?>
+											 <?php if($mode == 'edit'){?>
 												<input type="hidden" name="product_id" value="<?=$rel['product_id']?>">
-											 <?}?>
+											 <?php }?>
                                           </div>
 										  <?phpif($getspecialConfiguration['smpl_permission'] != '1'){ ?>
                                           <div class="col-md-1">   
@@ -427,7 +427,7 @@
           
           });
       </script>
-      <?
+      <?php 
 		if($mode=="Add"){
 			echo "<script>get_series_no(22);</script>";
 			echo "<script>ven_prod(0);</script>";

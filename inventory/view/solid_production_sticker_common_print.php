@@ -119,7 +119,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 			<div class="col-lg-9 table-responsive" id="receipt_print">	
 				<div style="width: 100%;" id="print1">
 					
-			<?
+			<?php 
 				$mode="Print";
 				
 					
@@ -194,7 +194,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 							<td colspan="4">&nbsp;</td>
 						</tr>
 					</table>
-					<?
+					<?php 
 						if($i>1){ echo '<hr style="margin-top:4px;margin-bottom:4px;"/>';}
 						 echo "<script>generateBarcode('".$batch_rel['batch_no']."','$s');</script>";
 

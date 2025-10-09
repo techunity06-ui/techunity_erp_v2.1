@@ -137,7 +137,7 @@ $(".select2").select2({
         });
 
 </script>
-<?
+<?php 
 echo "<script>format_valuechange(".$rel['invoice_format'].")</script>";
 
 

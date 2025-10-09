@@ -70,7 +70,7 @@
 					<label class="col-md-4  control-label"><span class="english">Voucher Type*</span></label>
 					<div class="col-md-6">
 					<select class="select2" name="voucher_typeid" id="voucher_typeid" >
-					<?//=get_voucher_type_list_common($rel['voucher_typeid'],$dbcon);?>	
+					<?php //=get_voucher_type_list_common($rel['voucher_typeid'],$dbcon);?>	
 					</select>
 					</div>
 					</div>

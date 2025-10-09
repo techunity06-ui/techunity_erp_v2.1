@@ -45,12 +45,12 @@
 						<strong>	To<br>
 							<?=$rel['cust_name']?><br>
 							<?=$rel['cust_city']?><br>
-							<?
+							<?php 
 							if(!empty($rel['cust_phone']))
 							{
 							?>
 							<?=$rel['cust_phone']?> 
-							<?}?></strong>
+							<?php }?></strong>
 							
 							</div>
 						<div id="self_address"  style="">

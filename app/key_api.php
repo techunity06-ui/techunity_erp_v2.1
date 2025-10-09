@@ -1,4 +1,4 @@
-<?
+<?php 
 
  
 function get_key_api_data($cust_code,$cust_key){

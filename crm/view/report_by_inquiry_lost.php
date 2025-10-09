@@ -101,7 +101,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 										</div>
 									</div>
 									<div class="col-md-12">
-										<?if($_SESSION['user_type']!=2){?>
+										<?php if($_SESSION['user_type']!=2){?>
 											<input type="hidden" name="user_id" id="user_id" value="<?=$_SESSION['user_id']?>">
 										<?php}else {?>
 										<div class="col-md-4">

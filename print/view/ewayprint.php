@@ -359,7 +359,7 @@ if(strtolower($type) == 'pdf') {
 		}); 	
       </script>
 
-<?
+<?php 
 
 		
 		$html .='</html>';

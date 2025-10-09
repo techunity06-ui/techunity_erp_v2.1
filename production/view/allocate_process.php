@@ -138,11 +138,11 @@ $(".form_datetime").datetimepicker({
 	todayBtn: true,
 	pickerPosition: "bottom-left"
 });  
-<?if($mode=='Edit'){?>
+<?php if($mode=='Edit'){?>
 $('#vender_id').select2('readonly',true);
 $('#branch_id').select2('readonly',true);
 $('#purchaseorder_id').select2('readonly',true);
-<?}?>
+<?php }?>
 
 </script> 
 </body>

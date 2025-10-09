@@ -99,7 +99,7 @@ $cityid='1';
 						<div class="col-sm-12">
 							<section class="panel">
 								<header class="panel-heading">
-								<?if($mode=="Bom"){ echo "Sales Order Bom";}else{?>New <?=$form?><?} ?>
+								<?php if($mode=="Bom"){ echo "Sales Order Bom";}else{?>New <?=$form?><?php } ?>
 									
 								</header>	
 								<div class="panel-body">
@@ -132,7 +132,7 @@ $cityid='1';
 												</div>
 											</div>
 											
-											<?
+											<?php 
 											if($mode=="Add" || $mode=="Edit")
 											{ ?>
 											<div class="col-md-12">
@@ -156,7 +156,7 @@ $cityid='1';
 															<td style="vertical-align:top;">
 																<select class="select2" title="Select product" name="product_id" id="product_id"  onChange="load_productdetail(this.value)">
 																	<option value="">Choose Product</option>
-																	<?//=getproduct($dbcon,0,'0,1,2,4')?>
+																	<?php //=getproduct($dbcon,0,'0,1,2,4')?>
 																</select>
 																<input type="button"  name="addproduct" id="addproduct" data-toggle="modal" data-target="#bs-example-modal-addproduct"  class="btn btn-primary" value="+"/>
 																<br/><br/>
@@ -185,7 +185,7 @@ $cityid='1';
 											</div>
 											<?php} ?>
 											<div id="sale_productdata"></div>
-											<?if($mode=="Add" || $mode=="Edit")
+											<?php if($mode=="Add" || $mode=="Edit")
 											{ ?>
 											<div class="col-md-12">
 												<div class="col-md-7">
@@ -245,7 +245,7 @@ $cityid='1';
 					autoclose: true
 				});
 			</script>
-			<?
+			<?php 
 			echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
 			echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
 			if($mode=="Add")
@@ -258,7 +258,7 @@ $cityid='1';
 				<script>
 					$('#cust_id').select2('readonly',true);
 				</script>
-			<?	echo "<script>show_bom_product_data() </script>";
+			<?php 	echo "<script>show_bom_product_data() </script>";
 			}
 			
 

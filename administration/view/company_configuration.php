@@ -258,7 +258,7 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 
 											</div>
 											<div class="col-md-3 col-xs-11">
-												<?
+												<?php 
 												if($mode=="Edit")
 												{
 													echo '<img src="'.ROOT.LOGO.$rel2['logo'].'" style="width:120px"/>';
@@ -496,11 +496,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<label class="col-md-3 control-label">Assign Users: </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($companyConfiguration['enable_assing_user'] == 0){ echo "active";}?>">
-														<input type="radio" name="enable_assing_user" id="enable_assing_user1" autocomplete="off" value="0" <?if($companyConfiguration['enable_assing_user'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($companyConfiguration['enable_assing_user'] == 0){ echo "active";}?>">
+														<input type="radio" name="enable_assing_user" id="enable_assing_user1" autocomplete="off" value="0" <?php if($companyConfiguration['enable_assing_user'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($companyConfiguration['enable_assing_user'] == 1){ echo "active";}?>" >
-														<input type="radio" name="enable_assing_user" id="enable_assing_user2" autocomplete="off" value="1" <?if($companyConfiguration['enable_assing_user'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($companyConfiguration['enable_assing_user'] == 1){ echo "active";}?>" >
+														<input type="radio" name="enable_assing_user" id="enable_assing_user2" autocomplete="off" value="1" <?php if($companyConfiguration['enable_assing_user'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -551,11 +551,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">Show Ledger Code *: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['ledger_code'] == '0'){ echo "active";}?>">
-															<input type="radio" name="ledger_code" id="ledger_code1" autocomplete="off" value="0" <?if($companyConfiguration['ledger_code'] == '0'){ echo "checked";}?>  > Manual
+														<label class="btn btn-secondary <?php if($companyConfiguration['ledger_code'] == '0'){ echo "active";}?>">
+															<input type="radio" name="ledger_code" id="ledger_code1" autocomplete="off" value="0" <?php if($companyConfiguration['ledger_code'] == '0'){ echo "checked";}?>  > Manual
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['ledger_code'] == '1'){ echo "active";}?>" >
-															<input type="radio" name="ledger_code" id="ledger_code2" autocomplete="off" value="1" <?if($companyConfiguration['ledger_code'] == '1'){ echo"checked"; }?>> Automatic 
+														<label class="btn btn-secondary <?php if($companyConfiguration['ledger_code'] == '1'){ echo "active";}?>" >
+															<input type="radio" name="ledger_code" id="ledger_code2" autocomplete="off" value="1" <?php if($companyConfiguration['ledger_code'] == '1'){ echo"checked"; }?>> Automatic 
 														</label>
 													</div>
 												</div>
@@ -568,11 +568,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">Enable Material Center: </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['enable_material_center'] == 0){ echo "active";}?>">
-															<input type="radio" name="enable_material_center" id="enable_material_center1" autocomplete="off" value="0" <?if($companyConfiguration['enable_material_center'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['enable_material_center'] == 0){ echo "active";}?>">
+															<input type="radio" name="enable_material_center" id="enable_material_center1" autocomplete="off" value="0" <?php if($companyConfiguration['enable_material_center'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['enable_material_center'] == 1){ echo "active";}?>" >
-															<input type="radio" name="enable_material_center" id="enable_material_center2" autocomplete="off" value="1" <?if($companyConfiguration['enable_material_center'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['enable_material_center'] == 1){ echo "active";}?>" >
+															<input type="radio" name="enable_material_center" id="enable_material_center2" autocomplete="off" value="1" <?php if($companyConfiguration['enable_material_center'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -583,11 +583,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">SO to Invoice Description Transfer: </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['so_invo_descri_transfer'] == 0){ echo "active";}?>">
-															<input type="radio" name="so_invo_descri_transfer" id="so_invo_descri_transfer1" autocomplete="off" value="0" <?if($companyConfiguration['so_invo_descri_transfer'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['so_invo_descri_transfer'] == 0){ echo "active";}?>">
+															<input type="radio" name="so_invo_descri_transfer" id="so_invo_descri_transfer1" autocomplete="off" value="0" <?php if($companyConfiguration['so_invo_descri_transfer'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['so_invo_descri_transfer'] == 1){ echo "active";}?>" >
-															<input type="radio" name="so_invo_descri_transfer" id="so_invo_descri_transfer2" autocomplete="off" value="1" <?if($companyConfiguration['so_invo_descri_transfer'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['so_invo_descri_transfer'] == 1){ echo "active";}?>" >
+															<input type="radio" name="so_invo_descri_transfer" id="so_invo_descri_transfer2" autocomplete="off" value="1" <?php if($companyConfiguration['so_invo_descri_transfer'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -599,11 +599,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">SO Discount Editable..? </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['so_discount_editable'] == 0){ echo "active";}?>">
-															<input type="radio" name="so_discount_editable" id="so_discount_editable1" autocomplete="off" value="0" <?if($companyConfiguration['so_discount_editable'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['so_discount_editable'] == 0){ echo "active";}?>">
+															<input type="radio" name="so_discount_editable" id="so_discount_editable1" autocomplete="off" value="0" <?php if($companyConfiguration['so_discount_editable'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['so_discount_editable'] == 1){ echo "active";}?>" >
-															<input type="radio" name="so_discount_editable" id="so_discount_editable2" autocomplete="off" value="1" <?if($companyConfiguration['so_discount_editable'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['so_discount_editable'] == 1){ echo "active";}?>" >
+															<input type="radio" name="so_discount_editable" id="so_discount_editable2" autocomplete="off" value="1" <?php if($companyConfiguration['so_discount_editable'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -615,11 +615,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">SO Discount Calculation Show..? </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['so_calculation_discount_show'] == 0){ echo "active";}?>">
-															<input type="radio" name="so_calculation_discount_show" id="so_calculation_discount_show1" autocomplete="off" value="0" <?if($companyConfiguration['so_calculation_discount_show'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['so_calculation_discount_show'] == 0){ echo "active";}?>">
+															<input type="radio" name="so_calculation_discount_show" id="so_calculation_discount_show1" autocomplete="off" value="0" <?php if($companyConfiguration['so_calculation_discount_show'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['so_calculation_discount_show'] == 1){ echo "active";}?>" >
-															<input type="radio" name="so_calculation_discount_show" id="so_calculation_discount_show2" autocomplete="off" value="1" <?if($companyConfiguration['so_calculation_discount_show'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['so_calculation_discount_show'] == 1){ echo "active";}?>" >
+															<input type="radio" name="so_calculation_discount_show" id="so_calculation_discount_show2" autocomplete="off" value="1" <?php if($companyConfiguration['so_calculation_discount_show'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -631,11 +631,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">Invoice Discount Editable..? </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['invoice_discount_editable'] == 0){ echo "active";}?>">
-															<input type="radio" name="invoice_discount_editable" id="invoice_discount_editable1" autocomplete="off" value="0" <?if($companyConfiguration['invoice_discount_editable'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['invoice_discount_editable'] == 0){ echo "active";}?>">
+															<input type="radio" name="invoice_discount_editable" id="invoice_discount_editable1" autocomplete="off" value="0" <?php if($companyConfiguration['invoice_discount_editable'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['invoice_discount_editable'] == 1){ echo "active";}?>" >
-															<input type="radio" name="invoice_discount_editable" id="invoice_discount_editable2" autocomplete="off" value="1" <?if($companyConfiguration['invoice_discount_editable'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['invoice_discount_editable'] == 1){ echo "active";}?>" >
+															<input type="radio" name="invoice_discount_editable" id="invoice_discount_editable2" autocomplete="off" value="1" <?php if($companyConfiguration['invoice_discount_editable'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -647,11 +647,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												<label class="col-md-3 control-label">Invoice Discount Calculation Show..? </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['invoice_calculation_discount_show'] == 0){ echo "active";}?>">
-															<input type="radio" name="invoice_calculation_discount_show" id="invoice_calculation_discount_show1" autocomplete="off" value="0" <?if($companyConfiguration['invoice_calculation_discount_show'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['invoice_calculation_discount_show'] == 0){ echo "active";}?>">
+															<input type="radio" name="invoice_calculation_discount_show" id="invoice_calculation_discount_show1" autocomplete="off" value="0" <?php if($companyConfiguration['invoice_calculation_discount_show'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['invoice_calculation_discount_show'] == 1){ echo "active";}?>" >
-															<input type="radio" name="invoice_calculation_discount_show" id="invoice_calculation_discount_show2" autocomplete="off" value="1" <?if($companyConfiguration['invoice_calculation_discount_show'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['invoice_calculation_discount_show'] == 1){ echo "active";}?>" >
+															<input type="radio" name="invoice_calculation_discount_show" id="invoice_calculation_discount_show2" autocomplete="off" value="1" <?php if($companyConfiguration['invoice_calculation_discount_show'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -760,11 +760,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Sales Time How to Load:</label></div>
 										<div class="col-md-8">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['sales_time_load_pro'] == 0){ echo "active";}?>">
-													<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro1" autocomplete="off" value="0" <?if($companyConfiguration['sales_time_load_pro'] == 0){ echo "checked";}?>  > Product Load Wise
+												<label class="btn btn-secondary <?php if($companyConfiguration['sales_time_load_pro'] == 0){ echo "active";}?>">
+													<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro1" autocomplete="off" value="0" <?php if($companyConfiguration['sales_time_load_pro'] == 0){ echo "checked";}?>  > Product Load Wise
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['sales_time_load_pro'] == 1){ echo "active";}?>" >
-													<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro2" autocomplete="off" value="1" <?if($companyConfiguration['sales_time_load_pro'] == 1){ echo"checked"; }?>> Product Dropdown Wise
+												<label class="btn btn-secondary <?php if($companyConfiguration['sales_time_load_pro'] == 1){ echo "active";}?>" >
+													<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro2" autocomplete="off" value="1" <?php if($companyConfiguration['sales_time_load_pro'] == 1){ echo"checked"; }?>> Product Dropdown Wise
 												</label>
 											</div>
 										</div>
@@ -777,11 +777,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['trading_stock'] == 0){ echo "active";}?>">
-															<input type="radio" name="trading_stock" id="trading_stock1" autocomplete="off" value="0" <?if($companyConfiguration['trading_stock'] == 0){ echo "checked";}?>  > NO
+														<label class="btn btn-secondary <?php if($companyConfiguration['trading_stock'] == 0){ echo "active";}?>">
+															<input type="radio" name="trading_stock" id="trading_stock1" autocomplete="off" value="0" <?php if($companyConfiguration['trading_stock'] == 0){ echo "checked";}?>  > NO
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['trading_stock'] == 1){ echo "active";}?>" >
-															<input type="radio" name="trading_stock" id="trading_stock2" autocomplete="off" value="1" <?if($companyConfiguration['trading_stock'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['trading_stock'] == 1){ echo "active";}?>" >
+															<input type="radio" name="trading_stock" id="trading_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['trading_stock'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -800,11 +800,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Store Approval?* :</label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary store_approval store_approval1 <?if($companyConfiguration['store_approval'] == 0){ echo "active";}?>" <?=$store_disable?>>
-													<input type="radio" name="store_approval" id="store_approval1" autocomplete="off" value="0" <?if($companyConfiguration['store_approval'] == 0){ echo "checked";}?> > NO
+												<label class="btn btn-secondary store_approval store_approval1 <?php if($companyConfiguration['store_approval'] == 0){ echo "active";}?>" <?=$store_disable?>>
+													<input type="radio" name="store_approval" id="store_approval1" autocomplete="off" value="0" <?php if($companyConfiguration['store_approval'] == 0){ echo "checked";}?> > NO
 												</label>
-												<label class="btn btn-secondary store_approval store_approval2 <?if($companyConfiguration['store_approval'] == 1){ echo "active";}?>" <?=$store_disable?>>
-													<input type="radio" name="store_approval" id="store_approval2" autocomplete="off" value="1" <?if($companyConfiguration['store_approval'] == 1){ echo"checked"; }?> > Yes
+												<label class="btn btn-secondary store_approval store_approval2 <?php if($companyConfiguration['store_approval'] == 1){ echo "active";}?>" <?=$store_disable?>>
+													<input type="radio" name="store_approval" id="store_approval2" autocomplete="off" value="1" <?php if($companyConfiguration['store_approval'] == 1){ echo"checked"; }?> > Yes
 												</label>
 											</div>
 										</div>
@@ -817,11 +817,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%;">
-														<label class="btn btn-secondary <?if($companyConfiguration['batch_wise_stock'] == 0){ echo "active";}?>" data-original-title="If you don't want to add stock batch wise" data-toggle="tooltip" data-placement="top" >
-															<input type="radio" name="batch_wise_stock" id="batch_wise_stock1" onchange="toggle_banch_no_wise()" autocomplete="off" value="0" <?if($companyConfiguration['batch_wise_stock'] == 0){ echo "checked";}?>  > NO
+														<label class="btn btn-secondary <?php if($companyConfiguration['batch_wise_stock'] == 0){ echo "active";}?>" data-original-title="If you don't want to add stock batch wise" data-toggle="tooltip" data-placement="top" >
+															<input type="radio" name="batch_wise_stock" id="batch_wise_stock1" onchange="toggle_banch_no_wise()" autocomplete="off" value="0" <?php if($companyConfiguration['batch_wise_stock'] == 0){ echo "checked";}?>  > NO
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['batch_wise_stock'] == 1){ echo "active";}?>" data-original-title="If you want to add stock batch wise" data-toggle="tooltip" data-placement="top">
-															<input type="radio" onchange="toggle_banch_no_wise()" name="batch_wise_stock" id="batch_wise_stock2" autocomplete="off" value="1" <?if($companyConfiguration['batch_wise_stock'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['batch_wise_stock'] == 1){ echo "active";}?>" data-original-title="If you want to add stock batch wise" data-toggle="tooltip" data-placement="top">
+															<input type="radio" onchange="toggle_banch_no_wise()" name="batch_wise_stock" id="batch_wise_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['batch_wise_stock'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -829,18 +829,18 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										</div>
 									</div><br>
 
-									<div class="row batch_stock_permission" style="display: <?if($companyConfiguration['batch_wise_stock'] == 0){ echo "none";}else{ echo "block";}?>;" >
+									<div class="row batch_stock_permission" style="display: <?php if($companyConfiguration['batch_wise_stock'] == 0){ echo "none";}else{ echo "block";}?>;" >
 										<div class="col-md-4"><label>Batch Stock? <a href="#"  data-original-title="This setting is for generate bach stock manually or automatic." data-toggle="tooltip" data-placement="top"><i class="fa fa-info-circle"></a></i> </label></div>
 										<div class="col-md-8">
 											<div class="form-group">
 
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%;">
-														<label class="btn btn-secondary <?if($companyConfiguration['batch_stock'] == 0){ echo "active";}?>" data-original-title="If you want to add stock batch no manually" data-toggle="tooltip" data-placement="top" >
-															<input type="radio" name="batch_stock" id="batch_stock1" onchange="toggle_batch_stock()" autocomplete="off" value="0" <?if($companyConfiguration['batch_stock'] == 0){ echo "checked";}?>  > Manually
+														<label class="btn btn-secondary <?php if($companyConfiguration['batch_stock'] == 0){ echo "active";}?>" data-original-title="If you want to add stock batch no manually" data-toggle="tooltip" data-placement="top" >
+															<input type="radio" name="batch_stock" id="batch_stock1" onchange="toggle_batch_stock()" autocomplete="off" value="0" <?php if($companyConfiguration['batch_stock'] == 0){ echo "checked";}?>  > Manually
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['batch_stock'] == 1){ echo "active";}?>" data-original-title="If you want to add stock batch no automatic" data-toggle="tooltip" data-placement="top">
-															<input type="radio" onchange="toggle_batch_stock()" name="batch_stock" id="batch_stock2" autocomplete="off" value="1" <?if($companyConfiguration['batch_stock'] == 1){ echo"checked"; }?>> Automatic
+														<label class="btn btn-secondary <?php if($companyConfiguration['batch_stock'] == 1){ echo "active";}?>" data-original-title="If you want to add stock batch no automatic" data-toggle="tooltip" data-placement="top">
+															<input type="radio" onchange="toggle_batch_stock()" name="batch_stock" id="batch_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['batch_stock'] == 1){ echo"checked"; }?>> Automatic
 														</label>
 													</div>
 												</div>
@@ -848,18 +848,18 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										</div>
 									</div><br>
 
-									<div class="row batch_no_permission" style="display: <?if($companyConfiguration['batch_stock'] == 0){ echo "none";}else{ echo "block";}?>;" >
+									<div class="row batch_no_permission" style="display: <?php if($companyConfiguration['batch_stock'] == 0){ echo "none";}else{ echo "block";}?>;" >
 										<div class="col-md-4"><label>Batch No? <a href="#"  data-original-title="This setting is for generate stock product wise or general batch wise." data-toggle="tooltip" data-placement="top"><i class="fa fa-info-circle"></a></i> </label></div>
 										<div class="col-md-8">
 											<div class="form-group">
 
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%;">
-														<label class="btn btn-secondary <?if($companyConfiguration['batch_no_stock'] == 0){ echo "active";}?>"data-original-title="If you want to generat number general wise" data-toggle="tooltip" data-placement="top" >
-															<input type="radio" name="batch_no_stock" id="batch_no_stock1" onchange="toggle_banch_no_wise()" autocomplete="off" value="0" <?if($companyConfiguration['batch_no_stock'] == 0){ echo "checked";}?>  > General Wise
+														<label class="btn btn-secondary <?php if($companyConfiguration['batch_no_stock'] == 0){ echo "active";}?>"data-original-title="If you want to generat number general wise" data-toggle="tooltip" data-placement="top" >
+															<input type="radio" name="batch_no_stock" id="batch_no_stock1" onchange="toggle_banch_no_wise()" autocomplete="off" value="0" <?php if($companyConfiguration['batch_no_stock'] == 0){ echo "checked";}?>  > General Wise
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['batch_no_stock'] == 1){ echo "active";}?>" data-original-title="If you want to generate number product wise" data-toggle="tooltip" data-placement="top">
-															<input type="radio" onchange="toggle_banch_no_wise()" name="batch_no_stock" id="batch_no_stock2" autocomplete="off" value="1" <?if($companyConfiguration['batch_no_stock'] == 1){ echo"checked"; }?>> Product Wise
+														<label class="btn btn-secondary <?php if($companyConfiguration['batch_no_stock'] == 1){ echo "active";}?>" data-original-title="If you want to generate number product wise" data-toggle="tooltip" data-placement="top">
+															<input type="radio" onchange="toggle_banch_no_wise()" name="batch_no_stock" id="batch_no_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['batch_no_stock'] == 1){ echo"checked"; }?>> Product Wise
 														</label>
 													</div>
 												</div>
@@ -876,11 +876,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel2['inventory_management'] == 0){ echo "active";}?>">
-															<input type="radio" name="inventory_management" id="inventory_management1" autocomplete="off" value="0" <?if($rel2['inventory_management'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel2['inventory_management'] == 0){ echo "active";}?>">
+															<input type="radio" name="inventory_management" id="inventory_management1" autocomplete="off" value="0" <?php if($rel2['inventory_management'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel2['inventory_management'] == 1){ echo "active";}?>" >
-															<input type="radio" name="inventory_management" id="inventory_management2" autocomplete="off" value="1" <?if($rel2['inventory_management'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel2['inventory_management'] == 1){ echo "active";}?>" >
+															<input type="radio" name="inventory_management" id="inventory_management2" autocomplete="off" value="1" <?php if($rel2['inventory_management'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -898,11 +898,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['batchno_as_grnno'] == 0){ echo "active";}?>">
-															<input type="radio" name="batchno_as_grnno" id="batchno_as_grnno1" autocomplete="off" value="0" <?if($rel['batchno_as_grnno'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel['batchno_as_grnno'] == 0){ echo "active";}?>">
+															<input type="radio" name="batchno_as_grnno" id="batchno_as_grnno1" autocomplete="off" value="0" <?php if($rel['batchno_as_grnno'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel['batchno_as_grnno'] == 1){ echo "active";}?>" >
-															<input type="radio" name="batchno_as_grnno" id="batchno_as_grnno2" autocomplete="off" value="1" <?if($rel['batchno_as_grnno'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel['batchno_as_grnno'] == 1){ echo "active";}?>" >
+															<input type="radio" name="batchno_as_grnno" id="batchno_as_grnno2" autocomplete="off" value="1" <?php if($rel['batchno_as_grnno'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -919,11 +919,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['batch_type'] == 0){ echo "active";}?>">
-															<input type="radio" name="batch_type" id="batch_type1" autocomplete="off" value="0" <?if($rel['batch_type'] == 0){ echo "checked";}?>  > Batch
+														<label class="btn btn-secondary <?php if($rel['batch_type'] == 0){ echo "active";}?>">
+															<input type="radio" name="batch_type" id="batch_type1" autocomplete="off" value="0" <?php if($rel['batch_type'] == 0){ echo "checked";}?>  > Batch
 														</label>
-														<label class="btn btn-secondary <?if($rel['batch_type'] == 1){ echo "active";}?>" >
-															<input type="radio" name="batch_type" id="batch_type2" autocomplete="off" value="1" <?if($rel['batch_type'] == 1){ echo"checked"; }?>> Serial
+														<label class="btn btn-secondary <?php if($rel['batch_type'] == 1){ echo "active";}?>" >
+															<input type="radio" name="batch_type" id="batch_type2" autocomplete="off" value="1" <?php if($rel['batch_type'] == 1){ echo"checked"; }?>> Serial
 														</label>
 													</div>
 												</div>
@@ -941,11 +941,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['batch_process'] == 0){ echo "active";}?>">
-															<input type="radio" name="batch_process" id="batch_process1" autocomplete="off" value="0" <?if($rel['batch_process'] == 0){ echo "checked";}?>  > Start  
+														<label class="btn btn-secondary <?php if($rel['batch_process'] == 0){ echo "active";}?>">
+															<input type="radio" name="batch_process" id="batch_process1" autocomplete="off" value="0" <?php if($rel['batch_process'] == 0){ echo "checked";}?>  > Start  
 														</label>
-														<label class="btn btn-secondary <?if($rel['batch_process'] == 1){ echo "active";}?>" >
-															<input type="radio" name="batch_process" id="batch_process2" autocomplete="off" value="1" <?if($rel['batch_process'] == 1){ echo"checked"; }?>> End
+														<label class="btn btn-secondary <?php if($rel['batch_process'] == 1){ echo "active";}?>" >
+															<input type="radio" name="batch_process" id="batch_process2" autocomplete="off" value="1" <?php if($rel['batch_process'] == 1){ echo"checked"; }?>> End
 														</label>
 													</div>
 												</div>
@@ -960,11 +960,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%;">
-														<label class="btn btn-secondary <?if($companyConfiguration['grn_diff_from_po'] == 0){ echo "active";}?>" data-original-title="If you want to create GRN same as PO." data-toggle="tooltip" data-placement="top" >
-															<input type="radio" name="grn_diff_from_po" id="grn_diff_from_po1" onchange="toggle_banch_no_wise()" autocomplete="off" value="0" <?if($companyConfiguration['grn_diff_from_po'] == 0){ echo "checked";}?>  > NO
+														<label class="btn btn-secondary <?php if($companyConfiguration['grn_diff_from_po'] == 0){ echo "active";}?>" data-original-title="If you want to create GRN same as PO." data-toggle="tooltip" data-placement="top" >
+															<input type="radio" name="grn_diff_from_po" id="grn_diff_from_po1" onchange="toggle_banch_no_wise()" autocomplete="off" value="0" <?php if($companyConfiguration['grn_diff_from_po'] == 0){ echo "checked";}?>  > NO
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['grn_diff_from_po'] == 1){ echo "active";}?>" data-original-title="If you want to create GRN Different from PO and add other product in GRN." data-toggle="tooltip" data-placement="top">
-															<input type="radio" onchange="toggle_banch_no_wise()" name="grn_diff_from_po" id="grn_diff_from_po2" autocomplete="off" value="1" <?if($companyConfiguration['grn_diff_from_po'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['grn_diff_from_po'] == 1){ echo "active";}?>" data-original-title="If you want to create GRN Different from PO and add other product in GRN." data-toggle="tooltip" data-placement="top">
+															<input type="radio" onchange="toggle_banch_no_wise()" name="grn_diff_from_po" id="grn_diff_from_po2" autocomplete="off" value="1" <?php if($companyConfiguration['grn_diff_from_po'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -980,11 +980,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['jobwork_grn'] == 0){ echo "active";}?>">
-															<input type="radio" name="jobwork_grn" id="jobwork_grn1" autocomplete="off" value="0" <?if($rel['jobwork_grn'] == 0){ echo "checked";}?>  > FIFO WISE  
+														<label class="btn btn-secondary <?php if($rel['jobwork_grn'] == 0){ echo "active";}?>">
+															<input type="radio" name="jobwork_grn" id="jobwork_grn1" autocomplete="off" value="0" <?php if($rel['jobwork_grn'] == 0){ echo "checked";}?>  > FIFO WISE  
 														</label>
-														<label class="btn btn-secondary <?if($rel['jobwork_grn'] == 1){ echo "active";}?>" >
-															<input type="radio" name="jobwork_grn" id="jobwork_grn2" autocomplete="off" value="1" <?if($rel['jobwork_grn'] == 1){ echo"checked"; }?>> SEPARATE
+														<label class="btn btn-secondary <?php if($rel['jobwork_grn'] == 1){ echo "active";}?>" >
+															<input type="radio" name="jobwork_grn" id="jobwork_grn2" autocomplete="off" value="1" <?php if($rel['jobwork_grn'] == 1){ echo"checked"; }?>> SEPARATE
 														</label>
 													</div>
 												</div>
@@ -1099,7 +1099,7 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 												</div>
 											</div>
 										</div>
-										<?if($getspecialConfiguration['smpl_permission']==1){?>
+										<?php if($getspecialConfiguration['smpl_permission']==1){?>
 											<div class="col-md-12" style="margin-top: 50px;">
 												<div class="form-group">
 													<label class="col-md-3 control-label"> QC heat no saperator</label>
@@ -1117,7 +1117,7 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											</div>
 										</div>
 										</div>
-										<?}?>
+										<?php }?>
 									</div>
 
 								</div>
@@ -1144,11 +1144,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-8">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['send_email'] == 0){ echo "active";}?>">
-															<input type="radio" name="send_email" id="send_email1" autocomplete="off" value="0" <?if($rel['send_email'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel['send_email'] == 0){ echo "active";}?>">
+															<input type="radio" name="send_email" id="send_email1" autocomplete="off" value="0" <?php if($rel['send_email'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel['send_email'] == 1){ echo "active";}?>" >
-															<input type="radio" name="send_email" id="send_email2" autocomplete="off" value="1" <?if($rel['send_email'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel['send_email'] == 1){ echo "active";}?>" >
+															<input type="radio" name="send_email" id="send_email2" autocomplete="off" value="1" <?php if($rel['send_email'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -1161,11 +1161,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-8">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['ip_add_login'] == 0){ echo "active";}?>">
-															<input type="radio" name="ip_add_login" id="ip_add_login1" autocomplete="off" value="0" <?if($rel['ip_add_login'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel['ip_add_login'] == 0){ echo "active";}?>">
+															<input type="radio" name="ip_add_login" id="ip_add_login1" autocomplete="off" value="0" <?php if($rel['ip_add_login'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel['ip_add_login'] == 1){ echo "active";}?>" >
-															<input type="radio" name="ip_add_login" id="ip_add_login2" autocomplete="off" value="1" <?if($rel['ip_add_login'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel['ip_add_login'] == 1){ echo "active";}?>" >
+															<input type="radio" name="ip_add_login" id="ip_add_login2" autocomplete="off" value="1" <?php if($rel['ip_add_login'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -1178,11 +1178,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-8">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($crm_auto_mail == 'No'){ echo "active";}?>">
-															<input type="radio" name="crm_auto_mail" id="crm_auto_mail1" autocomplete="off" value="No" <?if($crm_auto_mail == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($crm_auto_mail == 'No'){ echo "active";}?>">
+															<input type="radio" name="crm_auto_mail" id="crm_auto_mail1" autocomplete="off" value="No" <?php if($crm_auto_mail == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($crm_auto_mail == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="crm_auto_mail" id="crm_auto_mail2" autocomplete="off" value="Yes" <?if($crm_auto_mail == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($crm_auto_mail == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="crm_auto_mail" id="crm_auto_mail2" autocomplete="off" value="Yes" <?php if($crm_auto_mail == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -1256,23 +1256,23 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<label class="col-md-4 control-label">Branch Wise Manage: </label>
 										<div class="col-md-6">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['branch_wise_manage'] == 0){ echo "active";}?>">
-													<input type="radio" name="branch_wise_manage" id="branch_wise_manage1" autocomplete="off" value="0" <?if($companyConfiguration['branch_wise_manage'] == 0){ echo "checked";}?> onchange="branch_wise_manages(this.value)"> No
+												<label class="btn btn-secondary <?php if($companyConfiguration['branch_wise_manage'] == 0){ echo "active";}?>">
+													<input type="radio" name="branch_wise_manage" id="branch_wise_manage1" autocomplete="off" value="0" <?php if($companyConfiguration['branch_wise_manage'] == 0){ echo "checked";}?> onchange="branch_wise_manages(this.value)"> No
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['branch_wise_manage'] == 1){ echo "active";}?>" >
-													<input type="radio" name="branch_wise_manage" id="branch_wise_manage2" autocomplete="off" value="1" <?if($companyConfiguration['branch_wise_manage'] == 1){ echo"checked"; }?> onchange="branch_wise_manages(this.value)"> Yes
+												<label class="btn btn-secondary <?php if($companyConfiguration['branch_wise_manage'] == 1){ echo "active";}?>" >
+													<input type="radio" name="branch_wise_manage" id="branch_wise_manage2" autocomplete="off" value="1" <?php if($companyConfiguration['branch_wise_manage'] == 1){ echo"checked"; }?> onchange="branch_wise_manages(this.value)"> Yes
 												</label>
 											</div>
 										</div>
 									</div>
 									<div class="row row_margin">
 										<label class="col-md-4 control-label">Default Branch </label>
-										<div class="col-md-6" id="branch_1" <?if($companyConfiguration['branch_wise_manage'] == 0){ echo 'style="display:none"';}?>>
+										<div class="col-md-6" id="branch_1" <?php if($companyConfiguration['branch_wise_manage'] == 0){ echo 'style="display:none"';}?>>
 											
 											<?php echo getBranchBox($dbcon, $branch_id, $companyConfiguration['default_branch_id'], false, false,'','4','8'); ?>
 										
 										</div>
-										<div class="col-md-6" id="branch_0" <?if($companyConfiguration['branch_wise_manage'] == 1){ echo 'style="display:none"';}?>>
+										<div class="col-md-6" id="branch_0" <?php if($companyConfiguration['branch_wise_manage'] == 1){ echo 'style="display:none"';}?>>
 											
 											<?php echo getBranchBox($dbcon, $branch_id, $companyConfiguration['default_branch_id'], true, false,'','4','8'); ?>
 										
@@ -1462,11 +1462,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 															<label class="col-md-2 control-label">Enable Whatsapp: </label>
 															<div class="col-md-8 col-xs-11">
 																<div class="btn-group btn-group-toggle" data-toggle="buttons">
-																	<label class="btn btn-secondary <?if($companyConfiguration['enable_whatsapp'] == 0){ echo "active";}?>">
-																		<input type="radio" name="enable_whatsapp" id="enable_whatsapp" autocomplete="off" value="0" <?if($companyConfiguration['enable_whatsapp'] == 0){ echo "checked";}?>  > No
+																	<label class="btn btn-secondary <?php if($companyConfiguration['enable_whatsapp'] == 0){ echo "active";}?>">
+																		<input type="radio" name="enable_whatsapp" id="enable_whatsapp" autocomplete="off" value="0" <?php if($companyConfiguration['enable_whatsapp'] == 0){ echo "checked";}?>  > No
 																	</label>
-																	<label class="btn btn-secondary <?if($companyConfiguration['enable_whatsapp'] == 1){ echo "active";}?>" >
-																		<input type="radio" name="enable_whatsapp" id="enable_whatsapp1" autocomplete="off" value="1" <?if($companyConfiguration['enable_whatsapp'] == 1){ echo"checked"; }?>> Yes
+																	<label class="btn btn-secondary <?php if($companyConfiguration['enable_whatsapp'] == 1){ echo "active";}?>" >
+																		<input type="radio" name="enable_whatsapp" id="enable_whatsapp1" autocomplete="off" value="1" <?php if($companyConfiguration['enable_whatsapp'] == 1){ echo"checked"; }?>> Yes
 																	</label>
 																</div>
 															</div>
@@ -1571,11 +1571,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($project_wise_manufacturing == 'No'){ echo "active";}?>">
-															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing1" autocomplete="off" value="No" <?if($project_wise_manufacturing == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($project_wise_manufacturing == 'No'){ echo "active";}?>">
+															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing1" autocomplete="off" value="No" <?php if($project_wise_manufacturing == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($project_wise_manufacturing == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing2" autocomplete="off" value="Yes" <?if($project_wise_manufacturing == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($project_wise_manufacturing == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing2" autocomplete="off" value="Yes" <?php if($project_wise_manufacturing == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -1588,11 +1588,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4">
 											<div class="form-group">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($upload_receipt == 'No'){ echo "active";}?>">
-														<input type="radio" name="upload_receipt" id="upload_receipt1" autocomplete="off" value="No" <?if($upload_receipt == 'No'){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($upload_receipt == 'No'){ echo "active";}?>">
+														<input type="radio" name="upload_receipt" id="upload_receipt1" autocomplete="off" value="No" <?php if($upload_receipt == 'No'){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($upload_receipt == 'Yes'){ echo "active";}?>" >
-														<input type="radio" name="upload_receipt" id="upload_receipt2" autocomplete="off" value="Yes" <?if($upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($upload_receipt == 'Yes'){ echo "active";}?>" >
+														<input type="radio" name="upload_receipt" id="upload_receipt2" autocomplete="off" value="Yes" <?php if($upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -1603,11 +1603,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>QC time upload receipt field Mandetory?*: </label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($qc_upload_receipt == 'No'){ echo "active";}?>">
-													<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt1" autocomplete="off" value="No" <?if($qc_upload_receipt == 'No'){ echo "checked";}?>  > No
+												<label class="btn btn-secondary <?php if($qc_upload_receipt == 'No'){ echo "active";}?>">
+													<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt1" autocomplete="off" value="No" <?php if($qc_upload_receipt == 'No'){ echo "checked";}?>  > No
 												</label>
-												<label class="btn btn-secondary <?if($qc_upload_receipt == 'Yes'){ echo "active";}?>" >
-													<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt2" autocomplete="off" value="Yes" <?if($qc_upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
+												<label class="btn btn-secondary <?php if($qc_upload_receipt == 'Yes'){ echo "active";}?>" >
+													<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt2" autocomplete="off" value="Yes" <?php if($qc_upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
 												</label>
 											</div>
 										</div>
@@ -1617,11 +1617,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Are you want to display the project wise item rate?*: </label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($project_wise_item_rate == 'No'){ echo "active";}?>">
-													<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate1" autocomplete="off" value="No" <?if($project_wise_item_rate == 'No'){ echo "checked";}?>  > No
+												<label class="btn btn-secondary <?php if($project_wise_item_rate == 'No'){ echo "active";}?>">
+													<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate1" autocomplete="off" value="No" <?php if($project_wise_item_rate == 'No'){ echo "checked";}?>  > No
 												</label>
-												<label class="btn btn-secondary <?if($project_wise_item_rate == 'Yes'){ echo "active";}?>" >
-													<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate2" autocomplete="off" value="Yes" <?if($project_wise_item_rate == 'Yes'){ echo"checked"; }?>> Yes
+												<label class="btn btn-secondary <?php if($project_wise_item_rate == 'Yes'){ echo "active";}?>" >
+													<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate2" autocomplete="off" value="Yes" <?php if($project_wise_item_rate == 'Yes'){ echo"checked"; }?>> Yes
 												</label>
 											</div>
 										</div>
@@ -1632,11 +1632,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Outside Jobwork?* :</label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['outside_jobwork'] == 0){ echo "active";}?>">
-													<input type="radio" name="outside_jobwork" id="outside_jobwork1" autocomplete="off" value="0" <?if($companyConfiguration['outside_jobwork'] == 0){ echo "checked";}?>  > NO
+												<label class="btn btn-secondary <?php if($companyConfiguration['outside_jobwork'] == 0){ echo "active";}?>">
+													<input type="radio" name="outside_jobwork" id="outside_jobwork1" autocomplete="off" value="0" <?php if($companyConfiguration['outside_jobwork'] == 0){ echo "checked";}?>  > NO
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['outside_jobwork'] == 1){ echo "active";}?>" >
-													<input type="radio" name="outside_jobwork" id="outside_jobwork2" autocomplete="off" value="1" <?if($companyConfiguration['outside_jobwork'] == 1){ echo"checked"; }?>> Yes
+												<label class="btn btn-secondary <?php if($companyConfiguration['outside_jobwork'] == 1){ echo "active";}?>" >
+													<input type="radio" name="outside_jobwork" id="outside_jobwork2" autocomplete="off" value="1" <?php if($companyConfiguration['outside_jobwork'] == 1){ echo"checked"; }?>> Yes
 												</label>
 											</div>
 										</div>
@@ -1648,11 +1648,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>AutoMrp Display?* :</label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['automrp_display'] == 0){ echo "active";}?>">
-													<input type="radio" name="automrp_display" id="automrp_display1" autocomplete="off" value="0" <?if($companyConfiguration['automrp_display'] == 0){ echo "checked";}?>  > NO
+												<label class="btn btn-secondary <?php if($companyConfiguration['automrp_display'] == 0){ echo "active";}?>">
+													<input type="radio" name="automrp_display" id="automrp_display1" autocomplete="off" value="0" <?php if($companyConfiguration['automrp_display'] == 0){ echo "checked";}?>  > NO
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['automrp_display'] == 1){ echo "active";}?>" >
-													<input type="radio" name="automrp_display" id="automrp_display2" autocomplete="off" value="1" <?if($companyConfiguration['automrp_display'] == 1){ echo"checked"; }?>> Yes
+												<label class="btn btn-secondary <?php if($companyConfiguration['automrp_display'] == 1){ echo "active";}?>" >
+													<input type="radio" name="automrp_display" id="automrp_display2" autocomplete="off" value="1" <?php if($companyConfiguration['automrp_display'] == 1){ echo"checked"; }?>> Yes
 												</label>
 											</div>
 										</div>
@@ -1664,11 +1664,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Production Start Type?* :</label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['production_start_type'] == 0){ echo "active";}?>">
-													<input type="radio" name="production_start_type" id="production_start_type1" autocomplete="off" value="0" <?if($companyConfiguration['production_start_type'] == 0){ echo "checked";}?>  > Manually
+												<label class="btn btn-secondary <?php if($companyConfiguration['production_start_type'] == 0){ echo "active";}?>">
+													<input type="radio" name="production_start_type" id="production_start_type1" autocomplete="off" value="0" <?php if($companyConfiguration['production_start_type'] == 0){ echo "checked";}?>  > Manually
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['production_start_type'] == 1){ echo "active";}?>" >
-													<input type="radio" name="production_start_type" id="production_start_type2" autocomplete="off" value="1" <?if($companyConfiguration['production_start_type'] == 1){ echo"checked"; }?>> FIFO Wise
+												<label class="btn btn-secondary <?php if($companyConfiguration['production_start_type'] == 1){ echo "active";}?>" >
+													<input type="radio" name="production_start_type" id="production_start_type2" autocomplete="off" value="1" <?php if($companyConfiguration['production_start_type'] == 1){ echo"checked"; }?>> FIFO Wise
 												</label>
 											</div>
 										</div>
@@ -1678,11 +1678,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Store Recive Only first Process* :</label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['store_relese_first_process'] == 0){ echo "active";}?>">
-													<input type="radio" name="store_relese_first_process" id="automrp_display1" autocomplete="off" value="0" <?if($companyConfiguration['store_relese_first_process'] == 0){ echo "checked";}?>  > NO
+												<label class="btn btn-secondary <?php if($companyConfiguration['store_relese_first_process'] == 0){ echo "active";}?>">
+													<input type="radio" name="store_relese_first_process" id="automrp_display1" autocomplete="off" value="0" <?php if($companyConfiguration['store_relese_first_process'] == 0){ echo "checked";}?>  > NO
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['store_relese_first_process'] == 1){ echo "active";}?>" >
-													<input type="radio" name="store_relese_first_process" id="automrp_display2" autocomplete="off" value="1" <?if($companyConfiguration['store_relese_first_process'] == 1){ echo"checked"; }?>> Yes
+												<label class="btn btn-secondary <?php if($companyConfiguration['store_relese_first_process'] == 1){ echo "active";}?>" >
+													<input type="radio" name="store_relese_first_process" id="automrp_display2" autocomplete="off" value="1" <?php if($companyConfiguration['store_relese_first_process'] == 1){ echo"checked"; }?>> Yes
 												</label>
 											</div>
 										</div>
@@ -1695,11 +1695,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 									</div>
 									<div class="col-md-8">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($companyConfiguration['workorder_planning'] == 0){ echo "active";}?>" data-original-title="Set All for create one workorder for all Quantity" data-toggle="tooltip" data-placement="top">
-												<input type="radio" name="workorder_planning" id="workorder_planning1" autocomplete="off" value="0" <?if($companyConfiguration['workorder_planning'] == 0){ echo "checked";}?>  > All
+											<label class="btn btn-secondary <?php if($companyConfiguration['workorder_planning'] == 0){ echo "active";}?>" data-original-title="Set All for create one workorder for all Quantity" data-toggle="tooltip" data-placement="top">
+												<input type="radio" name="workorder_planning" id="workorder_planning1" autocomplete="off" value="0" <?php if($companyConfiguration['workorder_planning'] == 0){ echo "checked";}?>  > All
 											</label>
-											<label class="btn btn-secondary <?if($companyConfiguration['workorder_planning'] == 1){ echo "active";}?>" data-original-title="Set Single for create single single workorder for all Quantity" data-toggle="tooltip" data-placement="top">
-												<input type="radio" name="workorder_planning" id="workorder_planning2" autocomplete="off" value="1" <?if($companyConfiguration['workorder_planning'] == 1){ echo"checked"; }?>> Single
+											<label class="btn btn-secondary <?php if($companyConfiguration['workorder_planning'] == 1){ echo "active";}?>" data-original-title="Set Single for create single single workorder for all Quantity" data-toggle="tooltip" data-placement="top">
+												<input type="radio" name="workorder_planning" id="workorder_planning2" autocomplete="off" value="1" <?php if($companyConfiguration['workorder_planning'] == 1){ echo"checked"; }?>> Single
 											</label>
 										</div>
 									</div>
@@ -1711,11 +1711,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 								</div>
 								<div class="col-md-8">
 									<div class="btn-group btn-group-toggle" data-toggle="buttons">
-										<label class="btn btn-secondary <?if($companyConfiguration['workorder_planning'] == 0){ echo "active";}?>" data-original-title="Set All for create one workorder for all Quantity" data-toggle="tooltip" data-placement="top">
-											<input type="radio" name="workorder_planning" id="workorder_planning1" autocomplete="off" value="0" <?if($companyConfiguration['workorder_planning'] == 0){ echo "checked";}?>  > All
+										<label class="btn btn-secondary <?php if($companyConfiguration['workorder_planning'] == 0){ echo "active";}?>" data-original-title="Set All for create one workorder for all Quantity" data-toggle="tooltip" data-placement="top">
+											<input type="radio" name="workorder_planning" id="workorder_planning1" autocomplete="off" value="0" <?php if($companyConfiguration['workorder_planning'] == 0){ echo "checked";}?>  > All
 										</label>
-										<label class="btn btn-secondary <?if($companyConfiguration['workorder_planning'] == 1){ echo "active";}?>" data-original-title="Set Single for create single single workorder for all Quantity" data-toggle="tooltip" data-placement="top">
-											<input type="radio" name="workorder_planning" id="workorder_planning2" autocomplete="off" value="1" <?if($companyConfiguration['workorder_planning'] == 1){ echo"checked"; }?>> Single
+										<label class="btn btn-secondary <?php if($companyConfiguration['workorder_planning'] == 1){ echo "active";}?>" data-original-title="Set Single for create single single workorder for all Quantity" data-toggle="tooltip" data-placement="top">
+											<input type="radio" name="workorder_planning" id="workorder_planning2" autocomplete="off" value="1" <?php if($companyConfiguration['workorder_planning'] == 1){ echo"checked"; }?>> Single
 										</label>
 									</div>
 								</div>
@@ -1725,11 +1725,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Production Start & Stop Timing?* :</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['production_start_stop_time'] == 0){ echo "active";}?>">
-										<input type="radio" name="production_start_stop_time" id="production_start_stop_time1" autocomplete="off" value="0" <?if($companyConfiguration['production_start_stop_time'] == 0){ echo "checked";}?>  > Automatic
+									<label class="btn btn-secondary <?php if($companyConfiguration['production_start_stop_time'] == 0){ echo "active";}?>">
+										<input type="radio" name="production_start_stop_time" id="production_start_stop_time1" autocomplete="off" value="0" <?php if($companyConfiguration['production_start_stop_time'] == 0){ echo "checked";}?>  > Automatic
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['production_start_stop_time'] == 1){ echo "active";}?>" >
-										<input type="radio" name="production_start_stop_time" id="production_start_stop_time2" autocomplete="off" value="1" <?if($companyConfiguration['production_start_stop_time'] == 1){ echo"checked"; }?>> Manually
+									<label class="btn btn-secondary <?php if($companyConfiguration['production_start_stop_time'] == 1){ echo "active";}?>" >
+										<input type="radio" name="production_start_stop_time" id="production_start_stop_time2" autocomplete="off" value="1" <?php if($companyConfiguration['production_start_stop_time'] == 1){ echo"checked"; }?>> Manually
 									</label>
 								</div>
 							</div>
@@ -1739,11 +1739,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 										<div class="col-md-4"><label>Resource Wise Production?* :</label></div>
 										<div class="col-md-4">
 											<div class="btn-group btn-group-toggle" data-toggle="buttons">
-												<label class="btn btn-secondary <?if($companyConfiguration['resource_wise_production'] == 0){ echo "active";}?>">
-													<input type="radio" name="resource_wise_production" id="resource_wise_production1" autocomplete="off" value="0" <?if($companyConfiguration['resource_wise_production'] == 0){ echo "checked";}?>  > NO
+												<label class="btn btn-secondary <?php if($companyConfiguration['resource_wise_production'] == 0){ echo "active";}?>">
+													<input type="radio" name="resource_wise_production" id="resource_wise_production1" autocomplete="off" value="0" <?php if($companyConfiguration['resource_wise_production'] == 0){ echo "checked";}?>  > NO
 												</label>
-												<label class="btn btn-secondary <?if($companyConfiguration['resource_wise_production'] == 1){ echo "active";}?>" >
-													<input type="radio" name="resource_wise_production" id="resource_wise_production2" autocomplete="off" value="1" <?if($companyConfiguration['resource_wise_production'] == 1){ echo"checked"; }?>> Yes
+												<label class="btn btn-secondary <?php if($companyConfiguration['resource_wise_production'] == 1){ echo "active";}?>" >
+													<input type="radio" name="resource_wise_production" id="resource_wise_production2" autocomplete="off" value="1" <?php if($companyConfiguration['resource_wise_production'] == 1){ echo"checked"; }?>> Yes
 												</label>
 											</div>
 										</div>
@@ -1753,11 +1753,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Roundup Quantity?* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['round_up_qty'] == 0){ echo "active";}?>">
-									<input type="radio" name="round_up_qty" id="round_up_qty1" autocomplete="off" value="0" <?if($companyConfiguration['round_up_qty'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['round_up_qty'] == 0){ echo "active";}?>">
+									<input type="radio" name="round_up_qty" id="round_up_qty1" autocomplete="off" value="0" <?php if($companyConfiguration['round_up_qty'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['round_up_qty'] == 1){ echo "active";}?>" >
-									<input type="radio" name="round_up_qty" id="round_up_qty2" autocomplete="off" value="1" <?if($companyConfiguration['round_up_qty'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['round_up_qty'] == 1){ echo "active";}?>" >
+									<input type="radio" name="round_up_qty" id="round_up_qty2" autocomplete="off" value="1" <?php if($companyConfiguration['round_up_qty'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1766,11 +1766,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Workorder wise production merge?* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['workorder_wise_production_merge'] == 1){ echo "active";}?>">
-									<input type="radio" name="workorder_wise_production_merge" id="workorder_wise_production_merge1" autocomplete="off" value="1" <?if($companyConfiguration['workorder_wise_production_merge'] == 1){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['workorder_wise_production_merge'] == 1){ echo "active";}?>">
+									<input type="radio" name="workorder_wise_production_merge" id="workorder_wise_production_merge1" autocomplete="off" value="1" <?php if($companyConfiguration['workorder_wise_production_merge'] == 1){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['workorder_wise_production_merge'] == 0){ echo "active";}?>" >
-									<input type="radio" name="workorder_wise_production_merge" id="workorder_wise_production_merge2" autocomplete="off" value="0" <?if($companyConfiguration['workorder_wise_production_merge'] == 0){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['workorder_wise_production_merge'] == 0){ echo "active";}?>" >
+									<input type="radio" name="workorder_wise_production_merge" id="workorder_wise_production_merge2" autocomplete="off" value="0" <?php if($companyConfiguration['workorder_wise_production_merge'] == 0){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1779,11 +1779,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Process END Time QC?* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['process_end_time_qc'] == 0){ echo "active";}?>">
-									<input type="radio" name="process_end_time_qc" id="process_end_time_qc1" autocomplete="off" value="0" <?if($companyConfiguration['process_end_time_qc'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['process_end_time_qc'] == 0){ echo "active";}?>">
+									<input type="radio" name="process_end_time_qc" id="process_end_time_qc1" autocomplete="off" value="0" <?php if($companyConfiguration['process_end_time_qc'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['process_end_time_qc'] == 1){ echo "active";}?>" >
-									<input type="radio" name="process_end_time_qc" id="process_end_time_qc2" autocomplete="off" value="1" <?if($companyConfiguration['process_end_time_qc'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['process_end_time_qc'] == 1){ echo "active";}?>" >
+									<input type="radio" name="process_end_time_qc" id="process_end_time_qc2" autocomplete="off" value="1" <?php if($companyConfiguration['process_end_time_qc'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1792,11 +1792,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Extra Stock?* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['extra_stock'] == 0){ echo "active";}?>">
-									<input type="radio" name="extra_stock" id="extra_stock1" autocomplete="off" value="0" <?if($companyConfiguration['extra_stock'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['extra_stock'] == 0){ echo "active";}?>">
+									<input type="radio" name="extra_stock" id="extra_stock1" autocomplete="off" value="0" <?php if($companyConfiguration['extra_stock'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['extra_stock'] == 1){ echo "active";}?>" >
-									<input type="radio" name="extra_stock" id="extra_stock2" autocomplete="off" value="1" <?if($companyConfiguration['extra_stock'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['extra_stock'] == 1){ echo "active";}?>" >
+									<input type="radio" name="extra_stock" id="extra_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['extra_stock'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1805,11 +1805,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>BOM Extra NO.?* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['bom_extra_no'] == 0){ echo "active";}?>">
-									<input type="radio" name="bom_extra_no" id="bom_extra_no1" autocomplete="off" value="0" <?if($companyConfiguration['bom_extra_no'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['bom_extra_no'] == 0){ echo "active";}?>">
+									<input type="radio" name="bom_extra_no" id="bom_extra_no1" autocomplete="off" value="0" <?php if($companyConfiguration['bom_extra_no'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['bom_extra_no'] == 1){ echo "active";}?>" >
-									<input type="radio" name="bom_extra_no" id="bom_extra_no2" autocomplete="off" value="1" <?if($companyConfiguration['bom_extra_no'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['bom_extra_no'] == 1){ echo "active";}?>" >
+									<input type="radio" name="bom_extra_no" id="bom_extra_no2" autocomplete="off" value="1" <?php if($companyConfiguration['bom_extra_no'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1818,11 +1818,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>GRN Time Supplier TC.?* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['supplier_tc_no'] == 0){ echo "active";}?>">
-									<input type="radio" name="supplier_tc_no" id="supplier_tc_no1" autocomplete="off" value="0" <?if($companyConfiguration['supplier_tc_no'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['supplier_tc_no'] == 0){ echo "active";}?>">
+									<input type="radio" name="supplier_tc_no" id="supplier_tc_no1" autocomplete="off" value="0" <?php if($companyConfiguration['supplier_tc_no'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['supplier_tc_no'] == 1){ echo "active";}?>" >
-									<input type="radio" name="supplier_tc_no" id="supplier_tc_no2" autocomplete="off" value="1" <?if($companyConfiguration['supplier_tc_no'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['supplier_tc_no'] == 1){ echo "active";}?>" >
+									<input type="radio" name="supplier_tc_no" id="supplier_tc_no2" autocomplete="off" value="1" <?php if($companyConfiguration['supplier_tc_no'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1831,11 +1831,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Workorder Batch Wise Stock Allocation* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['wo_bw_alloc_stock'] == 0){ echo "active";}?>">
-									<input type="radio" name="wo_bw_alloc_stock" id="wo_bw_alloc_stock1" autocomplete="off" onchange="toggle_store_approval()" value="0" <?if($companyConfiguration['wo_bw_alloc_stock'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['wo_bw_alloc_stock'] == 0){ echo "active";}?>">
+									<input type="radio" name="wo_bw_alloc_stock" id="wo_bw_alloc_stock1" autocomplete="off" onchange="toggle_store_approval()" value="0" <?php if($companyConfiguration['wo_bw_alloc_stock'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['wo_bw_alloc_stock'] == 1){ echo "active";}?>" >
-									<input type="radio" onchange="toggle_store_approval()" name="wo_bw_alloc_stock" id="wo_bw_alloc_stock2" autocomplete="off" value="1" <?if($companyConfiguration['wo_bw_alloc_stock'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['wo_bw_alloc_stock'] == 1){ echo "active";}?>" >
+									<input type="radio" onchange="toggle_store_approval()" name="wo_bw_alloc_stock" id="wo_bw_alloc_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['wo_bw_alloc_stock'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1844,11 +1844,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Show Customer IN Production* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['customer_show_in_production'] == 0){ echo "active";}?>">
-									<input type="radio" name="customer_show_in_production" id="customer_show_in_production1" autocomplete="off" value="0" <?if($companyConfiguration['customer_show_in_production'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['customer_show_in_production'] == 0){ echo "active";}?>">
+									<input type="radio" name="customer_show_in_production" id="customer_show_in_production1" autocomplete="off" value="0" <?php if($companyConfiguration['customer_show_in_production'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['customer_show_in_production'] == 1){ echo "active";}?>" >
-									<input type="radio" name="customer_show_in_production" id="customer_show_in_production2" autocomplete="off" value="1" <?if($companyConfiguration['customer_show_in_production'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['customer_show_in_production'] == 1){ echo "active";}?>" >
+									<input type="radio" name="customer_show_in_production" id="customer_show_in_production2" autocomplete="off" value="1" <?php if($companyConfiguration['customer_show_in_production'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -1857,30 +1857,30 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Production On Dashboard* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['production_on_dashboard'] == 0){ echo "active";}?>">
-									<input type="radio" name="production_on_dashboard" id="production_on_dashboard1" autocomplete="off" value="0" <?if($companyConfiguration['production_on_dashboard'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['production_on_dashboard'] == 0){ echo "active";}?>">
+									<input type="radio" name="production_on_dashboard" id="production_on_dashboard1" autocomplete="off" value="0" <?php if($companyConfiguration['production_on_dashboard'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['production_on_dashboard'] == 1){ echo "active";}?>" >
-									<input type="radio" name="production_on_dashboard" id="production_on_dashboard2" autocomplete="off" value="1" <?if($companyConfiguration['production_on_dashboard'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['production_on_dashboard'] == 1){ echo "active";}?>" >
+									<input type="radio" name="production_on_dashboard" id="production_on_dashboard2" autocomplete="off" value="1" <?php if($companyConfiguration['production_on_dashboard'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
 					</div><br>
-					<?if($getspecialConfiguration['austar_permission']==1){?>
+					<?php if($getspecialConfiguration['austar_permission']==1){?>
 					<div class="row">
 						<div class="col-md-4"><label>Fix Reserve Godown* :</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['set_reserve_godown'] == 0){ echo "active";}?>">
-									<input type="radio" name="set_reserve_godown" id="set_reserve_godown1" autocomplete="off" onchange="toggle_default_godown()" value="0" <?if($companyConfiguration['set_reserve_godown'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['set_reserve_godown'] == 0){ echo "active";}?>">
+									<input type="radio" name="set_reserve_godown" id="set_reserve_godown1" autocomplete="off" onchange="toggle_default_godown()" value="0" <?php if($companyConfiguration['set_reserve_godown'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['set_reserve_godown'] == 1){ echo "active";}?>" >
-									<input type="radio" name="set_reserve_godown" id="set_reserve_godown2" autocomplete="off" onchange="toggle_default_godown()" value="1" <?if($companyConfiguration['set_reserve_godown'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['set_reserve_godown'] == 1){ echo "active";}?>" >
+									<input type="radio" name="set_reserve_godown" id="set_reserve_godown2" autocomplete="off" onchange="toggle_default_godown()" value="1" <?php if($companyConfiguration['set_reserve_godown'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
 					</div><br>
-					<div class="row def_gd_row" style="display: <?if($companyConfiguration['default_godown_id'] == 0){ echo "none";}else{ echo "block";}?>;">
+					<div class="row def_gd_row" style="display: <?php if($companyConfiguration['default_godown_id'] == 0){ echo "none";}else{ echo "block";}?>;">
 						<div class="col-md-4"><label>Default Godown* :</label></div>
 						<div class="col-md-4">
 							<select class="select2" name="default_godown_id" id="default_godown_id"  data-placeholder="Default Godown">
@@ -2034,11 +2034,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>Item Description ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['enable_item_description'] == 0){ echo "active";}?>">
-										<input type="radio" name="enable_item_description" id="enable_item_description" autocomplete="off" value="0" <?if($companyConfiguration['enable_item_description'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['enable_item_description'] == 0){ echo "active";}?>">
+										<input type="radio" name="enable_item_description" id="enable_item_description" autocomplete="off" value="0" <?php if($companyConfiguration['enable_item_description'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['enable_item_description'] == 1){ echo "active";}?>" >
-										<input type="radio" name="enable_item_description" id="enable_item_description" autocomplete="off" value="1" <?if($companyConfiguration['enable_item_description'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['enable_item_description'] == 1){ echo "active";}?>" >
+										<input type="radio" name="enable_item_description" id="enable_item_description" autocomplete="off" value="1" <?php if($companyConfiguration['enable_item_description'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2047,11 +2047,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>BOM Item Image Show ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['enable_item_image'] == 0){ echo "active";}?>">
-										<input type="radio" name="enable_item_image" id="enable_item_image" autocomplete="off" value="0" <?if($companyConfiguration['enable_item_image'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['enable_item_image'] == 0){ echo "active";}?>">
+										<input type="radio" name="enable_item_image" id="enable_item_image" autocomplete="off" value="0" <?php if($companyConfiguration['enable_item_image'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['enable_item_image'] == 1){ echo "active";}?>" >
-										<input type="radio" name="enable_item_image" id="enable_item_image" autocomplete="off" value="1" <?if($companyConfiguration['enable_item_image'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['enable_item_image'] == 1){ echo "active";}?>" >
+										<input type="radio" name="enable_item_image" id="enable_item_image" autocomplete="off" value="1" <?php if($companyConfiguration['enable_item_image'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2060,11 +2060,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>CRM Print - with letterpad ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['crm_print_letterhead_per'] == 0){ echo "active";}?>">
-										<input type="radio" name="crm_print_letterhead_per" id="crm_print_letterhead_per" autocomplete="off" value="0" <?if($companyConfiguration['crm_print_letterhead_per'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['crm_print_letterhead_per'] == 0){ echo "active";}?>">
+										<input type="radio" name="crm_print_letterhead_per" id="crm_print_letterhead_per" autocomplete="off" value="0" <?php if($companyConfiguration['crm_print_letterhead_per'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['crm_print_letterhead_per'] == 1){ echo "active";}?>" >
-										<input type="radio" name="crm_print_letterhead_per" id="crm_print_letterhead_per" autocomplete="off" value="1" <?if($companyConfiguration['crm_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['crm_print_letterhead_per'] == 1){ echo "active";}?>" >
+										<input type="radio" name="crm_print_letterhead_per" id="crm_print_letterhead_per" autocomplete="off" value="1" <?php if($companyConfiguration['crm_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2073,11 +2073,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>Sales Print - with letterpad ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['sales_print_letterhead_per'] == 0){ echo "active";}?>">
-										<input type="radio" name="sales_print_letterhead_per" id="sales_print_letterhead_per" autocomplete="off" value="0" <?if($companyConfiguration['sales_print_letterhead_per'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['sales_print_letterhead_per'] == 0){ echo "active";}?>">
+										<input type="radio" name="sales_print_letterhead_per" id="sales_print_letterhead_per" autocomplete="off" value="0" <?php if($companyConfiguration['sales_print_letterhead_per'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['sales_print_letterhead_per'] == 1){ echo "active";}?>" >
-										<input type="radio" name="sales_print_letterhead_per" id="sales_print_letterhead_per" autocomplete="off" value="1" <?if($companyConfiguration['sales_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['sales_print_letterhead_per'] == 1){ echo "active";}?>" >
+										<input type="radio" name="sales_print_letterhead_per" id="sales_print_letterhead_per" autocomplete="off" value="1" <?php if($companyConfiguration['sales_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2086,11 +2086,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>Purchase Print - with letterpad ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['purchase_print_letterhead_per'] == 0){ echo "active";}?>">
-										<input type="radio" name="purchase_print_letterhead_per" id="purchase_print_letterhead_per" autocomplete="off" value="0" <?if($companyConfiguration['purchase_print_letterhead_per'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['purchase_print_letterhead_per'] == 0){ echo "active";}?>">
+										<input type="radio" name="purchase_print_letterhead_per" id="purchase_print_letterhead_per" autocomplete="off" value="0" <?php if($companyConfiguration['purchase_print_letterhead_per'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['purchase_print_letterhead_per'] == 1){ echo "active";}?>" >
-										<input type="radio" name="purchase_print_letterhead_per" id="purchase_print_letterhead_per" autocomplete="off" value="1" <?if($companyConfiguration['purchase_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['purchase_print_letterhead_per'] == 1){ echo "active";}?>" >
+										<input type="radio" name="purchase_print_letterhead_per" id="purchase_print_letterhead_per" autocomplete="off" value="1" <?php if($companyConfiguration['purchase_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2099,11 +2099,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>Finance Print - with letterpad ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['finance_print_letterhead_per'] == 0){ echo "active";}?>">
-										<input type="radio" name="finance_print_letterhead_per" id="finance_print_letterhead_per" autocomplete="off" value="0" <?if($companyConfiguration['finance_print_letterhead_per'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['finance_print_letterhead_per'] == 0){ echo "active";}?>">
+										<input type="radio" name="finance_print_letterhead_per" id="finance_print_letterhead_per" autocomplete="off" value="0" <?php if($companyConfiguration['finance_print_letterhead_per'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['finance_print_letterhead_per'] == 1){ echo "active";}?>" >
-										<input type="radio" name="finance_print_letterhead_per" id="finance_print_letterhead_per" autocomplete="off" value="1" <?if($companyConfiguration['finance_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['finance_print_letterhead_per'] == 1){ echo "active";}?>" >
+										<input type="radio" name="finance_print_letterhead_per" id="finance_print_letterhead_per" autocomplete="off" value="1" <?php if($companyConfiguration['finance_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2112,11 +2112,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-8"><label><strong>Production Print - with letterpad ?</strong></label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['production_print_letterhead_per'] == 0){ echo "active";}?>">
-										<input type="radio" name="production_print_letterhead_per" id="production_print_letterhead_per" autocomplete="off" value="0" <?if($companyConfiguration['production_print_letterhead_per'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['production_print_letterhead_per'] == 0){ echo "active";}?>">
+										<input type="radio" name="production_print_letterhead_per" id="production_print_letterhead_per" autocomplete="off" value="0" <?php if($companyConfiguration['production_print_letterhead_per'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['production_print_letterhead_per'] == 1){ echo "active";}?>" >
-										<input type="radio" name="production_print_letterhead_per" id="production_print_letterhead_per" autocomplete="off" value="1" <?if($companyConfiguration['production_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['production_print_letterhead_per'] == 1){ echo "active";}?>" >
+										<input type="radio" name="production_print_letterhead_per" id="production_print_letterhead_per" autocomplete="off" value="1" <?php if($companyConfiguration['production_print_letterhead_per'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div>
@@ -2189,7 +2189,7 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						</div>
 					</div>
 					<!--////////////////////////////////////////////SMPL Specail Changes Start - Harashil////////////////////-->
-					<?if($getspecialConfiguration['smpl_permission'] ==1)
+					<?php if($getspecialConfiguration['smpl_permission'] ==1)
 				{?>
 					<div class="row row_margin">
 						<div class="col-md-3"><label><strong>SMPL Batch PreFix: </strong></label></div>
@@ -2713,11 +2713,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Purchase Planning Work Order wise ?</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['po_work_order_wise'] == 0){ echo "active";}?>">
-									<input type="radio" name="po_work_order_wise" id="po_work_order_wise1" autocomplete="off" value="0" <?if($companyConfiguration['po_work_order_wise'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['po_work_order_wise'] == 0){ echo "active";}?>">
+									<input type="radio" name="po_work_order_wise" id="po_work_order_wise1" autocomplete="off" value="0" <?php if($companyConfiguration['po_work_order_wise'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['po_work_order_wise'] == 1){ echo "active";}?>" >
-									<input type="radio" name="po_work_order_wise" id="po_work_order_wise2" autocomplete="off" value="1" <?if($companyConfiguration['po_work_order_wise'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['po_work_order_wise'] == 1){ echo "active";}?>" >
+									<input type="radio" name="po_work_order_wise" id="po_work_order_wise2" autocomplete="off" value="1" <?php if($companyConfiguration['po_work_order_wise'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -2726,11 +2726,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Direct PO Create ?</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['direct_po_create'] == 0){ echo "active";}?>">
-									<input type="radio" name="direct_po_create" id="direct_po_create1" autocomplete="off" value="0" <?if($companyConfiguration['direct_po_create'] == 0){ echo "checked";}?>  > NO
+								<label class="btn btn-secondary <?php if($companyConfiguration['direct_po_create'] == 0){ echo "active";}?>">
+									<input type="radio" name="direct_po_create" id="direct_po_create1" autocomplete="off" value="0" <?php if($companyConfiguration['direct_po_create'] == 0){ echo "checked";}?>  > NO
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['direct_po_create'] == 1){ echo "active";}?>" >
-									<input type="radio" name="direct_po_create" id="direct_po_create2" autocomplete="off" value="1" <?if($companyConfiguration['direct_po_create'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['direct_po_create'] == 1){ echo "active";}?>" >
+									<input type="radio" name="direct_po_create" id="direct_po_create2" autocomplete="off" value="1" <?php if($companyConfiguration['direct_po_create'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -2756,11 +2756,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 						<div class="col-md-4"><label>Resource Display ?</label></div>
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['resource_display'] == 0){ echo "active";}?>">
-									<input type="radio" name="resource_display" id="resource_display" autocomplete="off" value="0" <?if($companyConfiguration['resource_display'] == 0){ echo "checked";}?>  > No
+								<label class="btn btn-secondary <?php if($companyConfiguration['resource_display'] == 0){ echo "active";}?>">
+									<input type="radio" name="resource_display" id="resource_display" autocomplete="off" value="0" <?php if($companyConfiguration['resource_display'] == 0){ echo "checked";}?>  > No
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['resource_display'] == 1){ echo "active";}?>" >
-									<input type="radio" name="resource_display" id="resource_display" autocomplete="off" value="1" <?if($companyConfiguration['resource_display'] == 1){ echo"checked"; }?>> Yes
+								<label class="btn btn-secondary <?php if($companyConfiguration['resource_display'] == 1){ echo "active";}?>" >
+									<input type="radio" name="resource_display" id="resource_display" autocomplete="off" value="1" <?php if($companyConfiguration['resource_display'] == 1){ echo"checked"; }?>> Yes
 								</label>
 							</div>
 						</div>
@@ -2770,11 +2770,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 
 						<div class="col-md-4">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
-								<label class="btn btn-secondary <?if($companyConfiguration['resource_time'] == 0){ echo "active";}?>">
-									<input type="radio" name="resource_time" id="resource_time" autocomplete="off" value="0" <?if($companyConfiguration['resource_time'] == 0){ echo "checked";}?>  > Minute
+								<label class="btn btn-secondary <?php if($companyConfiguration['resource_time'] == 0){ echo "active";}?>">
+									<input type="radio" name="resource_time" id="resource_time" autocomplete="off" value="0" <?php if($companyConfiguration['resource_time'] == 0){ echo "checked";}?>  > Minute
 								</label>
-								<label class="btn btn-secondary <?if($companyConfiguration['resource_time'] == 1){ echo "active";}?>" >
-									<input type="radio" name="resource_time" id="resource_time" autocomplete="off" value="1" <?if($companyConfiguration['resource_time'] == 1){ echo"checked"; }?>> Days
+								<label class="btn btn-secondary <?php if($companyConfiguration['resource_time'] == 1){ echo "active";}?>" >
+									<input type="radio" name="resource_time" id="resource_time" autocomplete="off" value="1" <?php if($companyConfiguration['resource_time'] == 1){ echo"checked"; }?>> Days
 								</label>
 							</div>
 						</div>
@@ -2817,11 +2817,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto Indent Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_indent'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_approval_indent" id="automatic_approval_indent" autocomplete="off" value="0" <?if($companyConfiguration['automatic_approval_indent'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_indent'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_approval_indent" id="automatic_approval_indent" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_approval_indent'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_indent'] == 1){ echo "active";}?>" >
-										<input type="radio" name="automatic_approval_indent" id="automatic_approval_indent" autocomplete="off" value="1" <?if($companyConfiguration['automatic_approval_indent'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_indent'] == 1){ echo "active";}?>" >
+										<input type="radio" name="automatic_approval_indent" id="automatic_approval_indent" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_approval_indent'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2831,11 +2831,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto PO Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_po'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_approval_po" id="automatic_approval_po" autocomplete="off" onchange="user_wise_approval()" value="0" <?if($companyConfiguration['automatic_approval_po'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_po'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_approval_po" id="automatic_approval_po" autocomplete="off" onchange="user_wise_approval()" value="0" <?php if($companyConfiguration['automatic_approval_po'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_po'] == 1){ echo "active";}?>" >
-										<input type="radio" name="automatic_approval_po" id="automatic_approval_po" onchange="user_wise_approval()" autocomplete="off" value="1" <?if($companyConfiguration['automatic_approval_po'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_po'] == 1){ echo "active";}?>" >
+										<input type="radio" name="automatic_approval_po" id="automatic_approval_po" onchange="user_wise_approval()" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_approval_po'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2849,11 +2849,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto PO Finance Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_finance_approval_po'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_finance_approval_po" id="automatic_finance_approval_po" onchange="user_wise_approval()" autocomplete="off" value="0" <?if($companyConfiguration['automatic_finance_approval_po'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_finance_approval_po'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_finance_approval_po" id="automatic_finance_approval_po" onchange="user_wise_approval()" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_finance_approval_po'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_finance_approval_po'] == 1){ echo "active";}?>" >
-										<input type="radio" name="automatic_finance_approval_po" id="automatic_finance_approval_po" onchange="user_wise_approval()" autocomplete="off" value="1" <?if($companyConfiguration['automatic_finance_approval_po'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_finance_approval_po'] == 1){ echo "active";}?>" >
+										<input type="radio" name="automatic_finance_approval_po" id="automatic_finance_approval_po" onchange="user_wise_approval()" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_finance_approval_po'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2867,11 +2867,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto PO Shortclose Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_shortclose_approval_po'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_shortclose_approval_po" id="automatic_shortclose_approval_po" autocomplete="off" value="0" <?if($companyConfiguration['automatic_shortclose_approval_po'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_shortclose_approval_po'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_shortclose_approval_po" id="automatic_shortclose_approval_po" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_shortclose_approval_po'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_shortclose_approval_po'] == 1){ echo "active";}?>" >
-										<input type="radio" name="automatic_shortclose_approval_po" id="automatic_shortclose_approval_po" autocomplete="off" value="1" <?if($companyConfiguration['automatic_shortclose_approval_po'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_shortclose_approval_po'] == 1){ echo "active";}?>" >
+										<input type="radio" name="automatic_shortclose_approval_po" id="automatic_shortclose_approval_po" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_shortclose_approval_po'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2881,11 +2881,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto Quotation Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_quotation'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_approval_quotation" id="automatic_approval_quotation" onchange="user_wise_approval()" autocomplete="off" value="0" <?if($companyConfiguration['automatic_approval_quotation'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_quotation'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_approval_quotation" id="automatic_approval_quotation" onchange="user_wise_approval()" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_approval_quotation'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_quotation'] == 1){ echo "active";}?>" >
-										<input type="radio" name="automatic_approval_quotation" onchange="user_wise_approval()" id="automatic_approval_quotation" autocomplete="off" value="1" <?if($companyConfiguration['automatic_approval_quotation'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_quotation'] == 1){ echo "active";}?>" >
+										<input type="radio" name="automatic_approval_quotation" onchange="user_wise_approval()" id="automatic_approval_quotation" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_approval_quotation'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2898,11 +2898,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto Proforma Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_proforma'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_approval_proforma" id="automatic_approval_proforma" onchange="user_wise_approval()" autocomplete="off" value="0" <?if($companyConfiguration['automatic_approval_proforma'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_proforma'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_approval_proforma" id="automatic_approval_proforma" onchange="user_wise_approval()" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_approval_proforma'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_proforma'] == 1){ echo "active";}?>" >
-										<input type="radio" name="automatic_approval_proforma" id="automatic_approval_proforma" onchange="user_wise_approval()" autocomplete="off" value="1" <?if($companyConfiguration['automatic_approval_proforma'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_proforma'] == 1){ echo "active";}?>" >
+										<input type="radio" name="automatic_approval_proforma" id="automatic_approval_proforma" onchange="user_wise_approval()" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_approval_proforma'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2915,11 +2915,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto Sales Order Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_so'] == 0){ echo "active";}?>">
-										<input type="radio" name="automatic_approval_so" id="automatic_approval_so" onchange="user_wise_approval()" autocomplete="off" value="0" <?if($companyConfiguration['automatic_approval_so'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_so'] == 0){ echo "active";}?>">
+										<input type="radio" name="automatic_approval_so" id="automatic_approval_so" onchange="user_wise_approval()" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_approval_so'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_so'] == 1){ echo "active";}?>" >
-										<input type="radio" onchange="user_wise_approval()" name="automatic_approval_so" id="automatic_approval_so" autocomplete="off" value="1" <?if($companyConfiguration['automatic_approval_so'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_so'] == 1){ echo "active";}?>" >
+										<input type="radio" onchange="user_wise_approval()" name="automatic_approval_so" id="automatic_approval_so" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_approval_so'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2934,11 +2934,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 							<div class="col-md-4"><label>Auto Order Acceptance Approval ?</label></div>
 							<div class="col-md-4">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_order_acceptance'] == 0){ echo "active";}?>">
-										<input type="radio" onchange="user_wise_approval()" name="automatic_approval_order_acceptance" id="automatic_approval_order_acceptance" autocomplete="off" value="0" <?if($companyConfiguration['automatic_approval_order_acceptance'] == 0){ echo "checked";}?>  > No
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_order_acceptance'] == 0){ echo "active";}?>">
+										<input type="radio" onchange="user_wise_approval()" name="automatic_approval_order_acceptance" id="automatic_approval_order_acceptance" autocomplete="off" value="0" <?php if($companyConfiguration['automatic_approval_order_acceptance'] == 0){ echo "checked";}?>  > No
 									</label>
-									<label class="btn btn-secondary <?if($companyConfiguration['automatic_approval_order_acceptance'] == 1){ echo "active";}?>" >
-										<input type="radio" onchange="user_wise_approval()" name="automatic_approval_order_acceptance" id="automatic_approval_order_acceptance" autocomplete="off" value="1" <?if($companyConfiguration['automatic_approval_order_acceptance'] == 1){ echo"checked"; }?>> Yes
+									<label class="btn btn-secondary <?php if($companyConfiguration['automatic_approval_order_acceptance'] == 1){ echo "active";}?>" >
+										<input type="radio" onchange="user_wise_approval()" name="automatic_approval_order_acceptance" id="automatic_approval_order_acceptance" autocomplete="off" value="1" <?php if($companyConfiguration['automatic_approval_order_acceptance'] == 1){ echo"checked"; }?>> Yes
 									</label>
 								</div>
 							</div><br>
@@ -2989,11 +2989,11 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 											<div class="form-group">
 												<div class="col-md-8">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if(	$rel['qc_unit'] == 1){ echo "active";}?>">
-															<input type="radio" name="qc_unit" id="qc_unit1" autocomplete="off" value="1" <?if($rel['qc_unit'] == 1){ echo "checked";}?>  > Base Unit
+														<label class="btn btn-secondary <?php if(	$rel['qc_unit'] == 1){ echo "active";}?>">
+															<input type="radio" name="qc_unit" id="qc_unit1" autocomplete="off" value="1" <?php if($rel['qc_unit'] == 1){ echo "checked";}?>  > Base Unit
 														</label>
-														<label class="btn btn-secondary <?if($rel['qc_unit'] == 2){ echo "active";}?>" >
-															<input type="radio" name="qc_unit" id="qc_unit2" autocomplete="off" value="2" <?if($rel['qc_unit'] == 2){ echo"checked"; }?>> Conv Unit
+														<label class="btn btn-secondary <?php if($rel['qc_unit'] == 2){ echo "active";}?>" >
+															<input type="radio" name="qc_unit" id="qc_unit2" autocomplete="off" value="2" <?php if($rel['qc_unit'] == 2){ echo"checked"; }?>> Conv Unit
 														</label>
 													</div>
 												</div>
@@ -3295,7 +3295,7 @@ $invoice_header_content = str_ireplace(array("\r","\n",'\r','\n'),'', $companyCo
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip();
-		<?
+		<?php 
 		$header_logo='3';
 		if(!empty($companyConfiguration['header_logo'])){
 			$header_logo = $companyConfiguration['header_logo'];			

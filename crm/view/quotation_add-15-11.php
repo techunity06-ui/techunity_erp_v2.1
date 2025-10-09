@@ -123,7 +123,7 @@ else {
 									<div class="text-center">Owner : <strong><?=$user_name?></strong></div>
 								</header>	
 								<div class="">
-									<?	
+									<?php 	
 									$url = $_SERVER['HTTP_REFERER'];
 									$infopage = basename($url);
 									if($infopage=='crm_dashboard'){
@@ -217,8 +217,8 @@ else {
 												<div class="form-group">
 													<label class="col-md-3 control-label">Quotation Type</label>
 													<div class="col-md-6"> 
-														<label class="col-md-5 col-sm-6" style="font-weight:bold;"><input type="radio" id="quot_type_domestic" name="quot_type" style="width: 15px;height: 15px;" <?if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?}?> value="0" <?=($quot_type!='1')?'checked':''?>> Domestic</label>
-														<label class="col-md-6 col-sm-6 " style="font-weight:bold;"><input type="radio" id="quot_type_export" name="quot_type" style="width: 15px;height: 15px;" <?if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?}?> value="1" <?=($quot_type=='1')?'checked':''?>> Export</label>
+														<label class="col-md-5 col-sm-6" style="font-weight:bold;"><input type="radio" id="quot_type_domestic" name="quot_type" style="width: 15px;height: 15px;" <?php if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?php }?> value="0" <?=($quot_type!='1')?'checked':''?>> Domestic</label>
+														<label class="col-md-6 col-sm-6 " style="font-weight:bold;"><input type="radio" id="quot_type_export" name="quot_type" style="width: 15px;height: 15px;" <?php if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?php }?> value="1" <?=($quot_type=='1')?'checked':''?>> Export</label>
 													</div>
 												</div>	
 											</div>
@@ -248,7 +248,7 @@ else {
 																	<!--	</div>	-->
 																	<!--</div>-->
 																	
-<?	//Show Flp field only if add mode
+<?php 	//Show Flp field only if add mode
 if($mode=='Add'){
 	?>
 	<div class="col-md-6">
@@ -269,7 +269,7 @@ if($mode=='Add'){
 			<label class="col-md-4 control-label">Assign To*</label>
 			<div class="col-md-8">
 				<select class="select2" id="assign_user_ids" name="assign_user_ids[]" title="Choose Assign User" placeholder="Choose Assign User" multiple="multiple" required>
-					<?//=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
+					<?php //=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
 					<?=get_assign_users($dbcon, $assign_user_ids, "");?>
 				</select>
 			</div>
@@ -298,13 +298,13 @@ if($mode=='Add'){
 			</div>
 		</div>	
 	</div>	
-	<?}?>
+	<?php }?>
 	<div class="clearfix"></div>
 	<!--<div class="col-md-6">-->
 		<!--	<div class="form-group">-->
 			<!--		<label class="col-md-2 control-label">Greeting</label>-->
 			<!--		<div class="col-md-10">-->
-				<!--			<textarea class="form-control" id="quatation_greeting" name="quatation_greeting" placeholder="Enter Quatation Greeting"><?if($mode=='Add'){ echo $set_head['quotation_greeting'];}else{ echo $rel['quatation_greeting']; }?></textarea>-->
+				<!--			<textarea class="form-control" id="quatation_greeting" name="quatation_greeting" placeholder="Enter Quatation Greeting"><?php if($mode=='Add'){ echo $set_head['quotation_greeting'];}else{ echo $rel['quatation_greeting']; }?></textarea>-->
 				<!--		</div>-->
 				<!--	</div>-->
 				<!--</div>-->
@@ -312,7 +312,7 @@ if($mode=='Add'){
 					<!--	<div class="form-group">-->
 						<!--		<label class="col-md-2 control-label">Attached Part</label>-->
 						<!--		<div class="col-md-10">-->
-							<!--			<textarea class="form-control" id="attach_part" name="attach_part" placeholder="Enter Attached Part"><?if($mode=='Add'){ echo $set_head['attach_part'];}else{ echo $rel['attach_part']; }?></textarea>-->
+							<!--			<textarea class="form-control" id="attach_part" name="attach_part" placeholder="Enter Attached Part"><?php if($mode=='Add'){ echo $set_head['attach_part'];}else{ echo $rel['attach_part']; }?></textarea>-->
 							<!--		</div>-->
 							<!--	</div>-->
 							<!--</div>-->
@@ -597,36 +597,36 @@ if($mode=='Add'){
 		format: 'dd-mm-yyyy',
 		autoclose: true
 	});
-	<?if($mode=='Edit'){?>
+	<?php if($mode=='Edit'){?>
 		$('#cust_id').select2('readonly',true);
 		$('#c_con_id').select2('readonly',true);
 		$('#inquiry_id').select2('readonly',true);
 	//Disable not selected Radio Button
 	$(':radio:not(:checked)').attr('disabled', true);
 	load_typeswise_terms(<?=$quot_type?>,<?=$quotation_id?>);
-	<?}
+	<?php }
 	else{?>
 		load_typeswise_terms(<?=$quot_type?>,'');
-		<?}?>
-		<?if($prev_quotation_id){?>
+		<?php }?>
+		<?php if($prev_quotation_id){?>
 			copy_prev_quot_trn(<?=$prev_quotation_id?>);
-			<?}?>
+			<?php }?>
 /*$(function() { 
 	$('#quotation_date').datepicker({
 	format: 'dd-mm-yyyy',
 	autoclose: true
-	<?if($mode=='Add')
+	<?php if($mode=='Add')
 	{?>
 	,startDate: 'd'//don't allow today and past dates
-	<?}?>
+	<?php }?>
 	});
 });*/
-<?if($inq_to_quot){//check inq to quot for copy inq pro?>
+<?php if($inq_to_quot){//check inq to quot for copy inq pro?>
 	load_inq_pro(<?=$inquiry_id?>);
-	<?}?>
-	<?if($viewmode=="Add"){?>
+	<?php }?>
+	<?php if($viewmode=="Add"){?>
 		load_def_quotation_no();
-		<?}?>
+		<?php }?>
 		CKEDITOR.replace( 'quot_annex_content', {
 			enterMode: CKEDITOR.ENTER_BR
 		});

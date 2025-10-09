@@ -1259,7 +1259,7 @@ else if(strpos($_SERVER['REQUEST_URI'], "direct_workorder")==true)
 													<div class="form-group">
 														<label class="col-md-4 control-label"><strong>Process Qty</strong></label>
 														<div class="col-md-8 col-xs-11">
-														<?//=$readonly;?>
+														<?php //=$readonly;?>
 															<input id="in_process_qty_main" name="in_process_qty" type="number" class="form-control" title="Date" value="<?=$totalpro?>" placeholder="Inhouse Process Qty"  onkeyup="get_inhouse_request_qty(this.value);get_bom_request_qty(this.value);get_po_request_qty(this.value);cal_po_qty();"/>
 															
 														</div>
@@ -1305,7 +1305,7 @@ else if(strpos($_SERVER['REQUEST_URI'], "direct_workorder")==true)
 														<button <?=$style?> type="button" id="add_wo_prd" onclick="add_work_order_product('<?php echo $id;?>','<?=$total?>','<?=$unit_id?>');" class="btn btn-success" >Add Product</button>
 														
 													</div>
-													<?if($getspecialConfiguration['smpl_permission'] !=1)
+													<?php if($getspecialConfiguration['smpl_permission'] !=1)
 													{?>
 													<div class="col-md-3 col-xs-11">
 

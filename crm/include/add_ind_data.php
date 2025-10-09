@@ -109,7 +109,7 @@
 									</div>
 								</div>	
 							</div>
-							<?if($getspecialConfiguration['reciclar']==1){?>
+							<?php if($getspecialConfiguration['reciclar']==1){?>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="col-md-12 control-label" style="text-align:left;line-height:25px">PRODUCT CATEGORY</label>
@@ -120,7 +120,7 @@
 									</div>
 								</div>	
 							</div>
-							<?}?>
+							<?php }?>
 							
 							<div class="clearfix"></div>
 							<div class="col-md-6">
@@ -134,7 +134,7 @@
 								</div>	
 							</div>
 
-							<?if($getspecialConfiguration['reciclar']==1){?>
+							<?php if($getspecialConfiguration['reciclar']==1){?>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="col-md-12 control-label" style="text-align:left;line-height:25px">Reciclare Category</label>
@@ -145,7 +145,7 @@
 										</div>
 									</div>	
 								</div>
-							<?}?>
+							<?php }?>
 							<div class="clearfix"></div>
 							<div class="col-md-6">
 								<div class="form-group">
@@ -162,8 +162,8 @@
 									<label class="col-md-12 control-label" style="text-align:left;line-height:25px">Assign To</label>
 									<div class="col-md-12">
 										<select class="select2" id="assign_user_ids" name="assign_user_ids" title="Choose Assign User" placeholder="Choose Assign User" required>
-											<?//=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
-											<?//=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_type in(2,8,9,21,22)");?>
+											<?php //=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
+											<?php //=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_type in(2,8,9,21,22)");?>
 											<?=get_users_typewise($dbcon, $rel['assign_user_ids'], " and user_type in(".$crm_user_type.")");?>
 										</select>
 									</div>

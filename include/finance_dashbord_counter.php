@@ -202,7 +202,7 @@ $user_ids = check_user_chein($dbcon,$_SESSION['user_id'],1);
                                     </div>
 <!--                                    <div class="col-md-6">
                                             <select class="form-control" name="c_year3" id="c_year3" onchange="get_chart();" >
-                                                    <?//=get_year()?>
+                                                    <?php //=get_year()?>
                                             </select>
                                     </div> -->
                                    <!--  <div class="col-md-6">
@@ -246,7 +246,7 @@ $user_ids = check_user_chein($dbcon,$_SESSION['user_id'],1);
                                     </div>
 <!--                                    <div class="col-md-6">
                                             <select class="form-control" name="c_year4" id="c_year4" onchange="get_chart();" >
-                                                    <?//=get_year()?>
+                                                    <?php //=get_year()?>
                                             </select>
                                     </div> -->
                                    
@@ -317,7 +317,7 @@ $user_ids = check_user_chein($dbcon,$_SESSION['user_id'],1);
                                     </div>
 <!--                                    <div class="col-md-6">
                                             <select class="form-control" name="c_year5" id="c_year5" onchange="load_month_wise_won();" >
-                                                    <?//=get_year()?>
+                                                    <?php //=get_year()?>
                                             </select>
                                     </div> -->                       
                                     <div class="col-md-12">

@@ -210,11 +210,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Sales Time How to Load: </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['sales_time_load_pro'] == 0){ echo "active";}?>">
-															<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro1" autocomplete="off" value="0" <?if($companyConfiguration['sales_time_load_pro'] == 0){ echo "checked";}?>  > Product Load Wise
+														<label class="btn btn-secondary <?php if($companyConfiguration['sales_time_load_pro'] == 0){ echo "active";}?>">
+															<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro1" autocomplete="off" value="0" <?php if($companyConfiguration['sales_time_load_pro'] == 0){ echo "checked";}?>  > Product Load Wise
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['sales_time_load_pro'] == 1){ echo "active";}?>" >
-															<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro2" autocomplete="off" value="1" <?if($companyConfiguration['sales_time_load_pro'] == 1){ echo"checked"; }?>> Product Dropdown Wise
+														<label class="btn btn-secondary <?php if($companyConfiguration['sales_time_load_pro'] == 1){ echo "active";}?>" >
+															<input type="radio" name="sales_time_load_pro" id="sales_time_load_pro2" autocomplete="off" value="1" <?php if($companyConfiguration['sales_time_load_pro'] == 1){ echo"checked"; }?>> Product Dropdown Wise
 														</label>
 													</div>
 												</div>
@@ -228,11 +228,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Trading Stock? </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['trading_stock'] == 0){ echo "active";}?>">
-															<input type="radio" name="trading_stock" id="trading_stock1" autocomplete="off" value="0" <?if($companyConfiguration['trading_stock'] == 0){ echo "checked";}?>  > NO
+														<label class="btn btn-secondary <?php if($companyConfiguration['trading_stock'] == 0){ echo "active";}?>">
+															<input type="radio" name="trading_stock" id="trading_stock1" autocomplete="off" value="0" <?php if($companyConfiguration['trading_stock'] == 0){ echo "checked";}?>  > NO
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['trading_stock'] == 1){ echo "active";}?>" >
-															<input type="radio" name="trading_stock" id="trading_stock2" autocomplete="off" value="1" <?if($companyConfiguration['trading_stock'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['trading_stock'] == 1){ echo "active";}?>" >
+															<input type="radio" name="trading_stock" id="trading_stock2" autocomplete="off" value="1" <?php if($companyConfiguration['trading_stock'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -247,11 +247,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Assign Users: </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['enable_assing_user'] == 0){ echo "active";}?>">
-															<input type="radio" name="enable_assing_user" id="enable_assing_user1" autocomplete="off" value="0" <?if($companyConfiguration['enable_assing_user'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($companyConfiguration['enable_assing_user'] == 0){ echo "active";}?>">
+															<input type="radio" name="enable_assing_user" id="enable_assing_user1" autocomplete="off" value="0" <?php if($companyConfiguration['enable_assing_user'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['enable_assing_user'] == 1){ echo "active";}?>" >
-															<input type="radio" name="enable_assing_user" id="enable_assing_user2" autocomplete="off" value="1" <?if($companyConfiguration['enable_assing_user'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['enable_assing_user'] == 1){ echo "active";}?>" >
+															<input type="radio" name="enable_assing_user" id="enable_assing_user2" autocomplete="off" value="1" <?php if($companyConfiguration['enable_assing_user'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -265,11 +265,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Manage Inventory *: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['inventory_management'] == 0){ echo "active";}?>">
-															<input type="radio" name="inventory_management" id="inventory_management1" autocomplete="off" value="0" <?if($rel['inventory_management'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel['inventory_management'] == 0){ echo "active";}?>">
+															<input type="radio" name="inventory_management" id="inventory_management1" autocomplete="off" value="0" <?php if($rel['inventory_management'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel['inventory_management'] == 1){ echo "active";}?>" >
-															<input type="radio" name="inventory_management" id="inventory_management2" autocomplete="off" value="1" <?if($rel['inventory_management'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel['inventory_management'] == 1){ echo "active";}?>" >
+															<input type="radio" name="inventory_management" id="inventory_management2" autocomplete="off" value="1" <?php if($rel['inventory_management'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -280,11 +280,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">TCS Applicable*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['tcs_applicable'] == 0){ echo "active";}?>">
-															<input type="radio" name="tcs_applicable" id="tcs_applicable1" autocomplete="off" value="0" <?if($rel['tcs_applicable'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel['tcs_applicable'] == 0){ echo "active";}?>">
+															<input type="radio" name="tcs_applicable" id="tcs_applicable1" autocomplete="off" value="0" <?php if($rel['tcs_applicable'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel['tcs_applicable'] == 1){ echo "active";}?>" >
-															<input type="radio" name="tcs_applicable" id="tcs_applicable2" autocomplete="off" value="1" <?if($rel['tcs_applicable'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel['tcs_applicable'] == 1){ echo "active";}?>" >
+															<input type="radio" name="tcs_applicable" id="tcs_applicable2" autocomplete="off" value="1" <?php if($rel['tcs_applicable'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -295,11 +295,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Daily Send Email*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($rel['send_email'] == 0){ echo "active";}?>">
-															<input type="radio" name="send_email" id="send_email1" autocomplete="off" value="0" <?if($rel['send_email'] == 0){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($rel['send_email'] == 0){ echo "active";}?>">
+															<input type="radio" name="send_email" id="send_email1" autocomplete="off" value="0" <?php if($rel['send_email'] == 0){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($rel['send_email'] == 1){ echo "active";}?>" >
-															<input type="radio" name="send_email" id="send_email2" autocomplete="off" value="1" <?if($rel['send_email'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($rel['send_email'] == 1){ echo "active";}?>" >
+															<input type="radio" name="send_email" id="send_email2" autocomplete="off" value="1" <?php if($rel['send_email'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -310,11 +310,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Send Mail Automatically*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($crm_auto_mail == 'No'){ echo "active";}?>">
-															<input type="radio" name="crm_auto_mail" id="crm_auto_mail1" autocomplete="off" value="No" <?if($crm_auto_mail == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($crm_auto_mail == 'No'){ echo "active";}?>">
+															<input type="radio" name="crm_auto_mail" id="crm_auto_mail1" autocomplete="off" value="No" <?php if($crm_auto_mail == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($crm_auto_mail == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="crm_auto_mail" id="crm_auto_mail2" autocomplete="off" value="Yes" <?if($crm_auto_mail == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($crm_auto_mail == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="crm_auto_mail" id="crm_auto_mail2" autocomplete="off" value="Yes" <?php if($crm_auto_mail == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -341,11 +341,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Are you working with project wise manufacturing?*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($project_wise_manufacturing == 'No'){ echo "active";}?>">
-															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing1" autocomplete="off" value="No" <?if($project_wise_manufacturing == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($project_wise_manufacturing == 'No'){ echo "active";}?>">
+															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing1" autocomplete="off" value="No" <?php if($project_wise_manufacturing == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($project_wise_manufacturing == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing2" autocomplete="off" value="Yes" <?if($project_wise_manufacturing == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($project_wise_manufacturing == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="project_wise_manufacturing" id="project_wise_manufacturing2" autocomplete="off" value="Yes" <?php if($project_wise_manufacturing == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -356,11 +356,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">GRN time upload receipt field Mandetory?*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($upload_receipt == 'No'){ echo "active";}?>">
-															<input type="radio" name="upload_receipt" id="upload_receipt1" autocomplete="off" value="No" <?if($upload_receipt == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($upload_receipt == 'No'){ echo "active";}?>">
+															<input type="radio" name="upload_receipt" id="upload_receipt1" autocomplete="off" value="No" <?php if($upload_receipt == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($upload_receipt == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="upload_receipt" id="upload_receipt2" autocomplete="off" value="Yes" <?if($upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($upload_receipt == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="upload_receipt" id="upload_receipt2" autocomplete="off" value="Yes" <?php if($upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -371,11 +371,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">QC time upload receipt field Mandetory?*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($qc_upload_receipt == 'No'){ echo "active";}?>">
-															<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt1" autocomplete="off" value="No" <?if($qc_upload_receipt == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($qc_upload_receipt == 'No'){ echo "active";}?>">
+															<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt1" autocomplete="off" value="No" <?php if($qc_upload_receipt == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($qc_upload_receipt == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt2" autocomplete="off" value="Yes" <?if($qc_upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($qc_upload_receipt == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="qc_upload_receipt" id="qc_upload_receipt2" autocomplete="off" value="Yes" <?php if($qc_upload_receipt == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -386,11 +386,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Are you want to display the project wise item rate?*: </label>
 												<div class="col-md-6">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($project_wise_item_rate == 'No'){ echo "active";}?>">
-															<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate1" autocomplete="off" value="No" <?if($project_wise_item_rate == 'No'){ echo "checked";}?>  > No
+														<label class="btn btn-secondary <?php if($project_wise_item_rate == 'No'){ echo "active";}?>">
+															<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate1" autocomplete="off" value="No" <?php if($project_wise_item_rate == 'No'){ echo "checked";}?>  > No
 														</label>
-														<label class="btn btn-secondary <?if($project_wise_item_rate == 'Yes'){ echo "active";}?>" >
-															<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate2" autocomplete="off" value="Yes" <?if($project_wise_item_rate == 'Yes'){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($project_wise_item_rate == 'Yes'){ echo "active";}?>" >
+															<input type="radio" name="project_wise_item_rate" id="project_wise_item_rate2" autocomplete="off" value="Yes" <?php if($project_wise_item_rate == 'Yes'){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>
@@ -402,11 +402,11 @@ $purchase_party_show=explode(",",$companyConfiguration['purchase_party_show']);
 												<label class="col-md-3 control-label">Store Approval?* : </label>
 												<div class="col-md-6 col-xs-11">
 													<div class="btn-group btn-group-toggle" data-toggle="buttons">
-														<label class="btn btn-secondary <?if($companyConfiguration['store_approval'] == 0){ echo "active";}?>">
-															<input type="radio" name="store_approval" id="store_approval1" autocomplete="off" value="0" <?if($companyConfiguration['store_approval'] == 0){ echo "checked";}?>  > NO
+														<label class="btn btn-secondary <?php if($companyConfiguration['store_approval'] == 0){ echo "active";}?>">
+															<input type="radio" name="store_approval" id="store_approval1" autocomplete="off" value="0" <?php if($companyConfiguration['store_approval'] == 0){ echo "checked";}?>  > NO
 														</label>
-														<label class="btn btn-secondary <?if($companyConfiguration['store_approval'] == 1){ echo "active";}?>" >
-															<input type="radio" name="store_approval" id="store_approval2" autocomplete="off" value="1" <?if($companyConfiguration['store_approval'] == 1){ echo"checked"; }?>> Yes
+														<label class="btn btn-secondary <?php if($companyConfiguration['store_approval'] == 1){ echo "active";}?>" >
+															<input type="radio" name="store_approval" id="store_approval2" autocomplete="off" value="1" <?php if($companyConfiguration['store_approval'] == 1){ echo"checked"; }?>> Yes
 														</label>
 													</div>
 												</div>

@@ -133,7 +133,7 @@
 										<label class="col-md-2 control-label">Payment Mode *</label>
 										<div class="col-md-3 col-xs-11">
 											<select class="form-control" name="paymentmodeid" id="paymentmodeid" onChange="" required title="Select Payment Mode">
-												<?echo getpaymentmode($dbcon,$rel['payment_mode']);?>	
+												<?php echo getpaymentmode($dbcon,$rel['payment_mode']);?>	
 											</select>					
 										</div>
 									</div>	

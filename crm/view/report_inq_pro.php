@@ -100,7 +100,7 @@ $crm_user_type = $companyConfiguration['crm_user_type'];
 										<div class="col-md-7">
 											<input id="product_id" name="product_id" style="width:100%;" placeholder="Select Product" onchange="generate_chart_report();"/>
 											<!-- <select class="select2" id="product_id" name="product_id[]" onchange="generate_chart_report()" placeholder="Choose Products" multiple="multiple">
-												<?//=getproduct($dbcon,"");?>
+												<?php //=getproduct($dbcon,"");?>
 											</select> -->
 										</div>
 									</div>
@@ -124,7 +124,7 @@ $crm_user_type = $companyConfiguration['crm_user_type'];
 										<div class="col-md-7">
 											<select class="select2" name="c_add_state" id="c_add_state" onChange="load_city(this.value,'c_add_city','');generate_chart_report()">
 												<option value="">Select State</option>	
-												<?//=getstate($dbcon,$rel['stateid'])?>				
+												<?php //=getstate($dbcon,$rel['stateid'])?>				
 											</select>
 										</div>
 									</div>
@@ -257,7 +257,7 @@ $crm_user_type = $companyConfiguration['crm_user_type'];
 		}
 	</script>
 
-	<?
+	<?php 
 		echo "<script>load_state(".$countryid.",'c_add_state',".$stateid.")</script>";
 	?>
 </body>

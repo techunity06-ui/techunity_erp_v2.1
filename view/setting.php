@@ -155,7 +155,7 @@ if($companySettings) {
 
 												</div>
 												<div class="col-md-3 col-xs-11">
-													<?
+													<?php 
 													if($mode=="Edit")
 													{
 														echo '<img src="'.ROOT.LOGO.$rel['logo'].'" style="width:120px"/>';

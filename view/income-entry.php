@@ -272,7 +272,7 @@ function paymentmode(id)
 		$('.cheque_data').hide();				
 }
 </script>
-<?
+<?php 
 echo "<script>load_state(229,'stateid',0)</script>";
 echo "<script>show_data() </script>";
 ?>

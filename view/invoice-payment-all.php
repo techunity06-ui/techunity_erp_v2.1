@@ -73,7 +73,7 @@
 									<label class="control-label col-md-4" >Choose Date</label>
                                   <div class="col-md-6">
                                      <div class="input-group date form_datetime-component">
-										 <?
+										 <?php 
 									  $start=date('01-04-2016');
 									  ?>
                                         <input type="hidden" id="from_date"  value="<?=$start?>">
@@ -89,7 +89,7 @@
 									<label class="col-md-4 control-label" >Choose Company </label>
 									<div class="col-md-6 col-xs-11" style="text-align:left;">
 									<select  name="companyid" class="select2" id="companyid" onChange="reload_data();"  >
-										<?
+										<?php 
 											getcust($dbcon,$companyid);
 										?>							
 									</select>

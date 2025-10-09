@@ -80,7 +80,7 @@ body {
 						<label class="col-md-2 control-label"> Print</label>
 				<div class="col-md-4 col-xs-11">
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
 						<option value="1">ORIGINAL</option>
 						<option value="2">DUPLICATE</option>
@@ -113,8 +113,8 @@ body {
 			</th>
 			<th style="text-align:left;border: none;"> 
 				<?=$set_head['address']?> 
-				<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?}?>
-				<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?}?>
+				<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+				<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
 			</th>
 		</tr>
 	</thead>
@@ -127,10 +127,10 @@ body {
 			<h2 align="center" style="font-weight:600;"><u><?=$set_head['company_name']?></u></h2>
 			<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX;  !important"><?=$set_head['logo_content']?></h4>
 			<h4 align="center" style="padding:top:15px;margin-top: 10PX;margin-bottom: 0PX; font-weight:lighter; !important"><?=$set_head['address']?></h4>
-			<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-			<?if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?}?></h4>
-			<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-			<?if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?}?></h4>
+			<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+			<?php if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?php }?></h4>
+			<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+			<?php if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?php }?></h4>
 			
 		</td>
 	</tr>
@@ -201,13 +201,13 @@ body {
 						<?=$i?>
 				</td>
 				<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-					<?if($row['product_alias_name']){?>
+					<?php if($row['product_alias_name']){?>
 						<strong><?=stripcslashes($row['product_alias_name'])?></strong>
 						<br/><?=nl2br(stripcslashes($row['description']));?>
 					<?php}else{ ?>
 						<strong><?=stripcslashes($row['product_name'])?></strong>
 						<br/><?=nl2br(stripcslashes($row['description']));?>
-					<?}?>
+					<?php }?>
 				
 				</td>
 				<td style="text-align:center;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
@@ -269,7 +269,7 @@ body {
 				<!--<table class="footer-table" width="100%">
 					<tr style="border-bottom:none;">
 						<td colspan="2" style="border-top:1px solid;">
-						<?if(!empty($set_head['vatno'])){ ?>
+						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 						<?php} ?>
 						</td>

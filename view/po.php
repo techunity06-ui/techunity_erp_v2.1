@@ -197,7 +197,7 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <?
+                                                    <?php 
                                                     $ck='';
                                                     if(empty($rel['consignee_id'])){
                                                         $ck='checked="checked"';
@@ -454,7 +454,7 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                                         <tr id="field1">
                                                             <!-- <td style="vertical-align:top;">
                                                             <select class="select2" name="product_type" id="product_type" onChange="load_product_po(this.value);" title="Select Product Type">
-                                                            <?//=getproducttype($dbcon,'');?>
+                                                            <?php //=getproducttype($dbcon,'');?>
                                                             </select>
                                                         </td>-->
                                                        <td style="vertical-align:top;max-width:310px">
@@ -626,7 +626,7 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                 <input type='hidden' name='prev_purchaseorder_id' id='prev_purchaseorder_id' value='<?=$purchaseorder_id;?>' />   
                                 <input type='hidden' name='revise_status' id='revise_status' value='<?=$revise_status;?>' />   
                                 <input type='hidden' name='back' id='back' value='<?=$back;?>' /> 
-                                <?
+                                <?php 
                                 if($direct_add=='1'){
                                     ?>    
                                     <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?=$rel['purchaseorder_id']?>" />
@@ -735,7 +735,7 @@ copy_prev_purchase_trn(<?=$purchaseorder_id?>);
 get_revise_po_no(<?=$purchaseorder_id?>,<?=$start_purchaseorder_id?>);
 <?php} ?>
 </script>
-<?
+<?php 
 //echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
 //echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
 if($mode=="Add" && $viewmode=="Add"){

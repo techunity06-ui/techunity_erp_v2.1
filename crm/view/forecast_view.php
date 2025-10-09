@@ -57,7 +57,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 	<span class="tools pull-right">
 		<a href="javascript:;" class="fa fa-chevron-down"></a>
 	</span>
-	<?
+	<?php 
 		$whr='';
 		//Prepare WHERE Condition
 		if($rel['f_target_period']=='1'){
@@ -118,7 +118,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 						</tr>
 					</thead>
 					<tbody>
-			<?
+			<?php 
 				$k=1;
 				$get_ter_qry="select ter.t_id,ter.t_name,trn.ter_target_amt,trn.ter_target_qty,
 				(SELECT sum(g_total) from tbl_inquiry WHERE inquiry_status=0 and stage_prob='100' and t_id=ter.t_id ".$whr.") as ach_amt,
@@ -156,7 +156,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 					<?=$get_ter_rel['pipe_qty']?>
 				</td>
 			</tr>
-			<?
+			<?php 
 				$k++;
 				}
 			?>
@@ -200,7 +200,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 						</tr>
 					</thead>
 					<tbody>
-			<?
+			<?php 
 				$k=1;
 				$get_usr_qry="select usr.user_id,usr.user_mail,type.usertype_name,trn.usr_target_amt,trn.usr_target_qty,
 				(SELECT sum(g_total) from tbl_inquiry WHERE inquiry_status=0 and stage_prob='100' and user_id=usr.user_id ".$whr.") as ach_amt,
@@ -242,7 +242,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 					<?=$get_usr_rel['pipe_qty']?>
 				</td>
 			</tr>
-			<?
+			<?php 
 				$k++;
 				}
 			?>
@@ -286,7 +286,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 						</tr>
 					</thead>
 					<tbody>
-			<?
+			<?php 
 				$k=1;
 				$get_grp_qry="select grp.pg_id,grp.pg_name,grp_trn.grp_target_amt,grp_trn.grp_target_qty,
 				(SELECT sum(product_amount) from tbl_inquiry_trn 
@@ -326,7 +326,7 @@ $comty=mysqli_fetch_assoc($dbcon->query($com));
 					<?=$get_grp_rel['pipe_qty']?>
 				</td>
 			</tr>
-			<?
+			<?php 
 				$k++;
 				}
 			?>

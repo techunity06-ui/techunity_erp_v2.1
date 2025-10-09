@@ -122,7 +122,7 @@ body {
 							<label class="col-md-2 control-label"> Print</label>
 				<div class="col-md-4 col-xs-11">
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
 						<option value="1">ORIGINAL</option>
 						<option value="2">DUPLICATE</option>
@@ -158,8 +158,8 @@ body {
 			</th>
 			<th style="text-align:left;border: none;"> 
 				<?=$set_head['address']?> 
-				<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?}?>
-				<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?}?>
+				<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+				<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
 			</th>
 		</tr>
 	</thead>
@@ -174,8 +174,8 @@ body {
 				<h2 align="center"><?=$set_head['company_name']?></h2>
 				<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 				<h5 align="center"><?=$set_head['address']?></h5>
-				<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-				<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+				<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+				<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 				
 			</td>
 		</tr>
@@ -326,7 +326,7 @@ body {
 					<td style="border-right:1px solid;"></td>
 					
 				</tr>
-				<?}
+				<?php }
 				*/?>
 		<tr style="height:40px">
 				<td style="text-align:center;vertical-align:top;border-right:1px solid;border-left:1px solid;">
@@ -380,7 +380,7 @@ body {
 				<table class="footer-table" width="100%">
 					<tr style="border-bottom:none;">
 						<td colspan="2" style="">
-						<?if(!empty($set_head['vatno'])){ ?>
+						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 						<?php} ?>
 						</td>
@@ -411,7 +411,7 @@ body {
 			<!--<table width="100%" border="0" style="margin-top: 5px;" id="table_foot">
 					<tr>
 						<td style="border:none;padding:0px 0px !important;width:100%;"> 
-							<img src="<?//=ROOT.LOGO.$set_head['f_logo']?>"  style="width:100%"/>
+							<img src="<?php //=ROOT.LOGO.$set_head['f_logo']?>"  style="width:100%"/>
 						</td>
 					</tr>
 				</table>-->

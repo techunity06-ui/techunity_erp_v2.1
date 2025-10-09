@@ -111,7 +111,7 @@ $jobwork_data=mysqli_fetch_assoc($dbcon->query($query));
 									<label class="col-md-2 control-label"> Print</label>
 									<div class="col-md-4 col-xs-11">
 										<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-											<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+											<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 												<option value="">Select Print</option>
 												<option value="1">ORIGINAL</option>
 												<option value="2">DUPLICATE</option>
@@ -144,8 +144,8 @@ $jobwork_data=mysqli_fetch_assoc($dbcon->query($query));
 												<h2 align="center"><?=$set_head['company_name']?></h2>
 												<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 												<h5 align="center"><?=$set_head['address']?></h5>
-												<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+												<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 
 											</td>
 										</tr>

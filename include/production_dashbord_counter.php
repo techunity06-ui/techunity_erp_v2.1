@@ -42,7 +42,7 @@ $jc_rp_id =$result2['rp_id'];
 							<label class="control-label col-lg-4 col-md-4 col-xs-3">Choose Date</label>
 							<div class=" col-lg-8 col-md-8 col-xs-9">
 								<div class="input-group date form_datetime-component">
-									<?
+									<?php 
 										//$start=(date('m')<'04') ? date('01-04-Y',strtotime('-1 year')) : date('01-04-Y');
 									?>
 									<input type="hidden" id="from_date"  value="<?=$start?>">
@@ -76,7 +76,7 @@ $jc_rp_id =$result2['rp_id'];
 							<label class="control-label col-lg-4 col-md-4 col-xs-3">Choose Date</label>
 							<div class=" col-lg-8 col-md-8 col-xs-9">
 								<div class="input-group date form_datetime-component">
-									<?
+									<?php 
 										//$start=(date('m')<'04') ? date('01-04-Y',strtotime('-1 year')) : date('01-04-Y');
 									?>
 									<input type="hidden" id="wo_from_date"  value="<?=$start?>">
@@ -131,7 +131,7 @@ $jc_rp_id =$result2['rp_id'];
 					<div class="col-md-8 col-xs-11">
 						<input type="hidden" name="wo_sp_id" id="wo_sp_id" value="<?=$wo_sp_id?>">
 						<select class="select2" name="work_order_id1" id="work_order_id1" onchange="load_work_order_graph();" >
-							<?//=getfinishedproducts($dbcon,'');?>
+							<?php //=getfinishedproducts($dbcon,'');?>
 						</select>
 					</div>
 				</div>
@@ -177,7 +177,7 @@ $jc_rp_id =$result2['rp_id'];
 					<div class="col-md-8 col-xs-11">
 						<input type="hidden" name="jc_rp_id" id="jc_rp_id" value="<?=$jc_rp_id?>">
 						<select class="select2" name="job_work_id" id="job_work_id" onchange="load_job_work_graph();" >
-							<?//=getfinishedproducts($dbcon,'');?>
+							<?php //=getfinishedproducts($dbcon,'');?>
 						</select>
 					</div>
 				</div>

@@ -85,7 +85,7 @@
 											<input id="po_type_status2" name="po_type_status" onClick="reload_data();" type="radio" class="" title="Done" value="1" />
 										</div>
 									</div>
-									<?if($companyConfiguration['branch_wise_manage']==1){?>
+									<?php if($companyConfiguration['branch_wise_manage']==1){?>
 										<div class="col-md-6">
 											<?php echo getBranchBox($dbcon, $branch_id, '', false, false, 'reload_data();','4','6'); ?>
 										</div>
@@ -102,7 +102,7 @@
 											<thead>
 												<tr>
 													<th>#</th>
-													<?if($companyConfiguration['po_work_order_wise'] == 1){ ?>
+													<?php if($companyConfiguration['po_work_order_wise'] == 1){ ?>
 														<th>Work Order Details</th>
 													<?php} ?>
 													<th>PO Request Date</th>

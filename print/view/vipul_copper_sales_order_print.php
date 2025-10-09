@@ -119,7 +119,7 @@ if($rel['approve_status']==0){
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1">ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -273,19 +273,19 @@ if($rel['approve_status']==0){
 							<?=$i?>
 						</td>
 						<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-							<?if($row['product_alias_name']){?>
+							<?php if($row['product_alias_name']){?>
 								<strong><?=stripcslashes($row['product_alias_name'])?></strong>
 								<!-- <?php if(!empty($row['die_product_id'])){ ?>
-									<br><strong><u><?//=get_product_name($dbcon,$row['die_product_id'])?></u></strong>
+									<br><strong><u><?php //=get_product_name($dbcon,$row['die_product_id'])?></u></strong>
 								<?php } ?> -->
 								<br/><?=nl2br(stripcslashes($row['description']));?>
 							<?php}else{ ?>
 								<strong><?=stripcslashes($row['product_name'])?></strong>
 								<!-- <?php if(!empty($row['die_product_id'])){ ?>
-									<br><strong><u><?//=get_product_name($dbcon,$row['die_product_id'])?></u></strong>
+									<br><strong><u><?php //=get_product_name($dbcon,$row['die_product_id'])?></u></strong>
 								<?php } ?> -->
 								<br/><?=nl2br(stripcslashes($row['description']));?>
-								<?}?>
+								<?php }?>
 
 							</td>
 							<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
@@ -356,7 +356,7 @@ if($rel['approve_status']==0){
 				<!--<table class="footer-table" width="100%">
 					<tr style="border-bottom:none;">
 						<td colspan="2" style="border-top:1px solid;">
-						<?if(!empty($set_head['vatno'])){ ?>
+						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 						<?php} ?>
 						</td>

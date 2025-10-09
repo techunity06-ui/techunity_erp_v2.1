@@ -59,7 +59,7 @@
 								<div class="col-md-12">
 									<select class="select2" name="qt_add_state" id="qt_add_state" onChange="load_city(this.value,'qt_add_city','')">
 										<option value="">Select State</option>	
-										<?//=getstate($dbcon,$rel['stateid'])?>				
+										<?php //=getstate($dbcon,$rel['stateid'])?>				
 									</select>
 								</div>
 							</div>

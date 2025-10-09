@@ -139,12 +139,12 @@ td, th {
 							<label class="col-md-2 control-label"> Print</label>
 				<div class="col-md-4 col-xs-11">
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
-						<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
-						<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-						<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-						<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+						<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
+						<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+						<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+						<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 					</select>
 				 </form>
 				</div>
@@ -320,9 +320,9 @@ td, th {
 						</tr>
 						<tr>
 							<td colspan="4" style="border-right:1px solid black;border-left:1px solid black;"><strong>GSTIN: <?=$rel['gst_no']?> 
-							<?if($rel['pan_no']){?>, PAN No : <?=$rel['pan_no']?><?}?> </strong></td>
+							<?php if($rel['pan_no']){?>, PAN No : <?=$rel['pan_no']?><?php }?> </strong></td>
 							<td colspan="2" style="border-right:1px solid black;"><strong>GSTIN: <?=$cons_gst_no?> 
-							<?if($cons_pan_no){?>, PAN No : <?=$cons_pan_no?><?}?> 
+							<?php if($cons_pan_no){?>, PAN No : <?=$cons_pan_no?><?php }?> 
 							</strong></td>
 						</tr>
 						<tr>
@@ -409,7 +409,7 @@ td, th {
 							<?=$i?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid #000;" >
-					<?
+					<?php 
 						echo stripcslashes($row['product_name']).' <br/> '.stripcslashes($row['description']);
 						
 					?>
@@ -581,7 +581,7 @@ td, th {
 						<td colspan="<?=9+$colspan?>" style="border:1px solid #000;border-bottom:none;"></td>
 					</tr>
 					<tr ><td style="border-right:1px solid #000;border-top:1px solid #000;border-left:1px solid #000; font-size:10px;padding:0px !important;" 	colspan="<?=9+$colspan?>">
-					<?
+					<?php 
 								
 								if($rel['gst_state_code']==24)
 								{

@@ -101,7 +101,7 @@
 	$(".select2").select2({
 		width: '100%'
 	});
-	<?//Hide approve btn if not allowed
+	<?php //Hide approve btn if not allowed
 		$mod_btn_per=check_permission($_SESSION['page'],$_SESSION['user_id'],'aprv',$dbcon);
 		if(!$mod_btn_per){
 	?>	

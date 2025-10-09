@@ -47,7 +47,7 @@
                 <hr class="" size="30" />
 		<div class="row">
                     <div class="col-md-12">
-                        <?
+                        <?php 
 				$comp_per=check_permission("#team_pend_tasks_sec",$user_id,'view',$dbcon);
 				if($comp_per)
 				{
@@ -94,13 +94,13 @@
 								<th>
 									<a target="_blank" href="<?php echo ROOT.'order_confirm_list/pen_po';?>">Pending P.O. Upload</a>
 								</th>
-								<th><?//=count_pend_po_upload($dbcon,$user_id);?></th>
+								<th><?php //=count_pend_po_upload($dbcon,$user_id);?></th>
 							</tr>
 							<tr> 
 								<th>
 									<a target="_blank" href="<?php echo ROOT.'dispatch_list';?>">Pending Dispatch</a>
 								</th>
-								<th><?//=count_pend_disp($dbcon);?></th>
+								<th><?php //=count_pend_disp($dbcon);?></th>
 							</tr>-->
 							<tr> 
 								<th>
@@ -116,7 +116,7 @@
 			</div>
 			<!-- Pending follow-ups Section End -->	
 			<?php }  ?>
-			<?
+			<?php 
 				$comp_per=check_permission("#pend_tasks_sec",$_SESSION['user_id'],'view',$dbcon);
 				if($comp_per)
 				{
@@ -163,13 +163,13 @@
 								<th>
 									<a target="_blank" href="<?php echo ROOT.'order_confirm_list/pen_po';?>">Pending P.O. Upload</a>
 								</th>
-								<th><?//=count_pend_po_upload($dbcon,$_SESSION['user_id']);?></th>
+								<th><?php //=count_pend_po_upload($dbcon,$_SESSION['user_id']);?></th>
 							</tr>
 							<tr> 
 								<th>
 									<a target="_blank" href="<?php echo ROOT.'dispatch_list';?>">Pending Dispatch</a>
 								</th>
-								<th><?//=count_pend_disp($dbcon);?></th>
+								<th><?php //=count_pend_disp($dbcon);?></th>
 							</tr>-->
 							<tr> 
 								<th>
@@ -188,7 +188,7 @@
                     </div>
 			<div class="col-md-12">
 				<!-- Complaint Section Start -->
-				<?
+				<?php 
 			        $comp_per=check_permission("#COMPLAINT",$_SESSION['user_id'],'view',$dbcon);
 			        if($comp_per){
 			    ?>
@@ -257,7 +257,7 @@
 		
 				<div class="col-md-4">
 				    <!-- Employee Section Start -->
-				<?
+				<?php 
 			        $emp_per=check_permission("#employee",$_SESSION['user_id'],'view',$dbcon);
 			        if($emp_per){
 			    ?>    
@@ -305,7 +305,7 @@
 				<!-- Employee Section End -->
 				
 				<!-- Spare Parts Section Start -->
-				<?
+				<?php 
 			        $spare_per=check_permission("#SPARE",$_SESSION['user_id'],'view',$dbcon);
 			        if($spare_per){
 			    ?>
@@ -356,7 +356,7 @@
 				
 				<div class="col-md-4">
 				    <!-- Out of Stock Section Start -->
-				<?
+				<?php 
 			        $out_per=check_permission("#OUT",$_SESSION['user_id'],'view',$dbcon);
 			        if($out_per){
 			    ?>
@@ -402,7 +402,7 @@
 					<!-- Out of Stock Section End -->
 					
 					<!-- Pending Jobcard Section Start -->
-				<?
+				<?php 
 			        $pend_job_per=check_permission("#PENDING",$_SESSION['user_id'],'view',$dbcon);
 			        if($pend_job_per){
 			    ?>	
@@ -443,7 +443,7 @@
 			
 			<div class="col-md-12">
 				
-				<?
+				<?php 
 			       $comp_per=check_permission("#po_pending",$_SESSION['user_id'],'view',$dbcon);
 			        if($comp_per){
 			    ?>
@@ -492,7 +492,7 @@
 				</div>
 				<?php }  ?>
 				
-				<?
+				<?php 
 			        $comp_per=check_permission("#qc_pending",$_SESSION['user_id'],'view',$dbcon);
 			        if($comp_per){
 			    ?>
@@ -528,7 +528,7 @@
 					</div>
 				</div>
 				<?php }  ?>
-			<?
+			<?php 
 				$comp_per=check_permission("#manager_userwise_sec",$_SESSION['user_id'],'view',$dbcon);
 				if($comp_per)
 				{
@@ -578,7 +578,7 @@
 			<div class="col-md-12">
 			
 			    <!-- Inhouse Pending Section Start -->
-			    <?
+			    <?php 
 			        $inhouse_pend_per=check_permission("#INHOUSE",$_SESSION['user_id'],'view',$dbcon);
 			        if($inhouse_pend_per){
 			   ?>
@@ -642,7 +642,7 @@
 				<?php }   ?>
 				<!-- Inhouse Pending Section End -->
 				<!-- Outward Pending Section Start -->
-				<?
+				<?php 
 			        $outhouse_pend_per=check_permission("#OUTWARD",$_SESSION['user_id'],'view',$dbcon);
 			        if($outhouse_pend_per){
 			   ?>

@@ -85,7 +85,7 @@
 								<label>Select State *</label>
 								<select class="select2" name="stateid" id="stateid" onChange="load_city(this.value,'cityid','')">
 									<option value="">Select State</option>	
-									<?//=getstate($dbcon,$rel['stateid'])?>				
+									<?php //=getstate($dbcon,$rel['stateid'])?>				
 								</select>
 							</div>
 							<div class="form-group">
@@ -181,7 +181,7 @@
 					<label>Select State *</label>
 					<select class="select2" name="edit_stateid" id="edit_stateid" onChange="load_city(this.value,'edit_cityid','')">
 						<option value="">Select State</option>	
-						<?//=getstate($dbcon,$rel['stateid'])?>				
+						<?php //=getstate($dbcon,$rel['stateid'])?>				
 					</select>
 				</div>
 				<div class="form-group">

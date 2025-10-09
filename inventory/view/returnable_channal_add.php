@@ -207,8 +207,8 @@
 						                                <label class="col-md-4 control-label">Challan Type * </label>
 						                                <div class="col-md-6">
 															<select class="select2" title="Select Type" id="chln_type" name="chln_type" onchange="sales_order();" >
-																<option value="internal" <?if($challan_type == 'internal'){ echo "selected";}?>>Internal</option>
-																<option value="external" <?if($challan_type == 'external'){ echo "selected";}?>>External</option>
+																<option value="internal" <?php if($challan_type == 'internal'){ echo "selected";}?>>Internal</option>
+																<option value="external" <?php if($challan_type == 'external'){ echo "selected";}?>>External</option>
 															</select>
 														</div>
 						                            </div>	
@@ -280,8 +280,8 @@
 													<label class="col-md-4 control-label">Challan Return Type</label>
 													<div class="col-md-6">
 														<select class="select2" title="Return Type" id="return_type" name="return_type" onchange="return_challan_type_permission()">
-															<option value="challan_wise" <?if($challan_return_type == 'CHALLAN_WISE'){ echo "selected";}?>>Challan Wise</option>
-															<option value="product_wise" <?if($challan_return_type == 'PRODUCT_WISE'){ echo "selected";}?>>Product Wise</option>
+															<option value="challan_wise" <?php if($challan_return_type == 'CHALLAN_WISE'){ echo "selected";}?>>Challan Wise</option>
+															<option value="product_wise" <?php if($challan_return_type == 'PRODUCT_WISE'){ echo "selected";}?>>Product Wise</option>
 														</select>
 													</div>
 												</div>
@@ -484,9 +484,9 @@
            startDate: today,
            endDate: endDate
        }); 
-         <?if ($mode =="Edit"){?>
+         <?php if ($mode =="Edit"){?>
          	get_salesorder_no();
-     	<?}?>
+     	<?php }?>
 		</script> 
 	</body>
 </html>

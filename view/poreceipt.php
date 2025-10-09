@@ -97,7 +97,7 @@
 									<div class="col-md-7"></div>
 									<div class="col-md-1">
 							
-								<?
+								<?php 
 								}
 								?>
 								<input type="checkbox" class="form-control"  name="logo" id="logo" value="1">
@@ -108,7 +108,7 @@
 			</center>
 
 			<div class="col-lg-12 table-responsive" id="receipt_print">	<div class="form-group col-md-12" style="margin-left:0px;" id="print1">
-					<?
+					<?php 
 						$set="select * from tbl_setting";
 						$set_head=mysqli_fetch_assoc($dbcon->query($set));		
 					?>
@@ -147,7 +147,7 @@
 							<tr>
 									<td colspan="3" style="" ><p style=";margin-bottom:0px">Phn No: <strong><?=$rel['cust_mobile']?></strong></p></td>
 									<td colspan="2" style="border-right-color:#FFFFFF;">Quotation No :
-									<?echo '<strong>'.$rel['pq_no'].'</strong>';?></strong>
+									<?php echo '<strong>'.$rel['pq_no'].'</strong>';?></strong>
 										</td>
 							</tr>
 							<tr>
@@ -169,7 +169,7 @@
 									<tr>
 										<td style="text-align:center;border-bottom-color:#FFFFFF;vertical-align:top"><?=$i?></td>
 										<td style="border-bottom-color:#FFFFFF;vertical-align:top">
-											<?
+											<?php 
 										 $qry1="select * from  tbl_product where product_id=".$row['product_id'];
 										$row1=mysqli_fetch_assoc($dbcon->query($qry1));		
 											echo '<strong>'.stripcslashes($row1['product_name'])."<br>";
@@ -207,7 +207,7 @@
 									<td style="text-align:right;">
 									<strong><?=number_format($rel['packing'],2,".","")?></strong></td>
 							</tr>
-							<?
+							<?php 
 							if(!empty($rel['tax1_name']))
 							{
 								if(strpos($rel['tax1_name'], "2%")==true)
@@ -224,7 +224,7 @@
 									<strong><?=$rel['taxvalue1']?></strong></td>
 							</tr>
 							<?php} ?>
-							<?
+							<?php 
 							if(!empty($rel['tax2_name']))
 							{
 								if(strpos($rel['tax2_name'], "2%")==true)
@@ -241,7 +241,7 @@
 									<strong><?=$rel['taxvalue2']?></strong></td>
 							</tr>
 							<?php} ?>
-							<?
+							<?php 
 							if(!empty($rel['tax3_name']))
 							{
 								if(strpos($rel['tax3_name'], "2%")==true)

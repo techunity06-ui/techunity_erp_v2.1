@@ -143,7 +143,7 @@ $end_date = date("d-m-Y");
 						</div>
 					</div>
 				<?php }  ?>
-				<?
+				<?php 
 				//$comp_per=check_permission("#team_pend_tasks_sec",$_SESSION['user_id'],'view',$dbcon);
 				$comp_per = 1;
 				if ($comp_per) {

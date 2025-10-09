@@ -89,7 +89,7 @@
 				<form class="form-horizontal" role="form" id="debitnote_add" action="javascript:;" method="post" name="debitnote_add">
 				<div class="row">
 					
-				<?if(!empty($grn_id)){?>
+				<?php if(!empty($grn_id)){?>
 					<div class="col-md-12 text-center" style="margin-top:10px;">
 						<center>
 							<div class="form-group">
@@ -297,10 +297,10 @@ $(".form_datetime").datetimepicker({
     pickerPosition: "bottom-left"
 
 });
-<?if($mode=='Add'){?>
+<?php if($mode=='Add'){?>
 	load_debit_srs_no();
-<?}?>
-<?if(!empty($grn_id)){ ?>
+<?php }?>
+<?php if(!empty($grn_id)){ ?>
 	load_ven_grn(<?=$vender_id?>,<?=$grn_id?>);
 	load_grn_data(<?=$grn_id?>);
 	$('#vender_id').select2('readonly',true);

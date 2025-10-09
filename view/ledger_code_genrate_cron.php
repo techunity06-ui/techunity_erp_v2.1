@@ -1,4 +1,4 @@
-<?
+<?php 
 include_once("../config/config.php");
 include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 include_once("../include/function_database_query.php");

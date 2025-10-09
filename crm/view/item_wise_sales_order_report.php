@@ -111,7 +111,7 @@ else
 												<div class="col-md-8">
 													<select class="select2" name="c_add_state" id="c_add_state" onChange="load_city(this.value,'c_add_city','');item_so_detail_report()">
 														<option value="">Select State</option>	
-														<?//=getstate($dbcon,$rel['stateid'])?>				
+														<?php //=getstate($dbcon,$rel['stateid'])?>				
 													</select>
 												</div>
 											</div>
@@ -249,7 +249,7 @@ else
 			$('#logo').css('display','none');
 		}
 	</script>
-	<?
+	<?php 
 		echo "<script>load_state(".$countryid.",'c_add_state',".$stateid.")</script>";
 	?>
 </body>

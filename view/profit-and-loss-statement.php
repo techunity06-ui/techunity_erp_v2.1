@@ -63,7 +63,7 @@
                                   <label class="control-label col-md-2" ><span class="english">Choose Date</span></label>
                                   <div class="col-md-3">
                                     <div class="input-group date form_datetime-component">
-										 <?
+										 <?php 
 										  $start=date('01-m-Y');
 										  ?>
                                          <input type="hidden" id="from_date"  value="<?=$start?>">

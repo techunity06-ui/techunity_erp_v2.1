@@ -92,12 +92,12 @@ $pro_search=explode(",", $purchase_pro_search);
 									<label class="col-md-4 control-label"> </label>
 									<div class="col-md-4 col-xs-11" style="display:none;">
 										<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-											<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+											<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 												<option value="">Select Print</option>
-												<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-												<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-												<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-												<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+												<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+												<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+												<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+												<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 											</select>
 										</form>
 									</div>
@@ -132,10 +132,10 @@ $pro_search=explode(",", $purchase_pro_search);
 												<h2 align="center" style="font-weight:600;"><u><?=$set_head['company_name']?></u></h2>
 												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX;  !important"><?=$set_head['logo_content']?></h4>
 												<h4 align="center" style="padding:top:15px;margin-top: 10PX;margin-bottom: 0PX; font-weight:lighter; !important"><?=$set_head['address']?></h4>
-												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-												<?if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?}?></h4>
-												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-												<?if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?}?></h4>
+												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+												<?php if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?php }?></h4>
+												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+												<?php if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?php }?></h4>
 												
 											</td>
 										</tr>
@@ -172,7 +172,7 @@ $pro_search=explode(",", $purchase_pro_search);
 															<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;">User</td>
 														</tr>
 
-														<?
+														<?php 
 															$query_d = "select trn.*,pmst.product_name,unit.unit_name,so.sales_order_no,l.l_name from tbl_general_stock_trn as trn 
 															left join product_mst as pmst on pmst.product_id = trn.product_id
 															left join unit_mst as unit on unit.unitid = trn.rate_unit
@@ -192,7 +192,7 @@ $pro_search=explode(",", $purchase_pro_search);
 															<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;"><?=$row_d['product_qty']?> <?=$row_d['unit_name']?></td>
 															<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;"><?=$row_d['l_name']?></td>
 														</tr>
-														<?
+														<?php 
 																$i++;
 															}
 															$cnt_d = 20 - $cnt_d;
@@ -205,7 +205,7 @@ $pro_search=explode(",", $purchase_pro_search);
 																<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;"></td>
 																<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;"></td>
 															</tr>
-														<?}?>
+														<?php }?>
 
 													</table>
 												</th>
@@ -222,7 +222,7 @@ $pro_search=explode(",", $purchase_pro_search);
 															<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;">Rates</td>
 															<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;">User</td>
 														</tr>
-														<?
+														<?php 
 															$query_i = "select trn.*,unit.unit_name,pro.product_name,so.sales_order_no,l.l_name from tbl_general_stock_trn as trn
 															left join product_mst as pro on pro.product_id = trn.product_id
 															left join unit_mst as unit on unit.unitid = trn.rate_unit
@@ -245,7 +245,7 @@ $pro_search=explode(",", $purchase_pro_search);
 																</td>
 																<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;"><?=$row_i['l_name']?></td>
 															</tr>
-														<?
+														<?php 
 																$j++;
 															}
 															$cnt_i = 20 - $cnt_i;
@@ -261,7 +261,7 @@ $pro_search=explode(",", $purchase_pro_search);
 																<td style="border:1px solid;border-bottom: none;border-right: none;text-align: center;"></td>
 
 															</tr>
-														<?
+														<?php 
 															}
 														?>
 													</table>

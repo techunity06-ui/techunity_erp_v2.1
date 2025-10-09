@@ -125,7 +125,7 @@
         </section>
         <?php include_once('../include/include_js_file.php');?>   
         <script src="<?=ROOT?>js/app/report_bill_pass.js?<?=time()?>"></script>
-        <!--<script src="<?=ROOT?>js/app/purchase.js?<?//=time()?>"></script>-->
+        <!--<script src="<?=ROOT?>js/app/purchase.js?<?php //=time()?>"></script>-->
         <script>
                 $(".select2").select2({
                         width: '100%'

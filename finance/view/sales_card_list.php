@@ -90,7 +90,7 @@ $branch_id = $_SESSION['branch_id'];
                      <span class="tools pull-right">
                         <?php if(in_array(SALES_CARD_ADD,$bulkAccessArray)){ ?>
                            <a href="<?=ROOT.FINANCE_ROOT.'sales_card_add'?>" ><button class="btn btn-success btn-flat" >Create <?=$form?></button></a>
-                           <?}?>					
+                           <?php }?>					
                         </span>
                      </header>
                      <div class="panel-body">

@@ -46,7 +46,7 @@
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Work Order </label>
 													<div class="col-md-6 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="workorder_id" id="workorder_id" onChange="get_product()" required title="Select Work Order">
 															<?=getworkorderpo($dbcon);?>	
 														</select>

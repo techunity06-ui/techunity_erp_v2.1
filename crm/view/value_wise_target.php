@@ -166,7 +166,7 @@ $crm_user_type=$companyConfiguration['crm_user_type'];
 												<p style="color:white;padding-top:5px;">Current month</p>
 												<h3 style="font-size:18px;color:white;padding-top:2px;" ></h3>
 												<p style="color:white;" id="quotamount"></p>
-												<!-- <p style="color:white;" id="quotamount">Count : <?//=get_total_current_month_target($dbcon,$_SESSION['user_id']);?></p> -->
+												<!-- <p style="color:white;" id="quotamount">Count : <?php //=get_total_current_month_target($dbcon,$_SESSION['user_id']);?></p> -->
 											</div>
 										</a>
 									</div>
@@ -176,7 +176,7 @@ $crm_user_type=$companyConfiguration['crm_user_type'];
 												<p style="color:white;padding-top:5px;">Outstanding</p>
 												<h3 style="font-size:18px;color:white;padding-top:2px;" ></h3>
 												<p style="color:white;" id="soamount"></p>
-												<!-- <p style="color:white;" id="soamount">Count : <?//=number_format(get_total_outstanding_target($dbcon,$_SESSION['user_id']),2);?></p> -->
+												<!-- <p style="color:white;" id="soamount">Count : <?php //=number_format(get_total_outstanding_target($dbcon,$_SESSION['user_id']),2);?></p> -->
 											</div>
 										</a>
 									</div>
@@ -186,7 +186,7 @@ $crm_user_type=$companyConfiguration['crm_user_type'];
 												<p style="color:white;padding-top:5px;">Achieved</p>
 												<h3 style="font-size:18px;color:white;padding-top:2px;" ></h3>
 												<p style="color:white;" id="oaamount"></p>
-												<!-- <p style="color:white;" id="oaamount">Count : <?//=get_total_achieved_target($dbcon,$_SESSION['user_id']);?></p> -->
+												<!-- <p style="color:white;" id="oaamount">Count : <?php //=get_total_achieved_target($dbcon,$_SESSION['user_id']);?></p> -->
 											</div>
 										</a>
 									</div>

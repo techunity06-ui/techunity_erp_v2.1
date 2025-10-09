@@ -1,4 +1,4 @@
-<?$company_data = get_company_data($dbcon,$_SESSION['company_id'])?>
+<?php $company_data = get_company_data($dbcon,$_SESSION['company_id'])?>
 
 <header class="header white-bg" onload="startTime()" style="min-height:70px;/*padding:0px 12px;*/"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<div class="sidebar-toggle-box">
@@ -16,7 +16,7 @@
 		<div class="nav notify-row" id='top_menu' style="margin-left:0px;">
 			<ul class="nav top-menu">
 			<li id="header_inbox_bar" style="float:left;margin-left:50px;" class="dropdown">
-		    <?
+		    <?php 
 			/*
 			$todoqry='select * from todo_mst where status=0 and date >= CURDATE() and date <= DATE_ADD(CURDATE(),INTERVAL 3 DAY) and company_id='.$_SESSION['company_id'].' order by date ASC';
 			 $result_todo=$dbcon->query($todoqry);
@@ -32,7 +32,7 @@
                 <li>
                  <p class="red">You have <?=$notify?> new notification</p>
 				</li>
-			<?	
+			<?php 	
 			 if(mysqli_num_rows($result_todo)>0)
 			 {
 				  $i=1;
@@ -50,7 +50,7 @@
 							</span>
                     </a>
                 </li> 
-			<?
+			<?php 
 					}
 			 }*/
 			?>
@@ -67,7 +67,7 @@
 <div class="nav notify-row" id='top_menu' style="margin-left:0px;">
 	<ul class="nav top-menu">
 		<li class="dropdown" id="header_inbox_bar">
-			<?
+			<?php 
 			$fieldd = ($_SESSION['user_type'] == '2') ? 'is_read_by_admin' : 'is_read';
 			// $wheres = ($_SESSION['user_type'] != '2') ? " and task.assign_user_ids = ".$_SESSION['user_id'] : "";
 			$fis1=" and FIND_IN_SET (".$_SESSION['user_id'].",task.show_user_ids)";
@@ -118,7 +118,7 @@
 			</ul>
 		</li>
 		<li id="header_inbox_bar" style="float:left;margin-left:50px;" class="dropdown">
-			<?
+			<?php 
 			$field = ($_SESSION['user_type'] == '2') ? 'is_read_by_admin' : 'is_read';
 			$where = ($_SESSION['user_type'] != '2') ? " and FIND_IN_SET (".$_SESSION['user_id'].",task.assign_user_ids)" : "";
 			// $where.=' ORDER BY followup.flp_id DESC';
@@ -137,7 +137,7 @@
 				<li>
 					<p class="red">You have <span class="gt_count"><?=$notify?></span> new notification</p>
 				</li>
-				<?
+				<?php 
 				if(mysqli_num_rows($result_todo)>0)
 				{
 					$i=1;
@@ -155,7 +155,7 @@
 								</span>
 							</a>
 						</li>
-						<?
+						<?php 
 					}
 				}
 				?>
@@ -178,7 +178,7 @@
 				<li>
 					<p class="yellow">You have <span class="gt_count"><?=$count_notes?></span> new notes</p>
 				</li>
-				<?
+				<?php 
 				if(mysqli_num_rows($notesqry)>0)
 				{
 					$i=1;
@@ -196,7 +196,7 @@
 								</span>
 							</a>
 						</li>
-						<?
+						<?php 
 					}
 				}
 				?>

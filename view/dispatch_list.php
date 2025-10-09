@@ -81,7 +81,7 @@
 								<label class="control-label col-md-4">Choose Customer</label>
 								<div class="col-md-7">
 									<select class="select2" name="cust_id" id="cust_id" onChange="load_dispatch_datatable();">
-										<?//=getcust($dbcon,'');?>	
+										<?php //=getcust($dbcon,'');?>	
 									</select>
 								</div>
 							</div>

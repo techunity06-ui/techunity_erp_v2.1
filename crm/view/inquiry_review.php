@@ -87,11 +87,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">1. Customer Address </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['customer_address'] == 0){ echo "active";}?>">
-														<input type="radio" name="customer_address" id="customer_address1" autocomplete="off" value="0" <?if($row['customer_address'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['customer_address'] == 0){ echo "active";}?>">
+														<input type="radio" name="customer_address" id="customer_address1" autocomplete="off" value="0" <?php if($row['customer_address'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['customer_address'] == 1){ echo "active";}?>" >
-														<input type="radio" name="customer_address" id="customer_address2" autocomplete="off" value="1" <?if($row['customer_address'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['customer_address'] == 1){ echo "active";}?>" >
+														<input type="radio" name="customer_address" id="customer_address2" autocomplete="off" value="1" <?php if($row['customer_address'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -103,11 +103,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">2. Enquiry No. & Date </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['inquiry_no_date'] == 0){ echo "active";}?>">
-														<input type="radio" name="inquiry_no_date" id="inquiry_no_date1" autocomplete="off" value="0" <?if($row['inquiry_no_date'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['inquiry_no_date'] == 0){ echo "active";}?>">
+														<input type="radio" name="inquiry_no_date" id="inquiry_no_date1" autocomplete="off" value="0" <?php if($row['inquiry_no_date'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['inquiry_no_date'] == 1){ echo "active";}?>" >
-														<input type="radio" name="inquiry_no_date" id="inquiry_no_date2" autocomplete="off" value="1" <?if($row['inquiry_no_date'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['inquiry_no_date'] == 1){ echo "active";}?>" >
+														<input type="radio" name="inquiry_no_date" id="inquiry_no_date2" autocomplete="off" value="1" <?php if($row['inquiry_no_date'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -119,11 +119,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">3. Technical Specification of the items available </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['technical_spacification'] == 0){ echo "active";}?>">
-														<input type="radio" name="technical_spacification" id="technical_spacification1" autocomplete="off" value="0" <?if($row['technical_spacification'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['technical_spacification'] == 0){ echo "active";}?>">
+														<input type="radio" name="technical_spacification" id="technical_spacification1" autocomplete="off" value="0" <?php if($row['technical_spacification'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['technical_spacification'] == 1){ echo "active";}?>" >
-														<input type="radio" name="technical_spacification" id="technical_spacification2" autocomplete="off" value="1" <?if($row['technical_spacification'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['technical_spacification'] == 1){ echo "active";}?>" >
+														<input type="radio" name="technical_spacification" id="technical_spacification2" autocomplete="off" value="1" <?php if($row['technical_spacification'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -135,11 +135,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">4. Applicable API Product Specification Requirements </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['pro_speci_req'] == 0){ echo "active";}?>">
-														<input type="radio" name="pro_speci_req" id="pro_speci_req1" autocomplete="off" value="0" <?if($row['pro_speci_req'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['pro_speci_req'] == 0){ echo "active";}?>">
+														<input type="radio" name="pro_speci_req" id="pro_speci_req1" autocomplete="off" value="0" <?php if($row['pro_speci_req'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['pro_speci_req'] == 1){ echo "active";}?>" >
-														<input type="radio" name="pro_speci_req" id="pro_speci_req2" autocomplete="off" value="1" <?if($row['pro_speci_req'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['pro_speci_req'] == 1){ echo "active";}?>" >
+														<input type="radio" name="pro_speci_req" id="pro_speci_req2" autocomplete="off" value="1" <?php if($row['pro_speci_req'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -151,11 +151,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">5. Customer Drawing Enclosed </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['cust_draw_enclose'] == 0){ echo "active";}?>">
-														<input type="radio" name="cust_draw_enclose" id="cust_draw_enclose1" autocomplete="off" value="0" <?if($row['cust_draw_enclose'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['cust_draw_enclose'] == 0){ echo "active";}?>">
+														<input type="radio" name="cust_draw_enclose" id="cust_draw_enclose1" autocomplete="off" value="0" <?php if($row['cust_draw_enclose'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['cust_draw_enclose'] == 1){ echo "active";}?>" >
-														<input type="radio" name="cust_draw_enclose" id="cust_draw_enclose2" autocomplete="off" value="1" <?if($row['cust_draw_enclose'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['cust_draw_enclose'] == 1){ echo "active";}?>" >
+														<input type="radio" name="cust_draw_enclose" id="cust_draw_enclose2" autocomplete="off" value="1" <?php if($row['cust_draw_enclose'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -167,11 +167,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">6. Scope of inspection </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['scope_inspection'] == 0){ echo "active";}?>">
-														<input type="radio" name="scope_inspection" id="scope_inspection1" autocomplete="off" value="0" <?if($row['scope_inspection'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['scope_inspection'] == 0){ echo "active";}?>">
+														<input type="radio" name="scope_inspection" id="scope_inspection1" autocomplete="off" value="0" <?php if($row['scope_inspection'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['scope_inspection'] == 1){ echo "active";}?>" >
-														<input type="radio" name="scope_inspection" id="scope_inspection2" autocomplete="off" value="1" <?if($row['scope_inspection'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['scope_inspection'] == 1){ echo "active";}?>" >
+														<input type="radio" name="scope_inspection" id="scope_inspection2" autocomplete="off" value="1" <?php if($row['scope_inspection'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -184,11 +184,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">7. Delivery</label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['delivery'] == 0){ echo "active";}?>">
-														<input type="radio" name="delivery" id="delivery1" autocomplete="off" value="0" <?if($row['delivery'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['delivery'] == 0){ echo "active";}?>">
+														<input type="radio" name="delivery" id="delivery1" autocomplete="off" value="0" <?php if($row['delivery'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['delivery'] == 1){ echo "active";}?>" >
-														<input type="radio" name="delivery" id="delivery2" autocomplete="off" value="1" <?if($row['delivery'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['delivery'] == 1){ echo "active";}?>" >
+														<input type="radio" name="delivery" id="delivery2" autocomplete="off" value="1" <?php if($row['delivery'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -200,11 +200,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">8. Pricing Available</label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['pricing_available'] == 0){ echo "active";}?>">
-														<input type="radio" name="pricing_available" id="pricing_available1" autocomplete="off" value="0" <?if($row['pricing_available'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['pricing_available'] == 0){ echo "active";}?>">
+														<input type="radio" name="pricing_available" id="pricing_available1" autocomplete="off" value="0" <?php if($row['pricing_available'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['pricing_available'] == 1){ echo "active";}?>" >
-														<input type="radio" name="pricing_available" id="pricing_available2" autocomplete="off" value="1" <?if($row['pricing_available'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['pricing_available'] == 1){ echo "active";}?>" >
+														<input type="radio" name="pricing_available" id="pricing_available2" autocomplete="off" value="1" <?php if($row['pricing_available'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -216,11 +216,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">9. Commercial terms clear </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['com_term_clear'] == 0){ echo "active";}?>">
-														<input type="radio" name="com_term_clear" id="com_term_clear1" autocomplete="off" value="0" <?if($row['com_term_clear'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['com_term_clear'] == 0){ echo "active";}?>">
+														<input type="radio" name="com_term_clear" id="com_term_clear1" autocomplete="off" value="0" <?php if($row['com_term_clear'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['com_term_clear'] == 1){ echo "active";}?>" >
-														<input type="radio" name="com_term_clear" id="com_term_clear2" autocomplete="off" value="1" <?if($row['com_term_clear'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['com_term_clear'] == 1){ echo "active";}?>" >
+														<input type="radio" name="com_term_clear" id="com_term_clear2" autocomplete="off" value="1" <?php if($row['com_term_clear'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -232,11 +232,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">10. Earnest Money Deposit</label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['earn_money_deposit'] == 0){ echo "active";}?>">
-														<input type="radio" name="earn_money_deposit" id="earn_money_deposit1" autocomplete="off" value="0" <?if($row['earn_money_deposit'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['earn_money_deposit'] == 0){ echo "active";}?>">
+														<input type="radio" name="earn_money_deposit" id="earn_money_deposit1" autocomplete="off" value="0" <?php if($row['earn_money_deposit'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['earn_money_deposit'] == 1){ echo "active";}?>" >
-														<input type="radio" name="earn_money_deposit" id="earn_money_deposit2" autocomplete="off" value="1" <?if($row['earn_money_deposit'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['earn_money_deposit'] == 1){ echo "active";}?>" >
+														<input type="radio" name="earn_money_deposit" id="earn_money_deposit2" autocomplete="off" value="1" <?php if($row['earn_money_deposit'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -249,11 +249,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">11. Bank Guarantee /D.D. / TDR </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['bank_guarantee_dd_tdr'] == 0){ echo "active";}?>">
-														<input type="radio" name="bank_guarantee_dd_tdr" id="bank_guarantee_dd_tdr1" autocomplete="off" value="0" <?if($row['bank_guarantee_dd_tdr'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['bank_guarantee_dd_tdr'] == 0){ echo "active";}?>">
+														<input type="radio" name="bank_guarantee_dd_tdr" id="bank_guarantee_dd_tdr1" autocomplete="off" value="0" <?php if($row['bank_guarantee_dd_tdr'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['bank_guarantee_dd_tdr'] == 1){ echo "active";}?>" >
-														<input type="radio" name="bank_guarantee_dd_tdr" id="bank_guarantee_dd_tdr2" autocomplete="off" value="1" <?if($row['bank_guarantee_dd_tdr'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['bank_guarantee_dd_tdr'] == 1){ echo "active";}?>" >
+														<input type="radio" name="bank_guarantee_dd_tdr" id="bank_guarantee_dd_tdr2" autocomplete="off" value="1" <?php if($row['bank_guarantee_dd_tdr'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -265,11 +265,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">12. Separate Cover for Price & Technical BID</label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['sep_cov_price_techbid'] == 0){ echo "active";}?>">
-														<input type="radio" name="sep_cov_price_techbid" id="sep_cov_price_techbid1" autocomplete="off" value="0" <?if($row['sep_cov_price_techbid'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['sep_cov_price_techbid'] == 0){ echo "active";}?>">
+														<input type="radio" name="sep_cov_price_techbid" id="sep_cov_price_techbid1" autocomplete="off" value="0" <?php if($row['sep_cov_price_techbid'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['sep_cov_price_techbid'] == 1){ echo "active";}?>" >
-														<input type="radio" name="sep_cov_price_techbid" id="sep_cov_price_techbid2" autocomplete="off" value="1" <?if($row['sep_cov_price_techbid'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['sep_cov_price_techbid'] == 1){ echo "active";}?>" >
+														<input type="radio" name="sep_cov_price_techbid" id="sep_cov_price_techbid2" autocomplete="off" value="1" <?php if($row['sep_cov_price_techbid'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -281,11 +281,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">13. Delivery Due Date </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['del_due_date'] == 0){ echo "active";}?>">
-														<input type="radio" name="del_due_date" id="del_due_date1" autocomplete="off" value="0" <?if($row['del_due_date'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['del_due_date'] == 0){ echo "active";}?>">
+														<input type="radio" name="del_due_date" id="del_due_date1" autocomplete="off" value="0" <?php if($row['del_due_date'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['del_due_date'] == 1){ echo "active";}?>" >
-														<input type="radio" name="del_due_date" id="del_due_date2" autocomplete="off" value="1" <?if($row['del_due_date'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['del_due_date'] == 1){ echo "active";}?>" >
+														<input type="radio" name="del_due_date" id="del_due_date2" autocomplete="off" value="1" <?php if($row['del_due_date'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>
@@ -297,11 +297,11 @@ if($row['wo_date'] != "1970-01-01" && $row['wo_date'] != "0000-00-00"){
 											<label class="col-md-6 control-label">14. Any Other Comments </label>
 											<div class="col-md-6 col-xs-11">
 												<div class="btn-group btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-secondary <?if($row['any_other_comment'] == 0){ echo "active";}?>">
-														<input type="radio" name="any_other_comment" id="any_other_comment1" autocomplete="off" value="0" <?if($row['any_other_comment'] == 0){ echo "checked";}?>  > No
+													<label class="btn btn-secondary <?php if($row['any_other_comment'] == 0){ echo "active";}?>">
+														<input type="radio" name="any_other_comment" id="any_other_comment1" autocomplete="off" value="0" <?php if($row['any_other_comment'] == 0){ echo "checked";}?>  > No
 													</label>
-													<label class="btn btn-secondary <?if($row['any_other_comment'] == 1){ echo "active";}?>" >
-														<input type="radio" name="any_other_comment" id="any_other_comment2" autocomplete="off" value="1" <?if($row['any_other_comment'] == 1){ echo"checked"; }?>> Yes
+													<label class="btn btn-secondary <?php if($row['any_other_comment'] == 1){ echo "active";}?>" >
+														<input type="radio" name="any_other_comment" id="any_other_comment2" autocomplete="off" value="1" <?php if($row['any_other_comment'] == 1){ echo"checked"; }?>> Yes
 													</label>
 												</div>
 											</div>

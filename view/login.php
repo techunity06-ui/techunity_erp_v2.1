@@ -32,7 +32,7 @@
                       <div class="modal-body">
                           <p>Enter Question.</p>
 									<select class="form-control" name="forgotquestion_id" id="forgotquestion_id">	
-										<?//=getquestion($dbcon,$rel['question_id'])?>
+										<?php //=getquestion($dbcon,$rel['question_id'])?>
 									<select>
 									<label class="error" id="error_companyid"></label>
 						  <p>Your Answer.</p>

@@ -242,7 +242,7 @@ if($company_config['invoice_discount_editable']==0){
 									<input type="hidden" name="cust_stateid" id="cust_stateid">
 									<div class="row">
 										<div class="col-md-12 info_line" style="margin-bottom: 5px;">Customer Details</div>
-										<?if($company_config['branch_wise_manage']==1){?>
+										<?php if($company_config['branch_wise_manage']==1){?>
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id, $edit_branch_id, false, true, '','4','8'); ?>
 										</div>
@@ -293,7 +293,7 @@ if($company_config['invoice_discount_editable']==0){
 											</div>
 										</div>
 
-										<?if($company_config['crm_sales_order_user_selecation']==1){ ?>
+										<?php if($company_config['crm_sales_order_user_selecation']==1){ ?>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="col-md-4 control-label">Users *</label>
@@ -372,7 +372,7 @@ if($company_config['invoice_discount_editable']==0){
 												</div>
 											</div>	
 										</div>
-										<?if($company_config['enable_installation_type']==1){?>
+										<?php if($company_config['enable_installation_type']==1){?>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label class="col-md-4 control-label">Installation type *</label>
@@ -452,7 +452,7 @@ if($company_config['invoice_discount_editable']==0){
 												</div>
 											</div>	
 										</div>
-										<?if($company_config['enable_material_center']==1){?>
+										<?php if($company_config['enable_material_center']==1){?>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="col-md-4 control-label">Material Center</label>
@@ -614,7 +614,7 @@ if($company_config['invoice_discount_editable']==0){
 															</div>
 														</div>
 													</div> -->
-												<?//}?>	
+												<?php //}?>	
 									</div>
 									<div class="row">
 										<div class="col-md-7" id="check_due_div" style="display:none">
@@ -646,10 +646,10 @@ if($company_config['invoice_discount_editable']==0){
 														<div class="form-group">
 															<table cellspacing="10" style="border-spacing:10px; table-layout: fixed;" id="product_list" class="display table table-bordered table-striped">
 																<tr id="field">
-																	<?if($getspecialConfiguration['reciclar']==1){?>
+																	<?php if($getspecialConfiguration['reciclar']==1){?>
 																	<th width="12%" class="text-center">Parent Category</th>
 																	<th width="12%" class="text-center">Category</th>
-																	<?}?>
+																	<?php }?>
 																	<th width="12%" class="text-center">Type</th>
 																	<th width="28%" class="text-center">Product Detail</th>
 																	<th width="10%" class="text-center">Per</th>
@@ -662,18 +662,18 @@ if($company_config['invoice_discount_editable']==0){
 																</tr>
 																<input type="hidden" value="<?=$company_config['enable_negative_qty']?>" name="isstockngative" id="isstockngative"/>
 																<tr id="field1">
-																	<?if($getspecialConfiguration['reciclar']==1){?>
+																	<?php if($getspecialConfiguration['reciclar']==1){?>
 																	<td>
 																		<select class="select2" name="parent_cat_id" id="parent_cat_id" title="Parent Category" onchange="load_parent_cat()">
                                                                             <?=get_all_category($dbcon,0);?>
                                                                         </select>
 																	</td>
 																	<td>
-																		<select class="select2" name="cat_id" id="cat_id" title="Select Category" <?if($getspecialConfiguration['reciclar'] ==1){?> onchange="product_load('')"<?}?>>
+																		<select class="select2" name="cat_id" id="cat_id" title="Select Category" <?php if($getspecialConfiguration['reciclar'] ==1){?> onchange="product_load('')"<?php }?>>
                                                                             <?=get_all_category($dbcon,0);?>
                                                                         </select>
 																	</td>
-																	<?}?>
+																	<?php }?>
 																	<td style="vertical-align:top;" width="12%">
 																		<select class="select2" name="product_type_sel" id="product_type_sel" onChange="product_load(this.value);" title="Select Product Type" tabindex="21">
 																			<?=get_product_type_company($dbcon,'0');?>
@@ -681,7 +681,7 @@ if($company_config['invoice_discount_editable']==0){
 																	</td>
 																	<td style="vertical-align:top;" width="28%">
 																			<!--<select class="select2_product" tabindex="22" title="Select product" name="product_id" id="product_id" onChange="load_productdetail(this.value);get_hsn(this.value);"  style="width:100% !important">
-																				<?//=getproduct($dbcon,0,'0,1,2,3,4,5')?>
+																				<?php //=getproduct($dbcon,0,'0,1,2,3,4,5')?>
 																			</select> -->
 																			<div class="col-md-9">
 																				<input id="product_id" name="product_id" style="width:100%;" placeholder="Select Product" onchange="load_productdetail(this.value);" autocomplete="off" />
@@ -703,7 +703,7 @@ if($company_config['invoice_discount_editable']==0){
 																		</td>	
 																		<td>
 				                                                            <select class="form-control"  title="Select Unit" placeholder="Unit" name="rate_unit_id" id="rate_unit_id" onchange="load_product_unit();">
-				                                                                <?//=getunit($dbcon,0);?>
+				                                                                <?php //=getunit($dbcon,0);?>
 				                                                                <option value="0">Select Unit</option>
 				                                                            </select><br>
 				                                                            <input type="hidden" name="p_qty" id="p_qty">
@@ -779,7 +779,7 @@ if($company_config['invoice_discount_editable']==0){
 																		<td colspan="2"><input id="repairing" name="repairing" type="text" class="form-control" title="Reparing" placeholder="Reparing" onkeyup="calculate_repairing()"><br><input id="repairing_total" name="repairing_total" type="text" class="form-control" title="Reparing Total" placeholder="Reparing Total" readonly></td>
 																		<td><input id="other" name="other" type="text" class="form-control" title="Other" placeholder="Other" onkeyup="calculate_other()"><br><input id="other_total" name="other_total" type="text" class="form-control" title="Other Total" placeholder="Other Total" readonly></td>
 																		</tr>
-																	<?}?>
+																	<?php }?>
 																</table>								
 															</div>
 
@@ -1420,15 +1420,15 @@ if($company_config['invoice_discount_editable']==0){
 					$('.currency_div').hide();
 				}
 			}
-			<?
+			<?php 
 			if($mode == "Edit"){ ?>
 				load_cust_so(<?=$cust_id?>,<?=$sales_order_id?>);
 				get_so_data_invoice();
 				/*load_typeswise_terms(<=$invoiceid?>);*/
 			<?php}else{ ?>
 				load_typeswise_terms('');
-			<?}?>
-			<?if($viewmode == "invoiceso"){?>
+			<?php }?>
+			<?php if($viewmode == "invoiceso"){?>
 				load_ven_grn(<?=$cust_id?>,<?=$sales_order_id?>);
 				//load_grn_data(<=$grn_id?>);
 				// insert_product();
@@ -1449,7 +1449,7 @@ if($company_config['invoice_discount_editable']==0){
 					enterMode: CKEDITOR.ENTER_BR
 				});
 			</script>
-			<?
+			<?php 
 			echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
 			echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
 

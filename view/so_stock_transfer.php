@@ -179,10 +179,10 @@
 				todayBtn: true,
 				pickerPosition: "bottom-left"
 			});  
-			<?if($mode=='Add'){?>
+			<?php if($mode=='Add'){?>
 			//load_grn_no();
 			show_data();
-			<?}?>
+			<?php }?>
 			
 		</script> 
 	</body>

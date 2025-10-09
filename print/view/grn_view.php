@@ -118,7 +118,7 @@ if($set_head['show_disc']=='1'){
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1" selected>ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -191,7 +191,7 @@ if($set_head['show_disc']=='1'){
 														<tr>
 															<td width="15%"  style="vertical-align:top;border:1px solid;border-right:none;"><strong>GRN Against </strong>
 															</td>
-															<td colspan="" style="vertical-align:top;border:1px solid;border-left:none;"> : <strong><?if($rel['ref_type']=="1"){ echo "Job Work";}else{ echo "PO";}?></strong>
+															<td colspan="" style="vertical-align:top;border:1px solid;border-left:none;"> : <strong><?php if($rel['ref_type']=="1"){ echo "Job Work";}else{ echo "PO";}?></strong>
 															</td>
 														</tr>
 														<tr>
@@ -250,7 +250,7 @@ if($set_head['show_disc']=='1'){
 														<?=$i?>
 													</td>
 													<td style="border-bottom-color:#FFFFFF; border-right:1px solid;" colspan="2">
-														<?if($row['product_alias_name']){ ?>
+														<?php if($row['product_alias_name']){ ?>
 															<strong><?=stripcslashes($row['product_alias_name'])?></strong>
 															<br/><?=nl2br(stripcslashes($row['description']));?>
 														<?php}else{ ?>

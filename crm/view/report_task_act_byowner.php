@@ -127,13 +127,13 @@ function generate_report(){
 							<div class="form-group">
 								<table class="display table table-bordered table-striped">
 									<tr>
-										<?
+										<?php 
 										$fil_qry="select * from task_rel_mst where task_rel_status=0";
 										$fil_qry_rs=$dbcon->query($fil_qry);
 										while($fil_rel=mysqli_fetch_assoc($fil_qry_rs)){
 											?>
 											<th><input type="checkbox" class="fil_chk" style="width: 16px;height: 16px;" id="task_rel_id<?=$fil_rel['task_rel_id']?>" name="task_rel_id[]" value="<?=$fil_rel['task_rel_id']?>" onChange="generate_chart_report();"> <?=$fil_rel['task_rel_name']?></th>
-											<?}?>
+											<?php }?>
 										</tr>
 									</table>
 								</div>

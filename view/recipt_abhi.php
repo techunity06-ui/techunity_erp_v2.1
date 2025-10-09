@@ -63,7 +63,7 @@
 					<div class="col-md-4 col-xs-8 ">
 						<select class="select2" name="vender_id" id="vender_id" onChange="load_billdata(this.value);show_data();" >
 							<!--<option value="">Choose Party</option>-->
-							<?//=get_ledger_cust($dbcon,$rel['vender_id']);?>
+							<?php //=get_ledger_cust($dbcon,$rel['vender_id']);?>
 							<?=get_pay_ledger($dbcon,$rel['vender_id']);?>							
 						</select>
 					</div>
@@ -84,9 +84,9 @@
 					<label class="col-md-3 control-label">Receive Account*</label>
 					<div class="col-md-4 col-xs-11">
 						<select class="select2" name="paymentmodeid" id="paymentmodeid" onChange="paymentmode(this.value);/*get_cash_opening_bal(this.value,'max_paid_amount','tran_amounterr');*/" required title="Select Receive Account">
-							<?//=getpaymentmode($dbcon);?>	
+							<?php //=getpaymentmode($dbcon);?>	
 							<?=get_ledger_bank($dbcon);?>	
-							<?//=get_ledger($dbcon,$rel['vender_id']);?>	
+							<?php //=get_ledger($dbcon,$rel['vender_id']);?>	
 						</select>
 						
 					</div>
@@ -96,7 +96,7 @@
 						<label class="col-md-3 control-label">Choose Account  *</label>
 						<div class="col-md-4 col-xs-10">
 						<select class="form-control"  name="pur_acc_id" id="pur_acc_id" required title="Select Bank" onchange="get_opening_bal(this.value,'max_paid_amount','tran_amounterr');get_chequeno(this.value,'cheque_dtl')">
-						<?//=getaccount($dbcon,$rel['acc_id'],'acc_type!=1');?>	
+						<?php //=getaccount($dbcon,$rel['acc_id'],'acc_type!=1');?>	
 						</select>
 						</div>
 						<div class="col-md-2 col-xs-2">
@@ -318,7 +318,7 @@ function generate_report()
 	}
 }
 </script>
-<?
+<?php 
 if($mode=="Add")
 {
 	//echo "<script>show_data() </script>";

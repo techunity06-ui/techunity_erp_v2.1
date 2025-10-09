@@ -210,9 +210,9 @@
 				todayBtn: true,
 				pickerPosition: "bottom-left"
 			});  
-			<?if($mode=='Add'){?>
+			<?php if($mode=='Add'){?>
 				show_data();
-			<?}?>
+			<?php }?>
 			
 			
 		</script> 

@@ -214,7 +214,7 @@ $infopage = pathinfo( __FILE__ );
                                                     <label class="col-md-4 control-label" style="text-align: right;">Owner User :</label>
                                                     <div class="col-md-8"> 
                                                         <select class="select2" id="user_id" name="user_id" onChange="load_inquiry_datatable();">
-                                                            <?//= get_child_users($dbcon,$user_id);//get_assign_users_inq($dbcon,$user_id); ?>
+                                                            <?php //= get_child_users($dbcon,$user_id);//get_assign_users_inq($dbcon,$user_id); ?>
                                                             <?= get_assign_users_inq($dbcon,$user_id); ?>
                                                         </select>
                                                     </div>
@@ -247,7 +247,7 @@ $infopage = pathinfo( __FILE__ );
                                                     <label class="col-md-4 control-label" style="text-align: right;">Assign User :</label>
                                                     <div class="col-md-8"> 
                                                         <select class="select2" id="assign_user_id" name="assign_user_id" onChange="load_inquiry_datatable();">
-                                                            <?//= get_child_users($dbcon,$user_id);//get_assign_users_inq($dbcon,$user_id); ?>
+                                                            <?php //= get_child_users($dbcon,$user_id);//get_assign_users_inq($dbcon,$user_id); ?>
                                                             <?= get_assign_users_inq($dbcon,$assign_user_ids); ?>
                                                         </select>
                                                     </div>

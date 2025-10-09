@@ -228,7 +228,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												</div>
 											</div>
 										</div>
-										<?if($getspecialConfiguration['hermattic_permission']==1){?>
+										<?php if($getspecialConfiguration['hermattic_permission']==1){?>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label class="col-md-4 control-label">Sales Order No.</label>
@@ -281,11 +281,11 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 
 
 <script>
-	<?if($companyConfiguration['po_work_order_wise']==1){?>
+	<?php if($companyConfiguration['po_work_order_wise']==1){?>
 		CKEDITOR.replace('product_desc', {
 			enterMode: CKEDITOR.ENTER_BR
 		});
-		<?}?>
+		<?php }?>
 		$(".select2").select2({
 			width: '100%'
 		});

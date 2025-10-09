@@ -94,14 +94,14 @@
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Vendor </label>
 													<div class="col-md-8 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="vender_id" id="vender_id" onChange="/*get_po_tax(this.value)*/" required title="Select Vender">
 															<?=getcust($dbcon,$vender_id,$purchase_party_show);?>	
 														</select>
 													</div>
 													</div>	
 												</div>
-												<?if($companyConfiguration['branch_wise_manage']==1){?>
+												<?php if($companyConfiguration['branch_wise_manage']==1){?>
 												<div class="col-md-4">
 													<?php echo getBranchBox($dbcon, $branch_id, $branchId, true, false,'','4','8'); ?>
 												</div>
@@ -118,7 +118,7 @@
 											<div class="col-md-12" style="margin-top:10px;"></div>			
 											<div class="col-md-12" style="margin-top:10px;">
 												<div id="sale_productdata">
-													<?
+													<?php 
 														$where ='';$ab='';
 														if($companyConfiguration['po_work_order_wise'] == 1){
 															$where .= ' and po.po_ref_id='.$rp_id;
@@ -150,7 +150,7 @@
 																	<th width="8%" class="text-center">Unit Of PO </th>
 																	<th width="8%" class="text-center">PO qty</th>
 																</tr>
-															<?
+															<?php 
 															$i=1;
 															while($rel_trn=mysqli_fetch_assoc($result))
 															{
@@ -219,14 +219,14 @@
 																
 																	<td style="vertical-align:middle;" class="text-center">
 																		<select class="form-control" id="product_base_unit<?php echo $i ?>" name="product_base_unit[]" >
-																			<?//=getunit($dbcon,$rel_trn['product_base_unit']);?>
+																			<?php //=getunit($dbcon,$rel_trn['product_base_unit']);?>
 																			<?=getunit($dbcon,$rel_trn['unit_id']);?>
 																		</select>
 																	</td>
 																	
 																	<td style="vertical-align:middle;" class="text-center">
 																		<select class="form-control" id="product_uom<?php echo $i ?>" name="product_uom[]" onchange="get_alt_qty(this.value,'<?=$rel_trn['product_id'];?>','<?=$i?>')" >
-																			<?//=getunit($dbcon,$rel_trn['product_conv_unit']);?>
+																			<?php //=getunit($dbcon,$rel_trn['product_conv_unit']);?>
 																			<?=getunit($dbcon,$rel_trn['unit_id']);?>
 																		</select>
 																	</td>
@@ -247,7 +247,7 @@
 																		<input type="hidden" class="form-control" name="product_alloc_qty[]" id="product_alloc_qty<?php echo $i ?>" value="<?=$pending_qty?>"  />
 																	</td>
 																</tr>
-															<?
+															<?php 
 																$i++;
 															}
 															?>

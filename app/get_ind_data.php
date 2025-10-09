@@ -1,4 +1,4 @@
-<?
+<?php 
 
 function get_indiamart_data($dbcon,$sdate,$ldate,$api_key,$mob_no){
 	

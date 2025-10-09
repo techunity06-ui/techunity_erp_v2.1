@@ -233,7 +233,7 @@ if($companyConfiguration) {
 				width: '100%'
 			});
 		</script>
-		<?
+		<?php 
 		echo "<script>show_data() </script>";
 		?>
 		<script>

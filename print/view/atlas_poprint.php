@@ -157,7 +157,7 @@ $pro_search=explode(",", $purchase_pro_search);
 
 							<div class="panel-body">
 								<!--<center>-->
-									<?
+									<?php 
 									if($rel['po_approval_status']=='1'){
 										?>
 										<div id="logo_sec_div">
@@ -166,12 +166,12 @@ $pro_search=explode(",", $purchase_pro_search);
 											<label class="col-md-4 control-label"> </label>
 											<div class="col-md-4 col-xs-11" style="display:none;">
 												<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-													<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+													<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 														<option value="">Select Print</option>
-														<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-														<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-														<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-														<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+														<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+														<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+														<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+														<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 													</select>
 												</form>
 											</div>
@@ -186,14 +186,14 @@ $pro_search=explode(",", $purchase_pro_search);
 											</div>
 											<!--</center>	-->	
 										</div>	
-										<?
+										<?php 
 									}
 									else{
 										?>	
 										<center>
 											<button type="submit" class="btn btn-warning"><i class="fa fa-ban"></i> PO Not Approved</button>
 										</center>
-										<?
+										<?php 
 									}
 									?>
 									<div class="col-md-12"></div>
@@ -215,10 +215,10 @@ $pro_search=explode(",", $purchase_pro_search);
 												<h2 align="center" style="font-weight:600;"><u><?=$set_head['company_name']?></u></h2>
 												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX;  !important"><?=$set_head['logo_content']?></h4>
 												<h4 align="center" style="padding:top:15px;margin-top: 10PX;margin-bottom: 0PX; font-weight:lighter; !important"><?=$set_head['address']?></h4>
-												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-												<?if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?}?></h4>
-												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-												<?if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?}?></h4>
+												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+												<?php if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?php }?></h4>
+												<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+												<?php if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?php }?></h4>
 												
 											</td>
 										</tr> -->
@@ -239,8 +239,8 @@ $pro_search=explode(",", $purchase_pro_search);
 														</tr>
 														<tr>
 															<td width="35%" rowspan="3" style="vertical-align:top;border:1px solid;"><strong><?=$set_head['company_name']?></strong><br><?=$set_head['address']?> 
-													<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?}?>
-													<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?}?></td>
+													<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+													<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?></td>
 															<td width="35%" rowspan="3" style="vertical-align:top;border:1px solid;"><strong>To, </strong><br/><strong><?=$rel['vender_name']?></strong><br/><?=$rel['vender_address']?><br/><?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?><br/>Vendor GST No. : <?= ($rel['tin_no']!=0) ? $rel['tin_no'] : "" ?></td>
 															<td width="15%" style="vertical-align:top;border:1px solid;border-right:none;">
 																<strong>Purchase Order No </strong>
@@ -364,22 +364,22 @@ $pro_search=explode(",", $purchase_pro_search);
 														<?phpif(!empty($row['scode'])){
 															$code=" ( ".$row['scode'] .")";
 														} ?>
-														<?if($row['product_alias_name']){?>
+														<?php if($row['product_alias_name']){?>
 															<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?> <?=$drawing_number?> <?=$item_code?> <?=$alias?></strong> 
-															<br/><?if($row['product_des']){?><?=stripcslashes($row['product_des']);?><br><?}?><strong>HSN Code : </strong><?=$row['product_hsn_code']?>
+															<br/><?php if($row['product_des']){?><?=stripcslashes($row['product_des']);?><br><?php }?><strong>HSN Code : </strong><?=$row['product_hsn_code']?>
 															<?=$wno?>
 														<?php}else{ ?>
 															<strong><?=stripcslashes($row['product_name'])?> <?=$code?> <?=$drawing_number?> <?=$item_code?> <?=$alias?> </strong>
 															<br/><?=stripcslashes($row['product_des']);?><br/><strong>HSN Code : </strong><?=$row['product_hsn_code']?>
 															<?=$wno?>
-															<?}?>
+															<?php }?>
 														</td>
 														<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
 															<?phpif($row['product_type']!='8'){ ?>
 																<?=number_format($row['product_qty'],2,".","").' '.$row['unit_name']?><br/>
-																<?if($row['product_base_unit']!=$row['product_conv_unit']){?>
+																<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 																	<?=number_format($cqty,2,".","").' '.$uname?>
-																	<?}?>
+																	<?php }?>
 																<?php}else{
 																	$charges_qty+=$row['product_qty'];
 																} ?>	
@@ -477,7 +477,7 @@ $pro_search=explode(",", $purchase_pro_search);
 																		<td style="border-top:1px solid;border-right:1px solid;text-align:left">Round off</td>
 																		<td colspan="2" style="text-align:right; border-top:1px solid;"><?=number_format($r+$rel['round_off'],2,".","")?></td>
 																	</tr>
-																	<?
+																	<?php 
 																	$bill_sun=$dbcon->query("select b.*,l.sundry_ledger_id,l.sundry_type,l.sundry_nature,l.sundry_amount_of,l.sundry_calculate_on,l.sundry_default_value,le.l_name,le.l_id from tbl_bill_sundry_transaction as b 
 
 			left join tbl_ledger_bill_sundry as l on l.bill_sundry_id=b.sundry_ledger_id 
@@ -492,7 +492,7 @@ $pro_search=explode(",", $purchase_pro_search);
 																		<td style="border-top:1px solid;border-right:1px solid;text-align:left"><?=$bill_sundry['l_name']?></td>
 																		<td style="text-align:right; border-top:1px solid;font-size:13px;border-bottom:1px solid; "><?=$bill_sundry['sundry_amount']?></td>
 																	</tr>
-																	<?
+																	<?php 
 																	}
 																	?>
 																	<tr height="20px">

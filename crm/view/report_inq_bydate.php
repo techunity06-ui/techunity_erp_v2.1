@@ -52,7 +52,7 @@ $countryid = '101';
 				<section class="panel">
 					<header class="panel-heading">
 <!--						<span class="tools pull-right">
-							<a href="<?//=ROOT.'report_list'?>"><button type="button" class="btn btn-info"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Report List</button></a>	
+							<a href="<?php //=ROOT.'report_list'?>"><button type="button" class="btn btn-info"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Report List</button></a>	
 						</span>-->
 						
 						<h3 style=""><?=$form?> </h3>
@@ -138,7 +138,7 @@ $countryid = '101';
                                 <label class="col-md-4 control-label" >Assign User :</label>
                                 <div class="col-md-7"> 
                                     <select class="select2" id="assign_user_id" name="assign_user_id" onChange="generate_chart_report();">
-                                        <?//= get_child_users($dbcon,$user_id);//get_assign_users_inq($dbcon,$user_id); ?>
+                                        <?php //= get_child_users($dbcon,$user_id);//get_assign_users_inq($dbcon,$user_id); ?>
                                         <?= get_assign_users_inq($dbcon,$assign_user_ids); ?>
                                     </select>
                                 </div>
@@ -203,7 +203,7 @@ $countryid = '101';
 								<div class="col-md-7">
 									<select class="select2" name="c_add_state" id="c_add_state" onChange="load_city(this.value,'c_add_city','');generate_chart_report()">
 										<option value="">Select State</option>	
-										<?//=getstate($dbcon,$rel['stateid'])?>				
+										<?php //=getstate($dbcon,$rel['stateid'])?>				
 									</select>
 								</div>
 							</div>
@@ -322,7 +322,7 @@ include_once('../../include/footer.php');
 	})()
 </script>
 
-<?
+<?php 
 	echo "<script>load_state(".$countryid.",'c_add_state',".$stateid.")</script>";
 ?>
 </body>

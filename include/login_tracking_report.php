@@ -56,7 +56,7 @@
 								Start Dates
 							</label> 
 							<div class="col-md-8">
-								<input id="start_date" name="start_date" type="text" class="form-control default-date-picker valid" title="Date" value="<?echo date('1-m-Y');?>" placeholder="Start Date" onChange="load_trans_datatable()">
+								<input id="start_date" name="start_date" type="text" class="form-control default-date-picker valid" title="Date" value="<?php echo date('1-m-Y');?>" placeholder="Start Date" onChange="load_trans_datatable()">
 							</div>
 						</div>
 					</div>

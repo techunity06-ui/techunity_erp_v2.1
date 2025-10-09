@@ -61,8 +61,8 @@
                                                     <label class="control-label col-md-2" >Choose Date</label>
                                                     <div class="col-md-3">
                                                             <div class="input-group date form_datetime-component">
-                                                                    <input type="hidden" id="from_date"  value="<?//= $start_date ?>">
-                                                                    <input type="hidden" id="to_date"  value="<?//= $end_date ?>">
+                                                                    <input type="hidden" id="from_date"  value="<?php //= $start_date ?>">
+                                                                    <input type="hidden" id="to_date"  value="<?php //= $end_date ?>">
                                                                     <input type="text" id="rep_date"  onChange="generate_report();" class="form-control datepikerdemo" value="">
                                                                     <span class="input-group-btn">
                                                                             <button type="button" class="btn btn-danger date-set"><i class="fa fa-calendar"></i></button>

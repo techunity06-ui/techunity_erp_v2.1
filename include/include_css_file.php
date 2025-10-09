@@ -101,7 +101,7 @@
 	
 
     ///Maulik Code Start////
-    <?
+    <?php 
         //var_dump($com_con_setting);
         if(!empty($_SESSION['company_id'])){
         $com_con_setting = getspecialConfiguration($dbcon);
@@ -125,7 +125,7 @@
     var comp_config_data        = '<?=json_encode($companyConfig);?>';
     var comp_config             = jQuery.parseJSON(comp_config_data);
     //console.log(comp_config.cat_wise_product_load);
-    <?
+    <?php 
         }
     ?>
     ///Maulik Code End////

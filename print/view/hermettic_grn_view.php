@@ -118,12 +118,12 @@ if($set_head['show_disc']=='1'){
 								<div class="col-md-2" style="display:block;"> With Logo</div>
 								<div class="col-md-6" style="display:block;">
 									<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-										<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+										<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 											<option value="">Select Print</option>
-											<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-											<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-											<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-											<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+											<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+											<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+											<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+											<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 										</select>
 									</form>
 								</div>
@@ -146,8 +146,8 @@ if($set_head['show_disc']=='1'){
 												<!-- <h2 align="center"><?=$set_head['company_name']?></h2>
 												<h4 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h4>
 												<h4 align="center"><?=$set_head['address']?></h4>
-												<h4 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
+												<h4 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
 												<h4 align="center" style="margin-top:0px;">Website: <?=$set_head['company_website']?></h4> -->
 											</td>
 										</tr>
@@ -271,7 +271,7 @@ if($set_head['show_disc']=='1'){
 														<?=$i?>
 													</td>
 													<td style="border-right:1px solid;vertical-align: top;" colspan="2">
-														<?//=$row['product_hsn']?>&nbsp;&nbsp;<strong><?=stripcslashes($row['product_name'])?></strong>
+														<?php //=$row['product_hsn']?>&nbsp;&nbsp;<strong><?=stripcslashes($row['product_name'])?></strong>
 														</td>
 														<td style="border-right:1px solid;vertical-align:top;text-align:center" >
 															<?=number_format($row['poqty'],2,'.','').' '.$row['unit_name']?><br><?=$poconvqt?>

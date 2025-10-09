@@ -113,7 +113,7 @@
 													</div>
 												</div>
 												
-												<?if($mode=="Add"){ 
+												<?php if($mode=="Add"){ 
 													$ttrt="required";
 												}else{
 													$ttrt="";
@@ -144,7 +144,7 @@
 															<a href="<?=ROOT.INVENTORY_ROOT.RECEIPT_FILE_VWING.$attch_rel['gir_file']?>" class="btn btn-xs btn-primary" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-eye"></i>  </a> 
 															<button type="button" onClick="delete_attch(<?=$attch_rel['gir_attch_id']?>)" class="btn btn-xs btn-danger" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-trash-o"></i></button>
 															<br/>
-														<?} }?>
+														<?php } }?>
 														</div>
 													</div> 
 												</div>

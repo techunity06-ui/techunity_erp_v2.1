@@ -52,7 +52,7 @@
 			<div class="col-sm-12">
 				<section class="panel">
 					<header class="panel-heading">
-						<?if($companyConfiguration['branch_wise_manage']==1){?>
+						<?php if($companyConfiguration['branch_wise_manage']==1){?>
 						<div class="col-md-5">
                               <?php echo getBranchBox($dbcon, $branch_id, '', false, false, 'load_po_req_datatable();'); ?>
                         </div>

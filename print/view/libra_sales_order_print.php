@@ -125,7 +125,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1" selected>ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -168,11 +168,11 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 											<h1 style="margin-bottom:0px; font-name:cambria; font-size:30px;" align="center"><?=$set_head['company_name']?></h1>
 											<!--<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>-->
 											<h4 style="font-size:18px; margin-bottom:0px;font-name:cambria;" align="center"><?=$set_head['address']?></h4>
-												<span style="font-size:18px; margin-top:0px; font-name:cambria;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></span></br>
-												<h4 align="center" style="margin-top:0px;font-size:18px; font-name:cambria;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4>
+												<span style="font-size:18px; margin-top:0px; font-name:cambria;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></span></br>
+												<h4 align="center" style="margin-top:0px;font-size:18px; font-name:cambria;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>
 
-												<!--<h4 align="center" style="margin-top:0px;"><?if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?}?></h4>-->
+												<!--<h4 align="center" style="margin-top:0px;"><?php if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?php }?></h4>-->
 												
 											</td>
 										</tr>
@@ -310,14 +310,14 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																	<?=$i?>
 																</td>
 																<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-																	<?if($row['product_alias_name']){?>
+																	<?php if($row['product_alias_name']){?>
 																		<strong><?=stripcslashes($row['product_alias_name'])?>  <?=$item_code;?></strong>
 																		<br/><?=stripcslashes($row['description']);?>
 																	<?php}else{ ?>
 																		<strong><?=stripcslashes($row['product_name'])?>  <?=$item_code;?></strong>
 																		<br/><?=stripcslashes($row['description']);?>
-																		<?}?>
-																		<?if($delivery_type == 'product_wise'){
+																		<?php }?>
+																		<?php if($delivery_type == 'product_wise'){
 																			$retu_date = "select sdate.*,unit.unit_name from tbl_salesorder_delivery_date as sdate left join unit_mst as unit on unit.unitid=sdate.unit_id where invoice_status=0 and sdate.po_delivery_date_status=0 and sales_ordertrn_id=".$row['sales_ordertrn_id'];
 																			$resadate=$dbcon->query($retu_date);
 																			?>
@@ -328,13 +328,13 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																				</tr>
 																				
 																				
-																				<?while($rowdate=brp_mysqli_fetch_array($resadate)){?>		<tr>
+																				<?php while($rowdate=brp_mysqli_fetch_array($resadate)){?>		<tr>
 																					<td><?=date('d-m-Y',strtotime($rowdate['delivery_date']))?></td>
 																					<td><?=$rowdate['product_qty'].' '.$rowdate['unit_name']?></td>
 																				</tr>		
-																				<?}?>
+																				<?php }?>
 																			</table>
-																			<?}
+																			<?php }
 																			?>
 																		</td>
 																		<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >

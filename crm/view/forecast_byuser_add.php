@@ -66,7 +66,7 @@ else {
 				<span class="tools pull-right">
 					<a href="javascript:;" class="fa fa-chevron-down"></a>
 				</span>
-				<?
+				<?php 
 		/*$s_year=2016;
 		$e_year=date("Y");
 		for($i=$e_year;$i>=$s_year;$i--){
@@ -156,7 +156,7 @@ else {
 			<div class="clearfix"></div>	
 
 			<!-- Accordian Start -->
-			<?
+			<?php 
 			$k=1;$t=1;
 			$get_usr_qry="select usr.user_id,usr.user_mail,type.usertype_name,trn.usr_target_amt,trn.usr_target_qty from users as usr 
 			left join tbl_usertype as type on type.usertype_id=usr.user_type
@@ -203,7 +203,7 @@ else {
 												</tr>
 											</thead>
 											<tbody>
-												<?
+												<?php 
 
 												$get_ter_qry="select ter.t_id,ter.t_name,trn.ter_target_amt,trn.ter_target_qty from territory_mst as ter 
 												left join tbl_f_byuser_ter_trn as trn on trn.t_id=ter.t_id and trn.f_ter_trn_status=0 and trn.forecast_id='".$rel['forecast_id']."' and trn.ref_user_id='".$get_usr_rel['user_id']."'
@@ -223,7 +223,7 @@ else {
 														<input type="number" min="0" class="form-control" id="ter_target_qty<?=$t?>" name="ter_target_qty[]" value="<?=$get_ter_rel['ter_target_qty']?>">
 													</td>
 												</tr>
-												<?
+												<?php 
 												$t++;
 											}
 											?>
@@ -237,7 +237,7 @@ else {
 					</div>
 				</div>
 			</div>
-			<?
+			<?php 
 			$k++;
 		}
 		?>

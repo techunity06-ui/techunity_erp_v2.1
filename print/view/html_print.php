@@ -98,7 +98,7 @@ function exportFile(){
 									<label class="col-md-2 control-label"> Print</label>
 									<div class="col-md-4 col-xs-11">
 										<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-											<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+											<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 												<option value="">Select Print</option>
 												<option value="1" selected>ORIGINAL</option>
 												<option value="2">DUPLICATE</option>
@@ -135,8 +135,8 @@ function exportFile(){
 												<!-- <h2 align="center"><?=$set_head['company_name']?></h2>
 												<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 												<h5 align="center"><?=$set_head['address']?></h5>
-												<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5> -->
+												<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5> -->
 											</td>
 										</tr>
 									</table>				
@@ -154,8 +154,8 @@ function exportFile(){
 											<th rowspan="4" colspan="2" style="width: 50%;border:1px solid black;"><h4 align="left"><?=$set_head['company_name']?></h4>
 												<h5 align="left" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 												<h5 align="left"><?=$set_head['address']?></h5>
-												<h5 align="left"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5> </th>
+												<h5 align="left"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5> </th>
 											<th style="border:1px solid black;">Customer Name</th>
 											<th style="border:1px solid black;"><?=$rel['cust_name']?></th>
 										</tr>
@@ -189,7 +189,7 @@ function exportFile(){
 														<th style="border-right:1px solid;">Group Total (<?=$currency['currency_code']?>)</th>
 														<th style="">Remark</th>
 													</tr>
-													<?
+													<?php 
 														$query_cat = "select sum(product_amount_conv) as group_total,cat.cat_name,inq.cat_id from tbl_inquiry_trn as inq 
 														left join tbl_category as cat on cat.cat_id=inq.cat_id
 
@@ -229,7 +229,7 @@ function exportFile(){
 														<td rowspan="<?=$cnt?>" style="border-right:1px solid;text-align:center"> <?=$row_cat['group_total']?></td>
 														<td ><?=$row_trn['product_spec']?></td>
 													</tr>
-													<?}else{?>
+													<?php }else{?>
 													<tr style="height:70px;border-bottom: 1px solid black;">
 														<td style="border-right:1px solid"><?=$i?></td>
 														<!-- <td style="border-right:1px solid">press tbl 1 & connecting line</td> -->
@@ -244,7 +244,7 @@ function exportFile(){
 														<!-- <td style="border-right:1px solid">18260</td> -->
 														<td ><?=$row_trn['product_spec']?></td>
 													</tr>
-												<?
+												<?php 
 															
 														}
 														$j++;$i++;
@@ -282,7 +282,7 @@ function exportFile(){
 												<table class="footer-table" width="100%">
 													<tr style="border-bottom:none;">
 														<td colspan="2" style="">
-															<?if(!empty($set_head['vatno'])){ ?>
+															<?php if(!empty($set_head['vatno'])){ ?>
 																<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 															<?php} ?>
 														</td>

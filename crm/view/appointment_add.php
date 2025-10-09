@@ -89,7 +89,7 @@ else {
 									<a href="<?=$back_link?>" type="button" class="btn btn-info" style="float:right;"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</a>
 									<h3><?=$mode .' '.$form?></h3>
 									<!--<div class="text-center">Owner : <strong><?=$user_name?></strong></div>-->
-									<?
+									<?php 
 		/*//This is where you put the date, but I use the current date for this example
 		$date = date("Y-m-d H:i:s", strtotime("14-11-2019 01:02 PM"));
 
@@ -119,7 +119,7 @@ else {
 			<div class="panel-body">
 				<form class="form-horizontal" role="form" id="appointment_add" action="javascript:;" method="post" name="appointment_add">
 					<div class="row">
-						<?if($mode != 'Add' && $task_rel_id=='5'){?>
+						<?php if($mode != 'Add' && $task_rel_id=='5'){?>
 							<div class="col-md-12">
 								<div class="col-md-6 col-md-offset-1"> 
 									<div class="form-group text-center">
@@ -128,7 +128,7 @@ else {
 									</div>
 								</div>
 							</div>
-							<?}?>
+							<?php }?>
 							<div class="clearfix"></div>
 							<div class="col-md-6">
 								<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true,'','4','8'); ?>
@@ -261,14 +261,14 @@ else {
 							<div class="clearfix"></div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<?if($mode=='Add'){?>
+									<?php if($mode=='Add'){?>
 										<label class="col-md-2 control-label">Alert</label>
 										<div class="col-md-6"> 
 											<select class="select2" id="task_alert_id" name="task_alert_id">
 												<?=get_task_alert_types($dbcon,$rel['task_alert_id']);?>
 											</select>
 										</div>
-										<?}else if($alert_date_time){?>
+										<?php }else if($alert_date_time){?>
 											<label class="col-md-2 control-label">Alert Date</label>
 											<div class="col-md-6">
 												<div data-date="<?=$alert_date_time?>" class="input-group date form_datetime-meridian">
@@ -278,7 +278,7 @@ else {
 													</div>
 												</div>
 											</div>
-											<?}?>
+											<?php }?>
 										</div>	
 									</div>
 									<div class="clearfix"></div>
@@ -342,12 +342,12 @@ else {
 	$(".select2").select2({
 		width: '100%'
 	});
-	<?if($mode!='Add'){?>
+	<?php if($mode!='Add'){?>
 		$('#task_rel_id').select2("readonly",true);
 		$('#c_con_id').select2("readonly",true);
 		$('#cust_id').select2("readonly",true);
 		$('#inquiry_id').select2("readonly",true);
-		<?}?>
+		<?php }?>
 		$('.default-date-picker').datepicker({
 			format: 'dd-mm-yyyy',
 			autoclose: true
@@ -398,11 +398,11 @@ else {
 	<}?>
 	});
 });*/
-<?if($task_rel_id){?>
+<?php if($task_rel_id){?>
 	$(document).ready(function() {
 		get_rel_task_divs(<?=$task_rel_id?>);
 	}); 
-	<?}?>
+	<?php }?>
 //$('#task_rel_id').select2('readonly',true);
 //$('#inquiry_id').select2("readonly",true);
 </script>

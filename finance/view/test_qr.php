@@ -5,6 +5,6 @@ $str = 'iVBORw0KGgoAAAANSUhEUgAAAOIAAADiCAYAAABTEBvXAAAAAXNSR0IArs4c6QAAAARnQU1B
 
 ?>
 
-<img src="<?//=$qr?>" />
+<img src="<?php //=$qr?>" />
 
 <img src="data:image/png;base64,<?php echo $str ?>" />

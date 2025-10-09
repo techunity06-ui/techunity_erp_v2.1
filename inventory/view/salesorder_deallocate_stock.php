@@ -122,7 +122,7 @@ $result = $dbcon->query($query);
 											<td style="vertical-align:top;" width="25%">
 												<select class="select2" id="sales_order_id" name="sales_order_id" onchange="get_salesorder_product(this.value)">
 													<option value="">Select Salesorder</option>
-													<?
+													<?php 
 														while($row = brp_mysqli_fetch_assoc($result)){
 															echo '<option value="'.$row['sales_order_id'].'">'.$row['sales_order_no'].'</option>';
 														}

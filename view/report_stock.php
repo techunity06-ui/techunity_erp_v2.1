@@ -113,7 +113,7 @@
 															<th>Stock</th>	  
 															<th>Reserve Stock</th>	  
 															<th>Free Stock</th>
-															<?if($getspecialConfiguration['rb_auto_permission']!=1){?>
+															<?php if($getspecialConfiguration['rb_auto_permission']!=1){?>
 																<th>Rate</th>	  
 															<?php} ?>
 															<th>Customer Stock</th>	  

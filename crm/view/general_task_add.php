@@ -391,7 +391,7 @@ else {
     													</div>
     												</div>
     											</div>
-    											<?}?>
+    											<?php }?>
 
     <?php // Amish Soni Start 19-01-2021
     if($showTemplate) { ?>
@@ -508,14 +508,14 @@ else {
 // 	$('#rchars').text(textlen);
 // });
 
-<?if($mode!='Add'){?>
+<?php if($mode!='Add'){?>
 	$('#task_rel_id').select2("readonly",true);
 	$('#c_con_id').select2("readonly",true);
 	$('#cust_id').select2("readonly",true);
 	$('#inquiry_id').select2("readonly",true);
 <?php} ?>
 
-<?if($viewmode == 'Add_flp'){?>
+<?php if($viewmode == 'Add_flp'){?>
 	$('#task_rel_id').select2("readonly",true);
 	$('#c_con_id').select2("readonly",true);
 	$('#cust_id').select2("readonly",true);
@@ -549,13 +549,13 @@ $(".form_datetime-meridian").datetimepicker({
 	$('#inquiry_date').datepicker({
 	format: 'dd-mm-yyyy',
 	autoclose: true
-	<?if($mode=='Add')
+	<?php if($mode=='Add')
 	{?>
 	,startDate: 'd'//don't allow today and past dates
-	<?}?>
+	<?php }?>
 	});
 });*/
-<?if($task_rel_id){?>
+<?php if($task_rel_id){?>
 	$(document).ready(function() {
 		get_rel_task_divs(<?=$task_rel_id?>);
 	}); 

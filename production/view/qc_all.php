@@ -123,7 +123,7 @@ $query="select batch.batch_id,batch.batch_no,batch.process_id,batch.batch_qty,ba
 														<th class="<?=$dper?>" style='width:8%;text-align: center;<?=$display?>'> New Process </th>
 													
 													</tr>
-													<?
+													<?php 
 														$cnt=1;
 	
 													?>

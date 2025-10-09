@@ -100,7 +100,7 @@ if(strpos($_SERVER[REQUEST_URI], "workorderpackingprint")==true)
 			<div class="col-lg-9 table-responsive" id="receipt_print">	
 				<div style="width: 100%;" id="print1">
 					
-			<?
+			<?php 
 				$mode="Print";
 				
 				$rs_inward=$dbcon->query($query_inward);
@@ -141,7 +141,7 @@ if(strpos($_SERVER[REQUEST_URI], "workorderpackingprint")==true)
 					border-collapse:separate;font-weight:bold;" id="packing<?=$x?>" >
 					<tr style="font-size: 8px;">
 							<td rowspan="6" style="width:30%;">
-								<?
+								<?php 
 								echo '<img style="height: 80px;" src="'.$PNG_WEB_DIR.basename($filename).'"/><br/>'; 
 								?>
 							</td>
@@ -163,7 +163,7 @@ if(strpos($_SERVER[REQUEST_URI], "workorderpackingprint")==true)
 						</tr>
 						
 					</table>
-					<?
+					<?php 
 						 echo '<hr style="margin-top:4px;margin-bottom:4px;"/>';
 					//}
 					

@@ -111,7 +111,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1" selected>ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -155,11 +155,11 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 											<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 											<h4 style="font-size:19px; margin-bottom:0px;" align="center"><?=$set_head['address']?></h3>
 												
-												<h4 style="font-size:14px; margin-top:0px;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
-												<h4 align="center" style="margin-top:0px;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4>
+												<h4 style="font-size:14px; margin-top:0px;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
+												<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>
 
-												<h4 align="center" style="margin-top:0px;"><?if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?}?></h4>
+												<h4 align="center" style="margin-top:0px;"><?php if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?php }?></h4>
 												
 											</td>
 										</tr>
@@ -272,14 +272,14 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																	<?=$i?>
 																</td>
 																<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-																	<?if($row['product_alias_name']){?>
+																	<?php if($row['product_alias_name']){?>
 																		<strong><?=stripcslashes($row['product_alias_name'])?> - <?=$item_code;?></strong>
 																		<br/><?=nl2br(stripcslashes($row['description']));?>
 																	<?php}else{ ?>
 																		<strong><?=stripcslashes($row['product_name'])?> - <?=$item_code;?></strong>
 																		<br/><?=nl2br(stripcslashes($row['description']));?>
-																		<?}?>
-																		<?if($delivery_type == 'product_wise'){
+																		<?php }?>
+																		<?php if($delivery_type == 'product_wise'){
 																			$retu_date = "select sdate.*,unit.unit_name from tbl_salesorder_delivery_date as sdate left join unit_mst as unit on unit.unitid=sdate.unit_id where invoice_status=0 and sdate.po_delivery_date_status=0 and sales_ordertrn_id=".$row['sales_ordertrn_id'];
 																			$resadate=$dbcon->query($retu_date);
 																			?>
@@ -290,13 +290,13 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																				</tr>
 																				
 																				
-																				<?while($rowdate=brp_mysqli_fetch_array($resadate)){?>		<tr>
+																				<?php while($rowdate=brp_mysqli_fetch_array($resadate)){?>		<tr>
 																					<td><?=date('d-m-Y',strtotime($rowdate['delivery_date']))?></td>
 																					<td><?=$rowdate['product_qty'].' '.$rowdate['unit_name']?></td>
 																				</tr>		
-																				<?}?>
+																				<?php }?>
 																			</table>
-																			<?}
+																			<?php }
 																			?>
 																		</td>
 																		<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
@@ -316,7 +316,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																	$j=1;
 																	while($row1=brp_mysqli_fetch_assoc($result1))
 																	{?>
-																	<?
+																	<?php 
 																		$item_code = '';
 																		if(in_array('item',$sales_pro_search)){
 																			$item_code = " -- (".$row1['product_icode'].")";
@@ -327,14 +327,14 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																	<?=$i.'.'.$j?>
 																</td>
 																<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-																	<?if($row1['product_alias_name']){?>
+																	<?php if($row1['product_alias_name']){?>
 																		<strong><?=stripcslashes($row1['product_alias_name'])?> - <?=$item_code;?></strong>
 																		<br/><?=nl2br(stripcslashes($row1['description']));?>
 																	<?php}else{ ?>
 																		<strong><?=stripcslashes($row1['product_name'])?> - <?=$item_code;?></strong>
 																		<br/><?=nl2br(stripcslashes($row1['description']));?>
-																		<?}?>
-																		<?if($delivery_type == 'product_wise'){
+																		<?php }?>
+																		<?php if($delivery_type == 'product_wise'){
 																			$retu_date1 = "select sdate.*,unit.unit_name from tbl_salesorder_delivery_date as sdate left join unit_mst as unit on unit.unitid=sdate.unit_id where invoice_status=0 and sdate.po_delivery_date_status=0 and sales_ordertrn_id=".$row1['sales_ordertrn_id'];
 																			$resadate1=$dbcon->query($retu_date1);
 																			?>
@@ -345,20 +345,20 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																				</tr>
 																				
 																				
-																				<?while($rowdate1=brp_mysqli_fetch_array($resadate1)){?>		<tr>
+																				<?php while($rowdate1=brp_mysqli_fetch_array($resadate1)){?>		<tr>
 																					<td><?=date('d-m-Y',strtotime($rowdate1['delivery_date']))?></td>
 																					<td><?=$rowdate1['product_qty'].' '.$rowdate1['unit_name']?></td>
 																				</tr>		
-																				<?}?>
+																				<?php }?>
 																			</table>
-																			<?}
+																			<?php }
 																			?>
 																		</td>
 																		<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 																			<?=$row1['product_qty'].' '.$row1['unit_name']?>
 																		</td>
 																	</tr>
-																	<?
+																	<?php 
 																	$total=$total+=$row1['product_amount'];
 																	$totalqty=$totalqty+$row1['product_qty'];
 																	$totalsqr=$totalsqr+$row1['sqr_ft'];	

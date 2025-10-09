@@ -1,4 +1,4 @@
-<?
+<?php 
 session_start();
 	include_once("../config/config.php");
 	include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");

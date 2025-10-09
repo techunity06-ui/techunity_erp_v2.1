@@ -79,7 +79,7 @@ $mode="Print";
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1">ORIGINAL</option>
 													<option value="2">DUPLICATE</option>

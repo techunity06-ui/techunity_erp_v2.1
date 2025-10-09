@@ -75,8 +75,8 @@ $form="Leads by Executive Report";
 											<div class="col-md-8">
 												<select  class="select2" name="source_id" id="source_id" onChange="load_ledger_datatable()" >
 													<!--<option value="">--Select Customer--</option>-->
-													<?//=get_refer_by($dbcon);?>
-													<?//=get_assign_users_inq($dbcon,$assign_user_inq_ids);?>
+													<?php //=get_refer_by($dbcon);?>
+													<?php //=get_assign_users_inq($dbcon,$assign_user_inq_ids);?>
 													<?=get_assign_users_inq($dbcon,$_SESSION['user_id']);?>
 												</select>
 											</div>

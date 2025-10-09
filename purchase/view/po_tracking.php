@@ -66,7 +66,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 								<h3><?='View '.$form?></h3>
 							</header>	
 							<div class="">
-								<?	
+								<?php 	
 								
 					/*$url = $_SERVER['HTTP_REFERER'];
 					$infopage = basename($url);
@@ -139,7 +139,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 							<div class="tab-content">
 				              <div class="tab-pane active" id="tab_1">
 				                  <div class="panel-group" id="accordion1">
-				                  	<?
+				                  	<?php 
 			                      		$i=1;
 			                      		while($row = brp_mysqli_fetch_array($trn_query_s)){
 			                      			if($row['rate_unit']==$row['unit_id']){
@@ -156,7 +156,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 				                                  </a>
 				                              </h4>
 				                          </div>
-				                          <div class="panel-collapse collapse  <?if($i==1){?>in<?}?>" id="accordion1_<?=$i?>">
+				                          <div class="panel-collapse collapse  <?php if($i==1){?>in<?php }?>" id="accordion1_<?=$i?>">
 				                              <div class="panel-body">
 													<table class="table table-bordered">
 														<thead>
@@ -213,7 +213,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											  </div>
 										  </div>
 									   </div>
-								  	<?$i++;}?>
+								  	<?php $i++;}?>
 								  </div>
 							  </div>
 							</div>	

@@ -52,7 +52,7 @@
                                   <label class="control-label col-md-5">Choose Date</label>
                                   <div class="col-md-7">
                                        <div class="input-group date form_datetime-component">
-										<?
+										<?php 
 									//  $start=(date('m')<'04') ? date('01-04-Y',strtotime('-1 year')) : date('01-04-Y');
 									$start = date('01-m-Y')
 									 ?>

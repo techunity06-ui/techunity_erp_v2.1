@@ -46,7 +46,7 @@ $form="CRM Masters";
 							
 							<div class="panel-body">
 								<div class="row">
-									<?
+									<?php 
 							//Get Crm Masters Fixed id 
 									$user_access_permission = [];
 									$quserdata = $dbcon->query("SELECT * FROM `users` WHERE `user_id` = '".$_SESSION['user_id']."'");

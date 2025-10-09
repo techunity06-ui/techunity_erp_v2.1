@@ -62,7 +62,7 @@
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Vendor * </label>
 													<div class="col-md-8 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" <?=$venreq?> name="vender_id" id="vender_id" onChange="get_product(this.value)"  title="Select Vender">
 															<?=getcust($dbcon,$vender_id,$purchase_party_show);?>	
 														</select>
@@ -82,12 +82,12 @@
 											</div>
 											<div class="col-md-12" style="margin-top:10px;">
 												
-												<?if($companyConfiguration['po_work_order_wise'] == 1){?>
+												<?php if($companyConfiguration['po_work_order_wise'] == 1){?>
 												<div class="col-md-4">
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Sales Order</label>
 													<div class="col-md-8 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="sales_order_id" id="sales_order_id" onChange="get_product();get_work_o_no();"  title="Select Sales Order">
 															<?=getsalesorderno($dbcon);?>	
 														</select>
@@ -99,7 +99,7 @@
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Work Order</label>
 													<div class="col-md-8 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="workorder_id" id="workorder_id" onChange="get_product()"  title="Select Work Order">
 															<?=getworkorderpo($dbcon);?>	
 														</select>
@@ -111,14 +111,14 @@
 													<div class="form-group">
 													<label class="col-md-3 control-label"> Select Product Category</label>
 													<div class="col-md-5 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="product_cat" id="product_cat" onChange="get_product()"  title="Select Product Category">
 															<?=get_all_category($dbcon,"","");?>	
 														</select>
 													</div>
 													</div>	
 												</div>
-												<?}else{ 
+												<?php }else{ 
 													$venreq="required";
 												}?>
 											</div>

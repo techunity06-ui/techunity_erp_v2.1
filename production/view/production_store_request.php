@@ -88,14 +88,14 @@ $company_config = getCompanyConfiguration($dbcon);
 												<label class="col-md-4 control-label" style="color: #404040;font-weight: 600;"> Product Name </label>
 												<div class="col-md-6 col-xs-11" style="color: #0e8400;font-weight: 600;">
 													<?=$rel['product_name']?>
-													<!--<input type="text" class="form-control" id="pr_product_id" name="pr_product_id" value="<?//=$rel['product_name']; ?>" readonly />-->
+													<!--<input type="text" class="form-control" id="pr_product_id" name="pr_product_id" value="<?php //=$rel['product_name']; ?>" readonly />-->
 												</div>
 											</div>
 											<div class="col-md-4">
 												<label class="col-md-4 control-label" style="color: #404040;font-weight: 600;"> Process Name </label>
 												<div class="col-md-6 col-xs-11" style="color: #c71313;font-weight: 600;">
 													<?=$rel['process_name']; ?>
-													<!--<input type="text" class="form-control" id="pr_process_id" name="pr_process_id" value="<?//=$rel['process_name']; ?>" readonly />-->
+													<!--<input type="text" class="form-control" id="pr_process_id" name="pr_process_id" value="<?php //=$rel['process_name']; ?>" readonly />-->
 												</div>
 											</div>
 											<div class="col-md-4">

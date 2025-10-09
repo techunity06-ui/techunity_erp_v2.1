@@ -174,7 +174,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                                 <div class="col-md-1">
                                     <button type="button" id="addcust" data-toggle="modal" data-target="#bs-example-modal-lg"  class="btn btn-primary"><i class="fa fa-plus"></i></button>
                                 </div>
-                                <?}?>
+                                <?php }?>
                                 <div class="col-md-1">
                                     <button type="button" id="viewcompany" onclick="preview_cust_dtls()" title="View Company" class="btn btn-primary"><i class="fa fa-eye"></i></button>
                                 </div>
@@ -348,10 +348,10 @@ $showTemplate = ($crm_auto_mail == 'No');
                                 <label class="col-md-4 control-label">Assign To*</label>
                                 <div class="col-md-8">
 <!--                                    <select class="select2" id="assign_user_inq_ids" name="assign_user_inq_ids[]" title="Choose Assign User" placeholder="Choose Assign User" multiple="multiple" required>
-                                        <?//=get_assign_users_inq($dbcon,$assign_user_inq_ids);?>
+                                        <?php //=get_assign_users_inq($dbcon,$assign_user_inq_ids);?>
                                     </select>-->
                                     <select class="select2" id="assign_user_inq_ids" name="assign_user_inq_ids" required>
-                                        <?//= get_assign_users_inq($dbcon,$rel['user_id']); ?>
+                                        <?php //= get_assign_users_inq($dbcon,$rel['user_id']); ?>
                                         <?=get_assign_users($dbcon, $assign_user_inq_ids, " and user_type in(2,8,9,21)");?>
                                     </select>
                                 </div>
@@ -365,7 +365,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Task</label>
                                 <div class="col-md-8">
-                                <?//=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task?>
+                                <?php //=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task?>
                                     <select class="select2" id="task_type_id" name="task_type_id" title="Choose Task Type">
                                         <option value="">Choose Task Type</option>
                                         <?=get_master_category_dtl($dbcon,16,10);//10:Task?>
@@ -705,7 +705,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                 <td width="25%" class="text-left">
                         <strong>Task</strong>
                 </td>
-        <?	
+        <?php 	
             $tsk_type="";
             $tsk_due_time=strtotime($task_rel['task_due_date']);
 
@@ -752,7 +752,7 @@ $showTemplate = ($crm_auto_mail == 'No');
     </tr>
     <tr>
         <td colspan="4" class="text-left" style="border-bottom: 1px solid #000 !important;">
-            <?
+            <?php 
                 $task_flp_qry="select flp.*,usr.user_name from tbl_followup as flp 
                 left join users as usr on usr.user_id=flp.user_id
                 where flp.flp_status=0 and flp.task_id=".$task_rel['task_id']."";
@@ -776,7 +776,7 @@ $showTemplate = ($crm_auto_mail == 'No');
             <?php} ?>
         </td>
     </tr>
-    <?	} else if($task_rel['entry_type']=='2'){
+    <?php 	} else if($task_rel['entry_type']=='2'){
             //Appointment
             $appointment_start_time='';$appointment_end_time='';
             if($task_rel['appointment_start_time']!="1970-01-01 00:00:00" && $task_rel['appointment_start_time']!="0000-00-00 00:00:00"){
@@ -790,7 +790,7 @@ $showTemplate = ($crm_auto_mail == 'No');
         <td width="25%" class="text-left">
                 <strong>Appointment</strong>
         </td>
-        <?	
+        <?php 	
             $tsk_type="";
             $tsk_due_time=strtotime($task_rel['appointment_end_time']);
 
@@ -919,9 +919,9 @@ CKEDITOR.replace( 'product_desc', {
 CKEDITOR.replace( 'product_spec', {
 	enterMode: CKEDITOR.ENTER_BR
 });
-<?if($mode=='Add'){?>
+<?php if($mode=='Add'){?>
 $('#task_type_id').select2('readonly',true);
-<?}?>
+<?php }?>
 /*$(".form_datetime-meridian").datetimepicker({
     format: "dd-mm-yyyy HH:ii P",
     showMeridian: true,
@@ -950,10 +950,10 @@ $(".form_datetime-meridian").datetimepicker({
 	$('#inquiry_date').datepicker({
 	format: 'dd-mm-yyyy',
 	autoclose: true
-	<?if($mode=='Add')
+	<?php if($mode=='Add')
 	{?>
 	,startDate: 'd'//don't allow today and past dates
-	<?}?>
+	<?php }?>
 	});
 });*/
 $(function(){

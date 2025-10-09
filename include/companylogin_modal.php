@@ -15,7 +15,7 @@
 							  <label class="col-md-4 control-label" style="text-align:left;line-height:25px">User Type *</label>
 							  <div class="col-md-8 col-xs-11">
 								<select class="form-control" id="loginusertype_id" name="loginusertype_id" required title="Select User Type" onchange="showAttendance(this.value)">
-									<?//=getusertype($dbcon,0," and usertype_id!=1")?>
+									<?php //=getusertype($dbcon,0," and usertype_id!=1")?>
 								</select>
                              </div>
 							 </div> -->
@@ -70,9 +70,9 @@
 <script type="text/javascript" src="<?=ROOT?>js/app/companylogin.js?<?=time()?>"></script>
 <script type="text/javascript">
 $("#username").focus();
-<?if((basename($_SERVER['PHP_SELF']))=='login.php'){ ?>
+<?php if((basename($_SERVER['PHP_SELF']))=='login.php'){ ?>
 	$.getJSON("http://jsonip.com?callback=?", function (data) {
 		$("#ip_addr").val(data.ip);
 	});
-<?}?>
+<?php }?>
 </script>

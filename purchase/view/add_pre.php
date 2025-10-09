@@ -107,7 +107,7 @@
 														<?php if($set_conf['po_work_order_wise']==1) { ?>
 															<th width="15%">Choose Sales Order</th>
 															<th width="15%">Choose Work Order</th>
-														<?}?>
+														<?php }?>
 														
 														<th width="15%">Choose Item</th>
 														<th width="10%">Qty</th>
@@ -134,7 +134,7 @@
 																	<?=get_work_order($dbcon)?>
 																</select>
 															</td>
-														<?}?>
+														<?php }?>
 														<td style="max-width:0px">
 															<input type="hidden" name="inquiry_type" id="inquiry_type" value="1">
 															<input id="product_id" name="product_id" style="width:100%;" placeholder="Select product" onchange="product_detail(this.value)" />

@@ -55,12 +55,12 @@
 						<!--<span class="tools pull-right">
 							<a href="<?=ROOT.'import_customerdetail'?>"><button class="btn btn-primary btn-flat" >Import Customer</button></a>
 						</span>-->
-						<?if($_SESSION['user_type'] == 2){?>	
+						<?php if($_SESSION['user_type'] == 2){?>	
 						<span class="tools pull-right">		
 							<a href="javascript:;" onClick="tableToExcel('consignee-table', 'Instalment Collection')" ><button class="btn btn-info btn-flat" >Export Excel</button></a>
 							<!--<a href="<?=ROOT.'customer'?>" ><button class="btn btn-success btn-flat" >Add <?=$form?></button></a>-->
 						</span>
-						<?}?>
+						<?php }?>
 						<span class="tools pull-right"></span>
 						<div class="col-md-12" style="height:20px;"></div>
 						<div class="col-md-6">

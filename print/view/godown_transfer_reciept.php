@@ -107,7 +107,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1" selected>ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -151,11 +151,11 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 											<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 											<h4 style="font-size:19px; margin-bottom:0px;" align="center"><?=$set_head['address']?></h3>
 												
-												<h4 style="font-size:14px; margin-top:0px;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
-												<h4 align="center" style="margin-top:0px;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4>
+												<h4 style="font-size:14px; margin-top:0px;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
+												<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>
 
-												<h4 align="center" style="margin-top:0px;"><?if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?}?></h4>
+												<h4 align="center" style="margin-top:0px;"><?php if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?php }?></h4>
 												
 											</td>
 										</tr>
@@ -274,11 +274,11 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 																</td>
 																<td style="text-align:center !important;vertical-align:top;border-right:1px solid;border-left:1px solid;"><?=$item_code?></td>
 																<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-																	<?if($row['product_alias_name']){?>
+																	<?php if($row['product_alias_name']){?>
 																		<strong><?=stripcslashes($row['product_alias_name'])?> - <?=$item_code;?></strong>
 																	<?php}else{ ?>
 																		<strong><?=stripcslashes($row['product_name'])?></strong>
-																		<?}?>
+																		<?php }?>
 																		</td>
 																		<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 																			<?=$row['base_stock'].' '.$row['unit_name']?>

@@ -24,11 +24,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_name'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_name" id="crm_partymst_cust_name1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_name'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_name'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_name" id="crm_partymst_cust_name1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_name'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_name'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_name" id="crm_partymst_cust_name2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_name'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_name'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_name" id="crm_partymst_cust_name2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_name'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -41,11 +41,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_mobile'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_mobile" id="crm_partymst_cust_mobile1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_mobile'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_mobile'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_mobile" id="crm_partymst_cust_mobile1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_mobile'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_mobile'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_mobile" id="crm_partymst_cust_mobile2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_mobile'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_mobile'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_mobile" id="crm_partymst_cust_mobile2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_mobile'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -58,11 +58,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_email'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_email" id="crm_partymst_cust_email1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_email'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_email'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_email" id="crm_partymst_cust_email1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_email'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_email'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_email" id="crm_partymst_cust_email2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_email'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_email'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_email" id="crm_partymst_cust_email2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_email'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -75,11 +75,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_gst'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_gst" id="crm_partymst_cust_gst1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_gst'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_gst'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_gst" id="crm_partymst_cust_gst1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_gst'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_gst'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_gst" id="crm_partymst_cust_gst2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_gst'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_gst'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_gst" id="crm_partymst_cust_gst2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_gst'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -92,11 +92,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_cat'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_cat" id="crm_partymst_cust_cat1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_cat'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_cat'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_cat" id="crm_partymst_cust_cat1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_cat'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_cat'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_cat" id="crm_partymst_cust_cat2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_cat'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_cat'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_cat" id="crm_partymst_cust_cat2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_cat'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -109,11 +109,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_iec'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_iec" id="crm_partymst_cust_iec1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_iec'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_iec'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_iec" id="crm_partymst_cust_iec1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_iec'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_iec'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_iec" id="crm_partymst_cust_iec2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_iec'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_iec'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_iec" id="crm_partymst_cust_iec2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_iec'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -126,11 +126,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_type'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_type" id="crm_partymst_cust_type1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_type'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_type'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_type" id="crm_partymst_cust_type1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_type'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_type'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_type" id="crm_partymst_cust_type2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_type'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_type'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_type" id="crm_partymst_cust_type2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_type'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -143,11 +143,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_pan'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_pan" id="crm_partymst_cust_pan1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_pan'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_pan'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_pan" id="crm_partymst_cust_pan1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_pan'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_pan'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_pan" id="crm_partymst_cust_pan2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_pan'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_pan'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_pan" id="crm_partymst_cust_pan2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_pan'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -160,11 +160,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_ind'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_ind" id="crm_partymst_cust_ind1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_ind'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_ind'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_ind" id="crm_partymst_cust_ind1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_ind'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_ind'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_ind" id="crm_partymst_cust_ind2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_ind'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_ind'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_ind" id="crm_partymst_cust_ind2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_ind'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -177,11 +177,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_source'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_cust_source" id="crm_partymst_cust_source1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_cust_source'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_source'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_cust_source" id="crm_partymst_cust_source1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_cust_source'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_cust_source'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_cust_source" id="crm_partymst_cust_source2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_cust_source'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_cust_source'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_cust_source" id="crm_partymst_cust_source2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_cust_source'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -194,11 +194,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_t_id'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_t_id" id="crm_partymst_t_id1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_t_id'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_t_id'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_t_id" id="crm_partymst_t_id1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_t_id'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_t_id'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_t_id" id="crm_partymst_t_id2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_t_id'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_t_id'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_t_id" id="crm_partymst_t_id2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_t_id'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -211,11 +211,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_address'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_c_add_address" id="crm_partymst_c_add_address1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_c_add_address'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_address'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_c_add_address" id="crm_partymst_c_add_address1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_c_add_address'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_address'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_c_add_address" id="crm_partymst_c_add_address2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_c_add_address'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_address'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_c_add_address" id="crm_partymst_c_add_address2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_c_add_address'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -228,11 +228,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_country'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_c_add_country" id="crm_partymst_c_add_country1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_c_add_country'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_country'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_c_add_country" id="crm_partymst_c_add_country1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_c_add_country'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_country'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_c_add_country" id="crm_partymst_c_add_country2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_c_add_country'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_country'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_c_add_country" id="crm_partymst_c_add_country2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_c_add_country'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -245,11 +245,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_state'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_c_add_state" id="crm_partymst_c_add_state1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_c_add_state'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_state'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_c_add_state" id="crm_partymst_c_add_state1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_c_add_state'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_state'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_c_add_state" id="crm_partymst_c_add_state2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_c_add_state'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_state'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_c_add_state" id="crm_partymst_c_add_state2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_c_add_state'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>
@@ -262,11 +262,11 @@
 								<div class="form-group">
 									<div class="col-md-12">
 										<div class="btn-group btn-group-toggle" data-toggle="buttons">
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_city'] == '0'){ echo "active";}?>">
-												<input type="radio" name="crm_partymst_c_add_city" id="crm_partymst_c_add_city1" autocomplete="off" value="0" <?if($getpagePermission['crm_partymst_c_add_city'] == '0'){ echo "checked";}?>  > No
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_city'] == '0'){ echo "active";}?>">
+												<input type="radio" name="crm_partymst_c_add_city" id="crm_partymst_c_add_city1" autocomplete="off" value="0" <?php if($getpagePermission['crm_partymst_c_add_city'] == '0'){ echo "checked";}?>  > No
 											</label>
-											<label class="btn btn-secondary <?if($getpagePermission['crm_partymst_c_add_city'] == '1'){ echo "active";}?>" >
-												<input type="radio" name="crm_partymst_c_add_city" id="crm_partymst_c_add_city2" autocomplete="off" value="1" <?if($getpagePermission['crm_partymst_c_add_city'] == '1'){ echo"checked"; }?>> Yes
+											<label class="btn btn-secondary <?php if($getpagePermission['crm_partymst_c_add_city'] == '1'){ echo "active";}?>" >
+												<input type="radio" name="crm_partymst_c_add_city" id="crm_partymst_c_add_city2" autocomplete="off" value="1" <?php if($getpagePermission['crm_partymst_c_add_city'] == '1'){ echo"checked"; }?>> Yes
 											</label>
 										</div>
 									</div>

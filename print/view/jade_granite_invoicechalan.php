@@ -121,7 +121,7 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 									<label class="col-md-2 control-label"> Print</label>
 									<div class="col-md-4 col-xs-11">
 										<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-											<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+											<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 												<option value="">Select Print</option>
 												<option value="1">ORIGINAL</option>
 												<option value="2">DUPLICATE</option>
@@ -153,8 +153,8 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 												<h2 align="center"><?=$set_head['company_name']?></h2>
 												<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 												<h5 align="center"><?=$set_head['address']?></h5>
-												<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+												<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 											</td>
 										</tr>
 									</table>				
@@ -288,7 +288,7 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 												<table class="footer-table" width="100%">
 													<tr style="border-bottom:none;">
 														<td colspan="2" style="">
-															<?if(!empty($set_head['vatno'])){ ?>
+															<?php if(!empty($set_head['vatno'])){ ?>
 																<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 															<?php} ?>
 														</td>

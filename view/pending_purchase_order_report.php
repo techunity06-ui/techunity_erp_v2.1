@@ -117,7 +117,7 @@ if(!in_array(PENDING_PURCHASE_ORDER_REPORT_VIEW,$bulkAccessArray)){
 												
 												<div class="col-md-6">
 													<div class="input-group date form_datetime-component">
-														<?
+														<?php 
 														$start=date('01-m-Y');
 														?>
 														<input type="hidden" id="from_po_date"  value="<?=$start?>">
@@ -135,7 +135,7 @@ if(!in_array(PENDING_PURCHASE_ORDER_REPORT_VIEW,$bulkAccessArray)){
 												
 												<div class="col-md-6">
 													<div class="input-group date form_datetime-component">
-														<?
+														<?php 
 														$start=date('01-m-Y');
 														?>
 														<input type="hidden" id="from_delivery_date"  value="<?=$start?>">

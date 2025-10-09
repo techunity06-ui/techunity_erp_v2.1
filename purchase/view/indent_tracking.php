@@ -56,7 +56,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 								<h3><?='View '.$form?></h3>
 							</header>	
 							<div class="">
-								<?	
+								<?php 	
 								
 					/*$url = $_SERVER['HTTP_REFERER'];
 					$infopage = basename($url);

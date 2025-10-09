@@ -268,7 +268,7 @@ die;*/
                                                     </div>
                                                 </div>
 
-                                                <?if($getspecialConfiguration['reciclar']==1){?>
+                                                <?php if($getspecialConfiguration['reciclar']==1){?>
                                                 <div class="col-md-4" style="display: none;">
                                                     <div class="form-group">
                                                         <label for="product_category" class="col-md-4 control-label">Parent Category*</label>
@@ -279,7 +279,7 @@ die;*/
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <?}?>
+                                                <?php }?>
 
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -410,7 +410,7 @@ die;*/
 
                                                 </div>
                                             <?php} ?>
-                                            <?if($getspecialConfiguration['power_drive']==1){
+                                            <?php if($getspecialConfiguration['power_drive']==1){
                                                 $query_field = "select * from tbl_item_master_field where item_master_field_status=0 and company_id=".$_SESSION['company_id']." order by priority ASC";
                                                 $res_field = $dbcon->query($query_field);
                                                 $ro_cnt = brp_mysqli_num_rows($res_field);
@@ -420,7 +420,7 @@ die;*/
                                                     if($field==1){
                                             ?>
                                                 <div class="col-md-12 margin_row">  
-                                                <?}?>
+                                                <?php }?>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="col-md-4 control-label"><?=$row_field['item_master_field']?>*</label>
@@ -434,15 +434,15 @@ die;*/
                                                 </div>
                                                 <?phpif($ro_cnt == $field){?>
                                                 </div>
-                                                <?}else{
+                                                <?php }else{
                                                     if($counter==3){ 
                                                         $counter=0;
                                                 
                                                     ?>
                                                     </div><div class="col-md-12 margin_row">
-                                                <?}}?>
+                                                <?php }}?>
 
-                                            <?$field++;$counter++;}}?>
+                                            <?php $field++;$counter++;}}?>
                                             <input type="hidden" name="dynamic_field" id="dynamic_field" value="<?=$field-1?>">
                                             <div class="col-md-12 margin_row">
                                                 <div class="col-md-4">
@@ -627,7 +627,7 @@ die;*/
                                              }
                                         ?>
                                        
-                                                <?if($getspecialConfiguration['power_drive']==1){ ?>
+                                                <?php if($getspecialConfiguration['power_drive']==1){ ?>
                                                     <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="ISO Verify" class="col-md-4 control-label">ISO Verify</label>
@@ -2049,7 +2049,7 @@ die;*/
             	
             }*/
         </script>
-        <?
+        <?php 
         echo "<script>pro_status(" . $rel['product_type'] . ");</script>";
         echo "<script>getitemstatus(" . $rel['item_status'] . ");</script>";
         /*echo "<script>readonlyform();</script>";*/

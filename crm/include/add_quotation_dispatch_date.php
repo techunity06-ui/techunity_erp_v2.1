@@ -13,7 +13,7 @@
 
 							<div class="col-md-12" style="margin-top:10px;margin-bottom: 10px;">
 								<select class="form-control"  title="Select Unit" placeholder="Unit" name="unit_wise" id="unit_wise" onchange="delivery_schedule();">
-                                    <?//=getunit($dbcon,0);?>
+                                    <?php //=getunit($dbcon,0);?>
                                     <option value="0">Select Unit</option>
                                 </select>
 							</div>

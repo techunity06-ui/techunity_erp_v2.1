@@ -145,7 +145,7 @@ $sales_pro_print=explode(",", $company_config['sales_pro_print']);
 									<label class="col-md-2 control-label"> Print</label>
 									<div class="col-md-4 col-xs-11">
 										<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-											<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+											<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 												<option value="">Select Print</option>
 												<option value="1" selected>ORIGINAL</option>
 												<option value="2">DUPLICATE</option>
@@ -287,7 +287,7 @@ $sales_pro_print=explode(",", $company_config['sales_pro_print']);
 												<table class="footer-table" width="100%">
 													<tr style="border-bottom:none;">
 														<td colspan="2" style="">
-															<?if(!empty($set_head['vatno'])){ ?>
+															<?php if(!empty($set_head['vatno'])){ ?>
 																<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 															<?php} ?>
 														</td>

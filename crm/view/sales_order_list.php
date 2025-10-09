@@ -193,7 +193,7 @@ $cnyts = explode(",",$amnts);
 
 								<php //echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true,'reload_data()','4','8'); ?>
 							</div> -->
-							<?if($companyConfiguration['branch_wise_manage']==1){?>
+							<?php if($companyConfiguration['branch_wise_manage']==1){?>
 								<div class='col-lg-4'>
 									<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true,'reload_data()','4','8'); ?>
 								</div>
@@ -242,7 +242,7 @@ $cnyts = explode(",",$amnts);
 										<label for="user_id" class="col-md-4 control-label">User</label>
 										<div class="col-md-8">
 											<select class="select2" name="user_id" id="user_id" onchange="reload_data()">
-												<?
+												<?php 
 												if($getspecialConfiguration['apson_special']==1){
 													echo get_tree_user($dbcon, $_SESSION['user_id'], '');
 												}

@@ -280,7 +280,7 @@ $sales_party_show = $set_conf['sales_party_show'];
 
 	});
 </script>
-<?
+<?php 
 if($mode=="Add"){
 	echo "<script>get_series_no(".SALES_CARD.");show_card_type();</script>";
 }else{

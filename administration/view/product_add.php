@@ -2061,7 +2061,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
         	
         }*/
     </script>
-    <?
+    <?php 
     echo "<script>pro_status(" . $rel['product_type'] . ");</script>";
     echo "<script>getitemstatus(" . $rel['item_status'] . ");</script>";
     /*echo "<script>readonlyform();</script>";*/

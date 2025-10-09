@@ -34,7 +34,7 @@
 							<section class="panel">
 								<header class="panel-heading">
 									<h3><?=$form?> List</h3>
-										<?
+										<?php 
 											//Hide approve btn if not allowed
 											//$aprvfinal_btn_per=check_permission("#mod_po_per_div_sec",$_SESSION['user_id'],'final_aprv',$dbcon);
 											//var_dump($aprvfinal_btn_per);
@@ -88,7 +88,7 @@
 											<label class="control-label col-md-4">Choose Customer</label>
 											<div class="col-md-7">
 												<select class="select2" name="cust_id" id="cust_id" onChange="load_order_confirm_datatable();">
-													<?//=getcust($dbcon,'');?>	
+													<?php //=getcust($dbcon,'');?>	
 												</select>
 											</div>
 										</div>
@@ -236,20 +236,20 @@
 			$(function(){
 				setTimeout(function(){ $('#sidebar > ul').hide(); }, 1000);
 			});
-			<?//Hide approve btn if not allowed - Payment Modal
+			<?php //Hide approve btn if not allowed - Payment Modal
 				$mod_btn_per=check_permission("#mod_per_div_sec",$_SESSION['user_id'],'aprv',$dbcon);
 				if(!$mod_btn_per){
 			?>	
 			$('#mod_per_div_sec').hide();
-			<?
+			<?php 
 				}
 			?>
-			<?//Hide approve btn if not allowed - Po Modal
+			<?php //Hide approve btn if not allowed - Po Modal
 			$mod_btn_per=check_permission("#mod_po_per_div_sec",$_SESSION['user_id'],'aprv',$dbcon);
 			if(!$mod_btn_per){
 			?>	
 				$('#mod_po_per_div_sec').hide();
-			<?
+			<?php 
 				}
 			?>
 		</script>

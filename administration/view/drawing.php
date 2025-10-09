@@ -243,7 +243,7 @@ $sales_party_show = $company_config['sales_party_show'];
                               <input type='hidden' name='eid' id='eid' value='<?= $drawing_id; ?>' />
                               <input type='hidden' name='back' id='back' value='<?= $back; ?>' />
                               <input type='hidden' name='revision_id' id='revision_id' value='<?= $rev_rel['revision_id'] ?>' />
-                              <?
+                              <?php 
                               if ($direct_add == '1') {
                               ?>
                                  <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?= $rel['drawing_id'] ?>" />
@@ -447,7 +447,7 @@ $sales_party_show = $company_config['sales_party_show'];
          $(this).valid();
       });
    </script>
-   <?
+   <?php 
    //echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
    //echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
    if ($mode == "Add") {

@@ -37,8 +37,8 @@ if($_REQUEST['id']){
 									<div class="col-md-7">
 										<input id="from_date" name="from_date" type="text" class="form-control default-date-picker" title="Date" value="<?=$start?>" placeholder="Start Date" onchange="load_pend_appointment();">
 <!--			<div class="input-group date form_datetime-component">
-				<input type="hidden" id="from_date" value="<?//=$start?>">
-				<input type="hidden" id="to_date" value="<?//=$end?>">
+				<input type="hidden" id="from_date" value="<?php //=$start?>">
+				<input type="hidden" id="to_date" value="<?php //=$end?>">
 				<input type="text" id="fil_due_date" onChange="load_pend_appointment();" class="form-control datepikerdemo" value="">
 				<span class="input-group-btn">
 					<button type="button" class="btn btn-danger date-set"><i class="fa fa-calendar"></i></button>
@@ -54,7 +54,7 @@ if($_REQUEST['id']){
 		<div class="col-md-7">
 			<select class="select2" id="fil_task_type_id" name="fil_task_type_id" onChange="load_pend_task();">
 				<option value="">ALL</option>
-				<?//=get_master_category_dtl($dbcon,$task_type_id,10);//10:Task?>
+				<?php //=get_master_category_dtl($dbcon,$task_type_id,10);//10:Task?>
 			</select>
 		</div>
 	</div>

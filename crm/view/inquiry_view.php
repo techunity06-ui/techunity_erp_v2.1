@@ -51,7 +51,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 								<div class="text-center">Owner : <strong><?=$user_name?></strong></div>
 							</header>	
 							<div class="">
-								<?	
+								<?php 	
 								
 					/*$url = $_SERVER['HTTP_REFERER'];
 					$infopage = basename($url);
@@ -167,7 +167,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											<td class="text-right"><?=$trn_rel['product_amount']?></td>
 											<!--<td><?=(nl2br($trn_rel['product_spec']))?></td>-->
 										</tr>
-										<?
+										<?php 
 									}
 									?>
 								</table>
@@ -185,7 +185,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 									<th>Approve Status</th>
 									<th>Action</th>
 								</tr>
-								<?
+								<?php 
 								$get_quot_qry="select quotation_id,quotation_no,quotation_date ,approve_status from tbl_quotation where inquiry_id=".$rel['inquiry_id'];
 								$get_quot_qry_rs=$dbcon->query($get_quot_qry);
 								if(mysqli_num_rows($get_quot_qry_rs)){
@@ -195,7 +195,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											<td><?=$get_quot_rel['quotation_no']?></td>
 											<td><?=date("d-M-Y", strtotime($get_quot_rel['quotation_date']))?></td>
 											<td>
-												<?
+												<?php 
 												if($get_quot_rel['approve_status']=='1'){
 													echo '<div class="external-event label label-success ui-draggable" style="cursor:auto;">Authorized</div>';
 												}
@@ -221,7 +221,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 										<tr>
 											<td colspan="4" class="text-center">No Quotation Found !!!</td>
 										</tr>
-									<?	}	?>	
+									<?php 	}	?>	
 								</table>
 								<div style="overflow:auto;">
 									<table class="display table table-bordered table-striped">
@@ -238,7 +238,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											<th class="text-center">Owner</th>
 											<th class="text-center">Assign User</th>
 										</tr>
-										<?
+										<?php 
 										$get_apt_qry="select tsk.*,sub.mcd_name as subject,usr.user_name,prior.task_priority_name,user.user_name as assign_name from tbl_task as tsk 
 										left join tbl_master_category_detail as sub on sub.mcd_id=tsk.task_type_id
 										left join users as usr on usr.user_id=tsk.user_id
@@ -267,7 +267,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 													<td><?=$apt_rel['user_name']?></td>
 													<td><?=$apt_rel['assign_name']?></td>
 												</tr>
-												<?	$k++;
+												<?php 	$k++;
 											}
 										}
 										else{
@@ -275,7 +275,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											<tr>
 												<td colspan="7" class="text-center">No Appointments Found!!!</td>
 											</tr>
-											<?
+											<?php 
 										}
 										?>
 									</table>
@@ -296,7 +296,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											<th class="text-center">Owner</th>
 											<th class="text-center">Assign User</th>
 										</tr>
-										<?
+										<?php 
 										$get_task_qry="select tsk.*,sub.mcd_name as subject,usr.user_name,prior.task_priority_name,user.user_name as assign_name from tbl_task as tsk 
 										left join tbl_master_category_detail as sub on sub.mcd_id=tsk.task_type_id
 										left join users as usr on usr.user_id=tsk.user_id
@@ -326,7 +326,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 													<td><?=$task_rel['user_name']?></td>
 													<td><?=$task_rel['assign_name']?></td>
 												</tr>
-												<?	$k++;
+												<?php 	$k++;
 											}
 										}
 										else{
@@ -334,7 +334,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 											<tr>
 												<td colspan="8" class="text-center">No Data Found!!!</td>
 											</tr>
-											<?
+											<?php 
 										}
 										?>
 									</table>

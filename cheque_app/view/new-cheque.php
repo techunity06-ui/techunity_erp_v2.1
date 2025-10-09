@@ -159,13 +159,13 @@
 						<div class="content">
 							<form method="post" id="FormGenerateCheque" role="form" parsley-validate novalidate> 
 								<div class="form-group">
-									<?
+									<?php 
 									if($mode=="direct_cheque")
 									{ ?>
 									<label>ACCOUNT</label>
 									<input type="text" readonly class="form-control"  value="<?=$rel['acc_name'].' ('.$rel['bank_name'].'-'.$rel['branch_name'].') ';?>"/>
 									<input type="hidden" id="bank" value="<?=$acc_id?>"/>
-									<?}
+									<?php }
 									else
 									{
 									?>
@@ -189,7 +189,7 @@
 									<input type="text" id="cheque-date" onKeyUp="UpdateDate()" value="<?php echo $date ?>" class="form-control datetime" parsley-trigger="change" required>
 								</div>
 								<div class="form-group">
-									<?
+									<?php 
 									if($mode=="direct_cheque")
 									{ ?>
 									<label>PAYEE</label>
@@ -198,7 +198,7 @@
 									<input type="hidden" id="payee_type" value="<?=$payeetype?>"/>
 									<input type="hidden" id="cradit_id" value="<?=$craditid?>"/>
 									
-									<?}
+									<?php }
 									else
 									{
 									?>
@@ -259,7 +259,7 @@
 									<input type="hidden" id="backurl" name="backurl" value="<?=$backurl?>" />
 									<button type="button" id="save_print" class="btn btn-success"><i class="fa fa-print"></i> Save &amp; Print</button>
 									<!--<button type="button" id="save_print_email" class="btn btn-info"><i class="fa fa-envelope-o"></i> Save &amp; Email Print</button>-->
-									<?
+									<?php 
 									if($mode!="direct_cheque")
 									{ ?>
 									<button type="button" id="save_only" class="btn btn-primary"><i class="fa fa-save"></i> Save Only</button>
@@ -1032,7 +1032,7 @@ function payee_change()
 			
 }
 </script>
-<?
+<?php 
 	if($mode=="direct_cheque")
 	{
 			//$('#bank').select2('val','.$acc_id.');$('#bank').trigger('change');

@@ -290,7 +290,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 												<th>
 													<a  href="<?php echo ROOT.'pending_dispatch_list_crm';?>">PENDING DISPATCH</a>
 												</th>
-												<th><?//=count_pend_disp($dbcon);?></th>
+												<th><?php //=count_pend_disp($dbcon);?></th>
 											</tr>
 										<?php } ?>
 										<?php if(in_array(DASHBOARD_PENDING_TASK_LIST_APPOINTMENT_LIST,$bulkAccessArray)) { ?>
@@ -399,7 +399,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 												<th>
 													<a  href="<?php echo ROOT.'pending_dispatch_list_crm';?>">PENDING DISPATCH</a>
 												</th>
-												<th><?//=count_pend_disp($dbcon);?></th>
+												<th><?php //=count_pend_disp($dbcon);?></th>
 											</tr>
 										<?php } ?>
 										<?php if(in_array(DASHBOARD_PERSONAL_PENDING_TASK_LIST_APPOINTMENT_LIST,$bulkAccessArray)) { ?>
@@ -696,20 +696,20 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 													<th><a href="<?=ROOT.PURCHASE_ROOT.'po_dispproved_list'?>">Purchase Order Disapproved</a></th>
 													<td><span id="po_disapproved"></span></td>
 												</tr>
-												<?}?>
+												<?php }?>
 												<?php if(in_array(DASHBOARD_PO_SHORTCLOSE_APPROVAL,$bulkAccessArray)) { ?>
 													<tr>
 														<th><a href="<?=ROOT.PURCHASE_ROOT.'po_shortclose_approval_list'?>">PO Shortclose Approval Pending</a></th>
 														<td><span id="po_shortclose_approval"></span></td>
 													</tr>
-													<?}?>
+													<?php }?>
 
 													<?php if(in_array(DASHBOARD_PO_SHORTCLOSE_DISAPPROVAL,$bulkAccessArray)) { ?>
 														<tr>
 															<th><a href="<?=ROOT.PURCHASE_ROOT.'po_shortclose_disapproval_list'?>">PO Shortclose Disapproval</a></th>
 															<td><span id="po_shortclose_disapproval"></span></td>
 														</tr>
-														<?}?>
+														<?php }?>
 														<?php /* START JAYESH FOR GIR */ if(in_array(DASHBOARD_PO_GIR_LIST,$bulkAccessArray)) { ?>
 															<tr>
 																<th><a href="<?=ROOT.'gir_list'?>">Gate Inward Receipt</a></th>
@@ -717,13 +717,13 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 															</tr>
 														<?php }  /* END JAYESH FOR GIR */ ?>
 
-														<?if(in_array(DASHBOARD_SERVICE_NOTES_LIST,$bulkAccessArray)) {?>
+														<?php if(in_array(DASHBOARD_SERVICE_NOTES_LIST,$bulkAccessArray)) {?>
 															<tr>
 																<th><a href="<?=ROOT.PURCHASE_ROOT.'service_notes_pro_list'?>">Service Notes</a></th>
 																<td><span id="service_notes"></span></td>
 															</tr>
 
-															<?}?>
+															<?php }?>
 															<?php if(in_array(DASHBOARD_OVERDUE_PO_PRO_LIST,$bulkAccessArray)) { ?>
 																<tr>
 																	<th><a href="<?=ROOT.INVENTORY_ROOT.'overdue_po_pro_list'?>">Pending Inward</a></th>
@@ -740,7 +740,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 																	<td><span id="today_inward"></span></td>
 																</tr>
 
-																<?}?>
+																<?php }?>
 																<?php if(in_array(DASHBOARD_PURCHASE_BILL_PENDING_LIST,$bulkAccessArray)) { ?>
 																	<tr>
 																		<th><a href="<?=ROOT.PURCHASE_ROOT.'purchase_bill_pending_list'?>">Goods Purchase Bill Pending</a></th>
@@ -869,7 +869,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 										<tr>
 											<th class="text-left "><a class="border_line1" href="<?php echo ROOT.PRODUCTION_ROOT."pending_job_work_list_new";?>">Pending Job Work</a></th>
 											<th><span id="pending_job_work_count"></span>
-												<?//=production_start_count_using_p_id($dbcon,"1"); ?>
+												<?php //=production_start_count_using_p_id($dbcon,"1"); ?>
 											</th>
 										</tr>
 									<?php } ?>
@@ -1092,7 +1092,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 													<a href="<?php echo ROOT.PRODUCTION_ROOT."working_process_detail_list/".$row_p['process_id']."/2";?>" class="link_dash"><?=process_wise_production_count($dbcon,$row_p['process_id'],1,2);?></a>
 
 												</th>
-											<?	} ?>
+											<?php 	} ?>
 											<!--   END ::  Added by Sanat :: 20-09-2021 -->
 
 
@@ -1126,7 +1126,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 							</table>
 							
 						</div>
-						<?	} ?>
+						<?php 	} ?>
 					</div>
 					
 				</div>
@@ -1376,7 +1376,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 													<th class="text-center">0</th>
 												</tr> -->
 												
-												<?} ?>
+												<?php } ?>
 												<tr>
 													<th>
 														<a class="border_line1" href="<?php echo ROOT.INVENTORY_ROOT."returnable_pending_grn_list" ?>">Returnable Chalan GRN Pending</a></th> 
@@ -1462,7 +1462,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 
 												<table class="table">
 
-													<?
+													<?php 
 													$branch_id_part_qc=$_SESSION['branch_id'];
 													$branch_id_part_qc = ($_SESSION['user_type'] == '2' && isset($branch_id_part_qc) && $branch_id_part_qc) ? $branch_id_part_qc : $_SESSION['branch_id'];
 													$where_part_qc_db = check_branch('trn', $branch_id_part_qc);
@@ -1488,7 +1488,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 																			</tr>
 																			
 
-																		<?	}
+																		<?php 	}
 
 																		?>
                                                                     <!--<tr>
@@ -1515,7 +1515,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 
                                                         			<table class="table">
 
-                                                        				<?
+                                                        				<?php 
                                                         				$branch_id_reproces_qc=$_SESSION['branch_id'];
                                                         				$branch_id_reproces_qc = ($_SESSION['user_type'] == '2' && isset($branch_id_reproces_qc) && $branch_id_reproces_qc) ? $branch_id_reproces_qc : $_SESSION['branch_id'];
                                                         				$where_reproces_qc_db = check_branch('trn', $branch_id_reproces_qc);
@@ -1538,7 +1538,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                                         					</tr>
 
 
-                                                        				<?	}
+                                                        				<?php 	}
 
                                                         				?>
 
@@ -1747,28 +1747,28 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 									<th>In Order</th>
 									<th>In Stock</th>
 									<th>End Process</th>
-									<!-- <th><?//= count_so_invoice_pending($dbcon); ?></th> -->
+									<!-- <th><?php //= count_so_invoice_pending($dbcon); ?></th> -->
 								</tr>
 								<tr>
 									<th><a  href="<?php echo ROOT."production/solid_mixing_entry";?>" >Mixing</a></th>
 									<th>-</th>
 									<th>-</th>
 									<th><a  href="<?php echo ROOT."production/solid_mixing_entry";?>" ><?=count_mixing_end($dbcon);?></a></th>
-									<!-- <th><?//= count_so_invoice_pending($dbcon); ?></th> -->
+									<!-- <th><?php //= count_so_invoice_pending($dbcon); ?></th> -->
 								</tr>
 								<tr>
 									<th><a  href="<?php echo ROOT."production/solid_extrusion_entry";?>" >Extrusion</a></th>
 									<th><a  href="<?php echo ROOT."production/solid_extrusion_entry/0";?>" ><?=count_exe_inorder($dbcon);?></a></th>
 									<th><a  href="<?php echo ROOT."production/solid_extrusion_entry/1";?>" ><?=count_exe_instock($dbcon);?></a></th>
 									<th><a  href="<?php echo ROOT."production/solid_extrusion_entry/2";?>" ><?=count_exe_end($dbcon);?></a></th>
-									<!-- <th><?//= count_so_invoice_pending($dbcon); ?></th> -->
+									<!-- <th><?php //= count_so_invoice_pending($dbcon); ?></th> -->
 								</tr>
 								<tr>
 									<th><a  href="<?php echo ROOT."production/solid_printing_entry";?>" >Printing</a></th>
 									<th><a  href="<?php echo ROOT."production/solid_printing_entry/0";?>" ><?=count_printing_inorder($dbcon);?></a></th>
 									<th><a  href="<?php echo ROOT."production/solid_printing_entry/1";?>" ><?=count_printing_instock($dbcon);?></a></th>
 									<th><a  href="<?php echo ROOT."production/solid_printing_entry/2";?>" ><?=count_printing_end($dbcon);?></a></th>
-									<!-- <th><?//= count_so_invoice_pending($dbcon); ?></th> -->
+									<!-- <th><?php //= count_so_invoice_pending($dbcon); ?></th> -->
 								</tr>
 							</table>
 
@@ -1796,7 +1796,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 										<th><a  href="<?php echo ROOT."pending_dispatch_list";?>" >SO Invoice Pending</a></th>
 										<th><?= count_so_invoice_pending($dbcon); ?></th>
 									</tr>
-									<?}?>
+									<?php }?>
 									<?php if(in_array(DASHBOARD_CUSTOMER_UNADJUSTED_AMOUNT,$bulkAccessArray)){ ?>
 										<tr>
 											<th><a  href="<?php echo ROOT."report_cust_unadjusted_amount";?>" >Invoice Unadjusted amount</a></th>
@@ -1878,22 +1878,22 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 										<?php if(in_array(DASHBOARD_DISPATCH_PENDING,$bulkAccessArray)){ ?>
 										<tr>
 											<th><a  href="<?php echo ROOT.DISPATCH_ROOT."dispatch_pending";?>" > Dispatch Pending</a></th>
-											<th><?=dispatch_pending($dbcon,'0')?><?//=count_pending_invoice_approval($dbcon); ?></th>
+											<th><?=dispatch_pending($dbcon,'0')?><?php //=count_pending_invoice_approval($dbcon); ?></th>
 										</tr>
-										<?}?>
+										<?php }?>
 										<?php if(in_array(DASHBOARD_DISPATCH,$bulkAccessArray)){ ?>
 										<tr>
 											<th><a  href="<?php echo ROOT.DISPATCH_ROOT."dispatch";?>" > Dispatch </a></th>
-											<th><?=dispatch_pending($dbcon,'2')?><?//=count_pending_invoice_approval($dbcon); ?></th>
+											<th><?=dispatch_pending($dbcon,'2')?><?php //=count_pending_invoice_approval($dbcon); ?></th>
 										</tr>
-										<?}?>
+										<?php }?>
 
 										<?php if(in_array(DASHBOARD_FINAL_DISPATCH,$bulkAccessArray)){ ?>
 										<tr>
 											<th><a  href="<?php echo ROOT.DISPATCH_ROOT."final_dispatch";?>" > Final Dispatch </a></th>
-											<th><?=dispatch_pending($dbcon,'1')?><?//=count_pending_invoice_approval($dbcon); ?></th>
+											<th><?=dispatch_pending($dbcon,'1')?><?php //=count_pending_invoice_approval($dbcon); ?></th>
 										</tr>
-										<?}?>
+										<?php }?>
 									</table>
 								</div>
 							</div>
@@ -1901,7 +1901,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 					</div>
 				</div>
 			</div>
-		<?}?>
+		<?php }?>
 		<!-- DISPATCH Section End -->
 		<!-- HRMS Section Start-->
 		<?php if(in_array(HRMS_SLUG_VIEW,$bulkAccessArray)) { ?>

@@ -70,7 +70,7 @@
 								<label class="col-md-2 control-label" style="margin-left:">Select Customer </label>
 								<div class="col-md-4 col-xs-11">
 								<select class="select2" name="cust_id" id="cust_id" onChange="" >
-									<?
+									<?php 
 												getcust($dbcon,$rel['cust_id']);
 									?>	
 							</select>
@@ -116,7 +116,7 @@
 							<th width="8%">Disc.%</th>
 							<th> Amount</th>
 						</tr>
-							<?
+							<?php 
 							if($mode=="Add")
 							{ ?>
 								<input type="hidden" value="1" name="fieldcnt" id="fieldcnt"/>
@@ -134,7 +134,7 @@
 								<td><input type="button"  name="addrow" id="addrow" onClick="return add_field();"  class="btn btn-primary" value="Add Product"/></td>
 						</tr>
 									<?php}?>
-							<?
+							<?php 
 							if($mode=="Edit")
 							{
 							$qry1="select * from  tbl_povendertrancation where povender_id=".$rel['povender_id'];
@@ -142,13 +142,13 @@
 									$num_rows=mysqli_num_rows($result1);
 									?>
 									 <input type="hidden" value="<?=$num_rows?>" name="fieldcnt" id="fieldcnt"/>
-									<?
+									<?php 
 									$i=1;
 									while($row1=mysqli_fetch_assoc($result1))
 									{
 								?>
 							<tr id="fieldtr<?=$i?>">
-							<?
+							<?php 
 								$qry2="select * from tbl_product where product_id=".$row1['product_id'];
 								$result2=$dbcon->query($qry2);
 								$row2=mysqli_fetch_assoc($result2);
@@ -175,7 +175,7 @@
 								else
 								{
 								?><td><button type="button" class="btn btn-round btn-warning" onClick="field_remove(<?=$i?>);" id="fieldremove" name="fieldremove">Remove</button></td>
-								<?
+								<?php 
 								}
 								?>
 						</tr>
@@ -218,7 +218,7 @@
 								<label class="col-md-6 control-label">Select Formula</label>
 								<div class="col-md-4 col-xs-11">
 								<select class="form-control" name="formulaid" id="formulaid" onChange="get_gtotal(this.value);">
-									<?
+									<?php 
 									echo getformula($dbcon,$rel['formulaid']);
 									 ?>
 								</select>
@@ -226,7 +226,7 @@
 							</div>							
 							<div class="col-md-12">
 							<div id="showformulatextbox">
-							<?
+							<?php 
 							if($mode=='Edit')
 							{
 							if(!empty($rel['tax1_name']))
@@ -239,7 +239,7 @@
 						</div>
 					</div>
 					<input id="taxname0" name="taxname0" value= "<?=$rel['tax1_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}
 							if(!empty($rel['tax2_name']))
 							{
@@ -251,7 +251,7 @@
 						</div>
 					</div>
 					<input id="taxname1" name="taxname1" value= "<?=$rel['tax2_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}if(!empty($rel['tax3_name']))
 							{
 							?>
@@ -262,7 +262,7 @@
 						</div>
 					</div>
 					<input id="taxname2" name="taxname2" value= "<?=$rel['tax3_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}} 
 							?>
 							</div>

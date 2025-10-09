@@ -286,8 +286,8 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<label class="col-md-4 control-label">Compare</label>
 																<div class="col-md-8 col-xs-11">
 																	<select class="select2" name="comparision" id="comparision" onchange="quotation_compare()">
-																		<option <?if($row['comparision']==1){ echo "selected='selected'";}?> value="1">Quotation Wise</option>
-																		<option <?if($row['comparision']==2){ echo "selected='selected'";}?> value="2">Item Wise</option>
+																		<option <?php if($row['comparision']==1){ echo "selected='selected'";}?> value="1">Quotation Wise</option>
+																		<option <?php if($row['comparision']==2){ echo "selected='selected'";}?> value="2">Item Wise</option>
 																	</select>
 																</div>
 															</div>

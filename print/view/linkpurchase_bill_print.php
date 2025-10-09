@@ -121,9 +121,9 @@ if($rel_disc['discount'] > 0){
 														<!-- <h1 style="margin-bottom:0px;" align="center"><?=$set_head['company_name']?></h1>
 														<h5 align="center" style="padding-top:8px;"><?=$set_head['logo_content']?></h5>
 														<h4 style="font-size:19px; margin-bottom:0px;" align="center"><?=$set_head['address']?></h4>
-															<h4 style="font-size:14px; margin-top:0px;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-															<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
-															<h4 align="center" style="margin-top:0px;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4> -->
+															<h4 style="font-size:14px; margin-top:0px;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+															<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
+															<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4> -->
 														</td>
 													</tr>
 												</table>
@@ -379,7 +379,7 @@ if($rel_disc['discount'] > 0){
 																	<td style="text-align:right  !important; vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 																		<?=number_format($row['discount_per'],2,".","").'%'?>
 																	</td>
-																	<?}?>
+																	<?php }?>
 																	<td style="text-align:right  !important; vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 																		<?=number_format(($row['product_rate'] * $row['product_qty']),2,".","")?>
 																	</td>
@@ -638,7 +638,7 @@ if($rel_disc['discount'] > 0){
 																		<?php if($company_config['tax_editable'] == 0){ ?>
 																			<tr>
 																				<td style="border-right:1px solid;border-top:1px solid;font-size:10px;padding:0px !important;" 	colspan="<?=5+$colspan?>">
-																					<?
+																					<?php 
 																					if($rel['stateid']==$set_head['stateid'])
 																					{
 																						echo '<table border="0" style="font-size:10px;text-align:right;" width="100%"><tr> 

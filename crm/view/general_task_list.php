@@ -124,7 +124,7 @@
                         <?php //Amish Soni 05-01-2021
                         if(in_array(GENERAL_TASK_SLUG_CREATE, $bulkAccessArray)) { ?>
                         <span class="tools pull-right">
-                            <a href="<?=ROOT.CRM_ROOT.'general_task_add'?>"><button class="btn btn-success btn-flat"><i class="fa fa-plus"></i>&nbsp;Add <?//=$form?></button></a>
+                            <a href="<?=ROOT.CRM_ROOT.'general_task_add'?>"><button class="btn btn-success btn-flat"><i class="fa fa-plus"></i>&nbsp;Add <?php //=$form?></button></a>
 						</span>
                         <?php } ?>
 						<div class="col-md-12"	style="height:20px;" >

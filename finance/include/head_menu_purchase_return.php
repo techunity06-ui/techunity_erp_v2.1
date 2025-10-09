@@ -1,4 +1,4 @@
-<?
+<?php 
 	$arr=explode("/",$_SERVER['PHP_SELF']);
 	$page_name=end($arr);
 	$page_name=basename($page_name, '.php');

@@ -264,7 +264,7 @@ padding-bottom:20px;
 								</header>	
 								<div class="panel-body">
 									<div class="col-md-12" style="margin-top: 10px;<?=$branch_style?>">
-										<?if($companyConfiguration['branch_wise_manage']==1){?>
+										<?php if($companyConfiguration['branch_wise_manage']==1){?>
 									<div class="col-md-6">
 										<?php echo getBranchBox($dbcon, $branch_id, '', false, true, 'reload_data(this.value)','3','9'); ?>	
 									</div>

@@ -110,7 +110,7 @@ $order_date='';$dispatch_date='';
 										padding:10px 0;">Print</label>
 										<div class="col-md-10 col-xs-12">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1">ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -154,9 +154,9 @@ $order_date='';$dispatch_date='';
 											<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 											<h4 style="font-size:19px; margin-bottom:0px;" align="center"><?=$set_head['address']?></h3>
 												
-												<h4 style="font-size:14px; margin-top:0px;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
-												<h4 align="center" style="margin-top:0px;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4>
+												<h4 style="font-size:14px; margin-top:0px;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
+												<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>
 												
 											</td>
 										</tr>
@@ -214,7 +214,7 @@ $order_date='';$dispatch_date='';
 																		</td>	
 																	</tr>
 
-												<?
+												<?php 
 													if($returnable_type=='returnable' && $challan_return_type=='CHALLAN_WISE'){
 												?>
 																	<tr>
@@ -225,7 +225,7 @@ $order_date='';$dispatch_date='';
 																			: <?=date('d/m/Y',strtotime($rel['return_date']))?>
 																		</td>
 																	</tr>
-														<?}?>
+														<?php }?>
 														<tr>
 																		<td style="vertical-align:top;border:1px solid;border-right:none;border-left:none;white-space:nowrap;">
 																			<strong>Issue Date</strong>
@@ -286,15 +286,15 @@ $order_date='';$dispatch_date='';
 																	<?=$i?>
 																</td>
 																<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
-																	<?if($row['product_alias_name']){?>
+																	<?php if($row['product_alias_name']){?>
 																		<strong><?=stripcslashes($row['product_alias_name'])?> -- (<?=$row['product_icode']?>)</strong>
 																		<br/><?=nl2br(stripcslashes($row['description']));?>
 																	<?php}else{ ?>
 																		<strong><?=stripcslashes($row['product_name'])?> -- (<?=$row['product_icode']?>)</strong>
 																		<br/><?=nl2br(stripcslashes($row['item_description']));?>
-																	<?}?>
+																	<?php }?>
 																	<br>
-																	<?if($challan_return_type == 'PRODUCT_WISE'){
+																	<?php if($challan_return_type == 'PRODUCT_WISE'){
 																		$retu_date = "select redate.*,unit.unit_name from tbl_returnable_return_date as redate left join unit_mst as unit on unit.unitid=redate.unit_id where return_date_status=0 and return_item_id=".$row['id'];
 																		$resadate=$dbcon->query($retu_date);
 																	?>
@@ -305,24 +305,24 @@ $order_date='';$dispatch_date='';
 																		</tr>
 																	
 																	
-																	<?while($rowdate=brp_mysqli_fetch_array($resadate)){?>		<tr>
+																	<?php while($rowdate=brp_mysqli_fetch_array($resadate)){?>		<tr>
 																			<td><?=date('d-m-Y',strtotime($rowdate['return_date']))?></td>
 																			<td><?=$rowdate['item_qty'].' '.$rowdate['unit_name']?></td>
 																		</tr>		
-																	<?}?>
+																	<?php }?>
 																	</table>
 																	<br>
-																		<?}
+																		<?php }
 																	?>
 																	
-																	<?if($product_detail['batch_wise_stock_manage']==1){?>
+																	<?php if($product_detail['batch_wise_stock_manage']==1){?>
 
 																		<table width="40%" style="font-size:13px">
 																		<tr>
 																			<td><strong>Batch No</strong></td>
 																			<td><strong>Qty</strong></td>
 																		</tr>
-																		<?$query_batch = "select ret_batch.qty,un.unit_name,st.batch_no from tbl_returnable_batch_stock_tmp as ret_batch 
+																		<?php $query_batch = "select ret_batch.qty,un.unit_name,st.batch_no from tbl_returnable_batch_stock_tmp as ret_batch 
 																		left join unit_mst as un on un.unitid=ret_batch.unitid
 																		left join tbl_stock_trn as st on st.stock_id=ret_batch.stock_id where status=1 and returnable_trn_id=".$row['id'];
 
@@ -332,10 +332,10 @@ $order_date='';$dispatch_date='';
 																			<td><?=$row_batch['batch_no']?></td>
 																			<td><?=$row_batch['qty']?> <?=$row_batch['unit_name']?></td>
 																		</tr>
-																		<?}?>
+																		<?php }?>
 																		</table>
 																		<br>
-																	<?}?>
+																	<?php }?>
 																	
 																	</td>
 																	<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;">

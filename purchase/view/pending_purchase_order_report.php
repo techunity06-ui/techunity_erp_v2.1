@@ -139,7 +139,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
 											<div class="col-md-12" style="margin-top: 10px;">	
 												<div class="col-md-6">
 													<div class="input-group date form_datetime-component">
-														<?
+														<?php 
 														$start=date('01-m-Y');
 														?>
 														<input type="hidden" id="from_po_date"  value="<?=$start?>">
@@ -157,7 +157,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
 												
 												<div class="col-md-6">
 													<div class="input-group date form_datetime-component">
-														<?
+														<?php 
 														$start=date('01-m-Y');
 														?>
 														<input type="hidden" id="from_delivery_date"  value="<?=$start?>">
@@ -327,7 +327,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
 			$('#logo').css('display','none');
 		}
 	</script>
-	<?
+	<?php 
 	 echo "<script>pending_po_fliter()</script>";
 	?>
 </body>

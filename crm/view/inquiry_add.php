@@ -1041,7 +1041,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                         } ?>
                                                                         <tr>
                                                                             <td colspan="4" class="text-left" style="border-bottom: 1px solid #000 !important;">
-                                                                                <?
+                                                                                <?php 
                                                                                 $task_flp_qry = "select flp.*,usr.user_name from tbl_followup as flp 
                                                left join users as usr on usr.user_id=flp.user_id
                                                where flp.flp_status=0 and flp.task_id=" . $task_rel['task_id'] . "";
@@ -1080,7 +1080,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                             <td width="25%" class="text-left">
                                                                                 <strong>Appointment</strong>
                                                                             </td>
-                                                                            <?
+                                                                            <?php 
                                                                             $tsk_type = "";
                                                                             $tsk_due_time = strtotime($task_rel['appointment_end_time']);
 

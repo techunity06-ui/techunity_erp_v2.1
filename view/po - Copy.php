@@ -114,7 +114,7 @@
 					</div>	
 					<div class="col-md-6">
 					 <div class="form-group">  	
-						<?
+						<?php 
 							$ck='';
 							if(empty($rel['consignee_id'])){
 								$ck='checked="checked"';
@@ -270,7 +270,7 @@
 						</div>
                              </div>
 	<div id="sale_productdata">
-				<?if($mode=="Edit"){
+				<?php if($mode=="Edit"){
 					
 					$query="select purchaseordertrn_id,product_hsn_code,product.product_name,cat.unit_name,product.product_name,mst.description,mst.*,product_qty,product_rate,product_disc,product_amount from  tbl_purchaseordertrn as mst left join unit_mst as cat on cat.unitid=mst.unit_id left join product_mst as product on product.product_id=mst.product_id  where purchaseordertrn_status=0 and purchaseorder_id=".$rel['purchaseorder_id'];
 					$result=$dbcon->query($query);
@@ -293,7 +293,7 @@
 					<th class="text-center" width="10%">Action</th>
 						 	 
 				</tr>
-		<?
+		<?php 
 			$i=1;
 			while($rel_trn=mysqli_fetch_assoc($result))
 			{
@@ -319,7 +319,7 @@
 						<?=$rel_trn['unit_name']?>
 					</td>
 					<!--<td style="vertical-align:top" class="text-left">
-						<?//=$rel_trn['product_discount'].'('.$rel_trn['discount_per'].'%)';?>
+						<?php //=$rel_trn['product_discount'].'('.$rel_trn['discount_per'].'%)';?>
 					</td>-->
 					<td style="vertical-align:top" class="text-right">
 						<?=$rel_trn['product_amount']?>
@@ -341,14 +341,14 @@
 							<button type="button" class="btn btn-round btn-danger btn-xs" onclick="delete_data(<?=$rel_trn['purchaseordertrn_id']?>,'tbl_purchaseordertrn','purchaseordertrn_id');" ><i class="fa fa-times"></i></button>
 					</td>	
 			</tr>
-			<?
+			<?php 
 			$i++;
 			}?>
 			</table>
 			</div>
                            
 							</div>	
-			<?}?>
+			<?php }?>
 			
 							 </div>	
 					 <div class="col-md-6">
@@ -380,7 +380,7 @@
 								<label class="col-md-6 control-label">Select Formula</label>
 								<div class="col-md-4 col-xs-11">
 								<select class="form-control" name="formulaid" id="formulaid" onChange="get_gtotal(this.value);">
-									<?
+									<?php 
 									echo getformula($dbcon,$rel['formulaid']);
 									 ?>
 								</select>
@@ -388,7 +388,7 @@
 							</div>							
 							<div class="col-md-12">
 							<div id="showformulatextbox">
-							<?
+							<?php 
 							if($mode=='Edit')
 							{
 							if(!empty($rel['tax1_name']))
@@ -401,7 +401,7 @@
 						</div>
 					</div>
 					<input id="taxname0" name="taxname0" value= "<?=$rel['tax1_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}
 							if(!empty($rel['tax2_name']))
 							{
@@ -413,7 +413,7 @@
 						</div>
 					</div>
 					<input id="taxname1" name="taxname1" value= "<?=$rel['tax2_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}if(!empty($rel['tax3_name']))
 							{
 							?>
@@ -424,7 +424,7 @@
 						</div>
 					</div>
 					<input id="taxname2" name="taxname2" value= "<?=$rel['tax3_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}} 
 							?>
 							</div>
@@ -459,11 +459,11 @@
 		<input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
 		<input type="hidden" name="invoicetype_id" id="invoicetype_id" value="" />
 		<input type='hidden' name='eid' id='eid' value='<?=($mode=='Edit')?$rel['purchaseorder_id']:''?>' />	
-		<?
+		<?php 
 			if($direct_add=='1'){
 		?>		
 			<input type="hidden" name="po_ref_id" id="po_ref_id" value="<?=$rel['purchaseorder_id']?>" />
-		<?	} ?>	
+		<?php 	} ?>	
 		</form>
 </div>
 						
@@ -533,7 +533,7 @@ function consinee_change(val){
 	}
 }
 </script>
-<?
+<?php 
 echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
 echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
 if($mode=="Add"){

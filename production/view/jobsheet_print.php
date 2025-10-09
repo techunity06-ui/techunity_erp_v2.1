@@ -115,7 +115,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 										<label class="col-md-2 control-label"> Print</label>
 										<div class="col-md-4 col-xs-11">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1">ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -147,8 +147,8 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 												<h2 align="center"><?=$set_head['company_name']?></h2>
 												<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 												<h5 align="center"><?=$set_head['address']?></h5>
-												<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+												<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 
 											</td>
 										</tr>
@@ -305,7 +305,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 											</tr>
 										<?php } ?>
 
-										<?
+										<?php 
 
 										$q_111 = "select trn.*,pro.product_name,unit.unit_name from tbl_workorder_direct_material_issue_trn as trn
 																	left join tbl_workorder_direct_material_issue as mst on mst.material_issue_id = trn.material_issue_id
@@ -356,7 +356,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 													<td colspan="2" style="padding-top: .2em;padding-bottom: .2em;border-right: 1px solid;<?=$style?>" ></td>
 													<td style="padding-top: .2em;padding-bottom: .2em;border-right: 1px solid;<?=$style?>" ></td>
 												</tr>
-										<?}?>
+										<?php }?>
 											<tr style="border-top:0.5px #000 solid;border-bottom:0.5px #000 solid;">
 												<td></td>
 												<!-- <td></td>
@@ -493,7 +493,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 													<td style="border:1px #444 solid;" ><?=$qty_detail['reject_qty'];?></td>
 
 												</tr>
-											<?	}
+											<?php 	}
 												
 										?>
 											
@@ -548,7 +548,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 											<td style="border:1px #444 solid;" colspan="9"><center>No data Found</center></td>
 										</tr>
 									<?php } ?>
-									<?
+									<?php 
 										$bln = 10-$prct;
 										for($i=0; $i<$bln; $i++){
 									?>
@@ -562,7 +562,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 											<td style="border:1px #444 solid;" ></td>
 											<td style="border:1px #444 solid;" ></td>
 										</tr>
-									<?}?>
+									<?php }?>
 								</tbody>
 							</table>
 							<!-- <table style="font-size: 12px;margin-top: 15px; width: 100%;">

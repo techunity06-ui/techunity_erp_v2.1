@@ -73,7 +73,7 @@ $form="Sales Card Report";
 												<div class="col-md-8 col-xs-11">
 													<select class="select2" name="party_sales_id" id="party_sales_id" onChange="report_sales_card();" >
 														<?=get_all_sales_card($dbcon,'');?>	
-														<?//=getcust($dbcon,$cust_id);?>	
+														<?php //=getcust($dbcon,$cust_id);?>	
 													</select>
 												</div>
 											</div>

@@ -147,7 +147,7 @@ function exportFile(){
 												</tr>
 										</thead>
 										<tbody>
-												<?
+												<?php 
 												$i=1;
 												while($row=brp_mysqli_fetch_array($result)){
 													$enable_sez = 'No';$enable_cost_center ='No';$enable_tds='No';$enable_tcs='No';
@@ -204,7 +204,7 @@ function exportFile(){
 													<td><?=$row['m_pan']?></td>
 												</tr>
 
-												<?
+												<?php 
 													$query_bank = "select mst.*,b.bank_name from tbl_customer_bank as mst 
 														left join bank_mst as b on b.bankid=mst.b_name
 														where mst.b_cust=".$row['l_id']." order by b_id Desc";
@@ -229,7 +229,7 @@ function exportFile(){
 															<th colspan="2">Opening</th>
 															<th colspan="24"></th>
 													</tr>
-													<?while($row_bank = brp_mysqli_fetch_array($result_bank)){?>
+													<?php while($row_bank = brp_mysqli_fetch_array($result_bank)){?>
 														<tr>
 															<td colspan="2"><?=$row_bank['bank_ac']?></td>
 															<td colspan="2"><?=$row_bank['bank_name']?></td>
@@ -238,11 +238,11 @@ function exportFile(){
 															<td colspan="2"><?=$row_bank['bank_open']?></td>
 															<td colspan="24"></td>
 														</tr>
-												<?}?>
+												<?php }?>
 												<tr>
 														<td colspan="34" style="height:30px"></td>
 												</tr>
-												<?}
+												<?php }
 													$query_cont="select * from tbl_cust_contact_person where cust_id=".$row['l_id']." order by cust_contact_person_id Desc";
 													$result_cont = $dbcon->query($query_cont);
 													$cnt_cont = brp_mysqli_num_rows($result_cont);
@@ -258,18 +258,18 @@ function exportFile(){
 														<th colspan="3">Email</th>
 														<th colspan="3">Job Title</th>
 													</tr>
-													<?while($row_cont = brp_mysqli_fetch_array($result_cont)){?>
+													<?php while($row_cont = brp_mysqli_fetch_array($result_cont)){?>
 													<tr>
 														<td colspan="2"><?=$row_cont['cust_contact_person_name']?></td>
 														<td colspan="2"><?=$row_cont['cust_contact_person_no']?></td>
 														<td colspan="3"><?=$row_cont['cust_contact_person_email']?></td>
 														<td colspan="3"><?=$row_cont['cust_contact_person_designation']?></td>
 													</tr>
-												<?}?>
+												<?php }?>
 													<tr>
 														<td colspan="34" style="height:30px"></td>
 													</tr>
-												<?}
+												<?php }
 												$query_consi="select tbcon.*, cit.city_name, sta.state_name, coun.country_name from tbl_custmer_consignee as tbcon
 													left join country_mst as coun on coun.countryid=tbcon.countryid
 													left join state_mst as sta on sta.stateid=tbcon.stateid 
@@ -296,7 +296,7 @@ function exportFile(){
 														<th>Pincode</th>
 														<th colspan="20"></th>
 													</tr>
-													<?while($row_consi = brp_mysqli_fetch_array($result_consi)){?>
+													<?php while($row_consi = brp_mysqli_fetch_array($result_consi)){?>
 														<tr>
 															<td colspan="2"><?=$row_consi['company_name']?></td>
 															<td colspan="2"><?=$row_consi['cust_name']?></td>
@@ -310,12 +310,12 @@ function exportFile(){
 															<td><?=$row_consi['cust_pincode']?></td>
 															<td colspan="20"></td>
 														</tr>
-												<?}?>
+												<?php }?>
 												<tr>
 													<td colspan="34" style="height:30px"></td>
 												</tr>
-												<?}?>
-												<?$i++;}?>
+												<?php }?>
+												<?php $i++;}?>
 										</tbody>
 										</table>
 								</div>

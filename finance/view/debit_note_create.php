@@ -608,7 +608,7 @@
 				}
 			}
 		</script>
-		<?
+		<?php 
 
 			if($mode=="Add"){
 				echo "<script>load_invoiceno(".$load_inv_type.");</script>";

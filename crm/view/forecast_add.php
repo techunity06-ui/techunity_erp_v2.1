@@ -66,7 +66,7 @@ else {
 				<span class="tools pull-right">
 					<a href="javascript:;" class="fa fa-chevron-down"></a>
 				</span>
-				<?
+				<?php 
 		/*$s_year=2016;
 		$e_year=date("Y");
 		for($i=$e_year;$i>=$s_year;$i--){
@@ -173,7 +173,7 @@ else {
 											</tr>
 										</thead>
 										<tbody>
-											<?
+											<?php 
 											$k=1;
 											$get_ter_qry="select ter.t_id,ter.t_name,trn.ter_target_amt,trn.ter_target_qty from territory_mst as ter
 											left join tbl_f_ter_trn as trn on trn.t_id=ter.t_id and trn.f_ter_trn_status=0 and trn.forecast_id='".$rel['forecast_id']."'
@@ -192,7 +192,7 @@ else {
 													<input type="number" class="form-control" min="0" id="ter_target_qty<?=$k?>" name="ter_target_qty[]" value="<?=$get_ter_rel['ter_target_qty']?>">
 												</td>
 											</tr>
-											<?
+											<?php 
 											$k++;
 										}
 										?>
@@ -232,7 +232,7 @@ else {
 										</tr>
 									</thead>
 									<tbody>
-										<?
+										<?php 
 										$k=1;
 										$get_usr_qry="select usr.user_id,usr.user_mail,type.usertype_name,trn.usr_target_amt,trn.usr_target_qty from users as usr 
 										left join tbl_usertype as type on type.usertype_id=usr.user_type
@@ -254,7 +254,7 @@ else {
 											<input type="number" min="0" class="form-control" id="usr_target_qty<?=$k?>" name="usr_target_qty[]" value="<?=$get_usr_rel['usr_target_qty']?>">
 										</td>
 									</tr>
-									<?
+									<?php 
 									$k++;
 								}
 								?>
@@ -294,7 +294,7 @@ else {
 						</tr>
 					</thead>
 					<tbody>
-			<?
+			<?php 
 				/*$k=1;
 				$get_grp_qry="select grp.pg_id,grp.pg_name,grp_trn.grp_target_amt,grp_trn.grp_target_qty from tbl_product_grp as grp 
 				left join tbl_f_grp_trn as grp_trn on grp_trn.pg_id=grp.pg_id and grp_trn.f_grp_trn_status=0 and grp_trn.forecast_id='".$rel['forecast_id']."'
@@ -313,7 +313,7 @@ else {
 					<input type="number" min="0" class="form-control" id="grp_target_qty<?=$k?>" name="grp_target_qty[]" value="<?=$get_grp_rel['grp_target_qty']?>">
 				</td>
 			</tr>
-			<?
+			<?php 
 				$k++;
 				}*/
 			?>

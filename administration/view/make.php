@@ -91,11 +91,11 @@ ADMINISTRATOR_MAKE_EXCEL
 			<section class="panel">
 				  <header class="panel-heading">
 					  <?=$form?> List
-					<?if($_SESSION['user_type'] == 2 && in_array(ADMINISTRATOR_MAKE_EXCEL,$bulkAccessArray)){ ?>					  
+					<?php if($_SESSION['user_type'] == 2 && in_array(ADMINISTRATOR_MAKE_EXCEL,$bulkAccessArray)){ ?>					  
 					<span class="tools pull-right">		
 						<a href="javascript:;" onClick="tableToExcel('make-table', 'Instalment Collection')" ><button class="btn btn-info btn-flat" >Export Excel</button></a>	
 					</span>
-					<?}?>
+					<?php }?>
 				  </header>
 				  <div class="panel-body">
 				  <div class="adv-table">

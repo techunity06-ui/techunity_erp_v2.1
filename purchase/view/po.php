@@ -271,7 +271,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                         </div>
                                         <div class="col-md-3" >
                                             <div class="form-group">
-                                                <?
+                                                <?php 
                                                 $ck='';
                                                 if($mode=="Add" && $viewmode=='Add'){
                                                     $ck='checked="checked"';
@@ -457,7 +457,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                 </div>
                                             </div>
                                         </div>
-                                        <?if($set_conf['branch_wise_manage']==1){?>
+                                        <?php if($set_conf['branch_wise_manage']==1){?>
                                             <div class="col-md-4">
                                                 <?php echo getBranchBox($dbcon, $branch_id, $branchId, $isDisabled, $isRequired); ?>
                                             </div>
@@ -635,7 +635,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                     <?php} ?>
                                         <?phpif($getspecialConfiguration['aeon_permission'] ==1){ ?>
                                         <th width="10%" class="text-center">Category</th>
-                                        <?}?>
+                                        <?php }?>
                                         <th width="20%" class="text-center">Product</th>
                                         <th width="10%" class="text-center hidden" id="job_proc">Process</th>
                                         <th width="7%" class="text-center" style="display:none">HSN Code</th>
@@ -991,12 +991,12 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                     <input type='hidden' name='revise_status' id='revise_status' value='<?=$revise_status;?>' />   
                     <input type='hidden' name='back' id='back' value='<?=$back;?>' /> 
                     <input type='hidden' name='direct_po_create' id='direct_po_create' value="<?=$set_conf['direct_po_create']?>">
-                    <?
+                    <?php 
                     if($direct_add=='1'){
                         ?>    
                         <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?=$rel['purchaseorder_id']?>" />
                     <?php} ?>  
-                    <?include_once($include1.'po_consignee_concept.php')?>
+                    <?php include_once($include1.'po_consignee_concept.php')?>
                 </form>
             </div>
 
@@ -1123,14 +1123,14 @@ $(this).focus();
     load_typeswise_terms(<?=$purchaseorder_id?>);
     get_revise_po_no(<?=$purchaseorder_id?>,<?=$start_purchaseorder_id?>);
 <?php} ?>
-<?if($mode=='Edit'){?>
+<?php if($mode=='Edit'){?>
     load_typeswise_terms(<?=$purchaseorder_id?>);
     
-    <?}  else {?>
+    <?php }  else {?>
         load_transportation_vendor_wise();
-        <?}?>
+        <?php }?>
     </script>
-    <?
+    <?php 
     echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
     echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
     if($mode=="Add" && $viewmode=="Add"){

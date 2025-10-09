@@ -98,12 +98,12 @@
                               <label class="col-md-2 control-label"> Print</label>
                               <div class="col-md-4 col-xs-11">
                                  <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-                                    <select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+                                    <select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
                                        <option value="">Select Print</option>
-                                       <option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
-                                       <option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-                                       <option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-                                       <option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+                                       <option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
+                                       <option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+                                       <option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+                                       <option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
                                     </select>
                                  </form>
                               </div>
@@ -132,8 +132,8 @@
                                           <h1 align="center"><?=$set_head['company_name']?></h1>
                                           <h4 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h4>
                                           <h4 align="center"><?=$set_head['address']?></h4>
-                                          <h4 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-                                             <?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?>
+                                          <h4 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+                                             <?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?>
                                           </h4>
                                        </td>
                                     </tr>
@@ -151,7 +151,7 @@
                                                       <td style="" colspan="2"> </td>
                                                       <td colspan="3" style="text-align:center;"> 
                                                          <strong class="typetitle" style="font-size:14px;">
-                                                         <?//=$rel['module_name']?>
+                                                         <?php //=$rel['module_name']?>
                                                          JOBWORK RECEIPT
                                                          </strong>
                                                       </td>
@@ -337,7 +337,7 @@
                                           <td style="border-right:0.5px #ccc solid;"></td>
                                           <?phpif($set_head['show_disc']=='1'){?>
                                           <td style="border-right:0.5px #ccc solid;"></td>
-                                          <?}?>
+                                          <?php }?>
                                           <td style="border-right:0.5px #ccc solid;"></td>
                                           <td style="border-right:0.5px #ccc solid;"></td>
                                           <td style="border-right:0.5px #ccc solid;"></Td>
@@ -346,12 +346,12 @@
                                        <?php } ?>
                                        <tr style="height:20px">
                                           <td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;border-left:0.5px #ccc solid; text-align:right;" colspan="6"><strong>Total</strong></td>
-                                          <td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;text-align:right;"><strong><?//=number_format($total,2,".","")?><?=number_format($total,2,".","")?></strong></td>
+                                          <td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;text-align:right;"><strong><?php //=number_format($total,2,".","")?><?=number_format($total,2,".","")?></strong></td>
                                        </tr>
                                        <tr>
                                           <td colspan="<?=$hed?>" style="padding: 0px !important;border:0.5px #ccc solid">
                                              <table class="footer-table" width="100%">
-                                                <?
+                                                <?php 
                                                    
                                                    
                                                    

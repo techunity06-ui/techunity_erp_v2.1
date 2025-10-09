@@ -263,7 +263,7 @@
 				}
 			}
 		</script>
-		<?
+		<?php 
 			echo "<script>get_series_no()</script>";
 		?>
 	</body>

@@ -55,7 +55,7 @@
 						<div class="form-group">
                                   <label class="control-label col-md-2">Choose Date</label>
                                   <div class="col-md-3">
-                                      <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">						<?
+                                      <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">						<?php 
 									  $start=(date('m')<'04') ? date('01-04-Y',strtotime('-1 year')) : date('01-04-Y');
 									
 									  ?>

@@ -214,7 +214,7 @@ function paymentmode(id)
 				
 }
 </script>
-<?
+<?php 
 echo "<script>show_data() </script>";
 
 ?>

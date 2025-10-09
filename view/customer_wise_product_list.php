@@ -441,7 +441,7 @@
                               <input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
                               <input type='hidden' name='eid' id='eid' value='<?=$purchasecard_id;?>' />  
                               <input type='hidden' name='back' id='back' value='<?=$back;?>' /> 
-                              <?
+                              <?php 
                                  if($direct_add=='1'){
                                  ?>   
                               <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?=$rel['purchasecard_id']?>" />
@@ -522,7 +522,7 @@
 
          //$('#vender_id').attr('disabled', 'disabled');
       </script>
-      <?
+      <?php 
          //echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
          //echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
          if($mode=="Add"){

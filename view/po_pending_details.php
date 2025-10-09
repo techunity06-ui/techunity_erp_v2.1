@@ -73,7 +73,7 @@ $type=$dbcon->real_escape_string($_REQUEST['id']);
 												<td>Pending Qty</td>
 												<td>Due Date</td>
 											</tr>
-											<?
+											<?php 
 											$today_date = date('Y-m-d');
 											if($type==1){
 												$over_due_inword="select pmst.product_name,po.purchaseorder_no,po.purchaseorder_date,(del.product_qty-del.used_qty) as pending_qty,del.delivery_date,led.l_name from `tbl_purchaseorder_delivery_date` as del 
@@ -112,7 +112,7 @@ $type=$dbcon->real_escape_string($_REQUEST['id']);
 														<td><?=$row['pending_qty']?></td>
 														<td><?=$row['delivery_date']?></td>
 													</tr>
-												<?	} ?>
+												<?php 	} ?>
 												</table>
 											</div>
 											</div>

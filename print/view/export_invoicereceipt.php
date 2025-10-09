@@ -140,12 +140,12 @@ $company_config = getCompanyConfiguration($dbcon);
 													<label class="col-md-2 control-label" style="padding-top: 10px;"> Print</label>
 													<div class="col-md-10 col-xs-12">
 														<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-															<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+															<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 																<option value="" >Select Print</option>
-																<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
-																<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-																<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-																<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+																<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
+																<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+																<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+																<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 															</select>
 														</form>
 													</div>
@@ -162,7 +162,7 @@ $company_config = getCompanyConfiguration($dbcon);
 													<a href="<?=ROOT.FINANCE_ROOT.'invoice_list'?>" type="button" class="btn btn-danger"><i class="fa fa-ban"></i> Cancel</a>
 												</div>
 												<div class="col-sm-4 resclear resspace"  style="text-align:center;padding-top:5px;">
-													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?echo $rel['cust_mobile']?>&text=<?echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
+													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
 														<?phpecho $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
 													</div>
 												</center>

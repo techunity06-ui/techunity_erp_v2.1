@@ -141,7 +141,7 @@ if(in_array('item',$bom_pro_print)){
 									<label class="col-md-2 control-label"> Print</label>
 									<div class="col-md-4 col-xs-11">
 										<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-											<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+											<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 												<option value="">Select Print</option>
 												<option value="1">ORIGINAL</option>
 												<option value="2">DUPLICATE</option>
@@ -188,8 +188,8 @@ if(in_array('item',$bom_pro_print)){
 			<h2 align="center"><?=$set_head['company_name']?></h2>
 			<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 			<h5 align="center"><?=$set_head['address']?></h5>
-			<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-			<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+			<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+			<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 
 		</td>
 	</tr>
@@ -252,12 +252,12 @@ if(in_array('item',$bom_pro_print)){
 					<strong>SR. NO.</strong>
 				</th>
 				
-				<?if($companyConfiguration['bom_extra_no']==1){ ?>
+				<?php if($companyConfiguration['bom_extra_no']==1){ ?>
 					<th  width="5%" style="text-align:center;border:1px solid;border-top:none;">
 					<strong>BOM Extra NO.</strong>
 				</th>
 				<?php} ?>
-				<?if($companyConfiguration['enable_item_image']==1){ ?>
+				<?php if($companyConfiguration['enable_item_image']==1){ ?>
 					<th width="15%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Item Image</strong></th>
 				<?php} ?>
 				<th width="45%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Item Description</strong></th>
@@ -272,15 +272,15 @@ if(in_array('item',$bom_pro_print)){
 
 			<tr>
 				<td style="border:1px #444 solid;" >0</td>
-				<?if($companyConfiguration['bom_extra_no']==1){ 
+				<?php if($companyConfiguration['bom_extra_no']==1){ 
 					$chk_data = check_extra_bom_no($dbcon,$rel['bom_product'],$main_bom_id,$rel['bom_id'],0,$rel['bom_version_id']);
 				?>
 					<td style="border:1px #444 solid;" ><?=$chk_data['ext_no']?></td>
 				<?php} ?>
-				<?if($companyConfiguration['enable_item_image']==1){ ?>
+				<?php if($companyConfiguration['enable_item_image']==1){ ?>
 					<td style="border:1px #444 solid;" ><?=$image_name?></td>
 				<?php} ?>
-				<td style="border:1px #444 solid;" ><?=$rel['product_name'].''.$item_code1;?><?=$drawing_number1?><?=$alias_name1?><?if($companyConfiguration['enable_item_description']==1){ ?><br><?=$rel['product_desc']?><?php} ?></td>
+				<td style="border:1px #444 solid;" ><?=$rel['product_name'].''.$item_code1;?><?=$drawing_number1?><?=$alias_name1?><?php if($companyConfiguration['enable_item_description']==1){ ?><br><?=$rel['product_desc']?><?php} ?></td>
 				<td style="border:1px #444 solid;" ><?=get_product_type_by_id($dbcon,$rel['product_type'])?></td>
 				<td style="border:1px #444 solid;" >
 					<?php 
@@ -291,20 +291,20 @@ if(in_array('item',$bom_pro_print)){
 			
 				echo  $rel['product_base_qty']?>  <?=$rel['base_unit_name']?><br/>
 				<?=$rel['product_conv_qty']?>  <?=$rel['conv_unit_name']?>
-				<?}else{?>
+				<?php }else{?>
 				<?php
 				$SESSION['tot_bom']=$SESSION['tot_bom']+$rel['product_base_qty']; 
 				//$total=$total+$rel1['product_base_qty'].'kl';
 				$rel['product_base_qty']?>  <?=$rel['base_unit_name']?>
-				<?}?> -->
+				<?php }?> -->
 			</td>
 			<!--<td style="border:1px #444 solid;" >
-				<?//=$rel['base_unit_name'] ?>
+				<?php //=$rel['base_unit_name'] ?>
 			</td>-->
 			<!--<td style="border:1px #444 solid;"><?=get_last_purchase($dbcon,$rel['bom_product']) ?></td>-->
 
 			<td style="border:1px #444 solid;" >
-				<?$query3="select pbom.*, mst.resource_id,mst.process_id ,p.process_name,reso.resource_name,mst.process_type from pro_bom_process as pbom 
+				<?php $query3="select pbom.*, mst.resource_id,mst.process_id ,p.process_name,reso.resource_name,mst.process_type from pro_bom_process as pbom 
 				left join tbl_product_process as mst on mst.pr_process_id=pbom.pr_process_id
 				left join tbl_resource as reso on reso.resource_id=mst.resource_id
 				left join process_mst as p on p.process_id=mst.process_id where mst.status=0 and  mst.status=0 and  pbom.product_id=".$rel['bom_product']." and pbom.bom_version_id = ". $rel['bom_version_id'] ." and pbom.process_status = 0 order by pbom.priority";
@@ -386,12 +386,12 @@ if(in_array('item',$bom_pro_print)){
 			?>
 			<tr>
 				<td style="border:1px #444 solid;" ><?=$i?></td>
-				<?if($companyConfiguration['bom_extra_no']==1){ 
+				<?php if($companyConfiguration['bom_extra_no']==1){ 
 					$chk_data = check_extra_bom_no($dbcon,$rel1['product_id'],$main_bom_id,$rel1['p_bom_id'],$rel1['bom_id'],$rel1['bom_version_id']);
 				?>
 					<td style="border:1px #444 solid;" ><?=$chk_data['ext_no']?></td>
 				<?php} ?>
-				<?if($companyConfiguration['enable_item_image']==1){ ?>
+				<?php if($companyConfiguration['enable_item_image']==1){ ?>
 					<td style="border:1px #444 solid;" ><?=$image_name1?></td>
 				<?php} ?>
 				<td style="border:1px #444 solid;" ><?=$rel1['product_name'].''.$item_code1;?><?=$drawing_number1?><?=$alias_name1?><br>
@@ -408,21 +408,21 @@ if(in_array('item',$bom_pro_print)){
 				<td style="border:1px #444 solid;" ><?=get_product_type_by_id($dbcon,$rel1['product_type'])?></td>
 				<td style="border:1px #444 solid;" >
 					<?phpif($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
-						<?
+						<?php 
 						echo  $rel1['product_base_qty'];  echo $rel1['base_unit_name']; ?>
 					</br>
-					<?	echo $rel1['product_conv_qty'];  echo $rel1['conv_unit_name'];
+					<?php 	echo $rel1['product_conv_qty'];  echo $rel1['conv_unit_name'];
 				}else{
 					echo $rel1['product_base_qty']; ?>  <?=$rel1['base_unit_name']?>
-					<?}?> 
+					<?php }?> 
 				</td>
 			<!--<td style="border:1px #444 solid;" >
-				<?//=$rel1['base_unit_name'] ?>
+				<?php //=$rel1['base_unit_name'] ?>
 			</td>-->
-			<!--<td style="border:1px #444 solid;"><?//=get_last_purchase($dbcon,$rel1['product_id']) ?></td>-->
+			<!--<td style="border:1px #444 solid;"><?php //=get_last_purchase($dbcon,$rel1['product_id']) ?></td>-->
 
 			<td style="border:1px #444 solid;" >
-				<?
+				<?php 
 				// Sanat :: comment below query and add new query -  10-08-2021
 
 				/*$query="select mst.*,p.process_name,reso.resource_name from tbl_product_process as mst 
@@ -492,7 +492,7 @@ if(in_array('item',$bom_pro_print)){
 				<!--<table class="footer-table" width="100%">
 					<tr style="border-bottom:none;">
 						<td colspan="2" style="border-top:1px solid;">
-						<?if(!empty($set_head['vatno'])){ ?>
+						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
 						<?php} ?>
 						</td>

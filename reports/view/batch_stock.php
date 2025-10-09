@@ -66,7 +66,7 @@
                                   <label class="control-label col-md-4 text-right" >Choose Date</label>
                                   <div class="col-md-8">
                                     <div class="input-group date form_datetime-component">
-									 <?
+									 <?php 
 									 if(empty($start_date)){
 										$start=date('01-m-Y');
 									 }else{

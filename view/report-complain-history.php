@@ -152,7 +152,7 @@ h4.panel-title{margin:10px 0px !important;}
                                   <label class="control-label col-md-2" >Choose Date</label>
                                   <div class="col-md-3">
 										<div class="input-group date form_datetime-component">
-										 <?
+										 <?php 
 										  $start=date('01-m-Y');
 										  ?>
 											 <input type="hidden" id="from_date"  value="<?=$start?>">

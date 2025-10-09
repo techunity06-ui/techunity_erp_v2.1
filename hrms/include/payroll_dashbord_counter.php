@@ -83,7 +83,7 @@
 	
 		<div class="row">
                     <div class="col-md-12">
-            <?
+            <?php 
 				$comp_per=check_permission("#payroll_permission",$_SESSION['user_id'],'view',$dbcon);
 				if($comp_per)
 				{
@@ -180,7 +180,7 @@
 			</div>
 			<!-- Employee Module End -->	
 			<?php }  ?>
-			<?
+			<?php 
 				$comp_per=check_permission("#taxation",$_SESSION['user_id'],'view',$dbcon);
 				if($comp_per)
 				{
@@ -278,7 +278,7 @@
 
 			
 			<div class="col-md-4">
-				<?
+				<?php 
 					$payroll_compensations=check_permission("#payroll_compensations",$_SESSION['user_id'],'view',$dbcon);
 					if($payroll_compensations){	
 				?>
@@ -370,7 +370,7 @@
             </div>
 			<div class="col-md-12">
 				<!-- Payroll Reports Start -->
-				<?
+				<?php 
 			        $payroll_reports_per=check_permission("#payroll_reports",$_SESSION['user_id'],'view',$dbcon);
 			        if($payroll_reports_per){
 			    ?>
@@ -456,7 +456,7 @@
 		
 			<div class="col-md-4">
 				<!-- Payroll Settings Start -->
-				<?
+				<?php 
 			        $payroll_settings_per=check_permission("#payroll_settings",$_SESSION['user_id'],'view',$dbcon);
 			        if($payroll_settings_per){
 			    ?>    

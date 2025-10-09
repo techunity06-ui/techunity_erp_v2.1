@@ -149,7 +149,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 						<div class="col-sm-12">
 							<section class="panel">
 								<header class="panel-heading">
-									<?if($mode=="Bom"){ echo "Sales Order Bom";}else{?>New <?=$form?><?} ?>
+									<?php if($mode=="Bom"){ echo "Sales Order Bom";}else{?>New <?=$form?><?php } ?>
 								</header>	
 								<div class="panel-body">
 									<form class="form-horizontal" role="form" id="qc_add" action="javascript:;" method="post" name="qc_add">
@@ -186,7 +186,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 															<?php echo getBranchBox($dbcon, $branch_id,$edit_branch_id, true, true, 'load_purchase_qc_pending_datatable()', '4', '6'); ?>
 														</div>
 													</div>
-											<?	} ?>
+											<?php 	} ?>
 											</div>
 											<div class="col-md-12">
 											 <?phpif($process_show==1){ ?>
@@ -232,7 +232,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														<th class="<?=$dper?>" style='width:8%;text-align: center;'>Godown *</th>
 														<th class="<?=$dper?>" style='width:8%;text-align: center;'> New Process </th>
 													</tr>
-													<?
+													<?php 
 														$cnt=1;
 	
 													?>
@@ -321,7 +321,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														</div>
 													</div>
 												</div>
-												<?if($mode=="Add" && $set_conr['qc_upload_receipt'] == "Yes"){ 
+												<?php if($mode=="Add" && $set_conr['qc_upload_receipt'] == "Yes"){ 
 													$ttrt="required";
 												}else{
 													$ttrt="";
@@ -341,7 +341,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														<a href="<?=ROOT.QC_FILE_VWING.$attch_rel['qc_file']?>" class="btn btn-xs btn-primary" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-eye"></i>  </a> 
 														<button type="button" onClick="delete_attch(<?=$attch_rel['grn_attch_id']?>)" class="btn btn-xs btn-danger" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-trash-o"></i></button>
 														<br/>
-													<?} }?>
+													<?php } }?>
 													</div>
 												</div>
 											</div>
@@ -409,7 +409,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 					autoclose: true
 				});
 			</script>
-			<?
+			<?php 
 		
 			if($mode=="Add")
 			{

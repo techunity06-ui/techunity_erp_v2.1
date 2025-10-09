@@ -189,7 +189,7 @@ if($companyConfiguration['ledger_code'] ==1){
 												<div class="form-group">
 													<label class="col-md-4 control-label">Select Group*</label>
 													<div class="col-md-8 col-xs-11">
-														<select class="select2" <?//= $disable ?> name="ledger_grp" id="ledger_grp" required onchange="show_div_ledger(this.value);load_ledger_code(this.value,'<?=$leger_per?>');" >
+														<select class="select2" <?php //= $disable ?> name="ledger_grp" id="ledger_grp" required onchange="show_div_ledger(this.value);load_ledger_code(this.value,'<?=$leger_per?>');" >
 															<?=get_all_group($dbcon,$rel['l_group'],'','0');?>
 														</select>
 														<?php
@@ -304,7 +304,7 @@ if($companyConfiguration['ledger_code'] ==1){
 									    			<div class="col-md-6 col-xs-11">
 									    				<select class="select2" name="stateid" id="stateid" onChange="load_city(this.value,'cityid','<?=$stateid;?>')">
 									    					<option value="">Select State</option>	
-									    					<?//=getstate($dbcon,$rel['stateid'])?>
+									    					<?php //=getstate($dbcon,$rel['stateid'])?>
 									    				</select>
 									    			</div>
 									    			<div class="col-md-2">
@@ -1771,9 +1771,9 @@ if($companyConfiguration['ledger_code'] ==1){
 
 		Unloading();
 	}
-	<?if($cust_gst_reg =='0'){?>
+	<?php if($cust_gst_reg =='0'){?>
 		changeGstText(0);
-		<?}?>
+		<?php }?>
 
 
 /*

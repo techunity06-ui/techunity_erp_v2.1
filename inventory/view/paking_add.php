@@ -152,12 +152,12 @@
 															<tr>
 																<td style="max-width:150px">
 																	<select class="select2" name="salesorderid" id="salesorderid" onChange="get_sales_product(this.value);">
-																		<?//=getcust($dbcon,$cust_id,$sales_party_show,0);?>	
+																		<?php //=getcust($dbcon,$cust_id,$sales_party_show,0);?>	
 																	</select>
 																</td>
 																<td style="max-width:150px">
 																	<select class="select2" name="sales_order_trn_id" id="sales_order_trn_id" onChange="get_product_pen_qty(this.value);">
-																		<?//=getcust($dbcon,$cust_id,$sales_party_show,0);?>	
+																		<?php //=getcust($dbcon,$cust_id,$sales_party_show,0);?>	
 																	</select>
 																	<span id="so_pro_pending_qty" style="font-weight: 600;color: red;"></span> <span style="color: #105a03;font-weight: 600;margin: 10px;" class="btn btn-round btn-warning  btn-xs" id="unit_show">  </span>
 																</td>

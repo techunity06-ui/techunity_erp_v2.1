@@ -123,12 +123,12 @@ td, th {
 				<label class="col-md-4 control-label"> With Logo </label>
 				<div class="col-md-4 col-xs-11" >
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
-						<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-						<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-						<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-						<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+						<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+						<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+						<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+						<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 					</select>
 				 </form>
 			</div>	
@@ -159,8 +159,8 @@ td, th {
 													<!--<h2 align="center"><?=$set_head['company_name']?></h2>
 									<h4 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h4>
 									<h4 align="center"><?=$set_head['address']?></h4>
-									<h4 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-									<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
+									<h4 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+									<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
 										<h4 align="center" style="margin-top:0px;">Website: <?=$set_head['company_website']?></h4>-->
 											</td>
 										</tr>
@@ -331,13 +331,13 @@ td, th {
 					<?=$i?>
 			</td>
 			<td style="border-bottom:1px solid; border-right:1px solid;border-bottom-color:#c9c7c7" colspan="2">
-				<?if($row['product_alias_name']){?>
+				<?php if($row['product_alias_name']){?>
 					<strong><?=stripcslashes($row['product_alias_name'])?></strong>
 					<br/><?=nl2br(stripcslashes($row['description']));?>
 				<?php}else{ ?>
 					<strong><?=stripcslashes($row['product_name'])?></strong>
 					
-				<?}?>
+				<?php }?>
 			</td>
 			<td style="border-bottom:1px solid; border-right:1px solid;vertical-align:top;text-align:center;border-bottom-color:#c9c7c7" >
 			<?=$row['product_hsn_code']?>
@@ -371,7 +371,7 @@ td, th {
 				<?=$row['product_disc']?>
 			</td>
 			<td style="text-align:right;vertical-align:top;border-bottom:1px solid;border-right:1px solid;border-bottom-color:#c9c7c7">
-				<?
+				<?php 
 					$amount = '';
 					$amount = $row['prate'] * $row['product_qty'];
 					$disc 	= ($amount*$row['product_disc'])/100;
@@ -406,9 +406,9 @@ td, th {
 					<td style="border-right:1px solid;border-left:1px solid;border-bottom: 1px solid;border-bottom-color:<?=$color?>"></td>
 					<td style="border-right:1px solid;border-bottom: 1px solid;border-bottom-color:<?=$color?>" colspan="2"></td>
 					<td style="border-right:1px solid;border-bottom: 1px solid;border-bottom-color:<?=$color?>"></td>
-					<?/* if($set_head['show_disc']=='1'){*/?>
+					<?php /* if($set_head['show_disc']=='1'){*/?>
 					<td style="border-right:1px solid;border-bottom: 1px solid;border-bottom-color:<?=$color?>"></td>
-					<?/*}*/?>
+					<?php /*}*/?>
 					<!--<td style="border-right:1px solid;"></td>-->
 					<td style="border-right:1px solid;border-bottom: 1px solid;border-bottom-color:<?=$color?>"></td>
 					<td style="border-right:1px solid;padding: 0px 0px !important;border-bottom: 1px solid;border-bottom-color:<?=$color?>">

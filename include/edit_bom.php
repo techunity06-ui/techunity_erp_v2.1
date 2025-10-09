@@ -121,7 +121,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 			.po_req_mode{
 				display:none;
 			}
-			<?}?>
+			<?php }?>
 
 			<?php
 			if($bom_actual_add){
@@ -431,7 +431,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 																<td style="vertical-align:top;" class="hide_act_add">
 																<!--<select class="form-control" id="product_base_unit" name="product_base_unit" >
 																	<option value="">--select Unit--</option>
-																	<?//=getunit($dbcon);?>
+																	<?php //=getunit($dbcon);?>
 																</select>-->
 																<input class="form-control" type="text" name="product_base_unit_name" id="product_base_unit_name" value="" readonly />
 																<input type="hidden" name="product_base_unit" id="product_base_unit"value="" />	
@@ -446,7 +446,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 															<td style="vertical-align:top;" class="hide_act_add">
 																<!--<select class="form-control" id="product_uom" name="product_uom" >
 																	<option value="">--select UOM--</option>
-																	<?//=getunit($dbcon);?>
+																	<?php //=getunit($dbcon);?>
 																</select>-->
 																<input class="form-control" type="text" id="product_conv_unit_name" name="product_conv_unit_name" value="" readonly />
 																
@@ -508,7 +508,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 										</div>
 										<input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
 										
-										<!--<input type="hidden" name="eid" id="eid" value="<?//=isset($_GET['eid'])&& $_GET['eid']!=''?$bom_id:$r_bom_id ?>" />-->
+										<!--<input type="hidden" name="eid" id="eid" value="<?php //=isset($_GET['eid'])&& $_GET['eid']!=''?$bom_id:$r_bom_id ?>" />-->
 										
 										<input type="hidden" name="invoicetype_id" id="invoicetype_id" value="" />
 										
@@ -563,23 +563,23 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 					format: 'dd-mm-yyyy',
 					autoclose: true
 				});
-				<?
+				<?php 
 				if($mode!='Add'){
 					?>	
 					$('#sales_order_id').select2('readonly',true);
 					$('#sales_order_pro_id').select2('readonly',true);
-					<?}
+					<?php }
 					?>
 					<?phpif($direct_add){?>
 						load_sales_pro_data(<?=$rel['sales_order_id']?>);
 						$('#sales_order_id').select2('readonly',true);
-						<?
+						<?php 
 						$deleteid=delete_record('tbl_bomtrn', "bom_id=0", $dbcon);
 					}
 					?>
 		<?php/*if($bom_clone){?>
 			clone_bom_trn_data(<?=$bom_id?>);
-			<?}*/?>	
+			<?php }*/?>	
 		</script>
 		<?php
 		if($mode=="Add"){

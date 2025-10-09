@@ -156,7 +156,7 @@ if($set_head['show_disc']=='1'){
 
 							<div class="panel-body">
 								<!--<center>-->
-									<?
+									<?php 
 									if($rel['po_approval_status']=='1'){
 										?>
 										<div id="logo_sec_div">
@@ -165,12 +165,12 @@ if($set_head['show_disc']=='1'){
 											<label class="col-md-4 control-label"> </label>
 											<div class="col-md-4 col-xs-11" style="display:none;">
 												<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-													<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+													<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 														<option value="">Select Print</option>
-														<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-														<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-														<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-														<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+														<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+														<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+														<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+														<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 													</select>
 												</form>
 											</div>
@@ -185,14 +185,14 @@ if($set_head['show_disc']=='1'){
 											</div>
 											<!--</center>	-->	
 										</div>	
-										<?
+										<?php 
 									}
 									else{
 										?>	
 										<center>
 											<button type="submit" class="btn btn-warning"><i class="fa fa-ban"></i> PO Not Approved</button>
 										</center>
-										<?
+										<?php 
 									}
 									?>
 									<div class="col-md-12"></div>
@@ -379,7 +379,7 @@ if($set_head['show_disc']=='1'){
 															<?=$row['product_icode'];?>
 														</td>
 														<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-															<?if($row['product_alias_name']){?>
+															<?php if($row['product_alias_name']){?>
 																<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?></strong>
 																<br/><?=($row['product_des']) ? nl2br(stripcslashes($row['product_des'])) : '';?>
 															<?php}else{ ?>
@@ -392,7 +392,7 @@ if($set_head['show_disc']=='1'){
 														</td>
 														<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
 															<?phpif($row['product_type']!='8'){ ?>
-																<?if($row['product_base_unit']!=$row['product_conv_unit']){?>
+																<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 																	<?=$cqty.' '.$uname?><br/>
 																<?php} ?>
 																<?=$row['product_qty'].' '.$row['unit_name']?>
@@ -410,7 +410,7 @@ if($set_head['show_disc']=='1'){
 														</td>
 														<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 															<?=number_format($taxable_amt,2,".","")?>
-															<?//=number_format($row['product_amount_tax'],2,".","")?>
+															<?php //=number_format($row['product_amount_tax'],2,".","")?>
 														</td>
 
 														<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">

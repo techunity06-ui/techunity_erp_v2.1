@@ -52,7 +52,7 @@ $countryid = '101';
 				<section class="panel">
 					<header class="panel-heading">
 <!--						<span class="tools pull-right">
-							<a href="<?//=ROOT.'report_list'?>"><button type="button" class="btn btn-info"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Report List</button></a>	
+							<a href="<?php //=ROOT.'report_list'?>"><button type="button" class="btn btn-info"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Report List</button></a>	
 						</span>-->
 						
 						<h3 style=""><?=$form?> </h3>
@@ -183,7 +183,7 @@ include_once('../../include/footer.php');
 	})()
 </script>
 
-<?
+<?php 
 	echo "<script>load_state(".$countryid.",'c_add_state',".$stateid.")</script>";
 ?>
 </body>

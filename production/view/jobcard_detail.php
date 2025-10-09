@@ -234,7 +234,7 @@ function consinee_change(val){
 	}
 }
 </script>
-<?
+<?php 
 
 if($mode=="Add"){
 	echo "<script>load_salesno();</script>";

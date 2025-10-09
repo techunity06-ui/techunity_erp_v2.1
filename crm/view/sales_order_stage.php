@@ -108,7 +108,7 @@ $rel_trn=mysqli_fetch_assoc($dbcon->query($query));
 									</div>
 									<input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
 									<input type='hidden' name='eid' id='eid' value='<?=$rel['sales_order_id']?>' />
-									<input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?if($mode != "Add"){ echo $rel['sales_order_id']; }?>' />
+									<input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?php if($mode != "Add"){ echo $rel['sales_order_id']; }?>' />
 									<input type='hidden' name='save_print' id='save_print' value='' />
 									<input type='hidden' name='receipt_no' id='receipt_no' value='<?=$receiptno?>' />
 									<input type='hidden' name='token' id='token' value='<?php echo $token; ?>' />

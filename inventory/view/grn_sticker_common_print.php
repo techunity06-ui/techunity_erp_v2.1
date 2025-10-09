@@ -83,7 +83,7 @@ $company_config = getCompanyConfiguration($dbcon);
 			<div class="col-lg-9 table-responsive" id="receipt_print">	
 				<div style="width: 100%;" id="print1">
 					
-			<?
+			<?php 
 				$mode="Print";
 				$query_inward="SELECT pro.product_name,pro.product_icode,grn.vender_id,led.l_name,led.ledger_code,grn.invoice_no,grn.grn_no,grn.grn_date FROM tbl_grn_trn as grn_trn 
 				left join tbl_grn as grn on grn.grn_id=grn_trn.grn_id
@@ -124,7 +124,7 @@ $company_config = getCompanyConfiguration($dbcon);
 	
    //QRcode End
    ?> 
-					<?}
+					<?php }
 					//for ($i=0; $i < $batch_rel['accept_qty']; $i++) { 
 						// code...
 					
@@ -134,7 +134,7 @@ $company_config = getCompanyConfiguration($dbcon);
 					border-collapse:separate;font-weight:bold;" id="batch<?=$i?>" >
 						<tr style="font-size: 12px;">
 							<td rowspan="4" style="width:30%;">
-								<?
+								<?php 
 								echo '<img style="height: 80px;" src="'.$PNG_WEB_DIR.basename($filename).'"/><br/>'; 
 								?>
 							</td>
@@ -159,7 +159,7 @@ $company_config = getCompanyConfiguration($dbcon);
 							<td colspan="4">&nbsp;</td>
 						</tr>
 					</table>
-					<?
+					<?php 
 						if($i>1){ echo '<hr style="margin-top:4px;margin-bottom:4px;"/>';}
 					//}
 					

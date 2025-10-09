@@ -105,7 +105,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                 <section class="panel">
                     <header class="panel-heading">
                         <h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-                        <?// include_once("../include/head_menu.php") ?>
+                        <?php // include_once("../include/head_menu.php") ?>
                         <br/>
                     </header>
                     <div class="">
@@ -161,7 +161,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                 </div>
                                                 <div class="col-md-4">
                                             <div class="form-group">
-                                                <?
+                                                <?php 
                                                 $ck='';
                                                 if(empty($rel['consignee_id'])){
                                                     $ck='checked="checked"';
@@ -433,7 +433,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
 														<label class="col-md-4 control-label" >Transport Address</label>
 														<div class="col-md-8 col-xs-11">      
 															<select class="form-control" name="trans_add" id="trans_add" >
-																<?//=getpaymentterms($dbcon,$rel['payment_terms']);?>
+																<?php //=getpaymentterms($dbcon,$rel['payment_terms']);?>
 															</select>
 															<input type="hidden" name="trans_add_ed" id="trans_add_ed" value="<?=$rel['trans_add']?>" />
 														</div>
@@ -455,13 +455,13 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                 <table cellspacing="10" style="border-spacing:10px;table-layout: fixed;" id="product_list" class="display table table12 table-striped table-bordered  ">
                                                                     <tr id="field">
                                                                         <!-- <th width="5%" class="text-center"></th> -->
-                                                                        <?if($companyConfiguration['category_selection_active']==1){ ?>
+                                                                        <?php if($companyConfiguration['category_selection_active']==1){ ?>
                                                                             <th width="8%" class="text-center">Category</th>
                                                                         <?php} ?>
                                                                         <th width="20%" class="text-center">Product Detail</th>
-                                                                        <?if($getspecialConfiguration['global_eng_permission']==1){?>
+                                                                        <?php if($getspecialConfiguration['global_eng_permission']==1){?>
                                                                                             <th width="8%" class="text-center">Size</th>
-                                                                                        <?}?>
+                                                                                        <?php }?>
                                                                         <th width="8%" class="text-center" style="display:none">HSN Code</th>
                                                                         <th width="7%" class="text-center">Per</th>
                                                                         <th width="6%" class="text-center">Quantity</th>
@@ -475,9 +475,9 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                         <input type="hidden" value="1" name="fieldcnt" id="fieldcnt"/>
                                                                         <input type="hidden" id="inquiry_type" name="inquiry_type" value="1">
                                                                         <tr id="field1">
-                                                                            <?if($companyConfiguration['category_selection_active']==1){ ?>
+                                                                            <?php if($companyConfiguration['category_selection_active']==1){ ?>
                                                                                 <td data-label="PRODUCT CATEGORY" style="vertical-align:top;">
-                                                                                    <select class="select2" title="Select Category" name="product_category_id" id="product_category_id" <?if($companyConfiguration['cat_wise_product_load'] ==1){?>onchange="product_load()"<?}?>>
+                                                                                    <select class="select2" title="Select Category" name="product_category_id" id="product_category_id" <?php if($companyConfiguration['cat_wise_product_load'] ==1){?>onchange="product_load()"<?php }?>>
                                                                                         <?=get_all_category($dbcon,$rel['product_category_id']);?>
                                                                                     </select>
                                                                                 </td>
@@ -489,11 +489,11 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                                 <button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" onclick="showproduct()"><i class="fa fa-plus"></i> Add Product</button>
                                                                             <?php} ?>
                                                                             </td>
-                                                                            <?if($getspecialConfiguration['global_eng_permission']==1){?>
+                                                                            <?php if($getspecialConfiguration['global_eng_permission']==1){?>
                                                                                     <td>
                                                                                     <input type="text" class="form-control" id="item_size" name="item_size" value="">
                                                                                     </td>
-                                                                                    <?}?>
+                                                                                    <?php }?>
                                                                             <td data-label="HSN CODE" style="vertical-align:top; display: none;">
                                                                                 <input type="text"  title="Enter HSN Code" placeholder="HSN Code" id="product_hsn" name="product_hsn" class="form-control"/>
                                                                                 <input type="hidden" id="product_hsn_code" name="product_hsn_code"/>
@@ -501,7 +501,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                             <td data-label="PER" style="vertical-align:top;">
                                                                                 <select class="form-control" title="Select Unit" name="rate_unit_id" id="rate_unit_id" onchange="load_product_unit();getrate();">
                                                                                     <option value="0">Select Unit</option>
-                                                                                    <?//=getunit($dbcon,0);?>
+                                                                                    <?php //=getunit($dbcon,0);?>
                                                                                 </select>
                                                                                 <input type="hidden" name="p_qty" id="p_qty">
                                                                             <td data-label="QTY" style="vertical-align:top;">
@@ -533,7 +533,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                         </td>
                                                                         <td data-label="TAX" style="vertical-align:top;">
                                                                             <select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-                                                                                <?
+                                                                                <?php 
                                                                                 //echo getformula($dbcon,$rel['formulaid']);
                                                                                 ?>
                                                                             </select>
@@ -542,12 +542,12 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                             <input type="number" min="0" id="product_amount" readonly="readonly" name="product_amount" class="form-control" onmouseover="this.title=this.value"/>
                                                                         </td>
                                                                         <td data-label="ACTION" style="vertical-align:top;"> 
-                                                                        <?if ($getspecialConfiguration['durva_permission']==1){?>
+                                                                        <?php if ($getspecialConfiguration['durva_permission']==1){?>
                                                                             <input type="button"  name="addrow1" id="addrow1" onClick="open_batch_wise_qty()"  class="btn btn-primary product_add_batch_wise" value="Add" />
                                                                             <button type="button" class="btn btn-primary" id="addrow" style=" display:none;" onclick="add_field()">Add</button>
-                                                                        <?}else{?>
+                                                                        <?php }else{?>
                                                                             <input type="button"  name="addrow" id="addrow" onclick="return add_field();"  class="btn btn-primary" value="Add"/> 
-                                                                        <?}?>
+                                                                        <?php }?>
 
                                                                         </td>
                                                                         <input type='hidden' name='edit_id' id='edit_id' value='' />
@@ -780,7 +780,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                         <input type="hidden" id="edit_sales_order_id" value="<?=$rel['sales_order_id']?>">
                                         <input type="hidden" id="edit_quotation_id" value="<?=$rel['quotation_id']?>">
                                         <input type="hidden" id="edit_consignee_id" value="<?=$rel['consignee_id']?>">
-                                        <input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?if($mode == "Edit"){ echo $rel['invoicetype_id']; }?>' /> 
+                                        <input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?php if($mode == "Edit"){ echo $rel['invoicetype_id']; }?>' /> 
                                         <input type="hidden" name="print_path" id="print_path" value="<?=get_print_path($dbcon,'2');?>" />             
                                     </form>
                                 </div>

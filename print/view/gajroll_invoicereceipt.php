@@ -115,12 +115,12 @@ $place_of_supply=$rel['city_name'];
 													<label class="col-md-2 control-label" style="padding-top: 10px;"> Print</label>
 													<div class="col-md-10 col-xs-12">
 														<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-															<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+															<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 																<option value="" >Select Print</option>
-																<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
-																<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-																<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-																<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+																<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
+																<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+																<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+																<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 															</select>
 														</form>
 													</div>
@@ -140,7 +140,7 @@ $place_of_supply=$rel['city_name'];
 												</div>
 												<div class="col-sm-4 resclear resspace"  style="text-align:center;padding-top:5px;">
 
-													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?echo $rel['cust_mobile']?>&text=<?echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
+													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
 														<?phpecho $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
 
 												<!--<button type="button" name="printpdf" id="printpdf" class="btn btn-default" value="" onclick="make_pdf()" /><span class="english"> Export to PDF</span>
@@ -161,9 +161,9 @@ $place_of_supply=$rel['city_name'];
 														<!--<h1 style="margin-bottom:0px;" align="center"><?=$set_head['company_name']?></h1>
 														<h5 align="center" style="padding-top:8px;"><?=$set_head['logo_content']?></h5>
 														<h4 style="font-size:19px; margin-bottom:0px;" align="center"><?=$set_head['address']?></h3>
-														<h4 style="font-size:14px; margin-top:0px;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-														<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
-														<h4 align="center" style="margin-top:0px;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4>-->
+														<h4 style="font-size:14px; margin-top:0px;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+														<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
+														<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>-->
 													</td>
 												</tr>
 											</table>
@@ -332,7 +332,7 @@ $place_of_supply=$rel['city_name'];
 							<th width="6%" style="text-align:center  !important;border:1px solid;border-top: none;">
 								<strong>Less:<br/>Disc.</strong>
 							</th>
-							<?}?>
+							<?php }?>
 							<th width="9%" style="text-align:center  !important;border:1px solid;border-top: none;">
 								<strong>Taxable<br/>Value</strong>
 							</th>
@@ -397,7 +397,7 @@ $place_of_supply=$rel['city_name'];
 									<td style="text-align:right  !important; vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 										<?=number_format($row['product_discount'],2,".","")?>
 									</td>
-									<?}?>
+									<?php }?>
 									<td style="text-align:right  !important; vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 										<?=number_format(($row['product_rate'] * $row['product_qty'])-$row['product_discount'],2,".","")?>
 									</td>
@@ -435,7 +435,7 @@ $place_of_supply=$rel['city_name'];
 										</td>
 										<?phpif($set_head['show_disc']=='1'){?>
 											<td style="border-right:1px solid;"></td>
-											<?}?>
+											<?php }?>
 											<!--<td style="border-right:1px solid;"></td>-->
 											<td style="border-right:1px solid;"></td>
 											<td style="border-right:1px solid;"></td>
@@ -445,7 +445,7 @@ $place_of_supply=$rel['city_name'];
 											<td style="border-right:1px solid;"></td>
 											<td style="border-right:1px solid;"></td>
 										</tr>
-										<?}?>
+										<?php }?>
 										<tr style="height:20px">
 											<td class="borderleftadd" style="border-top:1px solid;border-right:1px solid;border-left:1px solid; text-align:right  !important;" colspan="3">
 												<strong>Total</strong>
@@ -455,7 +455,7 @@ $place_of_supply=$rel['city_name'];
 											</td>
 											<?phpif($set_head['show_disc']=='1'){?>
 												<td style="border-top:1px solid;border-right:1px solid;"></td>
-												<?}?>
+												<?php }?>
 												<td style="border-top:1px solid;border-right:1px solid;"></td>
 												<td style="border-top:1px solid;border-right:1px solid;text-align:right  !important;">
 													<strong><?=number_format($total_product_amount,2,".","")?></strong>
@@ -580,7 +580,7 @@ $place_of_supply=$rel['city_name'];
 
 																				<tr>
 																					<td style="border-right:1px solid;border-top:1px solid;font-size:10px;padding:0px !important;" 	colspan="<?=5+$colspan?>">
-																						<?
+																						<?php 
 																						if($rel['stateid']==$set_head['stateid'])
 																						{
 																							echo '<table border="0" style="font-size:10px;text-align:right;" width="100%"><tr> 

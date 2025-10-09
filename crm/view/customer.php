@@ -260,7 +260,7 @@ $end_year = date("Y",strtotime($financial_year['financial_end_date']));
 										<td><input type="text" class="form-control" name="ext_type" id="ext_type" /></td>
 										<td>
 											<select class="select2" name="ext_product" id="ext_product">
-												<?//=getproduct($dbcon,0,'')?>
+												<?php //=getproduct($dbcon,0,'')?>
 											</select>
 										</td>
 										<td><input type="text" class="form-control" name="ext_remark" id="ext_remark" /></td>
@@ -473,7 +473,7 @@ $end_year = date("Y",strtotime($financial_year['financial_end_date']));
 														<td>
 															<select class="select2" name="c_add_state" id="c_add_state" onChange="load_city(this.value,'c_add_city','')">
 																<option value="">Select State</option>	
-																<?//=getstate($dbcon,$rel['stateid'])?>				
+																<?php //=getstate($dbcon,$rel['stateid'])?>				
 															</select>
 														</td>
 														<td>

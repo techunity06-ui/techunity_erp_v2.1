@@ -93,7 +93,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 .po_req_mode{
 	display:none;
 }
-<?}?>
+<?php }?>
 
 <?php
 if($bom_actual_add){
@@ -200,7 +200,7 @@ else{
 		<td style="vertical-align:top;">
 			<select class="select2" title="Select product" name="product_id" id="product_id" onchange="load_product_detail(this.value);" >
 				<option value="">Choose Product</option>
-				<?//=getproduct($dbcon,0,'0,1,2,4')?>
+				<?php //=getproduct($dbcon,0,'0,1,2,4')?>
 			</select>
 			<br/><br/>
 			<div id="get_spec_div" style="display:none">
@@ -314,17 +314,17 @@ $('.default-date-picker').datepicker({
 	autoclose: true
 });
 
-<?
+<?php 
 if($mode!='Add'){
 ?>	
 $('#sales_order_id').select2('readonly',true);
 $('#sales_order_pro_id').select2('readonly',true);
-<?}
+<?php }
 ?>
 <?phpif($direct_add){?>
 load_sales_pro_data(<?=$rel['sales_order_id']?>);
 $('#sales_order_id').select2('readonly',true);
-<?
+<?php 
 $deleteid=delete_record('tbl_bomtrn', "bom_id=0", $dbcon);
 }
 ?>

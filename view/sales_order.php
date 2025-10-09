@@ -195,7 +195,7 @@
 														<tr id="field1">
 															<td data-label="PRODUCT DETAIL" style="vertical-align:top;">
 																<select class="select2"  title="Select product" name="product_id" id="product_id" onChange="load_productdetail(this.value)">
-																	<?//=getproduct($dbcon,0,'0,1,2,3,4,5')?>
+																	<?php //=getproduct($dbcon,0,'0,1,2,3,4,5')?>
 																	<?=getproduct_typewise($dbcon,'',$type_conf,$pro_search);?>
 																</select>
 															<br><br>
@@ -317,7 +317,7 @@
 										<input type='hidden' name='quotaion_id' id='quotaion_id' value='<?=$quotaion_id?>' />
 										
 										<input type='hidden' name='eid' id='eid' value='<?=$rel['sales_order_id']?>' />
-										<input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?if($mode != "Add"){ echo $rel['sales_order_id']; }?>' />
+										<input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?php if($mode != "Add"){ echo $rel['sales_order_id']; }?>' />
 										<input type='hidden' name='save_print' id='save_print' value='' />
 										<input type='hidden' name='receipt_no' id='receipt_no' value='<?=$receiptno?>' />
 										<input type='hidden' name='token' id='token' value='<?php echo $token; ?>' />
@@ -347,7 +347,7 @@
 						autoclose: true
 			});
 		</script>
-		<?
+		<?php 
 			if($mode=="Add")
 			{
 				

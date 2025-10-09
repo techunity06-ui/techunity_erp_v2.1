@@ -342,7 +342,7 @@
 			
 		</script>
 		<?phpecho "<script>show_data() </script>";?>
-		<?if($mode=="Add")
+		<?php if($mode=="Add")
 		{
 			echo "<script>get_series_no() </script>";
 		}

@@ -60,7 +60,7 @@
                                   <label class="control-label col-md-2" >Choose Date</label>
                                   <div class="col-md-3">
                                     <div class="input-group date form_datetime-component">
-									 <?
+									 <?php 
 									 if(empty($start_date)){
 										$start=date('d-m-Y');
 									 }else{

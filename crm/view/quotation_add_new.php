@@ -189,10 +189,10 @@ else {
 							<section class="panel">
 								<header class="panel-heading">
 									<h3><?=$viewmode .' '.$form?></h3>
-									<!--<div class="text-center">Owner : <strong><?//=$user_name?></strong></div>-->
+									<!--<div class="text-center">Owner : <strong><?php //=$user_name?></strong></div>-->
 								</header>	
 								<div class="">
-									<?	
+									<?php 	
 									$url = $_SERVER['HTTP_REFERER'];
 									$infopage = basename($url);
 									if($infopage=='dashboard'){
@@ -264,7 +264,7 @@ else {
 											<div class="col-md-6">
 												<?php echo getBranchBox($dbcon, $branch_id, $selected_branch_id, false, true,'','3','6'); ?>
 											</div>
-											<?if($getspecialConfiguration['rb_auto_permission']==1){?>
+											<?php if($getspecialConfiguration['rb_auto_permission']==1){?>
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="col-md-3 control-label">Installation type *</label>
@@ -276,7 +276,7 @@ else {
 														</div>
 													</div>									
 												</div>
-												<?}?>
+												<?php }?>
 												<div class="clearfix"></div>
 												<div class="col-md-6">
 													<div class="form-group">
@@ -331,8 +331,8 @@ else {
 													<div class="form-group">
 														<label class="col-md-3 control-label">Quotation Type</label>
 														<div class="col-md-6"> 
-															<label class="col-md-5 col-sm-6" style="font-weight:bold;"><input type="radio" id="quot_type_domestic" name="quot_type" style="width: 15px;height: 15px;" <?if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?}?> value="0" <?=($quot_type!='1')?'checked':''?>> Domestic</label>
-															<label class="col-md-6 col-sm-6 " style="font-weight:bold;"><input type="radio" id="quot_type_export" name="quot_type" style="width: 15px;height: 15px;" <?if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?}?> value="1" <?=($quot_type=='1')?'checked':''?>> Export</label>
+															<label class="col-md-5 col-sm-6" style="font-weight:bold;"><input type="radio" id="quot_type_domestic" name="quot_type" style="width: 15px;height: 15px;" <?php if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?php }?> value="0" <?=($quot_type!='1')?'checked':''?>> Domestic</label>
+															<label class="col-md-6 col-sm-6 " style="font-weight:bold;"><input type="radio" id="quot_type_export" name="quot_type" style="width: 15px;height: 15px;" <?php if($mode=='Add'){?>onclick="load_typeswise_terms(this.value,'');"<?php }?> value="1" <?=($quot_type=='1')?'checked':''?>> Export</label>
 														</div>
 													</div>	
 												</div>
@@ -362,7 +362,7 @@ else {
 													</div>	
 												</div>
 
-<?	//Show Flp field only if add mode
+<?php 	//Show Flp field only if add mode
 if($mode=='Add'){
 	?>
 	<div class="col-md-6">
@@ -383,7 +383,7 @@ if($mode=='Add'){
 			<label class="col-md-4 control-label">Assign To*</label>
 			<div class="col-md-8">
 				<select class="select2" id="assign_user_ids" name="assign_user_ids[]" title="Choose Assign User" placeholder="Choose Assign User" required>
-					<?//=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
+					<?php //=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
 					<?=get_assign_users($dbcon, $assign_user_ids, "");?>
 				</select>
 			</div>
@@ -412,18 +412,18 @@ if($mode=='Add'){
 			</div>
 		</div>	
 	</div>	
-	<?}?>
-	<?if($getspecialConfiguration['elcon_permission'] ==1){?>
+	<?php }?>
+	<?php if($getspecialConfiguration['elcon_permission'] ==1){?>
 		<div class="col-md-6">
 			<div class="form-group">
 				<label class="col-md-3 control-label">Greeting</label>
 				<div class="col-md-8">
-					<textarea class="form-control" id="quatation_greeting" name="quatation_greeting" placeholder="Enter Quatation Greeting"><?if($mode=='Add'){ echo $set_head['quotation_greeting'];}else{ echo $rel['quatation_greeting']; }?></textarea>
+					<textarea class="form-control" id="quatation_greeting" name="quatation_greeting" placeholder="Enter Quatation Greeting"><?php if($mode=='Add'){ echo $set_head['quotation_greeting'];}else{ echo $rel['quatation_greeting']; }?></textarea>
 				</div>
 			</div>
 		</div>
 		
-		<?}?>
+		<?php }?>
 		<div class="clearfix"></div>
 		<hr/>
 		<!--tab start--> 
@@ -579,7 +579,7 @@ if($mode=='Add'){
 			</div>
 		</div>
 		<div class="col-md-6"></div>
-		<?if($getspecialConfiguration['maruti_permission']==1){?>
+		<?php if($getspecialConfiguration['maruti_permission']==1){?>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label class="col-md-4 control-label">Inclusive all</label>
@@ -588,7 +588,7 @@ if($mode=='Add'){
 					</div>
 				</div>	
 			</div>
-			<?}?>
+			<?php }?>
 			<hr/>
 			<div class="clearfix"></div>
 			<!--tab start--> 
@@ -601,10 +601,10 @@ if($mode=='Add'){
 						<li role="presentation" id="tab5"><a href="#dfd-section" aria-controls="dfd-section" role="tab" data-toggle="tab">Annex DFD</a></li>
 						<li role="presentation" id="tab4"><a href="#address-section" aria-controls="address-section" role="tab" data-toggle="tab">Address</a></li>
 						<li role="presentation" id="tab6"><a href="#greeting-section" aria-controls="greeting-section" role="tab" data-toggle="tab">Greetings</a></li>
-						<?if($getspecialConfiguration['maruti_permission']==1){?>
+						<?php if($getspecialConfiguration['maruti_permission']==1){?>
 							<li role="presentation" id="tab4"><a href="#general-terms-condition-section" aria-controls="general-terms-condition-section" role="tab" data-toggle="tab">General Terms & Conditions Content</a></li>
 							<li role="presentation" id="tab4"><a href="#battery-limits-and-schedule-exclusion-section" aria-controls="battery-limits-and-schedule-exclusion-section" role="tab" data-toggle="tab">Battery Limits And Schedule Of Exclusion Content</a></li>
-							<?}?>
+							<?php }?>
 						</ul>
 						<!-- Tab panes -->
 						<div class="tab-content"> 
@@ -711,7 +711,7 @@ if($mode=='Add'){
 								</div> 
 							</div>
 						</div>
-						<?if($getspecialConfiguration['maruti_permission']==1){?>
+						<?php if($getspecialConfiguration['maruti_permission']==1){?>
 							<div role="tabpanel" class="tab-pane" id="general-terms-condition-section">
 								<div class="col-md-12">
 									<div class="form-group">
@@ -733,7 +733,7 @@ if($mode=='Add'){
 									</div> 
 								</div> 
 							</div>
-							<?}?>
+							<?php }?>
 						</div>      		
 					</div>      		
 					<!--tabs end-->	
@@ -808,24 +808,24 @@ if($mode=='Add'){
 		format: 'dd-mm-yyyy',
 		autoclose: true
 	});
-	<?if($mode=='Add'){?>
+	<?php if($mode=='Add'){?>
 		$('#task_type_id').select2('readonly',true);
-		<?}?>
-		<?if($mode=='Edit'){?>
+		<?php }?>
+		<?php if($mode=='Edit'){?>
 			$('#cust_id').select2('readonly',true);
 			$('#c_con_id').select2('readonly',true);
 			$('#inquiry_id').select2('readonly',true);
 	//Disable not selected Radio Button
 	$(':radio:not(:checked)').attr('disabled', true);
 	load_typeswise_terms(<?=$quot_type?>,<?=$quotation_id?>);
-	<?} else if ($viewmode=='Revise') { ?>
+	<?php } else if ($viewmode=='Revise') { ?>
 		load_typeswise_terms(<?=$quot_type?>,<?=$prev_quotation_id?>);
 	<?php} else {?>
 		load_typeswise_terms(<?=$quot_type?>,'');
-		<?}?>
-		<?if($prev_quotation_id){?>
+		<?php }?>
+		<?php if($prev_quotation_id){?>
 			copy_prev_quot_trn(<?=$prev_quotation_id?>);
-			<?}?>
+			<?php }?>
 
 			var max_followup_date = '<?=$max_followup_date?>';
 			var date = new Date();
@@ -840,16 +840,16 @@ $(".quotattion-followup-date").datetimepicker({
 	startDate: today,
 	endDate: endDate
 });
-<?if($inq_to_quot){//check inq to quot for copy inq pro?>
+<?php if($inq_to_quot){//check inq to quot for copy inq pro?>
 	load_inq_pro(<?=$inquiry_id?>);
 	$('#cust_id').select2('readonly',true);
 	$('#c_con_id').select2('readonly',true);
 	$('#inquiry_id').select2('readonly',true);
-	<?}?>
-	<?if($viewmode=="Add"){?>
+	<?php }?>
+	<?php if($viewmode=="Add"){?>
 		load_def_quotation_no();
 
-		<?}?>
+		<?php }?>
 		CKEDITOR.replace( 'quot_annex_content', {
 			enterMode: CKEDITOR.ENTER_BR
 		});

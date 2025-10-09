@@ -336,7 +336,7 @@
 													<div class="form-group">
 														<label class="col-md-4 control-label"><strong>Process Qty</strong></label>
 														<div class="col-md-8 col-xs-11">
-														<?//=$readonly;?>
+														<?php //=$readonly;?>
 															<input id="in_process_qty_main" name="in_process_qty" type="number" class="form-control" title="Date" value="" placeholder="Inhouse Process Qty"  onkeyup="get_inhouse_request_qty(this.value);get_bom_request_qty(this.value);get_po_request_qty(this.value);cal_po_qty();" >
 															
 														</div>

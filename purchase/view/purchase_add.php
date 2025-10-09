@@ -421,7 +421,7 @@
 												<tr id="field1">
 												   <!--<td class="grn" style="vertical-align:top;">
 													  <select class="select2" name="grn_id" id="grn_id" onChange="load_grn_data(this.value);">
-													  <?//=get_grn_for_purchase($dbcon,$rel['vender_id'],"",$mode);?>
+													  <?php //=get_grn_for_purchase($dbcon,$rel['vender_id'],"",$mode);?>
 													  </select>
 												   </td>-->
 												   <td style="vertical-align:top;max-width:300px">
@@ -440,7 +440,7 @@
 												   </td>
 												   <td style="vertical-align:top;">
 											   		<select class="form-control"  title="Select Unit" placeholder="Unit" name="rate_unit_id" tabindex="16" id="rate_unit_id" onchange="load_product_unit();get_product_price();">
-                                        		<?//=getunit($dbcon,0);?>
+                                        		<?php //=getunit($dbcon,0);?>
                                              <option value="0">Select Unit</option>
                                           </select>
 												   </td>
@@ -846,9 +846,9 @@
 		CKEDITOR.replace( 'pro_spe', {
 			enterMode: CKEDITOR.ENTER_BR
 		});
-         <?if($mode=='Add'){?>
+         <?php if($mode=='Add'){?>
          	//load_purchase_srs_no();
-         <?}?>
+         <?php }?>
       </script>
       <script type="text/javascript">
          $(".add-row").click(function(){
@@ -970,7 +970,7 @@
          	}
          }
          
-         <?
+         <?php 
             if(!empty($grn_id)){ ?>
          	load_ven_grn(<?=$vender_id?>,<?=$grn_id?>);
          	//load_grn_data(<?=$grn_id?>);
@@ -978,11 +978,11 @@
 				get_statecode(<?=$vender_id?>);
          	$('#vender_id').select2('readonly',true);
          <?php} ?>
-         <?	if(strpos($_SERVER['REQUEST_URI'], "purchase_bill_service_pending")==true){ ?>
+         <?php 	if(strpos($_SERVER['REQUEST_URI'], "purchase_bill_service_pending")==true){ ?>
          		load_service_bill(<?=$vender_id?>,<?=$service_id?>);
          		insert_service_data(<?=$service_id?>);
          		$('#vender_id').select2('readonly',true);
-      	<?	} ?>
+      	<?php 	} ?>
       </script>
       <?php 
          echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";

@@ -35,7 +35,7 @@
 								<tr>
 									<!--<td>
 										<select class="select2" id="assign_user_ids" name="assign_user_ids" placeholder="Choose Assign User">
-											<?//=get_assign_users($dbcon, '', " and user_id not in(".$_SESSION['user_id'].")");?>
+											<?php //=get_assign_users($dbcon, '', " and user_id not in(".$_SESSION['user_id'].")");?>
 										</select>
 									</td>-->
 									<td>

@@ -85,7 +85,7 @@
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Vendor </label>
 													<div class="col-md-6 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="vender_id" id="vender_id" onChange="get_po_tax(this.value)" required title="Select Vender">
 															<?=getcust($dbcon,$vender_id);?>	
 														</select>
@@ -108,7 +108,7 @@
 											<div class="col-md-12" style="margin-top:10px;"></div>			
 											<div class="col-md-12" style="margin-top:10px;">
 												<div id="sale_productdata">
-													<?
+													<?php 
 																
 														$query="select sum(po.product_qty) as pqty,po.unit_id, tc.cat_name, product.product_name,product.product_type,product.product_base_unit,product.product_conv_unit,purchaseordertrn_id,group_concat(po.purchaseordertrn_id ORDER BY po.purchaseordertrn_id ASC) as req_id,group_concat(po.po_ref_id ORDER BY po.purchaseordertrn_id ASC) as po_ref_id,po.product_id 
 														from tbl_purchasetrntemp  as po 
@@ -133,7 +133,7 @@
 																	<th width="8%" class="text-center">Unit Of PO </th>
 																	<th width="8%" class="text-center">PO qty</th>
 																</tr>
-															<?
+															<?php 
 															$i=1;
 															while($rel_trn=mysqli_fetch_assoc($result))
 															{
@@ -178,14 +178,14 @@
 																
 																	<td style="vertical-align:middle;" class="text-center">
 																		<select class="form-control" id="product_base_unit<?php echo $i ?>" name="product_base_unit[]" >
-																			<?//=getunit($dbcon,$rel_trn['product_base_unit']);?>
+																			<?php //=getunit($dbcon,$rel_trn['product_base_unit']);?>
 																			<?=getunit($dbcon,$rel_trn['unit_id']);?>
 																		</select>
 																	</td>
 																	
 																	<td style="vertical-align:middle;" class="text-center">
 																		<select class="form-control" id="product_uom<?php echo $i ?>" name="product_uom[]" onchange="get_alt_qty(this.value,'<?=$rel_trn['product_id'];?>','<?=$i?>')" >
-																			<?//=getunit($dbcon,$rel_trn['product_conv_unit']);?>
+																			<?php //=getunit($dbcon,$rel_trn['product_conv_unit']);?>
 																			<?=getunit($dbcon,$rel_trn['unit_id']);?>
 																		</select>
 																	</td>
@@ -199,7 +199,7 @@
 																		<input type="text" class="form-control" name="product_alloc_qty[]" id="product_alloc_qty<?php echo $i ?>" value="<?=$pending_qty?>"  />
 																	</td>
 																</tr>
-															<?
+															<?php 
 																$i++;
 															}
 															?>

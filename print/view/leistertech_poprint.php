@@ -165,7 +165,7 @@ if($set_head['show_disc']=='1'){
 
 							<div class="panel-body">
 								<!--<center>-->
-									<?
+									<?php 
 									if($rel['po_approval_status']=='1'){
 										?>
 										<div id="logo_sec_div">
@@ -174,12 +174,12 @@ if($set_head['show_disc']=='1'){
 											<label class="col-md-4 control-label"> </label>
 											<div class="col-md-4 col-xs-11" style="display:none;">
 												<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-													<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+													<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 														<option value="">Select Print</option>
-														<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-														<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-														<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-														<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+														<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+														<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+														<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+														<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 													</select>
 												</form>
 											</div>
@@ -194,14 +194,14 @@ if($set_head['show_disc']=='1'){
 											</div>
 											<!--</center>	-->	
 										</div>	
-										<?
+										<?php 
 									}
 									else{
 										?>	
 										<center>
 											<button type="submit" class="btn btn-warning"><i class="fa fa-ban"></i> PO Not Approved</button>
 										</center>
-										<?
+										<?php 
 									}
 									?>
 									<div class="col-md-12"></div>
@@ -264,7 +264,7 @@ if($set_head['show_disc']=='1'){
 							</td>
 						</tr>
 						<tr>
-							<?
+							<?php 
 							$rowsp = "";
 							if($rel['delivery_type'] != 'product_wise'){
 								$rowsp = "2";
@@ -294,7 +294,7 @@ if($set_head['show_disc']=='1'){
 										<?php//} ?>
 									</td>
 								</tr>
-								<?if($rel['delivery_type'] != 'product_wise'){?>
+								<?php if($rel['delivery_type'] != 'product_wise'){?>
 									<tr>
 										<td style="vertical-align:top;border:1px solid;border-right:none;">
 											Delivery Date 
@@ -303,7 +303,7 @@ if($set_head['show_disc']=='1'){
 											: <?=$po_del?>
 										</td>
 									</tr>
-									<?}?>
+									<?php }?>
 								</table>
 
 
@@ -330,7 +330,7 @@ if($set_head['show_disc']=='1'){
 				<th width="6%" style="text-align:center;border:1px solid;border-top: none;">
 					<strong>Less:<br/>Disc.</strong>
 				</th>
-				<?}?>
+				<?php }?>
 				<th width="9%" style="text-align:center;border:1px solid;border-top: none;">
 					<strong>Amount</strong>
 				</th>
@@ -404,20 +404,20 @@ if($set_head['show_disc']=='1'){
 						<?=$i?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-						<?if($row['product_alias_name']){?>
-							<strong><?=stripcslashes($row['product_alias_name'])?> </strong><br><?//=$code?>
+						<?php if($row['product_alias_name']){?>
+							<strong><?=stripcslashes($row['product_alias_name'])?> </strong><br><?php //=$code?>
 							<br/><?=$description;?>
 						<?php}else{ ?>
-							<strong><?=stripcslashes($row['product_name'])?> </strong><br><?//=$code?>
+							<strong><?=stripcslashes($row['product_name'])?> </strong><br><?php //=$code?>
 							<br/><?=$description;?>
-							<?}?>
-							<?if($rel['delivery_type'] == 'product_wise'){?>
+							<?php }?>
+							<?php if($rel['delivery_type'] == 'product_wise'){?>
 								<table style="border:1px solid;width:100%">
 									<tr style="border-bottom:1px solid">
 										<td style="width:50%;border-right:1px solid"><strong>Delivery Date</strong></td>
 										<td style="width:50%;"><strong>Qty</strong></td>
 									</tr>
-									<?
+									<?php 
 									$pro_delivery = "select * from tbl_purchaseorder_delivery_date where po_delivery_date_status=0 and purchaseordertrn_id=".$row['purchaseordertrn_id'];
 									$del_result=$dbcon->query($pro_delivery);
 									while($del_row = mysqli_fetch_array($del_result)){
@@ -426,9 +426,9 @@ if($set_head['show_disc']=='1'){
 											<td style="width:50%;border-right:1px solid"><?=date('d-m-Y',strtotime($del_row['delivery_date']));?></td>
 											<td style="width:50%;"><?=$del_row['product_qty']?></td>
 										</tr>
-										<?}?>
+										<?php }?>
 									</table>
-									<?}?>
+									<?php }?>
 								</td>
 								<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
 									<?=stripcslashes($row['product_hsn_code'])?>
@@ -437,9 +437,9 @@ if($set_head['show_disc']=='1'){
 								<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
 									<?phpif($row['product_type']!='8'){ ?>
 										<?=$row['product_qty'].' '.$row['unit_name']?><br/>
-										<?if($row['product_base_unit']!=$row['product_conv_unit']){?>
+										<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 											<?=$cqty.' '.$uname?>
-											<?}?>
+											<?php }?>
 										<?php}else{
 											$charges_qty+=$row['product_qty'];
 										} ?>	
@@ -458,7 +458,7 @@ if($set_head['show_disc']=='1'){
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 							<?=number_format($row['discount_per'],2,".","").'%'?>
 						</td>
-						<?}?>
+						<?php }?>
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 							<?=number_format($row['product_amount'],2,".","")?>
 						</td>
@@ -467,7 +467,7 @@ if($set_head['show_disc']=='1'){
 
 						</td>
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
-							<?//=number_format($taxable_amt,2,".","")?>
+							<?php //=number_format($taxable_amt,2,".","")?>
 							<?=number_format($gst_rate,2,".","")?>
 						</td>
 
@@ -496,7 +496,7 @@ if($set_head['show_disc']=='1'){
 						<td style="border-right:1px solid;"></td>
 						<?phpif($set_head['show_disc']=='1'){?>
 							<td style="border-right:1px solid;"></td>
-							<?}?>
+							<?php }?>
 							<!--	<td style="border-right:1px solid;"></td>-->
 							<td style="border-right:1px solid;"></td>
 							<td style="border-right:1px solid;"></Td>
@@ -514,7 +514,7 @@ if($set_head['show_disc']=='1'){
 							<!--<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalsqr,2,".","")?></strong></td>-->
 							<?phpif($set_head['show_disc']=='1'){?>
 								<td style="border-top:1px solid;border-right:1px solid;"></td>
-								<?}?>
+								<?php }?>
 								<td style="border-top:1px solid;border-right:1px solid;"></td>
 								<td style="border-top:1px solid;border-right:1px solid;text-align:right;"><strong><?=number_format($total_product_amount,2,".","")?></strong></td>
 								<td style="border-top:1px solid;border-right:1px solid;text-align:right;"></td>

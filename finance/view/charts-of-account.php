@@ -200,7 +200,7 @@
 				<div class="form-group">
                                     <label for="g_parent">Parent group</label>
                                     <select class="select2" name="g_parent" id="g_parent">
-                                         <?//= get_all_group($dbcon,''); ?>
+                                         <?php //= get_all_group($dbcon,''); ?>
                                     </select>
 				</div>-->
 
@@ -242,7 +242,7 @@
                                     </div>
 <!--                                    <div class="col-md-8">
                                         <select class="select2" name="e_g_parent" id="e_g_parent">
-                                            <?//= get_all_group($dbcon,''); ?>
+                                            <?php //= get_all_group($dbcon,''); ?>
                                         </select>
                                     </div>-->
 				</div>	
@@ -262,7 +262,7 @@
 <!--				<div class="form-group">
 				   <label for="unitid">Parent group</label>
 				   <select class="select2" name="e_g_parent" id="e_g_parent">
-					 <?//= get_all_group($dbcon,''); ?>
+					 <?php //= get_all_group($dbcon,''); ?>
 				   </select>
 				</div>-->
 

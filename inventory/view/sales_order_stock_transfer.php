@@ -104,7 +104,7 @@ if(strpos($_SERVER[REQUEST_URI], "returnable_channal_update")==true){
 												<tr>
 													<td style="vertical-align:top;">
 														<select class="select2"  title="Select Sales Order" placeholder="Sales Order" name="main_sales_order" id="main_sales_order" onchange="load_main_qty();">
-															<?//=getunit($dbcon,0);?>
+															<?php //=getunit($dbcon,0);?>
 														</select>
 													</td>
 													<td style="vertical-align:top;">
@@ -112,7 +112,7 @@ if(strpos($_SERVER[REQUEST_URI], "returnable_channal_update")==true){
 													</td>
 													<td style="vertical-align:top;">
 														<select class="select2"  title="Select Sales Order" placeholder="Sales Order" name="transfer_sales_order" id="transfer_sales_order" onchange="load_transfer_qty();">
-															<?//=getunit($dbcon,0);?>
+															<?php //=getunit($dbcon,0);?>
 														</select>
 													</td>
 													<td style="vertical-align:top;">

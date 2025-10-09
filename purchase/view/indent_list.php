@@ -106,9 +106,9 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												<th>#</th>
 												<th>Indent No</th>
 												<th>Indent Date</th>
-												<?if($companyConfiguration['po_work_order_wise'] ==1){?>
+												<?php if($companyConfiguration['po_work_order_wise'] ==1){?>
 													<th>Sales Order No</th>
-													<?}?>
+													<?php }?>
 													<th>WorkOrder No</th>
 													<th>Product Name</th>
 													<th>Product Category</th>

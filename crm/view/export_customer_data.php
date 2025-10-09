@@ -115,7 +115,7 @@ $cnt = brp_mysqli_num_rows($result);
 										</tr>
 									</thead>
 									<tbody>
-										<?if($cnt>0){
+										<?php if($cnt>0){
 											$i = 1;
 											while($row = brp_mysqli_fetch_array($result)){
 												$owners = getUserDetailById($dbcon,$row['cust_owner']);
@@ -136,7 +136,7 @@ $cnt = brp_mysqli_num_rows($result);
 												<td><?=$row['cust_email']?></td>
 												<td><?=$row['cust_pan']?></td>
 										</tr>
-										<?$personal_detail = "select from tbl_cust_relation status=0 and cust_id=".$row['cust_id'];
+										<?php $personal_detail = "select from tbl_cust_relation status=0 and cust_id=".$row['cust_id'];
 										$result_pdetail = $dbcon->query($personal_detail);
 										$per_cnt = brp_mysqli_num_rows($result_pdetail); 
 										if($per_cnt>0){
@@ -150,7 +150,7 @@ $cnt = brp_mysqli_num_rows($result);
 											<th colspan="4">Birthday</th>
 											<th colspan="3">Anniversary</th>
 										</tr>
-										<?
+										<?php 
 											while($per_row = brp_mysqli_fetch_array($result_pdetail)){?>
 												<tr>
 														<td colspan="4"><?=$per_row['relation']?></td>
@@ -158,11 +158,11 @@ $cnt = brp_mysqli_num_rows($result);
 														<td colspan="4"><?=date("d-M-Y", strtotime($per_row['birth_date']))?></td>
 														<td colspan="3"><?=date("d-M-Y", strtotime($per_row['anniversary_date']))?></td>
 												</tr>
-										<?}?>
+										<?php }?>
 										<tr>
 												<td colspan="14" style="height:30px"></td>
 										</tr>
-										<?}
+										<?php }
 											$cust_add = $dbcon->query("select per.*,country_name,state_name,city_name from tbl_cust_address as per
 											left join country_mst as country on country.countryid=per.c_add_country
 											left join state_mst as state on state.stateid=per.c_add_state
@@ -182,7 +182,7 @@ $cnt = brp_mysqli_num_rows($result);
 													<th colspan="3">City</th>
 													<th colspan="2">Default</th>
 											</tr>
-										<?while($addr_row = brp_mysqli_fetch_array($cust_add)){
+										<?php while($addr_row = brp_mysqli_fetch_array($cust_add)){
 											if($row['c_addr_defult'] ==1){
 												$default = '<i style="color:green">Default</i>';
 											}else{
@@ -196,11 +196,11 @@ $cnt = brp_mysqli_num_rows($result);
 												<td colspan="3"><?=$addr_row['city_name']?></td>
 												<td colspan="2"><?=$default?></td>
 											</tr>
-										<?}?>
+										<?php }?>
 										<tr>
 												<td colspan="14" style="height:30px"></td>
 										</tr>
-										<?}
+										<?php }
 										$cont_det = $dbcon->query("select * from tbl_cust_contact where c_con_status=0 and cust_id=".$row['cust_id']);
 										$cont_cnt = brp_mysqli_num_rows($cont_det);
 										if($cont_cnt>0){
@@ -216,7 +216,7 @@ $cnt = brp_mysqli_num_rows($result);
 												<th colspan="2">Phone</th>
 												<th colspan="2">Job Title</th>
 											</tr>
-											<?while($cont_row = brp_mysqli_fetch_array($cont_det)){?>
+											<?php while($cont_row = brp_mysqli_fetch_array($cont_det)){?>
 												<tr>
 														<td colspan="3"><?=$cont_row['c_con_fname']?></td>
 														<td colspan="3"><?=$cont_row['c_con_lname']?></td>
@@ -225,11 +225,11 @@ $cnt = brp_mysqli_num_rows($result);
 														<td colspan="2"><?=$cont_row['c_con_phone']?></td>
 														<td colspan="2"><?=$cont_row['c_con_job']?></td>
 												</tr>
-										<?}?>
+										<?php }?>
 										<tr>
 												<td colspan="14" style="height:30px"></td>
 										</tr>
-										<?}
+										<?php }
 											$consignee_det = $dbcon->query("select per.*,country.country_name,state.state_name,city.city_name from tbl_party_consignee as per
 											left join country_mst as country on country.countryid=per.countryid
 											left join state_mst as state on state.stateid=per.stateid
@@ -254,7 +254,7 @@ $cnt = brp_mysqli_num_rows($result);
 													<th>City</th>
 													<th>Gst No</th>
 											</tr>
-											<?while($row_consi = brp_mysqli_fetch_array($consignee_det)){?>
+											<?php while($row_consi = brp_mysqli_fetch_array($consignee_det)){?>
 												<tr>
 													<td><?=$row_consi['company_name']?></td>
 													<td><?=$row_consi['cust_name']?></td>
@@ -266,16 +266,16 @@ $cnt = brp_mysqli_num_rows($result);
 													<td><?=$row_consi['city_name']?></td>
 													<td><?=$row_consi['gst_no']?></td>
 												</tr>
-										<?}?>
+										<?php }?>
 										<tr>
 												<td colspan="14" style="height:30px"></td>
 										</tr>
-										<?}?>
-										<?$i++;}}else{?>
+										<?php }?>
+										<?php $i++;}}else{?>
 											<tr>	
 												<td colspan="14" style="text-align:center">No Data Found.....!!!!</td>
 											</tr>
-										<?}?>
+										<?php }?>
 									</tbody>
 									</table>
 								</div>

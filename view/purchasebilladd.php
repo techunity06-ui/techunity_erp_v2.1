@@ -95,7 +95,7 @@
 							<label class="col-md-2 control-label" style="margin-left:">Select Vender *</label>
 							<div class="col-md-3 col-xs-11">
 							<select class="select2" name="vender_id" id="vender_id" onChange="" >
-									<?
+									<?php 
 												getvender($dbcon,$rel['vender_id']);
 									?>	
 							</select>

@@ -83,7 +83,7 @@
 	
 		<div class="row">
                     <div class="col-md-12">
-                        <?
+                        <?php 
 				$comp_per=check_permission("#employee",$_SESSION['user_id'],'view',$dbcon);
 				if($comp_per)
 				{
@@ -205,7 +205,7 @@
 			</div>
 			<!-- Employee Module End -->	
 			<?php }  ?>
-			<?
+			<?php 
 				$comp_per=check_permission("#employee_life_cycle",$_SESSION['user_id'],'view',$dbcon);
 				if($comp_per)
 				{
@@ -323,7 +323,7 @@
 
 			
 			<div class="col-md-4">
-				<?
+				<?php 
 					$shift_per=check_permission("#shift_management",$_SESSION['user_id'],'view',$dbcon);
 					if($shift_per){	
 				?>
@@ -368,7 +368,7 @@
 					</div>
 				</div>
 				<?php }  ?>
-				<?
+				<?php 
 					$expense_claim_per=check_permission("#expense_claim",$_SESSION['user_id'],'view',$dbcon);
 					if($expense_claim_per){	
 				?>
@@ -407,7 +407,7 @@
             </div>
 			<div class="col-md-12">
 				<!-- Leaves Section Start -->
-				<?
+				<?php 
 			        $comp_per=check_permission("#hrms_leave",$_SESSION['user_id'],'view',$dbcon);
 			        if($comp_per){
 			    ?>
@@ -520,7 +520,7 @@
 		
 			<div class="col-md-4">
 				<!-- Attendance Module Start -->
-				<?
+				<?php 
 			        $attendance_per=check_permission("#attendance",$_SESSION['user_id'],'view',$dbcon);
 			        if($attendance_per){
 			    ?>    
@@ -624,7 +624,7 @@
 				
 				<div class="col-md-4">
 				    <!-- Setting Module Start -->
-				<?
+				<?php 
 			        $hr_setting_per=check_permission("#hr_settings",$_SESSION['user_id'],'view',$dbcon);
 			        if($hr_setting_per){
 			    ?>
@@ -686,7 +686,7 @@
 					<!-- Setting Module End -->
 					
 					<!-- Report Module Start -->
-					<?
+					<?php 
 				        $reports_per=check_permission("#hrms_report",$_SESSION['user_id'],'view',$dbcon);
 				        if($reports_per){
 				    ?>	
@@ -731,7 +731,7 @@
 			<div class="col-md-12">
 				<div class="col-md-4">
 					<!-- Performance Module Start -->
-					<?
+					<?php 
 				        $performance_per=check_permission("#hr_performance",$_SESSION['user_id'],'view',$dbcon);
 				        if($performance_per){
 				    ?>	

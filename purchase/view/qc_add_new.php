@@ -196,7 +196,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 					<div class="col-sm-12">
 						<section class="panel">
 							<header class="panel-heading">
-								<?if($mode=="Bom"){ echo "Sales Order Bom";}else{?>New <?=$form?><?} ?>
+								<?php if($mode=="Bom"){ echo "Sales Order Bom";}else{?>New <?=$form?><?php } ?>
 							</header>
 							<div class="panel-body">
 								<!--<form class="form-horizontal" role="form" id="qc_add" action="javascript:;" method="post" name="qc_add">-->
@@ -231,7 +231,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id,$edit_branch_id, true, true, 'load_purchase_qc_pending_datatable()', '4', '6'); ?>
 										</div>
-									<?	} ?>
+									<?php 	} ?>
 								</div> -->
 								<form class="form-horizontal" role="form" id="qc_add" action="javascript:;" method="post" name="qc_add" >
 									<div>
@@ -428,7 +428,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 													<label class="col-lg-4 control-label " for="confirm">New Product</label>
 													<div class="col-lg-8">
 														<select class="select2 " name="new_product" id="new_product"  >
-															<?//=getproduct($dbcon,'');?>
+															<?php //=getproduct($dbcon,'');?>
 														</select>
 													</div>
 												</div>-->
@@ -477,7 +477,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 														<a href="<?=ROOT.QC_FILE_VWING.$attch_rel['qc_file']?>" class="btn btn-xs btn-primary" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-eye"></i>  </a> 
 														<button type="button" onClick="delete_attch(<?=$attch_rel['grn_attch_id']?>)" class="btn btn-xs btn-danger" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-trash-o"></i></button>
 														<br/>
-													<?} }?>
+													<?php } }?>
 													</div>
 												</div>	
 											</div>
@@ -643,7 +643,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 		});
 
 	</script>
-	<?
+	<?php 
 
 	if($mode=="Add")
 	{

@@ -216,7 +216,7 @@
 
 												</th>
 												<?php } ?>
-											<?	} ?>
+											<?php 	} ?>
 
 											<?php if($type == "pending_stop"){ ?>
 												<th>

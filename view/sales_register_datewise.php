@@ -65,7 +65,7 @@
                                                                 <label class="control-label col-md-4"> Customer</label>
                                                                 <div class="col-md-8">
                                                                         <select class="select2" name="cust_id" id="cust_id" onChange="reload_data();" >
-                                                                                <?getcust($dbcon,$rel['cust_id']);?>	
+                                                                                <?php getcust($dbcon,$rel['cust_id']);?>	
                                                                         </select>
                                                                 </div>
                                                             </div>

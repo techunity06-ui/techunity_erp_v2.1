@@ -48,7 +48,7 @@
 													<div class="form-group">
 													<label class="col-md-4 control-label"> Select Vendor * </label>
 													<div class="col-md-6 col-xs-11">
-														<?//=getcust_purchase($dbcon,$vender_id,$product_id)?>
+														<?php //=getcust_purchase($dbcon,$vender_id,$product_id)?>
 														<select class="select2" name="vender_id" id="vender_id" onChange="get_product(this.value)" required title="Select Vender">
 															<?=getcust($dbcon,$vender_id);?>	
 														</select>

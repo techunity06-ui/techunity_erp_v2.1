@@ -149,7 +149,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												<div class="col-md-8">
 													<select class="select2" name="f_user_id" id="f_user_id" required>
 														<option value="">Select User</option>
-														<?//=get_users_typewise($dbcon, '', '')?>
+														<?php //=get_users_typewise($dbcon, '', '')?>
 													</select>
 													<input type="hidden" name="fore_user_id" id="fore_user_id" value="<?=$rel['f_user_id']?>">
 												</div>
@@ -172,7 +172,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																	<thead>
 																		<tr>
 																			<th>Month</th>
-																			<?if($companyConfiguration['forecast_base']==3){ ?>
+																			<?php if($companyConfiguration['forecast_base']==3){ ?>
 																				<th>Product Name</th>
 																			<?php}
 																			if($companyConfiguration['forecast_base']==2){ ?>
@@ -190,14 +190,14 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																					<?=get_for_period($dbcon,'1','1','');?>
 																				</select>
 																			</td>
-																			<?if($companyConfiguration['forecast_base']==3){ ?>
+																			<?php if($companyConfiguration['forecast_base']==3){ ?>
 																				<td>
 																					<select class="select2" name="f_product" id="f_product">
 																						<?=getproduct_typewise($dbcon, '', '')?>
 																					</select>
 																				</td>
 																			<?php} ?>
-																			<?if($companyConfiguration['forecast_base']==2){ ?>
+																			<?php if($companyConfiguration['forecast_base']==2){ ?>
 																				<td>
 																					<select class="select2" name="f_product" id="f_product">
 																						<?=get_all_category($dbcon, '', '')?>
@@ -272,7 +272,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 		format: 'dd-mm-yyyy',
 		autoclose: true
 	});
-	<?if($mode=='Edit' || $cmode=='Add'){ ?>
+	<?php if($mode=='Edit' || $cmode=='Add'){ ?>
 		get_branchwise_user(<?=$rel['branch_id']?>);
 		//load_f_period(<?=$rel['forecast_type']?>);
 	<?php}

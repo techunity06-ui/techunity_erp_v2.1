@@ -100,7 +100,7 @@
 						   <span class="tools pull-right">
                            <?php if(in_array(PURCHASE_CARD_ADD,$bulkAccessArray)){ ?>
                               <a href="<?=ROOT.PURCHASE_ROOT.'purchase_card_mer'?>" ><button class="btn btn-success btn-flat" >Create <?=$form?></button></a>
-                           <?}?>					
+                           <?php }?>					
                            </span>
                         </header>
                         <div class="panel-body">

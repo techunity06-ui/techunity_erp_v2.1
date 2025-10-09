@@ -123,7 +123,7 @@
 										</select>
 									</div>
 								</div>
-								<?
+								<?php 
 								if ($_SESSION['user_type'] == '2' || $_SESSION['user_type'] == '5') {
 								?>
 									<div class="col-md-3">

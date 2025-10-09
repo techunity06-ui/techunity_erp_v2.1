@@ -188,7 +188,7 @@ $production_on_dashboard = $company_config['production_on_dashboard'];
 		<!--div1 code end-->
 
 		<!--div10 code start-->
-		<?
+		<?php 
 		$companyConfiguration_dash=getCompanyConfiguration($dbcon);
 		$enable_post_crm_dash = $companyConfiguration_dash['enable_post_crm'];
 

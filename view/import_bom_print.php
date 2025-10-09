@@ -121,8 +121,8 @@
 															<h2 align="center"><?=$set_head['company_name']?></h2>
 															<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 															<h5 align="center"><?=$set_head['address']?></h5>
-															<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-															<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+															<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+															<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 															
 														</td>
 													</tr>
@@ -167,7 +167,7 @@
 																
 															</td>
 															<td style="border:1px #444 solid;" >
-																<?$query3="select mst.*,p.process_name as pname from bom_process_temp as mst 
+																<?php $query3="select mst.*,p.process_name as pname from bom_process_temp as mst 
 																left join process_mst as p on p.process_name=mst.process_name where mst.bom_temp_id=".$rel['bom_temp_id']." order by bom_process_temp_id";
 																$result3=$dbcon->query($query3);
 																$cnt3=mysqli_num_rows($result3);
@@ -244,7 +244,7 @@
 																	<?phpecho $rel1['qty'];  echo $unit_name; ?> <?=$erro_unit?>
 																</td>
 																<td style="border:1px #444 solid;" >
-																<?$query3="select mst.*,p.process_name as pname from bom_process_temp as mst 
+																<?php $query3="select mst.*,p.process_name as pname from bom_process_temp as mst 
 																left join process_mst as p on p.process_name=mst.process_name where mst.bom_temp_id=".$rel1['bom_temp_id']." order by bom_process_temp_id";
 																$result3=$dbcon->query($query3);
 																$cnt3=mysqli_num_rows($result3);
@@ -446,7 +446,7 @@ else
   </body>
 </html>
 
-<?
+<?php 
 function bom_show_excel($dbcon,$bom_temp_id,$qty,$num,$call,$space)
 {
 	$query1="select bom.*,product.product_name as proname,product.image_name,bunit.unit_name as base_unit_name,bunit.unit_name as conv_unit_name,product.product_type,dwg.drawing_number from bom_temp as bom

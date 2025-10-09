@@ -98,7 +98,7 @@
 							<label class="col-md-4 control-label"> Invoice type </label>
 							<div class="col-md-6 col-xs-11">
 								<select style="padding-right: 0px;" class="form-control" name="invoicetype_id" id="invoicetype_id" onChange="load_invoiceno(this.value)" <?phpif($mode=='Edit'){?> readonly="readonly"<?php}?> >
-									<?//=getinvoicetype($dbcon,$load_inv_type);?>
+									<?php //=getinvoicetype($dbcon,$load_inv_type);?>
 								</select>
 							</div>
 	    			</div>-->
@@ -153,12 +153,12 @@
 					 </div>									
 					</div>
 			
-					<!--<div class="col-md-3" id="consignee" <?if(empty($rel['consignee_id'])){ echo "style='display:none'"; }?>>
+					<!--<div class="col-md-3" id="consignee" <?php if(empty($rel['consignee_id'])){ echo "style='display:none'"; }?>>
 					 <div class="form-group">
 						<label class="col-md-3 control-label">Consignee *</label>
 						<div class="col-md-6 col-xs-11">
 							<select class="select2" name="consignee_id" id="consignee_id">
-								<?//=get_custmer_consignee($dbcon,$rel['cust_id'],$rel['consignee_id'])?>
+								<?php //=get_custmer_consignee($dbcon,$rel['cust_id'],$rel['consignee_id'])?>
 							</select>
 						</div>
 						<div class="col-md-2">
@@ -231,7 +231,7 @@
 						</td>
 						<td style="vertical-align:top;">
 							<select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-								<?
+								<?php 
 									echo getformula($dbcon,$rel['formulaid']);
 								?>
 							</select>
@@ -265,7 +265,7 @@
 		</div>	
 						
 						<div class="col-md-6">
-							<?
+							<?php 
 								if($set_head['show_charges']=='1'){
 									$ttl_display="display:block";
 								}else{
@@ -304,12 +304,12 @@
 								<label class="col-md-5 control-label">Tax </label>
 								<div class="col-md-5 col-xs-11">
 								<select class="form-control" name="formulaid" id="formulaid" onChange="get_gtotal(this.value);"  title="Select Formula">
-									<?//=getformula($dbcon,$rel['formulaid']);?>
+									<?php //=getformula($dbcon,$rel['formulaid']);?>
 								</select>
 								</div>
 							</div>-->
 							<div id="showformulatextbox">
-							<?
+							<?php 
 							if($mode=='Edit')
 							{
 							if(!empty($rel['tax1_name']))
@@ -322,7 +322,7 @@
 								</div>
 							</div>
 					<input id="taxname0" name="taxname0" value= "<?=$rel['tax1_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}
 							if(!empty($rel['tax2_name']))
 							{
@@ -334,7 +334,7 @@
 						</div>
 					</div>
 					<input id="taxname1" name="taxname1" value= "<?=$rel['tax2_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}if(!empty($rel['tax3_name']))
 							{
 							?>
@@ -345,7 +345,7 @@
 						</div>
 					</div>
 					<input id="taxname2" name="taxname2" value= "<?=$rel['tax3_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}} 
 							?>
 							</div>
@@ -431,7 +431,7 @@ $(".form_datetime-meridian").datetimepicker({
 });
 $('#cust_id').select2('readonly',true);
 </script>
-<?
+<?php 
 if($mode=="Add"){
 	echo "<script>load_invoiceno();</script>";
 }

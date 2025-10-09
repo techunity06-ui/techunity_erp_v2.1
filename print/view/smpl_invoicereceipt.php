@@ -173,12 +173,12 @@ if($rel_disc['discount'] > 0){
 													<label class="col-md-2 control-label" style="padding-top: 10px;"> Print</label>
 													<div class="col-md-10 col-xs-12">
 														<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-															<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+															<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 																<option value="" >Select Print</option>
-																<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}else{ echo "selected";}?>>ORIGINAL</option>
-																<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-																<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-																<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+																<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}else{ echo "selected";}?>>ORIGINAL</option>
+																<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+																<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+																<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 															</select>
 														</form>
 													</div>
@@ -195,7 +195,7 @@ if($rel_disc['discount'] > 0){
 													<a href="<?=ROOT.FINANCE_ROOT.'invoice_list'?>" type="button" class="btn btn-danger"><i class="fa fa-ban"></i> Cancel</a>
 												</div>
 												<div class="col-sm-4 resclear resspace"  style="text-align:center;padding-top:5px;">
-													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?echo $rel['cust_mobile']?>&text=<?echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
+													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
 														<?phpecho $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
 													</div>
 												</center>
@@ -369,7 +369,7 @@ if($rel_disc['discount'] > 0){
 																	</td>
 																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
 																		<strong><?=stripcslashes($row['product_name'])?></strong>
-																		<?$batch_detail = "select bst.*,st.batch_no from tbl_batch_stock_tmp as bst
+																		<?php $batch_detail = "select bst.*,st.batch_no from tbl_batch_stock_tmp as bst
 																		left join `tbl_stock_trn` as st on st.stock_id=bst.stock_id where invoice_trn_id = ".$row['trancation_id']." and status =1";
 																		$brtch_q = $dbcon->query($batch_detail);
 																		while($r = brp_mysqli_fetch_array($brtch_q)){?>
@@ -673,11 +673,11 @@ if($rel_disc['discount'] > 0){
 																			<td colspan="5" style="border-right:1px solid; text-align: center;">
 																			</td>
 																			<td colspan="<?=$colspan?>" style=" border-left:none;vertical-align:top; text-align: right;">
-																				<?if($set_head['authorized_signature']!=""){?>
+																				<?php if($set_head['authorized_signature']!=""){?>
 																					<img src="<?=DOMAIN_F.'view/upload/signature/'.$set_head['authorized_signature'];?>" style="height: 100px; width: 100px;"><br>
 																				<?php}else{ ?>
 																					<br><br><br>
-																					<?}?>
+																					<?php }?>
 																					<span style="vertical-align:bottom;">Authorised Signatory</span>
 
 																				</td>

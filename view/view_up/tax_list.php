@@ -55,7 +55,7 @@
 								<div class="form-group">
 									<label>Ledger *</label>
 									<select class="select2" name="ledger_id" id="ledger_id">
-										<?//=get_ledger($dbcon);?>
+										<?php //=get_ledger($dbcon);?>
 										<?=get_ledger($dbcon,''," and l_group in (31)");?>
 									</select>
 								</div>
@@ -132,7 +132,7 @@
 				<div class="form-group">
 					<label>Ledger *</label>
 					<select class="select2" name="edit_ledger_id" id="edit_ledger_id">
-						<?//=get_ledger($dbcon);?>
+						<?php //=get_ledger($dbcon);?>
 						<?=get_ledger($dbcon,''," and l_group in (31)");?>
 					</select>
 				</div>

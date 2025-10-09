@@ -10,7 +10,7 @@
                       <section class="panel" >
                           <label class="col-md-12 control-label" style="font-weight: bold;font-size: 20px;color: black;">Select Financial Year</label>
 								<div class="col-md-12 col-xs-11">
-								<?
+								<?php 
 							$minyear= 2016;
 							$maxyear=(date('m')<'04') ? date('Y',strtotime('-1 year')) : date('Y');
 							$end = $start+1;
@@ -18,7 +18,7 @@
 								?>
 								<form>
 								<select class="form-control" name="c_year" id="c_year" onchange="get_value();" >
-								<?
+								<?php 
 								for($y=$minyear;$y<=$maxyear;$y++)
 								{
 								$sel='';
@@ -56,7 +56,7 @@
 											</select>
 										</div>
 										<div class="col-lg-3">
-											<?
+											<?php 
 											$minyear= 2016;
 											$maxyear=(date('m')<'04') ? date('Y',strtotime('-1 year')) : date('Y');
 											$end = $start+1;
@@ -64,7 +64,7 @@
 												?>
 												<form>
 												<select class="form-control" name="c_year" id="year_graph1" onchange="load_graph();" >
-												<?
+												<?php 
 												for($y=$minyear;$y<=$maxyear;$y++)
 												{
 												$sel='';
@@ -142,7 +142,7 @@
 											</select>
 										</div>
 										<div class="col-lg-3">
-											<?
+											<?php 
 											$minyear= 2016;
 											$maxyear=(date('m')<'04') ? date('Y',strtotime('-1 year')) : date('Y');
 											$end = $start+1;
@@ -150,7 +150,7 @@
 												?>
 												<form>
 												<select class="form-control" name="c_year" id="year_graph2" onchange="load_graph();" >
-												<?
+												<?php 
 												for($y=$minyear;$y<=$maxyear;$y++)
 												{
 												$sel='';

@@ -92,7 +92,7 @@
 					<span class="tools pull-right">		
 						<a href="javascript:;" onClick="tableToExcel('make-table', 'Instalment Collection')" ><button class="btn btn-info btn-flat" >Export Excel</button></a>	
 					</span>
-					<?//}?>
+					<?php //}?>
 				  </header>
 				  <div class="panel-body">
 				  <div class="adv-table">
@@ -145,7 +145,7 @@
 						<label>Branch *</label>
 						<select class="branch_validate" name="branch_id" id="e_branch_id" required>
 	    					<?php $branch = isset($rel['branch_id']) ? $rel['branch_id'] : '1000'; ?>
-						<?//=getBranchBox_new($dbcon, $branch,'all');?>
+						<?php //=getBranchBox_new($dbcon, $branch,'all');?>
 						</select>
 		            </div>-->
 		        <?php } ?> 

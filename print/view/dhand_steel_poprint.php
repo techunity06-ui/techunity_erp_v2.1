@@ -146,7 +146,7 @@ $pro_search=explode(",", $purchase_pro_search);
 
 							<div class="panel-body">
 								<!--<center>-->
-									<?
+									<?php 
 									if($rel['po_approval_status']=='1'){
 										?>
 										<div id="logo_sec_div">
@@ -155,12 +155,12 @@ $pro_search=explode(",", $purchase_pro_search);
 											<label class="col-md-4 control-label"> </label>
 											<div class="col-md-4 col-xs-11" style="display:none;">
 												<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-													<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+													<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 														<option value="">Select Print</option>
-														<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-														<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-														<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-														<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+														<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+														<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+														<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+														<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 													</select>
 												</form>
 											</div>
@@ -175,14 +175,14 @@ $pro_search=explode(",", $purchase_pro_search);
 											</div>
 											<!--</center>	-->	
 										</div>	
-										<?
+										<?php 
 									}
 									else{
 										?>	
 										<center>
 											<button type="submit" class="btn btn-warning"><i class="fa fa-ban"></i> PO Not Approved</button>
 										</center>
-										<?
+										<?php 
 									}
 									?>
 									<div class="col-md-12"></div>
@@ -202,8 +202,8 @@ $pro_search=explode(",", $purchase_pro_search);
 				</th>
 				<th style="text-align:left;border: none;"> 
 					<?=$set_head['address']?> 
-					<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?}?>
-					<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?}?>
+					<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+					<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
 				</th>
 			</tr>
 		</thead>-->
@@ -213,10 +213,10 @@ $pro_search=explode(",", $purchase_pro_search);
 				<h2 align="center" style="font-weight:600;"><u><?=$set_head['company_name']?></u></h2>
 				<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX;  !important"><?=$set_head['logo_content']?></h4>
 				<h4 align="center" style="padding:top:15px;margin-top: 10PX;margin-bottom: 0PX; font-weight:lighter; !important"><?=$set_head['address']?></h4>
-				<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-				<?if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?}?></h4>
-				<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?if($set_head['website']){?><?}?> 
-				<?if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?}?></h4>
+				<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+				<?php if($set_head['contact_no']){?>Contact No. <?=$set_head['contact_no']?><?php }?></h4>
+				<h4 align="center" style="padding:top:0px;margin-top: 0PX;margin-bottom: 0PX; font-weight:lighter; !important"><?php if($set_head['website']){?><?php }?> 
+				<?php if($set_head['website']){?>E-Mail: <?=$set_head['website']?><?php }?></h4>
 				
 			</td>
 		</tr>
@@ -312,7 +312,7 @@ $pro_search=explode(",", $purchase_pro_search);
 				<th width="6%" style="text-align:center;border:1px solid;border-top: none;">
 					<strong>Less:<br/>Disc.</strong>
 				</th>
-				<?}?>
+				<?php }?>
 				<th width="9%" style="text-align:center;border:1px solid;border-top: none;">
 					<strong>Amount</strong>
 				</th>
@@ -407,13 +407,13 @@ $pro_search=explode(",", $purchase_pro_search);
 						<?phpif(!empty($row['scode'])){
 							$code=" ( ".$row['scode'] .")";
 						} ?>
-						<?if($row['product_alias_name']){?>
+						<?php if($row['product_alias_name']){?>
 							<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?></strong> <?=$drawing_number?> <?=$item_code?> <?=$alias?>
 							<br/><?=nl2br(stripcslashes($row['product_des']));?>
 						<?php}else{ ?>
 							<strong><?=stripcslashes($row['product_name'])?> <?=$code?></strong> <?=$drawing_number?> <?=$item_code?> <?=$alias?>
 							<br/><?=nl2br(stripcslashes($row['product_des']));?>
-							<?}?>
+							<?php }?>
 							<?=$wno?>
 						</td>
 						<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
@@ -423,9 +423,9 @@ $pro_search=explode(",", $purchase_pro_search);
 						<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
 							<?phpif($row['product_type']!='8'){ ?>
 								<?=$row['product_qty'].' '.$row['unit_name']?><br/>
-								<?if($row['product_base_unit']!=$row['product_conv_unit']){?>
+								<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 									<?=$cqty.' '.$uname?>
-									<?}?>
+									<?php }?>
 								<?php}else{
 									$charges_qty+=$row['product_qty'];
 								} ?>	
@@ -444,7 +444,7 @@ $pro_search=explode(",", $purchase_pro_search);
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 							<?=number_format($row['discount_per'],2,".","").'%'?>
 						</td>
-						<?}?>
+						<?php }?>
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 							<?=number_format($row['product_amount'],2,".","")?>
 						</td>
@@ -480,7 +480,7 @@ $pro_search=explode(",", $purchase_pro_search);
 						<td style="border-right:1px solid;"></td>
 						<?phpif($set_head['show_disc']=='1'){?>
 							<td style="border-right:1px solid;"></td>
-							<?}?>
+							<?php }?>
 							<!--	<td style="border-right:1px solid;"></td>-->
 							<td style="border-right:1px solid;"></td>
 							<td style="border-right:1px solid;"></Td>
@@ -498,7 +498,7 @@ $pro_search=explode(",", $purchase_pro_search);
 							<!--<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalsqr,2,".","")?></strong></td>-->
 							<?phpif($set_head['show_disc']=='1'){?>
 								<td style="border-top:1px solid;border-right:1px solid;"></td>
-								<?}?>
+								<?php }?>
 								<td style="border-top:1px solid;border-right:1px solid;"></td>
 								<td style="border-top:1px solid;border-right:1px solid;text-align:right;"><strong><?=number_format($total_product_amount,2,".","")?></strong></td>
 								<td style="border-top:1px solid;border-right:1px solid;text-align:right;"></td>
@@ -608,7 +608,7 @@ $pro_search=explode(",", $purchase_pro_search);
 					</tr>
 					<tr>
 					<td style="border-right:1px solid;border-top:1px solid;border-left:1px solid; font-size:10px;padding:0px !important;" 	colspan="<?=5+$colspan?>">
-					<?
+					<?php 
 								
 								if($rel['stateid']==$set_head['stateid'])
 								{

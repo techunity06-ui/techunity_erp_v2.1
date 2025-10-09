@@ -354,7 +354,7 @@ $cnyts = explode(",", get_quot_lost_taxable_total($dbcon));
 			enterMode: CKEDITOR.ENTER_BR
 		});
 
-		<?//Hide approve btn if not allowed
+		<?php //Hide approve btn if not allowed
 		$bulkAccessArray = canCheckPermissionAccess($dbcon, [
 			QUOTATION_SLUG_APPROVE
 		]);
@@ -362,7 +362,7 @@ $cnyts = explode(",", get_quot_lost_taxable_total($dbcon));
 		if (!in_array(QUOTATION_SLUG_APPROVE, $bulkAccessArray)) {
 			?>
 			$('#mod_per_div_sec').hide();
-		<?
+		<?php 
 		}
 		?>
 	</script>

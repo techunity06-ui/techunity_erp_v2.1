@@ -105,7 +105,7 @@
 																<td style="vertical-align:top;">
 																	<select class="select2" title="Select product" name="product_id" id="product_id" onchange="current_stock1(this.value);">
 																		<option value="">Choose Product</option>
-																		<?//=getproduct($dbcon,0,'0,1,2,4')?>
+																		<?php //=getproduct($dbcon,0,'0,1,2,4')?>
 																	</select>
 																	<br/><br/>
 																	<textarea id="product_des" name="product_des" class="form-control" ></textarea>
@@ -182,7 +182,7 @@
 
 				});
 			</script>
-			<?
+			<?php 
 				if($mode=="Add"){
 					echo "<script>show_data();</script>";
 					echo "<script>get_series_no(15);</script>";

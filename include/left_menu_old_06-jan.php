@@ -43,7 +43,7 @@
           <div id="sidebar"  class="nav-collapse scrollbar style-11">
               <!-- sidebar menu start-->
 			  <ul class="sidebar-menu" id="nav-accordion">		 
-            <?
+            <?php 
 			 $querymenu="select * from tbl_menu as menu 
 			 inner join tbl_permission as per on per.menu_id=menu.menu_id 
 			 inner join users as type on type.user_id=per.usertype_id 
@@ -60,7 +60,7 @@
 					<span style="font-size:14px"><?=ucwords(strtolower($rel_menu['menu_name']))?></span>
 					
 					</a>
-				<?
+				<?php 
 				}
 				else
 				{
@@ -73,7 +73,7 @@
 
 					
 					<ul class="sub">
-				<?	
+				<?php 	
 					 $querymenu1="select * from tbl_menu as menu 
 					 inner join tbl_permission as per on per.menu_id=menu.menu_id 
 					 inner join users as type on type.user_id=per.usertype_id 
@@ -90,7 +90,7 @@
 				<?php}?>
 					
             </li>	
-			<?	} ?>
+			<?php 	} ?>
 				 	
 				<!--<li>
                  	   <a class="" href="<?=ROOT.'changepassword/'.$_SESSION['user_id'] ?>">

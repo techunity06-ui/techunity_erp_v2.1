@@ -63,7 +63,7 @@ left join tbl_common_mst as pay on pay.common_mst_id=rec.payment_mode_id and com
 							else if($_REQUEST['report']=='0'){?>
 							  <li><a href="<?=ROOT.FINANCE_ROOT.'payment_list/'.$rel['invoice_id']?>">Receipt Payment</a></li>
 							
-							<?}else
+							<?php }else
 							{?>
 							  <li><a href="<?=ROOT.FINANCE_ROOT.'payment_list'?>">Payment List</a></li>
 							 <?php}?> 
@@ -92,7 +92,7 @@ left join tbl_common_mst as pay on pay.common_mst_id=rec.payment_mode_id and com
 							{
 							?>
 							<a  type="button" class="btn btn-success"  href="<?=ROOT.FINANCE_ROOT.'payment_list/'.$rel['invoice_id']?>">Cancel</a>
-							<?
+							<?php 
 							}
 							else
 							{?>
@@ -137,9 +137,9 @@ border: 1px solid; padding:17px 0 0;"  width="100%">
 							<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 							<h4 style="font-size:14px; margin-bottom:10px;" align="center"><?=$set_head['address']?></h3>
 							
-						<h4 style="font-size:16px; margin-top:0px;" align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-							<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
-											<h4 align="center" style="margin-top:0px;"><?if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?}?></h4>
+						<h4 style="font-size:16px; margin-top:0px;" align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+							<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
+											<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>
 											
 						</td>
 					</tr>
@@ -221,7 +221,7 @@ border: 1px solid; padding:17px 0 0;"  width="100%">
 			
 			
 			</tr>
-			<?
+			<?php 
 		$query ="SELECT rec.receipt_no,rec.receipt_date,rec.total_paid_amount,invoice.invoice_no as ref_id, invoice.invoice_date as ref_date,invoice.g_total as total,'Invoice' as type from tbl_receipt as rec 
 						 left join tbl_receipt_trn as rtrn on rec.receipt_id=rtrn.receipt_id 
 						 left join tbl_invoice as invoice on rtrn.invoice_id=invoice.invoice_id

@@ -107,7 +107,7 @@
 							<label class="col-md-4 control-label"> Invoice type </label>
 							<div class="col-md-6 col-xs-11">
 								<select style="padding-right: 0px;" class="form-control" name="invoicetype_id" id="invoicetype_id" onChange="load_invoiceno(this.value)" <?phpif($mode=='Edit'){?> readonly="readonly"<?php}?> >
-									<?//=getinvoicetype($dbcon,$load_inv_type);?>
+									<?php //=getinvoicetype($dbcon,$load_inv_type);?>
 								</select>
 							</div>
 	    			</div>-->
@@ -177,7 +177,7 @@
 							<div class="col-md-6 col-xs-11">
 							<!--<input id="payment_terms"  name="payment_terms" type="text" class="form-control" title="Mode/Payment Terms"  value="<?=$rel['payment_terms']?>" placeholder=" Mode/Payment Terms">--
 								<select style="padding-right: 0px;" class="form-control" name="payment_terms" id="payment_terms" onChange="demo();" placeholder="Days">
-									<?//=getpaymentterms($dbcon,$rel['payment_days']);?>
+									<?php //=getpaymentterms($dbcon,$rel['payment_days']);?>
 								</select>
 							</div>
 							<div class="col-md-2">
@@ -191,8 +191,8 @@
 							<div class="col-md-7 col-xs-11">
 								<!--<input type="text" id="dispatch_date" name="dispatch_date" type="text" class="form-control default-date-picker" title="Date Of Supply"   placeholder="Date Of Supply" value="<?=$dispatch_date?>">-->
 								
-								<div data-date="<?if($mode=="Add"){ echo date('d-m-Y h:i A');}else { echo $dispatch_date;}?>" class="input-group date form_datetime-meridian">
-									  <input type="text" class="form-control" value="<?if($mode=="Add"){ echo date('d-m-Y h:i A');}else { echo $dispatch_date;}?>" name="dispatch_date" id="dispatch_date">
+								<div data-date="<?php if($mode=="Add"){ echo date('d-m-Y h:i A');}else { echo $dispatch_date;}?>" class="input-group date form_datetime-meridian">
+									  <input type="text" class="form-control" value="<?php if($mode=="Add"){ echo date('d-m-Y h:i A');}else { echo $dispatch_date;}?>" name="dispatch_date" id="dispatch_date">
 									  <div class="input-group-btn">
 										  <button type="button" class="btn btn-info date-set"><i class="fa fa-calendar"></i></button>
 									  </div>
@@ -255,7 +255,7 @@
 						<div class="form-group">
 						  <label class="col-md-4 control-label">Consignee Same *</label>
 							<div class="col-md-6 col-xs-11">
-							<?
+							<?php 
 								$ck='';
 								if(empty($rel['consignee_id']))
 								{
@@ -304,7 +304,7 @@
 					 </div>									
 					</div>
 					
-					<div class="col-md-3" id="consignee" <?if(empty($rel['consignee_id'])){ echo "style='display:none'"; }?>>
+					<div class="col-md-3" id="consignee" <?php if(empty($rel['consignee_id'])){ echo "style='display:none'"; }?>>
 					 <div class="form-group">
 						<label class="col-md-3 control-label">Consignee *</label>
 						<div class="col-md-6 col-xs-11">
@@ -393,7 +393,7 @@
 						</td>
 						<td style="vertical-align:top;">
 							<select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-								<?
+								<?php 
 									echo getformula($dbcon,$rel['formulaid']);
 								?>
 							</select>
@@ -433,7 +433,7 @@
 					</div>	
 						
 						<div class="col-md-6">
-							<?
+							<?php 
 								if($set_head['show_charges']=='1'){
 									$ttl_display="display:block";
 								}else{
@@ -458,7 +458,7 @@
 					
 								</div>
 							</div>
-						<?	} ?>	
+						<?php 	} ?>	
 							<!--<div class="form-group">
 								<label class="col-md-5 control-label">Discount </label>
 								<div class="col-md-2 col-xs-11">
@@ -482,12 +482,12 @@
 								<label class="col-md-5 control-label">Tax </label>
 								<div class="col-md-5 col-xs-11">
 								<select class="form-control" name="formulaid" id="formulaid" onChange="get_gtotal(this.value);"  title="Select Formula">
-									<?//=getformula($dbcon,$rel['formulaid']);?>
+									<?php //=getformula($dbcon,$rel['formulaid']);?>
 								</select>
 								</div>
 							</div>-->
 							<div id="showformulatextbox">
-							<?
+							<?php 
 							if($mode=='Edit')
 							{
 							if(!empty($rel['tax1_name']))
@@ -500,7 +500,7 @@
 								</div>
 							</div>
 					<input id="taxname0" name="taxname0" value= "<?=$rel['tax1_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}
 							if(!empty($rel['tax2_name']))
 							{
@@ -512,7 +512,7 @@
 						</div>
 					</div>
 					<input id="taxname1" name="taxname1" value= "<?=$rel['tax2_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}if(!empty($rel['tax3_name']))
 							{
 							?>
@@ -523,7 +523,7 @@
 						</div>
 					</div>
 					<input id="taxname2" name="taxname2" value= "<?=$rel['tax3_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}} 
 							?>
 							</div>
@@ -701,7 +701,7 @@ function consinee_change(val){
 }
 
 </script>
-<?
+<?php 
 echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
 echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
 

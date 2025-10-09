@@ -333,7 +333,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                  <div class="form-group">
                                     <label class="col-md-4 control-label">Consignee Same *</label>
                                     <div class="col-md-6 col-xs-11">
-                                       <?
+                                       <?php 
                                           $ck='';
                                           if(empty($rel['consignee_id']))
                                           {
@@ -343,7 +343,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                        <input id="same_as" name="same_as" type="checkbox" class="" title="Other Name"  <?=$ck?> value="1" style="width:20%;height:25px;" onChange="consinee_change(this.checked);">
                                     </div>
                                  </div>
-                                 <div class="form-group" id="consignee" <?if(empty($rel['consignee_id'])){ echo "style='display:none'"; }?>>
+                                 <div class="form-group" id="consignee" <?php if(empty($rel['consignee_id'])){ echo "style='display:none'"; }?>>
                                     <label class="col-md-3 control-label">Consignee *</label>
                                     <div class="col-md-6 col-xs-11">
                                        <select class="select2" name="consignee_id" id="consignee_id">
@@ -428,7 +428,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                                    <label class="col-md-3 control-label">
                                                    <input type="radio" id="purchase_type_grn" name="purchase_type" style="height: 18px;width: 18px;" value="1" onchange="check_grn();" <?=($rel['purchase_type']!='2')?'checked':''?> >
                                                    <strong>G.R.N.</strong></label>
-                                                   <?if(empty($grn_id)){?>
+                                                   <?php if(empty($grn_id)){?>
                                                    <label class="col-md-3 control-label">
                                                    <input type="radio" id="purchase_type_direct" name="purchase_type" style="height: 18px;width: 18px;" value="2" onchange="check_grn();" <?=($rel['purchase_type']=='2')?'checked':''?> >
                                                    <strong>Direct</strong></label>
@@ -438,7 +438,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                           </div>
 											<div class="col-md-12 grn" >
 												<!-- <select class="select2" name="grn_id" id="grn_id" onChange="load_grn_data(this.value);">
-													<?//=get_grn_for_purchase($dbcon,$rel['vender_id'],"",$mode);?>
+													<?php //=get_grn_for_purchase($dbcon,$rel['vender_id'],"",$mode);?>
 												</select>
 												 -->
 												<div class="col-md-6">
@@ -474,7 +474,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                                 <tr id="field1">
                                                    <!--<td class="grn" style="vertical-align:top;">
                                                       <select class="select2" name="grn_id" id="grn_id" onChange="load_grn_data(this.value);">
-                                                      <?//=get_grn_for_purchase($dbcon,$rel['vender_id'],"",$mode);?>
+                                                      <?php //=get_grn_for_purchase($dbcon,$rel['vender_id'],"",$mode);?>
                                                       </select>
                                                    </td>-->
                                                    <td style="vertical-align:top;">
@@ -599,7 +599,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                                 <label class="col-md-6 control-label">Tax </label>
                                                 <div class="col-md-4 col-xs-11">
                                                    <select class="form-control" name="importformulaid" id="importformulaid" onChange="get_amount();">
-                                                   <?
+                                                   <?php 
                                                       echo getformula($dbcon,$rel['formulaid']);
                                                       ?>
                                                    </select>
@@ -771,9 +771,9 @@ $purchase_party_show = $set_conf['purchase_party_show'];
          	pickerPosition: "bottom-left"
          
          });
-         <?if($mode=='Add'){?>
+         <?php if($mode=='Add'){?>
          	load_purchase_srs_no();
-         <?}?>
+         <?php }?>
       </script>
       <script type="text/javascript">
          $(".add-row").click(function(){
@@ -895,7 +895,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
          	}
          }
          
-         <?
+         <?php 
             if(!empty($grn_id)){ ?>
          	load_ven_grn(<?=$vender_id?>,<?=$grn_id?>);
          	//load_grn_data(<?=$grn_id?>);

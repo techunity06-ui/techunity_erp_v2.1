@@ -478,7 +478,7 @@
 
 			
 		</script>
-		<?
+		<?php 
 			echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";
 			echo "<script>load_city(".$stateid.",'cityid',".$cityid.")</script>";
 

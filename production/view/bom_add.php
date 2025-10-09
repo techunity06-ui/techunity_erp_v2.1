@@ -224,7 +224,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 			.po_req_mode{
 				display:none;
 			}
-			<?}?>
+			<?php }?>
 
 			<?php
 			if($bom_actual_add){
@@ -796,8 +796,8 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 							<?phpif(strpos($_SERVER['REQUEST_URI'], "bom_assign")==true || strpos($_SERVER['REQUEST_URI'], "bom_assign_store_order")==true){  ?>
 									<input type='hidden' name='bom_assign' id='bom_assign' value='yes' />
 									<?phpif(strpos($_SERVER['REQUEST_URI'], "bom_assign_store_order")==true){  ?>
-										<input type='hidden' name='bom_assign_from' id='bom_assign_from' value='store_order' />		<?	} ?>										
-							<?	}else{ ?>
+										<input type='hidden' name='bom_assign_from' id='bom_assign_from' value='store_order' />		<?php 	} ?>										
+							<?php 	}else{ ?>
 									<input type='hidden' name='bom_assign' id='bom_assign' value='no'/>	
 							<?php} ?>
 						</form>
@@ -852,24 +852,24 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 		format: 'dd-mm-yyyy',
 		autoclose: true
 	});
-	<?
+	<?php 
 	if($mode!='Add'){
 		?>	
 		$('#sales_order_id').select2('readonly',true);
 		$('#sales_order_pro_id').select2('readonly',true);
-		<?}
+		<?php }
 		?>
 		<?phpif($direct_add){?>
 			load_sales_pro_data(<?=$rel['sales_order_id']?>);
 			$('#sales_order_id').select2('readonly',true);
-			<?
+			<?php 
 			$deleteid=delete_record('tbl_bomtrn', "bom_id=0", $dbcon);
 		}
 		?>
 
 		<?php/*if($bom_clone){?>
 			clone_bom_trn_data(<?=$bom_id?>);
-			<?}*/?>	
+			<?php }*/?>	
 		</script>
 		<?php
 		if($mode=="Add"){

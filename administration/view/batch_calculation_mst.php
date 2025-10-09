@@ -97,11 +97,11 @@
 			<section class="panel">
 				  <header class="panel-heading">
 					  <?=$form?> List
-					<?if($_SESSION['user_type'] == 2){?>					  
+					<?php if($_SESSION['user_type'] == 2){?>					  
 					<span class="tools pull-right">		
 						<a href="javascript:;" onClick="tableToExcel('currency-table', 'Instalment Collection')" ><button class="btn btn-info btn-flat" >Export Excel</button></a>	
 					</span>
-					<?}?>
+					<?php }?>
 				  </header>
 				  <div class="panel-body">
 				  <div class="adv-table">

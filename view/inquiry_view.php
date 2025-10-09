@@ -53,7 +53,7 @@
 				<div class="text-center">Owner : <strong><?=$user_name?></strong></div>
 			</header>	
 			<div class="">
-				<?	
+				<?php 	
 					
 					/*$url = $_SERVER['HTTP_REFERER'];
 					$infopage = basename($url);
@@ -168,7 +168,7 @@
 						<td class="text-right"><?=$trn_rel['product_amount']?></td>
 						<!--<td><?=(nl2br($trn_rel['product_spec']))?></td>-->
 					</tr>
-				<?
+				<?php 
 					}
 				?>
 					</table>
@@ -186,7 +186,7 @@
 								<th>Approve Status</th>
 								<th>Action</th>
 							</tr>
-					<?
+					<?php 
 						$get_quot_qry="select quotation_id,quotation_no,quotation_date ,approve_status from tbl_quotation where inquiry_id=".$rel['inquiry_id'];
 						$get_quot_qry_rs=$dbcon->query($get_quot_qry);
 						if(mysqli_num_rows($get_quot_qry_rs)){
@@ -196,7 +196,7 @@
 							<td><?=$get_quot_rel['quotation_no']?></td>
 							<td><?=date("d-M-Y", strtotime($get_quot_rel['quotation_date']))?></td>
 							<td>
-							<?
+							<?php 
 								if($get_quot_rel['approve_status']=='1'){
 									echo '<div class="external-event label label-success ui-draggable" style="cursor:auto;">Authorized</div>';
 								}
@@ -215,7 +215,7 @@
 							<tr>
 								<td colspan="4" class="text-center">No Quotation Found !!!</td>
 							</tr>
-						<?	}	?>	
+						<?php 	}	?>	
 					</table>
 					<div style="overflow:auto;">
 					<table class="display table table-bordered table-striped">
@@ -231,7 +231,7 @@
 							<th class="text-center">Remark</th>
 							<th class="text-center">Owner</th>
 						</tr>
-				<?
+				<?php 
 					$get_apt_qry="select tsk.*,sub.mcd_name as subject,usr.user_name,prior.task_priority_name from tbl_task as tsk 
 					left join tbl_master_category_detail as sub on sub.mcd_id=tsk.task_type_id
 					left join users as usr on usr.user_id=tsk.user_id
@@ -258,7 +258,7 @@
 						<td><?=nl2br($apt_rel['task_remark'])?></td>
 						<td><?=$apt_rel['user_name']?></td>
 					</tr>
-				<?	$k++;
+				<?php 	$k++;
 					}
 					}
 					else{
@@ -266,7 +266,7 @@
 					<tr>
 						<td colspan="7" class="text-center">No Appointments Found!!!</td>
 					</tr>
-				<?
+				<?php 
 					}
 				?>
 					</table>
@@ -286,7 +286,7 @@
 							<th class="text-center">Remark</th>
 							<th class="text-center">Owner</th>
 						</tr>
-				<?
+				<?php 
 					$get_task_qry="select tsk.*,sub.mcd_name as subject,usr.user_name,prior.task_priority_name from tbl_task as tsk 
 					left join tbl_master_category_detail as sub on sub.mcd_id=tsk.task_type_id
 					left join users as usr on usr.user_id=tsk.user_id
@@ -314,7 +314,7 @@
 						<td><?=nl2br($task_rel['task_remark'])?></td>
 						<td><?=$task_rel['user_name']?></td>
 					</tr>
-				<?	$k++;
+				<?php 	$k++;
 					}
 					}
 					else{
@@ -322,7 +322,7 @@
 					<tr>
 						<td colspan="8" class="text-center">No Data Found!!!</td>
 					</tr>
-				<?
+				<?php 
 					}
 				?>
 					</table>

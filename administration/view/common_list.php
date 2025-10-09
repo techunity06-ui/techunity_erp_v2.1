@@ -115,11 +115,11 @@
 						Common Master List
 						<!--<span class="tools pull-right">
 							<a href="javascript:;" class="fa fa-chevron-down"></a>-->
-							<?if($_SESSION['user_type'] == 2){?>					  
+							<?php if($_SESSION['user_type'] == 2){?>					  
 					<span class="tools pull-right">		
 						<a href="javascript:;" onClick="tableToExcel('common-table', 'Instalment Collection')" ><button class="btn btn-info btn-flat" >Export Excel</button></a>	
 					</span>
-					<?}?>
+					<?php }?>
 						<!--</span>-->
 					</header>
 					<div class="col-md-5">

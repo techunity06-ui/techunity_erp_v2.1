@@ -1240,14 +1240,14 @@ function bom_show_print($dbcon,$bom_id,$qty,$num,$call,$space){
 				<?phpif($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
 				<?=$base_qty?>  <?=$rel1['base_unit_name']?><br/>
 				<?=$conv_stock?>  <?=$rel1['conv_unit_name']?>
-				<?}else{?>
+				<?php }else{?>
 				<?=$base_qty?>  <?=$rel1['base_unit_name']?>
-				<?}?>
+				<?php }?>
 			</td>
 			<td style="border:1px #444 solid;"><?=$rel1['base_unit_name'] ?></td>
 			<td style="border:1px #444 solid;"><?=get_last_purchase($dbcon,$rel1['product_id']) ?></td>
 			<td style="border:1px #444 solid;" >
-				<?$query="select mst.*,p.process_name from tbl_product_process as mst 
+				<?php $query="select mst.*,p.process_name from tbl_product_process as mst 
 				left join process_mst as p on p.process_id=mst.process_id where mst.status = 0 AND  mst.product_id=".$rel1['product_id']." order by process_priority";
 				$result=$dbcon->query($query);
 				$cnt=mysqli_num_rows($result);
@@ -1611,12 +1611,12 @@ function bom_show($dbcon,$bom_id,$qty,$num,$call,$space){
 				<?phpif($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
 				<?=$base_qty?>  <?=$rel1['base_unit_name']?><br/>
 				<?=$conv_stock?>  <?=$rel1['conv_unit_name']?>
-				<?}else{?>
+				<?php }else{?>
 				<?=$base_qty?>  <?=$rel1['base_unit_name']?>
-				<?}?>
+				<?php }?>
 			</td>
 			<td style="border:1px #444 solid;" >
-				<?$query="select mst.*,p.process_name from tbl_product_process as mst 
+				<?php $query="select mst.*,p.process_name from tbl_product_process as mst 
 				left join process_mst as p on p.process_id=mst.process_id where mst.status = 0 AND  mst.product_id=".$rel1['product_id']." order by process_priority";
 				$result=$dbcon->query($query);
 				$cnt=mysqli_num_rows($result);

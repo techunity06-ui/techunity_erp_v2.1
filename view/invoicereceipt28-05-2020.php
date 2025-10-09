@@ -121,12 +121,12 @@ body {
 				<label class="col-md-2 control-label"> Print</label>
 				<div class="col-md-4 col-xs-11">
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
-						<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
-						<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-						<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-						<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+						<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?>>ORIGINAL</option>
+						<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+						<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+						<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 					</select>
 				 </form>
 				</div>
@@ -157,8 +157,8 @@ body {
 				<h1 align="center"><?=$set_head['company_name']?></h1>
 				<h4 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h4>
 				<h4 align="center"><?=$set_head['address']?></h4>
-				<h4 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-				<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
+				<h4 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+				<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
 				
 			</td>
 		</tr>
@@ -343,7 +343,7 @@ body {
 			<th width="6%" style="text-align:center;border:0.5px #ccc solid;border-top: none;">
 				<strong>Less:<br/>Disc.</strong>
 			</th>
-			<?}?>
+			<?php }?>
 			<th width="9%" style="text-align:center;border:0.5px #ccc solid;border-top: none;">
 				<strong>Taxable<br/>Value</strong>
 			</th>
@@ -412,7 +412,7 @@ body {
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:0.5px #ccc solid;">
 						<?=number_format($row['discount_per'],2,".","").'%'?>
 					</td>
-					<?}?>
+					<?php }?>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:0.5px #ccc solid;">
 						<?=number_format($row['taxable_value'],2,".","")?>
 					</td>
@@ -446,7 +446,7 @@ body {
 				<td style="border-right:0.5px #ccc solid;"></td>
 				<?phpif($set_head['show_disc']=='1'){?>
 				<td style="border-right:0.5px #ccc solid;"></td>
-				<?}?>
+				<?php }?>
 				<td style="border-right:0.5px #ccc solid;"></td>
 				<td style="border-right:0.5px #ccc solid;"></td>
 				<td style="border-right:0.5px #ccc solid;"></Td>
@@ -463,7 +463,7 @@ body {
 				<td style="text-align:center;border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
 				<?phpif($set_head['show_disc']=='1'){?>
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;"></td>
-				<?}?>
+				<?php }?>
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;"></td>
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;text-align:right;"><strong><?=number_format($totaltaxable,2,".","")?></strong></td>
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;text-align:right;"></td>
@@ -475,7 +475,7 @@ body {
 			<tr>
 				<td colspan="10" style="padding: 0px !important;border:0.5px #ccc solid">
 				<table class="footer-table" width="100%">
-				<?
+				<?php 
 				$exp_total=get_expense_by_invoice($dbcon,$invoiceid);
 				$query="SELECT tax.tax_typeid,sum(tax_amount) as tax_amount FROM `tbl_tax_trn` as trn 
 						left join tbl_tax as tax on tax.tax_id=trn.tax_id 
@@ -508,7 +508,7 @@ body {
 						</td>
 						<td colspan="2" style="text-align:right; border-top:0.5px #ccc solid;" width="10%"><?=number_format($totaltaxable,2,".","")?></td>	
 					</tr>
-					<?
+					<?php 
 					while($rel_tax=mysqli_fetch_assoc($rs_total_tax))
 					{
 						$tax_type['type_id'][]=$rel_tax['tax_typeid'];
@@ -555,7 +555,7 @@ body {
 					</tr>
 					<tr>
 					<td style="border-right:0.5px #ccc solid;border-top:0.5px #ccc solid;font-size:10px;padding:0px !important;" colspan="<?=5+$colspan?>">
-					<?
+					<?php 
 						
 						if($rel['stateid']==$set_head['stateid'])
 						{
@@ -667,7 +667,7 @@ body {
 						}
 						echo '<td style="vertical-align:top;text-align:right;border-top:0.5px #ccc solid;">'.number_format($total1,2).'</td></tr></table>';
 					?>
-					<?
+					<?php 
 							/*
 									echo '<table border="0" style="font-size:10px;text-align:right;" width="100%"><tr> 
 										<td style="vertical-align:top;text-align:center;border-bottom:0.5px #ccc solid;border-right:0.5px #ccc solid;" >
@@ -914,6 +914,6 @@ else
 </script>
 </body>
 </html>
-<?
+<?php 
 
 ?>

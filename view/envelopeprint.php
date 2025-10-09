@@ -379,7 +379,7 @@ $(".select2").select2({
 
 
 
-<?
+<?php 
 	echo "<script>load_envelope(1)</script>";
 ?>
   </body>

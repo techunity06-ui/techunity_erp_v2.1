@@ -890,7 +890,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															<div class="col-md-12">
 																<div class="form-group">
 																	<table cellspacing="10" style="border-collapse:inherit;table-layout: fixed; " id="product_list" class="display table table12 table-striped table-bordered">
-																		<?
+																		<?php 
 																		$btn_search = "";
 																		if ($getspecialConfiguration['power_drive'] == 1) {
 																			$btn_search = '<button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="" onclick="show_product_search_modal();" data-tooltip="Add New Company"><i class="fa fa-search"></i> search</button>';
@@ -1044,7 +1044,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																			</td>
 																			<td style="vertical-align:top;" rowspan="3">
 
-																				<?
+																				<?php 
 																				if ($getspecialConfiguration['smpl_permission'] == 1 || $getspecialConfiguration['chetak_permission'] == 1) {
 																					$add_field = 'stock_allocate()';
 																				} else {
@@ -1499,7 +1499,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 		});
 	</script>
 
-	<?
+	<?php 
 	if ($smode == 'sales_order_emend') {
 		echo "<script>copy_prev_so_trn('" . $sales_order_id . "');get_revise_so_no('" . $sales_order_id . "','" . $start_sales_order_id . "');get_symbol();get_statecode('" . $rel['cust_id'] . "');get_all_bill_sundry('" . $sales_order_id . "');quotation_dropdown_data();get_grossbalance('" . $rel['cust_id'] . "');</script>";
 	}

@@ -122,7 +122,7 @@ $total_net_costing = 0;
 										<label class="col-md-2 control-label"> Print</label>
 										<div class="col-md-4 col-xs-11">
 											<form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-												<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+												<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 													<option value="">Select Print</option>
 													<option value="1">ORIGINAL</option>
 													<option value="2">DUPLICATE</option>
@@ -155,8 +155,8 @@ $total_net_costing = 0;
 												<h2 align="center"><?=$set_head['company_name']?></h2>
 												<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 												<h5 align="center"><?=$set_head['address']?></h5>
-												<h5 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-												<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h5>
+												<h5 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h5>
 												
 											</td>
 										</tr>
@@ -441,7 +441,7 @@ $total_net_costing = 0;
 													?>
 												</td>
 												</tr>
-											<?
+											<?php 
 											//=work_order_bom_show_print($dbcon,$rel1['p_bom_id'],$rel1['product_base_qty'],$i,$call,$space);?>
 										<?php  $i++;  }	?>
 

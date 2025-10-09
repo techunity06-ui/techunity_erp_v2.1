@@ -170,7 +170,7 @@ if($enable_assing_user==1){
 							<div class="col-md-12">
 								<select class="select2" name="c_add_state" id="c_add_state" onChange="load_city(this.value,'c_add_city',<?=$cityid?>)" <?=($getpagePermission['crm_partymst_c_add_state'] == '0') ? '' : 'required';?>>
 									<option value="">Select State</option>	
-									<?//=getstate($dbcon,$rel['stateid'])?>				
+									<?php //=getstate($dbcon,$rel['stateid'])?>				
 								</select>
 							</div>
 						</div>	

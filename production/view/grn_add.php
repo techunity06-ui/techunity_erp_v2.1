@@ -178,8 +178,8 @@
 												<div class="col-md-4">
 													<label class="col-md-4 control-label" style="white-space:nowrap;">Choose Order No *</label>
 													<div class="col-md-8">
-														<?if($mode=='Add'){?>
-															<?if($pmode=="padd"){ ?>
+														<?php if($mode=='Add'){?>
+															<?php if($pmode=="padd"){ ?>
 																<input type="text" class="form-control" value="<?=$ref_no?>" readonly>
 																
 																<input type="hidden" name="purchaseorder_id" id="purchaseorder_id" value="<?=$purchaseorder_id?>" />
@@ -191,10 +191,10 @@
 															
 															
 															<?php} ?>
-														<?}else{?>
+														<?php }else{?>
 															<input type="text" class="form-control" value="<?=$pono?>" readonly>
 															<input type="hidden" name="purchaseorder_id" id="purchaseorder_id" value="<?=$rel['purchaseorder_id']?>" />
-														<?}?>
+														<?php }?>
 													</div>
 												</div>
 												<div class="col-md-4">
@@ -239,7 +239,7 @@
 														</div>
 													</div> 
 												</div>
-												<?if($mode=="Add" && $set_conr['upload_reciept'] == "Yes"){ 
+												<?php if($mode=="Add" && $set_conr['upload_reciept'] == "Yes"){ 
 													$ttrt="required";
 												}else{
 													$ttrt="";
@@ -260,7 +260,7 @@
 															<a href="<?=ROOT.RECEIPT_FILE_VWING.$attch_rel['grn_file']?>" class="btn btn-xs btn-primary" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-eye"></i>  </a> 
 															<button type="button" onClick="delete_attch(<?=$attch_rel['grn_attch_id']?>)" class="btn btn-xs btn-danger" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-trash-o"></i></button>
 															<br/>
-														<?} }?>
+														<?php } }?>
 														</div>
 													</div> 
 												</div>
@@ -387,21 +387,21 @@
 				todayBtn: true,
 				pickerPosition: "bottom-left"
 			});  
-			<?if($mode=='Edit'){?>
+			<?php if($mode=='Edit'){?>
 			$('#vender_id').select2('readonly',true);
 			$('#branch_id').select2('readonly',true);
 			$('#purchaseorder_id').select2('readonly',true);
 			$('#grn_against').select2('readonly',true);
 			load_purhcase_order_data(<?=$rel['purchaseorder_id']?>);
-			<?}?>
-			<?if($mode=='Add'){?>
+			<?php }?>
+			<?php if($mode=='Add'){?>
 			load_grn_no();
-			<?}?>
-			<?if($pmode=="padd"){?>
+			<?php }?>
+			<?php if($pmode=="padd"){?>
 				//load_grn_no();
 				$('#grn_against').select2('readonly',true);
 				load_purhcase_order_data(<?=$purchaseorder_id?>);
-			<?}?>
+			<?php }?>
 		</script> 
 	</body>
 </html>

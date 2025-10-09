@@ -321,10 +321,10 @@ else
 							<section class="panel">
 								<header class="panel-heading">
 									<h3><?=$viewmode .' '.$form?></h3>
-									<!--<div class="text-center">Owner : <strong><?//=$user_name?></strong></div>-->
+									<!--<div class="text-center">Owner : <strong><?php //=$user_name?></strong></div>-->
 								</header>	
 								<div class="">
-									<?	
+									<?php 	
 									$url = $_SERVER['HTTP_REFERER'];
 									$infopage = basename($url);
 									if($infopage=='dashboard'){
@@ -366,9 +366,9 @@ else
 														</div>
 													</div>	
 												</div>
-											<?}else{?>
+											<?php }else{?>
 												<input type="hidden" name="quot_revise_type" id="quot_revise_type" value="<?=$quot_revise_type?>">
- 											<?}?>
+ 											<?php }?>
 											<?php if($project_wise_manufacturing=='Yes'){ ?>
 												<div class="col-md-6">
 													<div class="form-group">
@@ -408,12 +408,12 @@ else
 														</div>
 													</div>	
 												</div>
-												<?if($companyConfiguration['branch_wise_manage']==1){?>
+												<?php if($companyConfiguration['branch_wise_manage']==1){?>
 													<div class="col-md-6">
 														<?php echo getBranchBox($dbcon, $branch_id, $selected_branch_id, false, true,'','3','6'); ?>
 													</div>
 												<?php} ?>
-												<?if($getspecialConfiguration['rb_auto_permission']==1){?>
+												<?php if($getspecialConfiguration['rb_auto_permission']==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label">Installation type *</label>
@@ -515,7 +515,7 @@ else
 														</div>
 													</div>	
 												</div>
-												<?if($getspecialConfiguration['meru_permission']==1){?>
+												<?php if($getspecialConfiguration['meru_permission']==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label">Inquiry Ref Date</label>
@@ -524,13 +524,13 @@ else
 															</div>
 														</div>	
 													</div>
-												<?}?>
+												<?php }?>
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="col-md-3 control-label">Quotation Type</label>
 														<div class="col-md-6"> 
-															<label class="col-md-6" style="font-weight:bold;"><input type="radio" id="quot_type_domestic" name="quot_type" <?//if($mode=='Add'){?>onclick="load_typeswise_terms('');"<?//}?> value="0" <?=($quot_type!='1')?'checked':''?> onChange="get_invoice_total_tax();get_gtotal();"> Domestic</label>
-															<label class="col-md-6 " style="font-weight:bold;"><input type="radio" id="quot_type_export" name="quot_type" <?//if($mode=='Add'){?>onclick="load_typeswise_terms('');"<?//}?> value="1" <?=($quot_type=='1')?'checked':''?> onChange="get_invoice_total_tax();get_gtotal();"> Export</label>
+															<label class="col-md-6" style="font-weight:bold;"><input type="radio" id="quot_type_domestic" name="quot_type" <?php //if($mode=='Add'){?>onclick="load_typeswise_terms('');"<?php //}?> value="0" <?=($quot_type!='1')?'checked':''?> onChange="get_invoice_total_tax();get_gtotal();"> Domestic</label>
+															<label class="col-md-6 " style="font-weight:bold;"><input type="radio" id="quot_type_export" name="quot_type" <?php //if($mode=='Add'){?>onclick="load_typeswise_terms('');"<?php //}?> value="1" <?=($quot_type=='1')?'checked':''?> onChange="get_invoice_total_tax();get_gtotal();"> Export</label>
 														</div>
 													</div>	
 												</div>
@@ -661,7 +661,7 @@ else
 													</div>
 												</div>
 											</div>
-										<?	if($getspecialConfiguration['jainflex_permission']!=1 ){?>
+										<?php 	if($getspecialConfiguration['jainflex_permission']!=1 ){?>
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="col-md-3 control-label"> Payment Terms</label>
@@ -682,7 +682,7 @@ else
 													</div>
 												</div>
 											</div>
-									<?	}
+									<?php 	}
 
 											if($getspecialConfiguration['apson_special']!=1 && $getspecialConfiguration['jainflex_permission']!=1 ){?>
 										<!--	<div class="col-md-6">
@@ -722,7 +722,7 @@ else
                                 <label class="col-md-3 control-label" >Transport Address</label>
                                 <div class="col-md-6 col-xs-11">
                                         <select class="form-control" name="trans_add" id="trans_add" >
-                                                <?//=getpaymentterms($dbcon,$rel['payment_terms']);?>
+                                                <?php //=getpaymentterms($dbcon,$rel['payment_terms']);?>
                                         </select>
                                         <input type="hidden" name="trans_add_ed" id="trans_add_ed" value="<?=$rel['trans_add']?>" />
                                 </div>
@@ -798,7 +798,7 @@ else
 															</div>
 														</div>
 													</div> -->
-												<?//}?>											
+												<?php //}?>											
 
 												<?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
 													<div class="col-md-6">
@@ -834,7 +834,7 @@ else
 														</div>
 													</div>
 												<?php} ?>
-												<?if($getspecialConfiguration['jr_fiber_glass_permission'] ==1){?>
+												<?php if($getspecialConfiguration['jr_fiber_glass_permission'] ==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label" >Delivery From</label>
@@ -862,12 +862,12 @@ else
 														</div>
 													</div>
 												<?php} ?> 
-												<?if($getspecialConfiguration['elcon_permission'] ==1){?>
+												<?php if($getspecialConfiguration['elcon_permission'] ==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label">Greeting</label>
 															<div class="col-md-6">
-																<textarea class="form-control" id="quatation_greeting" name="quatation_greeting" placeholder="Enter Quatation Greeting"><?if($mode=='Add'){ echo $set_head['quotation_greeting'];}else{ echo $rel['quatation_greeting']; }?></textarea>
+																<textarea class="form-control" id="quatation_greeting" name="quatation_greeting" placeholder="Enter Quatation Greeting"><?php if($mode=='Add'){ echo $set_head['quotation_greeting'];}else{ echo $rel['quatation_greeting']; }?></textarea>
 															</div>
 														</div>
 													</div>
@@ -900,16 +900,16 @@ else
 																					
 																					<?phpif($getspecialConfiguration['reciclar'] ==1){ ?>
 																						<th width="15%" class="text-center">Reciclar Category</th>
-																					<?}?>
-																					<?if ($getspecialConfiguration['global_eng_permission'] == 1) {?>
+																					<?php }?>
+																					<?php if ($getspecialConfiguration['global_eng_permission'] == 1) {?>
 																							<th width="8%" class="text-center">Item No</th>
 																							<th width="8%" class="text-center">Size</th>
-																					<?}?>
-																					<?
+																					<?php }?>
+																					<?php 
 																					if ($getspecialConfiguration['dintech_valve_permission'] == 1) {?>
 																							<th width="8%" class="text-center">Size</th>
 																							<th width="8%" class="text-center">item_class</th>
-																					<?}?>
+																					<?php }?>
 																					<!--<th width="5%" class="text-center">Level</th>-->
 																					<th width="10%" class="text-center">Unit</th>
 																					<th width="5%" class="text-center">Quantity</th>
@@ -924,7 +924,7 @@ else
 																				<tr>
 																				<?phpif($companyConfiguration['category_selection_active'] ==1){ ?>
 																		 		<td>
-			                                                                        <select class="select2" name="cat_id" id="cat_id" title="Select Category" <?if($companyConfiguration['cat_wise_product_load'] ==1){?> onchange="product_load()"<?}?>>
+			                                                                        <select class="select2" name="cat_id" id="cat_id" title="Select Category" <?php if($companyConfiguration['cat_wise_product_load'] ==1){?> onchange="product_load()"<?php }?>>
 			                                                                            <?=get_all_category($dbcon,0);?>
 			                                                                        </select>
 		                                                                    	</td>
@@ -946,16 +946,16 @@ else
 				                                                                            <?=get_all_reciclare_category($dbcon,0);?>
 				                                                                        </select>
 		                                                                    		</td>
-																				<?}?>
-																				<?if($getspecialConfiguration['global_eng_permission']==1){?>
+																				<?php }?>
+																				<?php if($getspecialConfiguration['global_eng_permission']==1){?>
 																					<td>
 																						<input type="text" class="form-control" id="item_no" name="item_no" value="">
 																					</td>
 																					<td>
 																					<input type="text" class="form-control" id="item_size" name="item_size" value="">
 																					</td>
-																				<?}?>
-																				<?
+																				<?php }?>
+																				<?php 
 																					if ($getspecialConfiguration['dintech_valve_permission'] == 1) {?>
 																					<td>
 																						<input type="text" class="form-control" id="item_size" name="item_size" value="">
@@ -963,10 +963,10 @@ else
 																					<td>
 																						<input type="text" class="form-control" id="item_class" name="item_class" value="">
 																					</td>
-																					<?}?>
+																					<?php }?>
 																					<td>
 																						<select class="form-control"  title="Select Unit" placeholder="Unit" name="rate_unit_id" id="rate_unit_id" onchange="load_product_unit();">
-							                                                                <?//=getunit($dbcon,0);?>
+							                                                                <?php //=getunit($dbcon,0);?>
 							                                                                <option value="0">Select Unit</option>
 							                                                            </select>
 																						<!-- <select class="select2" name="unitid" id="unitid" title="Select Unit" onchange="getrate();">
@@ -1009,7 +1009,7 @@ else
 																						<input type="hidden" name="enable_quotation_limit" id="enable_quotation_limit" value="<?=$companyConfiguration['enable_quotation_limit']?>">
 																						<input type="hidden" name="quotation_disc_limit" id="quotation_disc_limit" value="<?=$companyConfiguration['quotation_disc_limit']?>">
 
-																						<?if ($getspecialConfiguration['durva_permission']==1)
+																						<?php if ($getspecialConfiguration['durva_permission']==1)
 																		{?>
 																			<input type="button"  name="addrow1" id="addrow1" onClick="open_batch_wise_qty()"  class="btn btn-primary product_add_batch_wise" value="Add" />
 																			<button type="button" class="btn btn-primary " id="quot_trn_btn" style=" display:none;" onclick="add_field()">Add</button>
@@ -1042,7 +1042,7 @@ else
 																		<td><input id="other" name="other" type="text" class="form-control" title="Other" placeholder="Other" onkeyup="calculate_other()"><br><input id="other_total" name="other_total" type="text" class="form-control" title="Other Total" placeholder="Other Total" readonly></td>
 																				</tr>
 																			</tbody>
-																			<?}?>
+																			<?php }?>
 																		</table>
 																	</div> 
 																</div>
@@ -1191,7 +1191,7 @@ else
 													</div>
 												</div>
 												<div class="col-md-6"></div>
-												<?if($getspecialConfiguration['maruti_permission']==1){?>
+												<?php if($getspecialConfiguration['maruti_permission']==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-4 control-label">Inclusive all</label>
@@ -1200,7 +1200,7 @@ else
 															</div>
 														</div>	
 													</div>
-													<?}?>
+													<?php }?>
 													
 													<hr/>
 													<div class="clearfix"></div>
@@ -1215,12 +1215,12 @@ else
 																<li role="presentation" id="tab4"><a href="#address-section" aria-controls="address-section" role="tab" data-toggle="tab">Address</a></li>
 																<li role="presentation" id="tab6"><a href="#greeting-section" aria-controls="greeting-section" role="tab" data-toggle="tab">Greetings</a></li>
 																<li role="presentation" id="tab6"><a href="#document-section" aria-controls="document-section" role="tab" data-toggle="tab">Documents</a></li>
-																<?if($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
+																<?php if($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
 																	<li role="presentation" id="tab4"><a href="#general-terms-condition-section" aria-controls="general-terms-condition-section" role="tab" data-toggle="tab">General Terms & Conditions Content</a></li>
 																<?php}
 																if($getspecialConfiguration['maruti_permission']==1){?>
 																	<li role="presentation" id="tab4"><a href="#battery-limits-and-schedule-exclusion-section" aria-controls="battery-limits-and-schedule-exclusion-section" role="tab" data-toggle="tab">Battery Limits And Schedule Of Exclusion Content</a></li>
-																	<?}?>
+																	<?php }?>
 																</ul>
 																<!-- Tab panes -->
 																<div class="tab-content"> 
@@ -1379,7 +1379,7 @@ else
 																			<div class="form-group" style="margin-top:20px;" id="inq_attch_trn_div"></div> 
 																		</div> 
 																	</div>
-																	<?if($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
+																	<?php if($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
 																	<div role="tabpanel" class="tab-pane" id="general-terms-condition-section">
 																		<div class="col-md-12">
 																			<div class="form-group">
@@ -1402,7 +1402,7 @@ else
 																			</div> 
 																		</div> 
 																	</div>
-																	<?}?>
+																	<?php }?>
 																</div>
 																
 																</div>      		
@@ -1491,13 +1491,13 @@ else
 						format: 'dd-mm-yyyy',
 						autoclose: true
 					});
-					<?if($inquiry_type=='2'){?>
+					<?php if($inquiry_type=='2'){?>
 						$('#projectItem').css('display','block');
 					<?php} ?>
-					<?if($mode=='Add'){?>
+					<?php if($mode=='Add'){?>
 						$('#task_type_id').select2('readonly',true);
 					<?php} ?>
-					<?if($mode=='Edit'){?>
+					<?php if($mode=='Edit'){?>
 						$('#cust_id').select2('readonly',true);
 			// $('#c_con_id').select2('readonly',true);
 			$('#inquiry_id').select2('readonly',true);
@@ -1514,7 +1514,7 @@ else
 		<?php} else {?>
 			load_typeswise_terms('');
 		<?php} ?>
-		<?if($prev_quotation_id){?>
+		<?php if($prev_quotation_id){?>
 			copy_prev_quot_trn(<?=$prev_quotation_id?>);
 		<?php} ?>
 
@@ -1531,18 +1531,18 @@ $(".quotattion-followup-date").datetimepicker({
 	startDate: today,
 	endDate: endDate
 });
-<?if($inq_to_quot){//check inq to quot for copy inq pro?>
+<?php if($inq_to_quot){//check inq to quot for copy inq pro?>
 	var cust_id = $('#cust_id').val();
 	get_statecode(cust_id);
 	load_inq_pro(<?=$inquiry_id?>,'<?=$inquiry_name?>');
 	$('#cust_id').select2('readonly',true);
 	//$('#c_con_id').select2('readonly',true);
 	$('#inquiry_id').select2('readonly',true);
-	<?}?>
-	<?if($viewmode=="Add"){?>
+	<?php }?>
+	<?php if($viewmode=="Add"){?>
 		load_def_quotation_no(<?=$start_quotation_id?>);
 
-		<?}?>
+		<?php }?>
 		CKEDITOR.replace( 'quot_annex_content', {
 			enterMode: CKEDITOR.ENTER_BR
 		});

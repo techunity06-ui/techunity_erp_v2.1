@@ -76,7 +76,7 @@
 					<div class="row">			
 						<div class="col-sm-12">
 								
-									<?
+									<?php 
 										$user_access_permission = [];
 										$quserdata = $dbcon->query("SELECT * FROM `users` WHERE `user_id` = '".$_SESSION['user_id']."'");
 										$recorduserData = $quserdata->fetch_assoc();
@@ -98,7 +98,7 @@
 									<div class="panel-body">
 									
 									<ul class="sub ulpad0">
-										<?	
+										<?php 	
 										$querymenu1re="SELECT menumaster.*,menuaccess.route_path_name	,menuaccess.id AS accessdata, CASE WHEN parent_id = 0 THEN menumaster.id ELSE parent_id END AS sort FROM menu_master_access AS menumaster
 											LEFT JOIN menu_master_access_routes AS menuaccess ON menuaccess.access_id = menumaster.id
 										 	WHERE menumaster.status=0 and menumaster.parent_id='".$rel_men['id']."' ORDER BY sort, menumaster.id";

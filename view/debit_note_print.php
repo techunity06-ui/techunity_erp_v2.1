@@ -99,12 +99,12 @@ td, th {
 				<label class="col-md-4 control-label"> </label>
 				<div class="col-md-4 col-xs-11" style="display:none;">
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
-						<option value="1" <?if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
-						<option value="2" <?if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
-						<option value="3" <?if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
-						<option value="4" <?if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
+						<option value="1" <?php if($_REQUEST['printstatus']=='1'){ echo "selected";}?> selected>ORIGINAL</option>
+						<option value="2" <?php if($_REQUEST['printstatus']=='2'){ echo "selected";}?>>DUPLICATE</option>
+						<option value="3" <?php if($_REQUEST['printstatus']=='3'){ echo "selected";}?>>TRIPLICATE</option>
+						<option value="4" <?php if($_REQUEST['printstatus']=='4'){ echo "selected";}?>>EXTRA</option>
 					</select>
 				 </form>
 				</div>
@@ -134,8 +134,8 @@ td, th {
 								<h2 align="center"><?=$set_head['company_name']?></h2>
 				<h4 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h4>
 				<h4 align="center"><?=$set_head['address']?></h4>
-				<h4 align="center"><?if($set_head['website']){?>Email: <?=$set_head['website']?><?}?> 
-				<?if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?}?></h4>
+				<h4 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
+				<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
 								<!--<h4 align="center" style="margin-top:0px;">Website: <?=$set_head['company_website']?></h5>-->
 						</td>
 					</tr>
@@ -209,7 +209,7 @@ td, th {
 			<th width="6%" style="text-align:center;border:1px solid;border-top: none;">
 				<strong>Less:<br/>Disc.</strong>
 			</th>
-			<?}?>
+			<?php }?>
 			<th width="9%" style="text-align:center;border:1px solid;border-top: none;">
 				<strong>Taxable<br/>Value</strong>
 			</th>
@@ -243,11 +243,11 @@ td, th {
 							<?=$i?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-						<?if($row['product_name']){?>
+						<?php if($row['product_name']){?>
 							<strong><?=stripcslashes($row['product_name'])?></strong>
 						<?php}else{ ?>
 							<strong><?=stripcslashes($row['product_name'])?></strong>
-						<?}?>
+						<?php }?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
 					<?=stripcslashes($row['product_hsn'])?>
@@ -272,7 +272,7 @@ td, th {
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 						<?=number_format($row['discount_per'],2,".","").'%'?>
 					</td>
-					<?}?>
+					<?php }?>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 						<?=number_format($row['product_amount'],2,".","")?>
 					</td>
@@ -308,7 +308,7 @@ td, th {
 					<td style="border-right:1px solid;"></td>
 					<?phpif($set_head['show_disc']=='1'){?>
 					<td style="border-right:1px solid;"></td>
-					<?}?>
+					<?php }?>
 				<!--	<td style="border-right:1px solid;"></td>-->
 					<td style="border-right:1px solid;"></td>
 					<td style="border-right:1px solid;"></Td>
@@ -326,7 +326,7 @@ td, th {
 				<!--<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalsqr,2,".","")?></strong></td>-->
 				<?phpif($set_head['show_disc']=='1'){?>
 				<td style="border-top:1px solid;border-right:1px solid;"></td>
-				<?}?>
+				<?php }?>
 				<td style="border-top:1px solid;border-right:1px solid;"></td>
 				<td style="border-top:1px solid;border-right:1px solid;text-align:right;"><strong><?=number_format($totaltaxable,2,".","")?></strong></td>
 				<td style="border-top:1px solid;border-right:1px solid;text-align:right;"></td>
@@ -426,7 +426,7 @@ td, th {
 					</tr>
 					<tr>
 					<td style="border-right:1px solid;border-top:1px solid;border-left:1px solid; font-size:10px;padding:0px !important;" 	colspan="<?=5+$colspan?>">
-					<?
+					<?php 
 								
 								if($rel['stateid']==$set_head['stateid'])
 								{

@@ -66,7 +66,7 @@
 										<label class="control-label col-md-4">Quotation</label>
 										<div class="col-md-8">
 											<select class="select2" name="estimate_id" id="estimate_id" onChange="reload_data();load_quotation_sales_order(this.value);" >
-												<?//=get_estimate_report($dbcon);?>	
+												<?php //=get_estimate_report($dbcon);?>	
 											</select>
 											
 										</div>
@@ -77,7 +77,7 @@
                                                             <label class="control-label col-md-2" >Choose Date</label>
 									<div class="col-md-3">
 										<div class="input-group date form_datetime-component">
-										 <?
+										 <?php 
 										  $start=date('01-m-Y');
 										  ?>
                                          <input type="hidden" id="from_date"  value="<?=$start?>">

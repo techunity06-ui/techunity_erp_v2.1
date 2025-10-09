@@ -294,7 +294,7 @@
 								<label class="col-md-6 control-label">Select Formula</label>
 								<div class="col-md-4 col-xs-11">
 								<select class="form-control" name="formulaid" id="formulaid" onChange="get_gtotal(this.value);">
-									<?
+									<?php 
 									echo getformula($dbcon,$rel['formulaid']);
 									 ?>
 								</select>
@@ -302,7 +302,7 @@
 							</div>							
 							<div class="col-md-12">
 							<div id="showformulatextbox">
-							<?
+							<?php 
 							if($mode=='Edit')
 							{
 							if(!empty($rel['tax1_name']))
@@ -315,7 +315,7 @@
 						</div>
 					</div>
 					<input id="taxname0" name="taxname0" value= "<?=$rel['tax1_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}
 							if(!empty($rel['tax2_name']))
 							{
@@ -327,7 +327,7 @@
 						</div>
 					</div>
 					<input id="taxname1" name="taxname1" value= "<?=$rel['tax2_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}if(!empty($rel['tax3_name']))
 							{
 							?>
@@ -338,7 +338,7 @@
 						</div>
 					</div>
 					<input id="taxname2" name="taxname2" value= "<?=$rel['tax3_name']?>" type="hidden" class="form-control">
-							<?
+							<?php 
 							}} 
 							?>
 							</div>
@@ -423,9 +423,9 @@ $(".form_datetime").datetimepicker({
     pickerPosition: "bottom-left"
 
 });
-<?if($mode=='Add'){?>
+<?php if($mode=='Add'){?>
 	load_purchase_srs_no();
-<?}?>
+<?php }?>
 </script>
 <script type="text/javascript">
 	$(".add-row").click(function(){

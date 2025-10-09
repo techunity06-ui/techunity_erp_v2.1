@@ -10,13 +10,13 @@
 					<div class="col-md-12">
 						<center>
 						<label class="radio-inline">
-					      <input type="radio" name="con_type" value="1" <?if($rel['con_type']=='1'){ echo "checked";}?> onchange="cons_type()">Unit
+					      <input type="radio" name="con_type" value="1" <?php if($rel['con_type']=='1'){ echo "checked";}?> onchange="cons_type()">Unit
 					    </label>
 					    <label class="radio-inline">
-					      <input type="radio" name="con_type" value="2" <?if($rel['con_type']=='2'){ echo "checked";}?> onchange="cons_type()">Vendor
+					      <input type="radio" name="con_type" value="2" <?php if($rel['con_type']=='2'){ echo "checked";}?> onchange="cons_type()">Vendor
 					    </label>
 					    <label class="radio-inline">
-					      <input type="radio" name="con_type" value="3" <?if($rel['con_type']=='3'){ echo "checked";}if($mode=='Add' && $viewmode=='Add'){echo "checked";}?> onchange="cons_type()">Manual
+					      <input type="radio" name="con_type" value="3" <?php if($rel['con_type']=='3'){ echo "checked";}if($mode=='Add' && $viewmode=='Add'){echo "checked";}?> onchange="cons_type()">Manual
 					    </label>
 						</center>
 					</div>

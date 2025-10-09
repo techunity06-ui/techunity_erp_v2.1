@@ -86,7 +86,7 @@
 								if(strtolower($mode)=="edit"){?>
 									<input type="text" readonly class="form-control" value="<?=$rel['company_name']?>"/>
 									<input type="hidden"  id="partyid" name="partyid" value="<?=$rel['partyid']?>"/>
-								<?}?>
+								<?php }?>
 								</div>
 								<div class="col-md-2 col-xs-3">
 									<input type="button"  name="addcust" id="addcust"  class="btn btn-primary" value="View Statement" onclick="open_statement_popup()"/>
@@ -112,7 +112,7 @@
 								<label class="col-md-2 control-label">Payment Mode *</label>
 								<div class="col-md-3 col-xs-11">
 								<select class="form-control" name="paymentmodeid" id="paymentmodeid" onChange="" required title="Select Payment Mode">
-									<?echo getpaymentmode($dbcon,$rel['payment_mode']);?>	
+									<?php echo getpaymentmode($dbcon,$rel['payment_mode']);?>	
 								</select>					
 								</div>
 							</div>	
@@ -341,7 +341,7 @@ function generate_report()
 	}
 }
 </script>
-<?
+<?php 
 if(strtolower($mode)=="edit")
 {
 	echo '<script>$("#total_paid_amount").val('.$rel["amount"].');load_billdata('.$rel['partyid'].');</script>';

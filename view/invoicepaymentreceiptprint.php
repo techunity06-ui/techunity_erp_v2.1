@@ -59,7 +59,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 							else if($_REQUEST['report']=='0'){?>
 							  <li><a href="<?=ROOT.'purchasepayment_list/'.$rel['purchasereceipt_id']?>">Receipt Payment</a></li>
 							
-							<?}else
+							<?php }else
 							{?>
 							  <li><a href="<?=ROOT.'purchasepayment_list'?>">Purchase Payment Receipt list</a></li>
 							 <?php}?> 
@@ -88,7 +88,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 							{
 							?>
 							<a  type="button" class="btn btn-success"  href="<?=ROOT.'purchasepayment_list/'.$rel['purchasereceipt_id']?>">Cancel</a>
-							<?
+							<?php 
 							}
 							else
 							{?>
@@ -180,7 +180,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 										
 										</tr>
 			
-<?
+<?php 
 	$query ="select tbl.*,trn.payment_trnid ,trn.total_amount,trn.total_amount as amount,trn.tax_amount from ((SELECT invoice_id,'invoice' as type,invoice_no,invoice_date,g_total,paid_amount FROM `tbl_invoice` as invoice where invoice.invoice_status=0 ) 
 				union all (SELECT incomeid,'income' as type,invoice_no,income_date,g_total,paid_amount FROM `income_mst` as income where income.mst_status=0 )) as tbl
 					left join payment_trn as trn on trn.bill_id=tbl.invoice_id and trn.bill_type=cast(tbl.type as CHAR)
@@ -268,35 +268,35 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 			<?phpif(strtolower($rel['payment_mode'])=="cheque"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Bank Name  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['bank_name']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['bank_name']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Cheque No  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['cheque_dtl'] //." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['cheque_dtl'] //." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Reference Date  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['ref_date']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['ref_date']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<?php}?>
 			<?phpif(strtolower($rel['payment_mode'])=="neft"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Bank Name  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['bank_name']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['bank_name']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">NEFT No  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['cheque_dtl'] //." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['cheque_dtl'] //." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Reference Date  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['ref_date']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['ref_date']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<?php}?>
 			<?phpif(strtolower($rel['payment_mode'])=="neft"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">PAYMENT DETAIL  :  </span>  </td>
-				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?echo $rel['bank_name']." (NEFT NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
+				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['bank_name']." (NEFT NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
 			<?php}?>
 			<tr style="height:30px;">

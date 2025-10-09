@@ -191,7 +191,7 @@ padding-bottom:20px;
                       <label class="control-label col-lg-4 col-md-4 col-xs-3">Choose Date</label>
 	                      <div class=" col-lg-8 col-md-8 col-xs-9">
 	                           <div class="input-group date form_datetime-component">
-							<?
+							<?php 
 							  //$start=(date('m')<'04') ? date('01-04-Y',strtotime('-1 year')) : date('01-04-Y');
 							?>
 	                            <input type="hidden" id="from_date"  value="<?=$start?>">
@@ -300,12 +300,12 @@ $(".select2").select2({
 $('.date-set').click(function(){
        $('.datepikerdemo').trigger('click')
 });
-<?//Hide approve btn if not allowed
+<?php //Hide approve btn if not allowed
 $mod_btn_per=check_permission($_SESSION['page'],$_SESSION['user_id'],'aprv',$dbcon);
 if(!$mod_btn_per){
 ?>	
 	//$('#mod_per_div_sec').hide();
-<?
+<?php 
 	}
 ?>
 </script>

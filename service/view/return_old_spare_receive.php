@@ -173,7 +173,7 @@ $('.default-date-picker').datepicker({
 	autoclose: true
 });
 </script>
-<?
+<?php 
 echo "<script>show_data() </script>";
 ?>
 </body>

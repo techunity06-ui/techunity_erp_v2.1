@@ -58,7 +58,7 @@ class MetadataWriter implements \Psr\Log\LoggerAwareInterface
 
 		$uuid = sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x', random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0x0fff) | 0x4000, random_int(0, 0x3fff) | 0x8000, random_int(0, 0xffff), random_int(0, 0xffff), random_int(0, 0xffff));
 
-		$m = '<?xpacket begin="' . chr(239) . chr(187) . chr(191) . '" id="W5M0MpCehiHzreSzNTczkc9d"?>' . "\n"; // begin = FEFF BOM
+		$m = '<?php xpacket begin="' . chr(239) . chr(187) . chr(191) . '" id="W5M0MpCehiHzreSzNTczkc9d"?>' . "\n"; // begin = FEFF BOM
 		$m .= ' <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="3.1-701">' . "\n";
 		$m .= '  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">' . "\n";
 		$m .= '   <rdf:Description rdf:about="uuid:' . $uuid . '" xmlns:pdf="http://ns.adobe.com/pdf/1.3/">' . "\n";
@@ -140,7 +140,7 @@ class MetadataWriter implements \Psr\Log\LoggerAwareInterface
 		$m .= '  </rdf:RDF>' . "\n";
 		$m .= ' </x:xmpmeta>' . "\n";
 		$m .= str_repeat(str_repeat(' ', 100) . "\n", 20); // 2-4kB whitespace padding required
-		$m .= '<?xpacket end="w"?>'; // "r" read only
+		$m .= '<?php xpacket end="w"?>'; // "r" read only
 		$this->writer->write('<</Type/Metadata/Subtype/XML/Length ' . strlen($m) . '>>');
 		$this->writer->stream($m);
 		$this->writer->write('endobj');

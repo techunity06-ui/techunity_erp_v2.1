@@ -82,7 +82,7 @@ $company_config = getCompanyConfiguration($dbcon);
 			<div class="col-lg-9 table-responsive" id="receipt_print">	
 				<div style="width: 100%;" id="print1">
 					
-			<?
+			<?php 
 				$mode="Print";
 				$query_inward="SELECT batch.*, grn.grn_no, p.product_name, p.product_icode,ct.cat_name,p.product_sale_rate, p.product_icode,u.unit_name, pr.process_name,p.smpl_size,p.smpl_material FROM tbl_batch_data as batch 
 				left join product_mst as p on p.product_id=batch.product_id 
@@ -125,7 +125,7 @@ $company_config = getCompanyConfiguration($dbcon);
 	
    //QRcode End
    ?> 
-					<?}
+					<?php }
 					//for ($i=0; $i < $batch_rel['accept_qty']; $i++) { 
 						// code...
 					
@@ -149,7 +149,7 @@ $company_config = getCompanyConfiguration($dbcon);
 							<td style="" colspan="2"><!--<strong><span style="margin-left:5px"><?=$batch_rel['batch_no']?></span></strong>--> <img style="height: 15px;margin-left:5px;" src="../stickerprinting/Date_of_MFG.jpg" /> <span style="margin-left:0px;"><?=$year_month?></span></td>
 						</tr>
 						<tr style="font-size: 8px;">
-							<td colspan="2" style="white-space: nowrap;width:70%;"><strong>MRP:<span style="margin-left:0px">Rs.<?=$batch_rel['product_sale_rate']?>/-<?=$price?></span><span style="margin-left:5px;font-size: 6px;">(Inclu. All Taxes Per PCS<?//=$batch_rel['unit_name']?>)</span><!--<img style="height: 15px;margin-left:5px;" src="../stickerprinting/Date_of_MFG.jpg" /><span style="margin-left:0px;"><?=$year_month?></span></strong>--></td>
+							<td colspan="2" style="white-space: nowrap;width:70%;"><strong>MRP:<span style="margin-left:0px">Rs.<?=$batch_rel['product_sale_rate']?>/-<?=$price?></span><span style="margin-left:5px;font-size: 6px;">(Inclu. All Taxes Per PCS<?php //=$batch_rel['unit_name']?>)</span><!--<img style="height: 15px;margin-left:5px;" src="../stickerprinting/Date_of_MFG.jpg" /><span style="margin-left:0px;"><?=$year_month?></span></strong>--></td>
 							<td style="font-size: 5px;text-align: end;vertical-align: top;width:20%;">
 								<!-- <img style="width: 35px;" src="../stickerprinting/EC_representativenew.jpg" /> -->
 								<!--<span style="border: 1px solid black;padding:2px">EC <span style="border-left: 1px solid black;padding:2px">REP</span></span>--></td>
@@ -157,7 +157,7 @@ $company_config = getCompanyConfiguration($dbcon);
 						</tr>
 						<tr style="font-size: 8px;">
 							<td rowspan="3" style="width:30%;">
-								<?
+								<?php 
 								echo '<img style="height: 80px;" src="'.$PNG_WEB_DIR.basename($filename).'"/><br/>'; 
 								?>
 							</td>
@@ -196,7 +196,7 @@ $company_config = getCompanyConfiguration($dbcon);
 							<td colspan="4">&nbsp;</td>
 						</tr>
 					</table>
-					<?
+					<?php 
 						if($i>1){ echo '<hr style="margin-top:4px;margin-bottom:4px;"/>';}
 				//	}
 					

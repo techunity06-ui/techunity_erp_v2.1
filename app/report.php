@@ -79,7 +79,7 @@ a.two:hover {/*font-size:110%;*/color:#210e46;}
 				  </header>	
 					 <div class="panel-body">
 					        <ul class="pad_l_0 ulpad0">		 
-            <?
+            <?php 
 			 /* $querymenure="select * from tbl_menu as menu inner join tbl_permission as per on per.menu_id=menu.menu_id inner join tbl_usertype as type on type.usertype_id=per.usertype_id where menu.status=0 and pid=0 and per.usertype_id=".$_SESSION['user_type']." order by menuorder";
 			$result_menure=$dbcon->query($querymenure);		
 			while($rel_menure=mysqli_fetch_assoc($result_menure))
@@ -92,7 +92,7 @@ a.two:hover {/*font-size:110%;*/color:#210e46;}
 							<i class="fa <?=strtolower($rel_menure['fa_icon'])?>"></i>
 					<span style="font-size:14px"><?=ucwords(strtolower($rel_menure['menu_name']))?></span>
 					</a>
-				<?
+				<?php 
 				}
 				else
 				{
@@ -104,7 +104,7 @@ a.two:hover {/*font-size:110%;*/color:#210e46;}
 					</a>*/
 					?>
 					<ul class="sub ulpad0">
-				<?	
+				<?php 	
 					 $querymenu1re="select * from tbl_menu as menu inner join tbl_permission as per on per.menu_id=menu.menu_id inner join tbl_usertype as type on type.usertype_id=per.usertype_id where menu.status=0 and pid=7 and per.usertype_id=".$_SESSION['user_type']." order by menuorder";
 					$result_menu1re=$dbcon->query($querymenu1re);		
 					echo $rel_menure['menu_id'];
@@ -122,7 +122,7 @@ a.two:hover {/*font-size:110%;*/color:#210e46;}
 				<?php//}?>
 					
             <!--</li>-->	
-			<?	//} ?>
+			<?php 	//} ?>
 				 	
 				<!--<li>
                  	   <a class="" href="<?=ROOT.'changepassword/'.$_SESSION['user_id'] ?>">

@@ -38,7 +38,7 @@
 								<div class="">
 									<ul class="breadcrumb">
 										<li><a href="<?=ROOT.'dashboard'?>"><i class="fa fa-home"></i> Home</a></li>
-										<!--<li><a href="<?//=ROOT.'customer_list'?>">Customer List</a></li>-->
+										<!--<li><a href="<?php //=ROOT.'customer_list'?>">Customer List</a></li>-->
 									</ul>
 								</div>
 							</section>

@@ -97,7 +97,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 									</div>
 									
 <!--						<span class="tools pull-right">
-                                                    <a href="<?//=ROOT.'task_add'?>"><button class="btn btn-success btn-flat"><i class="fa fa-plus"></i>&nbsp;Add <?//=$form?></button></a>
+                                                    <a href="<?php //=ROOT.'task_add'?>"><button class="btn btn-success btn-flat"><i class="fa fa-plus"></i>&nbsp;Add <?php //=$form?></button></a>
                                                 </span>-->
                                                 <div class="col-md-12"	style="height:20px;" ></div>
                                             </header>	

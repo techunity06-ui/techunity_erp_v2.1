@@ -9,11 +9,11 @@
 			<h4 style="margin:0; padding:0">Company</h4></div>
 			<div class=" col-sm-6 text-right" style="padding:0px;">
 			<!--<a class="tools" href="<=ROOT.'create_company'?>" ><button class="btn btn-success btn-flat" style="margin-right:10px"><i class="fa fa-plus"></i> Company</button></a>-->
-			<?
+			<?php 
 			 if(!empty($_SESSION['company_id']) || $_SESSION['company_id']=="0")
 			{?>
 			<button type="button"  class="btn btn-danger close btn-flat closemain" data-dismiss="modal" aria-hidden="true">Close</button>
-			<?}?>
+			<?php }?>
 			</div>
 				
 				
@@ -27,7 +27,7 @@
 							<td class="comptd"><label class="comp" onclick="pass_session('Admin',0)">Admin</label></td>
 						</tr>
 						
-						<?
+						<?php 
 						$q='';
 						if(!empty($_SESSION['company_id']))
 						{
@@ -43,7 +43,7 @@
 							<tr>
 								<td class="comptd"><label class="comp" onclick="pass_session('<?=$row['company_name']?>',<?=$row['company_id']?>)"><?=$row['company_name']?></label></td>
 							</tr>
-							<?
+							<?php 
 							}
 						}
 						else

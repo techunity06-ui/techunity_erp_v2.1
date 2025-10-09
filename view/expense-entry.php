@@ -205,9 +205,9 @@
 						
 							<div class="col-md-12">
 							<button type="submit" class="btn btn-success" id="save" name="save"><span class="english">Save</span></button>
-							<?if($mode=='Add'){?>
+							<?php if($mode=='Add'){?>
 								<button type="submit" class="btn btn-success" id="saveprint" name="saveprint" onClick="submit_estimate()"><span class="english">Save and New</span></button> &nbsp;
-							<?}?>
+							<?php }?>
 							<a href="<?=ROOT.'expense_detail'?>" type="button" class="btn btn-danger"><span class="english">Cancel</span></a><div class="col-md-3"></div>			</div>		
 							<input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
 							<input type='hidden' name='eid' id='eid' value='<?=$rel['ex_id']?>' />
@@ -245,13 +245,13 @@ $('.default-date-picker').datepicker({
 	format: 'dd-mm-yyyy',
 	autoclose: true
 });
-<?if($_SESSION['last_exp_comp_id'] && $_SESSION['last_exp_cust_id']){?>
+<?php if($_SESSION['last_exp_comp_id'] && $_SESSION['last_exp_cust_id']){?>
 	get_all_complain(<?=$_SESSION['last_exp_cust_id']?>,<?=$_SESSION['last_exp_comp_id']?>)
-<?}?>
-<?if($mode=='Edit'){?>
+<?php }?>
+<?php if($mode=='Edit'){?>
 	$('#cust_id').select2('readonly',true);
 	$('#comp_id').select2('readonly',true);
-<?}?>
+<?php }?>
 </script>
 </body>
 </html>

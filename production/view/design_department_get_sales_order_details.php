@@ -62,7 +62,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 						<section class="panel">
 							<div class="panel-body">
 								<div class="col-md-12">
-									<?if($companyConfiguration['branch_wise_manage']==1){?>
+									<?php if($companyConfiguration['branch_wise_manage']==1){?>
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id, $_SESSION['branch_id'], false, true, 'show_data()'); ?>	
 										</div>	

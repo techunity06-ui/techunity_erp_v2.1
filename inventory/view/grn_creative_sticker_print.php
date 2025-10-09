@@ -104,7 +104,7 @@ body {
 						<label class="col-md-2 control-label"> Print</label>
 				<div class="col-md-4 col-xs-11">
 				 <form class="form-horizontal" role="form" id="print_form" action="javascript:;" method="post" name="print_form">
-					<select class="form-control" name="print_status" id="print_status" <?if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
+					<select class="form-control" name="print_status" id="print_status" <?php if($_REQUEST['printstatus']!=''){ echo "readonly";}?>>
 						<option value="">Select Print</option>
 						<option value="1">ORIGINAL</option>
 						<option value="2">DUPLICATE</option>
@@ -231,12 +231,12 @@ body {
 						        QRcode::png($data_string, $filename, $errorCorrectionLevel, $matrixPointSize, 2);
 						      }
 					?>	
-					<?				
+					<?php 				
 							if($i==3){
 								$i=0;
 					?>
 						</tr><tr>
-					<?
+					<?php 
 							}
 					?>
 							<td width="25%" style="vertical-align:top;border:1px solid;padding:0px; colspan="2">
@@ -285,7 +285,7 @@ body {
 							</tr>
 							<tr>
 								<td colspan="2">
-									<?
+									<?php 
 										echo '<img style="height: 80px;" src="'.$PNG_WEB_DIR.basename($filename).'"/><br/>'; 
 									?>
 								</td>

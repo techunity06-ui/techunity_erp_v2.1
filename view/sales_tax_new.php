@@ -69,7 +69,7 @@
                                   <label class="control-label col-md-3">Choose Date</label>
                                   <div class="col-md-9">
                                       <div class="input-group date form_datetime-component">
-									 <?
+									 <?php 
 									  $start=date('01-m-Y');
 									  ?>
                                          <input type="hidden" id="from_date"  value="<?=$start?>">
@@ -87,7 +87,7 @@
                                   <label class="control-label col-md-3">Invoice Type</label>
                                   <div class="col-md-6">
                                        <select  class="form-control" name="type_id" id="type_id" onChange="reload_data();">
-									<?//=getlistinvoicetype($dbcon);?>	
+									<?php //=getlistinvoicetype($dbcon);?>	
 								</select>
                                   </div>
                               </div>

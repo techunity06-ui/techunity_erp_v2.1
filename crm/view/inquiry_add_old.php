@@ -73,7 +73,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 			<div class="text-center">Owner : <strong><?=$user_name?></strong></div>
 		</header>	
 		<div class="">
-			<?	
+			<?php 	
 				$url = $_SERVER['HTTP_REFERER'];
 				$infopage = basename($url);
 				if($infopage=='crm_dashboard'){
@@ -129,11 +129,11 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 							<?=getcust_crm($dbcon,$cust_id)?>
 						</select>
 					</div>
-					<?if($mode=='Add'){?>
+					<?php if($mode=='Add'){?>
 					<div class="col-md-1">
 						<button type="button" id="addcust" data-toggle="modal" data-target="#bs-example-modal-lg"  class="btn btn-primary"><i class="fa fa-plus"></i></button>
 					</div>
-					<?}?>
+					<?php }?>
 					<div class="col-md-1">
 						<button type="button" class="btn btn-primary" data-original-title="View Customer Details" data-toggle="tooltip" data-placement="top" onclick="preview_cust_dtls()"><i class="fa fa-eye"></i></button>
 					</div>
@@ -169,7 +169,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 					<label class="col-md-4 control-label">Territory*</label>
 					<div class="col-md-8">
 						<select class="select2" id="t_id" name="t_id" onchange="load_ter_users(this.value);">
-							<?//=get_all_territory($dbcon,$rel['t_id']);?>
+							<?php //=get_all_territory($dbcon,$rel['t_id']);?>
 						</select>
 					</div>
 				</div>	
@@ -247,14 +247,14 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 			</div>	
 		</div>
 		
-<?	//Show Flp field only if add mode
+<?php 	//Show Flp field only if add mode
 if($mode=='Add'){
 ?>
 		<div class="col-md-4">
 			<div class="form-group">
 				<label class="col-md-4 control-label">Task*</label>
 				<div class="col-md-8">
-				<?//=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task?>
+				<?php //=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task?>
 					<select class="select2" id="task_type_id" name="task_type_id" title="Choose Task Type" required>
 						<option value="">Choose Task Type</option>
 						<?=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task?>
@@ -267,7 +267,7 @@ if($mode=='Add'){
 				<label class="col-md-4 control-label">Assign To*</label>
 				<div class="col-md-8">
 					<select class="select2" id="assign_user_ids" name="assign_user_ids[]" title="Choose Assign User" placeholder="Choose Assign User" multiple="multiple" required>
-						<?//=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
+						<?php //=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_id not in(".$_SESSION['user_id'].")");?>
 						<?=get_assign_users($dbcon, $rel['assign_user_ids'], " and user_type in(2,8,9,21)");?>
 					</select>
 				</div>
@@ -298,7 +298,7 @@ if($mode=='Add'){
 			</div>	
 		</div>	
 		
-<?}?>
+<?php }?>
 	
 		<div class="clearfix"></div>
 	<hr/>
@@ -327,12 +327,12 @@ if($mode=='Add'){
 				</td>
 				<!--<td>
 					<select class="select2" id="cat_id" name="cat_id">
-						<?//=get_all_category($dbcon,"");?>
+						<?php //=get_all_category($dbcon,"");?>
 					</select>
 				</td>-->
 				<!--<td>
 					<select class="select2" id="pg_id" name="pg_id">
-						<?//=get_product_group($dbcon,"");?>
+						<?php //=get_product_group($dbcon,"");?>
 					</select>
 				</td>-->
 				<!--<td>
@@ -491,7 +491,7 @@ if($mode=='Add'){
 			<div role="tabpanel" class="tab-pane <?=($mode=='Edit')?'active':''?>" id="task-section">
 				<div class="form-group" style="margin-top:20px;">
 					<div class="clearfix"></div>
-				<?if($mode=='Edit'){?>
+				<?php if($mode=='Edit'){?>
 					<div class="col-md-2">
 						<a onclick="setFormSubmitting();" href="<?=ROOT.'task_add/'.$rel['inquiry_id']?>" type="button" class="btn btn-primary" ><i class="fa fa-plus"></i> Add Follow-Up</a>
 					</div>
@@ -511,7 +511,7 @@ if($mode=='Add'){
 								<th>Approve Status</th>
 								<th>Action</th>
 							</tr>
-					<?
+					<?php 
 						$get_quot_qry="select quotation_id,quotation_no,quotation_date ,approve_status from tbl_quotation where inquiry_id=".$rel['inquiry_id'];
 						$get_quot_qry_rs=$dbcon->query($get_quot_qry);
 						if(mysqli_num_rows($get_quot_qry_rs)){
@@ -521,7 +521,7 @@ if($mode=='Add'){
 							<td><?=$get_quot_rel['quotation_no']?></td>
 							<td><?=date("d-m-Y", strtotime($get_quot_rel['quotation_date']))?></td>
 							<td>
-							<?
+							<?php 
 								if($get_quot_rel['approve_status']=='1'){
 									echo '<div class="external-event label label-success ui-draggable" style="cursor:auto;">Authorized</div>';
 								}
@@ -540,14 +540,14 @@ if($mode=='Add'){
 							<tr>
 								<td colspan="3" class="text-center">No Data Found !!!</td>
 							</tr>
-						<?	}	?>	
+						<?php 	}	?>	
 						</table>
 					</div>
-				<?}?>
+				<?php }?>
 					<div class="clearfix"></div>
 					<div class="col-md-12 margin_row" style="margin-top: 10px;">
 					<table class="display table table-bordered table-striped">
-	<?
+	<?php 
 		$get_task_qry="select tsk.*,sub.mcd_name as subject,usr.user_name,prior.task_priority_name from tbl_task as tsk 
 		left join tbl_master_category_detail as sub on sub.mcd_id=tsk.task_type_id
 		left join users as usr on usr.user_id=tsk.user_id
@@ -572,7 +572,7 @@ if($mode=='Add'){
 				<td width="25%" colspan="2" class="text-left">
 					<strong>Task</strong>
 				</td>
-			<?	
+			<?php 	
 				/*$tsk_type="";
 				$tsk_due_time=strtotime($task_rel['task_due_date']);
 				
@@ -584,7 +584,7 @@ if($mode=='Add'){
 					}
 				?>
 				<td width="25%" class="text-center btn-success">Completed <?=$tsk_type?></td>
-			<?	}
+			<?php 	}
 				else{
 					$cur_time=strtotime(date('Y-m-d H:i:s'));
 					if($tsk_due_time<$cur_time){
@@ -592,7 +592,7 @@ if($mode=='Add'){
 					}	
 				?>
 				<td width="25%" class="text-center btn-warning">Pending <?=$tsk_type?></td>
-			<?	}*/?>
+			<?php 	}*/?>
 				<td width="25%" class="text-left">
 					<strong>Completion Date:</strong> <?=$task_completion_date?>
 				</td>
@@ -621,7 +621,7 @@ if($mode=='Add'){
 			</tr>
 			<tr>
 				<td colspan="4" class="text-left" style="border-bottom: 1px solid #000 !important;">
-					<?
+					<?php 
 						$task_flp_qry="select flp.*,usr.user_name from tbl_followup as flp 
 						left join users as usr on usr.user_id=flp.user_id
 						where flp.flp_status=0 and flp.task_id=".$task_rel['task_id']."";
@@ -635,13 +635,13 @@ if($mode=='Add'){
 							<th>Remarks</th>
 						</thead>
 						<tbody>
-						<?
+						<?php 
 							while($flp_rel=mysqli_fetch_assoc($task_flp_qry_rs)){
 						?>
 							<td width="20%"><?=$flp_rel['user_name']?></td>
 							<td width="20%"><?=date("d-M-Y h:i A",strtotime($flp_rel['flp_date']))?></td>
 							<td width="60%"><?=$flp_rel['task_flp_remark']?></td>
-						<?
+						<?php 
 							}
 						?>	
 						</tbody>
@@ -649,7 +649,7 @@ if($mode=='Add'){
 					<?php}?>
 				</td>
 			</tr>
-		<?	}
+		<?php 	}
 		else if($task_rel['entry_type']=='2'){//Appointment
 			$appointment_start_time='';$appointment_end_time='';
 			if($task_rel['appointment_start_time']!="1970-01-01 00:00:00" && $task_rel['appointment_start_time']!="0000-00-00 00:00:00"){
@@ -689,8 +689,8 @@ if($mode=='Add'){
 			<tr>
 				<td colspan="4" class="text-left" style="border-bottom: 1px solid #000 !important;"></td>
 			</tr>
-		<?}?>	
-	<?	}?>				
+		<?php }?>	
+	<?php 	}?>				
 					</table>
 					</div>
 				</div> 
@@ -776,23 +776,23 @@ $(".form_datetime-meridian").datetimepicker({
 	$('#inquiry_date').datepicker({
 	format: 'dd-mm-yyyy',
 	autoclose: true
-	<?if($mode=='Add')
+	<?php if($mode=='Add')
 	{?>
 	,startDate: 'd'//don't allow today and past dates
-	<?}?>
+	<?php }?>
 	});
 });*/
 $(function(){
 	setTimeout(function(){ $('#sidebar > ul').hide(); }, 1000);
 	$('#party_type_ven_div').hide();
 });
-<?if($mode=='Add'){?>
+<?php if($mode=='Add'){?>
 load_def_inq_no();
 load_opp_stage_prob(<?=$opp_id?>);
-<?}
+<?php }
 else{?>
 $('#cust_id').select2('readonly', true);
-<?}?>
+<?php }?>
 load_state(<?=$countryid?>,'c_add_state','');
 
 /*$("#product_id").select2({

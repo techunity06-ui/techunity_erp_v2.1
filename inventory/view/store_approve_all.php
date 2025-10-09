@@ -89,7 +89,7 @@ $back_title = "Store Approval Pending List";
 														<th style='width:14%;text-align: center;'> Godown *</th>
 														<th style='width:14%;text-align: center;'> Remark </th>
 													</tr>
-													<?
+													<?php 
 														$cnt=1;
 	
 													?>

@@ -63,7 +63,7 @@
 							<div class="form-group" style="margin-top:20px;">
                                <label class="col-md-12 control-label">Select Financial Year</label>
                                   <div class="col-md-3">
-                                    <?
+                                    <?php 
 							$minyear= 2014;
 							$maxyear=(date('m')<'04') ? date('Y',strtotime('-1 year')) : date('Y');
 							$end = $start+1;
@@ -71,7 +71,7 @@
 								?>
 								<form>
 								<select class="form-control" name="c_year" id="c_year" onchange="reload_data();" >
-								<?
+								<?php 
 								for($y=$minyear;$y<=$maxyear;$y++)
 								{
 								$sel='';

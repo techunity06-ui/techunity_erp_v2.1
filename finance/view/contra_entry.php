@@ -180,7 +180,7 @@
 															<td data-label="Ledger">
 																<div class="col-md-8">
 																	<select class="select2" name="ledger_id" id="ledger_id" title="Select Ledger">
-																		<?//=get_ledger($dbcon);?>
+																		<?php //=get_ledger($dbcon);?>
 																		<?=get_ledger_bank($dbcon,"");?>
 																	</select>
 																</div>
@@ -278,7 +278,7 @@
 			
 		</script>
 		<?phpecho "<script>show_data() </script>";?>
-		<?if($mode=="Add")
+		<?php if($mode=="Add")
 		{
 			echo "<script>get_series_no() </script>";
 		}

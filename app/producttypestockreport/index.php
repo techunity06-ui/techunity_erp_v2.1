@@ -1,4 +1,4 @@
-<?
+<?php 
 session_start(); //start session
 $AJAX = true;
 include("../../config/config.php");
