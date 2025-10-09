@@ -3078,7 +3078,7 @@ function AddFont($family,$style='') {
 		$originalsize = $ttfstat['size']+0;
 		$type = 'TTF';
 		//Generate metrics .php file
-		$s='<?php'."\n";
+		$s='<?php '."\n";
 		$s.='$name=\''.$name."';\n";
 		$s.='$type=\''.$type."';\n";
 		$s.='$desc='.var_export($desc,true).";\n";
@@ -8664,7 +8664,7 @@ function _putTTfontwidths(&$font, $asSubset, $maxUni) {
 		if ($cid==128 && $asSubset && (!file_exists(_MPDF_TTFONTDATAPATH.$font['fontkey'].'.cw127.php'))) {
 			if (is_writable(dirname(_MPDF_TTFONTDATAPATH.'x'))) {
 				$fh = fopen(_MPDF_TTFONTDATAPATH.$font['fontkey'].'.cw127.php',"wb");
-				$cw127='<?php'."\n";
+				$cw127='<?php '."\n";
 				$cw127.='$rangeid='.$rangeid.";\n";
 				$cw127.='$prevcid='.$prevcid.";\n";
 				$cw127.='$prevwidth='.$prevwidth.";\n";

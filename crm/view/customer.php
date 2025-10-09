@@ -195,8 +195,8 @@ $end_year = date("Y",strtotime($financial_year['financial_end_date']));
 														<select class="select2" name="post_crm_yes_no" id="post_crm_yes_no" >
 															<option value="">--Select Yes or No--</option>
 															
-															<option value="0" <?phpif($post_crm_yes_no == "0"){?> selected="selected" <?php}?> >Yes</option>
-															<option value="1" <?phpif($post_crm_yes_no == "1"){?> selected="selected" <?php}?>>No</option>
+															<option value="0" <?php if($post_crm_yes_no == "0"){?> selected="selected" <?php }?> >Yes</option>
+															<option value="1" <?php if($post_crm_yes_no == "1"){?> selected="selected" <?php }?>>No</option>
 														</select>
 													</div>
 												</div>							 

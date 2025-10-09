@@ -120,7 +120,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 											<?php // }
 											?>
 											<?php if (in_array(ADMINISTRATOR_PRODUCT_CREATE, $bulkAccessArray)) { ?>
-												<?phpif ($getspecialConfiguration['interpower_permission'] == 1) { ?>
+												<?php if ($getspecialConfiguration['interpower_permission'] == 1) { ?>
 													<a href="<?= ROOT . ADMINISTRATION_ROOT . 'product_add_ip' ?>"><button
 															class="btn btn-success btn-flat">Add
 															<?= $form ?>
@@ -146,7 +146,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												<th>Sr. NO.</th>
 												<th>Product Image</th>
 												<th>Product Type</th>
-												<?phpif ($getspecialConfiguratio['interpower_permission'] == 1) { ?>
+												<?php if ($getspecialConfiguratio['interpower_permission'] == 1) { ?>
 													<th>Product Description</th>
 													<th>Old Part Code</th>
 													<th>Part Code</th>

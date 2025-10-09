@@ -122,7 +122,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 										<div class="tab-content">
 											<div class="tab-pane active" id="tab_1">
 												<div class="panel-group" id="accordion1">
-													<?php$qry="SELECT mst.*,sales_ordertrn_id,if(mst.project_wise=0,(SELECT product_name FROM product_mst as pro WHERE pro.product_id=mst.product_id) ,(SELECT project_name FROM tbl_project_assign as proj WHERE proj.project_assign_id=mst.product_id)) as product_name,cat.unit_name,mst.description,product_qty,product_rate,product_amount,product.product_icode FROM tbl_sales_ordertrn as mst 
+													<?php $qry="SELECT mst.*,sales_ordertrn_id,if(mst.project_wise=0,(SELECT product_name FROM product_mst as pro WHERE pro.product_id=mst.product_id) ,(SELECT project_name FROM tbl_project_assign as proj WHERE proj.project_assign_id=mst.product_id)) as product_name,cat.unit_name,mst.description,product_qty,product_rate,product_amount,product.product_icode FROM tbl_sales_ordertrn as mst 
 													left join unit_mst as cat on cat.unitid=mst.unit_id 
 													left join product_mst as product on product.product_id=mst.product_id  
 													WHERE sales_ordertrn_status=0 and sales_order_id=".$sales_order_id;
@@ -146,15 +146,15 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																</h4>
 															</div>
 															<div class="panel-collapse collapse  in" id="accordion1_<?=$i?>">
-																<?phpif($rel['order_accept_status']==1){ ?>
+																<?php if($rel['order_accept_status']==1){ ?>
 																	<div class="panel-body">
 																		<table class="table table-bordered" style="font-weight: bold;">
 																			<tbody>
-																				<?phpif($companyConfiguration['design_department']==1 && $rels['bom_id']!=0){ ?>
+																				<?php if($companyConfiguration['design_department']==1 && $rels['bom_id']!=0){ ?>
 																					<tr>
 																						<td colspan="2" style="background: lavender;">Design Department</td>
 																					</tr>
-																					<?phpif($rels['bom_status']==1){ ?>
+																					<?php if($rels['bom_status']==1){ ?>
 																						<tr>
 																							<td width="50%">BOM Assign</td>
 																							<td width="50%">Yes</td>
@@ -163,9 +163,9 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																							<td width="50%">BOM No.</td>
 																							<td width="50%"><?=get_bom_no($dbcon,$rels['bom_id'])?></td>
 																						</tr>
-																					<?php} ?>
-																				<?php} ?>
-																				<?phpif($rels['production_branch_id']!=0){ ?>
+																					<?php } ?>
+																				<?php } ?>
+																				<?php if($rels['production_branch_id']!=0){ ?>
 																					<tr>
 																						<td colspan="2" style="background: lavender;">Sales order wise Branch Planning</td>
 																					</tr>
@@ -173,13 +173,13 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																						<td width="50%">Allocate Branch</td>
 																						<td width="50%"><?=get_branch_name_by_id($dbcon,$rels['production_branch_id'])?></td>
 																					</tr>
-																				<?php} ?>
+																				<?php } ?>
 																				<?=get_reserve_stock_qty($dbcon,$rels['sales_ordertrn_id']);?>
 																				<?=get_reserve_stock_deallocate_qty($dbcon,$rels['sales_ordertrn_id']);?>
 																				<?=get_wo_detail_by_so($dbcon,$rels['sales_ordertrn_id'],$rels['unit_id']);?>
 
 																				<?=get_invoice_no_by_so($dbcon,$rels['sales_ordertrn_id']);?>
-																				<?phpif($rels['short_close_status']==1){ ?>
+																				<?php if($rels['short_close_status']==1){ ?>
 																					<tr>
 																						<td colspan="2" style="background: lavender;">Shortclose Status</td>
 																					</tr>
@@ -191,14 +191,14 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																						<td>Shortclose Qty</td>
 																						<td><?=$rels['short_close_product_qty']?> <?=getunitname($dbcon,$rels['short_close_unit_id']);?></td>
 																					</tr>
-																				<?php} ?>
+																				<?php } ?>
 																			</tbody>
 																		</table>
 																	</div>
-																<?php} ?>
+																<?php } ?>
 															</div>
 														</div>
-														<?php$i++;
+														<?php $i++;
 													} ?>
 												</div>
 											</div>

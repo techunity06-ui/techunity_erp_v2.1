@@ -184,7 +184,7 @@
 			
 			
 		</script>
-		<?phpif($mode=="Edit"){ 
+		<?php if($mode=="Edit"){ 
 				echo "<script>next_page(".$rel['rp_pid'].",'',".$rel['rp_id'].");</script>";
 			} ?>
 	</body>

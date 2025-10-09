@@ -95,9 +95,9 @@
 												  <!-- <th class="nosort">  <input id="checkAll" type="checkbox" onclick="checkAll();"  name="chk[]"/></th> -->
 												  <th>Sales Order No</th>
 												  <th>Sales Order Date</th>
-												   <?phpif($companyConfiguration['customer_show_in_production'] == '1'){ ?>
+												   <?php if($companyConfiguration['customer_show_in_production'] == '1'){ ?>
 												  	<th>Cust Name</th>
-												 <?php} ?>
+												 <?php } ?>
 												  <th>Product Name</th>
 												  <th>Product Category</th>
 												  <th>Request Qty</th>
@@ -108,9 +108,9 @@
 												    <?php if($companyConfiguration['outside_jobwork']){ ?>
 											<th>Jobwork Type</th>
 										<?php } ?>
-												   <?phpif($_SESSION['branch_id']==0){ ?>
+												   <?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													  <?php} ?>
+													  <?php } ?>
 												   <th class="hidden-phone">Action</th>	 			  
 												</tr>
 											</thead>

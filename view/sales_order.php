@@ -157,7 +157,7 @@
 														</div>
 													</div>
 												</div>
-												<?phpif($smode=="quotation_mode") { ?>
+												<?php if($smode=="quotation_mode") { ?>
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="col-md-4 control-label" >Quotation No</label>
@@ -174,7 +174,7 @@
 														</div>
 													</div>
 												</div>
-												<?php} ?>
+												<?php } ?>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
@@ -224,7 +224,7 @@
 															</td>
 															<td data-label="TAX" style="vertical-align:top;">
 																<select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-																	<?phpecho get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); ?>
+																	<?php echo get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); ?>
 																</select>
 															</td>
 															<td  data-label="AMOUNT"  style="vertical-align:top;"> 
@@ -285,7 +285,7 @@
 														<input type="file" class="form-control" id="po_document" name="po_document[]" multiple="multiple" <?=$ttrt?> /> 
 													</div>
 												</div>
-												<?php$get_attch_qry="select * from tbl_so_attch where status=0 and so_id=".$rel['sales_order_id'];
+												<?php $get_attch_qry="select * from tbl_so_attch where status=0 and so_id=".$rel['sales_order_id'];
 												$attch_rs=$dbcon->query($get_attch_qry);
 												while($attch_rel=mysqli_fetch_assoc($attch_rs)){ ?>
 												<div class="col-md-6">
@@ -302,7 +302,7 @@
 												</div>
 												
 												</div>
-												<?php} ?>
+												<?php } ?>
 											</div>
 											<div class="col-md-12">
 												<center>

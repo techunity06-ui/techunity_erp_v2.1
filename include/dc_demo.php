@@ -27,9 +27,9 @@
 									$sel='selected="selected"';
 								}
 								?>
-								<option <?=$sel?> value="<?=$y?>"><?phpecho $y.'-'.($y+1)?></option>	
+								<option <?=$sel?> value="<?=$y?>"><?php echo $y.'-'.($y+1)?></option>	
 								
-								<?php}?>
+								<?php }?>
 								</select>
 								</form>
                           		</div>
@@ -73,9 +73,9 @@
 													$sel='selected="selected"';
 												}
 												?>
-												<option <?=$sel?> value="<?=$y?>"><?phpecho $y.'-'.($y+1)?></option>	
+												<option <?=$sel?> value="<?=$y?>"><?php echo $y.'-'.($y+1)?></option>	
 												
-												<?php}?>
+												<?php }?>
 												</select>
 										</div>
 									</div>
@@ -159,9 +159,9 @@
 													$sel='selected="selected"';
 												}
 												?>
-												<option <?=$sel?> value="<?=$y?>"><?phpecho $y.'-'.($y+1)?></option>	
+												<option <?=$sel?> value="<?=$y?>"><?php echo $y.'-'.($y+1)?></option>	
 												
-												<?php}?>
+												<?php }?>
 												</select>
 										</div>
 									</div>

@@ -79,7 +79,7 @@
 							<div class="col-md-4">Select Vendor </div>
 							<div class="col-md-6">
 							 <select style="width:170px;" class="select2" name="vender_id" id="vender_id" onChange="reload_data();"  >
-									<?phpgetreportvender($dbcon);?>	
+									<?php getreportvender($dbcon);?>	
 								</select></div>
 							</div>	
 														

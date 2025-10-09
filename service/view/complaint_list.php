@@ -103,7 +103,7 @@
 								<input type="hidden" name="" id="follow_id" value="<?= isset($id) ? $id : '' ?>" />
 								<input type="hidden" name="" id="f_type" value="<?= isset($type) ? $type : '' ?>" />
 
-								<?phpif (!$type) { ?>
+								<?php if (!$type) { ?>
 									<div class="col-md-2">
 										<div class="form-group">
 											<label class="control-label">Complaint Status</label>
@@ -113,7 +113,7 @@
 											</select>
 										</div>
 									</div>
-								<?php} ?>
+								<?php } ?>
 
 								<div class="col-md-3">
 									<div class="form-group">

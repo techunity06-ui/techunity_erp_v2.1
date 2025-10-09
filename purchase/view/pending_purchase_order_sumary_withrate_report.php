@@ -365,6 +365,6 @@ if(!in_array(PENDING_PURCHASE_ORDER_SUMMARY_WITHRATE_REPORT_VIEW,$bulkAccessArra
 			$('#logo').css('display','none');
 		}
 	</script>
-	<?phpecho "<script>pending_po_summary_withrate_filter()</script>";?>
+	<?php echo "<script>pending_po_summary_withrate_filter()</script>";?>
 </body>
 </html>

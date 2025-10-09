@@ -71,9 +71,9 @@ $branch_id = $_SESSION['branch_id'];
                                  <tr>
                                    <th>Reference No</th>
                                    <th>Reference Date</th>
-                                   <?phpif($company_config['batch_wise_stock'] == '1'){ ?>
+                                   <?php if($company_config['batch_wise_stock'] == '1'){ ?>
                                    <th>Batch No. / Serial No.</th>
-                                    <?php} ?>
+                                    <?php } ?>
                                    <th>Product Name</th>
                                    <th>Stock</th>
                                    <th class="hidden-phone">Action</th>

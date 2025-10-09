@@ -273,28 +273,28 @@ function get_tax_category_new($dbcon, $eid = '')
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Inquiry Date*</label>
                                                 <div class="col-md-8">
-                                                    <input id="inquiry_date" name="inquiry_date" type="text" class="form-control default-date-picker reuired valid" title="Date" value="<?= $inquiry_date ?>" placeholder="Inquiry Date" <?phpecho ($mode == "view") ? "readonly" : "" ?>>
+                                                    <input id="inquiry_date" name="inquiry_date" type="text" class="form-control default-date-picker reuired valid" title="Date" value="<?= $inquiry_date ?>" placeholder="Inquiry Date" <?php echo ($mode == "view") ? "readonly" : "" ?>>
                                                 </div>
                                             </div>
                                         </div>
-                                        <?phpif ($companyConfiguration['branch_wise_manage'] == 1) { ?>
+                                        <?php if ($companyConfiguration['branch_wise_manage'] == 1) { ?>
                                             <div class="col-md-4">
                                                 <?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], $is_umaboy, true, '', '4', '8'); ?>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Company*</label>
                                                 <div class="col-md-6">
-                                                    <select class="select2" id="cust_id" name="cust_id" onchange="load_cust_person(this.value);copy_inq_name(<?= $companyConfiguration['inq_name_using_comapany'] ?>);" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
+                                                    <select class="select2" id="cust_id" name="cust_id" onchange="load_cust_person(this.value);copy_inq_name(<?= $companyConfiguration['inq_name_using_comapany'] ?>);" <?php echo ($mode == "view") ? "disabled" : "" ?>>
                                                         <?= getcustomer($dbcon, $cust_id) ?>
                                                     </select>
                                                 </div>
-                                                <?phpif ($mode == 'Add') { ?>
+                                                <?php if ($mode == 'Add') { ?>
                                                     <div class="col-md-1">
                                                         <button type="button" id="addcust" onclick="addcustomer()" class="btn btn-primary"><i class="fa fa-plus"></i></button>
                                                     </div>
-                                                <?php} ?>
+                                                <?php } ?>
                                                 <div class="col-md-1">
                                                     <button type="button" id="viewcompany" onclick="preview_cust_dtls()" title="View Company" class="btn btn-primary"><i class="fa fa-eye"></i></button>
                                                 </div>
@@ -304,7 +304,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Contact Person</label>
                                                 <div class="col-md-5">
-                                                    <select class="select2" id="c_con_id" name="c_con_id" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
+                                                    <select class="select2" id="c_con_id" name="c_con_id" <?php echo ($mode == "view") ? "disabled" : "" ?>>
                                                         <?= get_cust_contactperson($dbcon, $rel['c_con_id'], $cust_id); ?>
                                                     </select>
                                                 </div>
@@ -321,27 +321,27 @@ function get_tax_category_new($dbcon, $eid = '')
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Inquiry Name</label>
                                                 <div class="col-md-8">
-                                                    <input type="text" class="form-control" id="inquiry_name" name="inquiry_name" placeholder="Inquiry Name" value="<?= $rel['inquiry_name'] ?>" <?phpecho ($mode == "view") ? "readonly" : "" ?>>
+                                                    <input type="text" class="form-control" id="inquiry_name" name="inquiry_name" placeholder="Inquiry Name" value="<?= $rel['inquiry_name'] ?>" <?php echo ($mode == "view") ? "readonly" : "" ?>>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <?phpif ($getspecialConfiguration['austar_permission'] != 1) { ?>
+                                        <?php if ($getspecialConfiguration['austar_permission'] != 1) { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Closing Date</label>
                                                     <div class="col-md-8">
-                                                        <input id="closing_date" name="closing_date" autocomplete="off" type="text" class="form-control default-date-picker" title="Date" value="<?= $closing_date ?>" placeholder="Closing Date" <?phpecho ($mode == "view") ? "readonly" : "" ?>>
+                                                        <input id="closing_date" name="closing_date" autocomplete="off" type="text" class="form-control default-date-picker" title="Date" value="<?= $closing_date ?>" placeholder="Closing Date" <?php echo ($mode == "view") ? "readonly" : "" ?>>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <!-- <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Territory</label> 
                                                     <div class="col-md-8">
-                                                        <select class="select2" id="t_id" name="t_id" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
-                                                            <?php//=get_all_territory($dbcon,$rel['t_id']);
+                                                        <select class="select2" id="t_id" name="t_id" <?php echo ($mode == "view") ? "disabled" : "" ?>>
+                                                            <?php //=get_all_territory($dbcon,$rel['t_id']);
                                                             ?>
                                                         </select>
                                                     </div>
@@ -351,7 +351,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Stage*</label>
                                                 <div class="col-md-8">
-                                                    <select class="select2" id="opp_id" name="opp_id" onchange="show_lost_reason();change_inquiry_stage(this.value);" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
+                                                    <select class="select2" id="opp_id" name="opp_id" onchange="show_lost_reason();change_inquiry_stage(this.value);" <?php echo ($mode == "view") ? "disabled" : "" ?>>
                                                         <?= get_inquiry_stage($dbcon, $rel['opp_id']); ?>
                                                     </select>
                                                 </div>
@@ -366,12 +366,12 @@ function get_tax_category_new($dbcon, $eid = '')
                                                 </div>
                                             </div>
                                         </div>
-                                        <?phpif ($getspecialConfiguration['austar_permission'] != 1) { ?>
+                                        <?php if ($getspecialConfiguration['austar_permission'] != 1) { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Sales Stage</label>
                                                     <div class="col-md-8">
-                                                        <select class="select2" id="sales_stage_id" name="sales_stage_id" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
+                                                        <select class="select2" id="sales_stage_id" name="sales_stage_id" <?php echo ($mode == "view") ? "disabled" : "" ?>>
                                                             <option value="">Choose Sales Stage</option>
                                                             <?= get_master_category_dtl($dbcon, $rel['sales_stage_id'], 7,'',''); //7:Sales Stage
                                                             ?>
@@ -379,12 +379,12 @@ function get_tax_category_new($dbcon, $eid = '')
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Type</label>
                                                 <div class="col-md-8">
-                                                    <select class="select2" id="inquiry_type_id" name="inquiry_type_id" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
+                                                    <select class="select2" id="inquiry_type_id" name="inquiry_type_id" <?php echo ($mode == "view") ? "disabled" : "" ?>>
                                                         <option value="">Choose Opportunity Type</option>
                                                         <?= get_master_category_dtl($dbcon, $rel['inquiry_type_id'], 8,'',''); //8:Type
                                                         ?>
@@ -434,19 +434,19 @@ function get_tax_category_new($dbcon, $eid = '')
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Source </label>
                                                     <div class="col-md-8"> 
-                                                        <select class="select2" id="rb_id" name="rb_id"<?phpecho ($mode == "view") ? "disabled" : "" ?>>
-                                                            <?php//=get_refer_by($dbcon,$rel['rb_id']);
+                                                        <select class="select2" id="rb_id" name="rb_id"<?php echo ($mode == "view") ? "disabled" : "" ?>>
+                                                            <?php //=get_refer_by($dbcon,$rel['rb_id']);
                                                             ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div> -->
-                                        <?phpif ($getspecialConfiguration['austar_permission'] != 1) { ?>
+                                        <?php if ($getspecialConfiguration['austar_permission'] != 1) { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Inquiry Category</label>
                                                     <div class="col-md-8">
-                                                        <select class="select2" id="inquiry_cat_id" name="inquiry_cat_id" <?phpecho ($mode == "view") ? "disabled" : "" ?>>
+                                                        <select class="select2" id="inquiry_cat_id" name="inquiry_cat_id" <?php echo ($mode == "view") ? "disabled" : "" ?>>
                                                             <option value="">Choose Inquiry Category</option>
                                                             <?= get_master_category_dtl($dbcon, $rel['inquiry_cat_id'], 9,'',''); //9:Category
                                                             ?>
@@ -454,13 +454,13 @@ function get_tax_category_new($dbcon, $eid = '')
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php}
+                                        <?php }
                                         ?>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Currency</label>
                                                 <div class="col-md-8">
-                                                    <select class="select2" id="currency_id" name="currency_id" onchange="get_symbol();currency_rate_c(<?php$is_umaboy ?>);" <?phpecho ($mode == "view" || $is_umaboy) ? "disabled" : "" ?>>
+                                                    <select class="select2" id="currency_id" name="currency_id" onchange="get_symbol();currency_rate_c(<?php $is_umaboy ?>);" <?php echo ($mode == "view" || $is_umaboy) ? "disabled" : "" ?>>
                                                         <?= getcurrency($dbcon, $rel['currency_id']) ?>
                                                     </select>
                                                 </div>
@@ -495,7 +495,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                 </div>
                                             </div>
                                         </div>
-                                        <?phpif ($getspecialConfiguration['austar_permission'] != 1) { ?>
+                                        <?php if ($getspecialConfiguration['austar_permission'] != 1) { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Priority</label>
@@ -506,14 +506,14 @@ function get_tax_category_new($dbcon, $eid = '')
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <?php  //Show Flp field only if add mode
                                         if ($mode == 'Add') { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Task</label>
                                                     <div class="col-md-8">
-                                                        <?php//=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task
+                                                        <?php //=get_master_category_dtl($dbcon,$task_type_id,10,"",1);//10:Task
                                                         ?>
                                                         <select class="select2" id="task_type_id" name="task_type_id" title="Choose Task Type">
                                                             <option value="">Choose Task Type</option>
@@ -601,7 +601,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                 </div>
                                             </div>
                                         </div>
-                                        <?phpif ($getspecialConfiguration['elcon_permission'] == 1 || $getspecialConfiguration['filter_concept_permission'] == 1) { ?>
+                                        <?php if ($getspecialConfiguration['elcon_permission'] == 1 || $getspecialConfiguration['filter_concept_permission'] == 1) { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Project Name</label>
@@ -610,8 +610,8 @@ function get_tax_category_new($dbcon, $eid = '')
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
-                                        <?phpif ($allow_objection == 1) { ?>
+                                        <?php } ?>
+                                        <?php if ($allow_objection == 1) { ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Objection</label>
@@ -622,7 +622,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <div class="clearfix"></div>
                                         <hr />
                                         <div class="col-md-12">
@@ -659,15 +659,15 @@ function get_tax_category_new($dbcon, $eid = '')
                                                             <div class="form-group" style="margin-top:20px;overflow-x:scroll;">
                                                                 <table class="display table table-bordered table-striped">
                                                                     <thead>
-                                                                        <?phpif ($mode != "view") { ?>
+                                                                        <?php if ($mode != "view") { ?>
                                                                             <tr>
-                                                                                <?phpif ($companyConfiguration['category_selection_active'] == 1) { ?>
+                                                                                <?php if ($companyConfiguration['category_selection_active'] == 1) { ?>
                                                                                     <th width="15%" class="text-center">Product Category</th>
-                                                                                <?php} ?>
+                                                                                <?php } ?>
                                                                                 <th width="25%" class="text-center">Product Name</th>
-                                                                                <?phpif ($getspecialConfiguration['reciclar'] == 1) { ?>
+                                                                                <?php if ($getspecialConfiguration['reciclar'] == 1) { ?>
                                                                                     <th width="15%" class="text-center">Reciclar Category</th>
-                                                                                <?php} ?>
+                                                                                <?php } ?>
                                                                                 <!--<th width="15%" class="text-center">Product Group</th>-->
                                                                                 <!--<th width="10%" class="text-center">Level</th>-->
                                                                                 <th width="" class="text-center">Unit</th>
@@ -676,18 +676,18 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                                 <th width="" class="text-center">Amount <span class="currency_icon"> </span></th>
                                                                                 <th width="2%" class="text-center">Action</th>
                                                                             </tr>
-                                                                        <?php} ?>
+                                                                        <?php } ?>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <?phpif ($mode != "view") { ?>
+                                                                        <?php if ($mode != "view") { ?>
                                                                             <tr>
-                                                                                <?phpif ($companyConfiguration['category_selection_active'] == 1) { ?>
+                                                                                <?php if ($companyConfiguration['category_selection_active'] == 1) { ?>
                                                                                     <td>
-                                                                                        <select class="select2" name="cat_id" id="cat_id" title="Select Category" <?phpif ($companyConfiguration['cat_wise_product_load'] == 1) { ?> onchange="product_load()" <?php} ?>>
+                                                                                        <select class="select2" name="cat_id" id="cat_id" title="Select Category" <?php if ($companyConfiguration['cat_wise_product_load'] == 1) { ?> onchange="product_load()" <?php } ?>>
                                                                                             <?= get_all_category($dbcon, 0); ?>
                                                                                         </select>
                                                                                     </td>
-                                                                                <?php} ?>
+                                                                                <?php } ?>
                                                                                 <td style="max-width: 300px;">
                                                                                     <!--<select class="select2" id="product_id" name="product_id" onchange="load_product_dtls(this.value)">
                                                                             <=getproduct_typewise($dbcon,"",$crm_pro_type,$crm_pro_search);?>
@@ -697,18 +697,18 @@ function get_tax_category_new($dbcon, $eid = '')
 
                                                                                     <!-- harshil :- tempory close karyu che time layi ne update karavu <button type="button" id="projectItem" onclick="load_project_item()" title="View Project Wise Item List" class="btn btn-primary" style="display: none;">View Item List <i class="fa fa-plus"></i></button>-->&nbsp;&nbsp;&nbsp;
                                                                                     <button type="button" id="productHistory" onclick="load_product_history()" title="View Product History" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></button>&nbsp;&nbsp;&nbsp;
-                                                                                    <?phpif ($getspecialConfiguration['invoite_permission'] != 1 && $getspecialConfiguration['smpl_permission'] != '1') { ?>
+                                                                                    <?php if ($getspecialConfiguration['invoite_permission'] != 1 && $getspecialConfiguration['smpl_permission'] != '1') { ?>
                                                                                         <button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" onclick="showproduct()"><i class="fa fa-plus"></i> Add Product</button>
-                                                                                    <?php} ?>
+                                                                                    <?php } ?>
                                                                                 </td>
 
-                                                                                <?phpif ($getspecialConfiguration['reciclar'] == 1) { ?>
+                                                                                <?php if ($getspecialConfiguration['reciclar'] == 1) { ?>
                                                                                     <td width="15%" class="text-center">
                                                                                         <select class="select2" name="parent_cat_id" id="parent_cat_id" title="Parent Category">
                                                                                             <?= get_all_reciclare_category($dbcon, 0); ?>
                                                                                         </select>
                                                                                     </td>
-                                                                                <?php} ?>
+                                                                                <?php } ?>
                                                                                 <td>
                                                                                     <!-- <select class="select2" name="unitid" id="unitid" title="Select Unit" onchange="getrate();">
                                                                             <= getunit($dbcon, 0); ?>
@@ -742,15 +742,15 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                                 <td style="vertical-align:middle;">
                                                                                     <input type="hidden" id="edit_id" name="edit_id" value="">
                                                                                     <input type='hidden' name='pro_cal_type' id='pro_cal_type' value='' />
-                                                                                    <?phpif ($getspecialConfiguration['durva_permission'] == 1) { ?>
+                                                                                    <?php if ($getspecialConfiguration['durva_permission'] == 1) { ?>
                                                                                         <input type="button" name="addrow1" id="addrow1" onClick="open_batch_wise_qty()" class="btn btn-primary product_add_batch_wise" value="Add" />
                                                                                         <button type="button" class="btn btn-primary" id="inq_trn_btn" style=" display:none;" onclick="add_field()">Add</button>
-                                                                                    <?php} else { ?>
+                                                                                    <?php } else { ?>
                                                                                         <button type="button" class="btn btn-primary" id="inq_trn_btn" onclick="add_field()">Add</button>
-                                                                                    <?php} ?>
+                                                                                    <?php } ?>
                                                                                 </td>
                                                                             </tr>
-                                                                        <?php} ?>
+                                                                        <?php } ?>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -826,7 +826,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                     <!-- Attachments Tab Start -->
                                                     <div role="tabpanel" class="tab-pane" id="attch-section">
                                                         <div class="form-group" style="margin-top:20px;">
-                                                            <?phpif ($mode != 'view') { ?>
+                                                            <?php if ($mode != 'view') { ?>
                                                                 <table class="display table table-bordered table-striped">
                                                                     <thead>
                                                                         <tr>
@@ -849,7 +849,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
-                                                            <?php} ?>
+                                                            <?php } ?>
                                                         </div>
                                                         <div class="form-group" style="margin-top:20px;" id="inq_attch_trn_div"></div>
                                                     </div>
@@ -949,11 +949,11 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                                                 <a onclick="setFormSubmitting();" href="<?= ROOT . CRM_ROOT . 'quotation_print/' . $get_quot_rel['quotation_id'] ?>" type="button" class="btn btn-primary" target="_blank"> <i class="fa fa-eye"></i> View</a>
                                                                                             </td>
                                                                                         </tr>
-                                                                                    <?php} ?>
+                                                                                    <?php } ?>
                                                                                 </tbody>
                                                                             </table>
-                                                                        <?php} ?>
-                                                                        <?php} ?>
+                                                                        <?php } ?>
+                                                                        <?php } ?>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -982,7 +982,7 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                         } ?>
                                                                         <tr>
                                                                             <td width="25%" class="text-left"><strong>Task</strong> </td>
-                                                                            <?php$tsk_type = "";
+                                                                            <?php $tsk_type = "";
                                                                             $tsk_due_time = strtotime($task_rel['task_due_date']);
 
                                                                             if ($task_rel['task_status'] == '1') {
@@ -992,14 +992,14 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                                 }
                                                                             ?>
                                                                                 <td width="25%" class="text-center btn-success">Completed <?= $tsk_type ?></td>
-                                                                            <?php} else {
+                                                                            <?php } else {
                                                                                 $cur_time = strtotime(date('Y-m-d H:i:s'));
                                                                                 if ($tsk_due_time < $cur_time) {
                                                                                     $tsk_type = "<label style='background:#d9534f;'>(Delayed)</label>";
                                                                                 }
                                                                             ?>
                                                                                 <td width="25%" class="text-center btn-warning">Pending <?= $tsk_type ?></td>
-                                                                            <?php} ?>
+                                                                            <?php } ?>
                                                                             <td width="25%" class="text-left">
                                                                                 Completion Date: <?= $task_completion_date ?>
                                                                             </td>
@@ -1055,14 +1055,14 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                                             <th>Remarks</th>
                                                                                         </thead>
                                                                                         <tbody>
-                                                                                            <?phpwhile ($flp_rel = mysqli_fetch_assoc($task_flp_qry_rs)) { ?>
+                                                                                            <?php while ($flp_rel = mysqli_fetch_assoc($task_flp_qry_rs)) { ?>
                                                                                                 <td width="20%"><?= $flp_rel['user_name'] ?></td>
                                                                                                 <td width="20%"><?= date("d-M-Y h:i A", strtotime($flp_rel['flp_date'])) ?></td>
                                                                                                 <td width="60%"><?= $flp_rel['task_flp_remark'] ?></td>
-                                                                                            <?php} ?>
+                                                                                            <?php } ?>
                                                                                         </tbody>
                                                                                     </table>
-                                                                                <?php} ?>
+                                                                                <?php } ?>
                                                                             </td>
                                                                         </tr>
                                                                     <?php  } else if ($task_rel['entry_type'] == '2') {
@@ -1091,14 +1091,14 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                                 }
                                                                             ?>
                                                                                 <td width="25%" class="text-center btn-success">Completed <?= $tsk_type ?></td>
-                                                                            <?php} else {
+                                                                            <?php } else {
                                                                                 $cur_time = strtotime(date('Y-m-d H:i:s'));
                                                                                 if ($tsk_due_time < $cur_time) {
                                                                                     $tsk_type = "<label style='background:#d9534f;'>(Delayed)</label>";
                                                                                 }
                                                                             ?>
                                                                                 <td width="25%" class="text-center btn-warning">Pending <?= $tsk_type ?></td>
-                                                                            <?php} ?>
+                                                                            <?php } ?>
                                                                             <td width="25%" class="text-left">
                                                                                 Owner: <?= $task_rel['user_name'] ?>
                                                                             </td>
@@ -1128,9 +1128,9 @@ function get_tax_category_new($dbcon, $eid = '')
                                                                         <tr>
                                                                             <td colspan="4" class="text-left" style="border-bottom: 1px solid #000 !important;"></td>
                                                                         </tr>
-                                                                    <?php} ?>
-                                                                <?php} ?>
-                                                                <?php} ?>
+                                                                    <?php } ?>
+                                                                <?php } ?>
+                                                                <?php } ?>
                                                             </table>
                                                         </div>
                                                     </div>
@@ -1141,12 +1141,12 @@ function get_tax_category_new($dbcon, $eid = '')
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="clearfix"></div>
-                                    <?phpif ($mode != 'view') { ?>
+                                    <?php if ($mode != 'view') { ?>
                                         <div class="col-md-12 text-center">
                                             <button type="submit" class="btn btn-success" id="save" name="save">Submit</button>
                                             <a href="<?= ROOT . CRM_ROOT . 'inquiry_list' ?>" type="button" class="btn btn-danger">Cancel</a>
                                         </div>
-                                    <?php} ?>
+                                    <?php } ?>
                             </div>
                     </div>
                     <!--Vendor row end-->
@@ -1270,13 +1270,13 @@ function get_tax_category_new($dbcon, $eid = '')
                 format: 'dd-mm-yyyy',
                 autoclose: true,
             });
-        <?php} else {  ?>
+        <?php } else {  ?>
             $('.default-date-picker').datepicker({
                 format: 'dd-mm-yyyy',
                 autoclose: true,
                 startDate: today,
             });
-        <?php}  ?>
+        <?php }  ?>
 
         if (typeof CKEDITOR !== 'undefined') {
             CKEDITOR.replace('product_desc', {
@@ -1289,9 +1289,9 @@ function get_tax_category_new($dbcon, $eid = '')
             console.error('CKEditor is not loaded');
         }
 
-        <?phpif ($mode == 'Add') { ?>
+        <?php if ($mode == 'Add') { ?>
             $('#task_type_id').select2('readonly', true);
-        <?php} ?>
+        <?php } ?>
         /*$(".form_datetime-meridian").datetimepicker({
             format: "dd-mm-yyyy HH:ii P",
             showMeridian: true,
@@ -1321,9 +1321,9 @@ function get_tax_category_new($dbcon, $eid = '')
             $('#inquiry_date').datepicker({
             format: 'dd-mm-yyyy',
             autoclose: true
-            <?phpif ($mode == 'Add') { ?>
+            <?php if ($mode == 'Add') { ?>
             ,startDate: 'd'//don't allow today and past dates
-            <?php} ?>
+            <?php } ?>
             });
         });*/
         $(function() {

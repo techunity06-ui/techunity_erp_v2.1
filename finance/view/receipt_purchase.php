@@ -59,14 +59,14 @@ left join tbl_common_mst as pay on pay.common_mst_id=rec.payment_mode_id and com
 							  if($_REQUEST['report']=='report')
 								{?>
 							  <li><a href="<?=ROOT.FINANCE_ROOT.'payment_list'?>">Party Wise Payment Report</a></li>
-							<?php}
+							<?php }
 							else if($_REQUEST['report']=='0'){?>
 							  <li><a href="<?=ROOT.FINANCE_ROOT.'payment_list/'.$rel['invoice_id']?>">Receipt Payment</a></li>
 							
 							<?php }else
 							{?>
 							  <li><a href="<?=ROOT.FINANCE_ROOT.'payment_list'?>">Payment List</a></li>
-							 <?php}?> 
+							 <?php }?> 
 						  </ul>
 						 </div>
 					</section>
@@ -84,10 +84,10 @@ left join tbl_common_mst as pay on pay.common_mst_id=rec.payment_mode_id and com
 								<center>
 								<div class="form-group resspace">
 							  <button type="submit" class="btn btn-danger" onClick="PrintMe('receipt_print');">Print</button>
-							<?phpif($_REQUEST['report']=="report")
+							<?php if($_REQUEST['report']=="report")
 							{?>
 							<a href="<?=ROOT.FINANCE_ROOT.'payment_list'?>" type="button" class="btn btn-success">Cancel</a>
-							<?php}
+							<?php }
 							else if($_REQUEST['report']=='0')
 							{
 							?>
@@ -97,7 +97,7 @@ left join tbl_common_mst as pay on pay.common_mst_id=rec.payment_mode_id and com
 							else
 							{?>
 							<a href="<?=ROOT.FINANCE_ROOT.'payment_list'?>" type="button" class="btn btn-success">Cancel</a>
-							<?php}?> 
+							<?php }?> 
 						<!--<input type="button" name="printpdf" id="printpdf" class="btn btn-default" value="Export to PDF" onclick="make_pdf()" />-->
 								</div>	
 								
@@ -197,12 +197,12 @@ border: 1px solid; padding:17px 0 0;"  width="100%">
 				<td colspan="3" style="border-bottom:1px solid black;border-right:none;border-left: none;" width="30%"><span style=""><?=$rel['payment_mode']?> </span> </td>
 				<td colspan="3" style="border-right:1px solid black;text-align:right;padding:5px;border-bottom:1px solid black;border-left: none !important;" width="40%"></td>
 			</tr>
-			<?phpif(strtolower($rel['payment_mode'])=="cheque"){?>
+			<?php if(strtolower($rel['payment_mode'])=="cheque"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style="border:none !important;"><span style="margin-left:5px;">PAYMENT DETAIL  :  </span>  </td>
 				<td colspan="6" style="border-bottom:1px solid black;border-right:1px solid black;border-left: none;"><span style=""><?= $rel['bank_name']." ( NO. :".$rel['cheque_dtl']." ) ";?> </span> </td>
 			</tr>
-			<?php}?>
+			<?php }?>
 			
 			
 			</table>

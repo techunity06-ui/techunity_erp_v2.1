@@ -87,9 +87,9 @@
 													<th>Total Qty</th>
 													<th>Working Qty</th>
 													<th>Used Qty</th>
-													<?phpif($_SESSION['branch_id']==0){ ?>
+													<?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													  <?php} ?>
+													  <?php } ?>
 													<th class="hidden-phone">Action</th>
 												</tr>
 												

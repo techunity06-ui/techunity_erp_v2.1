@@ -94,10 +94,10 @@ $mode="Print";
 										<div class="col-xs-10">
 											<select class="form-control" name="sales_order_id" id="sales_order_id" onchange="load_job_work_data()">
 												<option value="">Select O.A No</option>
-												<?php$query = $dbcon->query("SELECT sales_order_id, sales_order_no FROM tbl_sales_order WHERE sales_order_status = 0 AND order_accept_status = 1 AND company_id = '".$_SESSION['company_id']."' ORDER BY sales_order_id DESC");
+												<?php $query = $dbcon->query("SELECT sales_order_id, sales_order_no FROM tbl_sales_order WHERE sales_order_status = 0 AND order_accept_status = 1 AND company_id = '".$_SESSION['company_id']."' ORDER BY sales_order_id DESC");
 												while($rel=brp_mysqli_fetch_assoc($query)){ ?>
 													<option value="<?=$rel['sales_order_id'];?>"><?=$rel['sales_order_no'];?></option>
-												<?php} ?>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
@@ -232,7 +232,7 @@ function PrintMe(DivID) {
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
 //  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
 docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 docprint.document.write('<style type="text/css">');

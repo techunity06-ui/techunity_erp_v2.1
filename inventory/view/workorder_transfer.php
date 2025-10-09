@@ -59,7 +59,7 @@
 			<?php include_once($include.'left_menu.php');?>
 			<section id="main-content">
 				<section class="wrapper">
-					<?php//include_once('../include/equick_link.php');?>
+					<?php //include_once('../include/equick_link.php');?>
 					<div class="row">
 						<div class="col-lg-12">
 							<section class="panel">
@@ -112,9 +112,9 @@
 			                                          </div>
 			                                       </div>
 			                                    </div>
-			                                <?php}else{ ?>
+			                                <?php }else{ ?>
 			                                       <input type="hidden" name="branch_id" id="branch_id" value="<?=$company_config['default_branch_id']?>" />
-			                                    <?php} ?>									
+			                                    <?php } ?>									
 											</div>	
 											
 											<div class="col-md-12 mtop20">

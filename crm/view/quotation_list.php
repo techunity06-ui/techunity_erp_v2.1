@@ -227,11 +227,11 @@ $cnyts = explode(",", get_quot_lost_taxable_total($dbcon));
 											</div>
 										</div>
 									</div>
-									<?phpif ($companyConfiguration['branch_wise_manage'] == 1) { ?>
+									<?php if ($companyConfiguration['branch_wise_manage'] == 1) { ?>
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true, 'load_quotation_datatable()', '4', '8'); ?>
 										</div>
-									<?php} ?>
+									<?php } ?>
 
 									<div class="col-md-4">
 										<div class="form-group">
@@ -263,18 +263,18 @@ $cnyts = explode(",", get_quot_lost_taxable_total($dbcon));
 													<th>Quotation No</th>
 													<th>Quotation Date</th>
 													<th>Customer</th>
-													<?phpif ($getspecialConfiguration['power_drive'] == 1) { ?>
+													<?php if ($getspecialConfiguration['power_drive'] == 1) { ?>
 														<th>Item code</th>
 														<th>specification</th>
-													<?php} ?>
+													<?php } ?>
 													<th>Inquiry</th>
 
 													<th>Stage</th>
 													<th>City</th>
 													<th>Amount</th>
-													<?phpif ($getspecialConfiguration['durva_permission'] == 1) { ?>
+													<?php if ($getspecialConfiguration['durva_permission'] == 1) { ?>
 														<th>Subject</th>
-													<?php} ?>
+													<?php } ?>
 													<th>Owner</th>
 													<th>Assing User</th>
 													<th>Approval</th>

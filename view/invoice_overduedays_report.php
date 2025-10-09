@@ -86,7 +86,7 @@
 							<div class="col-md-4">Select Customer </div>
 							<div class="col-md-6">
 							 <select style="width:170px;" class="select2" name="cust_id" id="cust_id" onChange="reload_data();"  >
-									<?phpgetreportcust($dbcon);?>	
+									<?php getreportcust($dbcon);?>	
 								</select></div>
 							</div>	
 														

@@ -106,7 +106,7 @@ $order_date='';$dispatch_date='';
 											</tr>
 										</thead>
 										<tbody>
-											<?php$qry="select trn.*, product.product_name, product.product_icode, batch.stock_id, stock.batch_no,batch.qty FROM `tbl_returnable_channal_item` as trn left join tbl_returnable_batch_stock_tmp as batch on batch.returnable_trn_id = trn.id left join tbl_stock_trn as stock ON stock.stock_id = batch.stock_id left join product_mst as product on product.product_id=trn.item_id where trn.status=0 and trn.returnable_id=".$rel['id'];
+											<?php $qry="select trn.*, product.product_name, product.product_icode, batch.stock_id, stock.batch_no,batch.qty FROM `tbl_returnable_channal_item` as trn left join tbl_returnable_batch_stock_tmp as batch on batch.returnable_trn_id = trn.id left join tbl_stock_trn as stock ON stock.stock_id = batch.stock_id left join product_mst as product on product.product_id=trn.item_id where trn.status=0 and trn.returnable_id=".$rel['id'];
 											$result=$dbcon->query($qry);		
 											$i=1;
 											$cnt=mysqli_num_rows($result);
@@ -122,7 +122,7 @@ $order_date='';$dispatch_date='';
 													<td class="text-center"><?=$rel['channal_id']?></td>
 													<td class="text-center"><?=date('d/m/Y',strtotime($rel['challan_date']))?></td>
 												</tr>
-											<?php$i++;
+											<?php $i++;
 										} ?>
 										</tbody>
 									</table>

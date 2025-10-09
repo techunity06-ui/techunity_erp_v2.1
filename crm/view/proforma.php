@@ -219,7 +219,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                     <div class="form-group">
                                                         <label class="col-md-4 control-label">Proforma Invoice Date*</label>
                                                         <div class="col-md-8 col-xs-12">
-                                                            <input id="invoice_date" name="invoice_date" type="text" class="form-control default-date-picker required valid" title="Invoice Date" placeholder="Invoice Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['invoice_date']));}?>" placeholder="Invoice Date">
+                                                            <input id="invoice_date" name="invoice_date" type="text" class="form-control default-date-picker required valid" title="Invoice Date" placeholder="Invoice Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['invoice_date']));}?>" placeholder="Invoice Date">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -259,7 +259,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?phpif($getspecialConfiguration['umaboy_permission']=="1" || $getspecialConfiguration['umaboy_permission']=="1"){ ?>
+                                            <?php if($getspecialConfiguration['umaboy_permission']=="1" || $getspecialConfiguration['umaboy_permission']=="1"){ ?>
                                                 <div class="col-md-12">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -322,7 +322,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                         </div>
                                                     </div>
                                                 </div>
-                                            <?php} ?>
+                                            <?php } ?>
                                             <div class="col-md-12">
                                                 <div class="col-md-4 currency_div"  style="<?php if($mode=='Edit' && $rel['currency_enable']==1){ echo "display:block";  }else{echo 'display:block';}  ?>">
                                                     <div class="form-group">
@@ -457,7 +457,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                         <!-- <th width="5%" class="text-center"></th> -->
                                                                         <?php if($companyConfiguration['category_selection_active']==1){ ?>
                                                                             <th width="8%" class="text-center">Category</th>
-                                                                        <?php} ?>
+                                                                        <?php } ?>
                                                                         <th width="20%" class="text-center">Product Detail</th>
                                                                         <?php if($getspecialConfiguration['global_eng_permission']==1){?>
                                                                                             <th width="8%" class="text-center">Size</th>
@@ -481,13 +481,13 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                                                         <?=get_all_category($dbcon,$rel['product_category_id']);?>
                                                                                     </select>
                                                                                 </td>
-                                                                            <?php} ?>
+                                                                            <?php } ?>
                                                                             <td data-label="PRODUCT NAME" class="resclear" style="vertical-align:top;">
                                                                                 <input id="product_id" name="product_id" style="width:100%;" placeholder="Select product" onchange="load_productdetail(this.value);get_hsn(this.value);" /><br>
                                                                                 <strong class="hsncode" style="display:none;color:blue">HSN Code : <span id="hsncode"></span></strong>&nbsp;&nbsp;&nbsp;
-                                                                                <?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
+                                                                                <?php if($getspecialConfiguration['oilfield_permission']==1){ ?>
                                                                                 <button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" onclick="showproduct()"><i class="fa fa-plus"></i> Add Product</button>
-                                                                            <?php} ?>
+                                                                            <?php } ?>
                                                                             </td>
                                                                             <?php if($getspecialConfiguration['global_eng_permission']==1){?>
                                                                                     <td>
@@ -594,13 +594,13 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                             <div class="col-md-12"> 
                                                 <div class="col-md-3">
                                                    <div class="form-group">
-                                                        <input type="radio" class="" name="tc_format" id="format1" value="1" onchange="tc_format_view();" <?phpif($rel['tc_format'] == '1'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Format-1                 
+                                                        <input type="radio" class="" name="tc_format" id="format1" value="1" onchange="tc_format_view();" <?php if($rel['tc_format'] == '1'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Format-1                 
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-3">
                                                    <div class="form-group">
-                                                        <input type="radio" class="" name="tc_format" onchange="tc_format_view();" id="format2" value="2" <?phpif($rel['tc_format'] == '2'){ echo 'checked="checked"';}?>> Format-2                 
+                                                        <input type="radio" class="" name="tc_format" onchange="tc_format_view();" id="format2" value="2" <?php if($rel['tc_format'] == '2'){ echo 'checked="checked"';}?>> Format-2                 
                                                     </div>
                                                 </div>
 
@@ -618,7 +618,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                         <div class="form-group">
                                                             <input type="radio" class="" name="terms_type" id="common_terms" value="0" onchange="load_typeswise_terms();" 
 
-                                                            <?phpif($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
+                                                            <?php if($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
                                                         </div>
                                                     </div>
 
@@ -626,7 +626,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                         <div class="form-group">
                                                             <input type="radio" class="" name="terms_type" id="party_terms" value="1" onchange="load_typeswise_terms();" 
 
-                                                            <?phpif($rel['terms_type'] == '1'){ echo 'checked="checked"';}?> > Party Terms 
+                                                            <?php if($rel['terms_type'] == '1'){ echo 'checked="checked"';}?> > Party Terms 
                                                         </div>
                                                     </div>
 
@@ -634,7 +634,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                         <div class="form-group">
                                                             <input type="radio" class="" name="terms_type" id="ledger_terms" value="2" onchange="load_typeswise_terms();" 
 
-                                                            <?phpif($rel['terms_type'] == '2'){ echo 'checked="checked"';}?> > Ledger Terms 
+                                                            <?php if($rel['terms_type'] == '2'){ echo 'checked="checked"';}?> > Ledger Terms 
                                                         </div>
                                                     </div>
 
@@ -642,7 +642,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                         <div class="form-group">
                                                             <input type="radio" class="" name="terms_type" id="quotation_terms" value="3" onchange="load_typeswise_terms();" 
 
-                                                            <?phpif($rel['terms_type'] == '3'){ echo 'checked="checked"';}?> > Quotation Terms 
+                                                            <?php if($rel['terms_type'] == '3'){ echo 'checked="checked"';}?> > Quotation Terms 
                                                         </div>
                                                     </div>
 
@@ -650,14 +650,14 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                                         <div class="form-group">
                                                             <input type="radio" class="" name="terms_type" id="sales_order_terms" value="4" onchange="load_typeswise_terms();" 
 
-                                                            <?phpif($rel['terms_type'] == '4'){ echo 'checked="checked"';}?> > Sales Order Terms 
+                                                            <?php if($rel['terms_type'] == '4'){ echo 'checked="checked"';}?> > Sales Order Terms 
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 multi_condition">
                                                         <div class="form-group">
                                                             <input type="radio" class="" name="terms_type" id="multi_condition" value="5" onchange="load_typeswise_terms();" 
 
-                                                            <?phpif($rel['terms_type'] == '5'){ echo 'checked="checked"';}?> > Multi Condition 
+                                                            <?php if($rel['terms_type'] == '5'){ echo 'checked="checked"';}?> > Multi Condition 
                                                         </div>
                                                     </div>
 
@@ -679,7 +679,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                             <div class="form-group">
                                                 <label class="col-md-5 control-label">Total * <span class="currency_icon"></span></label>
                                                 <div class="col-md-5 col-xs-11">
-                                                    <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="Total">
+                                                    <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="Total">
                                                 </div>
                                             </div>
                                             <!-- <div class="form-group">
@@ -767,7 +767,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                                         <input type='hidden' name='o_total' id='o_total' value='<?=$rel['g_total']?>' />
                                         <input type='hidden' name='save_print' id='save_print' value='' />
                                         <input type='hidden' name='eid' id='eid' value='<?=$rel['invoice_id']?>' />
-                                        <?php$receiptno= 'rec/'.$invoiceid;?>
+                                        <?php $receiptno= 'rec/'.$invoiceid;?>
                                         <input type='hidden' name='receipt_no' id='receipt_no' value='<?=$receiptno?>' />
                                         <input type='hidden' name='token' id='token' value='<?php echo $token; ?>' />
 
@@ -878,7 +878,7 @@ $sales_pro_search = $companyConfiguration['sales_pro_search'];
                 enterMode: CKEDITOR.ENTER_BR
             });
         </script>
-        <?phpif($mode=="Add")
+        <?php if($mode=="Add")
         {
             echo "<script>show_data();</script>";
 //echo "<script>load_invoiceno(".$load_inv_type.");</script>";

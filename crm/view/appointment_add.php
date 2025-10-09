@@ -282,7 +282,7 @@ else {
 										</div>	
 									</div>
 									<div class="clearfix"></div>
-									<?phpif($mode != 'Add') { ?>
+									<?php if($mode != 'Add') { ?>
 										<div class="col-md-12">
 											<div class="form-group">
 												<label class="col-md-2 control-label">Status</label>
@@ -303,7 +303,7 @@ else {
 												</div>	
 											</div>
 										</div>
-									<?php} ?>
+									<?php } ?>
 									<hr/>
 									<div class="clearfix"></div>
 									

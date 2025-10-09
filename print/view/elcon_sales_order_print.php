@@ -309,12 +309,12 @@ if($rel['consignee_id']==0){
 															<td style="padding-left:5px;border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" >
 																<?php if($row['product_alias_name']){?>
 																	<strong><?=stripcslashes($row['product_alias_name'])?></strong>
-																<?php}else{ ?>
+																<?php }else{ ?>
 																	<strong><?=stripcslashes($row['product_name'])?></strong>
 																	<?php }?>
-																	<?phpif($row['description']){ ?>
+																	<?php if($row['description']){ ?>
 																		<br/>Des : <?=stripcslashes($row['description'])?>
-																	<?php} ?>
+																	<?php } ?>
 																	
 																</td>
 																<td style="text-align:center !important;padding-right:10px;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
@@ -346,9 +346,9 @@ if($rel['consignee_id']==0){
 																<table  border="0" style="font-size:12px;border-collapse:collapse;" cellpadding="0"  cellspacing="0" width="100%" id="">
 																	<tr>
 																		<td colspan="2" width="50%" style="vertical-align:top;font-size:10px;text-align:left  !important"  class="con" >
-																			<?phpif(!empty($rel['so_terms_and_condition'])){ ?>
+																			<?php if(!empty($rel['so_terms_and_condition'])){ ?>
 																				<strong>Terms and Conditions:</strong><br> <?=$rel['so_terms_and_condition']?>
-																				<?php} ?>	<br/><br/>
+																				<?php } ?>	<br/><br/>
 																				<!--<span style="vertical-align:bottom;">E & O.E.</span>-->
 																				
 																			</td>
@@ -477,7 +477,7 @@ if($rel['consignee_id']==0){
 				  docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
 				  docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
 				  docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-				  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+				  docprint.document.write('<head><title><?php echo TITLE;?></title>');
 				//  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
 				docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 				docprint.document.write('<style type="text/css">');

@@ -25,7 +25,7 @@
 							<section class="panel">
 								<header class="panel-heading">
 									<h3 style="float:left;"><?=$form?></h3><br>
-										<?php// include_once('../include/reporthead_menu.php');?>
+										<?php // include_once('../include/reporthead_menu.php');?>
 								</header>	
 								<div class="">
 									<ul class="breadcrumb">
@@ -54,7 +54,7 @@
 											<!--<div class="form-group" style="margin-top:20px;">
 												<div class="col-md-3">
 													<div class="input-group date form_datetime-component">
-														<?php$start=date('01-m-Y');?>
+														<?php $start=date('01-m-Y');?>
 														<input type="hidden" id="from_date"  value="<?=$start?>">
 														<input type="hidden" id="to_date"  value="<?=date('t-m-Y')?>">
 														<input type="text" id="rep_date"  onChange="generate_report_product_service();" class="form-control datepikerdemo" value="">

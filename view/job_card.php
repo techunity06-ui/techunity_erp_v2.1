@@ -31,7 +31,7 @@
          <?php include_once('../include/left_menu.php');?>
          <section id="main-content">
             <section class="wrapper">
-               <?php//include_once('../include/equick_link.php');?>
+               <?php //include_once('../include/equick_link.php');?>
                <div class="row">
                   <div class="col-lg-12">
                      <section class="panel">
@@ -77,7 +77,7 @@
                                                     <div class="form-group">
                                                       <label class="col-md-4 control-label" style="">Date</label>
                                                       <div class="col-md-8 col-xs-11">
-                                                        <input id="job_card_date" name="job_card_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['job_card_date']));}?>" placeholder="Date">
+                                                        <input id="job_card_date" name="job_card_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['job_card_date']));}?>" placeholder="Date">
                                                       </div>
                                                     </div>
                                                   </div>

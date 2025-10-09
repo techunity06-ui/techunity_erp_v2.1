@@ -44,7 +44,7 @@
       <!--main content start-->
            <section id="main-content">
           <section class="wrapper">
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
     		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->
@@ -100,7 +100,7 @@
 						 <div class="form-group">  	
 						  <label class="col-md-4 control-label" >Purchase Bill date </label>
 						  <div class="col-md-6 col-xs-11">
-							<input id="po_date" name="po_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchase Date">
+							<input id="po_date" name="po_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchase Date">
 							</div>
 						 </div>	
 					</div>	
@@ -226,7 +226,7 @@
 							<div class="form-group">
 								<label class="col-md-6 control-label">Total *</label>
 								<div class="col-md-4 col-xs-11">
-									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 					
 								</div>
 							</div>	
@@ -347,7 +347,7 @@
 							<div class="form-group">
 								<label class="col-md-6 control-label">Round Off</label>
 								<div class="col-md-4 col-xs-11">
-								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
+								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
 					
 								</div>
 							</div>
@@ -356,8 +356,8 @@
 								<label class="col-md-6 control-label"> Total  Expense *</label>
 								<div class="col-md-4 col-xs-11">
 								
-								<input id="exp_total" name="exp_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['exp_total'];}?>" placeholder="total"readonly="readonly">
-							<!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+								<input id="exp_total" name="exp_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['exp_total'];}?>" placeholder="total"readonly="readonly">
+							<!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
 							
 								</div>
 							</div>
@@ -366,8 +366,8 @@
 								<label class="col-md-6 control-label">Grand Total *</label>
 								<div class="col-md-4 col-xs-11">
 								
-								<input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
-							<!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+								<input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
+							<!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
 							
 								</div>
 							</div>

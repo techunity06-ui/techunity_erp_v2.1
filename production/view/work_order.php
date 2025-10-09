@@ -113,7 +113,7 @@
 
 									<?php if(in_array(PRODUCTION_WORK_ORDER_SLUG_CREATE,$bulkAccessArray)){	?>
     										<a href="<?=ROOT.PRODUCTION_ROOT.'work_order_add'?>" ><button class="btn btn-success btn-flat" >Create <?=$form?></button></a>
-    									<?php} ?>	
+    									<?php } ?>	
 								</span>
 								<div class="col-md-12"	style="height:10px;" ></div>
 							</header>	
@@ -138,9 +138,9 @@
 											<th>Sc Qty</th>
 											<th>Status</th>
 											<th>Priority</th>
-											<?phpif($company_config['customer_show_in_production']){?>
+											<?php if($company_config['customer_show_in_production']){?>
 											<th>Party Name</th>
-										<?php} ?>
+										<?php } ?>
 											<th>Branch</th>
 											<th class="hidden-phone">Action</th>
 										</tr>

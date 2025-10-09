@@ -10,7 +10,7 @@ ul.summary-list > li {
 </style>
 <div style="text-align:right" class="hidden-phone">
 						<ul class="summary-list" >
-							<?phpif($page_name!="sale_return_create")
+							<?php if($page_name!="sale_return_create")
 							{?>
 							<li class="">
 								<a href="<?=ROOT.'finance/sale_return_create'?>">
@@ -18,7 +18,7 @@ ul.summary-list > li {
 										Create Credit Note
 								</a>
                             </li>
-                            <?php}
+                            <?php }
 							if($page_name!="sale_return_list")
 							{?>
 							<li>
@@ -27,7 +27,7 @@ ul.summary-list > li {
 										Sale Return List
                                 </a>
                             </li>
-							<?php} ?>
+							<?php } ?>
 							
                      </ul>
 		</div>

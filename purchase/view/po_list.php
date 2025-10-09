@@ -134,7 +134,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
          <!--main content start-->
          <section id="main-content">
             <section class="wrapper">
-               <?php//include_once('../include/equick_link.php');?>
+               <?php //include_once('../include/equick_link.php');?>
                <div class="row">
                   <div class="col-lg-12">
                      <!--breadcrumbs start -->
@@ -197,7 +197,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
                            <div class="col-md-3">
                               <?php echo getBranchBox($dbcon, $branch_id, '', false, false, 'reload_data()'); ?>	
                            </div>
-                        <?php} ?>
+                        <?php } ?>
                         <div class="col-md-3">
                   <label class="col-md-4 control-label">Vendor*</label>
                   <div class="col-md-8" style="padding-left: 9px;">

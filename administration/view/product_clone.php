@@ -284,7 +284,7 @@
                                           <label for="Product Type" class="col-md-4 control-label">Purchase GST</label>
                                           <div class="col-md-8 col-xs-11">
                                              <input type="text" class="form-control" id="product_purchase_gst" name="product_purchase_gst" placeholder="Purchase GST" value="<?=$rel['product_purchase_gst']?>" readonly required />
-                                             <?php/*<select class="select2" name="product_purchase_gst" id="product_purchase_gst"  title="Select Unit" required>
+                                             <?php /*<select class="select2" name="product_purchase_gst" id="product_purchase_gst"  title="Select Unit" required>
                                              <?=get_tax_percentage($dbcon,$rel['product_purchase_gst']);?>
                                              </select>*/?>
                                           </div>

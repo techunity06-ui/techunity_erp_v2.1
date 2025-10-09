@@ -341,7 +341,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 														</label>
 													</div>
 												</div>
-												<?phpif ($companyConfiguration['crm_sales_order_user_selecation'] == 1) { ?>
+												<?php if ($companyConfiguration['crm_sales_order_user_selecation'] == 1) { ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4 control-label">Users *</label>
@@ -354,9 +354,9 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} else { ?>
+												<?php } else { ?>
 													<input type="hidden" id="user_id" name="user_id" value="<?= $_SESSION['user_id'] ?>">
-												<?php} ?>
+												<?php } ?>
 												<?php if ($companyConfiguration['outside_jobwork']) { ?>
 													<div class="col-md-4">
 														<div class="form-group">
@@ -396,18 +396,18 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 												<?php } else { ?>
 													<input type="hidden" id="inquiry_type" name="inquiry_type" value="1">
 												<?php } ?>
-												<?phpif ($companyConfiguration['branch_wise_manage'] == 1) { ?>
+												<?php if ($companyConfiguration['branch_wise_manage'] == 1) { ?>
 													<div class="col-md-4">
 														<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true, 'load_inquiry_type_product()', '4', '8'); ?>
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="col-md-4 control-label">Series*</label>
 														<div class="col-md-8 col-xs-12">
 															<select <?= $disable ?> class="select2" name="invoicetype_id" id="invoicetype_id" onchange="load_sono(this.value)" required>
 																<option value="">--Select Series--</option>
-																<?php$chkseri = $dbcon->query("SELECT * FROM tbl_invoicetype WHERE status = 0 AND type_id = 45 AND company_id = " . $_SESSION['company_id'] . " AND financial_year_id = " . $_SESSION['financial_year_id']);
+																<?php $chkseri = $dbcon->query("SELECT * FROM tbl_invoicetype WHERE status = 0 AND type_id = 45 AND company_id = " . $_SESSION['company_id'] . " AND financial_year_id = " . $_SESSION['financial_year_id']);
 																while ($getseri = brp_mysqli_fetch_assoc($chkseri)) {
 																	if ($rel['invoicetype_id'] != '') {
 																?>
@@ -415,7 +415,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																		<option value="<?= $getseri['invoicetype_id'] ?>" <?= ($getseri['invoicetype_id'] == $rel['invoicetype_id']) ? "selected" : "" ?>><?= $getseri['invoice_type'] ?></option>
 																	<?php } else { ?>
 																		<option value="<?= $getseri['invoicetype_id'] ?>" <?= ($getseri['invoicetype_id'] == 22) ? "selected" : "" ?>><?= $getseri['invoice_type'] ?></option>
-																<?php}
+																<?php }
 																} ?>
 															</select>
 														</div>
@@ -438,7 +438,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 													</div>
 												</div>
 
-												<?phpif ($getspecialConfiguration['libra_engineering_permission'] == 1) { ?>
+												<?php if ($getspecialConfiguration['libra_engineering_permission'] == 1) { ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4  control-label">SFG Date*</label>
@@ -447,7 +447,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="col-md-4 control-label">PO No </label>
@@ -573,7 +573,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 														</div>
 													</div>
 												</div>
-												<?phpif ($smode == "quotation_mode" || !empty($rel['quotation_no'])) { ?>
+												<?php if ($smode == "quotation_mode" || !empty($rel['quotation_no'])) { ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4 control-label">Quotation No</label>
@@ -590,8 +590,8 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} ?>
-												<?phpif ($getspecialConfiguration['elcon_permission'] == 1) { ?>
+												<?php } ?>
+												<?php if ($getspecialConfiguration['elcon_permission'] == 1) { ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4 control-label">Co-ordinator</label>
@@ -612,8 +612,8 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} ?>
-												<?phpif ($getspecialConfiguration['elcon_permission'] == 1 || $getspecialConfiguration['filter_concept_permission'] == 1) { ?>
+												<?php } ?>
+												<?php if ($getspecialConfiguration['elcon_permission'] == 1 || $getspecialConfiguration['filter_concept_permission'] == 1) { ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4 control-label">Project Name</label>
@@ -622,7 +622,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="col-md-4 control-label">Payment Terms</label>
@@ -729,7 +729,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 													</div>
 												</div>
 
-												<?phpif ($mode == 'Add' && $smode == '') { ?>
+												<?php if ($mode == 'Add' && $smode == '') { ?>
 													<div class="col-md-4 quotation_detail" style="display: none;">
 														<div class="form-group">
 															<label class="col-md-4 control-label" style="white-space:nowrap">Choose Quotation</label>
@@ -742,7 +742,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<div class="col-md-12">
 													<div class="col-md-4">
 														<div class="form-group">
@@ -760,7 +760,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															<label class="col-md-4 control-label">Transport Address</label>
 															<div class="col-md-8 col-xs-11">
 																<select class="form-control" name="trans_add" id="trans_add">
-																	<?php//=getpaymentterms($dbcon,$rel['payment_terms']);
+																	<?php //=getpaymentterms($dbcon,$rel['payment_terms']);
 																	?>
 																</select>
 																<input type="hidden" name="trans_add_ed" id="trans_add_ed" value="<?= $rel['trans_add'] ?>" />
@@ -819,10 +819,10 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div>
-												<?php} ?>
+												<?php } ?>
 
 
-												<?php//if($getspecialConfiguration['power_drive']==1){ 
+												<?php //if($getspecialConfiguration['power_drive']==1){ 
 												?>
 												<!-- <div class="col-md-4">
 														<div class="form-group">
@@ -869,7 +869,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 														</div>
 													</div> -->
-												<?php//}
+												<?php //}
 												?>
 											</div>
 											
@@ -896,22 +896,22 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																			$btn_search = '<button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="" onclick="show_product_search_modal();" data-tooltip="Add New Company"><i class="fa fa-search"></i> search</button>';
 																		} ?>
 																		<tr id="field">
-																			<?phpif ($companyConfiguration['category_selection_active'] == 1) { ?>
+																			<?php if ($companyConfiguration['category_selection_active'] == 1) { ?>
 																				<th width="8%" class="text-center">Category</th>
-																			<?php} ?>
+																			<?php } ?>
 																			<th width="8%" class="text-center quotation_detail">Choose Quotation</th>
 																			<th width="15%" class="text-center">Product Detail <?= $btn_search ?></th>
-																			<?phpif ($getspecialConfiguration['reciclar'] == 1) { ?>
+																			<?php if ($getspecialConfiguration['reciclar'] == 1) { ?>
 																				<th width="8%" class="text-center">Reciclare Category</th>
-																			<?php} ?>
+																			<?php } ?>
 																			<th width="8%" class="text-center" style="<?= ($getspecialConfiguration['elcon_permission'] == 1) ? '' : 'display:none'; ?>;">Item Code</th>
-																			<?phpif ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
+																			<?php if ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
 																				<th width="8%" class="text-center">HSN Code</th>
 																				<th width="8%" class="text-center">Length</th>
 																				<th width="8%" class="text-center">Pices</th>
-																			<?php} else { ?>
+																			<?php } else { ?>
 																				<th width="8%" class="text-center" style="display: none;">HSN Code</th>
-																			<?php} ?>
+																			<?php } ?>
 																			<th width="8%" class="text-center">Per</th>
 																			<th width="6%" class="text-center">Quantity</th>
 																			<th width="7%" class="text-center">Rate <span class="currency_icon"></span></th>
@@ -924,19 +924,19 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																		</tr>
 																		<input type="hidden" value="1" name="fieldcnt" id="fieldcnt" />
 																		<tr id="field1">
-																			<?phpif ($companyConfiguration['category_selection_active'] == 1) { ?>
+																			<?php if ($companyConfiguration['category_selection_active'] == 1) { ?>
 																				<td data-label="PRODUCT CATEGORY" style="vertical-align:top;">
-																					<select class="select2" title="Select Category" name="product_category_id" id="product_category_id" <?phpif ($companyConfiguration['cat_wise_product_load'] == 1) { ?>onchange="quotation_wise_product_load()" <?php} else { ?>onchange="getProductByCategoryID(this.value)" <?php} ?>>
+																					<select class="select2" title="Select Category" name="product_category_id" id="product_category_id" <?php if ($companyConfiguration['cat_wise_product_load'] == 1) { ?>onchange="quotation_wise_product_load()" <?php } else { ?>onchange="getProductByCategoryID(this.value)" <?php } ?>>
 																						<?= get_all_category($dbcon, $rel['product_category_id']); ?>
 																					</select>
 																				</td>
-																			<?php} ?>
+																			<?php } ?>
 																			<td class="quotation_detail" data-label="QUOTATION DETAIL" style="vertical-align:top;">
 																				<select class="select2" title="Select Quotation" name="mquotation_id" id="mquotation_id" onChange="load_product_data(this.value)">
 																				</select>
 																			</td>
 																			<td data-label="PRODUCT DETAIL" style="vertical-align:top;">
-																				<?phpif ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
+																				<?php if ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
 																					<select class="select2" title="Select product" name="product_id" id="product_id" onChange="load_productdetail(this.value)">
 																						<?= getproduct_typewise($dbcon, '', $type_conf, $sales_pro_search) ?>
 																					</select><br>
@@ -945,9 +945,9 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																						<input type="hidden" id="die_product_id" name="die_product_id" class="form-control" />
 																						<br>
 																					</div>
-																				<?php} else { ?>
+																				<?php } else { ?>
 																					<input id="product_id" name="product_id" style="width:100%;" placeholder="Select Product" onchange="load_product_dtls(this.value);" />
-																				<?php} ?>
+																				<?php } ?>
 																				<br><strong class="hsncode" style="display:none;color:blue">HSN Code : <span id="hsncode"></span></strong>
 																				<br><label id="current_stock" style="display: none;color:red"></label>
 																				<br />
@@ -955,21 +955,21 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																				<br><br>
 																				<button type="button" id="projectItem" onclick="load_project_item()" title="View Project Wise Item List" class="btn btn-primary" style="display: none;">View Item List <i class="fa fa-plus"></i></button>&nbsp;&nbsp;&nbsp;
 																				<button type="button" id="productHistory" onclick="load_product_history()" title="View Product History" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></button>&nbsp;&nbsp;&nbsp;
-																				<?phpif ($getspecialConfiguration['oilfield_permission'] == 1) { ?>
+																				<?php if ($getspecialConfiguration['oilfield_permission'] == 1) { ?>
 																					<button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" onclick="showproduct()"><i class="fa fa-plus"></i> Add Product</button>
-																				<?php} ?>
+																				<?php } ?>
 																			</td>
-																			<?phpif ($getspecialConfiguration['reciclar'] == 1) { ?>
+																			<?php if ($getspecialConfiguration['reciclar'] == 1) { ?>
 																				<td data-label="PRODUCT CATEGORY" style="vertical-align:top;">
 																					<select class="select2" title="Select Category" name="parent_category_id" id="parent_category_id">
 																						<?= get_all_reciclare_category($dbcon, $rel['product_category_id']); ?>
 																					</select>
 																				</td>
-																			<?php} ?>
+																			<?php } ?>
 																			<td data-label="ITEM CODE" style="vertical-align:top; <?= ($getspecialConfiguration['elcon_permission'] == 1) ? '' : 'display:none'; ?>;">
 																				<input type="text" title="Enter ITEM Code" placeholder="ITEM Code" id="product_item_code" name="product_item_code" class="form-control" />
 																			</td>
-																			<?phpif ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
+																			<?php if ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
 																				<td data-label="HSN CODE" style="vertical-align:top;">
 																					<input type="text" title="Enter HSN Code" placeholder="HSN Code" id="product_hsn_code" name="product_hsn_code" class="form-control" />
 																				</td>
@@ -979,14 +979,14 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																				<td data-label="Pices" style="vertical-align:top;">
 																					<input type="text" title="Enter Pices" placeholder="Pices" id="product_pices" name="product_pices" class="form-control" onChange="get_product_detail_calc('',this.value)" />
 																				</td>
-																			<?php} else { ?>
+																			<?php } else { ?>
 																				<td data-label="HSN CODE" style="display: none;vertical-align:top;">
 																					<input type="text" title="Enter HSN Code" placeholder="HSN Code" id="product_hsn_code" name="product_hsn_code" class="form-control" />
 																				</td>
-																			<?php} ?>
+																			<?php } ?>
 																			<td data-label="PER" style="vertical-align:top;">
 																				<select class="form-control" title="Select Unit" placeholder="Unit" name="rate_unit_id" id="rate_unit_id" onchange="load_product_unit();getrate();">
-																					<?php//=getunit($dbcon,0);
+																					<?php //=getunit($dbcon,0);
 																					?>
 																					<option value="0">Select Unit</option>
 																				</select>
@@ -1051,12 +1051,12 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																					$add_field = 'return add_field();';
 																				}
 																				?>
-																				<?phpif ($getspecialConfiguration['durva_permission'] == 1) { ?>
+																				<?php if ($getspecialConfiguration['durva_permission'] == 1) { ?>
 																					<input type="button" name="addrow1" id="addrow1" onClick="open_batch_wise_qty()" class="btn btn-primary product_add_batch_wise" value="Add" />
 																					<button type="button" class="btn btn-primary" id="addrow" style=" display:none;" onclick="add_field()">Add</button>
-																				<?php} else { ?>
+																				<?php } else { ?>
 																					<input type="button" name="addrow" id="addrow" onClick="<?= $add_field ?>" class="btn btn-primary delivary_so_wise" value="Add" />
-																				<?php} ?>
+																				<?php } ?>
 
 
 																				<input type="button" name="addrow" id="addrow" onClick="open_approv_quo1();load_unit_product();delivery_schedule()" class="btn btn-primary delivary_product_wise" value="Add" />
@@ -1065,7 +1065,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																			<input type='hidden' name='pro_cal_type' id='pro_cal_type' value='' />
 																			<input type='hidden' name='s_per' id='s_per' value='<?= $getspecialConfiguration['elcon_permission']; ?>' />
 																		</tr>
-																		<?phpif ($getspecialConfiguration['power_drive'] == 1) { ?>
+																		<?php if ($getspecialConfiguration['power_drive'] == 1) { ?>
 																			<tr>
 																				<th class="text-center">Orange</th>
 																				<th class="text-center">MFG</th>
@@ -1080,7 +1080,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																				<td colspan="2"><input id="repairing" name="repairing" type="text" class="form-control" title="Reparing" placeholder="Reparing" onkeyup="calculate_repairing()"><br><input id="repairing_total" name="repairing_total" type="text" class="form-control" title="Reparing Total" placeholder="Reparing Total" readonly></td>
 																				<td><input id="other" name="other" type="text" class="form-control" title="Other" placeholder="Other" onkeyup="calculate_other()"><br><input id="other_total" name="other_total" type="text" class="form-control" title="Other Total" placeholder="Other Total" readonly></td>
 																			</tr>
-																		<?php} ?>
+																		<?php } ?>
 																	</table>
 																</div>
 															</div>
@@ -1122,7 +1122,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																			if ($fieldcnt == 1) { ?>
 																				<div class="col-md-12 margin_row">
 																				<div class="row">
-																				<?php} ?>
+																				<?php } ?>
 																				<div class="col-md-4">
 																				<input type="hidden" name="fid" data-id="<?=$field_name;?>" class="dy_fields[<?=$field?>]" id="fid" value="<?=$field?>">
 																					<div class="form-group">
@@ -1136,18 +1136,18 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																						</div>
 																					</div>
 																				</div>
-																				<?phpif ($ro_cnt == $fieldcnt) { ?>
+																				<?php if ($ro_cnt == $fieldcnt) { ?>
 																				</div>
-																				<?php} else {
+																				<?php } else {
 																					if ($counter == 3) {
 																						$counter = 0;
 																				?>
 																						</div>
 																						<div class="col-md-12 margin_row">
-																					<?php}
+																					<?php }
 																				} ?>
 
-																			<?php$fieldcnt++;
+																			<?php $fieldcnt++;
 																			$counter++;
 																		}
 																	?>
@@ -1158,11 +1158,11 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 													</div>
 												</div>
 											</div>
-											<?phpif ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
+											<?php if ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
 												<div id="sale_productdata"></div>
-											<?php} else { ?>
+											<?php } else { ?>
 												<div id="sale_productdata_salesorder"></div>
-											<?php} ?>
+											<?php } ?>
 											<div class="col-md-7">
 												<div class="card">
 													<ul class="nav nav-tabs" id="my_tab_id" role="tablist">
@@ -1170,13 +1170,13 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 														<li role="presentation" id="tab1"><a href="#terms-section" aria-controls="terms-section" role="tab" data-toggle="tab">Terms & Condition</a></li>
 														<li role="presentation" id="tab3"><a href="#podoc-section" aria-controls="terms-section" role="tab" data-toggle="tab">PO Document</a></li>
 
-														<?phpif ($getspecialConfiguration['apson_special'] == 1) { ?>
+														<?php if ($getspecialConfiguration['apson_special'] == 1) { ?>
 															<li role="presentation" id="tab4"><a href="#general-terms-condition-section" aria-controls="general-terms-condition-section" role="tab" data-toggle="tab">General Terms
 																	& Conditions</a></li>
-														<?php} ?>
-														<?phpif ($getspecialConfiguration['apson_special'] == 1) { ?>
+														<?php } ?>
+														<?php if ($getspecialConfiguration['apson_special'] == 1) { ?>
 															<li role="presentation" id="tab4"><a href="#general-address-condition-section" aria-controls="general-address-condition-section" role="tab" data-toggle="tab">Shiping Address</a></li>
-														<?php} ?>
+														<?php } ?>
 
 
 													</ul>
@@ -1198,7 +1198,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																<div class="col-md-10" style="margin-top:30px">
 																	<div class="col-md-3">
 																		<div class="form-group">
-																			<input type="radio" class="" name="terms_type" id="common_terms" value="0" onchange="get_quotation_data_so();" <?phpif ($rel['terms_type'] == '0') {
+																			<input type="radio" class="" name="terms_type" id="common_terms" value="0" onchange="get_quotation_data_so();" <?php if ($rel['terms_type'] == '0') {
 																																																echo 'checked="checked"';
 																																															} else {
 																																																if ($mode == 'Add') {
@@ -1210,7 +1210,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 
 																	<div class="col-md-3">
 																		<div class="form-group">
-																			<input type="radio" class="" name="terms_type" id="party_terms" value="1" onchange="get_quotation_data_so();" <?phpif ($rel['terms_type'] == '1') {
+																			<input type="radio" class="" name="terms_type" id="party_terms" value="1" onchange="get_quotation_data_so();" <?php if ($rel['terms_type'] == '1') {
 																																																echo 'checked="checked"';
 																																															} ?>> Party Wise
 																		</div>
@@ -1218,7 +1218,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 
 																	<div class="col-md-3">
 																		<div class="form-group">
-																			<input type="radio" class="" name="terms_type" id="quotation_terms" value="2" onchange="get_quotation_data_so();" <?phpif ($rel['terms_type'] == '2') {
+																			<input type="radio" class="" name="terms_type" id="quotation_terms" value="2" onchange="get_quotation_data_so();" <?php if ($rel['terms_type'] == '2') {
 																																																	echo 'checked="checked"';
 																																																} ?>> Quotation Wise
 																		</div>
@@ -1226,7 +1226,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 
 																	<div class="col-md-3">
 																		<div class="form-group">
-																			<input type="radio" class="" name="terms_type" id="multi_condition" value="3" onchange="get_quotation_data_so();" <?phpif ($rel['terms_type'] == '3') {
+																			<input type="radio" class="" name="terms_type" id="multi_condition" value="3" onchange="get_quotation_data_so();" <?php if ($rel['terms_type'] == '3') {
 																																																	echo 'checked="checked"';
 																																																} ?>> Multi Condition
 																		</div>
@@ -1272,7 +1272,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															</div>
 															<div class="form-group" style="margin-top:20px;" id="po_doc_list"></div>
 														</div>
-														<?phpif ($getspecialConfiguration['apson_special'] == 1) { ?>
+														<?php if ($getspecialConfiguration['apson_special'] == 1) { ?>
 															<div role="tabpanel" class="tab-pane" id="general-terms-condition-section">
 																<div class="col-md-12">
 																	<div class="form-group">
@@ -1283,8 +1283,8 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																	</div>
 																</div>
 															</div>
-														<?php} ?>
-														<?phpif ($getspecialConfiguration['apson_special'] == 1) { ?>
+														<?php } ?>
+														<?php if ($getspecialConfiguration['apson_special'] == 1) { ?>
 															<div role="tabpanel" class="tab-pane" id="general-address-condition-section">
 																<div class="col-md-12">
 																	<div class="form-group">
@@ -1294,7 +1294,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 																	</div>
 																</div>
 															</div>
-														<?php} ?>
+														<?php } ?>
 													</div>
 												</div>
 											</div>
@@ -1307,7 +1307,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 												<div class="form-group">
 													<label class="col-md-3 control-label">Total <span class="currency_icon"></span></label>
 													<div class="col-md-6 col-xs-12">
-														<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0" value="<?phpif ($mode == "Add") {
+														<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0" value="<?php if ($mode == "Add") {
 																																													echo '0';
 																																												} else if ($mode == 'Edit') {
 																																													echo indian_number($e_total, 2);
@@ -1324,7 +1324,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 												<div class="form-group">
 													<label class="col-md-3 control-label">Grand Total * <span class="currency_icon"></span></label>
 													<div class="col-md-6 col-xs-12">
-														<input id="g_total" name="g_total" type="text" class="form-control" title="dispatch_no" value="<?php?>" placeholder="Grand Total" readonly="readonly">
+														<input id="g_total" name="g_total" type="text" class="form-control" title="dispatch_no" value="<?php ?>" placeholder="Grand Total" readonly="readonly">
 													</div>
 												</div>
 
@@ -1349,7 +1349,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 														<button style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" value="R1" onclick="addBillSundry()"><i class="fa fa-plus"></i></button>
 													</div>
 												</div>
-												<?phpif ($getspecialConfiguration['smpl_permission'] == '1') { ?>
+												<?php if ($getspecialConfiguration['smpl_permission'] == '1') { ?>
 													<div class="form-group">
 														<label class="col-md-3 control-label">Advance Payment * <span class="currency_icon"></span></label>
 														<div class="col-md-6 col-xs-11">
@@ -1374,7 +1374,7 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 															<input type="hidden" name="pen_amt" id="pen_amt" value="<?= $rel['pending_amt'] ?>">
 														</div>
 													</div>
-												<?php} ?>
+												<?php } ?>
 											</div>
 											<div class="col-md-12">
 												<center>
@@ -1389,10 +1389,10 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 										<input type='hidden' name='quotaion_id' id='quotaion_id' value='<?= $quotaion_id ?>' />
 										<input type='hidden' name='with_out_stock_invoice' id='with_out_stock_invoice' value='<?= $with_out_stock_invoice ?>' />
 
-										<input type='hidden' name='eid' id='eid' value='<?phpif ($mode == "Edit") {
+										<input type='hidden' name='eid' id='eid' value='<?php if ($mode == "Edit") {
 																							echo $sales_order_id;
 																						} ?>' />
-										<!-- <input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?phpif ($mode != "Add") {
+										<!-- <input type='hidden' name='invoicetype_id' id='invoicetype_id' value='<?php if ($mode != "Add") {
 																														echo $rel['sales_order_id'];
 																													} ?>' /> -->
 										<input type='hidden' name='save_print' id='save_print' value='' />
@@ -1467,17 +1467,17 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 	<script src="<?= ROOT . ADMINISTRATION_ROOT ?>js/app/product_mst.js?<?php echo time(); ?>"></script>
 	<script src="<?= ROOT . ADMINISTRATION_ROOT ?>js/app/hsn_master.js?<?php echo time(); ?>"></script>
 	<script>
-		<?phpif ($mode == 'Edit') { ?>
+		<?php if ($mode == 'Edit') { ?>
 			load_typeswise_terms(<?= $sales_order_id ?>);
 			get_symbol();
 			get_statecode(<?= $rel['cust_id'] ?>);
 			get_all_bill_sundry(<?= $sales_order_id ?>);
 			get_grossbalance(<?= $rel['cust_id'] ?>);
 			load_trans_add(<?= $rel['transid'] ?>)
-		<?php} else { ?>
+		<?php } else { ?>
 			load_typeswise_terms('');
 			get_symbol();
-		<?php} ?>
+		<?php } ?>
 		//CKEDITOR.replace('quotation_condition');
 		$(".selproduct").select2({
 			width: '100%',
@@ -1526,16 +1526,16 @@ $rel_field = brp_mysqli_fetch_assoc($dbcon->query($query_field));
 		CKEDITOR.replace('product_spec', {
 			enterMode: CKEDITOR.ENTER_BR
 		});
-		<?phpif ($getspecialConfiguration['apson_special'] == 1) { ?>
+		<?php if ($getspecialConfiguration['apson_special'] == 1) { ?>
 			CKEDITOR.replace('quot_general_terms_condition_content', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-		<?php} ?>
-		<?phpif ($getspecialConfiguration['apson_special'] == 1) { ?>
+		<?php } ?>
+		<?php if ($getspecialConfiguration['apson_special'] == 1) { ?>
 			CKEDITOR.replace('ship_address', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-		<?php} ?>
+		<?php } ?>
 	</script>
 	
 

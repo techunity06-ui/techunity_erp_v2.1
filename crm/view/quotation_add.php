@@ -412,7 +412,7 @@ else
 													<div class="col-md-6">
 														<?php echo getBranchBox($dbcon, $branch_id, $selected_branch_id, false, true,'','3','6'); ?>
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<?php if($getspecialConfiguration['rb_auto_permission']==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
@@ -425,7 +425,7 @@ else
 															</div>
 														</div>									
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="col-md-3 control-label">Company*</label>
@@ -543,7 +543,7 @@ else
 													</div>	
 												</div>
 
-												<?phpif($mode=='Add'){ ?>
+												<?php if($mode=='Add'){ ?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label">Task*</label>
@@ -590,7 +590,7 @@ else
 															</div>
 														</div>	
 													</div>	
-												<?php} ?>
+												<?php } ?>
 												<div class="col-md-6">
 													<div class="form-group">
 														<label class="col-md-3 control-label">Currency Converter *</label>
@@ -673,7 +673,7 @@ else
 													</div>
 												</div>
 											</div>
-										<?php} else { ?>
+										<?php } else { ?>
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="col-md-3 control-label"> Payment Terms</label>
@@ -704,7 +704,7 @@ else
 													</div>
 												</div>
 											</div>-->
-											<?php} ?> 
+											<?php } ?> 
 											
         
                 <div class="col-md-6">
@@ -747,12 +747,12 @@ else
                         </div>
                 	</div>
 
-					<?php} ?>
+					<?php } ?>
 				
       
 
 												
-												<?php//if($getspecialConfiguration['power_drive']==1){ ?>
+												<?php //if($getspecialConfiguration['power_drive']==1){ ?>
 													<!-- <div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label" >Orange</label>
@@ -800,7 +800,7 @@ else
 													</div> -->
 												<?php //}?>											
 
-												<?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
+												<?php if($getspecialConfiguration['oilfield_permission']==1){ ?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label" >Terms</label>
@@ -833,7 +833,7 @@ else
 															</div>
 														</div>
 													</div>
-												<?php} ?>
+												<?php } ?>
 												<?php if($getspecialConfiguration['jr_fiber_glass_permission'] ==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
@@ -851,8 +851,8 @@ else
 															</div>
 														</div>
 													</div>
-												<?php} ?>
-												<?phpif($getspecialConfiguration['elcon_permission'] ==1 || $getspecialConfiguration['filter_concept_permission'] ==1){?>
+												<?php } ?>
+												<?php if($getspecialConfiguration['elcon_permission'] ==1 || $getspecialConfiguration['filter_concept_permission'] ==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="col-md-3 control-label">Project Name</label>
@@ -861,7 +861,7 @@ else
 															</div>
 														</div>
 													</div>
-												<?php} ?> 
+												<?php } ?> 
 												<?php if($getspecialConfiguration['elcon_permission'] ==1){?>
 													<div class="col-md-6">
 														<div class="form-group">
@@ -872,7 +872,7 @@ else
 														</div>
 													</div>
 
-												<?php} ?>
+												<?php } ?>
 												<div class="clearfix"></div>
 												<hr/>
 												<!--tab start--> 
@@ -893,12 +893,12 @@ else
 																		<table class="display table table-bordered table-striped" style="table-layout: fixed;">
 																			<thead>
 																				<tr>
-																					<?phpif($companyConfiguration['category_selection_active'] ==1){ ?>
+																					<?php if($companyConfiguration['category_selection_active'] ==1){ ?>
 																						<th width="15%" class="text-center">Product Category</th>
-																					<?php} ?>
+																					<?php } ?>
 																					<th width="20%" class="text-center">Product Name</th>
 																					
-																					<?phpif($getspecialConfiguration['reciclar'] ==1){ ?>
+																					<?php if($getspecialConfiguration['reciclar'] ==1){ ?>
 																						<th width="15%" class="text-center">Reciclar Category</th>
 																					<?php }?>
 																					<?php if ($getspecialConfiguration['global_eng_permission'] == 1) {?>
@@ -922,13 +922,13 @@ else
 																			<tbody>
 																				<input type="hidden" value="<?=$company_config['enable_negative_qty']?>" name="isstockngative" id="isstockngative"/>
 																				<tr>
-																				<?phpif($companyConfiguration['category_selection_active'] ==1){ ?>
+																				<?php if($companyConfiguration['category_selection_active'] ==1){ ?>
 																		 		<td>
 			                                                                        <select class="select2" name="cat_id" id="cat_id" title="Select Category" <?php if($companyConfiguration['cat_wise_product_load'] ==1){?> onchange="product_load()"<?php }?>>
 			                                                                            <?=get_all_category($dbcon,0);?>
 			                                                                        </select>
 		                                                                    	</td>
-																				<?php} ?>
+																				<?php } ?>
 																<td style="max-width:300px">
 																	<input id="product_id" name="product_id" style="width:100%;" placeholder="Select Product" onchange="load_product_dtls(this.value);get_hsn(this.value);"/>
 																	<br><strong class="hsncode" style="display:none;color:blue">HSN Code : <span id="hsncode"></span></strong>
@@ -936,11 +936,11 @@ else
 																	<strong class="product_stock_label" style="display:none;color:green"> , Current Stock : <span id="product_stock_label"></span></strong><br>
 																	<button type="button" id="projectItem" onclick="load_project_item()" title="View Project Wise Item List" class="btn btn-primary" style="display: none;">View Item List <i class="fa fa-plus"></i></button>&nbsp;&nbsp;&nbsp;
 																	<button type="button" id="productHistory" onclick="load_product_history()" title="View Product History" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></button>&nbsp;&nbsp;&nbsp;
-																	<?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
+																	<?php if($getspecialConfiguration['oilfield_permission']==1){ ?>
 																	<button accesskey="n" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" onclick="showproduct()"><i class="fa fa-plus"></i> Add Product</button>
-																<?php} ?>
+																<?php } ?>
 																</td>
-																				<?phpif($getspecialConfiguration['reciclar'] ==1 ){ ?>
+																				<?php if($getspecialConfiguration['reciclar'] ==1 ){ ?>
 																					<td>
 				                                                                        <select class="select2" name="parent_cat_id" id="parent_cat_id" title="Select Category">
 				                                                                            <?=get_all_reciclare_category($dbcon,0);?>
@@ -1013,17 +1013,17 @@ else
 																		{?>
 																			<input type="button"  name="addrow1" id="addrow1" onClick="open_batch_wise_qty()"  class="btn btn-primary product_add_batch_wise" value="Add" />
 																			<button type="button" class="btn btn-primary " id="quot_trn_btn" style=" display:none;" onclick="add_field()">Add</button>
-																		<?php}else {?>
+																		<?php }else {?>
                                                                        			<button type="button" class="btn btn-primary delivary_po_wise" id="quot_trn_btn" onclick="add_field()">Add</button>
                                                                        			<input type="button"  name="addrow" id="addrow" onClick="open_approv_quo1();load_unit_product();delivery_schedule()"  class="btn btn-primary delivary_product_wise" value="Add" />
-																		<?php} ?>
+																		<?php } ?>
 	
 
 																						
 																					</td>
 																				</tr>
 																			</tbody>
-																			<?phpif($getspecialConfiguration['power_drive']==1){ ?>
+																			<?php if($getspecialConfiguration['power_drive']==1){ ?>
 																			<thead>
 																				<tr>
 																					<th class="text-center">Orange</th>	
@@ -1105,7 +1105,7 @@ else
 																				if ($fieldcnt == 1) { ?>
 																					<div class="col-md-12 margin_row">
 																					<div class="row">
-																					<?php} ?>
+																					<?php } ?>
 																					<div class="col-md-4">
 																					<input type="hidden" name="fid" data-id="<?=$field_name;?>" class="dy_fields[<?=$field?>]" id="fid" value="<?=$field?>">
 																						<div class="form-group">
@@ -1119,18 +1119,18 @@ else
 																							</div>
 																						</div>
 																					</div>
-																					<?phpif ($ro_cnt == $fieldcnt) { ?>
+																					<?php if ($ro_cnt == $fieldcnt) { ?>
 																					</div>
-																					<?php} else {
+																					<?php } else {
 																						if ($counter == 3) {
 																							$counter = 0;
 																					?>
 																							</div>
 																							<div class="col-md-12 margin_row">
-																						<?php}
+																						<?php }
 																					} ?>
 
-																				<?php$fieldcnt++;
+																				<?php $fieldcnt++;
 																				$counter++;
 																			}
 																		?>
@@ -1153,7 +1153,7 @@ else
 														<div class="form-group">
 															<label class="col-md-5 control-label">Total * <span class="currency_icon"> </span></label>
 															<div class="col-md-5 col-xs-11">
-																<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+																<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 															</div>
 														</div>	
 														<div class="invoiceTotalTax">
@@ -1217,7 +1217,7 @@ else
 																<li role="presentation" id="tab6"><a href="#document-section" aria-controls="document-section" role="tab" data-toggle="tab">Documents</a></li>
 																<?php if($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
 																	<li role="presentation" id="tab4"><a href="#general-terms-condition-section" aria-controls="general-terms-condition-section" role="tab" data-toggle="tab">General Terms & Conditions Content</a></li>
-																<?php}
+																<?php }
 																if($getspecialConfiguration['maruti_permission']==1){?>
 																	<li role="presentation" id="tab4"><a href="#battery-limits-and-schedule-exclusion-section" aria-controls="battery-limits-and-schedule-exclusion-section" role="tab" data-toggle="tab">Battery Limits And Schedule Of Exclusion Content</a></li>
 																	<?php }?>
@@ -1230,14 +1230,14 @@ else
 																			<div class="form-group">
 																				<input type="radio" class="" name="terms_type" id="common_terms" value="0" onchange="load_typeswise_terms();" 
 
-																				<?phpif($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
+																				<?php if($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
 																			</div>
 																		</div>
 
 																		<div class="col-md-2">
 																			<div class="form-group">
 																				<input type="radio" class="" name="terms_type" id="party_terms" value="1" onchange="load_typeswise_terms();"
-																				<?phpif($rel['terms_type'] == '1'){ echo 'checked="checked"';}?>
+																				<?php if($rel['terms_type'] == '1'){ echo 'checked="checked"';}?>
 																				> Party Wise		
 																			</div>
 																		</div>
@@ -1245,7 +1245,7 @@ else
 																		<div class="col-md-2">
 																			<div class="form-group">
 																				<input type="radio" class="" name="terms_type" id="multi_condition" value="2" onchange="load_typeswise_terms();"
-																				<?phpif($rel['terms_type'] == '2'){ echo 'checked="checked"';}?>
+																				<?php if($rel['terms_type'] == '2'){ echo 'checked="checked"';}?>
 																				> Multi Condition		
 																			</div>
 																		</div>
@@ -1390,7 +1390,7 @@ else
 																			</div> 
 																		</div> 
 																	</div>
-																	<?php} if($getspecialConfiguration['maruti_permission']==1){?>
+																	<?php } if($getspecialConfiguration['maruti_permission']==1){?>
 
 																	<div role="tabpanel" class="tab-pane" id="battery-limits-and-schedule-exclusion-section">
 																		<div class="col-md-12">
@@ -1493,10 +1493,10 @@ else
 					});
 					<?php if($inquiry_type=='2'){?>
 						$('#projectItem').css('display','block');
-					<?php} ?>
+					<?php } ?>
 					<?php if($mode=='Add'){?>
 						$('#task_type_id').select2('readonly',true);
-					<?php} ?>
+					<?php } ?>
 					<?php if($mode=='Edit'){?>
 						$('#cust_id').select2('readonly',true);
 			// $('#c_con_id').select2('readonly',true);
@@ -1505,18 +1505,18 @@ else
 			//$(':radio:not(:checked)').attr('disabled', true);
 			load_typeswise_terms(<?=$quotation_id?>);
 			get_all_bill_sundry(<?=$quotation_id?>);
-		<?php} else if ($viewmode=='Revise') { ?>
+		<?php } else if ($viewmode=='Revise') { ?>
 			load_def_quotation_no(<?=$start_quotation_id?>);
 			load_typeswise_terms(<?=$prev_quotation_id?>);
 			show_dfd_attach_data();
 			//load_annex_content(<?=$rel['an_id']?>);
 			get_all_bill_sundry(<?=$prev_quotation_id?>);
-		<?php} else {?>
+		<?php } else {?>
 			load_typeswise_terms('');
-		<?php} ?>
+		<?php } ?>
 		<?php if($prev_quotation_id){?>
 			copy_prev_quot_trn(<?=$prev_quotation_id?>);
-		<?php} ?>
+		<?php } ?>
 
 		var max_followup_date = '<?=$max_followup_date?>';
 		var date = new Date();
@@ -1564,20 +1564,20 @@ $(".quotattion-followup-date").datetimepicker({
 		CKEDITOR.replace( 'quot_remark', {
 			enterMode: CKEDITOR.ENTER_BR
 		});
-		<?phpif($getspecialConfiguration['elcon_permission'] ==1){?>
+		<?php if($getspecialConfiguration['elcon_permission'] ==1){?>
 			CKEDITOR.replace( 'quatation_greeting', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-		<?php} ?>
-		<?phpif($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
+		<?php } ?>
+		<?php if($getspecialConfiguration['maruti_permission']==1 || $getspecialConfiguration['apson_special']==1){?>
 			CKEDITOR.replace( 'quot_general_terms_condition_content', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-			<?php} if($getspecialConfiguration['maruti_permission']==1){?>
+			<?php } if($getspecialConfiguration['maruti_permission']==1){?>
 			CKEDITOR.replace( 'quot_battery_limits_and_schedule_exclusion_content', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-		<?php} ?>
+		<?php } ?>
 		$(function(){
 			setTimeout(function(){ $('#sidebar > ul').hide(); }, 1000);
 		});

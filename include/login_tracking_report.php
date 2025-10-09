@@ -66,7 +66,7 @@
 								End Date
 							</label> 
 							<div class="col-md-8">
-								<input id="end_date" name="end_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpecho date('d-m-Y');?>" placeholder="End Date" onChange="load_trans_datatable()">
+								<input id="end_date" name="end_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php echo date('d-m-Y');?>" placeholder="End Date" onChange="load_trans_datatable()">
 							</div>
 						</div>
 					</div>-->

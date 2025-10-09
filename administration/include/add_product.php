@@ -62,7 +62,7 @@
                               </div>
                            </div>
                         </div>
-                        <?phpif ($getspecialConfiguration['power_drive'] == 1) {
+                        <?php if ($getspecialConfiguration['power_drive'] == 1) {
                            $query_field = "select * from tbl_item_master_field where item_master_field_status=0 and company_id=" . $_SESSION['company_id'] . " order by priority ASC";
                            $res_field = $dbcon->query($query_field);
                            $ro_cnt = brp_mysqli_num_rows($res_field);
@@ -72,7 +72,7 @@
                               $field_name = $row_field['item_master_field_db_name'];
                               if ($field == 1) { ?>
                                  <div class="col-md-12 margin_row" style="margin-top: 10px;">
-                              <?php} ?>
+                              <?php } ?>
                                     <div class="col-md-4">
                                        <div class="form-group">
                                           <label class="col-md-4 control-label"><?= $row_field['item_master_field'] ?>*</label>
@@ -84,15 +84,15 @@
                                           </div>
                                        </div>
                                     </div>
-                              <?phpif ($ro_cnt == $field) { ?>
+                              <?php if ($ro_cnt == $field) { ?>
                                  </div>
-                              <?php} else {
+                              <?php } else {
                                  if ($counter == 3) {
                                     $counter = 0;
                               ?>
                                  </div>
                                  <div class="col-md-12 margin_row">
-                              <?php}
+                              <?php }
                               } 
                               $field++;
                               $counter++;

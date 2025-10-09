@@ -1,0 +1,145 @@
+[2025-10-09 12:27:43] Error [2]: Undefined variable $vender_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 160
+[2025-10-09 12:27:43] Error [2]: Undefined variable $remark in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 193
+[2025-10-09 12:27:43] Error [2]: Undefined variable $pre_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 200
+[2025-10-09 12:27:43] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:27:43] Error [2]: Undefined variable $disable in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 99
+[2025-10-09 12:27:43] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 140
+[2025-10-09 12:31:19] Error [2]: Undefined variable $vender_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 160
+[2025-10-09 12:31:19] Error [2]: Undefined variable $remark in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 193
+[2025-10-09 12:31:19] Error [2]: Undefined variable $pre_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 200
+[2025-10-09 12:31:19] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:31:19] Error [2]: Undefined variable $disable in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 99
+[2025-10-09 12:31:19] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 140
+[2025-10-09 12:31:28] Error [2]: Undefined variable $vender_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 160
+[2025-10-09 12:31:28] Error [2]: Undefined variable $remark in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 193
+[2025-10-09 12:31:28] Error [2]: Undefined variable $pre_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 200
+[2025-10-09 12:31:28] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:31:28] Error [2]: Undefined variable $disable in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 99
+[2025-10-09 12:31:28] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 140
+[2025-10-09 12:31:30] Error [2]: Undefined variable $vender_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 160
+[2025-10-09 12:31:30] Error [2]: Undefined variable $remark in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 193
+[2025-10-09 12:31:30] Error [2]: Undefined variable $pre_id in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\add_pre.php on line 200
+[2025-10-09 12:31:30] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:31:30] Error [2]: Undefined variable $disable in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 99
+[2025-10-09 12:31:30] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2\finance\include\add_ledger.php on line 140
+[2025-10-09 12:33:23] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\indent_list.php on line 43
+[2025-10-09 12:33:23] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:33:24] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:24] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 144
+[2025-10-09 12:33:24] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 169
+[2025-10-09 12:33:24] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:24] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 144
+[2025-10-09 12:33:24] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 169
+[2025-10-09 12:33:27] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:27] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 144
+[2025-10-09 12:33:27] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 169
+[2025-10-09 12:33:33] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_quotation_list_new.php on line 44
+[2025-10-09 12:33:33] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:33:33] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:33] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:34] Error [2]: Undefined array key "quotation_ref_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 284
+[2025-10-09 12:33:34] Error [2]: Undefined array key "vender_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 284
+[2025-10-09 12:33:34] Uncaught Exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and rtrn.vender_id =  and rtrn.po_quotationtrn_status=0' at line 7 in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 303
+[2025-10-09 12:33:34] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:34] Error [2]: Undefined array key "quotation_ref_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 408
+[2025-10-09 12:33:34] Uncaught Exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 409
+[2025-10-09 12:33:34] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:34] Error [2]: Undefined array key "quotation_ref_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 469
+[2025-10-09 12:33:34] Error [2]: Undefined array key "quotation_ref_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 482
+[2025-10-09 12:33:34] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:34] Error [2]: Undefined array key 1 in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 17
+[2025-10-09 12:33:34] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 144
+[2025-10-09 12:33:34] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 169
+[2025-10-09 12:33:34] Error [2]: Undefined variable $disaprv_btn in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 60
+[2025-10-09 12:33:34] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:33:34] Error [2]: Undefined array key "quotation_ref_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 469
+[2025-10-09 12:33:34] Error [2]: Undefined array key "quotation_ref_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\po_quotation_list_new\index.php on line 482
+[2025-10-09 12:35:33] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_req_list.php on line 44
+[2025-10-09 12:35:33] Error [2]: Undefined array key "po_type_status_filter" in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_req_list.php on line 77
+[2025-10-09 12:35:33] Error [8]: Only variables should be passed by reference in E:\MAMP\htdocs\techunity_erp_v2\include\company_modal.php on line 51
+[2025-10-09 12:35:33] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:35:34] Error [2]: Undefined variable $where_user in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 44
+[2025-10-09 12:35:34] Error [2]: Undefined variable $pera in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 66
+[2025-10-09 12:35:34] Error [2]: Undefined variable $left in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 73
+[2025-10-09 12:35:34] Error [2]: Undefined variable $group in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 75
+[2025-10-09 12:35:34] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 144
+[2025-10-09 12:35:34] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 169
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
+[2025-10-09 12:35:34] Error [2]: Undefined variable $where_user in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 44
+[2025-10-09 12:35:34] Error [2]: Undefined variable $pera in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 66
+[2025-10-09 12:35:34] Error [2]: Undefined variable $left in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 73
+[2025-10-09 12:35:34] Error [2]: Undefined variable $group in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 75
+[2025-10-09 12:35:34] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 144
+[2025-10-09 12:35:34] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2\include\pagging.php on line 169
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_no" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined array key "indent_date" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [8192]: strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 134
+[2025-10-09 12:35:34] Error [2]: Undefined variable $alias in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 140
+[2025-10-09 12:35:34] Error [8192]: number_format(): Passing null to parameter #1 ($num) of type float is deprecated in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 175
+[2025-10-09 12:35:34] Error [2]: Undefined variable $poprint in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order_req\index.php on line 218

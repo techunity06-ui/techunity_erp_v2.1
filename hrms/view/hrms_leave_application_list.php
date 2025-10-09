@@ -35,7 +35,7 @@
            <section id="main-content">
 			<section class="wrapper">
 			
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
      		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->

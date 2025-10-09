@@ -151,9 +151,9 @@ $companyConfiguration = getCompanyConfiguration($dbcon);
 												<th>Branch</th>
 												<th>Location</th>
 												<th>Product</th>
-												<?phpif ($companyConfiguration['batch_wise_stock'] == '1') { ?>
+												<?php if ($companyConfiguration['batch_wise_stock'] == '1') { ?>
 													<th>Batch No</th>
-												<?php} ?>
+												<?php } ?>
 												<th>Opening Stock Qty</th>
 												<th>Closing Stock Qty</th>
 												<th>Base Rate</th>

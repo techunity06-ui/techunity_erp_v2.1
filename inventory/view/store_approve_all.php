@@ -94,7 +94,7 @@ $back_title = "Store Approval Pending List";
 	
 													?>
 
-													<?phpif($count_batch == 0) {
+													<?php if($count_batch == 0) {
 														echo '<tr>
 														<td colspan="12">
 															<div class="text-center"> <h3> No QC Data Found. </h3></div>	

@@ -150,7 +150,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 											<td width="60%">
 												<?php if($companyConfiguration['so_header_content']!=''){?>
 													<h1 style="margin-bottom:0px;" align="center"><?=$set_head['company_name']?></h1><br><?=$companyConfiguration['so_header_content'];?>
-												<?php}else{ ?>
+												<?php }else{ ?>
 													<h1 style="margin-bottom:0px;" align="center"><?=$set_head['company_name']?></h1>
 													<h5 align="center" style="padding:top:8px;"><?=$set_head['logo_content']?></h5>
 													<h4 style="font-size:19px; margin-bottom:0px;" align="center"><?=$set_head['address']?></h4>
@@ -158,7 +158,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 													<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
 													<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){?>Website: <?=$set_head['company_website']?><?php }?></h4>
 													<h4 align="center" style="margin-top:0px;"><?php if($set_head['cin']){?>CIN : <?=$set_head['cin']?><?php }?></h4>
-												<?php} ?>
+												<?php } ?>
 											</td>
 										</tr>
 									</table>
@@ -180,7 +180,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 														<!--<thead>-->
 															<tr>
 																<td rowspan="5" width="50%" style="vertical-align:top; border-right:1px solid; border-top:1px solid; border-bottom:1px solid;">
-																	M/s, <strong><?=$company_name?></strong><span><br><?=$cust_address?>,<br/><?=$city_name?>,<?=$state_name?>,<?=$country_name?><?phpif(!empty($cust_pincode)){	?> - <?=$cust_pincode?><?php} ?></span><br><strong> GSTIN : <?=$gst_no?></strong>
+																	M/s, <strong><?=$company_name?></strong><span><br><?=$cust_address?>,<br/><?=$city_name?>,<?=$state_name?>,<?=$country_name?><?php if(!empty($cust_pincode)){	?> - <?=$cust_pincode?><?php } ?></span><br><strong> GSTIN : <?=$gst_no?></strong>
 																</td>
 																<td width="25%" style="vertical-align:top;border-top:1px solid;"><strong>Voucher No </strong>
 																</td>
@@ -288,7 +288,7 @@ $sales_pro_search=explode(",", $companyConfiguration['sales_pro_search']);
 															<td style="border-right:1px solid;"></td>
 															<td style="border-right:1px solid;"></td>
 														</tr>
-													<?php} ?>
+													<?php } ?>
 													<!-- <tr height="24px">
 														<td colspan="4" style="border-top:1px solid;border-bottom:1px solid;border-right:1px solid;border-left:1px solid;font-size:14px;text-align:right !important;">TOTAL</td>
 														<td style="text-align:center !important;border-bottom:1px solid; border-top:1px solid;font-size:14px;border-right:1px solid; "><?=number_format($totalqty,2,".","")?></td>
@@ -421,7 +421,7 @@ function PrintMe(DivID) {
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
 //  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
 docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 docprint.document.write('<style type="text/css">');

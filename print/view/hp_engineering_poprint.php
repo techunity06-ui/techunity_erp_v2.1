@@ -276,18 +276,18 @@ if($set_head['show_disc']=='1'){
 													<th width="10%" style="text-align:center;border:1px solid;border-top: none;">
 														<strong>Rate</strong>
 													</th>
-													<?phpif($set_head['show_disc']=='1'){ ?>
+													<?php if($set_head['show_disc']=='1'){ ?>
 														<th width="10%" style="text-align:center;border:1px solid;border-top: none;">
 															<strong>Less:<br/>Disc.</strong>
 														</th>
-													<?php} ?>
+													<?php } ?>
 													<th width="10%" style="text-align:center;border:1px solid;border-top: none;">
 														<strong>Total</strong>
 													</th>
 												</tr>
 											</thead>
 											<tbody style="border: 1px solid;">
-												<?php$qry="SELECT trn.*,product.*,product.product_desc as scode,per.unit_name,per1.unit_name as base_unit_name,per2.unit_name as conv_unit_name FROM `tbl_purchaseordertrn` as trn 
+												<?php $qry="SELECT trn.*,product.*,product.product_desc as scode,per.unit_name,per1.unit_name as base_unit_name,per2.unit_name as conv_unit_name FROM `tbl_purchaseordertrn` as trn 
 												left join product_mst as product on product.product_id=trn.product_id 
 												left join unit_mst as per on per.unitid=trn.unit_id 
 												left join unit_mst as per1 on per1.unitid=product.product_base_unit 
@@ -324,17 +324,17 @@ if($set_head['show_disc']=='1'){
 															<?=$i?>
 														</td>
 														<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-															<?phpif(!empty($row['scode'])){
+															<?php if(!empty($row['scode'])){
 																$code=" ( ".$row['scode'] .")";
 															} ?>
 															<?php if($row['product_alias_name']){?>
 																<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?></strong>
 																<br/><?=(!empty(nl2br(stripcslashes($row['product_des'])))) ? nl2br(stripcslashes($row['product_des'])) : "";?>
-															<?php}else{ ?>
+															<?php }else{ ?>
 																<strong><?=stripcslashes($row['product_name'])?> <?=$code?></strong>
 																<br/><?=(!empty(nl2br(stripcslashes($row['product_des'])))) ? nl2br(stripcslashes($row['product_des'])) : "";?>
-															<?php} ?>
-															<?phpif($delivery_type == 'product_wise'){
+															<?php } ?>
+															<?php if($delivery_type == 'product_wise'){
 																$retu_date = "select sdate.*,unit.unit_name from tbl_purchaseorder_delivery_date as sdate left join unit_mst as unit on unit.unitid=sdate.unit_id where po_delivery_date_status=0 and purchaseordertrn_id=".$row['purchaseordertrn_id'];
 																$resadate=$dbcon->query($retu_date); ?>
 																<br>
@@ -343,37 +343,37 @@ if($set_head['show_disc']=='1'){
 																		<td style="border: 1px solid;"><strong>Delivery Date</strong></td>
 																		<td style="border: 1px solid;"><strong>Qty</strong></td>
 																	</tr>
-																	<?phpwhile($rowdate=brp_mysqli_fetch_array($resadate)){ ?>
+																	<?php while($rowdate=brp_mysqli_fetch_array($resadate)){ ?>
 																		<tr style="border: 1px solid;">
 																			<td style="border: 1px solid;"><?=date('d-m-Y',strtotime($rowdate['delivery_date']));?></td>
 																			<td style="border: 1px solid;"><?=$rowdate['product_qty'].' '.$rowdate['unit_name'];?></td>
 																		</tr>
-																	<?php} ?>
+																	<?php } ?>
 																</table>
 																<br>
-															<?php} ?>
+															<?php } ?>
 														</td>
 														<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
 															<?=stripcslashes($row['product_hsn_code'])?>
 														</td>
 														<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-															<?phpif($row['product_type']!='8'){  echo $row['product_qty'].' '.$row['unit_name']?>
+															<?php if($row['product_type']!='8'){  echo $row['product_qty'].' '.$row['unit_name']?>
 															<br/>
 															<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 																<?=$cqty.' '.$uname?>
 																<?php }?>
-															<?php}else{
+															<?php }else{
 																$charges_qty+=$row['product_qty'];
 															} ?>	
 														</td>
 														<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 															<?=number_format($row['product_rate'],2,".","")?>
 														</td>
-														<?phpif($set_head['show_disc']=='1'){?>
+														<?php if($set_head['show_disc']=='1'){?>
 															<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 																<?=number_format($row['discount_per'],2,".","").'%'?>
 															</td>
-														<?php} ?>
+														<?php } ?>
 														<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 															<?=number_format($row['product_amount'],2,".","")?>
 														</td>
@@ -399,9 +399,9 @@ if($set_head['show_disc']=='1'){
 														<td style="border-right:1px solid;border-left:1px solid;"></td>
 														<td style="border-right:1px solid;" colspan="2"></td>
 														<td style="border-right:1px solid;"></td>
-														<?phpif($set_head['show_disc']=='1'){ ?>
+														<?php if($set_head['show_disc']=='1'){ ?>
 															<td style="border-right:1px solid;"></td>
-														<?php} ?>
+														<?php } ?>
 														<td style="border-right:1px solid;"></td>
 														<td style="border-right:1px solid;"></td>
 														<td style="border-right:1px solid;"></td>
@@ -411,9 +411,9 @@ if($set_head['show_disc']=='1'){
 												<tr style="height:20px">
 													<td style="border-top:1px solid;border-right:1px solid;border-left:1px solid; text-align:right;" colspan="4"><strong>Total</strong></td>
 													<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
-													<?phpif($set_head['show_disc']=='1'){?>
+													<?php if($set_head['show_disc']=='1'){?>
 														<td style="border-top:1px solid;border-right:1px solid;"></td>
-													<?php} ?>
+													<?php } ?>
 													<td style="border-top:1px solid;border-right:1px solid;"></td>
 													<td style="border-top:1px solid;border-right:1px solid;text-align:right;"><strong><?=number_format($total_product_amount,2,".","")?></strong></td>
 												</tr>
@@ -462,7 +462,7 @@ if($set_head['show_disc']=='1'){
 														<td colspan="2" style="border-top:1px solid;border-right:1px solid;text-align:left">Transport :</td>
 														<td colspan="2" style="text-align:right; border-top:1px solid;border-right:1px solid;"><?=number_format($rel['packing'],2,".","")?></td>
 													</tr>
-												<?php}
+												<?php }
 												$r=round($rel['g_total'])-$rel['g_total']; 
 												?>
 												<tr>
@@ -494,7 +494,7 @@ if($set_head['show_disc']=='1'){
 												</tr>
 												<tr>
 													<td colspan="8" style="vertical-align:top;text-align:left;border-top:1px solid; border-right: 1px solid;" class="con">
-														<strong>Terms and Conditions:</strong><br><?phpif(!empty($set_head['po_condition'])){ ?><?=$set_head['po_condition']?><?php} ?><?=(!empty($rel['po_condition'])) ? "<br>".$rel['po_condition'] : "";?>
+														<strong>Terms and Conditions:</strong><br><?php if(!empty($set_head['po_condition'])){ ?><?=$set_head['po_condition']?><?php } ?><?=(!empty($rel['po_condition'])) ? "<br>".$rel['po_condition'] : "";?>
 													</td>
 												</tr>
 												<tr style="height: 100px;">
@@ -620,7 +620,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

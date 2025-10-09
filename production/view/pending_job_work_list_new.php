@@ -50,9 +50,9 @@
 	                						</div>
 						            	</div>
 									</div>
-									<?php}else{ ?>
+									<?php }else{ ?>
 													<input type="hidden" name="branch_id" id="branch_id" value="<?=$company_config['default_branch_id']?>" />
-												<?php} ?>
+												<?php } ?>
 									<div class="col-lg-8 col-md-6 col-xs-12">
 									<div class="form-group">
 										
@@ -96,9 +96,9 @@
 													<th>Total Qty</th>
 													<th>Working Qty</th>
 													<th>Used Qty</th>
-													<?phpif($_SESSION['branch_id']==0){ ?>
+													<?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													  <?php} ?>
+													  <?php } ?>
 													<th class="hidden-phone">Action</th>
 												</tr>
 											</thead>

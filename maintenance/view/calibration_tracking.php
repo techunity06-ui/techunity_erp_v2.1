@@ -89,7 +89,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 												</tr>
 											</thead>
 											<tbody>
-												<?php$qry = $dbcon->query("SELECT le.l_name, cali.*, cali_trn.calculate_date FROM tbl_calibration_date_trn AS cali_trn LEFT JOIN tbl_calibration AS cali ON cali.calibration_id = cali_trn.calibration_id LEFT JOIN tbl_ledger AS le ON le.l_id = cali.cust_id WHERE cali_trn.calibration_date_trn_status = 1 AND cali_trn.maintenance_id = ".$maintenance_id." ORDER BY cali_trn.calibration_date_trn_id ASC");
+												<?php $qry = $dbcon->query("SELECT le.l_name, cali.*, cali_trn.calculate_date FROM tbl_calibration_date_trn AS cali_trn LEFT JOIN tbl_calibration AS cali ON cali.calibration_id = cali_trn.calibration_id LEFT JOIN tbl_ledger AS le ON le.l_id = cali.cust_id WHERE cali_trn.calibration_date_trn_status = 1 AND cali_trn.maintenance_id = ".$maintenance_id." ORDER BY cali_trn.calibration_date_trn_id ASC");
 												$i = 1;
 												while($res = brp_mysqli_fetch_assoc($qry)){ ?>
 												<tr>
@@ -105,7 +105,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 													<td><?=$res['acceptance']?></td>
 													<td><?=date("d-M-Y", strtotime($res['tc_date']))?></td>
 												</tr>
-											<?php$i++; 
+											<?php $i++; 
 										} 
 										$qrys = $dbcon->query("SELECT cali_trn.calculate_date FROM tbl_calibration_date_trn AS cali_trn WHERE cali_trn.calibration_date_trn_status = 0 AND cali_trn.maintenance_id = ".$maintenance_id." ORDER BY cali_trn.calibration_date_trn_id ASC");
 												while($rese = brp_mysqli_fetch_assoc($qrys)){ ?>
@@ -122,7 +122,7 @@ $back_link = $_SERVER['HTTP_REFERER'];
 													<td></td>
 													<td></td>
 												</tr>
-											<?php$i++; } ?>
+											<?php $i++; } ?>
 											</tbody>
 										</table>
 									</div>

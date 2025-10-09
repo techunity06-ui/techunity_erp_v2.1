@@ -43,7 +43,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
       <!--main content start-->
       <section id="main-content">
          <section class="wrapper">
-            <?php//include_once('../include/equick_link.php');?>
+            <?php //include_once('../include/equick_link.php');?>
             <div class="row">
                <div class="col-lg-12">
                   <!--breadcrumbs start -->
@@ -88,7 +88,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
                            <div class="col-md-4">
                               <?php echo getBranchBox($dbcon, $branch_id, '', false, false, 'reload_data()'); ?>	
                            </div>
-                        <?php} ?>
+                        <?php } ?>
                         <div class="col-md-4">
                            <div class="col-md-4">
                              <label for="po_type_status1" class="external-event label label-warning ui-draggable" style="position: relative;cursor:pointer;">Approval Pending</label>

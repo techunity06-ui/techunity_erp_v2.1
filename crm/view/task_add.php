@@ -834,7 +834,7 @@ mark{
 													</div>
 												</div>
 											</div>
-											<?phpif($rel['task_alert_id']!='1' && $alert_date_time){?>
+											<?php if($rel['task_alert_id']!='1' && $alert_date_time){?>
 												<div class="col-md-12">
 													<div class="form-group">
 														<label class="col-md-2 control-label">Alert Date</label>
@@ -849,7 +849,7 @@ mark{
 													</div>
 												</div>
 												<?php }?>
-												<?phpif($getspecialConfiguration['jet_technologies_permission'] == '1') { ?> 
+												<?php if($getspecialConfiguration['jet_technologies_permission'] == '1') { ?> 
 												<div class="clearfix"></div>
 											<div class="col-md-12">
 												<div class="form-group">
@@ -912,7 +912,7 @@ mark{
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="attch-section">
 				<div class="form-group" style="margin-top:20px;">
-					<?phpif($mode!='view'){?>
+					<?php if($mode!='view'){?>
 						<table class="display table table-bordered table-striped">
 							<thead>
 								<tr>
@@ -935,7 +935,7 @@ mark{
 								</tr>
 							</tbody>
 						</table>
-					<?php} ?>
+					<?php } ?>
 				</div>
 				<div class="form-group" style="margin-top:20px;" id="task_attch_trn_div"></div>
 			</div>

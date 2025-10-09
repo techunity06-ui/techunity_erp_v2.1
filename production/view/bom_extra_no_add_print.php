@@ -174,8 +174,8 @@ if(in_array('item',$bom_pro_print)){
 			</th>
 			<th style="text-align:left;border: none;"> 
 				<?=$set_head['address']?> 
-				<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
-				<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
+				<?php if($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+				<?php if($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
 			</th>
 		</tr>
 	</thead>
@@ -253,7 +253,7 @@ if(in_array('item',$bom_pro_print)){
 				</th>
 				<?php if($companyConfiguration['enable_item_image']==1){ ?>
 					<th width="15%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Item Image</strong></th>
-				<?php} ?>
+				<?php } ?>
 				<th width="25%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Item Description</strong></th>
 				<th width="15%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Item Type</strong></th>
 				<th width="5%"  style="text-align:center;border-right:1px solid; border-bottom:1px solid;border-top: none;" ><strong>Qty</strong></th>
@@ -269,13 +269,13 @@ if(in_array('item',$bom_pro_print)){
 				<td style="border:1px #444 solid;" >0</td>
 				<?php if($companyConfiguration['enable_item_image']==1){ ?>
 					<td style="border:1px #444 solid;" ><?=$image_name?></td>
-				<?php} ?>
-				<td style="border:1px #444 solid;" ><?=$rel['product_name'].''.$item_code;?><?=$drawing_number?><?=$alias_name?><?php if($companyConfiguration['enable_item_description']==1){ ?><br><?=$rel['product_desc']?><?php} ?></td>
+				<?php } ?>
+				<td style="border:1px #444 solid;" ><?=$rel['product_name'].''.$item_code;?><?=$drawing_number?><?=$alias_name?><?php if($companyConfiguration['enable_item_description']==1){ ?><br><?=$rel['product_desc']?><?php } ?></td>
 				<td style="border:1px #444 solid;" ><?=get_product_type_by_id($dbcon,$rel['product_type'])?></td>
 				<td style="border:1px #444 solid;" >
 					<?php 
 					echo $rel['product_base_qty'];  ?> <?=$rel['base_unit_name']?>
-				<!-- <?phpif($rel['product_base_unit']!=$rel['product_conv_unit']){ ?>
+				<!-- <?php if($rel['product_base_unit']!=$rel['product_conv_unit']){ ?>
 				<?php
 				 
 			
@@ -311,7 +311,7 @@ if(in_array('item',$bom_pro_print)){
 							<th style="border:0.5px #444 solid;text-align:center;" >Process Name</th>
 							<th style="border:0.5px #444 solid;text-align:center;" >Resource Name</th>
 						</tr>
-						<?phpwhile($rel3=mysqli_fetch_assoc($result3)){ 
+						<?php while($rel3=mysqli_fetch_assoc($result3)){ 
 							if($rel3['process_type']==1){
 								$process_type="Inhouse";
 							}else{
@@ -326,9 +326,9 @@ if(in_array('item',$bom_pro_print)){
 								<td style="border:0.5px #444 solid;text-align:center;" ><?=$rel3['process_name']?></td>
 								<td style="border:0.5px #444 solid;text-align:center;" ><?=$rel3['resource_name']?></td>
 							</tr>
-						<?php} ?>
+						<?php } ?>
 					</table>
-				<?php} ?>
+				<?php } ?>
 
 			</td>
 			<?php
@@ -391,7 +391,7 @@ if(in_array('item',$bom_pro_print)){
 				<td style="border:1px #444 solid;" ><?=$i?></td>
 				<?php if($companyConfiguration['enable_item_image']==1){ ?>
 					<td style="border:1px #444 solid;" ><?=$image_name1?></td>
-				<?php} ?>
+				<?php } ?>
 				<td style="border:1px #444 solid;" ><?=$rel1['product_name'].''.$item_code1;?><?=$drawing_number1?><?=$alias_name1?><br>
 					<?php $chkMaterial = $dbcon->query("SELECT bmt.*, mp.material_parameter_name FROM tbl_bom_material_trn as bmt LEFT JOIN tbl_material_parameter as mp ON mp.material_parameter_id = bmt.material_parameter_id WHERE bmt.bom_material_trn_status = 0 AND bmt.bom_trn_id='".$rel1['bom_trn_id']."'");
 					while($getMaterial=brp_mysqli_fetch_assoc($chkMaterial)){
@@ -405,7 +405,7 @@ if(in_array('item',$bom_pro_print)){
 
 				<td style="border:1px #444 solid;" ><?=get_product_type_by_id($dbcon,$rel1['product_type'])?></td>
 				<td style="border:1px #444 solid;" >
-					<?phpif($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
+					<?php if($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
 						<?php 
 						echo  $rel1['product_base_qty'];  echo $rel1['base_unit_name']; ?>
 					</br>
@@ -440,7 +440,7 @@ if(in_array('item',$bom_pro_print)){
 								<th style="border:0.5px #444 solid;text-align:center;" >Process Name</th>
 								<th style="border:0.5px #444 solid;text-align:center;" >Resource Name</th>
 							</tr>
-							<?phpwhile($rel=mysqli_fetch_assoc($result)){ 
+							<?php while($rel=mysqli_fetch_assoc($result)){ 
 								if($rel['process_type']==1){
 									$process_type="Inhouse";
 								}else{
@@ -455,9 +455,9 @@ if(in_array('item',$bom_pro_print)){
 									<td style="border:0.5px #444 solid;text-align:center;" ><?=$rel['process_name']?></td>
 									<td style="border:0.5px #444 solid;text-align:center;" ><?=$rel['resource_name']?></td>
 								</tr>
-							<?php} ?>
+							<?php } ?>
 						</table>
-					<?php} ?>
+					<?php } ?>
 
 				</td>
 				<?php
@@ -505,7 +505,7 @@ if(in_array('item',$bom_pro_print)){
 						<td colspan="2" style="border-top:1px solid;">
 						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
-						<?php} ?>
+						<?php } ?>
 						</td>
 						<td style="border-top:1px solid;">
 							<span style="font-size:12px;float:right;">For, <strong><?=$set_head['company_name']?></strong></span>
@@ -514,9 +514,9 @@ if(in_array('item',$bom_pro_print)){
 					
 					<tr height="50px" style="border-bottom:none;">
 					<td colspan="2"  style="">
-							<?phpif(!empty($set_head['challan_condition'])){ ?>
+							<?php if(!empty($set_head['challan_condition'])){ ?>
 								<strong>Terms and Conditions:</strong><br> <?=$set_head['challan_condition']?>
-							<?php} ?><br/>
+							<?php } ?><br/>
 					</td>
 					<td style="vertical-align:top;text-align:left;border-right:1px solid;">
 					
@@ -651,7 +651,7 @@ function PrintMe(DivID) {
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

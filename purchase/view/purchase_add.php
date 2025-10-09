@@ -273,7 +273,7 @@
                                  <div class="form-group">
                                     <label class="col-md-4 control-label" >Bill Date </label>
                                     <div class="col-md-8 col-xs-11">
-                                       <input id="po_date" name="po_date" type="text" class="form-control default_date" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchase Date" tabindex="5">
+                                       <input id="po_date" name="po_date" type="text" class="form-control default_date" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchase Date" tabindex="5">
                                     </div>
                                  </div>
                               </div>
@@ -431,12 +431,12 @@
 														  <br/><br/>
 														  <textarea id="product_des" name="product_des" tabindex="15" class="form-control" ></textarea>
 												     </div>
-												      <?phpif($getspecialConfiguration['invoite_permission'] !=1){ ?>
+												      <?php if($getspecialConfiguration['invoite_permission'] !=1){ ?>
 													  <div class="col-md-4">   
 					                            	<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" title="Short-Cut To Open PopUp, Shift + Alt + p " value="R1" onclick="showproduct();"><i class="fa fa-plus"></i> Add Product</button>
 					                            	
 					                          </div>
-					                       <?php} ?>
+					                       <?php } ?>
 												   </td>
 												   <td style="vertical-align:top;">
 											   		<select class="form-control"  title="Select Unit" placeholder="Unit" name="rate_unit_id" tabindex="16" id="rate_unit_id" onchange="load_product_unit();get_product_price();">
@@ -517,7 +517,7 @@
 								<div class="form-group">
 									<label class="col-md-5 control-label text-right">Total * <span class="currency_icon"></span></label>
 									<div class="col-md-5 col-xs-11">
-										<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total" tabindex="24">
+										<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total" tabindex="24">
 									</div>
 								</div>	
 								
@@ -977,7 +977,7 @@
 				insert_product();
 				get_statecode(<?=$vender_id?>);
          	$('#vender_id').select2('readonly',true);
-         <?php} ?>
+         <?php } ?>
          <?php 	if(strpos($_SERVER['REQUEST_URI'], "purchase_bill_service_pending")==true){ ?>
          		load_service_bill(<?=$vender_id?>,<?=$service_id?>);
          		insert_service_data(<?=$service_id?>);

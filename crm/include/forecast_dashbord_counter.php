@@ -31,7 +31,7 @@ error_reporting(E_ALL);
                                         <div class="col-md-9" style="padding-right: 0px;">
                                             <select class="form-control" name="month_won_revenue_user_id" id="month_won_revenue_user_id" onchange="load_month_wise_won();" >
                                                 <option value="">Select User</option>
-                                                <?php$qry = $dbcon->query("SELECT f.f_user_id, user.user_name FROM tbl_forecast_user as f LEFT JOIN users as user ON user.user_id = f.f_user_id WHERE f.forecast_status = 0 AND f.company_id = ".$_SESSION['company_id']." GROUP BY f_user_id");
+                                                <?php $qry = $dbcon->query("SELECT f.f_user_id, user.user_name FROM tbl_forecast_user as f LEFT JOIN users as user ON user.user_id = f.f_user_id WHERE f.forecast_status = 0 AND f.company_id = ".$_SESSION['company_id']." GROUP BY f_user_id");
                                                 while($rese = brp_mysqli_fetch_assoc($qry)){ 
                                                     // $sel = '';
                                                     if($rese['f_user_id']==$_SESSION['user_id']){
@@ -39,7 +39,7 @@ error_reporting(E_ALL);
                                                     }
                                                     ?>
                                                     <option value="<?=$rese['f_user_id']?>" <?=$sel?>><?=$rese['user_name']?></option>
-                                                <?php} ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -80,7 +80,7 @@ error_reporting(E_ALL);
                                         <div class="col-md-9" style="padding-right: 0px;">
                                             <select class="form-control" name="month_won_qty_user_id" id="month_won_qty_user_id" onchange="load_month_wise_won_qty();" >
                                                 <option value="">Select User</option>
-                                                <?php$qry = $dbcon->query("SELECT f.f_user_id, user.user_name FROM tbl_forecast_user as f LEFT JOIN users as user ON user.user_id = f.f_user_id WHERE f.forecast_status = 0 AND f.company_id = ".$_SESSION['company_id']." GROUP BY f_user_id");
+                                                <?php $qry = $dbcon->query("SELECT f.f_user_id, user.user_name FROM tbl_forecast_user as f LEFT JOIN users as user ON user.user_id = f.f_user_id WHERE f.forecast_status = 0 AND f.company_id = ".$_SESSION['company_id']." GROUP BY f_user_id");
                                                 while($rese = brp_mysqli_fetch_assoc($qry)){ 
                                                     // $sel = '';
                                                     if($rese['f_user_id']==$_SESSION['user_id']){
@@ -88,7 +88,7 @@ error_reporting(E_ALL);
                                                     }
                                                     ?>
                                                     <option value="<?=$rese['f_user_id']?>" <?=$sel?>><?=$rese['user_name']?></option>
-                                                <?php} ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@ error_reporting(E_ALL);
                             <div class="col-md-9" style="padding-right: 0px;">
                                 <select class="form-control" name="target_user_id" id="target_user_id" onchange="load_target_chart();" >
                                     <option value="">Select User</option>
-                                    <?php$qry = $dbcon->query("SELECT f.f_user_id, user.user_name FROM tbl_forecast_user as f LEFT JOIN users as user ON user.user_id = f.f_user_id WHERE f.forecast_status = 0 AND f.company_id = ".$_SESSION['company_id']." GROUP BY f_user_id");
+                                    <?php $qry = $dbcon->query("SELECT f.f_user_id, user.user_name FROM tbl_forecast_user as f LEFT JOIN users as user ON user.user_id = f.f_user_id WHERE f.forecast_status = 0 AND f.company_id = ".$_SESSION['company_id']." GROUP BY f_user_id");
                                     while($rese = brp_mysqli_fetch_assoc($qry)){ 
                                         // $sel = '';
                                         if($rese['f_user_id']==$_SESSION['user_id']){
@@ -135,7 +135,7 @@ error_reporting(E_ALL);
                                         }
                                         ?>
                                         <option value="<?=$rese['f_user_id']?>" <?=$sel?>><?=$rese['user_name']?></option>
-                                    <?php} ?>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ error_reporting(E_ALL);
                             <select class="form-control" name="t_pro_wise" id="t_pro_wise" onchange="load_target_chart();" >
                                 <?php if ($getspecialConfiguration["rb_auto_permission"] == 0) { ?>
                                     <option value="1">Quantity</option>
-                                <?php} ?>
+                                <?php } ?>
                                 <option value="2">Amount</option>
                             </select>
                         </div>

@@ -143,8 +143,8 @@ body {
 			</th>
 			<th style="text-align:left;border: none;"> 
 				<?=$set_head['address']?> 
-				<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
-				<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
+				<?php if($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+				<?php if($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
 			</th>
 		</tr>
 	</thead>
@@ -285,7 +285,7 @@ body {
 					<!--<td style="border-right:1px solid;"></td>
 					<td style="border-right:1px solid;"></td>-->
 				</tr>
-		<?php} ?>
+		<?php } ?>
 		
 		<tr height="24px">
 			<td colspan="3" style="border-top:1px solid;border-bottom:1px solid;border-right:1px solid;border-left:1px solid;font-size:14px;text-align:right;">TOTAL</td>
@@ -314,7 +314,7 @@ body {
 						<td colspan="2" style="border-top:1px solid;">
 						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
-						<?php} ?>
+						<?php } ?>
 						</td>
 						<td style="border-top:1px solid;">
 							<span style="font-size:12px;float:right;">For, <strong><?=$set_head['company_name']?></strong></span>
@@ -323,9 +323,9 @@ body {
 					
 					<tr height="50px" style="border-bottom:none;">
 					<td colspan="2"  style="">
-							<?phpif(!empty($set_head['challan_condition'])){ ?>
+							<?php if(!empty($set_head['challan_condition'])){ ?>
 								<strong>Terms and Conditions:</strong><br> <?=$set_head['challan_condition']?>
-							<?php} ?><br/>
+							<?php } ?><br/>
 					</td>
 					<td style="vertical-align:top;text-align:left;border-right:1px solid;">
 					
@@ -458,7 +458,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

@@ -541,7 +541,7 @@ if($mode=='Add'){
 				<div class="form-group">
 					<label class="col-md-5 control-label">Total *</label>
 					<div class="col-md-5 col-xs-11">
-						<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+						<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 					</div>
 				</div>	
 				<div class="invoiceTotalTax">
@@ -820,7 +820,7 @@ if($mode=='Add'){
 	load_typeswise_terms(<?=$quot_type?>,<?=$quotation_id?>);
 	<?php } else if ($viewmode=='Revise') { ?>
 		load_typeswise_terms(<?=$quot_type?>,<?=$prev_quotation_id?>);
-	<?php} else {?>
+	<?php } else {?>
 		load_typeswise_terms(<?=$quot_type?>,'');
 		<?php }?>
 		<?php if($prev_quotation_id){?>
@@ -868,19 +868,19 @@ $(".quotattion-followup-date").datetimepicker({
 		CKEDITOR.replace( 'quot_header', {
 			enterMode: CKEDITOR.ENTER_BR
 		});
-		<?phpif($getspecialConfiguration['elcon_permission'] ==1){?>
+		<?php if($getspecialConfiguration['elcon_permission'] ==1){?>
 			CKEDITOR.replace( 'quatation_greeting', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-		<?php} ?>
-		<?phpif($getspecialConfiguration['maruti_permission']==1){?>
+		<?php } ?>
+		<?php if($getspecialConfiguration['maruti_permission']==1){?>
 			CKEDITOR.replace( 'quot_general_terms_condition_content', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
 			CKEDITOR.replace( 'quot_battery_limits_and_schedule_exclusion_content', {
 				enterMode: CKEDITOR.ENTER_BR
 			});
-		<?php} ?>
+		<?php } ?>
 		$(function(){
 			setTimeout(function(){ $('#sidebar > ul').hide(); }, 1000);
 		});

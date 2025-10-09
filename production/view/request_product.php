@@ -1311,7 +1311,7 @@ else if(strpos($_SERVER['REQUEST_URI'], "direct_workorder")==true)
 
 													<button id="btn_process_main" <?=$style?> type="button" onclick="direct_show_product_process()" class="btn btn-success" > <span id="process_mode">Add</span> Process</button>	
 
-																							</div>	<?php} ?>
+																							</div>	<?php } ?>
 													<div class="col-md-3 col-xs-11">
 															<button type="button" id="btn_bom_doc" onclick="view_documents('<?=$bom_id?>','<?=$version_id?>');" class="btn btn-info" >View Documents</button>
 													</div>

@@ -135,7 +135,7 @@
 													<div class="form-group">
 														<label class="col-md-4 control-label">Effective Date*</label>
 														<div class="col-md-8 col-xs-11">
-															<input id="effective_date" name="effective_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['price_list_effective_date']));}?>" placeholder="Effective Date" tabindex="4">
+															<input id="effective_date" name="effective_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['price_list_effective_date']));}?>" placeholder="Effective Date" tabindex="4">
 														</div>
 													</div>	
 												</div>
@@ -144,7 +144,7 @@
 													<div class="form-group">
 														<label class="col-md-4 control-label">Expiry Date*</label>
 														<div class="col-md-8 col-xs-11">
-															<input id="expiry_date" name="expiry_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['price_list_expire_date']));}?>" placeholder="Expiry Date" tabindex="4">
+															<input id="expiry_date" name="expiry_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['price_list_expire_date']));}?>" placeholder="Expiry Date" tabindex="4">
 														</div>
 													</div>	
 												</div>

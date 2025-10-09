@@ -117,7 +117,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
     background-color: #337ab7 !important;
     border-color: #2e6da4 !important;
 		}
-		<?phpif(!$bom_to_po_req){ ?>
+		<?php if(!$bom_to_po_req){ ?>
 			.po_req_mode{
 				display:none;
 			}
@@ -513,7 +513,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 										<input type="hidden" name="invoicetype_id" id="invoicetype_id" value="" />
 										
 										<input type="hidden" name="save_print" id="save_print" value="" />			
-										<?phpif($bom_actual_add){
+										<?php if($bom_actual_add){
 											//Entry Same Actual Quantity if first time 
 											$upd_act_qty=$dbcon->query("update tbl_bomtrn as trn
 												inner join tbl_bom as mst on mst.bom_id=trn.bom_id
@@ -521,7 +521,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 												?>	
 												<input type='hidden' name='bom_actual_add' id='bom_actual_add' value='1' />		
 												
-											<?php} ?>
+											<?php } ?>
 										</form>
 									</div>	
 								</section>
@@ -570,14 +570,14 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 					$('#sales_order_pro_id').select2('readonly',true);
 					<?php }
 					?>
-					<?phpif($direct_add){?>
+					<?php if($direct_add){?>
 						load_sales_pro_data(<?=$rel['sales_order_id']?>);
 						$('#sales_order_id').select2('readonly',true);
 						<?php 
 						$deleteid=delete_record('tbl_bomtrn', "bom_id=0", $dbcon);
 					}
 					?>
-		<?php/*if($bom_clone){?>
+		<?php /*if($bom_clone){?>
 			clone_bom_trn_data(<?=$bom_id?>);
 			<?php }*/?>	
 		</script>

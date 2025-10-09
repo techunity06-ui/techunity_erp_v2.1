@@ -38,7 +38,7 @@
 				  <section class="panel">
 					  <header class="panel-heading">
 						<h3> <?=$mode .' '.$form?></h3>
-						<?php//include_once("../include/head_menu.php") ?>
+						<?php //include_once("../include/head_menu.php") ?>
 						</header>	
 						<div class="">
 						  <ul class="breadcrumb">

@@ -246,9 +246,9 @@ $where = "";
 														<tr>
 															<td style="vertical-align:top;">
 																<!-- <select class="select2" title="Select Product" name="product_id" id="product_id" onChange="load_cust_prowise_model(this.value);load_model_service_status(this.value)">
-												<?php//=load_cust_sold_pro($dbcon,'',$rel['cust_id'])
+												<?php //=load_cust_sold_pro($dbcon,'',$rel['cust_id'])
 												?>
-												<?php//=getproduct_typewise($dbcon,'','','')
+												<?php //=getproduct_typewise($dbcon,'','','')
 												?>
 											</select> -->
 																<input id="product_id" name="product_id" style="width:100%;" placeholder="Select Product" onChange="load_cust_prowise_model(this.value);load_model_service_status(this.value);load_bom_version(this.value);" />
@@ -435,15 +435,15 @@ $where = "";
 			format: 'dd-mm-yyyy',
 			autoclose: true,
 		});
-		<?phpif ($mode == 'Add') { ?>
+		<?php if ($mode == 'Add') { ?>
 			load_complaint_no();
-		<?php} ?>
-		<?phpif ($mode == 'Edit') { ?>
+		<?php } ?>
+		<?php if ($mode == 'Edit') { ?>
 			// load_ledger_detail(<?= $rel['cust_id'] ?>);
 			// $('#cust_id').select2('readonly',true);
 
 			$('#addrow').prop('disabled', true);
-		<?php} ?>
+		<?php } ?>
 
 		$('#radioBtn a').on('click', function() {
 			var sel = $(this).data('title');

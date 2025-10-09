@@ -84,10 +84,10 @@
 					{
 				?>
 					<li><a  style="font-size:14px" href="<?=ROOT.strtolower($rel_menu1['page_name'])?>"><?=ucwords(strtolower($rel_menu1['menu_name']))?></a></li>
-				<?php} ?>
+				<?php } ?>
 				</ul>
 				</li>
-				<?php}?>
+				<?php }?>
 					
             </li>	
 			<?php 	} ?>

@@ -81,7 +81,7 @@
 					<section class="panel">
 						<header class="panel-heading">
 							<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-							<?phpinclude_once("../include/head_menu.php") ?>
+							<?php include_once("../include/head_menu.php") ?>
 						</header>	
 						<div class="">
 						  <ul class="breadcrumb">
@@ -106,7 +106,7 @@
 					<!--<div class="col-md-4">
 							<label class="col-md-4 control-label"> Invoice type </label>
 							<div class="col-md-6 col-xs-11">
-								<select style="padding-right: 0px;" class="form-control" name="invoicetype_id" id="invoicetype_id" onChange="load_invoiceno(this.value)" <?phpif($mode=='Edit'){?> readonly="readonly"<?php}?> >
+								<select style="padding-right: 0px;" class="form-control" name="invoicetype_id" id="invoicetype_id" onChange="load_invoiceno(this.value)" <?php if($mode=='Edit'){?> readonly="readonly"<?php }?> >
 									<?php //=getinvoicetype($dbcon,$load_inv_type);?>
 								</select>
 							</div>
@@ -124,7 +124,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Invoice Date*</label>
 							<div class="col-md-6 col-xs-11">
-								<input id="invoice_date" name="invoice_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['invoice_date']));}?>" placeholder="Invoice Date">
+								<input id="invoice_date" name="invoice_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['invoice_date']));}?>" placeholder="Invoice Date">
 							</div>
 						</div>	
 					</div>
@@ -141,7 +141,7 @@
 						<div class="form-group">
 						  <label class="col-md-4 control-label">D.C. Date*</label>
 							<div class="col-md-6 col-xs-11">
-								<input id="challan_date" name="challan_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['challan_date']));}?>" placeholder="Challan Date">
+								<input id="challan_date" name="challan_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['challan_date']));}?>" placeholder="Challan Date">
 							</div>
 						</div>	
 					</div>
@@ -241,7 +241,7 @@
 				    </div>
 					
 				<div class="clearfix"></div>
-			   <?phpif($mode=="Add") {?>
+			   <?php if($mode=="Add") {?>
 				   <div class="col-md-4"  style="display:none;">
 						<div class="form-group">
 						  <label class="col-md-4 control-label">Payment Reminder</label>
@@ -250,7 +250,7 @@
 						  </div>
 						</div>	
 				   </div>
-			   <?php} ?>
+			   <?php } ?>
 					<div class="col-md-4">
 						<div class="form-group">
 						  <label class="col-md-4 control-label">Consignee Same *</label>
@@ -444,17 +444,17 @@
 							<div class="form-group" style="<?=$ttl_display?>">
 								<label class="col-md-5 control-label">Total *</label>
 								<div class="col-md-5 col-xs-11">
-									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 					
 								</div>
 							</div>	
 							
 						
-						<?phpif($set_head['show_charges']=='1'){ ?>		
+						<?php if($set_head['show_charges']=='1'){ ?>		
 							<div class="form-group">
 								<label class="col-md-5 control-label">Packing </label>
 								<div class="col-md-5 col-xs-11">
-								<input id="packing" name="packing" type="number" class="form-control" title="packing" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
+								<input id="packing" name="packing" type="number" class="form-control" title="packing" min="0"  value="<?php if($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
 					
 								</div>
 							</div>
@@ -462,18 +462,18 @@
 							<!--<div class="form-group">
 								<label class="col-md-5 control-label">Discount </label>
 								<div class="col-md-2 col-xs-11">
-									<input id="discount_per" name="discount_per" type="number" class="form-control col-md-6" title="in % Max 100" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['discount_per'];}?>" placeholder="in %" onKeyUp="add_discount('per');" max="100" style="width: 80px;" >
+									<input id="discount_per" name="discount_per" type="number" class="form-control col-md-6" title="in % Max 100" min="0"  value="<?php if($mode=='Edit'){ echo $rel['discount_per'];}?>" placeholder="in %" onKeyUp="add_discount('per');" max="100" style="width: 80px;" >
 									
 								</div>
 								<div class="col-md-3 col-xs-11">
-									<input id="discount_amt" name="discount_amt" type="number" class="form-control col-md-6" title="in Rs." min="0"  value="<?phpif($mode=='Edit'){ echo $rel['discount'];}?>" placeholder="in Rs." onKeyUp="add_discount('amt');" >
+									<input id="discount_amt" name="discount_amt" type="number" class="form-control col-md-6" title="in Rs." min="0"  value="<?php if($mode=='Edit'){ echo $rel['discount'];}?>" placeholder="in Rs." onKeyUp="add_discount('amt');" >
 								</div>
 							</div>-->
 							<!--
 							<div class="form-group">
 								<label class="col-md-5 control-label">Freight </label>
 								<div class="col-md-5 col-xs-11">
-								<input id="freight" name="freight" type="number" class="form-control" title="Transport" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['freight'];}?>" placeholder="Freight" onKeyUp="add_freight();" >
+								<input id="freight" name="freight" type="number" class="form-control" title="Transport" min="0"  value="<?php if($mode=='Edit'){ echo $rel['freight'];}?>" placeholder="Freight" onKeyUp="add_freight();" >
 					
 								</div>
 							</div>-->
@@ -530,7 +530,7 @@
 							<!-- <div class="form-group">
 								<label class="col-md-5 control-label">Round Off</label>
 								<div class="col-md-5 col-xs-11">
-								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off"  value="<?phpif($mode=='Edit'){ echo $rel['round_off'];}else{ echo "0";}?>" placeholder="Round Off" onKeyUp="add_freight();" >
+								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off"  value="<?php if($mode=='Edit'){ echo $rel['round_off'];}else{ echo "0";}?>" placeholder="Round Off" onKeyUp="add_freight();" >
 					
 								</div>
 							</div>	-->

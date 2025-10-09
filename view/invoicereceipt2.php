@@ -276,15 +276,15 @@ td, th {
 							<?=$rel['cust_address']?>
 							 <br>
 							 <?=$rel['city_name']?>, <?=$rel['state_name']?>
-							  <?phpif(!empty($rel['cust_pincode']))
+							  <?php if(!empty($rel['cust_pincode']))
 								{	?>
 							 -  <?=$rel['cust_pincode']?>
-								<?php} ?>
+								<?php } ?>
 								<!--<br>
 								Mobile no : <?=$rel['cust_mobile']?>-->
 								
 						</td>
-						<?phpif(empty($rel['consignee_id'])) { ?>
+						<?php if(empty($rel['consignee_id'])) { ?>
 						<td colspan="2"  style="border-right:1px solid black">
 						<b>Shipped to Party : </b><br>
 							<strong><?=$rel['company_name']?></strong>
@@ -292,15 +292,15 @@ td, th {
 							<?=$rel['cust_address']?>
 							 <br>
 							 <?=$rel['city_name']?>, <?=$rel['state_name']?>
-								<?phpif(!empty($rel['cust_pincode']))
+								<?php if(!empty($rel['cust_pincode']))
 								{	?>
 							 -  <?=$rel['cust_pincode']?>
-								<?php} ?>
+								<?php } ?>
 							<!--	<br>
 								Mobile no : <?=$rel['cust_mobile']?>-->
 								
 						</td>
-						<?php} else
+						<?php } else
 						{?>
 							<td colspan="2"  style="border-right:1px solid black">
 							<b>Consignee : </b><br>
@@ -309,14 +309,14 @@ td, th {
 							<?=$cons_data['cust_address']?>
 							 <br>
 							 <?=$cons_data['city_name']?>, <?=$cons_data['state_name']?>
-								<?phpif(!empty($cons_data['cust_pincode']))
+								<?php if(!empty($cons_data['cust_pincode']))
 								{	?>
 							 -  <?=$cons_data['cust_pincode']?>
-								<?php} ?>
+								<?php } ?>
 								<!--<br>
 								Mobile no : <?=$cons_data['cust_mobile']?>-->
 						</td>
-						<?php}?>
+						<?php }?>
 						</tr>
 						<tr>
 							<td colspan="4" style="border-right:1px solid black;border-left:1px solid black;"><strong>GSTIN: <?=$rel['gst_no']?> 
@@ -445,7 +445,7 @@ td, th {
 						<?=number_format($row['total'],2,".","")?>
 					</td>
 					</tr>
-				<?php$i++; 
+				<?php $i++; 
 						$totalqty=$totalqty+$row['product_qty'];
 						$total_product_amount+=($row['product_qty']*$row['product_rate']);
 						$totaltaxable+=$row['product_amount'];
@@ -473,7 +473,7 @@ td, th {
 									
 									
 					</tr>
-				<?php} 
+				<?php } 
 				?>
 					<tr style="height:20px">
 									<td style="border-top:1px solid #000;border-right:1px solid #000;border-left:1px solid #000; text-align:right;" colspan="3"><strong>Total</strong></td>
@@ -490,15 +490,15 @@ td, th {
 									
 									
 					</tr>
-					<?php$total-=$rel['discount'];?>
+					<?php $total-=$rel['discount'];?>
 					<tr height="20px">
 							<td style="border-right:1px solid #000;border-top:1px solid #000;border-left:1px solid #000; font-size:10px;" colspan="<?=4+$colspan?>">
-							<?phpif(!empty($set_head['bank_name'])){?>
+							<?php if(!empty($set_head['bank_name'])){?>
 									<strong>Bank Name:</strong> <?=$set_head['bank_name']?>, 
-									<?php} ?>
-								<?phpif(!empty($set_head['ac_no'])){?>
+									<?php } ?>
+								<?php if(!empty($set_head['ac_no'])){?>
 									<strong>A/c No:</strong> <?=$set_head['ac_no']?>	 
-									<?php} ?>
+									<?php } ?>
 							</td>
 						<td colspan="3" style="border-top:1px solid #000;border-right:1px solid #000;font-size:10px;text-align:left">
 							Taxable Amount
@@ -507,25 +507,25 @@ td, th {
 					</tr>
 					<tr height="20px">
 						<td style="border-right:1px solid #000;border-top:1px solid #000;border-left:1px solid #000; font-size:10px;" colspan="<?=4+$colspan?>">
-							<?phpif(!empty($set_head['ifcs'])){ ?>
+							<?php if(!empty($set_head['ifcs'])){ ?>
 									<strong>IFCS:</strong><?=$set_head['ifcs']?>,
-								<?php} ?>	
-								<?phpif(!empty($set_head['branch_name'])){ ?>
-									<strong>Branch :</strong> <?=$set_head['branch_name']?><?php} ?>
+								<?php } ?>	
+								<?php if(!empty($set_head['branch_name'])){ ?>
+									<strong>Branch :</strong> <?=$set_head['branch_name']?><?php } ?>
 						</td>
-						<?phpif(intval($rel_col['cnt'])>0) { ?>
+						<?php if(intval($rel_col['cnt'])>0) { ?>
 						<td colspan="3" style="border-top:1px solid #000;border-right:1px solid #000;font-size:10px;text-align:left" >
 						
 						<?=(intval($rel_col['cnt'])>1?'Add :  CGST':'Add :  IGST');?>
 						</td>
 						<td colspan="2" style="text-align:right; border-top:1px solid #000;font-size:10px;border-right:1px solid #000; "><?=number_format($totaltax1,2,".","")?></td>
-						<?php} else {?>
+						<?php } else {?>
 						<td colspan="3" style="border-top:1px solid #000;border-right:1px solid #000;font-size:10px;text-align:center"> - 
 						</td>
 						<td colspan="2" style="text-align:center; border-top:1px solid #000;font-size:10px;border-right:1px solid #000; "> - </td>
-						<?php}?>
+						<?php }?>
 					</tr>
-					<?phpif(intval($rel_col['cnt'])>1) { ?>
+					<?php if(intval($rel_col['cnt'])>1) { ?>
 					<tr height="20px">
 						<td style="border-right:1px solid #000;border-top:1px solid #000;border-left:1px solid #000; font-size:10px;" colspan="<?=4+$colspan?>">
 						
@@ -533,7 +533,7 @@ td, th {
 						<td colspan="3" style="border-top:1px solid #000;border-right:1px solid #000;font-size:10px;text-align:left">Add : SGST</td>
 						<td colspan="2" style="text-align:right; border-top:1px solid #000;font-size:10px;border-right:1px solid #000; "><?=number_format($totaltax2,2,".","")?></td>
 					</tr>
-					<?php}
+					<?php }
 						$totaltax=$totaltax1+$totaltax2;
 					?>
 					<tr height="20px">
@@ -559,7 +559,7 @@ td, th {
 						<td colspan="3" style="border-top:1px solid #000;border-right:1px solid #000;font-size:10px;text-align:left">Packing :</td>
 						<td colspan="2" style="text-align:right; border-top:1px solid #000;font-size:10px;border-right:1px solid #000; "><?=number_format($rel['packing'],2,".","")?></td>
 					</tr>
-					<?php}
+					<?php }
 					$r=round($total)-$total; 
 					?>
 					<tr height="20px">
@@ -701,9 +701,9 @@ td, th {
 						<td colspan="<?=4+$colspan?>" style="vertical-align:top;border:1px solid #000;border-top:none;
 						border-right:none;font-size:10px;text-align:left" class="con">
 							
-						<?phpif(!empty($set_head['conditions'])){ ?>
+						<?php if(!empty($set_head['conditions'])){ ?>
 								<strong>Terms and Conditions:</strong><br> <?=$set_head['conditions']?>
-							<?php} ?>	<br/><br/>
+							<?php } ?>	<br/><br/>
 						<span style="vertical-align:bottom;">E & O.E.</span>
 	
 						</td>
@@ -849,7 +849,7 @@ disp_setting+="scrollbars=yes,width=800, height=600, left=100, top=25";
  docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 

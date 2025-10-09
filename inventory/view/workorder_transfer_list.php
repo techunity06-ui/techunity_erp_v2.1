@@ -45,7 +45,7 @@
 				  <section class="panel">
 					  <header class="panel-heading">
 						<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-						<?php//include_once("../include/head_menu.php") ?>
+						<?php //include_once("../include/head_menu.php") ?>
 						</br>
 						</br>
 						</header>

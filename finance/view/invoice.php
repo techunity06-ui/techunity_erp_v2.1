@@ -220,7 +220,7 @@ if($company_config['invoice_discount_editable']==0){
 						<section class="panel">
 							<header class="panel-heading">
 								<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-								<?phpinclude_once($include."head_menu.php") ?>
+								<?php include_once($include."head_menu.php") ?>
 							</header>	
 							<div class="">
 								<ul class="breadcrumb">
@@ -246,7 +246,7 @@ if($company_config['invoice_discount_editable']==0){
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id, $edit_branch_id, false, true, '','4','8'); ?>
 										</div>
-									<?php} ?>
+									<?php } ?>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="col-md-3 control-label">Company*</label>
@@ -306,9 +306,9 @@ if($company_config['invoice_discount_editable']==0){
 													</div>
 												</div>
 											</div>
-										<?php}else{ ?>
+										<?php }else{ ?>
 											<input type="hidden" id="user_id" name="user_id" value="<?=$_SESSION['user_id']?>">
-										<?php} ?>
+										<?php } ?>
 
 										<div class="col-md-12 info_line" style="margin-bottom: 5px;">Invoice Details</div>
 										<div class="col-md-4">
@@ -337,10 +337,10 @@ if($company_config['invoice_discount_editable']==0){
 												<div class="col-md-6 col-xs-11" >
 													<select <?= $disable ?> class="select2" name="invoicetype_id" id="invoicetype_id" tabindex="2" onchange="load_pono(this.value)" required>
 														<option value="">--Select Series--</option>
-														<?php$chkseri = $dbcon->query("SELECT * FROM tbl_invoicetype WHERE status = 0 AND type_id = 37 AND company_id = ".$_SESSION['company_id']." AND financial_year_id = ".$_SESSION['financial_year_id']);
+														<?php $chkseri = $dbcon->query("SELECT * FROM tbl_invoicetype WHERE status = 0 AND type_id = 37 AND company_id = ".$_SESSION['company_id']." AND financial_year_id = ".$_SESSION['financial_year_id']);
 														while($getseri = brp_mysqli_fetch_assoc($chkseri)){ ?>
 															<option value="<?=$getseri['invoicetype_id']?>" <?=($getseri['invoicetype_id'] == $rel['invoicetype_id']) ? "selected" : "" ?>><?=$getseri['invoice_type']?></option>
-														<?php} ?>
+														<?php } ?>
 													</select>
 												</div>
 											</div>
@@ -358,7 +358,7 @@ if($company_config['invoice_discount_editable']==0){
 											<div class="form-group">
 												<label class="col-md-4 control-label">Invoice Date*</label>
 												<div class="col-md-6 col-xs-11">
-													<input id="invoice_date" name="invoice_date" type="text" class="form-control default_date required valid" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['invoice_date']));}?>" placeholder="Invoice Date" tabindex="5" autocomplete="off">
+													<input id="invoice_date" name="invoice_date" type="text" class="form-control default_date required valid" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['invoice_date']));}?>" placeholder="Invoice Date" tabindex="5" autocomplete="off">
 												</div>
 											</div>	
 										</div>
@@ -367,7 +367,7 @@ if($company_config['invoice_discount_editable']==0){
 											<div class="form-group">
 												<label class="col-md-4 control-label">Due Date*</label>
 												<div class="col-md-6 col-xs-11">
-													<input id="invoice_due_date" name="invoice_due_date" type="text" class="form-control required valid due_date_class" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit' && $rel['invoice_due_date']!="0000-00-00"){ echo date('d-m-Y',strtotime($rel['invoice_due_date']));} else { echo ""; }  ?>" placeholder="Due Date" tabindex="6" autocomplete="off" onchange="check_previos_date(this.value)">
+													<input id="invoice_due_date" name="invoice_due_date" type="text" class="form-control required valid due_date_class" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit' && $rel['invoice_due_date']!="0000-00-00"){ echo date('d-m-Y',strtotime($rel['invoice_due_date']));} else { echo ""; }  ?>" placeholder="Due Date" tabindex="6" autocomplete="off" onchange="check_previos_date(this.value)">
 													<strong class="invoice_due_date_error" style="color:red"></strong>
 												</div>
 											</div>	
@@ -384,7 +384,7 @@ if($company_config['invoice_discount_editable']==0){
 												</div>
 											</div>									
 										</div>
-									<?php} ?>
+									<?php } ?>
 										<div class="col-md-4">
 											<input id="dc_enable" name="dc_enable" type="checkbox" class="" title="Other Name"  value="1" style="display: none;" checked>
 											<div class="form-group">
@@ -399,7 +399,7 @@ if($company_config['invoice_discount_editable']==0){
 											<div class="form-group">
 												<label class="col-md-4 control-label">D.C. Date*</label>
 												<div class="col-md-6 col-xs-11">
-													<input id="challan_date" name="challan_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpif($mode=='Add'){ echo date('d-m-Y');}else if($mode=='Edit'){ if($rel['challan_date']=='0000-00-00'){ echo ""; } else { echo date('d-m-Y',strtotime($rel['challan_date']));} } ?>" placeholder="Challan Date" tabindex="9">
+													<input id="challan_date" name="challan_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php if($mode=='Add'){ echo date('d-m-Y');}else if($mode=='Edit'){ if($rel['challan_date']=='0000-00-00'){ echo ""; } else { echo date('d-m-Y',strtotime($rel['challan_date']));} } ?>" placeholder="Challan Date" tabindex="9">
 												</div>
 											</div>	
 										</div>
@@ -418,7 +418,7 @@ if($company_config['invoice_discount_editable']==0){
 											<div class="form-group">
 												<label class="col-md-4 control-label">P.O. Date*</label>
 												<div class="col-md-6 col-xs-11">
-													<input id="order_date" name="order_date" type="text" class="form-control default-date-picker  valid" title="Date" value="<?phpif($mode=='Add'){ echo $order_date;}else if($mode=='Edit'){ if($rel['order_date']=='0000-00-00'){ echo ""; } else { echo date('d-m-Y',strtotime($rel['order_date']));} } ?>" placeholder="P.O. Date" tabindex="12">
+													<input id="order_date" name="order_date" type="text" class="form-control default-date-picker  valid" title="Date" value="<?php if($mode=='Add'){ echo $order_date;}else if($mode=='Edit'){ if($rel['order_date']=='0000-00-00'){ echo ""; } else { echo date('d-m-Y',strtotime($rel['order_date']));} } ?>" placeholder="P.O. Date" tabindex="12">
 												</div>
 											</div>	
 										</div>
@@ -463,7 +463,7 @@ if($company_config['invoice_discount_editable']==0){
 													</div>
 												</div>
 											</div>
-										<?php} ?>
+										<?php } ?>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label class="col-md-4 control-label" >Payment Terms</label>
@@ -568,7 +568,7 @@ if($company_config['invoice_discount_editable']==0){
                                             </div>
                                         </div>
 
-										<?php//if($getspecialConfiguration['power_drive']==1){ ?>
+										<?php //if($getspecialConfiguration['power_drive']==1){ ?>
 													<!-- <div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4 control-label" >Orange</label>
@@ -692,12 +692,12 @@ if($company_config['invoice_discount_editable']==0){
 																				<strong id="product_stock_count_check" style="display: none;"></strong>
 																				<br/><br/>
 																			</div>
-																			<?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
+																			<?php if($getspecialConfiguration['oilfield_permission']==1){ ?>
 																			<div class="col-md-3">   
 																				<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" title="Short-Cut To Open PopUp, Shift + Alt + p " onclick="showproduct();"><i class="fa fa-plus"></i> Add Product</button>
 																				<!-- <a href="#"  data-original-title="Short-Cut To Open PopUp, Shift + Alt + n " data-toggle="tooltip" data-placement="top" ><i class="fa fa-info-circle fa-sm" style="color: black;"></a></i> -->
 																			</div>
-																			<?php} ?>
+																			<?php } ?>
 																			
 
 																		</td>	
@@ -764,7 +764,7 @@ if($company_config['invoice_discount_editable']==0){
 																		<input type='hidden' name='pro_cal_type' id='pro_cal_type' value='' />
 																	</tr>
 
-																	<?phpif($getspecialConfiguration['power_drive']==1){ ?>
+																	<?php if($getspecialConfiguration['power_drive']==1){ ?>
 																		<tr>
 																			<th class="text-center">Orange</th>
 																			<th class="text-center">MFG.</th>
@@ -846,7 +846,7 @@ if($company_config['invoice_discount_editable']==0){
 									<div class="form-group">
 										<label class="col-md-5 control-label">Total * <span class="currency_icon"></span></label>
 										<div class="col-md-5 col-xs-11">
-											<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+											<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 										</div>
 									</div>	
 									<div class="sundryaddedwithtax">
@@ -885,9 +885,9 @@ if($company_config['invoice_discount_editable']==0){
 												
 
 												<input id="is_power_drive" name="is_power_drive" type="hidden" class="form-control" title="Round Off" value="<?= $getspecialConfiguration['power_drive'];?>">
-												<?phpif($getspecialConfiguration['power_drive']==1){ ?>
+												<?php if($getspecialConfiguration['power_drive']==1){ ?>
 													<input id="round_of" name="round_of" type="hidden" class="form-control" title="Round Off" value="0.00">
-												<?php} else { ?>
+												<?php } else { ?>
 													<div class="row">							
 														<div class="form-group">
 															<label class="col-md-5 control-label text-right">Round Off * <span class="currency_icon"></span></label>
@@ -896,7 +896,7 @@ if($company_config['invoice_discount_editable']==0){
 															</div>
 														</div>										
 													</div>
-												<?php} ?>
+												<?php } ?>
 
 
 
@@ -946,13 +946,13 @@ if($company_config['invoice_discount_editable']==0){
 											<div class="col-md-6">
 												<div class="col-md-3">
 	                                               <div class="form-group">
-	                                                    <input type="radio" class="" name="tc_format" id="format1" value="1" onchange="tc_format_view();" <?phpif($rel['tc_format'] == '1'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Format-1                 
+	                                                    <input type="radio" class="" name="tc_format" id="format1" value="1" onchange="tc_format_view();" <?php if($rel['tc_format'] == '1'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Format-1                 
 	                                                </div>
 	                                            </div>
 
 	                                            <div class="col-md-3">
 	                                               <div class="form-group">
-	                                                    <input type="radio" class="" name="tc_format" onchange="tc_format_view();" id="format2" value="2" <?phpif($rel['tc_format'] == '2'){ echo 'checked="checked"';}?>> Format-2                 
+	                                                    <input type="radio" class="" name="tc_format" onchange="tc_format_view();" id="format2" value="2" <?php if($rel['tc_format'] == '2'){ echo 'checked="checked"';}?>> Format-2                 
 	                                                </div>
 	                                            </div>
 											</div>
@@ -971,28 +971,28 @@ if($company_config['invoice_discount_editable']==0){
 													<div class="form-group">
 														<input type="radio" class="" name="terms_type" id="common_terms" value="0" onchange="get_so_data_invoice();" 
 
-														<?phpif($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
+														<?php if($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
 													</div>
 												</div>
 
 												<div class="col-md-3">
 													<div class="form-group">
 														<input type="radio" class="" name="terms_type" id="party_terms" value="1" onchange="get_so_data_invoice();"
-														<?phpif($rel['terms_type'] == '1'){ echo 'checked="checked"';}?> > Party Wise
+														<?php if($rel['terms_type'] == '1'){ echo 'checked="checked"';}?> > Party Wise
 													</div>
 												</div>
 
 												<div class="col-md-3">
 													<div class="form-group">
 														<input type="radio" class="" name="terms_type" id="quotation_terms" value="2" onchange="get_so_data_invoice();"
-														<?phpif($rel['terms_type'] == '2'){ echo 'checked="checked"';}?> > Sales Order Wise
+														<?php if($rel['terms_type'] == '2'){ echo 'checked="checked"';}?> > Sales Order Wise
 													</div>
 												</div>
 
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="" name="terms_type" id="multi_condition" value="3" onchange="get_so_data_invoice();"
-															<?phpif($rel['terms_type'] == '3'){ echo 'checked="checked"';}?> > Multi Condition
+															<?php if($rel['terms_type'] == '3'){ echo 'checked="checked"';}?> > Multi Condition
 														</div>
 													</div>
 
@@ -1425,7 +1425,7 @@ if($company_config['invoice_discount_editable']==0){
 				load_cust_so(<?=$cust_id?>,<?=$sales_order_id?>);
 				get_so_data_invoice();
 				/*load_typeswise_terms(<=$invoiceid?>);*/
-			<?php}else{ ?>
+			<?php }else{ ?>
 				load_typeswise_terms('');
 			<?php }?>
 			<?php if($viewmode == "invoiceso"){?>
@@ -1434,7 +1434,7 @@ if($company_config['invoice_discount_editable']==0){
 				// insert_product();
 				get_sales_bill_sundry(<?=$sales_order_id?>,0);
 				$('#cust_id').select2('readonly',true);	
-				<?php} ?>
+				<?php } ?>
 				get_tax_details_table();
 				get_invoice_total_tax();
 			</script>

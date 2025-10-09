@@ -191,10 +191,10 @@ $header ='<table style:"border:0; border-color:white">
 																		<?=$city_name?>,
 																		<?=$state_name?>,
 																		<?=$country_name?>
-																		<?phpif(!empty($cust_pincode))
+																		<?php if(!empty($cust_pincode))
 																		{	?>
 																			-  <?=$cust_pincode?>
-																			<?php} ?></span>
+																			<?php } ?></span>
 																			<br> <strong> GSTIN : <?=$gst_no?></strong>
 																			
 																		</td>
@@ -279,7 +279,7 @@ $header ='<table style:"border:0; border-color:white">
 																	<?php if($row['product_alias_name']){?>
 																		<strong><?=stripcslashes($row['product_alias_name'])?>  <?=$item_code;?></strong>
 																		<br/><?=$row['description'];?>
-																	<?php}else{ ?>
+																	<?php }else{ ?>
 																		<strong><?=stripcslashes($row['product_name'])?>  <?=$item_code;?></strong>
 																		<br/><?=$row['description'];?>
 																		<?php }?>
@@ -322,7 +322,7 @@ $header ='<table style:"border:0; border-color:white">
 																		<td style="border-right:1px solid;"></td>
 																		<td style="border-right:1px solid;"></td>
 																	</tr>
-																<?php} ?>
+																<?php } ?>
 																<tr height="24px">
 																	<td colspan="2" style="border-top:1px solid;border-bottom:1px solid;border-right:1px solid;border-left:1px solid;font-size:14px;text-align:right !important;">TOTAL</td>
 																	<td style="text-align:center;border-bottom:1px solid; border-top:1px solid;font-size:14px;border-right:1px solid; "><?=number_format($totalqty,2,".","")?></td>
@@ -456,7 +456,7 @@ function PrintMe(DivID) {
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
 //  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
 docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 docprint.document.write('<style type="text/css">');

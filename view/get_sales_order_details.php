@@ -86,9 +86,9 @@
 												    <?php if($companyConfiguration['outside_jobwork']){ ?>
 											<th>Jobwork Type</th>
 										<?php } ?>
-												   <?phpif($_SESSION['branch_id']==0){ ?>
+												   <?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													  <?php} ?>
+													  <?php } ?>
 												  <th class="hidden-phone">Action</th>					  
 												</tr>
 											</thead>

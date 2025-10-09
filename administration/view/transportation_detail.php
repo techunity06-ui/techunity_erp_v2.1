@@ -68,9 +68,9 @@
 																<?=getBranchBox_new($dbcon, $branch,'all');?>
 	                					</select>
 						            </div>
-						        <?php}else{ ?>
+						        <?php }else{ ?>
 													<input type="hidden" name="branch_id" id="branch_id" value="<?=$companyConfiguration['default_branch_id']?>" />
-												<?php} ?>
+												<?php } ?>
 
 								<div class="form-group">
 									<label>Transportation Name *</label>

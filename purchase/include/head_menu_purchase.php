@@ -10,7 +10,7 @@ ul.summary-list > li {
 </style>
 <div style="text-align:right" class="hidden-phone">
 						<ul class="summary-list" >
-							<?phpif($page_name!="purchase_add")
+							<?php if($page_name!="purchase_add")
 							{?>
 							<li class="">
 								<a href="<?=ROOT.'purchase/purchase_add'?>">
@@ -18,7 +18,7 @@ ul.summary-list > li {
 										Create Purchase
 								</a>
                             </li>
-                            <?php}
+                            <?php }
 							if($page_name!="purchase_list")
 							{?>
 							<li>
@@ -27,7 +27,7 @@ ul.summary-list > li {
 										Purchase List
                                 </a>
                             </li>
-							<?php} ?>
+							<?php } ?>
 							
                      </ul>
 		</div>

@@ -338,7 +338,7 @@ if($set_head['show_disc']=='1'){
 												</tr>
 											</thead>
 											<tbody style="border: 1px solid;">
-												<?php$qry="select trn.*,product.*,per.unit_name,per1.unit_name as base_unit_name,per2.unit_name as conv_unit_name FROM `tbl_purchaseordertrn` as trn 
+												<?php $qry="select trn.*,product.*,per.unit_name,per1.unit_name as base_unit_name,per2.unit_name as conv_unit_name FROM `tbl_purchaseordertrn` as trn 
 												left join product_mst as product on product.product_id=trn.product_id 
 												left join unit_mst as per on per.unitid=trn.unit_id 
 												left join unit_mst as per1 on per1.unitid=product.product_base_unit 
@@ -382,21 +382,21 @@ if($set_head['show_disc']=='1'){
 															<?php if($row['product_alias_name']){?>
 																<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?></strong>
 																<br/><?=($row['product_des']) ? nl2br(stripcslashes($row['product_des'])) : '';?>
-															<?php}else{ ?>
+															<?php }else{ ?>
 																<strong><?=stripcslashes($row['product_name'])?> <?=$code?></strong>
 																<br/><?=($row['product_des']) ? nl2br(stripcslashes($row['product_des'])) : '';?>
-															<?php} ?>
+															<?php } ?>
 														</td>
 														<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
 															<?=stripcslashes($row['product_hsn_code'])?>
 														</td>
 														<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-															<?phpif($row['product_type']!='8'){ ?>
+															<?php if($row['product_type']!='8'){ ?>
 																<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 																	<?=$cqty.' '.$uname?><br/>
-																<?php} ?>
+																<?php } ?>
 																<?=$row['product_qty'].' '.$row['unit_name']?>
-															<?php}else{
+															<?php }else{
 																$charges_qty+=$row['product_qty'];
 															} ?>	
 														</td>
@@ -417,7 +417,7 @@ if($set_head['show_disc']=='1'){
 															<?=number_format($row['total'],2,".","")?>
 														</td>
 													</tr>
-													<?php$i++; 
+													<?php $i++; 
 													$totalqty=$totalqty+$row['product_qty']-$charges_qty;
 													$totalsqr=$totalsqr+$row['sqr_ft']-$charges_qty1;
 													$total_product_amount+=$row['product_rate'];
@@ -437,7 +437,7 @@ if($set_head['show_disc']=='1'){
 														<td style="border-right:1px solid;"></td>
 														<td style="border-right:1px solid;"></td>
 													</tr>
-												<?php} ?>
+												<?php } ?>
 												<tr style="height:20px">
 													<td style="border-top:1px solid;border-right:1px solid;border-left:1px solid; text-align:right;" colspan="5"><strong>Total</strong></td>
 													<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
@@ -528,7 +528,7 @@ if($set_head['show_disc']=='1'){
 												?></td>
 												<td colspan="2" style="text-align:right  !important; border-top:1px solid;font-size:12px;border-right:1px solid; "><?=number_format($totaltax2,2,".","")?></td>
 											</tr>
-										<?php} $totaltax=$totaltax1+$totaltax2;?>
+										<?php } $totaltax=$totaltax1+$totaltax2;?>
 										<?php 
 										$total=($total)+$rel['packing']; 
 										$r=round($total)-$total; ?>
@@ -682,7 +682,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

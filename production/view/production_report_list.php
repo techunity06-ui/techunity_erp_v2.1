@@ -116,7 +116,7 @@
 									</ul>
 									</div>
 									</section>
-								<?php} ?>							
+								<?php } ?>							
 						</div>
 					</div>
 				</section>

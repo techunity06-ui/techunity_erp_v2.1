@@ -107,7 +107,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 											<div class="form-group">
 												<label for="f_year" class="col-md-4 control-label">Forecast Date*</label>
 												<div class="col-md-8">
-													<input id="forecast_date" name="forecast_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?=$forecast_date?>" placeholder="Forecast Date" <?phpecho ($mode=="Edit")?"disabled":""?>>
+													<input id="forecast_date" name="forecast_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?=$forecast_date?>" placeholder="Forecast Date" <?php echo ($mode=="Edit")?"disabled":""?>>
 												</div>
 											</div>							 
 										</div>
@@ -174,10 +174,10 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																			<th>Month</th>
 																			<?php if($companyConfiguration['forecast_base']==3){ ?>
 																				<th>Product Name</th>
-																			<?php}
+																			<?php }
 																			if($companyConfiguration['forecast_base']==2){ ?>
 																				<th>Product Category</th>
-																			<?php} ?>
+																			<?php } ?>
 																			<th>Amount</th>
 																			<th>Quantity</th>
 																			<th>Action</th>
@@ -196,14 +196,14 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 																						<?=getproduct_typewise($dbcon, '', '')?>
 																					</select>
 																				</td>
-																			<?php} ?>
+																			<?php } ?>
 																			<?php if($companyConfiguration['forecast_base']==2){ ?>
 																				<td>
 																					<select class="select2" name="f_product" id="f_product">
 																						<?=get_all_category($dbcon, '', '')?>
 																					</select>
 																				</td>
-																			<?php} ?>
+																			<?php } ?>
 																			<td>
 																				<input type="number" min="0" class="form-control" id="target_amount" name="target_amount" value="">
 																			</td>
@@ -275,10 +275,10 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 	<?php if($mode=='Edit' || $cmode=='Add'){ ?>
 		get_branchwise_user(<?=$rel['branch_id']?>);
 		//load_f_period(<?=$rel['forecast_type']?>);
-	<?php}
+	<?php }
 	if($cmode=='Add'){ ?>
 		copy_forecast(<?=$rel['forecast_user_id']?>);
-	<?php} ?>
+	<?php } ?>
 	load_f_period();
 	show_data();
 </script>

@@ -197,9 +197,9 @@ $cnyts = explode(",",$amnts);
 								<div class='col-lg-4'>
 									<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true,'reload_data()','4','8'); ?>
 								</div>
-							<?php}else{ ?>
+							<?php }else{ ?>
 								<input type="hidden" name="branch_id" id="branch_id" value="<?=$companyConfiguration['default_branch_id']?>" />
-							<?php} ?>
+							<?php } ?>
 							<span class="tools pull-right respadr_15">
 								<a href="javascript:;"><button onClick="exportCsv()" class="btn btn-success btn-flat" >Export Excel</button></a>	
 								<!-- <a href="javascript:;" onClick="tableToExcel('dynamic-table', 'Instalment Collection')" ><button class="btn btn-info btn-flat" >Export Excel</button></a>	 -->
@@ -294,7 +294,7 @@ $cnyts = explode(",",$amnts);
 											<?php } ?>
 											<?php if($companyConfiguration['branch_wise_manage']==1){ ?>
 												<th>Branch Name</th>
-											<?php} ?>
+											<?php } ?>
 											<th>User Name</th>
 											<?php if(in_array(SALES_ORDER_SLUG_EDIT,$bulkAccessArray) || in_array(SALES_ORDER_SLUG_DELETE,$bulkAccessArray) || in_array(SALES_ORDER_SLUG_PRINT,$bulkAccessArray)){ ?>
 												<th class="hidden-phone">Action</th>	
@@ -313,7 +313,7 @@ $cnyts = explode(",",$amnts);
 											<?php } ?>
 											<?php if($companyConfiguration['branch_wise_manage']==1){ ?>
 												<th></th>
-											<?php} ?>
+											<?php } ?>
 											<th></th>
 											<th></th>
 										</tr>

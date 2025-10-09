@@ -46,7 +46,7 @@
               <!--state overview start-->
 		  <div class="row">
 			<div class="col-sm-3">
-			<?php//if(!in_array(USER_TYPE_CREATE,$bulkAccessArray)){ ?>
+			<?php //if(!in_array(USER_TYPE_CREATE,$bulkAccessArray)){ ?>
 				<section class="panel">
 					<header class="panel-heading">
 					  New <?=$form?>
@@ -64,7 +64,7 @@
 						</form>
 					</div>
 				</section>
-				<?php//} ?>
+				<?php //} ?>
 			</div>
 			<div class="col-sm-9">
 			<section class="panel">

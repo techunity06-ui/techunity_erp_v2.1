@@ -93,7 +93,7 @@
 											</div>
 											
 											<div class="col-md-6">
-												 <?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true,'','3','6'); ?>
+												 <?php echo getBranchBox($dbcon, $branch_id, isset($rel['branch_id']) ? $rel['branch_id'] : '', false, true,'','3','6'); ?>
 											</div>
 										</div>
 										

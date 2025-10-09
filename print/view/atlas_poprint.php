@@ -239,8 +239,8 @@ $pro_search=explode(",", $purchase_pro_search);
 														</tr>
 														<tr>
 															<td width="35%" rowspan="3" style="vertical-align:top;border:1px solid;"><strong><?=$set_head['company_name']?></strong><br><?=$set_head['address']?> 
-													<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
-													<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?></td>
+													<?php if($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+													<?php if($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?></td>
 															<td width="35%" rowspan="3" style="vertical-align:top;border:1px solid;"><strong>To, </strong><br/><strong><?=$rel['vender_name']?></strong><br/><?=$rel['vender_address']?><br/><?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?><br/>Vendor GST No. : <?= ($rel['tin_no']!=0) ? $rel['tin_no'] : "" ?></td>
 															<td width="15%" style="vertical-align:top;border:1px solid;border-right:none;">
 																<strong>Purchase Order No </strong>
@@ -286,7 +286,7 @@ $pro_search=explode(",", $purchase_pro_search);
 											</tr>
 										</thead>
 										<tbody style="border: 1px solid;">
-											<?php$qry="select trn.*,product.*,dr.drawing_number,product.product_desc as scode,per.unit_name,per1.unit_name as base_unit_name,per2.unit_name as conv_unit_name FROM `tbl_purchaseordertrn` as trn 
+											<?php $qry="select trn.*,product.*,dr.drawing_number,product.product_desc as scode,per.unit_name,per1.unit_name as base_unit_name,per2.unit_name as conv_unit_name FROM `tbl_purchaseordertrn` as trn 
 											left join product_mst as product on product.product_id=trn.product_id 
 											left join tbl_drawing as dr on dr.drawing_id = product.drawing_id
 											left join unit_mst as per on per.unitid=trn.unit_id 
@@ -361,26 +361,26 @@ $pro_search=explode(",", $purchase_pro_search);
 														<?=$i?>
 													</td>
 													<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-														<?phpif(!empty($row['scode'])){
+														<?php if(!empty($row['scode'])){
 															$code=" ( ".$row['scode'] .")";
 														} ?>
 														<?php if($row['product_alias_name']){?>
 															<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?> <?=$drawing_number?> <?=$item_code?> <?=$alias?></strong> 
 															<br/><?php if($row['product_des']){?><?=stripcslashes($row['product_des']);?><br><?php }?><strong>HSN Code : </strong><?=$row['product_hsn_code']?>
 															<?=$wno?>
-														<?php}else{ ?>
+														<?php }else{ ?>
 															<strong><?=stripcslashes($row['product_name'])?> <?=$code?> <?=$drawing_number?> <?=$item_code?> <?=$alias?> </strong>
 															<br/><?=stripcslashes($row['product_des']);?><br/><strong>HSN Code : </strong><?=$row['product_hsn_code']?>
 															<?=$wno?>
 															<?php }?>
 														</td>
 														<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-															<?phpif($row['product_type']!='8'){ ?>
+															<?php if($row['product_type']!='8'){ ?>
 																<?=number_format($row['product_qty'],2,".","").' '.$row['unit_name']?><br/>
 																<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 																	<?=number_format($cqty,2,".","").' '.$uname?>
 																	<?php }?>
-																<?php}else{
+																<?php }else{
 																	$charges_qty+=$row['product_qty'];
 																} ?>	
 															</td>
@@ -425,7 +425,7 @@ $pro_search=explode(",", $purchase_pro_search);
 														<td style="border-top:1px solid;border-right:1px solid;text-align:right;"><strong></strong></td>
 														<td style="border-top:1px solid;border-right:1px solid;text-align:right;"><strong><?=number_format($total_product_amount,2,".","")?></strong></td>
 													</tr>
-													<?php$bill1_sun=$dbcon->query("select b.*,l.sundry_ledger_id,l.sundry_type,l.sundry_nature,l.sundry_amount_of,l.sundry_calculate_on,l.sundry_default_value,le.l_name,le.l_id from tbl_bill_sundry_transaction as b 
+													<?php $bill1_sun=$dbcon->query("select b.*,l.sundry_ledger_id,l.sundry_type,l.sundry_nature,l.sundry_amount_of,l.sundry_calculate_on,l.sundry_default_value,le.l_name,le.l_id from tbl_bill_sundry_transaction as b 
 
 			left join tbl_ledger_bill_sundry as l on l.bill_sundry_id=b.sundry_ledger_id 
 			left join tbl_ledger as le on le.l_id=b.sundry_ledger_id 
@@ -508,9 +508,9 @@ $pro_search=explode(",", $purchase_pro_search);
 																	</tr>
 																	<tr>
 																		<td style="vertical-align:top;text-align:left;border-top:1px solid;" class="con" colspan="4">
-																			<?phpif(!empty($set_head['po_condition'])){ ?>
+																			<?php if(!empty($set_head['po_condition'])){ ?>
 																				<strong>Terms and Conditions:</strong><br> <?=$set_head['po_condition']?>
-																			<?php} ?>
+																			<?php } ?>
 																			<strong>Terms and Conditions:</strong><br> <?=$rel['po_condition']?>
 																		</td>
 																	</tr>
@@ -621,7 +621,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

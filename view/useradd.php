@@ -72,7 +72,7 @@
 								<div class="form-group">
 									<label class="col-md-3 control-label">Password *</label>
 									<div class="col-md-6 col-xs-11">
-										<input type="password" class="form-control" placeholder="Password" name="password" id="password" value="" <?phpif($mode=="Add"){ echo 'required';}?>/>
+										<input type="password" class="form-control" placeholder="Password" name="password" id="password" value="" <?php if($mode=="Add"){ echo 'required';}?>/>
 									</div>
 								</div>
 								<div class="form-group">

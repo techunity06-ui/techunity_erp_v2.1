@@ -103,7 +103,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 									<div class="col-md-12">
 										<?php if($_SESSION['user_type']!=2){?>
 											<input type="hidden" name="user_id" id="user_id" value="<?=$_SESSION['user_id']?>">
-										<?php}else {?>
+										<?php }else {?>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label for="user_id" class="col-md-3 control-label">User*</label>
@@ -114,7 +114,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												</div>
 											</div>
 										</div>
-									<?php} ?>
+									<?php } ?>
 									</div>
 									<div class="col-md-12" style="margin-top: 10px;"></div>
 									<div class="col-md-12">

@@ -162,8 +162,8 @@ $company_config = getCompanyConfiguration($dbcon);
 													<a href="<?=ROOT.FINANCE_ROOT.'invoice_list'?>" type="button" class="btn btn-danger"><i class="fa fa-ban"></i> Cancel</a>
 												</div>
 												<div class="col-sm-4 resclear resspace"  style="text-align:center;padding-top:5px;">
-													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
-														<?phpecho $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
+													<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?php echo $rel['invoice_no']?>%0aDate:-<?php echo date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?php echo $rel['g_total']?>%0aBest Regards%0a
+														<?php echo $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
 													</div>
 												</center>
 											</div>
@@ -244,7 +244,7 @@ $company_config = getCompanyConfiguration($dbcon);
 																				<b>Bill to Party : </b><br>
 																				<strong><?=$rel['l_name']?></strong><br>
 																				<?=$rel['m_address']?><br><?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-																				<?phpif(!empty($rel['cust_pincode'])){ ?> - <?=$rel['cust_pincode']?><?php} ?><br>
+																				<?php if(!empty($rel['cust_pincode'])){ ?> - <?=$rel['cust_pincode']?><?php } ?><br>
 																				<?php if($company_config['enable_hypothication']==1 && $rel['check_hypothication']!=0){ ?>
 																					<strong>
 																						Hypothecation with <?=get_id_detail($dbcon,'bank_mst','bankid',$rel['hypo_bank'],'bank_name')?>
@@ -329,12 +329,12 @@ $company_config = getCompanyConfiguration($dbcon);
 																}?>
 																<tr style="height:25px">
 																	<td class="borderleftadd" style="text-align:center !important; vertical-align:top;border-right:1px solid;border-left:1px solid;">
-																		<?phpif($row['product_type']!='3'){ echo $i;}?>
+																		<?php if($row['product_type']!='3'){ echo $i;}?>
 																	</td>
 																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center  !important" >
 																		<?=stripcslashes($row['product_hsn_code'])?>
 																	</td>
-																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
+																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?php if($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
 																		<strong><?=stripcslashes($row['product_name'])?></strong>
 																		<br/><?=nl2br(stripcslashes($row['description']));?>
 																	</td>
@@ -342,9 +342,9 @@ $company_config = getCompanyConfiguration($dbcon);
 																		1
 																	</td>
 																	<td style="text-align:center  !important; vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-																		<?phpif($row['product_type']!='3'){ ?>
+																		<?php if($row['product_type']!='3'){ ?>
 																			<?=$row['product_qty'].' '.$row['unit_name']?>
-																		<?php}else{
+																		<?php }else{
 																			$charges_qty+=$row['product_qty'];
 																		} ?>	
 																	</td>
@@ -379,7 +379,7 @@ $company_config = getCompanyConfiguration($dbcon);
 																	<td class="borderleftadd" style="text-align:center !important; vertical-align:top;border-right:1px solid;border-left:1px solid;">
 																	</td>
 																	<td style="border-right:1px solid;"></td>
-																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;vertical-align:top;';}?>" >
+																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?php if($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;vertical-align:top;';}?>" >
 																	</td>
 																	<td style="border-right:1px solid;"></td>
 																	<td style="border-right:1px solid;"></td>
@@ -388,7 +388,7 @@ $company_config = getCompanyConfiguration($dbcon);
 																	<td style="border-right:1px solid;"></td>
 																	<td style="border-right:1px solid;"></td>
 																</tr>
-															<?php} ?>
+															<?php } ?>
 															<tr style="height:20px">
 																<td class="borderleftadd" style="border-top:1px solid;border-right:1px solid;border-left:1px solid; text-align:right  !important;" colspan="3">
 																	<strong>Total</strong>
@@ -502,7 +502,7 @@ $company_config = getCompanyConfiguration($dbcon);
 																			<td  style="border-right:1px solid;border-top:1px solid; font-size:10px;" >
 																			</td>
 																			<td style="border-top:1px solid;border-right:1px solid;font-size:10px;text-align:left  !important">Add : 
-																				<?php$strt=$tax_name[1];
+																				<?php $strt=$tax_name[1];
 																				$position = strpos($strt, "TCS", 0);
 																				if ($position == true){ 
 																					echo $tax_name[1];
@@ -513,7 +513,7 @@ $company_config = getCompanyConfiguration($dbcon);
 																			</td>
 																			<td style="text-align:right  !important; border-top:1px solid;font-size:10px;border-left:1px solid; "><?=number_format($totaltax2,2,".","")?></td>
 																		</tr>
-																	<?php} $totaltax=$totaltax1+$totaltax2;?>
+																	<?php } $totaltax=$totaltax1+$totaltax2;?>
 																	<?php 
 																	$total=($total)+$rel['packing']; 
 																	$r=round($total)-$total; ?>
@@ -551,9 +551,9 @@ $company_config = getCompanyConfiguration($dbcon);
 																		<tr>
 																			<td colspan="2" style="vertical-align:top;border:1px solid;
 																			border-right:none;border-left:none;border-bottom:none;font-size:10px;text-align:left  !important"  class="con">
-																			<?phpif(!empty($set_head['conditions'])){ ?>
+																			<?php if(!empty($set_head['conditions'])){ ?>
 																				<strong>Terms and Conditions:</strong><br> <?=$set_head['conditions']?>
-																			<?php} ?>
+																			<?php } ?>
 																		</td>
 																		<td style=" border-left:none;border-top:1px solid black; text-align: center;">
 																			For, <strong><?=$set_head['company_name']?></strong><br>
@@ -675,7 +675,7 @@ function PrintMe(DivID) {
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
  // docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
  docprint.document.write('<style type="text/css">');

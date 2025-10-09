@@ -55,14 +55,14 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 							  if($_REQUEST['report']=='report')
 								{?>
 							  <li><a href="<?=ROOT.'partypaymentreport'?>">Party Wise Payment Report</a></li>
-							<?php}
+							<?php }
 							else if($_REQUEST['report']=='0'){?>
 							  <li><a href="<?=ROOT.'purchasepayment_list/'.$rel['purchasereceipt_id']?>">Receipt Payment</a></li>
 							
 							<?php }else
 							{?>
 							  <li><a href="<?=ROOT.'purchasepayment_list'?>">Purchase Payment Receipt list</a></li>
-							 <?php}?> 
+							 <?php }?> 
 						  </ul>
 						 </div>
 					</section>
@@ -80,10 +80,10 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 								<center>
 								<div class="form-group">
 							  <button type="submit" class="btn btn-danger" onClick="PrintMe('receipt_print');">Print</button>
-							<?phpif($_REQUEST['report']=="report")
+							<?php if($_REQUEST['report']=="report")
 							{?>
 							<a href="<?=ROOT.'partypaymentreport'?>" type="button" class="btn btn-success">Cancel</a>
-							<?php}
+							<?php }
 							else if($_REQUEST['report']=='0')
 							{
 							?>
@@ -93,7 +93,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 							else
 							{?>
 							<a href="<?=ROOT.'invoicepayment_list'?>" type="button" class="btn btn-success">Cancel</a>
-							<?php}?> 
+							<?php }?> 
 						<!--<input type="button" name="printpdf" id="printpdf" class="btn btn-default" value="Export to PDF" onclick="make_pdf()" />-->
 								</div>	
 								
@@ -265,7 +265,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 				<Td colspan="3" style="border-bottom:1px solid black;" width="30%"><span style=""><?=$rel['payment_mode']?> </span> </Td>
 				<td colspan="2" style="border-right:1px solid black;text-align:right;padding:5px;border-bottom:1px solid black;" width="40%"></td>
 			</tr>
-			<?phpif(strtolower($rel['payment_mode'])=="cheque"){?>
+			<?php if(strtolower($rel['payment_mode'])=="cheque"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Bank Name  :  </span>  </td>
 				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['bank_name']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
@@ -278,8 +278,8 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Reference Date  :  </span>  </td>
 				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['ref_date']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
-			<?php}?>
-			<?phpif(strtolower($rel['payment_mode'])=="neft"){?>
+			<?php }?>
+			<?php if(strtolower($rel['payment_mode'])=="neft"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Bank Name  :  </span>  </td>
 				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['bank_name']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
@@ -292,13 +292,13 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">Reference Date  :  </span>  </td>
 				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['ref_date']//." (check NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
-			<?php}?>
-			<?phpif(strtolower($rel['payment_mode'])=="neft"){?>
+			<?php }?>
+			<?php if(strtolower($rel['payment_mode'])=="neft"){?>
 			<tr style="height:30px;">
 				<td colspan="2" style=" border-left:1px solid black;"><span style="margin-left:5px;">PAYMENT DETAIL  :  </span>  </td>
 				<Td colspan="5" style="border-bottom:1px solid black;border-right:1px solid black;"><span style=""><?php echo $rel['bank_name']." (NEFT NO. :".$rel['cheque_dtl']." ) ";?> </span> </Td>
 			</tr>
-			<?php}?>
+			<?php }?>
 			<tr style="height:30px;">
 				<td colspan="7" style=" border-left:1px solid black;border-right:1px solid black;"></td>
 			</tr>	

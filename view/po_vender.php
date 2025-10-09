@@ -35,7 +35,7 @@
       <!--main content start-->
            <section id="main-content">
           <section class="wrapper">
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
     		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->
@@ -95,7 +95,7 @@
 							<div class="form-group">  	
 							  <label class="col-md-2 control-label" >Purchse Order date </label>
 							  <div class="col-md-4 col-xs-11">
-								<input id="po_date" name="po_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchse Order Date">
+								<input id="po_date" name="po_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchse Order Date">
 								</div>
                              </div>	
 							</div>		 	
@@ -121,19 +121,19 @@
 							{ ?>
 								<input type="hidden" value="1" name="fieldcnt" id="fieldcnt"/>
 								<tr id="field1">
-								<td><select class="select2" name="product_id[]" id="product_id1" onChange="load_productdetail(this.value,1)" required title="Select Product"><?phpecho getproduct($dbcon); ?></select>
+								<td><select class="select2" name="product_id[]" id="product_id1" onChange="load_productdetail(this.value,1)" required title="Select Product"><?php echo getproduct($dbcon); ?></select>
 								</td>							
 								<td><textarea id="product_des1" name="product_des[]" class="form-control" ></textarea></td>		 							<td><input type="number"  required title="Enter Qty" min="0" id="product_qty1"  name="product_qty[]" onBlur="get_amount();" class="form-control"/></td>		 
 								<td><input type="number" min="0" id="product_rate1" name="product_rate[]" onBlur="get_amount();" step="any"  required title="Enter Rate" class="form-control"/></td>
 								<td><select class="form-control" id="unitid1" name="unitid[]" >
-								<?phpecho getpervalue($dbcon,'0');?>
+								<?php echo getpervalue($dbcon,'0');?>
 								</select></td>
 								<td><input type="text" id="product_noskg1"  name="product_noskg[]" class="form-control"/></td>	
 								<td><input type="number"  min="0" id="product_disc1" name="product_disc[]" onBlur="get_amount();" step="any" class="form-control"/></td>
 								<td><input type="text" id="product_amount1" readonly="readonly" name="product_amount[]" class="form-control"/></td>
 								<td><input type="button"  name="addrow" id="addrow" onClick="return add_field();"  class="btn btn-primary" value="Add Product"/></td>
 						</tr>
-									<?php}?>
+									<?php }?>
 							<?php 
 							if($mode=="Edit")
 							{
@@ -161,7 +161,7 @@
 								<td><input type="number"  min="0" id="product_qty<?=$i?>"  value="<?=$row1['product_qty']?>"  name="product_qty[]" onBlur="get_amount();"  required title="Enter Qty" class="form-control"/></td>		 
 								<td><input type="number"  min="0"  required title="Enter Rate" id="product_rate<?=$i?>" value="<?=$row1['product_rate']?>" name="product_rate[]" step="any" onBlur="get_amount();" class="form-control"/></td>
 								<td><select class="form-control" id="unitid<?=$i?>" name="unitid[]"  >
-								<?phpecho getpervalue($dbcon,$row1['unitid']);?>
+								<?php echo getpervalue($dbcon,$row1['unitid']);?>
 								</select></td>
 								<td><input type="text" id="product_noskg'.$id.'"  name="product_noskg[]" class="form-control" value="<?=$row1['product_noskg']?>"/></td>
 								<td><input type="number"  min="0" value="<?=$row1['product_disc']?>" id="product_disc<?=$i?>" name="product_disc[]" step="any" onBlur="get_amount();" class="form-control"/></td>
@@ -180,7 +180,7 @@
 								?>
 						</tr>
 
-<?php$i++;$e_total=$e_total+$row1['product_amount'];;
+<?php $i++;$e_total=$e_total+$row1['product_amount'];;
 }}?>
 </table>			
 							</div>
@@ -210,7 +210,7 @@
 							<div class="form-group">
 								<label class="col-md-6 control-label">Packing charges </label>
 								<div class="col-md-4 col-xs-11">
-								<input id="paking" name="paking" type="number"  min="0"  class="form-control" title="paking" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="paking">
+								<input id="paking" name="paking" type="number"  min="0"  class="form-control" title="paking" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="paking">
 					
 								</div>
 							</div>	
@@ -272,8 +272,8 @@
 								<label class="col-md-6 control-label">Total *</label>
 								<div class="col-md-4 col-xs-11">
 								
-								<input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['amount'];}?>" placeholder="total"readonly="readonly">
-					<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">
+								<input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['amount'];}?>" placeholder="total"readonly="readonly">
+					<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">
 							
 								</div>
 							</div>

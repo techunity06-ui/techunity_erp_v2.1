@@ -115,11 +115,11 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 												<div class="col-md-8">
 													<select class="select2" name="f_product" id="f_product" onchange="load_forecast_report()">
 														<option value="">Choose</option>
-														<?phpif($companyConfiguration['forecast_base']==3){?>
+														<?php if($companyConfiguration['forecast_base']==3){?>
 														<?=getproduct_typewise($dbcon, '', '')?>
-														<?php} else if($companyConfiguration['forecast_base']==2){?>
+														<?php } else if($companyConfiguration['forecast_base']==2){?>
 														<?=get_all_category($dbcon, '', '')?>
-														<?php} ?>
+														<?php } ?>
 													</select>
 												</div>
 											</div>

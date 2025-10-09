@@ -268,9 +268,9 @@ padding-bottom:20px;
 									<div class="col-md-6">
 										<?php echo getBranchBox($dbcon, $branch_id, '', false, true, 'reload_data(this.value)','3','9'); ?>	
 									</div>
-							<?php}else{ ?>
+							<?php }else{ ?>
                                        <input type="hidden" name="branch_id" id="branch_id" value="<?=$companyConfiguration['default_branch_id']?>" />
-                                    <?php} ?>
+                                    <?php } ?>
 									</div>
 									<div class="adv-table">
 										<table class="display table table-bordered table-striped" id="po-req-table">
@@ -287,9 +287,9 @@ padding-bottom:20px;
 													<th>Priority</th>
 													<!-- <th>Unit</th>
 													<th>Progress Bars</th> -->
-													<?phpif($_SESSION['branch_id']==0){ ?>
+													<?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													<?php} ?>
+													<?php } ?>
 													<th class="hidden-phone">Action</th>
 												</tr>
 											</thead>

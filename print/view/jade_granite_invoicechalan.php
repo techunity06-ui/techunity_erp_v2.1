@@ -183,10 +183,10 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 																<?=$city_name?>,
 																<?=$state_name?>,
 																<?=$country_name?>
-																<?phpif(!empty($cust_pincode))
+																<?php if(!empty($cust_pincode))
 																{	?>
 																	-  <?=$cust_pincode?>
-																	<?php} ?></span>
+																	<?php } ?></span>
 																	<br> <strong> GSTIN : <?=$gst_no?></strong>
 																</td>
 																<td width="15%" style="vertical-align:top;border-bottom:1px solid;border-top:1px solid;"><strong>D.C. No </strong>
@@ -241,7 +241,7 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 									</tr>
 								</thead>
 								<tbody style="border: 1px solid;">
-									<?php$qry="select * FROM `tbl_invoicetrn` as trn left join product_mst as product on product.product_id=trn.product_id left join unit_mst as per on per.unitid=trn.unit_id where trancation_status=0 and product.product_type not in(3) and invoice_id=".$rel['invoice_id'];
+									<?php $qry="select * FROM `tbl_invoicetrn` as trn left join product_mst as product on product.product_id=trn.product_id left join unit_mst as per on per.unitid=trn.unit_id where trancation_status=0 and product.product_type not in(3) and invoice_id=".$rel['invoice_id'];
 									$result=$dbcon->query($qry);		
 									$i=1;$total=0;$discount=0;$totalqty=0;
 									$cnt=mysqli_num_rows($result);
@@ -275,7 +275,7 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 											<td style="border-right:1px solid;"></Td>
 												<td style="border-right:1px solid;"></td>
 											</tr>
-										<?php} ?>
+										<?php } ?>
 										<tr height="24px">
 											<td colspan="2" style="border-top:1px solid;border-right:1px solid;border-left:1px solid;font-size:14px;text-align:right;">TOTAL</td>
 											<td style="text-align:center; border-top:1px solid;font-size:14px;border-right:1px solid; "><?=number_format($totalqty,2,".","")?></td>
@@ -290,7 +290,7 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
 														<td colspan="2" style="">
 															<?php if(!empty($set_head['vatno'])){ ?>
 																<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
-															<?php} ?>
+															<?php } ?>
 														</td>
 														<td colspan="2" style="">
 															<span style="font-size:12px;float:right;">For, <strong><?=$set_head['company_name']?></strong></span>
@@ -417,7 +417,7 @@ if($rel['order_date']!="1970-01-01" && $rel['order_date']!="0000-00-00")
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

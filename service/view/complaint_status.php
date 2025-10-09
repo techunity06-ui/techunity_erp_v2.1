@@ -243,7 +243,7 @@ $spare_charge = get_spare_part_rate($dbcon, $id);
 															<label class="col-md-4 control-label">Payment Mode *</label>
 															<div class="col-md-7 col-xs-11">
 																<select class="form-control" name="service_charge" id="service_charge" onChange="" required title="Select Payment Mode">
-																	<?phpecho getpaymentmode($dbcon, $rel['payment_mode']); ?>
+																	<?php echo getpaymentmode($dbcon, $rel['payment_mode']); ?>
 																</select>
 															</div>
 														</div>

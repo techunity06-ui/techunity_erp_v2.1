@@ -217,7 +217,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
         <?php include_once($include.'/left_menu.php');?>
         <section id="main-content">
             <section class="wrapper">
-                <?php//include_once('../include/equick_link.php');?>
+                <?php //include_once('../include/equick_link.php');?>
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
@@ -461,7 +461,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                             <div class="col-md-4">
                                                 <?php echo getBranchBox($dbcon, $branch_id, $branchId, $isDisabled, $isRequired); ?>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <div class="col-md-4" >
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">PO Type *</label>
@@ -513,7 +513,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                     </div>
                                                  </div>
                                             </div>
-                                        <?phpif($getspecialConfiguration['oilfield_permission']==1){ ?>
+                                        <?php if($getspecialConfiguration['oilfield_permission']==1){ ?>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label" >Terms</label>
@@ -538,7 +538,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="col-md-12">
                                      <div class="col-md-4" style="display:none;">
@@ -630,10 +630,10 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                 <!-- Add Data  -->   
                                 <table cellspacing="10" style=" border-spacing:10px;" class="display table table-bordered table-striped" id="product_list">
                                     <tr id="field" >
-                                         <?phpif($getspecialConfiguration['invoite_permission'] !=1 && $getspecialConfiguration['smpl_permission'] != '1'){ ?>
+                                         <?php if($getspecialConfiguration['invoite_permission'] !=1 && $getspecialConfiguration['smpl_permission'] != '1'){ ?>
                                         <th width="4%" class="text-center"></th>
-                                    <?php} ?>
-                                        <?phpif($getspecialConfiguration['aeon_permission'] ==1){ ?>
+                                    <?php } ?>
+                                        <?php if($getspecialConfiguration['aeon_permission'] ==1){ ?>
                                         <th width="10%" class="text-center">Category</th>
                                         <?php }?>
                                         <th width="20%" class="text-center">Product</th>
@@ -652,23 +652,23 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                     </tr>
                                     <input type="hidden" value="1" name="fieldcnt" id="fieldcnt"/>
                                     <tr id="field1">
-                                         <?phpif($getspecialConfiguration['invoite_permission'] !=1 && $getspecialConfiguration['smpl_permission'] != '1'){ ?>
+                                         <?php if($getspecialConfiguration['invoite_permission'] !=1 && $getspecialConfiguration['smpl_permission'] != '1'){ ?>
                                         <td>
                                             <button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
                                         </td>
-                                    <?php} ?>
+                                    <?php } ?>
                                                         <!-- <td style="vertical-align:top;">
                                                             <select class="select2" name="product_type" id="product_type" onChange="load_product_po(this.value);" title="Select Product Type">
                                                             <//=getproducttype($dbcon,'');?>
                                                             </select>
                                                         </td>-->
-                                                        <?phpif($getspecialConfiguration['aeon_permission'] ==1){ ?>
+                                                        <?php if($getspecialConfiguration['aeon_permission'] ==1){ ?>
                                                             <td>
                                                                 <select class="select2" name="cat_id" id="cat_id" title="Select Category" onchange="/*load_product_category_wise(this.value)*/">
                                                                     <?=get_all_category($dbcon,0);?>
                                                                 </select>
                                                             </td>
-                                                        <?php} ?>
+                                                        <?php } ?>
                                                         <td style="vertical-align:top;max-width:300px">
                                                             <input id="product_id" name="product_id" style="width:100%;" placeholder="Select product" class="form-control" onChange="get_hsn(this.value);load_productdetail(this.value);job_work_process(this.value);" /><br>
                                                             <strong class="hsncode" style="display:none;color:blue">HSN Code : <span id="hsncode"></span></strong>
@@ -718,7 +718,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                     </td>
                                                     <td style="vertical-align:top;display:none">
                                                         <select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-                                                            <?phpecho get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); //Dimple Panchal ?>
+                                                            <?php echo get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); //Dimple Panchal ?>
                                                         </select>
                                                         <!-- <input type="hidden" name="formulaid" id="formulaid" class="form-control" readonly /> -->
                                                         <input type="hidden" name="formula_tax_id" id="formula_tax_id" class="form-control" readonly /></br>
@@ -765,13 +765,13 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                                 <div class="form-group" style="margin-top:20px;">
                                                                     <div class="col-md-3">
                                                                        <div class="form-group">
-                                                                            <input type="radio" class="" name="tc_format" id="format1" value="1" onchange="tc_format_view();" <?phpif($rel['tc_format'] == '1'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Format-1                 
+                                                                            <input type="radio" class="" name="tc_format" id="format1" value="1" onchange="tc_format_view();" <?php if($rel['tc_format'] == '1'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Format-1                 
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="col-md-3">
                                                                        <div class="form-group">
-                                                                            <input type="radio" class="" name="tc_format" onchange="tc_format_view();" id="format2" value="2" <?phpif($rel['tc_format'] == '2'){ echo 'checked="checked"';}?>> Format-2                 
+                                                                            <input type="radio" class="" name="tc_format" onchange="tc_format_view();" id="format2" value="2" <?php if($rel['tc_format'] == '2'){ echo 'checked="checked"';}?>> Format-2                 
                                                                         </div>
                                                                     </div>
 
@@ -789,21 +789,21 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                                             <div class="col-md-3">
                                                                                 <div class="form-group">
                                                                                     <input type="radio" class="" name="terms_type" id="common_terms" value="0" onchange="load_typeswise_terms();" 
-                                                                                    <?phpif($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
+                                                                                    <?php if($rel['terms_type'] == '0'){ echo 'checked="checked"';}else{ if($mode == 'Add'){echo 'checked="checked"';} }?> > Common Terms 
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="col-md-3">
                                                                                 <div class="form-group">
                                                                                     <input type="radio" class="" name="terms_type" id="party_terms" value="1" onchange="load_typeswise_terms();"
-                                                                                    <?phpif($rel['terms_type'] == '1'){ echo 'checked="checked"';}?> > Party Wise
+                                                                                    <?php if($rel['terms_type'] == '1'){ echo 'checked="checked"';}?> > Party Wise
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="col-md-3">
                                                                                 <div class="form-group">
                                                                                     <input type="radio" class="" name="terms_type" id="multi_condition" value="2" onchange="load_typeswise_terms();"
-                                                                                    <?phpif($rel['terms_type'] == '2'){ echo 'checked="checked"';}?> > Multi Condition
+                                                                                    <?php if($rel['terms_type'] == '2'){ echo 'checked="checked"';}?> > Multi Condition
                                                                                 </div>
                                                                             </div>   
 
@@ -844,19 +844,19 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                 <div class="form-group">
                                                     <label class="col-md-5 control-label">Total * <span class="currency_icon"></span></label>
                                                     <div class="col-md-5 col-xs-11">
-                                                        <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+                                                        <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
                                                     </div>
                                                 </div>
                                                 <div class="form-group hide">
                                                     <label class="col-md-5 control-label">Transport charges </label>
                                                     <div class="col-md-5 col-xs-11">
-                                                        <input id="paking" name="paking" type="number"  min="0"  class="form-control" title="Transport" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="Transport">
+                                                        <input id="paking" name="paking" type="number"  min="0"  class="form-control" title="Transport" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="Transport">
                                                     </div>
                                                 </div>
                                                 <div class="form-group hide">
                                                     <label class="col-md-5 control-label">Round Off</label>
                                                     <div class="col-md-5 col-xs-11">
-                                                        <input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
+                                                        <input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
                                                     </div>
                                                 </div>
                                                 <!-- Dimple Panchal : start -->
@@ -887,21 +887,21 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Round Off * <span class="currency_icon"></span></label>
                                                             <div class="col-md-5 col-xs-11">
-                                                                <input id="round_of" name="round_of" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['round_of'];}?>" placeholder="Round Off"readonly="readonly">
-                                                                <!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+                                                                <input id="round_of" name="round_of" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['round_of'];}?>" placeholder="Round Off"readonly="readonly">
+                                                                <!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Grand Total * <span class="currency_icon"></span></label>
                                                             <div class="col-md-5 col-xs-11">
-                                                                <input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
-                                                                <!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+                                                                <input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
+                                                                <!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
                                                             </div>
                                                         </div>
                                                         <div class="form-group currency_total_div" style="display: none">
                                                             <label class="col-md-5 control-label">Grand Total (<span class="currency_type_name"></span>)*</label>
                                                             <div class="col-md-5 col-xs-11">
-                                                                <input id="currency_total" name="currency_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['currency_total'];}?>" placeholder="total"readonly="readonly">
+                                                                <input id="currency_total" name="currency_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['currency_total'];}?>" placeholder="total"readonly="readonly">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -995,7 +995,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                     if($direct_add=='1'){
                         ?>    
                         <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?=$rel['purchaseorder_id']?>" />
-                    <?php} ?>  
+                    <?php } ?>  
                     <?php include_once($include1.'po_consignee_concept.php')?>
                 </form>
             </div>
@@ -1118,11 +1118,11 @@ $(this).focus();
 }
 
 });*/
-<?phpif($mode=="Add" && $viewmode=="Revise"){ ?>
+<?php if($mode=="Add" && $viewmode=="Revise"){ ?>
     copy_prev_purchase_trn(<?=$purchaseorder_id?>);
     load_typeswise_terms(<?=$purchaseorder_id?>);
     get_revise_po_no(<?=$purchaseorder_id?>,<?=$start_purchaseorder_id?>);
-<?php} ?>
+<?php } ?>
 <?php if($mode=='Edit'){?>
     load_typeswise_terms(<?=$purchaseorder_id?>);
     

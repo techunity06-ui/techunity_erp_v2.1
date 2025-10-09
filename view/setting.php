@@ -151,7 +151,7 @@ if($companySettings) {
 											<div class="form-group">
 												<label class="col-md-3 control-label">Head Logo</label>
 												<div class="col-md-6 col-xs-11">
-													<input type="file" class="form-control" placeholder="Logo" name="logo" id="logo" accept="image/*" <?phpif($mode=="Add") { echo 'required';}?> title="logo" />
+													<input type="file" class="form-control" placeholder="Logo" name="logo" id="logo" accept="image/*" <?php if($mode=="Add") { echo 'required';}?> title="logo" />
 
 												</div>
 												<div class="col-md-3 col-xs-11">
@@ -166,7 +166,7 @@ if($companySettings) {
 											<div class="form-group">
 												<label class="col-md-3 control-label">Footer Logo</label>
 												<div class="col-md-6 col-xs-11">
-													<input type="file" class="form-control" placeholder="Logo" name="f_logo" id="f_logo" accept="image/*" <?phpif($mode=="Add") { echo 'required';}?> title="Footer Logo" />
+													<input type="file" class="form-control" placeholder="Logo" name="f_logo" id="f_logo" accept="image/*" <?php if($mode=="Add") { echo 'required';}?> title="Footer Logo" />
 												</div>
 												<div class="col-md-3 col-xs-11">
 													<?php if($mode=="Edit")
@@ -179,7 +179,7 @@ if($companySettings) {
 											<div class="form-group">
 												<label class="col-md-3 control-label">Admin Signature</label>
 												<div class="col-md-6 col-xs-11">
-													<input type="file" class="form-control" placeholder="Admin Signature" name="authorized_signature" id="authorized_signature" accept="image/*" <?phpif($mode=="Add") { echo 'required';}?> title="Admin Signature" />
+													<input type="file" class="form-control" placeholder="Admin Signature" name="authorized_signature" id="authorized_signature" accept="image/*" <?php if($mode=="Add") { echo 'required';}?> title="Admin Signature" />
 												</div>
 												<div class="col-md-3 col-xs-11">
 													<?php if($mode=="Edit")

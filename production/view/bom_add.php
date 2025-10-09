@@ -220,7 +220,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 		}
 
 		
-		<?phpif(!$bom_to_po_req){ ?>
+		<?php if(!$bom_to_po_req){ ?>
 			.po_req_mode{
 				display:none;
 			}
@@ -650,9 +650,9 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 											<th width="10%" class="text-center hide_act_add">Quantity</th>
 											<th width="5%" class="text-center hide_act_add">UOM</th>
 											<th width="15%" class="text-center hide_act_add">ACtual Qty.</th>
-											<?phpif($getspecialConfiguration['jet_technologies_permission'] == 1){ ?>
+											<?php if($getspecialConfiguration['jet_technologies_permission'] == 1){ ?>
 													<th width="8%" class="text-center hide_act_add">Enable Multiplication</th>
-											<?php}	?>	
+											<?php }	?>	
 											<th width="7%" class="text-center"></th>
 										</tr>
 										<tr id="field1">
@@ -725,7 +725,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 												<input type="hidden"  title="" id="product_spec_act_qty" name="product_spec_act_qty"  class="form-control" />
 											</td>	
 
-											<?phpif($getspecialConfiguration['jet_technologies_permission'] == 1){ ?>
+											<?php if($getspecialConfiguration['jet_technologies_permission'] == 1){ ?>
 													<td>
 															<!-- <input class="form-control" type="number" id="conversation_factor" name="conversation_factor" value="1" /> -->
 															<select class="form-control select2" id="conversation_factor" name="conversation_factor">
@@ -733,7 +733,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 																<option value="0">No</option>
 															</select>
 													</td>
-											<?php}	?>		
+											<?php }	?>		
 											<td style="vertical-align:top;">
 												<!-- Sanat :: comment below button :: 03-03-2021 -->
 												<!-- <input type="button"  name="addrow" id="addrow" onClick="return add_field();" class="btn btn-primary" value="Add"/> -->
@@ -784,7 +784,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 						<input type="hidden" name="invoicetype_id" id="invoicetype_id" value="" />
 
 						<input type="hidden" name="save_print" id="save_print" value="" />			
-						<?phpif($bom_actual_add){
+						<?php if($bom_actual_add){
 											//Entry Same Actual Quantity if first time 
 							$upd_act_qty=$dbcon->query("update tbl_bomtrn as trn
 								inner join tbl_bom as mst on mst.bom_id=trn.bom_id
@@ -792,14 +792,14 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 								?>	
 								<input type='hidden' name='bom_actual_add' id='bom_actual_add' value='1' />		
 
-							<?php} ?>
-							<?phpif(strpos($_SERVER['REQUEST_URI'], "bom_assign")==true || strpos($_SERVER['REQUEST_URI'], "bom_assign_store_order")==true){  ?>
+							<?php } ?>
+							<?php if(strpos($_SERVER['REQUEST_URI'], "bom_assign")==true || strpos($_SERVER['REQUEST_URI'], "bom_assign_store_order")==true){  ?>
 									<input type='hidden' name='bom_assign' id='bom_assign' value='yes' />
-									<?phpif(strpos($_SERVER['REQUEST_URI'], "bom_assign_store_order")==true){  ?>
+									<?php if(strpos($_SERVER['REQUEST_URI'], "bom_assign_store_order")==true){  ?>
 										<input type='hidden' name='bom_assign_from' id='bom_assign_from' value='store_order' />		<?php 	} ?>										
 							<?php 	}else{ ?>
 									<input type='hidden' name='bom_assign' id='bom_assign' value='no'/>	
-							<?php} ?>
+							<?php } ?>
 						</form>
 					</div>	
 				</section>
@@ -859,7 +859,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 		$('#sales_order_pro_id').select2('readonly',true);
 		<?php }
 		?>
-		<?phpif($direct_add){?>
+		<?php if($direct_add){?>
 			load_sales_pro_data(<?=$rel['sales_order_id']?>);
 			$('#sales_order_id').select2('readonly',true);
 			<?php 
@@ -867,7 +867,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")!= false){
 		}
 		?>
 
-		<?php/*if($bom_clone){?>
+		<?php /*if($bom_clone){?>
 			clone_bom_trn_data(<?=$bom_id?>);
 			<?php }*/?>	
 		</script>

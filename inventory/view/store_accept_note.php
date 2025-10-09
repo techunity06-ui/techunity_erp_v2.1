@@ -36,7 +36,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 		<?php include_once($include.'left_menu.php');?>
 		<section id="main-content">
 			<section class="wrapper">
-				<?php//include_once('../include/equick_link.php');?>
+				<?php //include_once('../include/equick_link.php');?>
 				<div class="row">
 					<div class="col-lg-12">
 						<section class="panel">

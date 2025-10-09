@@ -171,7 +171,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														</div>
 													</div>
 												</div>
-												<?phpif($process_show==1){ ?>
+												<?php if($process_show==1){ ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<label class="col-md-4  control-label"><strong>Process Name</strong></label>
@@ -180,7 +180,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 															</div>
 														</div>
 													</div>
-												<?php}else{ ?>
+												<?php }else{ ?>
 													<div class="col-md-4">
 														<div class="form-group">
 															<?php echo getBranchBox($dbcon, $branch_id,$edit_branch_id, true, true, 'load_purchase_qc_pending_datatable()', '4', '6'); ?>
@@ -189,13 +189,13 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 											<?php 	} ?>
 											</div>
 											<div class="col-md-12">
-											 <?phpif($process_show==1){ ?>
+											 <?php if($process_show==1){ ?>
 												<div class="col-md-4">
 													<div class="form-group">
 														<?php echo getBranchBox($dbcon, $branch_id,$edit_branch_id, true, true, 'load_purchase_qc_pending_datatable()',  '4', '6'); ?>
 													</div>
 												</div>
-											 <?php} ?>
+											 <?php } ?>
 											</div>
 											<!--<div class="col-md-12">
 												<div class="col-md-4">
@@ -226,9 +226,9 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														<th style='width:7%;text-align: center;'>Rejected Qty</th>
 														<th style='width:8%;text-align: center;'>Godown *</th>
 														<th style='width:8%;text-align: center;'> New Product </th>
-														<?php//if($row['ref_type']=="1"){ ?>
+														<?php //if($row['ref_type']=="1"){ ?>
 														<th class="<?=$dper?>" style='width:7%;text-align: center;'>Reprocess Qty</th>
-														<?php//} ?>
+														<?php //} ?>
 														<th class="<?=$dper?>" style='width:8%;text-align: center;'>Godown *</th>
 														<th class="<?=$dper?>" style='width:8%;text-align: center;'> New Process </th>
 													</tr>
@@ -238,9 +238,9 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 													?>
 													<tr>
 														<td class="qc_detail_head"><?=$row['product_name']?>
-															<?phpif(!empty($revision_id)) { ?>
+															<?php if(!empty($revision_id)) { ?>
 															<a class="btn btn-xs btn-info" title="View Image" data-toggle="tooltip" data-id="<?=$revision_id?>" data-placement="top" href="javascript:void(0)" onClick="view_revision_image(<?=$revision_id?>)"><i class="fa fa-eye"></i></a>
-															<?php} ?>
+															<?php } ?>
 														</td>
 														<td class="qc_detail_head"><?=$cat_name?></td>
 														<!--<td  class="qc_detail_head"><?=$row['unit_name']?></td>-->
@@ -333,7 +333,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														<input type="file" class="form-control" id="qc_file" name="qc_file[]" multiple="multiple" <?=$ttrt?> />
 													</div>
 													<div class="col-md-2">
-													<?phpif($mode=='Edit'){
+													<?php if($mode=='Edit'){
 														 $get_attch_qry="select * from tbl_qc_attch where qc_attch_status=0 and qc_id=".$rel['qc_id'];
 														$attch_rs=$dbcon->query($get_attch_qry);
 														while($attch_rel=mysqli_fetch_assoc($attch_rs)){

@@ -66,9 +66,9 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id, $_SESSION['branch_id'], false, true, 'show_data()'); ?>	
 										</div>	
-									<?php}else{ ?>
+									<?php }else{ ?>
 													<input type="hidden" name="branch_id" id="branch_id" value="<?=$companyConfiguration['default_branch_id']?>" />
-												<?php} ?>
+												<?php } ?>
 									<div class="col-md-4">
 										<button class="btn btn-success btn-flat" onclick="assign_standard_bom();">STANDARD BOM ASSIGN</button>
 									</div>

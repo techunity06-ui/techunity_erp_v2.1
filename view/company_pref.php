@@ -84,8 +84,8 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label">Show Discount</label>
 						<div class="col-md-7 col-xs-11">
-							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_disc_yes" name="show_disc" value="1" <?phpif($rel['show_disc']=='1'){echo 'checked';} ?>/> <label for="show_disc_yes" style="font-weight: bold;" title="Show Discount in Invoice Print">Yes</label>
-							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_disc_no" name="show_disc" value="2" <?phpif($rel['show_disc']=='2'){echo 'checked';} ?>/> <label for="show_disc_no" style="font-weight: bold;" title="Hide Discount in Invoice Print">No</label>
+							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_disc_yes" name="show_disc" value="1" <?php if($rel['show_disc']=='1'){echo 'checked';} ?>/> <label for="show_disc_yes" style="font-weight: bold;" title="Show Discount in Invoice Print">Yes</label>
+							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_disc_no" name="show_disc" value="2" <?php if($rel['show_disc']=='2'){echo 'checked';} ?>/> <label for="show_disc_no" style="font-weight: bold;" title="Hide Discount in Invoice Print">No</label>
 						</div>
 					</div>
 					</div>
@@ -93,8 +93,8 @@
 					<div class="form-group">
 					  <label class="col-md-3 control-label">Packing Charges</label>
 						<div class="col-md-7 col-xs-11">
-							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_charges_withouttax" name="show_charges" value="1" <?phpif($rel['show_charges']=='1'){echo 'checked';} ?>/> <label for="show_charges_withouttax" style="font-weight: bold;" title="Show Packing Charges Without Tax">Without Tax</label>
-							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_charges_withtax" name="show_charges" value="2" <?phpif($rel['show_charges']=='2'){echo 'checked';} ?>/> <label for="show_charges_withtax" style="font-weight: bold;" title="Packing Charge is Taxable">
+							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_charges_withouttax" name="show_charges" value="1" <?php if($rel['show_charges']=='1'){echo 'checked';} ?>/> <label for="show_charges_withouttax" style="font-weight: bold;" title="Show Packing Charges Without Tax">Without Tax</label>
+							<input type="radio" class="" style="margin-left: 10px;width: 17px;height: 15px;" id="show_charges_withtax" name="show_charges" value="2" <?php if($rel['show_charges']=='2'){echo 'checked';} ?>/> <label for="show_charges_withtax" style="font-weight: bold;" title="Packing Charge is Taxable">
 							Taxable</label>
 						</div>
 					</div>
@@ -145,12 +145,12 @@
 					  <div class="form-group">
 						<label class="col-md-4 control-label">Software Type</label>
 						<div class="col-md-7 col-xs-11">
-							<?php//var_dump($rel2); ?>
+							<?php //var_dump($rel2); ?>
 							<select id="soft_type" name="soft_type" class="select2">
-								<option value="0" <?phpif($rel['software_type']=="0"){ echo "selected='selected'";}?> >Invoice</option>
-								<option value="1" <?phpif($rel['software_type']=="1"){ echo "selected='selected'";}?>>Invoice&Purchase </option>
-								<option value="2" <?phpif($rel['software_type']=="2"){echo "selected='selected'";}?>>Invoice,Purchase&Passbook </option>
-								<option value="3" <?phpif($rel['software_type']=="3"){ echo "selected='selected'";}?>>Invoice,Purchase,Passbook&Stock </option>
+								<option value="0" <?php if($rel['software_type']=="0"){ echo "selected='selected'";}?> >Invoice</option>
+								<option value="1" <?php if($rel['software_type']=="1"){ echo "selected='selected'";}?>>Invoice&Purchase </option>
+								<option value="2" <?php if($rel['software_type']=="2"){echo "selected='selected'";}?>>Invoice,Purchase&Passbook </option>
+								<option value="3" <?php if($rel['software_type']=="3"){ echo "selected='selected'";}?>>Invoice,Purchase,Passbook&Stock </option>
 							</select>
 						<input type="hidden" value="<?=$rel['software_type']?>"/>
 						</div>

@@ -55,7 +55,7 @@
       <!--main content start-->
            <section id="main-content">
           <section class="wrapper">
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
     		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->
@@ -95,7 +95,7 @@
 							</div>
 						</center>
 					</div>
-				<?php}else{?>
+				<?php }else{?>
 				<div class="col-md-12 text-center" style="margin-top:10px;">
 					<div class="col-md-4 col-md-offset-3">
 						<div class="form-group">
@@ -108,7 +108,7 @@
 						</div>		
 					</div>		
 				</div>
-				<?php} ?>
+				<?php } ?>
 				<div class="col-md-12"  style="margin-top:10px;">
 					<div class="col-md-6">
 						<div class="form-group">
@@ -122,7 +122,7 @@
 						 <div class="form-group">  	
 						  <label class="col-md-4 control-label" >Debitnote Date</label>
 						  <div class="col-md-6 col-xs-11">
-							<input id="debitnote_date" name="debitnote_date" type="text" class="form-control default-date-picker required" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['debitnote_date']));}?>" placeholder="Debitnote Date">
+							<input id="debitnote_date" name="debitnote_date" type="text" class="form-control default-date-picker required" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['debitnote_date']));}?>" placeholder="Debitnote Date">
 							</div>
 						 </div>	
 					</div>	
@@ -229,19 +229,19 @@
 							<div class="form-group">
 								<label class="col-md-6 control-label">Total *</label>
 								<div class="col-md-4 col-xs-11">
-									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 								</div>
 							</div>	
 							<div class="form-group">
 								<label class="col-md-6 control-label">Round Off</label>
 								<div class="col-md-4 col-xs-11">
-									<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
+									<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-6 control-label">Grand Total *</label>
 								<div class="col-md-4">
-									<input id="g_total" name="g_total" type="text" class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total" readonly="readonly">
+									<input id="g_total" name="g_total" type="text" class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total" readonly="readonly">
 								</div>
 							</div>
 						</div>	
@@ -300,7 +300,7 @@ $(".form_datetime").datetimepicker({
 	load_ven_grn(<?=$vender_id?>,<?=$grn_id?>);
 	load_grn_data(<?=$grn_id?>);
 	$('#vender_id').select2('readonly',true);
-<?php} ?>
+<?php } ?>
 </script>
 </body>
 </html>

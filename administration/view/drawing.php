@@ -72,7 +72,7 @@ $sales_party_show = $company_config['sales_party_show'];
       <?php include_once($include . 'left_menu.php'); ?>
       <section id="main-content">
          <section class="wrapper">
-            <?php//include_once('../include/equick_link.php');
+            <?php //include_once('../include/equick_link.php');
             ?>
             <div class="row">
                <div class="col-lg-12">
@@ -121,7 +121,7 @@ $sales_party_show = $company_config['sales_party_show'];
                                     <div class="form-group">
                                        <label class="col-md-4 control-label">Select Vendor</label>
                                        <div class="col-md-8 col-xs-11">
-                                          <?php//=getcust($dbcon,$vender_id);
+                                          <?php //=getcust($dbcon,$vender_id);
                                           ?>
                                           <select class="select2" name="vender_id" id="vender_id" onChange="get_so_no(this.value)" title="Select Vender">
                                              <?= getcust($dbcon, $vender_id, $sales_party_show); ?>
@@ -247,14 +247,14 @@ $sales_party_show = $company_config['sales_party_show'];
                               if ($direct_add == '1') {
                               ?>
                                  <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?= $rel['drawing_id'] ?>" />
-                              <?php} ?>
+                              <?php } ?>
                            </div>
                         </form>
                         <br>
                         <br>
 
                         <!-- Tab Section Start By Umair -->
-                        <?phpif ($mode == "Edit") { ?>
+                        <?php if ($mode == "Edit") { ?>
                            <section class="panel" style="margin-top: 15px">
                               <header class="panel-heading tab-bg-dark-navy-blue ">
                                  <ul class="nav nav-tabs">
@@ -357,7 +357,7 @@ $sales_party_show = $company_config['sales_party_show'];
                               </div>
                            </section>
 
-                        <?php} ?>
+                        <?php } ?>
                         <!-- Tab Section -->
 
 

@@ -151,7 +151,7 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
         <?php include_once('../include/left_menu.php');?>
         <section id="main-content">
             <section class="wrapper">
-                <?php//include_once('../include/equick_link.php');?>
+                <?php //include_once('../include/equick_link.php');?>
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
@@ -496,7 +496,7 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                                         </td>
                                                         <td style="vertical-align:top;">
                                                             <select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-                                                                <?phpecho get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); //Dimple Panchal ?>
+                                                                <?php echo get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); //Dimple Panchal ?>
                                                             </select>
                                                             <!-- <input type="hidden" name="formulaid" id="formulaid" class="form-control" readonly /> -->
                                                             <input type="hidden" name="formula_tax_id" id="formula_tax_id" class="form-control" readonly /></br>
@@ -535,19 +535,19 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                                         <div class="form-group hide">
                                                             <label class="col-md-6 control-label">Total *</label>
                                                             <div class="col-md-4 col-xs-11">
-                                                                <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+                                                                <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
                                                             </div>
                                                         </div>
                                                         <div class="form-group hide">
                                                             <label class="col-md-6 control-label">Transport charges </label>
                                                             <div class="col-md-4 col-xs-11">
-                                                                <input id="paking" name="paking" type="number"  min="0"  class="form-control" title="Transport" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="Transport">
+                                                                <input id="paking" name="paking" type="number"  min="0"  class="form-control" title="Transport" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="Transport">
                                                             </div>
                                                         </div>
                                                         <div class="form-group hide">
                                                             <label class="col-md-6 control-label">Round Off</label>
                                                             <div class="col-md-4 col-xs-11">
-                                                                <input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
+                                                                <input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
                                                             </div>
                                                         </div>
                                                         <!-- Dimple Panchal : start -->
@@ -574,14 +574,14 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                                         <div class="form-group">
                                                             <label class="col-md-6 control-label">Grand Total (<?=$_SESSION['currency_name']?>) *</label>
                                                             <div class="col-md-4 col-xs-11">
-                                                                <input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
-                                                                <!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+                                                                <input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
+                                                                <!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
                                                             </div>
                                                         </div>
                                                         <div class="form-group currency_total_div" style="display: none">
                                                             <label class="col-md-6 control-label">Grand Total (<span class="currency_type_name"></span>)*</label>
                                                             <div class="col-md-4 col-xs-11">
-                                                                <input id="currency_total" name="currency_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['currency_total'];}?>" placeholder="total"readonly="readonly">
+                                                                <input id="currency_total" name="currency_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['currency_total'];}?>" placeholder="total"readonly="readonly">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -630,7 +630,7 @@ $po_terms_conditions = $set_conf['po_terms_conditions'];
                                 if($direct_add=='1'){
                                     ?>    
                                     <input type="hidden" name="po_ref_id" id="po_ref_id" value="<?=$rel['purchaseorder_id']?>" />
-                                <?php} ?>  
+                                <?php } ?>  
                             </form>
                         </div>
 
@@ -730,10 +730,10 @@ $(this).focus();
 }
 
 });*/
-<?phpif($mode=="Add" && $viewmode=="Revise"){ ?>
+<?php if($mode=="Add" && $viewmode=="Revise"){ ?>
 copy_prev_purchase_trn(<?=$purchaseorder_id?>);
 get_revise_po_no(<?=$purchaseorder_id?>,<?=$start_purchaseorder_id?>);
-<?php} ?>
+<?php } ?>
 </script>
 <?php 
 //echo "<script>load_state(".$countryid.",'stateid',".$stateid.")</script>";

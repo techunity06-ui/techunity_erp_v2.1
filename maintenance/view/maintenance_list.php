@@ -76,11 +76,11 @@ else {
 										</div>
 									</div>
 								</div>
-								<?phpif(in_array(MAINTENANCE_ADD_SLUG_CREATE,$bulkAccessArray)){ ?>
+								<?php if(in_array(MAINTENANCE_ADD_SLUG_CREATE,$bulkAccessArray)){ ?>
 									<span class="tools pull-right"> 
 										<a href="<?=ROOT.MAINTENANCE_ROOT.'maintenance'?>"><button class="btn btn-success btn-flat">Add <?=$form?></button></a>
 									</span>
-								<?php} ?> 
+								<?php } ?> 
 							</header>	
 							<div class="panel-body">
 								<div class="adv-table" id="adv-table">

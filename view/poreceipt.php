@@ -89,7 +89,7 @@
 								</div>
 								<div class="col-md-1">
 							
-								<?php}
+								<?php }
 								else 
 								{
 								?>
@@ -181,7 +181,7 @@
 										<td style="text-align:center;padding-right:10px;border-bottom-color:#FFFFFF;vertical-align:top;"><strong><?=$row['product_rate']?></strong></td>
 										<td style="text-align:right;padding-right:10px;border-bottom-color:#FFFFFF;vertical-align:top;"><strong><?=$row['product_amount']?></strong></td>
 									</tr>
-									<?php$i++; $total=$total+$row['product_amount'];
+									<?php $i++; $total=$total+$row['product_amount'];
 									}
 									$pr=15-$cnt;
 									for($j=0; $j<$pr; $j++)
@@ -194,7 +194,7 @@
 									<td style="border-bottom-color:#FFFFFF"></td>
 									<td style="border-bottom-color:#FFFFFF"></td>
 							</tr>
-								<?php} ?>
+								<?php } ?>
 							<tr height="1px">
 									<td style="border-top:1px solid blank;"></td>
 									<td style=""></td>
@@ -223,7 +223,7 @@
 									<td style="text-align:right;">
 									<strong><?=$rel['taxvalue1']?></strong></td>
 							</tr>
-							<?php} ?>
+							<?php } ?>
 							<?php 
 							if(!empty($rel['tax2_name']))
 							{
@@ -240,7 +240,7 @@
 									<td style="text-align:right;">
 									<strong><?=$rel['taxvalue2']?></strong></td>
 							</tr>
-							<?php} ?>
+							<?php } ?>
 							<?php 
 							if(!empty($rel['tax3_name']))
 							{
@@ -256,7 +256,7 @@
 									<td style="text-align:right;">
 									<strong><?=$rel['taxvalue3']?></strong></td>
 							</tr>
-							<?php} ?>
+							<?php } ?>
 							<tr>
 									<td colspan="3" style="border-right-color:#FFFFFF;border-bottom-color:#FFFFFF;"><p style=";margin-bottom:0px">TIN GST 
 									<strong><?=$set_head['gstno']?></strong>
@@ -418,7 +418,7 @@ disp_setting+="scrollbars=yes,width=800, height=600, left=100, top=25";
  docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 

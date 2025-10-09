@@ -111,7 +111,7 @@ disp_setting+="scrollbars=yes,width=800, height=600, left=100, top=25";
  docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<style type="text/css">body { ');
   docprint.document.write('font-family:Tahoma;color:#000;');
   docprint.document.write('font-family:Tahoma,Verdana; font-size:15px;} .dataTables_length, .dataTables_filter , .dataTables_paginate { display:none; }');

@@ -266,7 +266,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                             </div>
                                         </div>
 
-                                        <?phpif ($getspecialConfiguration['reciclar'] == 1) { ?>
+                                        <?php if ($getspecialConfiguration['reciclar'] == 1) { ?>
                                             <div class="col-md-4" style="display: none;">
                                                 <div class="form-group">
                                                     <label for="product_category" class="col-md-4 control-label">Parent Category</label>
@@ -277,7 +277,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -290,7 +290,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                                 <div class="col-md-2 col-xs-1">
                                         <?php if ($mode != 'Edit') { ?>
                                             <button type="button" class="btn btn-primary" title="View Image" data-toggle="tooltip" data-id="2" data-placement="top" onclick="add_category()"><i class="fa fa-plus"></i></button>
-                                        <?php} ?>
+                                        <?php } ?>
                                     </div>
                                             </div>
                                             <br>
@@ -301,14 +301,14 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                             <div class="form-group">
                                                 <label for="product_icode" class="col-md-4 control-label">Item Code</label>
                                                 <div class="col-md-8 col-xs-11">
-                                                    <input type="text" class="form-control" id="product_icode" name="product_icode" placeholder="Item Code" value="<?= $rel['product_icode']; ?>" <?php echo ($companyConfiguration['generate_item_code'] == 0) ? 'readonly' : ''; ?> <?phpif ($companyConfiguration['generate_item_code'] == 1) { ?>onkeyup="icode_validation(this.value)" <?php} ?> />
+                                                    <input type="text" class="form-control" id="product_icode" name="product_icode" placeholder="Item Code" value="<?= $rel['product_icode']; ?>" <?php echo ($companyConfiguration['generate_item_code'] == 0) ? 'readonly' : ''; ?> <?php if ($companyConfiguration['generate_item_code'] == 1) { ?>onkeyup="icode_validation(this.value)" <?php } ?> />
                                                     <input type="hidden" class="form-control" id="product_icode_code" name="product_icode_code" value="" readonly />
                                                     <div id="icodeval" style="color: red; font-size: 13px;"></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- </div> -->
-                                        <?phpif ($getspecialConfiguration['filter_concept_permission'] == 1) { ?>
+                                        <?php if ($getspecialConfiguration['filter_concept_permission'] == 1) { ?>
                                             <div class="col-md-12 margin_row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -413,8 +413,8 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                                 </div>
 
                                             </div>
-                                        <?php} ?>
-                                        <?php//if ($getspecialConfiguration['power_drive'] == 1) {
+                                        <?php } ?>
+                                        <?php //if ($getspecialConfiguration['power_drive'] == 1) {
                                             $query_field = "select * from tbl_item_master_field where item_master_field_status=0 and company_id=" . $_SESSION['company_id'] . " order by priority ASC";
                                             $res_field = $dbcon->query($query_field);
                                             $ro_cnt = brp_mysqli_num_rows($res_field);
@@ -425,7 +425,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                                 if ($field == 1) {
                                         ?>
                                                     <div class="col-md-12 margin_row">
-                                                    <?php} ?>
+                                                    <?php } ?>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label class="col-md-4 control-label"><?= $row_field['item_master_field'] ?>*</label>
@@ -437,19 +437,19 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <?phpif ($ro_cnt == $field) { ?>
+                                                    <?php if ($ro_cnt == $field) { ?>
                                                     </div>
-                                                    <?php} else {
+                                                    <?php } else {
                                                         if ($counter == 3) {
                                                             $counter = 0;
 
                                                     ?>
                                     </div>
                                     <div class="col-md-12 margin_row">
-                                <?php}
+                                <?php }
                                                     } ?>
 
-                        <?php$field++;
+                        <?php $field++;
                                                 $counter++;
                                             }
                                         //} 
@@ -515,14 +515,14 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                             <select class="select2" name="drawing_id" id="drawing_id" onChange="get_revision_data(this.value)" title="SO No.">
                                                 <?= getdrawingnumber($dbcon, $rel['drawing_id']); ?>
                                             </select>
-                                        <?php} ?>
+                                        <?php } ?>
 
 
                                     </div>
                                     <div class="col-md-2 col-xs-1">
                                         <?php if ($mode != 'Edit') { ?>
                                             <a class="btn btn-primary" title="View Image" data-toggle="tooltip" data-id="2" data-placement="top" href="javascript:void(0)" onclick="add_drawing()"><i class="fa fa-plus"></i></a>
-                                        <?php} ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -582,7 +582,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                 </div>
                             </div>
 
-                            <?phpif($getspecialConfiguration['rb_auto_permission']==1 || $getspecialConfiguration['rapidrop_permission']==1 || $getspecialConfiguration['make_permission']==1 ){?>
+                            <?php if($getspecialConfiguration['rb_auto_permission']==1 || $getspecialConfiguration['rapidrop_permission']==1 || $getspecialConfiguration['make_permission']==1 ){?>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="Cat No." class="col-md-4 control-label">Make</label>
@@ -593,9 +593,9 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                         </div>
                                     </div>
                                 </div>
-                            <?php} else { ?>
+                            <?php } else { ?>
                                 <input type="hidden" class="form-control" id="product_rb_make" name="product_rb_make" value="" />
-                            <?php} ?>
+                            <?php } ?>
                             <input type="hidden" class="form-control" id="product_rb_make_name" name="product_rb_make_name" value="<?=$rel['r_make_name']?>" />
 
                             <?php
@@ -608,7 +608,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                             }
                             ?>
 
-                            <?phpif ($getspecialConfiguration['power_drive'] == 1) { ?>
+                            <?php if ($getspecialConfiguration['power_drive'] == 1) { ?>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="ISO Verify" class="col-md-4 control-label">ISO Verify</label>
@@ -620,8 +620,8 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                         </div>
                                     </div>
                                 </div>
-                            <?php} ?>
-                            <?phpif ($getspecialConfiguration['smpl_permission'] == "1") { ?>
+                            <?php } ?>
+                            <?php if ($getspecialConfiguration['smpl_permission'] == "1") { ?>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="smpl_size" class="col-md-4 control-label">Size</label>
@@ -638,7 +638,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                         </div>
                                     </div>
                                 </div>
-                            <?php} ?>
+                            <?php } ?>
                         </div>
 
                         <div class="col-md-12 margin_row" style="margin-top:25px !important;">
@@ -733,12 +733,12 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                             <li><a href="#talternative" data-toggle="tab" id="ltalternative">Accessories Product</a></li>
                             <?php if ($getspecialConfiguration['solid_permission'] == 1) { ?>
                                 <li><a href="#tsolidplaning" data-toggle="tab" id="solidplaning">Solidedge Planning</a></li>
-                            <?php} ?>
+                            <?php } ?>
                             <li id="project_product" style="display: none;"><a href="#tprojectproduct" data-toggle="tab" id="ltprojectproduct">Project Product</a></li>
                             <!--  <li><a href="#tmake" data-toggle="tab" id="ltmake" style="display:block;">Make</a></li> -->
                             <?php if ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
                                 <li><a href="#tdieitemlist" data-toggle="tab" id="ltdieitemlist">Die Allocation</a></li>
-                            <?php} ?>
+                            <?php } ?>
                             <!-- <li class="stagelist"><a href="#stageprocess" data-toggle="tab" id="ltprocess">Stage List</a></li> -->
                         </ul>
                     </div>
@@ -768,7 +768,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                     <td>
                                         <select class="form-control" name="utab_alt_unit" id="utab_alt_unit">
                                             <option value="">--Select Unit--</option>
-                                            <?php//=getunit($dbcon,0);
+                                            <?php //=getunit($dbcon,0);
                                             ?>
                                         </select>
                                     </td>
@@ -776,7 +776,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                     <td>
                                         <select class="form-control" name="utab_basic_unit" id="utab_basic_unit">
                                             <option value="">--Select Unit--</option>
-                                            <?php//=getunit($dbcon,0);
+                                            <?php //=getunit($dbcon,0);
                                             ?>
                                         </select>
                                     </td>
@@ -1367,7 +1367,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                         </div>
                                     </div>
                                 </div>
-                                <?phpif ($getspecialConfiguration['elcon_permission'] == 1) { ?>
+                                <?php if ($getspecialConfiguration['elcon_permission'] == 1) { ?>
                                     <div class="col-md-12 margin_row">
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -1387,7 +1387,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                             </div>
                                         </div>
                                     </div>
-                                <?php} ?>
+                                <?php } ?>
 
                                 <div class="col-md-12 margin_row">
 
@@ -1829,7 +1829,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                         </div>
                                     </div>
                                 </div>-->
-                            <?phpif ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
+                            <?php if ($getspecialConfiguration['vipul_copper_permission'] == 1) { ?>
                                 <div class="tab-pane" id="tdieitemlist">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -1867,7 +1867,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                         </div>
                                     </div>
                                 </div>
-                            <?php} ?>
+                            <?php } ?>
                             <!-- <div class="tab-pane" id="stageprocess" >
 					   <div class="row">
 					      <div class="col-md-12">

@@ -213,8 +213,8 @@ if($set_head['show_disc']=='1'){
 				</th>
 				<th style="text-align:left;border: none;"> 
 					<?=$set_head['address']?> 
-					<?phpif($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
-					<?phpif($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
+					<?php if($set_head['contact_no']){?><br/>Contact No. <?=$set_head['contact_no']?><?php }?>
+					<?php if($set_head['website']){?><br/>E-Mail: <?=$set_head['website']?><?php }?>
 				</th>
 			</tr>
 		</thead>-->
@@ -287,15 +287,15 @@ if($set_head['show_disc']=='1'){
 									<br/>Vendor GST No. : <?=$rel['tin_no']?>
 								</td>
 								<td width="50%" colspan="2" style="vertical-align:top;border:1px solid;">
-									<?php//if(!empty($baddress)){ ?>
+									<?php //if(!empty($baddress)){ ?>
 										<b>Ship To, </b><br/>
 										<strong><?=$party_address_con?></strong>
 										<!-- <span style="font-weight:normal;">   <br/> 
 											<?=$baddress?>
 											<br/>
 											<?=$cons_city_name1?>, <?=$cons_state_name1?>, <?=$cons_country_name1?></span>
-											<?php//<br/>GST No. : <?=$cons_gst_no?>
-										<?php//} ?> -->
+											<?php //<br/>GST No. : <?=$cons_gst_no?>
+										<?php //} ?> -->
 									</td>
 								</tr>
 							</table>
@@ -320,7 +320,7 @@ if($set_head['show_disc']=='1'){
 			<th width="7%" style="text-align:center;border:1px solid;border-top: none;">
 				<strong>Rate</strong>
 			</th>
-			<?phpif($set_head['show_disc']=='1'){ ?>
+			<?php if($set_head['show_disc']=='1'){ ?>
 				<th width="6%" style="text-align:center;border:1px solid;border-top: none;">
 					<strong>Less:<br/>Disc.</strong>
 				</th>
@@ -394,13 +394,13 @@ if($set_head['show_disc']=='1'){
 						<?=$i?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-						<?phpif(!empty($row['scode'])){
+						<?php if(!empty($row['scode'])){
 							$code=" ( ".$row['scode'] .")";
 						} ?>
 						<?php if($row['product_alias_name']){?>
 							<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?></strong>
 							<br/><?=nl2br(stripcslashes($row['product_des']));?>
-						<?php}else{ ?>
+						<?php }else{ ?>
 							<strong><?=stripcslashes($row['product_name'])?> <?=$code?></strong>
 							<br/><?=nl2br(stripcslashes($row['product_des']));?>
 							<?php }?>
@@ -410,27 +410,27 @@ if($set_head['show_disc']=='1'){
 						</td>
 
 						<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-							<?phpif($row['product_type']!='8'){ ?>
+							<?php if($row['product_type']!='8'){ ?>
 									<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 									<?=$cqty.' '.$uname?><br/>
 									<?php }?>
 									<?=$row['product_qty'].' '.$row['unit_name']?>
-								<?php}else{
+								<?php }else{
 									echo $row['product_qty'].' '.$row['unit_name'];
 									$charges_qty+=$row['product_qty'];
 								} ?>	
 							</td>
 					<!--<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-						<?phpif($row['product_type']!='3'){ ?>
+						<?php if($row['product_type']!='3'){ ?>
 							<?=$row['sqr_ft']?>
-						<?php}else{
+						<?php }else{
 							$charges_qty1+=$row['sqr_ft'];
 						} ?>	
 					</td>-->
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 						<?=number_format($row['product_rate'],2,".","")?>
 					</td>
-					<?phpif($set_head['show_disc']=='1'){?>
+					<?php if($set_head['show_disc']=='1'){?>
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 							<?=number_format($row['discount_per'],2,".","").'%'?>
 						</td>
@@ -468,7 +468,7 @@ if($set_head['show_disc']=='1'){
 						<td style="border-right:1px solid;border-left:1px solid;"></td>
 						<td style="border-right:1px solid;" colspan="2"></td>
 						<td style="border-right:1px solid;"></td>
-						<?phpif($set_head['show_disc']=='1'){?>
+						<?php if($set_head['show_disc']=='1'){?>
 							<td style="border-right:1px solid;"></td>
 							<?php }?>
 							<!--	<td style="border-right:1px solid;"></td>-->
@@ -486,7 +486,7 @@ if($set_head['show_disc']=='1'){
 
 							<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
 							<!--<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalsqr,2,".","")?></strong></td>-->
-							<?phpif($set_head['show_disc']=='1'){?>
+							<?php if($set_head['show_disc']=='1'){?>
 								<td style="border-top:1px solid;border-right:1px solid;"></td>
 								<?php }?>
 								<td style="border-top:1px solid;border-right:1px solid;"></td>
@@ -579,7 +579,7 @@ if($set_head['show_disc']=='1'){
 									?></td>
 									<td colspan="2" style="text-align:right  !important; border-top:1px solid;font-size:12px;border-right:1px solid; "><?=number_format($totaltax2,2,".","")?></td>
 								</tr>
-							<?php} $totaltax=$totaltax1+$totaltax2;?>
+							<?php } $totaltax=$totaltax1+$totaltax2;?>
 							<?php 
 							$total=($total)+$rel['packing']; 
 							$r=round($total)-$total; ?>
@@ -732,7 +732,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

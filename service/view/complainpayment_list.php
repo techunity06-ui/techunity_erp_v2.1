@@ -41,7 +41,7 @@
 				  <section class="panel">
 					  <header class="panel-heading">
 						<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-						<?phpinclude_once($incPath."head_menu.php") ?>
+						<?php include_once($incPath."head_menu.php") ?>
 						</header>	
 						<div class="">
 						  <ul class="breadcrumb">

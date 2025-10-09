@@ -165,7 +165,7 @@ $id=$_SESSION['type_id'];
 							<section class="panel">
 								<header class="panel-heading">
 									<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-									<?phpinclude_once($include1."/head_menu_purchase.php") ?>
+									<?php include_once($include1."/head_menu_purchase.php") ?>
 								</header>
 								<div class="">
 									<ul class="breadcrumb">

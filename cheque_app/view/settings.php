@@ -85,10 +85,10 @@
 										<div class="form-group"> 
 									      <label>Print Alignment on Printer</label><br/>
 										  <label class="radio-inline">
-											<input type="radio" name="align" value="1" <?phpif($record['print_align']=="1"){echo 'checked="checked"';}?>>Left<?php $record['print_align']?></label>
-										   <label class="radio-inline"><input type="radio" name="align" value="0" <?phpif($record['print_align']=="0"){echo 'checked="checked"';}?> >Center </label>
+											<input type="radio" name="align" value="1" <?php if($record['print_align']=="1"){echo 'checked="checked"';}?>>Left<?php $record['print_align']?></label>
+										   <label class="radio-inline"><input type="radio" name="align" value="0" <?php if($record['print_align']=="0"){echo 'checked="checked"';}?> >Center </label>
 											<label class="radio-inline">
-											<input type="radio" name="align" value="2" <?phpif($record['print_align']=="2"){echo 'checked="checked"';}?>>Right</label>
+											<input type="radio" name="align" value="2" <?php if($record['print_align']=="2"){echo 'checked="checked"';}?>>Right</label>
 											
 								      </div> 
 								      <div class="form-group">

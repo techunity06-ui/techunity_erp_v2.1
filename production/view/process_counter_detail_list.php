@@ -119,28 +119,28 @@
 									<th style="white-space:nowrap;">Process Name</th>
 									<?php if($company_config['batch_wise_stock'] == '1' && $company_config['batch_process'] == '0' && $type == "create_batch") { ?>
 										<th style="white-space:nowrap;">Create Batch </th>
-									<?php} ?> 
+									<?php } ?> 
 									
 									<?php if($is_store_approval == '1' &&  $type == "store_request"){ ?>
 										<th style="white-space:nowrap;">Store Request Pending</th>
-									<?php} ?> 
+									<?php } ?> 
 									
 
 									<?php if($type == "pending_start"){ ?>
 										<th style="white-space:nowrap;">Pending Start</th>
-									<?php} ?> 
+									<?php } ?> 
 
 									<?php if($type == "pending_stop"){ ?>
 										<th style="white-space:nowrap;">Pending Stop</th>
-									<?php} ?> 
+									<?php } ?> 
 
 									<?php if($type == "reprocess_start"){ ?>
 										<th style="white-space:nowrap;">Reprocess Start</th>
-									<?php} ?> 
+									<?php } ?> 
 
 									<?php if($type == "reprocess_stop"){ ?>
 										<th style="white-space:nowrap;">Reprocess Stop</th>
-									<?php} ?> 
+									<?php } ?> 
 									
 								</tr>
 								
@@ -209,7 +209,7 @@
 
 												</th>
 												<?php } ?>
-											<?php}else{ ?>
+											<?php }else{ ?>
 												<?php if($type == "pending_start"){ ?>
 												<th> 
 													<a href="<?php echo ROOT.PRODUCTION_ROOT."working_store_process_details_list/".$row_p['process_id']."/1";?>" class="link_dash"><?=$pending_count;?></a>
@@ -223,15 +223,15 @@
 													<a href="<?php echo ROOT.PRODUCTION_ROOT."working_store_process_details_list/".$row_p['process_id']."/2";?>" class="link_dash"><?=$pending_count;?></a>
 
 												</th>
-											<?php} ?> 
+											<?php } ?> 
 
 											<?php if($type == "reprocess_start"){ ?>
 												<th><a href="<?php echo ROOT.PRODUCTION_ROOT."working_reprocess_detail_list/".$row_p['process_id']."/1";?>"  class="link_dash"><?=$pending_count;?></a></th>
-											<?php} ?> 
+											<?php } ?> 
 
 											<?php if($type == "reprocess_stop"){ ?>
 												<th><a href="<?php echo ROOT.PRODUCTION_ROOT."working_reprocess_detail_list/".$row_p['process_id']."/2";?>"  class="link_dash"><?=$pending_count;?></a></th>
-											<?php} ?> 
+											<?php } ?> 
 
 										</tr>
 									<?php $cnt++;
@@ -246,7 +246,7 @@
 									<tr>
 										<td colspan="3" class="text-center"><h3>NO DATA FOUND.</h3></td>
 									</tr>
-								<?php}
+								<?php }
 								?>
 								
 								

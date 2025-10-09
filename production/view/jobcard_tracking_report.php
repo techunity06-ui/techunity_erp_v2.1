@@ -207,7 +207,7 @@
 											</tr>-->
 
 
-											<?phpif($getspecialConfiguration['hermattic_permission']=="1") { ?>
+											<?php if($getspecialConfiguration['hermattic_permission']=="1") { ?>
 											<tr>
 												<th colspan="8" style="padding:0px !important;">
 													<table  border="0" style="font-size:12px;border-collapse:collapse;" cellpadding="0"  cellspacing="0" width="100%" id="">
@@ -227,7 +227,7 @@
 															</table>
 												</th>
 											</tr>
-										<?php} ?>	
+										<?php } ?>	
 										<tr height="30px">
 											<td colspan="9" style="text-align:center;border:1px solid;" class="text-center"><strong style="font-size:14px">Jobcard No :  <?=$so_detail['job_card_no'] . " (".$so_detail['workorder_no'].")"  ?></strong></td>
 											
@@ -523,7 +523,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

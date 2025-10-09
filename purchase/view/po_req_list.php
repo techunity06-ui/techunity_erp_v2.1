@@ -74,7 +74,7 @@
 									<div class="col-md-6">
 										<!--<div class="col-md-3">
 											<label for="po_type_status1" class="external-event label label-primary ui-draggable" style="position: relative;cursor:pointer;">All</label>
-											<input id="po_type_status1" name="po_type_status" type="radio" <?phpif($_SESSION['po_type_status_filter']==''){ echo "checked"; } ?>  onClick="reload_data();" class="" title="All" value="">
+											<input id="po_type_status1" name="po_type_status" type="radio" <?php if($_SESSION['po_type_status_filter']==''){ echo "checked"; } ?>  onClick="reload_data();" class="" title="All" value="">
 										</div>-->
 										<div class="col-md-3">
 											<label for="po_type_status3" class="external-event label label-warning ui-draggable" style="position: relative;cursor:pointer;">Pending</label>
@@ -89,7 +89,7 @@
 										<div class="col-md-6">
 											<?php echo getBranchBox($dbcon, $branch_id, '', false, false, 'reload_data();','4','6'); ?>
 										</div>
-									<?php} ?>
+									<?php } ?>
 									<?php if(in_array(PO_REQ_ADD,$bulkAccessArray)){ ?>
 									<span class="tools pull-right">
 										<a href="<?=ROOT.PURCHASE_ROOT.'po_req_add_mul'?>" ><button class="btn btn-success btn-flat" >Create <?=$form?></button></a>
@@ -104,7 +104,7 @@
 													<th>#</th>
 													<?php if($companyConfiguration['po_work_order_wise'] == 1){ ?>
 														<th>Work Order Details</th>
-													<?php} ?>
+													<?php } ?>
 													<th>PO Request Date</th>
 													<th>Product</th>
 													<th>Product Category</th>

@@ -64,7 +64,7 @@
          <?php include_once($include.'/left_menu.php');?>
          <section id="main-content">
             <section class="wrapper">
-               <?php//include_once('../include/equick_link.php');?>
+               <?php //include_once('../include/equick_link.php');?>
                <div class="row">
                   <div class="col-lg-12">
                      <section class="panel">
@@ -146,7 +146,7 @@
 												<input type="hidden" name="product_id" value="<?=$rel['product_id']?>">
 											 <?php }?>
                                           </div>
-										  <?phpif($getspecialConfiguration['smpl_permission'] != '1'){ ?>
+										  <?php if($getspecialConfiguration['smpl_permission'] != '1'){ ?>
                                           <div class="col-md-1">   
                                           	<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct1();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
                                        	</div>
@@ -250,9 +250,9 @@
 																			<option value="">Choose Product</option>
 																			<?=getproduct_typewise($dbcon,'',$type_conf);?>
 																			</select>
-																			 <?phpif($getspecialConfiguration['invoite_permission'] !=1 && $getspecialConfiguration['smpl_permission'] != '1'){ ?>
+																			 <?php if($getspecialConfiguration['invoite_permission'] !=1 && $getspecialConfiguration['smpl_permission'] != '1'){ ?>
 																			<button accesskey="p" style="margin-top: 5px;" class="btn btn-round btn-info btn-xs" type="button" data-toggle="modal" value="R1" onclick="showproduct();" title="Short-Cut To Open PopUp, Shift + Alt + p "><i class="fa fa-plus"></i> Add Product</button>
-																		<?php}?>
+																		<?php }?>
 																		</td>
 																		<td class="vend_pro" style="max-width: 250px;">
 																			<select class="" title="Select Vendor" name="prod_id_vend" id="prod_id_vend">

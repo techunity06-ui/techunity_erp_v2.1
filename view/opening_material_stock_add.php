@@ -71,7 +71,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
 											<div class="form-group">
 												<label class="col-md-4 control-label">Stock Date*</label>
 												<div class="col-md-6 col-xs-11">
-													<input id="stock_date" name="stock_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?phpif($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['stock_date']));}?>" placeholder="Invoice Date">
+													<input id="stock_date" name="stock_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?php if($mode=='Add'){echo $date;}else if($mode=='Edit'){echo date('d-m-Y',strtotime($rel['stock_date']));}?>" placeholder="Invoice Date">
 												</div>
 											</div>	
 										</div>

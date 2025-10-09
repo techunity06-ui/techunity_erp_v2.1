@@ -218,7 +218,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 											</div>
 										</div>
 									</div>
-									<?phpif($process_show==1){ ?>
+									<?php if($process_show==1){ ?>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label class="col-md-4  control-label"><strong>Process Name</strong></label>
@@ -227,7 +227,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 												</div>
 											</div>
 										</div>
-									<?php}else{ ?>
+									<?php }else{ ?>
 										<div class="col-md-4">
 											<?php echo getBranchBox($dbcon, $branch_id,$edit_branch_id, true, true, 'load_purchase_qc_pending_datatable()', '4', '6'); ?>
 										</div>
@@ -257,14 +257,14 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 												</div>
 											</div>
 
-											<?phpif($process_show==1){ ?>
+											<?php if($process_show==1){ ?>
 												<div class="form-group clearfix ">
 													<label class="col-lg-2 control-label " for="userName">Process Name</label>
 													<div class="col-lg-3">
 														<strong style="color:#d90000"><?=$process_name?></strong>
 													</div>
 												</div>
-											<?php} ?>
+											<?php } ?>
 											<div class="form-group clearfix ">
 												<label class="col-lg-2 control-label " for="userName">Branch Name </label>
 												<div class="col-lg-3">
@@ -469,7 +469,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 
 												<div class="form-group col-lg-4 clearfix">
 													<div class="col-md-2">
-													<?phpif($mode=='Edit'){
+													<?php if($mode=='Edit'){
 														 $get_attch_qry="select * from tbl_qc_attch where qc_attch_status=0 and qc_id=".$rel['qc_id'];
 														$attch_rs=$dbcon->query($get_attch_qry);
 														while($attch_rel=mysqli_fetch_assoc($attch_rs)){

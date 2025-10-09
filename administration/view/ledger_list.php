@@ -95,7 +95,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 									<div class="col-md-8">
 										<select class="select2" name="gr_id" id="gr_id" onChange="load_ledger_datatable();">
 											<?= get_all_group($dbcon, $id, $where = '', $primary); ?>
-											<?php//=getcust($dbcon,$cust_id);
+											<?php //=getcust($dbcon,$cust_id);
 											?>
 										</select>
 									</div>

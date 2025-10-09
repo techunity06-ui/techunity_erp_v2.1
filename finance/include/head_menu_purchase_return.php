@@ -10,7 +10,7 @@ ul.summary-list > li {
 </style>
 <div style="text-align:right" class="hidden-phone">
 						<ul class="summary-list" >
-							<?phpif($page_name!="debit_note_create")
+							<?php if($page_name!="debit_note_create")
 							{?>
 							<li class="">
 								<a href="<?=ROOT.'finance/debit_note_create'?>">
@@ -18,7 +18,7 @@ ul.summary-list > li {
 										Create Debit Note
 								</a>
                             </li>
-                            <?php}
+                            <?php }
 							if($page_name!="debitnote")
 							{?>
 							<li>
@@ -27,7 +27,7 @@ ul.summary-list > li {
 										Debit Note List
                                 </a>
                             </li>
-							<?php} ?>
+							<?php } ?>
 							
                      </ul>
 		</div>

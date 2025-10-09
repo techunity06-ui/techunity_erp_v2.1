@@ -167,7 +167,7 @@ label.radio {
 				  <section class="panel">
 					  <header class="panel-heading">
 						<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-						<?phpinclude_once($include1."head_menu_purchase_return.php") ?>
+						<?php include_once($include1."head_menu_purchase_return.php") ?>
 						</header>
 						  <div class="">
 						  <ul class="breadcrumb">

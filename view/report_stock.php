@@ -105,7 +105,7 @@
 														<tr>
 															<th>Sr. NO.</th>
 															<th>Product Name</th>
-															<?phpif($getspecialConfiguration['fusiontech_permission'] == '1'){
+															<?php if($getspecialConfiguration['fusiontech_permission'] == '1'){
 																	echo '<th>Godown Details</th>';
 																} ?>
 															<!-- <th>Process Details</th>
@@ -115,7 +115,7 @@
 															<th>Free Stock</th>
 															<?php if($getspecialConfiguration['rb_auto_permission']!=1){?>
 																<th>Rate</th>	  
-															<?php} ?>
+															<?php } ?>
 															<th>Customer Stock</th>	  
 															<th>Action</th>	  
 														</tr>

@@ -1469,7 +1469,7 @@
 			for ( i = 0; i < protectedRegexs.length; ++i ) {
 				if ( ( match = source.match( protectedRegexs[ i ] ) ) &&
 					match[ 0 ].length == source.length	// Check whether this pattern matches entire source
-														// to avoid '<script>alert("<?php1 ?>")</script>' matching
+														// to avoid '<script>alert("<?php 1 ?>")</script>' matching
 														// the PHP's protectedSource regexp.
 				)
 					return true;

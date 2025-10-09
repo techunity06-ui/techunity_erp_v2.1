@@ -73,7 +73,7 @@
 									<div class="col-md-6">
 										<!--<div class="col-md-3">
 											<label for="po_type_status1" class="external-event label label-primary ui-draggable" style="position: relative;cursor:pointer;">All</label>
-											<input id="po_type_status1" name="po_type_status" type="radio" <?phpif($_SESSION['po_type_status_filter']==''){ echo "checked"; } ?>  onClick="reload_data();" class="" title="All" value="">
+											<input id="po_type_status1" name="po_type_status" type="radio" <?php if($_SESSION['po_type_status_filter']==''){ echo "checked"; } ?>  onClick="reload_data();" class="" title="All" value="">
 										</div>-->
 										<div class="col-md-3">
 											<label for="po_type_status3" class="external-event label label-warning ui-draggable" style="position: relative;cursor:pointer;">Pending</label>

@@ -245,7 +245,7 @@ if($set_head['show_disc']=='1'){
 											</tr>
 										</thead>
 										<tbody style="border: 1px solid;">
-											<?php$qry="select trn.*,trn.product_conv_qty as trn_conv_qty,perc.unit_name as conv_unit,product.*,per.unit_name, hsn.hsn_code FROM `tbl_grn_trn` as trn 
+											<?php $qry="select trn.*,trn.product_conv_qty as trn_conv_qty,perc.unit_name as conv_unit,product.*,per.unit_name, hsn.hsn_code FROM `tbl_grn_trn` as trn 
 											left join product_mst as product on product.product_id=trn.product_id 
 											left join mst_hsn_code as hsn on hsn.hsn_id = product.product_hsn 
 											left join unit_mst as per on per.unitid=trn.unit_id 
@@ -276,7 +276,7 @@ if($set_head['show_disc']=='1'){
 														<?=$qty?>
 													</td>
 												</tr>
-												<?php$i++; 
+												<?php $i++; 
 												$totalqty=$totalqty+$row['product_qty']-$charges_qty;
 												$totalsqr=$totalsqr+$row['sqr_ft']-$charges_qty1;
 												$total_product_amount+=($row['product_qty']*$row['product_rate']);
@@ -293,7 +293,7 @@ if($set_head['show_disc']=='1'){
 													<td style="border-right:1px solid;"></td>
 													<td style="border-right:1px solid;"></td>
 												</tr>
-											<?php} ?>
+											<?php } ?>
 											<tr style="border: 1px solid;">
 												<td style="text-align: right; font-weight: bold;" colspan="3">Total GRN Qty</td>
 												<td style="text-align: center;"></td>
@@ -411,7 +411,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

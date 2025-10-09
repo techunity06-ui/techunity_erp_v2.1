@@ -377,7 +377,7 @@ else {
     												</div>
     											</div>
     										</div>
-    										<?phpif($rel['task_alert_id']!='1' && $alert_date_time){?>
+    										<?php if($rel['task_alert_id']!='1' && $alert_date_time){?>
     											<div class="col-md-12">
     												<div class="form-group">
     													<label class="col-md-2 control-label">Alert Date</label>
@@ -422,7 +422,7 @@ else {
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="attch-section">
 				<div class="form-group" style="margin-top:20px;">
-					<?phpif($mode!='view'){?>
+					<?php if($mode!='view'){?>
 						<table class="display table table-bordered table-striped">
 							<thead>
 								<tr>
@@ -445,7 +445,7 @@ else {
 								</tr>
 							</tbody>
 						</table>
-					<?php} ?>
+					<?php } ?>
 				</div>
 				<div class="form-group" style="margin-top:20px;" id="task_attch_trn_div"></div>
 			</div>
@@ -513,14 +513,14 @@ else {
 	$('#c_con_id').select2("readonly",true);
 	$('#cust_id').select2("readonly",true);
 	$('#inquiry_id').select2("readonly",true);
-<?php} ?>
+<?php } ?>
 
 <?php if($viewmode == 'Add_flp'){?>
 	$('#task_rel_id').select2("readonly",true);
 	$('#c_con_id').select2("readonly",true);
 	$('#cust_id').select2("readonly",true);
 	$('#inquiry_id').select2("readonly",true);
-<?php} ?>
+<?php } ?>
 $('.default-date-picker').datepicker({
 	format: 'dd-mm-yyyy',
 	autoclose: true
@@ -559,7 +559,7 @@ $(".form_datetime-meridian").datetimepicker({
 	$(document).ready(function() {
 		get_rel_task_divs(<?=$task_rel_id?>);
 	}); 
-<?php} ?>
+<?php } ?>
 </script>
 </body>
 </html>

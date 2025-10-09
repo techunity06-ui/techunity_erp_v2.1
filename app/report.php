@@ -51,7 +51,7 @@ a.two:hover {/*font-size:110%;*/color:#210e46;}
            <section id="main-content">
 			<section class="wrapper">
 			
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
      		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->
@@ -116,10 +116,10 @@ a.two:hover {/*font-size:110%;*/color:#210e46;}
 					<!--<i class="fa fa-angle-right" style="font-size:20px;font-color:#337ab7;"></i>-->
 					<a  class="two"  href="<?=ROOT.strtolower($rel_menu1re['page_name'])?>" target="_blank"><?=ucwords(strtolower($rel_menu1re['menu_name']))?></a></li>
 					</div>
-				<?php} ?>
+				<?php } ?>
 				</ul>
 				<!--</li>-->
-				<?php//}?>
+				<?php //}?>
 					
             <!--</li>-->	
 			<?php 	//} ?>

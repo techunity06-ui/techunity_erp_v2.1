@@ -62,15 +62,15 @@
 													<th>Sr. No.</th>
 													<th>Product Name</th>
 													<th>Product Category</th>
-													<?phpif(empty($process_id)){ ?>
+													<?php if(empty($process_id)){ ?>
 														<th>Process Name</th>
-													<?php} ?>
+													<?php } ?>
 													<th>Batch No</th>
 													<th>Product Qty</th>
 													<th>User Name</th>
-													<?phpif($_SESSION['branch_id']==0){ ?>
+													<?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													  <?php} ?>		
+													  <?php } ?>		
 													<th>Add QC</th>
 												</tr>
 											</thead>

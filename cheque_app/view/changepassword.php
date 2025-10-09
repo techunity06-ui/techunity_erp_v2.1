@@ -29,7 +29,7 @@
       <div>
 	  
         <form id="FormChangepass" style="margin-bottom: 0px !important;" class="form-horizontal">
-		<?phpif(mysqli_num_rows($rs)>0) {?>
+		<?php if(mysqli_num_rows($rs)>0) {?>
           <div class="content">
 			
             <div class="form-group">
@@ -61,7 +61,7 @@
             <input type="hidden" id="FailError" value="INVALID USERNAME AND / OR PASSWORD !" />            
             <button class="btn btn-primary" id="btnChangepass" data-dismiss="modal" type="submit">LOGIN</button>
           </div>
-		  <?php}
+		  <?php }
 		else
 		{ ?>
 			
@@ -71,7 +71,7 @@
               </div>
             </div>
 			
-		<?php}
+		<?php }
 		?>
         </form>
 		

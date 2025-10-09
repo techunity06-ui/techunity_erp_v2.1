@@ -191,9 +191,9 @@
                                           </div>
                                        </div>
                                     </div>
-                                   <?php}else{ ?>
+                                   <?php }else{ ?>
                                        <input type="hidden" name="branch_id" id="branch_id" value="<?=$company_config['default_branch_id']?>" />
-                                    <?php} ?>
+                                    <?php } ?>
 
                                     <div class="col-md-4">
                                        <div class="form-group">

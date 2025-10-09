@@ -354,7 +354,7 @@ disp_setting+="scrollbars=yes,width=800, height=600, left=100, top=25";
  docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<style type="text/css"> @media print { @page { size: portrait;margin:0px;}}  body { display: block;padding-top: 0px;height:4.5in;width: 4.5in;margin:auto; vertical-align: middle; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg);-o-transform: rotate(90deg);filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);}</style>');
   docprint.document.write('</head><body onLoad="self.print()">');
   docprint.document.write(content_vlue);

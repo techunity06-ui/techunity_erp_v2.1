@@ -148,9 +148,9 @@
 														
 																<tr>
 																	<td style="vertical-align:middle;text-align:center;">
-																		<?phpif($rel_trn['po_trn_req_status']!='1'){ ?>
+																		<?php if($rel_trn['po_trn_req_status']!='1'){ ?>
 																		<input type="checkbox" name="che_box[]" class="chk_box" id="che_box<?=$i?>" value="<?=$rel_trn['purchaseordertrn_id']?>" onclick="check_box(<?=$i?>);" style="width: 23px;height: 23px;margin-top: 0px;">
-																		<?php} ?>
+																		<?php } ?>
 																		
 																		<input type="hidden" name="purchaseordertrn_id[]" id="purchaseordertrn_id<?=$i?>" value="<?=$rel_trn['purchaseordertrn_id']?>" />
 																		<input type="hidden" class="chk_box_st" name="check_status[]" id="check_status<?=$i?>" value="1" />

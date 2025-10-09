@@ -89,7 +89,7 @@ $set_head=mysqli_fetch_assoc($dbcon->query($set));
     font-size: 20px;
     font-weight: 900;
   }
-<?phpif(!$bom_to_po_req){ ?>
+<?php if(!$bom_to_po_req){ ?>
 .po_req_mode{
 	display:none;
 }
@@ -273,7 +273,7 @@ else{
 		<input type="hidden" name="eid" id="eid" value="<?=$bom_id!=''?$bom_id:''?>" />
 		<input type="hidden" name="invoicetype_id" id="invoicetype_id" value="" />
 		<input type="hidden" name="save_print" id="save_print" value="" />			
-		<?phpif($bom_actual_add){
+		<?php if($bom_actual_add){
 			//Entry Same Actual Quantity if first time 
 			$upd_act_qty=$dbcon->query("update tbl_bomtrn as trn
 			inner join tbl_bom as mst on mst.bom_id=trn.bom_id
@@ -281,7 +281,7 @@ else{
 		?>	
 			<input type='hidden' name='bom_actual_add' id='bom_actual_add' value='1' />		
 				
-		<?php} ?>
+		<?php } ?>
 	</form>
 </div>	
 					</section>
@@ -321,7 +321,7 @@ $('#sales_order_id').select2('readonly',true);
 $('#sales_order_pro_id').select2('readonly',true);
 <?php }
 ?>
-<?phpif($direct_add){?>
+<?php if($direct_add){?>
 load_sales_pro_data(<?=$rel['sales_order_id']?>);
 $('#sales_order_id').select2('readonly',true);
 <?php 

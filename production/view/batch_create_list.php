@@ -78,9 +78,9 @@
 									<div class="col-md-6">
 										<?php echo getBranchBox($dbcon, $branch_id, '', false, true, 'load_datatable()'); ?>
 									</div>
-									<?php}else{ ?>
+									<?php }else{ ?>
 													<input type="hidden" name="branch_id" id="branch_id" value="<?=$company_config['default_branch_id']?>" />
-												<?php} ?>
+												<?php } ?>
 								</div>
 								<div class="panel-body">
 									<div class="adv-table">

@@ -234,9 +234,9 @@ $company_config = getCompanyConfiguration($dbcon);
                                        <label class="col-md-4 control-label">Jobwork No </label>
                                        <div class="col-md-8 col-xs-11">
                                           <input id="jobwork_no" name="jobwork_no" type="text" class="form-control" title="Jobwork No" value="<?=$job_work_no?>" placeholder="Jobwork No" readonly>
-                                          <?phpif($old_jobwork_no != ""){ ?>
+                                          <?php if($old_jobwork_no != ""){ ?>
                                              <span class="text-success"><strong> Old Jobwork No : <?=$old_jobwork_no?></strong></span>
-                                          <?php} ?>
+                                          <?php } ?>
                                           <input type="hidden" name="old_jobwork_no" id="old_jobwork_no" value="<?=$old_jobwork_no?>">
                                        </div>
                                     </div>
@@ -246,9 +246,9 @@ $company_config = getCompanyConfiguration($dbcon);
                                        <label class="col-md-4 control-label"> Jobwork Date </label>
                                        <div class="col-md-8 col-xs-11">
                                           <input id="jobwork_date" name="jobwork_date" type="text" class="form-control default-date-picker" title="Date" value="<?= $jobwork_date ?>" placeholder="Jobwork Date" readonly>
-                                          <?phpif($old_jobwork_date != ""){ ?>
+                                          <?php if($old_jobwork_date != ""){ ?>
                                              <span class="text-success"><strong> Old Jobwork Date : <?=date("d-m-Y",strtotime($old_jobwork_date))?></strong></span>
-                                          <?php} ?>
+                                          <?php } ?>
                                           <input type="hidden" name="old_jobwork_no" id="old_jobwork_no" value="<?=$old_jobwork_no?>">
                                        </div>
                                     </div>
@@ -260,9 +260,9 @@ $company_config = getCompanyConfiguration($dbcon);
                                           <select class="select2" name="vender_id" id="vender_id" title="Select Vendor">
                                              <?= getcust($dbcon, $vendor_id); ?>
                                           </select>
-                                          <?phpif($vendor_name != ""){ ?>
+                                          <?php if($vendor_name != ""){ ?>
                                              <span class="text-success"><strong> Old Vendor : <?=$vendor_name?></strong></span>
-                                          <?php} ?>
+                                          <?php } ?>
                                           <input type="hidden" name="old_jobwork_no" id="old_jobwork_no" value="<?=$old_jobwork_no?>">
                                           <input type="hidden" name="old_jobwork_chalan_no" id="old_jobwork_chalan_no" value="<?=$old_jobwork_chalan_no?>">
                                        </div>
@@ -293,9 +293,9 @@ $company_config = getCompanyConfiguration($dbcon);
                                           </div>
                                        </div>
                                     </div>
-                                <?php}else{ ?>
+                                <?php }else{ ?>
                                        <input type="hidden" name="branch_id" id="branch_id" value="<?=$company_config['default_branch_id']?>" />
-                                    <?php} ?>
+                                    <?php } ?>
                                  <!-- <div class="col-md-4">
                                     <div class="form-group">
                                        <label class="col-md-4 control-label">Jobwork Type</label>

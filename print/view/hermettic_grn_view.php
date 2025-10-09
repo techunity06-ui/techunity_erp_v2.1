@@ -244,7 +244,7 @@ if($set_head['show_disc']=='1'){
 											</tr>
 										</thead>
 										<tbody style="border: 1px solid;">
-											<?php$qry="select trn.*,product.product_name,product.product_hsn,per.unit_name, po.product_qty as poqty,po.product_conv_qty as poconvqty,cnv.unit_name as cnvunit FROM `tbl_grn_trn` as trn 
+											<?php $qry="select trn.*,product.product_name,product.product_hsn,per.unit_name, po.product_qty as poqty,po.product_conv_qty as poconvqty,cnv.unit_name as cnvunit FROM `tbl_grn_trn` as trn 
 											left join product_mst as product on product.product_id=trn.product_id 
 											left join unit_mst as per on per.unitid=trn.unit_id
 											left join unit_mst as cnv on cnv.unitid=trn.product_conv_unit
@@ -518,7 +518,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

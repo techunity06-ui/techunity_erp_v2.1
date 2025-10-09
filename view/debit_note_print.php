@@ -205,7 +205,7 @@ td, th {
 			<th width="7%" style="text-align:center;border:1px solid;border-top: none;">
 				<strong>Rate</strong>
 			</th>
-			<?phpif($set_head['show_disc']=='1'){ ?>
+			<?php if($set_head['show_disc']=='1'){ ?>
 			<th width="6%" style="text-align:center;border:1px solid;border-top: none;">
 				<strong>Less:<br/>Disc.</strong>
 			</th>
@@ -245,7 +245,7 @@ td, th {
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
 						<?php if($row['product_name']){?>
 							<strong><?=stripcslashes($row['product_name'])?></strong>
-						<?php}else{ ?>
+						<?php }else{ ?>
 							<strong><?=stripcslashes($row['product_name'])?></strong>
 						<?php }?>
 					</td>
@@ -259,16 +259,16 @@ td, th {
 						
 					</td>
 					<!--<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-						<?phpif($row['product_type']!='3'){ ?>
+						<?php if($row['product_type']!='3'){ ?>
 							<?=$row['sqr_ft']?>
-						<?php}else{
+						<?php }else{
 							$charges_qty1+=$row['sqr_ft'];
 						} ?>	
 					</td>-->
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 						<?=number_format($row['product_rate'],2,".","")?>
 					</td>
-					<?phpif($set_head['show_disc']=='1'){?>
+					<?php if($set_head['show_disc']=='1'){?>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 						<?=number_format($row['discount_per'],2,".","").'%'?>
 					</td>
@@ -306,7 +306,7 @@ td, th {
 					<td style="border-right:1px solid;border-left:1px solid;"></td>
 					<td style="border-right:1px solid;" colspan="2"></td>
 					<td style="border-right:1px solid;"></td>
-					<?phpif($set_head['show_disc']=='1'){?>
+					<?php if($set_head['show_disc']=='1'){?>
 					<td style="border-right:1px solid;"></td>
 					<?php }?>
 				<!--	<td style="border-right:1px solid;"></td>-->
@@ -324,7 +324,7 @@ td, th {
 				
 				<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
 				<!--<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalsqr,2,".","")?></strong></td>-->
-				<?phpif($set_head['show_disc']=='1'){?>
+				<?php if($set_head['show_disc']=='1'){?>
 				<td style="border-top:1px solid;border-right:1px solid;"></td>
 				<?php }?>
 				<td style="border-top:1px solid;border-right:1px solid;"></td>
@@ -340,12 +340,12 @@ td, th {
 				<table class="footer-table" width="100%">
 					<tr width="61.6%" height="20px">
 							<td style="border-right:1px solid;" colspan="<?=$colspan?>">
-							<!--<?phpif(!empty($set_head['bank_name'])){?>
+							<!--<?php if(!empty($set_head['bank_name'])){?>
 									<strong>Bank Name:</strong> <?=$set_head['bank_name']?>, 
-									<?php} ?>
-								<?phpif(!empty($set_head['ac_no'])){?>
+									<?php } ?>
+								<?php if(!empty($set_head['ac_no'])){?>
 									<strong>A/c No:</strong> <?=$set_head['ac_no']?>	 
-									<?php} ?>-->
+									<?php } ?>-->
 							</td>
 						<td width="28.9%" colspan="3" style="border-right:1px solid;text-align:left">
 							Taxable Amount
@@ -354,11 +354,11 @@ td, th {
 					</tr>
 					<tr height="20px">
 						<td style="border-right:1px solid;border-top:1px solid;" colspan="<?=$colspan?>">
-							<!--<?phpif(!empty($set_head['ifcs'])){ ?>
+							<!--<?php if(!empty($set_head['ifcs'])){ ?>
 									<strong>IFCS:</strong><?=$set_head['ifcs']?>,
-								<?php} ?>	
-								<?phpif(!empty($set_head['branch_name'])){ ?>
-									<strong>Branch :</strong> <?=$set_head['branch_name']?><?php} ?>-->
+								<?php } ?>	
+								<?php if(!empty($set_head['branch_name'])){ ?>
+									<strong>Branch :</strong> <?=$set_head['branch_name']?><?php } ?>-->
 						</td>
 					
 						<td colspan="3" style="border-top:1px solid;border-right:1px solid;text-align:left" >
@@ -369,7 +369,7 @@ td, th {
 						
 					</tr>
 					
-					<?phpif($rel['stateid']==$set_head['stateid']) { ?>
+					<?php if($rel['stateid']==$set_head['stateid']) { ?>
 					<tr height="20px">
 						<td style="border-right:1px solid;border-top:1px solid;" colspan="<?=$colspan?>">
 						
@@ -377,7 +377,7 @@ td, th {
 						<td colspan="3" style="border-top:1px solid;border-right:1px solid;text-align:left">Add : SGST</td>
 						<td colspan="2" style="text-align:right; border-top:1px solid;border-right:1px solid; "><?=number_format($totaltax2,2,".","")?></td>
 					</tr>
-					<?php}
+					<?php }
 						$totaltax=$totaltax1+$totaltax2;
 					?>
 					<!--<tr height="20px">
@@ -402,7 +402,7 @@ td, th {
 						<td colspan="3" style="border-top:1px solid;border-right:1px solid;text-align:left">Transport :</td>
 						<td colspan="2" style="text-align:right; border-top:1px solid;border-right:1px solid; "><?=number_format($rel['packing'],2,".","")?></td>
 					</tr>
-					<?php}
+					<?php }
 					$r=round($total)-$total; 
 					?>
 					<tr height="20px">
@@ -546,9 +546,9 @@ td, th {
 					<tr>
 						<td colspan="<?=$colspan?>" style="vertical-align:top;font-size:10px;text-align:left;border-top:1px solid;" class="con">
 							
-						<?phpif(!empty($set_head['po_condition'])){ ?>
+						<?php if(!empty($set_head['po_condition'])){ ?>
 								<strong>Terms and Conditions:</strong><br> <?=$set_head['po_condition']?>
-							<?php} ?>	
+							<?php } ?>	
 	
 						</td>
 						<td colspan="5" style="vertical-align:top;border-top:1px solid;">
@@ -679,7 +679,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

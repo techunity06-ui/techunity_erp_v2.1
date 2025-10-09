@@ -117,7 +117,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                             <div class="col-md-4">
                                                 <?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true,'','4','8'); ?>
                                             </div>
-                                        <?php} ?>
+                                        <?php } ?>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Bill No*</label>
@@ -146,7 +146,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label">Company*</label>
                                                 <div class="col-md-8"> 
-                                                    <select class="select2" id="cust_id" name="cust_id" <?phpecho ($mode=="view")?"disabled":""?>>
+                                                    <select class="select2" id="cust_id" name="cust_id" <?php echo ($mode=="view")?"disabled":""?>>
                                                         <?= getcust($dbcon,$rel['cust_id']) ?>
                                                     </select>
                                                 </div>
@@ -238,7 +238,7 @@ $getspecialConfiguration=getspecialConfiguration($dbcon);
     });
 <?php if($mode=='Add'){?>
         get_series_no();
-    <?php}?>
+    <?php }?>
 </script>
 </body>
 </html>

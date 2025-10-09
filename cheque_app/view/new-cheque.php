@@ -177,7 +177,7 @@
 										<label id="message_cheque_left" class="hidden  text-primary"></label>
 										<a href="#" id="add_new_chequebook" data-toggle="modal" data-target="#ModalNewCBook" class="hidden text-primary">Add chequebook from here.</a>
 									</div>
-									<?php}?>
+									<?php }?>
 								</div>
 								<div id="cheque_number_div" class="hidden form-group">
 									<label>CHEQUE NUMBER : </label>
@@ -220,7 +220,7 @@
 									</select>
 									<a class="btn btn-success col-lg-3 float-left" href="javascript:;" onclick="add_customer();" title="Add Payee"><i class="fa fa-plus"></i> Payee</a>
 								</div>
-								<ul class="parsley-error-list col-lg-12"><li class="required" style="display: list-item;"></li></ul>	<?php}?>
+								<ul class="parsley-error-list col-lg-12"><li class="required" style="display: list-item;"></li></ul>	<?php }?>
 								</div>
 								
 								<div class="form-group ">
@@ -263,7 +263,7 @@
 									if($mode!="direct_cheque")
 									{ ?>
 									<button type="button" id="save_only" class="btn btn-primary"><i class="fa fa-save"></i> Save Only</button>
-									<?php}?>
+									<?php }?>
 								</div>
 							</form>
 						</div>

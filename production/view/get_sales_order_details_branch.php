@@ -73,9 +73,9 @@
 												<tr>
 												  <th>Sales Order No</th>
 												  <th>Sales Order Date</th>
-												  <?phpif($companyConfiguration['customer_show_in_production'] == '1'){ ?>
+												  <?php if($companyConfiguration['customer_show_in_production'] == '1'){ ?>
 												  	<th>Cust Name</th>
-												 <?php} ?>
+												 <?php } ?>
 												  
 												  <th>Product Name</th>
 												  <th>Product Category</th>

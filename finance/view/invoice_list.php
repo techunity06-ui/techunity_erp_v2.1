@@ -230,7 +230,7 @@ $cnyts = explode(",", $amnts);
 								<h3 style="float:left;">
 									<?= $mode . ' ' . $form ?>
 								</h3>
-								<?phpinclude_once($include . "head_menu.php") ?>
+								<?php include_once($include . "head_menu.php") ?>
 							</header>
 							<div class="">
 								<ul class="breadcrumb">
@@ -287,11 +287,11 @@ $cnyts = explode(",", $amnts);
 										</div>
 									</div>
 								</div>
-								<?phpif ($companyConfiguration['branch_wise_manage'] == 1) { ?>
+								<?php if ($companyConfiguration['branch_wise_manage'] == 1) { ?>
 									<div class='col-md-5'>
 										<?php echo getBranchBox($dbcon, $branch_id, $rel['branch_id'], false, true, 'reload_data()'); ?>
 									</div>
-								<?php} ?>
+								<?php } ?>
 								<!--	<div class="col-md-5">
 								<div class="col-md-3">
 								<div class='external-event label label-primary ui-draggable' style='position: relative;'>All</div>							<input id="report" name="report"  type="radio" checked="checked" onClick="reload_data();" class="" title="All" value="all">
@@ -332,10 +332,10 @@ $cnyts = explode(",", $amnts);
 												<th>#</th>
 												<th>Invoice No</th>
 												<th>Invoice Date</th>
-												<?phpif ($getspecialConfiguration['power_drive'] == 1) { ?>
+												<?php if ($getspecialConfiguration['power_drive'] == 1) { ?>
 													<th>Specification</th>
 													<th>Description</th>
-												<?php} ?>
+												<?php } ?>
 												<th>Customer Name</th>
 												<th>Grand Total</th>
 												<th>Basic Total</th>

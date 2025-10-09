@@ -79,7 +79,7 @@
 							<section class="panel">
 								<header class="panel-heading">
 									<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-									<?phpinclude_once($include1.'head_menu_sale_return.php') ?>
+									<?php include_once($include1.'head_menu_sale_return.php') ?>
 								</header>	
 								<div class="">
 								  <ul class="breadcrumb">
@@ -181,7 +181,7 @@
 												<div class="form-group">
 													<label class="col-md-4 control-label">Date *</label>
 													<div class="col-md-8 col-xs-11">
-														<input type="text" class="form-control default_date" name="sale_return_date" id="sale_return_date" value="<?phpif($mode=='Add'){ echo date("d-m-Y");}else if($mode=='Edit'){ if($rel['sale_return_date']=='0000-00-00'){ echo ""; } else { echo date('d-m-Y',strtotime($rel['sale_return_date']));} } ?>" tabindex="6" />
+														<input type="text" class="form-control default_date" name="sale_return_date" id="sale_return_date" value="<?php if($mode=='Add'){ echo date("d-m-Y");}else if($mode=='Edit'){ if($rel['sale_return_date']=='0000-00-00'){ echo ""; } else { echo date('d-m-Y',strtotime($rel['sale_return_date']));} } ?>" tabindex="6" />
 													</div>
 												</div>
 											</div>
@@ -309,7 +309,7 @@
 												<div class="form-group">
 													<label class="col-md-5 control-label">Total *</label>
 													<div class="col-md-5 col-xs-11">
-														<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+														<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 													</div>
 												</div>	
 													

@@ -211,7 +211,7 @@
 														<input type="file" class="form-control" id="po_document" name="po_document[]" multiple="multiple" <?=$ttrt?> /> 
 													</div>
 												</div>
-												<?php$get_attch_qry="select * from tbl_so_attch where status=0 and so_id=".$rel['sales_order_id'];
+												<?php $get_attch_qry="select * from tbl_so_attch where status=0 and so_id=".$rel['sales_order_id'];
 												$attch_rs=$dbcon->query($get_attch_qry);
 												while($attch_rel=mysqli_fetch_assoc($attch_rs)){ ?>
 												<div class="col-md-6">
@@ -228,7 +228,7 @@
 												</div>
 												
 												</div>
-												<?php} ?>
+												<?php } ?>
 											</div>
 											<div class="col-md-12">
 												<center>

@@ -183,7 +183,7 @@ $cityid='1';
 													</table>			
 												</div>
 											</div>
-											<?php} ?>
+											<?php } ?>
 											<div id="sale_productdata"></div>
 											<?php if($mode=="Add" || $mode=="Edit")
 											{ ?>
@@ -206,7 +206,7 @@ $cityid='1';
 												<a href="<?=ROOT.'sales_order_list'?>" type="button" class="btn btn-danger">Cancel</a>
 												</center>
 											</div>	
-										<?php} ?>
+										<?php } ?>
 										</div>
 										<input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
 										<input type='hidden' name='eid' id='eid' value='<?=$rel['pl_order_id']?>' />

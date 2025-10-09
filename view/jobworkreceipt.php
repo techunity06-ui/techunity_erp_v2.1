@@ -140,7 +140,7 @@
                                  </table>
                                  <!-- Fixed Logo Table End -->
                                  <!-- Multipage Table Start -->	
-                                 <?php$hed=13+$cnt1 ?>
+                                 <?php $hed=13+$cnt1 ?>
                                  <table width="100%" class="maintable" style="font-size: 11px;" id="invoice_type" >
                                     <thead>
                                        <tr>
@@ -174,10 +174,10 @@
                                                          <?=$rel['m_address']?>
                                                          <br>
                                                          <?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-                                                         <?phpif(!empty($rel['cust_pincode']))
+                                                         <?php if(!empty($rel['cust_pincode']))
                                                             {	?>
                                                          -  <?=$rel['cust_pincode']?>
-                                                         <?php} ?></span>
+                                                         <?php } ?></span>
                                                          <!--<br>
                                                             Mobile no : <?=$rel['cust_mobile']?>-->
                                                       </td>
@@ -252,7 +252,7 @@
                                           ?>
                                        <tr style="height:30px">
                                           <td style="text-align:center;vertical-align:center;border-right:0.5px #ccc solid;border-left:0.5px #ccc solid;">
-                                             <?phpecho $i;?>
+                                             <?php echo $i;?>
                                           </td>
                                           <td style="vertical-align:center;border-bottom-color:#FFFFFF; border-right:0.5px #ccc solid;" >
                                              <strong><?=stripcslashes($row['product_name'])?></strong>
@@ -301,7 +301,7 @@
 		                                            
 		                                          </td>
 		                                          <td style="vertical-align:center;border-bottom-color:#FFFFFF; " >
-		                                             <strong><?phpecho $i.".".$k ;?> </strong> <?=stripcslashes($materials_data['product_name'])?>
+		                                             <strong><?php echo $i.".".$k ;?> </strong> <?=stripcslashes($materials_data['product_name'])?>
 		                                          </td>
 		                                          <td style="border-bottom-color:#FFFFFF; vertical-align:center;text-align:center" ></td>
 		                                          <td style="text-align:center;vertical-align:center;border-bottom-color:#FFFFFF; white-space:nowrap;" >
@@ -335,7 +335,7 @@
                                        <tr style="height:30px">
                                           <td style="border-right:0.5px #ccc solid;border-left:0.5px #ccc solid;"></td>
                                           <td style="border-right:0.5px #ccc solid;"></td>
-                                          <?phpif($set_head['show_disc']=='1'){?>
+                                          <?php if($set_head['show_disc']=='1'){?>
                                           <td style="border-right:0.5px #ccc solid;"></td>
                                           <?php }?>
                                           <td style="border-right:0.5px #ccc solid;"></td>
@@ -384,9 +384,9 @@
                                                 <tr>
                                                    <td colspan="<?=$colspan?>" style="vertical-align:top;border:0.5px #ccc solid;
                                                       border-right:none;border-left:none;font-size:10px;text-align:left" class="con">
-                                                      <?phpif(!empty($set_head['conditions'])){ ?>
+                                                      <?php if(!empty($set_head['conditions'])){ ?>
                                                       <strong>Terms and Conditions:</strong><br> <?=$set_head['conditions']?>
-                                                      <?php} ?>	<br/><br/>
+                                                      <?php } ?>	<br/><br/>
                                                       <!--<span style="vertical-align:bottom;">E & O.E.</span>-->
                                                    </td>
                                                    <td colspan="5" style=" border:0.5px #ccc solid;border-left:none;vertical-align:top;">
@@ -500,7 +500,7 @@
            docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
            docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
            docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-           docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+           docprint.document.write('<head><title><?php echo TITLE;?></title>');
            docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
            docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
            docprint.document.write('<style type="text/css">');

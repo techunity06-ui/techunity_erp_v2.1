@@ -120,7 +120,7 @@
 									</ul>
 									</div>
 									</section>
-								<?php} ?>
+								<?php } ?>
 								
 							
 						</div>

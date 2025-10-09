@@ -132,7 +132,7 @@
 							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane active" id="attch-section">
 									<div class="form-group" style="margin-top:20px;">
-										<?phpif($mode!='view'){?>
+										<?php if($mode!='view'){?>
 											<table class="display table table-bordered table-striped">
 												<thead>
 													<tr>
@@ -155,7 +155,7 @@
 													</tr>
 												</tbody>
 											</table>
-										<?php} ?>
+										<?php } ?>
 									</div>
 									<div class="form-group" style="margin-top:20px;" id="task_attch_trn_div"></div>
 								</div>

@@ -41,7 +41,7 @@
 			<?php include_once($include.'left_menu.php');?>
 			<section id="main-content">
 				<section class="wrapper">
-					<?php//include_once('../include/equick_link.php');?>
+					<?php //include_once('../include/equick_link.php');?>
 					<div class="row">
 						<div class="col-lg-12">
 							<section class="panel">
@@ -136,7 +136,7 @@
 													<div class="form-group">
 														
 														<div class="col-md-2">
-														<?phpif($mode=='Edit'){
+														<?php if($mode=='Edit'){
 															$get_attch_qry="select * from pro_gir_attch where  gir_id=".$rel['pro_gir_id'];
 															$attch_rs=$dbcon->query($get_attch_qry);
 															while($attch_rel=mysqli_fetch_assoc($attch_rs)){

@@ -646,7 +646,7 @@ if($mode=='Add'){
 						?>	
 						</tbody>
 					</table>
-					<?php}?>
+					<?php }?>
 				</td>
 			</tr>
 		<?php 	}

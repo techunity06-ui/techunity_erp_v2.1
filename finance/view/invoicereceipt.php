@@ -144,8 +144,8 @@
 											</div>
 										<div class="col-sm-4 resclear resspace"  style="text-align:center;padding-top:5px;">
 											
-											<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?phpecho $rel['invoice_no']?>%0aDate:-<?phpecho date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?phpecho $rel['g_total']?>%0aBest Regards%0a
-											<?phpecho $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
+											<a type="button" class="btn btn-success" href="https://web.whatsapp.com/send?phone=+91<?php echo $rel['cust_mobile']?>&text=<?php echo $rel['company_name']?>%2C%0aThank you for your purchase.%0aInvoice No:-<?php echo $rel['invoice_no']?>%0aDate:-<?php echo date('d-m-Y',strtotime($rel['invoice_date']))?>%0aAmount:-<?php echo $rel['g_total']?>%0aBest Regards%0a
+											<?php echo $set_head['company_name']?>" target="_blank"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
  
 												<!--<button type="button" name="printpdf" id="printpdf" class="btn btn-default" value="" onclick="make_pdf()" /><span class="english"> Export to PDF</span>
 												</button>-->
@@ -263,14 +263,14 @@
 																			<?=$rel['cust_address']?>
 																			 <br/>
 																			 <?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-																			  <?phpif(!empty($rel['cust_pincode'])){	?>
+																			  <?php if(!empty($rel['cust_pincode'])){	?>
 																				-  <?=$rel['cust_pincode']?>
-																				<?php} ?>
+																				<?php } ?>
 																		</span>
 																			<br>
 																			Mobile no : <?=$rel['cust_mobile']?>
 																	</td>
-																	<?phpif(empty($rel['consignee_id'])) { ?>
+																	<?php if(empty($rel['consignee_id'])) { ?>
 																	<td colspan="2"  style="border-right:1px solid">
 																		<b>Shipped to Party : </b><br>
 																		<strong><?=$rel['company_name']?></strong>
@@ -279,14 +279,14 @@
 																			<?=$rel['cust_address']?>
 																			 <br/>
 																			 <?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-																				<?phpif(!empty($rel['cust_pincode'])){?>
+																				<?php if(!empty($rel['cust_pincode'])){?>
 																					-  <?=$rel['cust_pincode']?>
-																				<?php} ?>
+																				<?php } ?>
 																		</span>
 																			<br>
 																			Mobile no : <?=$rel['cust_mobile']?>
 																	</td>
-																	<?php} else
+																	<?php } else
 																	{?>
 																	<td colspan="2"  style="border-right:1px solid">
 																		<b>Consignee : </b><br>
@@ -295,14 +295,14 @@
 																			<?=$cons_data['cust_address']?>
 																			 <br/>
 																			 <?=$cons_data['city_name']?>, <?=$cons_data['state_name']?>, <?=$cons_data['country_name']?>
-																				<?phpif(!empty($cons_data['cust_pincode'])){?>
+																				<?php if(!empty($cons_data['cust_pincode'])){?>
 																					-  <?=$cons_data['cust_pincode']?>
-																				<?php} ?>
+																				<?php } ?>
 																		</span>
 																			<br>
 																			Mobile no : <?=$cons_data['cust_mobile']?>
 																	</td>
-																<?php}?>
+																<?php }?>
 																</tr>
 																<tr id="rawnone">
 																	<td colspan="4" style="border-right:1px solid;border-left:1px solid;"><strong>GSTIN: <?=$rel['gst_no']?> </strong></td>
@@ -332,7 +332,7 @@
 														<th width="7%" style="text-align:center  !important;border:1px solid;border-top: none;">
 															<strong>Rate</strong>
 														</th>
-														<?phpif($set_head['show_disc']=='1'){ ?>
+														<?php if($set_head['show_disc']=='1'){ ?>
 														<th width="6%" style="text-align:center  !important;border:1px solid;border-top: none;">
 															<strong>Less:<br/>Disc.</strong>
 														</th>
@@ -389,9 +389,9 @@
 														}?>
 														<tr style="height:25px">
 															<td class="borderleftadd" style="text-align:center !important; vertical-align:top;border-right:1px solid;border-left:1px solid;">
-																<?phpif($row['product_type']!='3'){ echo $i;}?>
+																<?php if($row['product_type']!='3'){ echo $i;}?>
 															</td>
-															<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
+															<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?php if($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
 																<strong><?=stripcslashes($row['product_name'])?></strong>
 																	<br/><?=nl2br(stripcslashes($row['description']));?>
 															</td>
@@ -399,16 +399,16 @@
 																<?=stripcslashes($row['product_hsn_code'])?>
 															</td>
 															<td style="text-align:center  !important; vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-																<?phpif($row['product_type']!='3'){ ?>
+																<?php if($row['product_type']!='3'){ ?>
 																	<?=$row['product_qty'].' '.$row['unit_name']?>
-																<?php}else{
+																<?php }else{
 																	$charges_qty+=$row['product_qty'];
 																} ?>	
 															</td>
 															<td style="text-align:right  !important;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 																<?=number_format($row['product_rate'],2,".","")?>
 															</td>
-															<?phpif($set_head['show_disc']=='1'){?>
+															<?php if($set_head['show_disc']=='1'){?>
 															<td style="text-align:right  !important; vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 																<?=number_format($row['discount_per'],2,".","").'%'?>
 															</td>
@@ -445,10 +445,10 @@
 																<td class="borderleftadd" style="text-align:center !important; vertical-align:top;border-right:1px solid;border-left:1px solid;">
 																
 															</td>
-															<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;vertical-align:top;';}?>" >
+															<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?php if($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;vertical-align:top;';}?>" >
 																
 															</td>
-																<?phpif($set_head['show_disc']=='1'){?>
+																<?php if($set_head['show_disc']=='1'){?>
 																<td style="border-right:1px solid;"></td>
 																<?php }?>
 																<!--<td style="border-right:1px solid;"></td>-->
@@ -468,7 +468,7 @@
 															<td style="text-align:center  !important;border-top:1px solid;border-right:1px solid;">
 																<strong><?=number_format($totalqty,2,".","")?></strong>
 															</td>
-															<?phpif($set_head['show_disc']=='1'){?>
+															<?php if($set_head['show_disc']=='1'){?>
 															<td style="border-top:1px solid;border-right:1px solid;"></td>
 															<?php }?>
 															<td style="border-top:1px solid;border-right:1px solid;"></td>
@@ -490,12 +490,12 @@
 																<table class="footer-table" width="100%">
 																	<tr height="20px">
 																		<td width="61.6%" style="border-right:1px solid;font-size:10px;" colspan="<?=$colspan?>">
-																		<?phpif(!empty($set_head['bank_name'])){?>
+																		<?php if(!empty($set_head['bank_name'])){?>
 																				<strong>Bank Name:</strong> <?=$set_head['bank_name']?>, 
-																				<?php} ?>
-																			<?phpif(!empty($set_head['ac_no'])){?>
+																				<?php } ?>
+																			<?php if(!empty($set_head['ac_no'])){?>
 																				<strong>A/c No:</strong> <?=$set_head['ac_no']?>	 
-																				<?php} ?>
+																				<?php } ?>
 																		</td>
 																		<td colspan="3" width="28.7%" style="border-right:1px solid;font-size:10px;text-align:left  !important">
 																			Taxable Amount
@@ -504,11 +504,11 @@
 																	</tr>
 																	<tr  height="20px">
 																		<td  style="border-right:1px solid;border-top:1px solid; font-size:10px;" colspan="<?=$colspan?>">
-																			<?phpif(!empty($set_head['ifcs'])){ ?>
+																			<?php if(!empty($set_head['ifcs'])){ ?>
 																					<strong>IFSC:</strong><?=$set_head['ifcs']?>,
-																				<?php} ?>	
-																				<?phpif(!empty($set_head['branch_name'])){ ?>
-																					<strong>Branch :</strong> <?=$set_head['branch_name']?><?php} ?>
+																				<?php } ?>	
+																				<?php if(!empty($set_head['branch_name'])){ ?>
+																					<strong>Branch :</strong> <?=$set_head['branch_name']?><?php } ?>
 																		</td>
 																	
 																		<td colspan="3" style="border-top:1px solid;border-right:1px solid;font-size:10px;text-align:left  !important" >																		
@@ -612,7 +612,7 @@ where b.sundry_voucher_id=".$rel['invoice_id']." and b.sundry_voucher_table='tbl
 																		?></td>
 																		<td colspan="2" style="text-align:right  !important; border-top:1px solid;font-size:10px;border-right:1px solid; "><?=number_format($totaltax2,2,".","")?></td>
 																	</tr>
-																<?php} $totaltax=$totaltax1+$totaltax2;?>
+																<?php } $totaltax=$totaltax1+$totaltax2;?>
 																<?php 
 																	$total=($total)+$rel['packing']; 
 																 $r=round($total)-$total; ?>
@@ -780,9 +780,9 @@ where b.sundry_voucher_id=".$rel['invoice_id']." and b.sundry_voucher_table='tbl
 																	<td colspan="<?=$colspan?>" style="vertical-align:top;border:1px solid;
 																	border-right:none;border-left:none;border-bottom:none;font-size:10px;text-align:left  !important"  class="con">
 																		
-																	<?phpif(!empty($set_head['conditions'])){ ?>
+																	<?php if(!empty($set_head['conditions'])){ ?>
 																			<strong>Terms and Conditions:</strong><br> <?=$set_head['conditions']?>
-																		<?php} ?>	<br/><br/>
+																		<?php } ?>	<br/><br/>
 																	<!--<span style="vertical-align:bottom;">E & O.E.</span>-->
 												
 																	</td>
@@ -912,7 +912,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
  // docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

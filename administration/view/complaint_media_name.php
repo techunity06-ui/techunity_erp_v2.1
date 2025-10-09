@@ -90,11 +90,11 @@ if (!in_array(ADMINISTRATOR_COMPLAINT_MST_LIST, $bulkAccessArray)) {
 							<section class="panel">
 								<header class="panel-heading">
 									Media List
-									<?phpif ($_SESSION['user_type'] == 2 && in_array(ADMINISTRATOR_COMPLAINT_MST_EXCEL, $bulkAccessArray)) { ?>
+									<?php if ($_SESSION['user_type'] == 2 && in_array(ADMINISTRATOR_COMPLAINT_MST_EXCEL, $bulkAccessArray)) { ?>
 										<span class="tools pull-right">
 											<a href="javascript:;" onClick="tableToExcel('media-table', 'Instalment Collection')"><button class="btn btn-info btn-flat">Export Excel</button></a>
 										</span>
-									<?php} ?>
+									<?php } ?>
 								</header>
 								<div class="panel-body">
 									<div class="adv-table">

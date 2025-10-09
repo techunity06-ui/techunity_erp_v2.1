@@ -78,7 +78,7 @@
                                              <input type="hidden" id="workorder_id" name="workorder_id" value="<?=$work_order_id?>">
                                           <select class="select2" readonly id="work_order_id" name="work_order_id" >
                                           	<option value=""> Select Workorder</option>
-                                          	<?phpwhile ($row = brp_mysqli_fetch_assoc($result)) { 
+                                          	<?php while ($row = brp_mysqli_fetch_assoc($result)) { 
                                           		$select = "";
                                           		if($row['sp_id'] == $work_order_id){
                                           			$select = 'selected="selected"';

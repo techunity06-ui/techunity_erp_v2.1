@@ -72,17 +72,17 @@
 													<th>Vendor Name</th>
 													<th>Product Name</th>
 													<th>Product Category</th>
-													<?phpif(empty($process_id)){ ?>
+													<?php if(empty($process_id)){ ?>
 														<th>Process Name</th>
-													<?php} ?>
-													<?phpif($company_config['batch_wise_stock'] == '1'){ ?> 
+													<?php } ?>
+													<?php if($company_config['batch_wise_stock'] == '1'){ ?> 
 													<th>Batch No</th>
-													<?php} ?>
+													<?php } ?>
 													<th>Product Qty</th>
 													<th>User Name</th>
-													<?phpif($_SESSION['branch_id']==0){ ?>
+													<?php if($_SESSION['branch_id']==0){ ?>
 														<th>Branch Name</th>
-													  <?php} ?>		
+													  <?php } ?>		
 													<th>Add QC</th>
 													<th class="nosort">  <input id="checkAll" type="checkbox" onClick="checkAll();"  name="chk[]"/></th>
 												</tr>

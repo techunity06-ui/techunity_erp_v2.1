@@ -153,7 +153,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Opportunity Date*</label>
                                 <div class="col-md-6"> 
-                                        <input id="inquiry_date" name="inquiry_date" type="text" class="form-control default-date-picker reuired valid" title="Date" value="<?=$inquiry_date?>" placeholder="Inquiry Date"<?phpecho ($mode=="view")?"readonly":""?>>
+                                        <input id="inquiry_date" name="inquiry_date" type="text" class="form-control default-date-picker reuired valid" title="Date" value="<?=$inquiry_date?>" placeholder="Inquiry Date"<?php echo ($mode=="view")?"readonly":""?>>
                                 </div>
                             </div>	
 			</div>
@@ -166,11 +166,11 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Customer*</label>
                                 <div class="col-md-6"> 
-                                    <select class="select2" id="cust_id" name="cust_id" onchange="load_cust_person(this.value);copy_inq_name();"<?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="cust_id" name="cust_id" onchange="load_cust_person(this.value);copy_inq_name();"<?php echo ($mode=="view")?"disabled":""?>>
                                         <?= getcustomer($dbcon,$cust_id) ?>
                                     </select>
                                 </div>
-                                <?phpif($mode=='Add'){ ?>
+                                <?php if($mode=='Add'){ ?>
                                 <div class="col-md-1">
                                     <button type="button" id="addcust" data-toggle="modal" data-target="#bs-example-modal-lg"  class="btn btn-primary"><i class="fa fa-plus"></i></button>
                                 </div>
@@ -184,7 +184,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Contact Person</label>
                                 <div class="col-md-6"> 
-                                        <select class="select2" id="c_con_id" name="c_con_id" <?phpecho ($mode=="view")?"disabled":""?> >
+                                        <select class="select2" id="c_con_id" name="c_con_id" <?php echo ($mode=="view")?"disabled":""?> >
                                                 <?=get_cust_contactperson($dbcon,$rel['c_con_id'],$cust_id);?>
                                         </select>
                                 </div>
@@ -201,7 +201,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Opportunity Name*</label>
                                 <div class="col-md-6"> 
-                                    <input type="text" class="form-control" id="inquiry_name" name="inquiry_name" placeholder="Opportunity Name" value="<?=$rel['inquiry_name']?>"<?phpecho ($mode=="view")?"readonly":""?>>
+                                    <input type="text" class="form-control" id="inquiry_name" name="inquiry_name" placeholder="Opportunity Name" value="<?=$rel['inquiry_name']?>"<?php echo ($mode=="view")?"readonly":""?>>
                                 </div>
                             </div>	
 			</div>
@@ -209,7 +209,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Closing Date</label>
                                 <div class="col-md-6">
-                                    <input id="closing_date" name="closing_date" autocomplete="off" type="text" class="form-control default-date-picker" title="Date" value="<?=$closing_date?>" placeholder="Closing Date" <?phpecho ($mode=="view")?"readonly":""?>>
+                                    <input id="closing_date" name="closing_date" autocomplete="off" type="text" class="form-control default-date-picker" title="Date" value="<?=$closing_date?>" placeholder="Closing Date" <?php echo ($mode=="view")?"readonly":""?>>
                                 </div>
                             </div>	
 			</div>
@@ -218,7 +218,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Territory</label> 
                                 <div class="col-md-8">
-                                    <select class="select2" id="t_id" name="t_id" <?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="t_id" name="t_id" <?php echo ($mode=="view")?"disabled":""?>>
                                             <?=get_all_territory($dbcon,$rel['t_id']);?>
                                     </select>
                                 </div>
@@ -228,7 +228,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Stage*</label>
                                 <div class="col-md-8"> 
-                                    <select class="select2" id="opp_id" name="opp_id" onchange="show_lost_reason();change_inquiry_stage(this.value);" <?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="opp_id" name="opp_id" onchange="show_lost_reason();change_inquiry_stage(this.value);" <?php echo ($mode=="view")?"disabled":""?>>
                                         <?=get_inquiry_stage($dbcon,$rel['opp_id']);?>
                                     </select>
                                 </div>
@@ -284,7 +284,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Sales Stage</label>
                                 <div class="col-md-8"> 
-                                    <select class="select2" id="sales_stage_id" name="sales_stage_id"<?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="sales_stage_id" name="sales_stage_id"<?php echo ($mode=="view")?"disabled":""?>>
                                         <option value="">Choose Sales Stage</option>
                                         <?= get_master_category_dtl($dbcon,$rel['sales_stage_id'],7);//7:Sales Stage?>
                                     </select>
@@ -295,7 +295,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Type</label>
                                 <div class="col-md-8"> 
-                                    <select class="select2" id="inquiry_type_id" name="inquiry_type_id"<?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="inquiry_type_id" name="inquiry_type_id"<?php echo ($mode=="view")?"disabled":""?>>
                                         <option value="">Choose Opportunity Type</option>
                                         <?=get_master_category_dtl($dbcon,$rel['inquiry_type_id'],8);//8:Type?>
                                     </select>
@@ -306,7 +306,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Source </label>
                                 <div class="col-md-8"> 
-                                    <select class="select2" id="rb_id" name="rb_id"<?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="rb_id" name="rb_id"<?php echo ($mode=="view")?"disabled":""?>>
                                         <?=get_refer_by($dbcon,$rel['rb_id']);?>
                                     </select>
                                 </div>
@@ -317,7 +317,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Opportunity Category</label>
                                 <div class="col-md-8">  
-                                    <select class="select2" id="inquiry_cat_id" name="inquiry_cat_id"<?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="inquiry_cat_id" name="inquiry_cat_id"<?php echo ($mode=="view")?"disabled":""?>>
                                         <option value="">Choose Opportunity Category</option>
                                         <?=get_master_category_dtl($dbcon,$rel['inquiry_cat_id'],9);//9:Category?>
                                     </select>
@@ -328,7 +328,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Currency</label>
                                 <div class="col-md-8">  
-                                    <select class="select2" id="currency_id" name="currency_id"<?phpecho ($mode=="view")?"disabled":""?>>
+                                    <select class="select2" id="currency_id" name="currency_id"<?php echo ($mode=="view")?"disabled":""?>>
                                         <?=get_org_currency($dbcon,$rel['currency_id'])?>
                                     </select>
                                 </div>
@@ -430,7 +430,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                                             <div class="form-group" style="margin-top:20px;overflow-x:scroll;">
                                                 <table class="display table table-bordered table-striped">
                                                     <thead>
-                                                    <?phpif($mode!="view")
+                                                    <?php if($mode!="view")
                                                     { ?>
                                                     <tr>
                                                         <th width="25%" class="text-center">Product Name</th>
@@ -443,10 +443,10 @@ $showTemplate = ($crm_auto_mail == 'No');
                                                         <th width="" class="text-center">Amount</th>
                                                         <th width="2%" class="text-center">Action</th>					  
                                                     </tr>
-                                                    <?php} ?>
+                                                    <?php } ?>
                                                     </thead>
                                                     <tbody>
-                                                    <?phpif($mode!="view"){ ?>
+                                                    <?php if($mode!="view"){ ?>
                                                     <tr>
                                                         <td>
                                                             <select class="select2" id="product_id" name="product_id" onchange="load_product_dtls(this.value)">
@@ -481,7 +481,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                                                         </td>
                                                         <td></td>
                                                     </tr>-->
-                                                    <?php} ?>
+                                                    <?php } ?>
                                                     </tbody>
                                                 </table>
                                 </div>
@@ -550,7 +550,7 @@ $showTemplate = ($crm_auto_mail == 'No');
                                 <!-- Attachments Tab Start -->
                                 <div role="tabpanel" class="tab-pane" id="attch-section">
                                     <div class="form-group" style="margin-top:20px;">
-                                    <?phpif($mode!='view'){?>
+                                    <?php if($mode!='view'){?>
 					<table class="display table table-bordered table-striped">
                                             <thead>
 						<tr>
@@ -573,7 +573,7 @@ $showTemplate = ($crm_auto_mail == 'No');
 						</tr>
                                             </tbody>
 					</table>
-                                        <?php} ?>
+                                        <?php } ?>
                                     </div> 
 				<div class="form-group" style="margin-top:20px;" id="inq_attch_trn_div"></div> 
                                 </div> 
@@ -673,10 +673,10 @@ $showTemplate = ($crm_auto_mail == 'No');
                                 <a onclick="setFormSubmitting();" href="<?=ROOT.CRM_ROOT.'quotation_print/'.$get_quot_rel['quotation_id']?>" type="button" class="btn btn-primary" target="_blank"> <i class="fa fa-eye"></i> View</a>
                         </td>
                 </tr>
-                <?php} ?>	
+                <?php } ?>	
                 </tbody>
             </table>
-            <?php} ?>
+            <?php } ?>
         </td>
     </tr>
     <tr>
@@ -716,14 +716,14 @@ $showTemplate = ($crm_auto_mail == 'No');
                 }
         ?>
         <td width="25%" class="text-center btn-success">Completed <?=$tsk_type?></td>
-        <?php} else {
+        <?php } else {
             $cur_time=strtotime(date('Y-m-d H:i:s'));
             if($tsk_due_time<$cur_time){
                 $tsk_type="<label style='background:#d9534f;'>(Delayed)</label>";
             }	
         ?>
         <td width="25%" class="text-center btn-warning">Pending <?=$tsk_type?></td>
-        <?php} ?>
+        <?php } ?>
         <td width="25%" class="text-left">
             Completion Date: <?=$task_completion_date?>
         </td>
@@ -766,14 +766,14 @@ $showTemplate = ($crm_auto_mail == 'No');
                     <th>Remarks</th>
                 </thead>
                 <tbody>
-                <?phpwhile($flp_rel=mysqli_fetch_assoc($task_flp_qry_rs)){ ?>
+                <?php while($flp_rel=mysqli_fetch_assoc($task_flp_qry_rs)){ ?>
                     <td width="20%"><?=$flp_rel['user_name']?></td>
                     <td width="20%"><?=date("d-M-Y h:i A",strtotime($flp_rel['flp_date']))?></td>
                     <td width="60%"><?=$flp_rel['task_flp_remark']?></td>
-                <?php} ?>	
+                <?php } ?>	
                 </tbody>
             </table>
-            <?php} ?>
+            <?php } ?>
         </td>
     </tr>
     <?php 	} else if($task_rel['entry_type']=='2'){
@@ -801,14 +801,14 @@ $showTemplate = ($crm_auto_mail == 'No');
                 }
         ?>
         <td width="25%" class="text-center btn-success">Completed <?=$tsk_type?></td>
-        <?php} else {
+        <?php } else {
             $cur_time=strtotime(date('Y-m-d H:i:s'));
             if($tsk_due_time<$cur_time){
                 $tsk_type="<label style='background:#d9534f;'>(Delayed)</label>";
             }	
         ?>
         <td width="25%" class="text-center btn-warning">Pending <?=$tsk_type?></td>
-        <?php} ?>
+        <?php } ?>
         <td width="25%" class="text-left">
                 Owner: <?=$task_rel['user_name']?>
         </td>
@@ -838,8 +838,8 @@ $showTemplate = ($crm_auto_mail == 'No');
     <tr>
             <td colspan="4" class="text-left" style="border-bottom: 1px solid #000 !important;"></td>
     </tr>
-        <?php} ?>	
-    <?php} ?>			
+        <?php } ?>	
+    <?php } ?>			
     </table>
     </div> 
 </div>               
@@ -851,12 +851,12 @@ $showTemplate = ($crm_auto_mail == 'No');
 
     </div>
     <div class="clearfix"></div>
-        <?phpif($mode!='view'){ ?>
+        <?php if($mode!='view'){ ?>
             <div class="col-md-12 text-center">
                 <button type="submit" class="btn btn-success" id="save" name="save">Submit</button>
                 <a href="<?=ROOT.CRM_ROOT.'inquiry_list'?>" type="button" class="btn btn-danger">Cancel</a>	
             </div>	
-        <?php} ?>
+        <?php } ?>
     </div>
 </div><!--Vendor row end-->	
 <input type='hidden' name='mode' id='mode' value='<?=$mode?>' />

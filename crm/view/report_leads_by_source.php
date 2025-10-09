@@ -74,7 +74,7 @@ $form="Leads By Source Reports";
 										<div class="form-group" style="margin-top:20px;">
 											<div class="col-md-3">
 												<div class="input-group date form_datetime-component">
-													<?php$start=date('01-m-Y');?>
+													<?php $start=date('01-m-Y');?>
 													<input type="hidden" id="from_date"  value="<?=$start?>">
 													<input type="hidden" id="to_date"  value="<?=date('t-m-Y')?>">
 													<input type="text" id="rep_date"  onChange="load_data_chart();" class="form-control datepikerdemo" value="">

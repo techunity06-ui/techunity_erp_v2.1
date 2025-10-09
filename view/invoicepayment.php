@@ -47,7 +47,7 @@
 				  <!--breadcrumbs start -->
 				  <section class="panel">
 					  <header class="panel-heading">
-						  <h3><?phpif($mode=="Add"){echo $form;}else if($mode=="payment"){echo $form.' #'.$rel['po_no'];}?></h3>
+						  <h3><?php if($mode=="Add"){echo $form;}else if($mode=="payment"){echo $form.' #'.$rel['po_no'];}?></h3>
 						</header>	
 							<div class="">
 						  <ul class="breadcrumb">
@@ -77,12 +77,12 @@
 							 <div class="form-group">
 								<label class="col-md-2 control-label">Customer Name *</label>
 								<div class="col-md-4 col-xs-11">
-								<?phpif(strtolower($mode)=="add"){?>
+								<?php if(strtolower($mode)=="add"){?>
 								<select  class="select2" name="partyid" id="partyid" onChange="load_billdata(this.value)" >
 									<option value="">Choose Customer</option>
 									<?=getvender($dbcon,$rel['partyid']);?>	
 								</select>
-								<?php}
+								<?php }
 								if(strtolower($mode)=="edit"){?>
 									<input type="text" readonly class="form-control" value="<?=$rel['company_name']?>"/>
 									<input type="hidden"  id="partyid" name="partyid" value="<?=$rel['partyid']?>"/>

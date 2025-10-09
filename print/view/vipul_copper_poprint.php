@@ -282,7 +282,7 @@ if($set_head['show_disc']=='1'){
 			<th width="7%" style="text-align:center;border:1px solid;border-top: none;">
 				<strong>Rate</strong>
 			</th>
-			<?phpif($set_head['show_disc']=='1'){ ?>
+			<?php if($set_head['show_disc']=='1'){ ?>
 				<th width="6%" style="text-align:center;border:1px solid;border-top: none;">
 					<strong>Less:<br/>Disc.</strong>
 				</th>
@@ -333,39 +333,39 @@ if($set_head['show_disc']=='1'){
 						<?=$i?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;" colspan="2">
-						<?phpif(!empty($row['scode'])){
+						<?php if(!empty($row['scode'])){
 							$code=" ( ".$row['scode'] .")";
 						} ?>
 						<?php if($row['product_alias_name']){?>
 							<strong><?=stripcslashes($row['product_alias_name'])?> <?=$code?></strong>
 							<br/><?=nl2br(stripcslashes($row['product_des']));?>
-						<?php}else{ ?>
+						<?php }else{ ?>
 							<strong><?=stripcslashes($row['product_name'])?> <?=$code?></strong>
 							<br/><?=nl2br(stripcslashes($row['product_des']));?>
-						<?php} ?>
+						<?php } ?>
 					</td>
 					<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
 						<?=stripcslashes($row['product_hsn_code'])?>
 					</td>
 
 					<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-						<?phpif($row['product_type']!='8'){ ?>
+						<?php if($row['product_type']!='8'){ ?>
 							<?=$row['product_qty'].' '.$row['unit_name']?><br/>
 							<?php if($row['product_base_unit']!=$row['product_conv_unit']){?>
 								<?=$cqty.' '.$uname?>
-							<?php} ?>
-						<?php} else{
+							<?php } ?>
+						<?php } else{
 							$charges_qty+=$row['product_qty'];
 						} ?>	
 					</td>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 						<?=number_format($row['product_rate'],2,".","")?>
 					</td>
-					<?phpif($set_head['show_disc']=='1'){?>
+					<?php if($set_head['show_disc']=='1'){?>
 						<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 							<?=number_format($row['discount_per'],2,".","").'%'?>
 						</td>
-					<?php} ?>
+					<?php } ?>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 						<?=number_format($row['product_amount'],2,".","")?>
 					</td>
@@ -397,9 +397,9 @@ if($set_head['show_disc']=='1'){
 					<td style="border-right:1px solid;border-left:1px solid;"></td>
 					<td style="border-right:1px solid;" colspan="2"></td>
 					<td style="border-right:1px solid;"></td>
-					<?phpif($set_head['show_disc']=='1'){?>
+					<?php if($set_head['show_disc']=='1'){?>
 						<td style="border-right:1px solid;"></td>
-					<?php} ?>
+					<?php } ?>
 					<!--	<td style="border-right:1px solid;"></td>-->
 					<td style="border-right:1px solid;"></td>
 					<td style="border-right:1px solid;"></td>
@@ -414,7 +414,7 @@ if($set_head['show_disc']=='1'){
 				<td style="border-top:1px solid;border-right:1px solid;border-left:1px solid; text-align:right;" colspan="4"><strong>Total</strong></td>
 
 				<td style="text-align:center;border-top:1px solid;border-right:1px solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
-				<?phpif($set_head['show_disc']=='1'){?>
+				<?php if($set_head['show_disc']=='1'){?>
 					<td style="border-top:1px solid;border-right:1px solid;"></td>
 					<?php }?>
 					<td style="border-top:1px solid;border-right:1px solid;"></td>
@@ -484,7 +484,7 @@ if($set_head['show_disc']=='1'){
 									<td colspan="3" style="border-top:1px solid;border-right:1px solid;text-align:left">Transport :</td>
 									<td colspan="2" style="text-align:right; border-top:1px solid;border-left:1px solid; "><?=number_format($row12['sundry_amount'],2,".","")?></td>
 								</tr>
-							<?php}
+							<?php }
 							$r=round($rel['g_total'])-$rel['g_total']; 
 							?>
 							<tr height="20px">
@@ -505,9 +505,9 @@ if($set_head['show_disc']=='1'){
 							<tr>
 								<td colspan="<?=$colspan?>" style="vertical-align:top;font-size:10px;text-align:left;border-top:1px solid;" class="con">
 									
-									<?phpif(!empty($set_head['po_condition'])){ ?>
+									<?php if(!empty($set_head['po_condition'])){ ?>
 										<strong>Terms and Conditions:</strong><br> <?=$set_head['po_condition']?>
-									<?php} ?>	
+									<?php } ?>	
 									
 									<strong>Terms and Conditions:</strong><br> <?=$rel['po_condition']?>
 
@@ -640,7 +640,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

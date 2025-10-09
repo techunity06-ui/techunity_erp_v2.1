@@ -10,7 +10,7 @@ ul.summary-list > li {
 </style>
 <div style="text-align:right" class="hidden-phone">
 						<ul class="summary-list" >
-							<?phpif($page_name!="invoice")
+							<?php if($page_name!="invoice")
 							{?>
 							<li class="">
 								<a href="<?=ROOT.FINANCE_ROOT.'invoice'?>">
@@ -18,7 +18,7 @@ ul.summary-list > li {
 										Create Invoice
 								</a>
                             </li>
-                            <?php}
+                            <?php }
 							if($page_name!="invoice_list")
 							{?>
 							<li>
@@ -27,7 +27,7 @@ ul.summary-list > li {
 										Invoice List
                                 </a>
                             </li>
-							<?php} ?>
+							<?php } ?>
 							
                      </ul>
 		</div>

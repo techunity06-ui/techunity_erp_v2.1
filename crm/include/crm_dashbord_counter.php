@@ -75,7 +75,7 @@ if ($companyConfiguration['forecast_calculation'] == 1) {
                             </div>
                         </a>
                     </div>
-                    <?php$qry = "select mcd_id,mcd_name from tbl_master_category_detail where mcd_status=0 and mcd_id != '" . GENERAL_TASK_TYPE . "' and mcd_cat_id=7";
+                    <?php $qry = "select mcd_id,mcd_name from tbl_master_category_detail where mcd_status=0 and mcd_id != '" . GENERAL_TASK_TYPE . "' and mcd_cat_id=7";
                     $rs_state = $dbcon->query($qry);
                     while ($row = brp_mysqli_fetch_assoc($rs_state)) { ?>
                         <div class="icons icons12 inq-list-stage-box">
@@ -89,7 +89,7 @@ if ($companyConfiguration['forecast_calculation'] == 1) {
                                 </div>
                             </a>
                         </div>
-                    <?php} ?>
+                    <?php } ?>
                 </div>
             </div>
         </section>
@@ -576,18 +576,18 @@ if ($companyConfiguration['forecast_calculation'] == 1) {
 
                         <div class="col-md-3">
                             <label class="col-md-12 control-label" style="font-weight: bold;font-size: 20px;color: black;">Target Year</label>
-                            <?php$s_year = 2018;
+                            <?php $s_year = 2018;
                             $e_year = date('Y');
                             ?>
                             <select class="form-control" name="t_pro_year" id="t_pro_year" onchange="load_target_chart();">
-                                <?phpfor ($i = $s_year; $i <= $e_year; $i++) {
+                                <?php for ($i = $s_year; $i <= $e_year; $i++) {
                                     $sel = '';
                                     if (date('Y') == $i) {
                                         $sel = 'selected="selected"';
                                     }
                                 ?>
                                     <option <?= $sel ?> value="<?= $i ?>"><?= $i ?></option>
-                                <?php} ?>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="col-md-3">

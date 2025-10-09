@@ -1237,7 +1237,7 @@ function bom_show_print($dbcon,$bom_id,$qty,$num,$call,$space){
 			
 			<td style="border:1px #444 solid;" >
 			<?php	$_SESSION['bom_tot']=$_SESSION['bom_tot']+$base_qty; ?>
-				<?phpif($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
+				<?php if($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
 				<?=$base_qty?>  <?=$rel1['base_unit_name']?><br/>
 				<?=$conv_stock?>  <?=$rel1['conv_unit_name']?>
 				<?php }else{?>
@@ -1258,7 +1258,7 @@ function bom_show_print($dbcon,$bom_id,$qty,$num,$call,$space){
 							<th style="border:0.5px #444 solid;text-align:center;" >Process Type</th>
 							<th style="border:0.5px #444 solid;text-align:center;" >Process Name</th>
 						</tr>
-					<?phpwhile($rel=mysqli_fetch_assoc($result)){ 
+					<?php while($rel=mysqli_fetch_assoc($result)){ 
 						if($rel['process_type']==1){
 							$process_type="Inhouse";
 						}else{
@@ -1271,12 +1271,12 @@ function bom_show_print($dbcon,$bom_id,$qty,$num,$call,$space){
 							<td style="border:0.5px #444 solid;text-align:center;" ><?=$process_type?></td>
 							<td style="border:0.5px #444 solid;text-align:center;" ><?=$rel['process_name']?></td>
 						</tr>
-					<?php} ?>
+					<?php } ?>
 					</table>
-				<?php} ?>
+				<?php } ?>
 			</td>
 		</tr>
-		<?phpecho bom_show_print($dbcon,$rel1['p_bom_id'],$base_qty,$new_num,$new_call,$space);
+		<?php echo bom_show_print($dbcon,$rel1['p_bom_id'],$base_qty,$new_num,$new_call,$space);
 		$k++;
 	}
 }
@@ -1608,7 +1608,7 @@ function bom_show($dbcon,$bom_id,$qty,$num,$call,$space){
 			<td style="border:1px #444 solid;" ><?=get_product_type_by_id($dbcon,$rel1['product_type'])?></td>
 			<td style="border:0.5px #444 solid;"><?=$rel1['product_name']?></td>
 			<td style="border:1px #444 solid;" >
-				<?phpif($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
+				<?php if($rel1['product_base_unit']!=$rel1['product_conv_unit']){ ?>
 				<?=$base_qty?>  <?=$rel1['base_unit_name']?><br/>
 				<?=$conv_stock?>  <?=$rel1['conv_unit_name']?>
 				<?php }else{?>
@@ -1627,7 +1627,7 @@ function bom_show($dbcon,$bom_id,$qty,$num,$call,$space){
 							<th style="border:0.5px #444 solid;text-align:center;" >Process Type</th>
 							<th style="border:0.5px #444 solid;text-align:center;" >Process Name</th>
 						</tr>
-					<?phpwhile($rel=mysqli_fetch_assoc($result)){ 
+					<?php while($rel=mysqli_fetch_assoc($result)){ 
 						if($rel['process_type']==1){
 							$process_type="Inhouse";
 						}else{
@@ -1640,12 +1640,12 @@ function bom_show($dbcon,$bom_id,$qty,$num,$call,$space){
 							<td style="border:0.5px #444 solid;text-align:center;" ><?=$process_type?></td>
 							<td style="border:0.5px #444 solid;text-align:center;" ><?=$rel['process_name']?></td>
 						</tr>
-					<?php} ?>
+					<?php } ?>
 					</table>
-				<?php} ?>
+				<?php } ?>
 			</td>
 		</tr>
-		<?phpecho bom_show($dbcon,$rel1['p_bom_id'],$base_qty,$new_num,$new_call,$space);
+		<?php echo bom_show($dbcon,$rel1['p_bom_id'],$base_qty,$new_num,$new_call,$space);
 		$k++;
 	}
 }

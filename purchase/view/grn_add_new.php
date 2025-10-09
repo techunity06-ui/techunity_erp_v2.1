@@ -80,7 +80,7 @@
 			<?php include_once($include.'/left_menu.php');?>
 			<section id="main-content">
 				<section class="wrapper">
-					<?php//include_once('../include/equick_link.php');?>
+					<?php //include_once('../include/equick_link.php');?>
 					<div class="row">
 						<div class="col-lg-12">
 							<section class="panel">
@@ -195,14 +195,14 @@
 																<input type="text" class="form-control" value="<?=$ref_no?>" readonly>
 																
 																<input type="hidden" name="purchaseorder_id" id="purchaseorder_id" value="<?=$purchaseorder_id?>" />
-															<?php}else{ ?>
+															<?php }else{ ?>
 															
 															<select class="select2" name="purchaseorder_id" id="purchaseorder_id" onChange="load_purhcase_order_data()">
 																<option value="">Choose Order No</option>
 															</select>
 															
 															
-															<?php} ?>
+															<?php } ?>
 														<?php }else{?>
 															<input type="text" class="form-control" value="<?=$pono?>" readonly>
 															<input type="hidden" name="purchaseorder_id" id="purchaseorder_id" value="<?=$rel['purchaseorder_id']?>" />
@@ -254,7 +254,7 @@
 															<input type="file" class="form-control" id="grn_file" name="grn_file[]" multiple="multiple" <?=$ttrt?> />
 														</div>
 														<div class="col-md-2">
-														<?phpif($mode=='Edit'){
+														<?php if($mode=='Edit'){
 															 $get_attch_qry="select * from tbl_grn_attch where grn_attch_status=0 and grn_id=".$rel['grn_id'];
 															$attch_rs=$dbcon->query($get_attch_qry);
 															while($attch_rel=mysqli_fetch_assoc($attch_rs)){

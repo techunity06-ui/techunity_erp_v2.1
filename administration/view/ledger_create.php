@@ -560,7 +560,7 @@ if($companyConfiguration['ledger_code'] ==1){
                                                 			</div>
                                                 		</div>
                                                 	</div>
-                                                	<?phpif($enable_assing_user==1){?>
+                                                	<?php if($enable_assing_user==1){?>
                                                 		<div class="col-md-6">
                                                 			<div class="form-group">
                                                 				<label class="col-md-4 control-label">Assign User</label>
@@ -576,7 +576,7 @@ if($companyConfiguration['ledger_code'] ==1){
                                                 				</div>
                                                 			</div>
                                                 		</div>
-                                                	<?php} ?>
+                                                	<?php } ?>
                                                 </div>
                                                 
                                                 
@@ -1280,7 +1280,7 @@ if($companyConfiguration['ledger_code'] ==1){
 										</div>
 									</div>
 								</div>
-								<?phpif($companyConfiguration['ip_add_login']==1){ ?>
+								<?php if($companyConfiguration['ip_add_login']==1){ ?>
 								<div class="col-md-12 margin_row">
 									<div class="col-md-6">
 										
@@ -1294,7 +1294,7 @@ if($companyConfiguration['ledger_code'] ==1){
 										
 									</div>
 								</div>
-							<?php} ?>
+							<?php } ?>
 								
 							</div>
 							

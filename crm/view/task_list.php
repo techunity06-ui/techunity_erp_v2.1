@@ -109,16 +109,16 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
                                             					<th>Type</th>
                                             					<th>Regarding</th>
                                             					<th>Name</th>
-                                            					<?phpif ($getspecialConfiguration["umaboy_permission"] != 1) { ?> 														<th>Inquiry Name</th>
-																	<?php} ?>
+                                            					<?php if ($getspecialConfiguration["umaboy_permission"] != 1) { ?> 														<th>Inquiry Name</th>
+																	<?php } ?>
                                             					<th>Due Date</th>
                                             					<th>Owner User</th>
                                             					<th>Assign Users</th>
-																<?phpif ($getspecialConfiguration["umaboy_permission"] == 1) { ?>
+																<?php if ($getspecialConfiguration["umaboy_permission"] == 1) { ?>
                                             						<th>Remark</th>
-																<?php} else { ?>
+																<?php } else { ?>
 																	<th>Priority</th>
-																<?php} ?>
+																<?php } ?>
                                             					<th>Status</th>
                                             					<th class="hidden-phone">Action</th>	
                                             				</tr>

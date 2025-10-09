@@ -36,7 +36,7 @@
       <!--main content start-->
            <section id="main-content">
           <section class="wrapper">
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
     		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->
@@ -106,7 +106,7 @@
 						<div class="form-group">  	
 						 <label class="col-md-2 control-label" >Purchase Bill date </label>
 							  <div class="col-md-3 col-xs-11">
-								<input id="purchasebill_date" name="purchasebill_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['purchasebill_date']));}?>" placeholder="Purchse Bill Date">
+								<input id="purchasebill_date" name="purchasebill_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['purchasebill_date']));}?>" placeholder="Purchse Bill Date">
 								</div>
                              </div>	
 					<div class="form-group">
@@ -114,7 +114,7 @@
 								<div class="col-md-9 col-xs-11">
 									<table width="80%">
 										<tbody id="item_data">
-									<?phpif($mode=='Add')
+									<?php if($mode=='Add')
 									{ ?>
 										 <input type="hidden" value="1" name="fieldcnt" id="fieldcnt">
 								<tr id="fieldtr1">
@@ -136,7 +136,7 @@
 										<button type="button" id="addfield" name="addfield" class="btn btn-round btn-primary" onClick="return add_field();">Add</button>
 									</td>							
 									</tr>
-									<?php}
+									<?php }
 									if($mode=='Edit')
 									{ 
 								$query="select * from tbl_purchasebilltranction where purchasebill_id=$purchasebillid";
@@ -161,17 +161,17 @@
 									<td style="padding:0px 5px 5px 0px;">
 										<input type="text" class="form-control" id="amount<?=$i?>" value="<?=$rel_trn['amount']?>" name="amount[]" style="width:125px;" placeholder="Amount" readonly="">
 									</td>
-									<?phpif($i==1){?>
+									<?php if($i==1){?>
 										<td style="padding-right:5px;">
 											<button  type="button" id="addfield" name="addfield" class="btn btn-round btn-primary" onClick="return add_field();">Add</button>
 										</td>
-										<?php} else {?>
+										<?php } else {?>
 											<td style="padding-right:5px;">
 											<button  type="button" id="removefield" name="removefield" class="btn btn-round btn-warning" onClick="field_remove(<?=$i?>);">Remove</button>
 										</td>
-										<?php}?>
+										<?php }?>
 										</tr>
-								<?php$i++;}
+								<?php $i++;}
 								}
 									?>
 																	</tbody>

@@ -209,7 +209,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                  <div class="form-group">
                                     <label class="col-md-4 control-label" >Bill Date </label>
                                     <div class="col-md-8 col-xs-11">
-                                       <input id="po_date" name="po_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchase Date">
+                                       <input id="po_date" name="po_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_date']));}?>" placeholder="Purchase Date">
                                     </div>
                                  </div>
                               </div>
@@ -219,7 +219,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                  <div class="form-group">
                                     <label class="col-md-4 control-label" >Bill Booking Date </label>
                                     <div class="col-md-8 col-xs-11">
-                                       <input id="po_booking_date" name="po_booking_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_booking_date']));}?>" placeholder="Booking Date">
+                                       <input id="po_booking_date" name="po_booking_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_booking_date']));}?>" placeholder="Booking Date">
                                     </div>
                                  </div>
                               </div>
@@ -227,7 +227,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                  <div class="form-group">
                                     <label class="col-md-4 control-label" >Bill Received Date </label>
                                     <div class="col-md-8 col-xs-11">
-                                       <input id="po_received_date" name="po_received_date" type="text" class="form-control default-date-picker" title="Date" value="<?phpif($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_received_date']));}?>" placeholder="Received Date">
+                                       <input id="po_received_date" name="po_received_date" type="text" class="form-control default-date-picker" title="Date" value="<?php if($mode=='Add'){ echo $date;}else if($mode=='Edit'){ echo date('d-m-Y',strtotime($rel['po_received_date']));}?>" placeholder="Received Date">
                                     </div>
                                  </div>
                               </div>
@@ -432,7 +432,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                                    <label class="col-md-3 control-label">
                                                    <input type="radio" id="purchase_type_direct" name="purchase_type" style="height: 18px;width: 18px;" value="2" onchange="check_grn();" <?=($rel['purchase_type']=='2')?'checked':''?> >
                                                    <strong>Direct</strong></label>
-                                                   <?php} ?>
+                                                   <?php } ?>
                                                 </div>
                                              </div>
                                           </div>
@@ -512,7 +512,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                                    </td>
                                                    <td style="vertical-align:top;" class="generalfield">
                                                       <select class="form-control" name="formulaid" id="formulaid" onChange="get_amount();">
-                                                      <?php//echo getformula($dbcon,$rel['formulaid']);?>
+                                                      <?php //echo getformula($dbcon,$rel['formulaid']);?>
                                                       <?php echo get_tax_formula($dbcon,$rel['formulaid'],' and tax_type=0'); ?>
                                                       </select>
                                                       <!-- <input type="hidden" name="formulaid" id="formulaid" class="form-control" readonly /> -->
@@ -538,7 +538,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                        <hr>
                                        <div class="row">
                                           <div class="col-md-6">
-                                             <?phpif($mode=="Add"){ ?>
+                                             <?php if($mode=="Add"){ ?>
                                              <div class="form-group">
                                                 <label class="col-md-4 control-label">Payment Mode</label>
                                                 <div class="col-md-6 col-xs-11">
@@ -572,7 +572,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                              <div class="form-group">
                                                 <label class="col-md-4 control-label">Paid Amount*</label>
                                                 <div class="col-md-6 col-xs-11">
-                                                   <input id="paid_amount" name="paid_amount" type="number" min='0' class="form-control" title="" value="" max="<?phpecho $due; ?>" placeholder="Amount" onkeyup="copy_full_payment();">
+                                                   <input id="paid_amount" name="paid_amount" type="number" min='0' class="form-control" title="" value="" max="<?php echo $due; ?>" placeholder="Amount" onkeyup="copy_full_payment();">
                                                 </div>
                                                 <div class="col-md-2 col-xs-11"  style="font-size:14px;display:none;">
                                                    <select class="select2" name="paid_typeid" onchange="copy_full_payment();" id="paid_typeid" title="Select Type">
@@ -580,19 +580,19 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                                    </select>
                                                 </div>
                                              </div>
-                                             <?php} ?>
+                                             <?php } ?>
                                           </div>
                                           <div class="col-md-6">
                                              <div class="form-group">
                                                 <label class="col-md-6 control-label">Total *</label>
                                                 <div class="col-md-4 col-xs-11">
-                                                   <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+                                                   <input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
                                                 </div>
                                              </div>
                                              <div class="form-group">
                                                 <label class="col-md-6 control-label">Round Off</label>
                                                 <div class="col-md-4 col-xs-11">
-                                                   <input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
+                                                   <input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
                                                 </div>
                                              </div>
                                              <div class="form-group importfield" style="display: none">
@@ -608,7 +608,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                              <div class="form-group importfield" style="display: none">
                                                 <label class="col-md-6 control-label">IGST Amount</label>
                                                 <div class="col-md-4 col-xs-11">
-                                                   <input id="igst_amount" name="igst_amount" type="number" class="form-control" title="IGST" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['igst_amount'];}?>" onKeyUp="get_amount();"  placeholder="IGST Amount">
+                                                   <input id="igst_amount" name="igst_amount" type="number" class="form-control" title="IGST" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['igst_amount'];}?>" onKeyUp="get_amount();"  placeholder="IGST Amount">
                                                 </div>
                                              </div>
                                              <!-- Dimple Panchal : start -->
@@ -634,15 +634,15 @@ $purchase_party_show = $set_conf['purchase_party_show'];
                                              <div class="form-group">
                                                 <label class="col-md-6 control-label"> Total  Expense *</label>
                                                 <div class="col-md-4 col-xs-11">
-                                                   <input id="exp_total" name="exp_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['exp_total'];}?>" placeholder="Total"readonly="readonly">
-                                                   <!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+                                                   <input id="exp_total" name="exp_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['exp_total'];}?>" placeholder="Total"readonly="readonly">
+                                                   <!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
                                                 </div>
                                              </div>
                                              <div class="form-group">
                                                 <label class="col-md-6 control-label">Grand Total *</label>
                                                 <div class="col-md-4 col-xs-11">
-                                                   <input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="Total"readonly="readonly">
-                                                   <!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+                                                   <input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="Total"readonly="readonly">
+                                                   <!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
                                                 </div>
                                              </div>
                                           </div>
@@ -901,7 +901,7 @@ $purchase_party_show = $set_conf['purchase_party_show'];
          	//load_grn_data(<?=$grn_id?>);
 			insert_product();
          	$('#vender_id').select2('readonly',true);
-         <?php} ?>
+         <?php } ?>
          
       </script>
       <?php 

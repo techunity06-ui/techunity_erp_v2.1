@@ -67,7 +67,7 @@
                         	<div class="col-md-12">Select Type </div>
 							<div class="col-md-10" style="line-height:50px;">
 							 <select style="width:170px;"  required class="select2" name="cust_id" id="cust_id" onChange="generate_report();">
-									<?phpgetinvoicetype($dbcon);?>	
+									<?php getinvoicetype($dbcon);?>	
 								</select>
 								</div>
 							</div>

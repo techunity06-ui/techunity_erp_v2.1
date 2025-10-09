@@ -144,7 +144,7 @@ if($set_head['show_disc']=='1'){
 												<h4 align="center"><?=$set_head['address']?></h4>
 												<h4 align="center"><?php if($set_head['website']){?>Email: <?=$set_head['website']?><?php }?> 
 												<?php if($set_head['contact_no']){?>(M) <?=$set_head['contact_no']?><?php }?></h4>
-												<h4 align="center" style="margin-top:0px;"><?phpif($set_head['company_website']){ ?>Website: <?=$set_head['company_website']?><?php }?></h4>
+												<h4 align="center" style="margin-top:0px;"><?php if($set_head['company_website']){ ?>Website: <?=$set_head['company_website']?><?php }?></h4>
 											</td>
 										</tr>
 									</table>
@@ -231,7 +231,7 @@ if($set_head['show_disc']=='1'){
 											</tr>
 										</thead>
 										<tbody style="border: 1px solid;">
-											<?php$qry="select trn.*,product.*,process.process_name,per.unit_name FROM `tbl_grn_trn` as trn left join product_mst as product on product.product_id=trn.product_id left join unit_mst as per on per.unitid=trn.unit_id
+											<?php $qry="select trn.*,product.*,process.process_name,per.unit_name FROM `tbl_grn_trn` as trn left join product_mst as product on product.product_id=trn.product_id left join unit_mst as per on per.unitid=trn.unit_id
 											left join process_mst as process on process.process_id = trn.process_id where grn_trn_status=0 and grn_id=".$rel['grn_id']." group by grn_trn_id order by grn_trn_id";
 											$result=$dbcon->query($qry);		
 											$i=1;$total=0;$discount=0;$totalqty=0;$charges_qty=0;
@@ -247,7 +247,7 @@ if($set_head['show_disc']=='1'){
 													<td style="border-bottom-color:#FFFFFF; border-right:1px solid;">
 														<?php if($row['product_alias_name']){?><strong><?=stripcslashes($row['product_alias_name'])?></strong><br/><?=nl2br(stripcslashes($row['description']));?>
 
-													<?php}else{ ?><strong><?=stripcslashes($row['product_name'])?></strong><?php }?>
+													<?php }else{ ?><strong><?=stripcslashes($row['product_name'])?></strong><?php }?>
 													<br><?=$row['process_name']?>
 													</td>
 													<td width="5%" style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;text-align:center" >
@@ -273,7 +273,7 @@ if($set_head['show_disc']=='1'){
 														0
 													</td>
 												</tr>
-												<?php$i++; 
+												<?php $i++; 
 												$totalqty=$totalqty+$row['product_qty']-$charges_qty;
 												$totalsqr=$totalsqr+$row['sqr_ft']-$charges_qty1;
 												$total_product_amount+=($row['product_qty']*$row['product_rate']);
@@ -297,7 +297,7 @@ if($set_head['show_disc']=='1'){
 														<td style="border-right:1px solid;border-top: none;border-bottom: none;"></td>
 														<td style="border-right:1px solid;border-top: none;border-bottom: none;"></td>
 													</tr>
-												<?php} ?>
+												<?php } ?>
 												<tr style="border-top: 1px solid;text-align: center;font-weight: bold;">
 													<td colspan="5" style="border-right: 1px solid;">Total: </td>
 													<td style="border-right: 1px solid;"><?= $totalqty; ?></td>
@@ -408,7 +408,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

@@ -202,14 +202,14 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 										</tr>
 										<?php if(in_array(DASHBOARD_PENDING_TASK_LIST_INQUIRY_ADD,$bulkAccessArray)) { ?>
 
-											<?phpif($getspecialConfiguration['jainflex_permission'] == '1'){ ?>
+											<?php if($getspecialConfiguration['jainflex_permission'] == '1'){ ?>
 													<tr> 
 												<th>
 													<a href="<?php echo CRM_ROOT.'customer_list';?>">ADD INQUIRY</a>
 												</th>
 												<th></th>
 											</tr>
-											<?php} ?>
+											<?php } ?>
 											
 											<tr> 
 												<th>
@@ -461,7 +461,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 				</div>
 			</div>  
 			<!-- POST_CRM SECTION Start --> 
-		<?php} ?>   
+		<?php } ?>   
 
 		<!-- SCHEDULING SECTION Start -->
 		<?php if(in_array(SCHEDULING_SLUG_VIEW,$bulkAccessArray)) { ?>
@@ -952,7 +952,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 
 					</div>
 				</div>
-			<?php// } ?>	
+			<?php // } ?>	
 			<!-- Jobwork reprocess Section End -->
 			<!-- Inhouse Pending Section Start -->
 			<?php if(in_array(WD_INHOUSE_PENDING_PROCESS_SLUG_READ,$bulkAccessArray)){ ?>
@@ -973,14 +973,14 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 											<a style="color: white;" class="two btn btn-shadow btn-primary btn-lg btn-block btn-align" href="<?php echo ROOT.PRODUCTION_ROOT."process_counter_detail_list/create_batch";?>">Create Batch</a>
 										
 									</div>
-									<?php} ?> 
+									<?php } ?> 
 									<?php if($is_store_approval == '1'){ ?>
 									<div class="col-sm-6 col-md-4" style="padding-top:10px;font-size:20px;">
 										
 											<a style="color: white;" class="two btn btn-shadow btn-primary btn-lg btn-block btn-align" href="<?php echo ROOT.PRODUCTION_ROOT."process_counter_detail_list/store_request";?>">Store Request Pending</a>
 										
 									</div>
-									<?php} ?>
+									<?php } ?>
 									<div class="col-sm-6 col-md-4" style="padding-top:10px;font-size:20px;">
 										
 											<a style="color: white;" class="two btn btn-shadow btn-primary btn-lg btn-block btn-align" href="<?php echo ROOT.PRODUCTION_ROOT."process_counter_detail_list/pending_start";?>">Pending Start</a>
@@ -1005,7 +1005,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 							</div>
 							</section>
 						</div>
-						<?php} else { ?>
+						<?php } else { ?>
 						<div class="panel-body" style="overflow:auto;">
 							
 							<table class="table" style="text-align:center">
@@ -1016,12 +1016,12 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 									<th style="white-space:nowrap;">Total Pending</th>
 									<?php if($company_config['batch_wise_stock'] == '1' && $company_config['batch_process'] == '0') { ?>
 										<th style="white-space:nowrap;">Create Batch </th>
-									<?php} ?> 
+									<?php } ?> 
 									<!--   START ::  Added by Sanat :: 20-09-2021 -->
 									<?php if($is_store_approval == '1'){ ?>
 										<th style="white-space:nowrap;">Store Request Pending</th>
 										<!-- <th style="white-space:nowrap;">Store Release Pending</th> -->
-									<?php} ?> 
+									<?php } ?> 
 									<!--   END ::  Added by Sanat :: 20-09-2021 -->
 									<th style="white-space:nowrap;">Pending Start</th>
 									<th style="white-space:nowrap;">Pending Stop</th>
@@ -1082,7 +1082,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 													<a href="<?php echo ROOT.PRODUCTION_ROOT."working_store_process_details_list/".$row_p['process_id']."/2";?>" class="link_dash"><?=process_wise_store_production_count($dbcon,$row_p['process_id'],1,2,1);?></a>
 
 												</th>
-											<?php}else{ ?>
+											<?php }else{ ?>
 												<th> 
 													<a href="<?php echo ROOT.PRODUCTION_ROOT."working_process_detail_list/".$row_p['process_id']."/1";?>" class="link_dash"><?=process_wise_production_count($dbcon,$row_p['process_id'],1,1,0);?></a>
 
@@ -1776,7 +1776,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 					</div>
 				</div>
 			</div>
-	<?php} ?>
+	<?php } ?>
 	<!-- solid dashbord end-->
 
 	<!-- FINANCE Section Start-->

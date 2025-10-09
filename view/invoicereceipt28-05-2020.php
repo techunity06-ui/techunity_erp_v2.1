@@ -266,15 +266,15 @@ body {
 							<?=$rel['m_address']?>
 							 <br>
 							 <?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-							  <?phpif(!empty($rel['cust_pincode']))
+							  <?php if(!empty($rel['cust_pincode']))
 								{	?>
 							 -  <?=$rel['cust_pincode']?>
-								<?php} ?></span>
+								<?php } ?></span>
 								<!--<br>
 								Mobile no : <?=$rel['cust_mobile']?>-->
 								
 						</td>
-						<?phpif(empty($rel['consignee_id'])) { ?>
+						<?php if(empty($rel['consignee_id'])) { ?>
 						<td colspan="2"  style="border-right:0.5px #ccc solid">
 						<b>Shipped to Party : </b><br>
 							<strong><?=$rel['l_name']?></strong>
@@ -282,15 +282,15 @@ body {
 							<?=$rel['m_address']?>
 							 <br>
 							 <?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-								<?phpif(!empty($rel['cust_pincode']))
+								<?php if(!empty($rel['cust_pincode']))
 								{	?>
 							 -  <?=$rel['cust_pincode']?>
-								<?php} ?></span>
+								<?php } ?></span>
 							<!--	<br>
 								Mobile no : <?=$rel['cust_mobile']?>-->
 								
 						</td>
-						<?php} else
+						<?php } else
 						{?>
 							<td colspan="2"  style="border-right:0.5px #ccc solid">
 							<b>Consignee : </b><br>
@@ -299,14 +299,14 @@ body {
 							<?=$cons_data['m_address']?>
 							 <br>
 							 <?=$cons_data['city_name']?>, <?=$cons_data['state_name']?>, <?=$cons_data['country_name']?>
-								<?phpif(!empty($cons_data['cust_pincode']))
+								<?php if(!empty($cons_data['cust_pincode']))
 								{	?>
 							 -  <?=$cons_data['cust_pincode']?>
-								<?php} ?></span>
+								<?php } ?></span>
 								<!--<br>
 								Mobile no : <?=$cons_data['cust_mobile']?>-->
 						</td>
-						<?php}?>
+						<?php }?>
 						</tr>
 						<tr>
 							<td colspan="4" style="border-right:0.5px #ccc solid;border-left:0.5px #ccc solid;"><strong>GSTIN: <?=$rel['gst_no']?> </strong></td>
@@ -339,7 +339,7 @@ body {
 			<th width="7%" style="text-align:center;border:0.5px #ccc solid;border-top: none;">
 				<strong>Rate</strong>
 			</th>
-			<?phpif($set_head['show_disc']=='1'){ ?>
+			<?php if($set_head['show_disc']=='1'){ ?>
 			<th width="6%" style="text-align:center;border:0.5px #ccc solid;border-top: none;">
 				<strong>Less:<br/>Disc.</strong>
 			</th>
@@ -387,11 +387,11 @@ body {
 		?>
 		<tr style="height:30px">
 					<td style="text-align:center;vertical-align:top;border-right:0.5px #ccc solid;border-left:0.5px #ccc solid;">
-							<?phpif($row['product_type']!='3'){
+							<?php if($row['product_type']!='3'){
 								echo $i;
 							}?>
 					</td>
-					<td style="vertical-align:top;border-bottom-color:#FFFFFF; border-right:0.5px #ccc solid;<?phpif($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;';}?>" >
+					<td style="vertical-align:top;border-bottom-color:#FFFFFF; border-right:0.5px #ccc solid;<?php if($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;';}?>" >
 						<strong><?=stripcslashes($row['product_name'])?></strong>
 						<br/><?=nl2br(stripcslashes($row['description']));?>
 					</td>
@@ -399,16 +399,16 @@ body {
 					<?=stripcslashes($row['product_hsn_code'])?>
 					</td>
 					<td style="text-align:center;vertical-align:top;border-bottom-color:#FFFFFF; border-right:0.5px #ccc solid;white-space:nowrap;" >
-						<?phpif($row['product_type']!='3'){ ?>
+						<?php if($row['product_type']!='3'){ ?>
 							<?=$row['product_qty'].' '.$row['unit_name']?>
-						<?php}else{
+						<?php }else{
 							$charges_qty+=$row['product_qty'];
 						} ?>	
 					</td>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF; border-right:0.5px #ccc solid;" >
 						<?=number_format($row['product_rate'],2,".","")?>
 					</td>
-					<?phpif($set_head['show_disc']=='1'){?>
+					<?php if($set_head['show_disc']=='1'){?>
 					<td style="text-align:right;vertical-align:top;border-bottom-color:#FFFFFF;border-right:0.5px #ccc solid;">
 						<?=number_format($row['discount_per'],2,".","").'%'?>
 					</td>
@@ -444,7 +444,7 @@ body {
 			<tr style="height:30px">
 				<td style="border-right:0.5px #ccc solid;border-left:0.5px #ccc solid;"></td>
 				<td style="border-right:0.5px #ccc solid;"></td>
-				<?phpif($set_head['show_disc']=='1'){?>
+				<?php if($set_head['show_disc']=='1'){?>
 				<td style="border-right:0.5px #ccc solid;"></td>
 				<?php }?>
 				<td style="border-right:0.5px #ccc solid;"></td>
@@ -461,7 +461,7 @@ body {
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;border-left:0.5px #ccc solid; text-align:right;" colspan="3"><strong>Total</strong></td>
 				
 				<td style="text-align:center;border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;"><strong><?=number_format($totalqty,2,".","")?></strong></td>
-				<?phpif($set_head['show_disc']=='1'){?>
+				<?php if($set_head['show_disc']=='1'){?>
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;"></td>
 				<?php }?>
 				<td style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;"></td>
@@ -488,17 +488,17 @@ body {
 				?>
 					<tr height="20px">
 						<td width="61.6%" style="border-right:0.5px #ccc solid;border-top:0.5px #ccc solid;vertical-align:top;" colspan="<?=$colspan?>" rowspan="<?=$rowspan?>">
-						<?phpif(!empty($set_head['bank_name'])){?>
+						<?php if(!empty($set_head['bank_name'])){?>
 								<strong>Bank Name:</strong> <?=$set_head['bank_name']?> <br/>
-								<?php} ?>
-								<?phpif(!empty($set_head['ac_no'])){?>
+								<?php } ?>
+								<?php if(!empty($set_head['ac_no'])){?>
 								<strong>A/c No:</strong> <?=$set_head['ac_no']?><br/>	 
-								<?php} ?>
-								<?phpif(!empty($set_head['ifcs'])){ ?>
+								<?php } ?>
+								<?php if(!empty($set_head['ifcs'])){ ?>
 									<strong>IFSC:</strong><?=$set_head['ifcs']?><br/>
-								<?php} ?>	
-								<?phpif(!empty($set_head['branch_name'])){ ?>
-									<strong>Branch :</strong> <?=$set_head['branch_name']?><br/><?php} ?>
+								<?php } ?>	
+								<?php if(!empty($set_head['branch_name'])){ ?>
+									<strong>Branch :</strong> <?=$set_head['branch_name']?><br/><?php } ?>
 								<strong>COMPANY GST No. : <?=$set_head['vatno']?> </strong><br>	
 								<strong>Rupees:</strong>
 									<?=ucwords(convert_number_to_words($total))?>
@@ -523,7 +523,7 @@ body {
 						<td colspan="2" style="text-align:right; border-top:0.5px #ccc solid;border-right:0.5px #ccc solid; "><?=number_format($rel_tax['tax_amount'],2,".","")?></td>
 						
 					</tr>
-					<?php}?>
+					<?php }?>
 					
 					
 				<?php 
@@ -536,7 +536,7 @@ body {
 						<td colspan="3" style="border-top:0.5px #ccc solid;border-right:0.5px #ccc solid;text-align:left">Expense :</td>
 						<td colspan="2" style="text-align:right; border-top:0.5px #ccc solid;border-right:0.5px #ccc solid; "><?=number_format($exp_total,2,".","")?></td>
 					</tr>
-					<?php}
+					<?php }
 					$r=round($total)-$total; 
 					?>
 					<tr height="20px">
@@ -751,9 +751,9 @@ body {
 						<td colspan="<?=$colspan?>" style="vertical-align:top;border:0.5px #ccc solid;
 						border-right:none;border-left:none;font-size:10px;text-align:left" class="con">
 							
-						<?phpif(!empty($set_head['conditions'])){ ?>
+						<?php if(!empty($set_head['conditions'])){ ?>
 								<strong>Terms and Conditions:</strong><br> <?=$set_head['conditions']?>
-							<?php} ?>	<br/><br/>
+							<?php } ?>	<br/><br/>
 						<!--<span style="vertical-align:bottom;">E & O.E.</span>-->
 	
 						</td>
@@ -882,7 +882,7 @@ else
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
   docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
   docprint.document.write('<style type="text/css">');

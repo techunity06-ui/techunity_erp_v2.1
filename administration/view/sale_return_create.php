@@ -49,7 +49,7 @@
 							<section class="panel">
 								<header class="panel-heading">
 									<h3 style="float:left;"> <?=$mode .' '.$form?></h3>
-									<?phpinclude_once($include1.'head_menu_sale_return.php') ?>
+									<?php include_once($include1.'head_menu_sale_return.php') ?>
 								</header>	
 								<div class="">
 								  <ul class="breadcrumb">
@@ -240,28 +240,28 @@
 												<div class="form-group">
 													<label class="col-md-5 control-label">Total *</label>
 													<div class="col-md-5 col-xs-11">
-														<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+														<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 													</div>
 												</div>	
 													
 												<div class="form-group">
 													<label class="col-md-5 control-label">CGST</label>
 													<div class="col-md-5 col-xs-11">
-														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
+														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?php if($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
 													</div>
 												</div>
 												
 												<div class="form-group">
 													<label class="col-md-5 control-label">SGST</label>
 													<div class="col-md-5 col-xs-11">
-														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
+														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?php if($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
 													</div>
 												</div>
 												
 												<div class="form-group">
 													<label class="col-md-5 control-label">TCS</label>
 													<div class="col-md-5 col-xs-11">
-														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
+														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?php if($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
 													</div>
 												</div>
 												                                                       
@@ -269,7 +269,7 @@
 												<div class="form-group">
 													<label class="col-md-5 control-label">Packing</label>
 													<div class="col-md-5 col-xs-11">
-														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
+														<input id="packing" name="packing" type="text" class="form-control" title="packing" min="0"  value="<?php if($mode=='Edit'){ echo $rel['packing'];}?>" placeholder="Packing" onKeyUp="add_freight();" >
 													</div>
 												</div>
 												<!-- Dimple Panchal : end -->

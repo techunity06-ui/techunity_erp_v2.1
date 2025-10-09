@@ -71,9 +71,9 @@
 										<th>Product Category</th>				  					  	  
 										<th>Product Qty</th>				  					  	  
 										<th>User Name</th>	
-											<?phpif($_SESSION['branch_id']==0){ ?>
+											<?php if($_SESSION['branch_id']==0){ ?>
 												<th>Branch Name</th>
-											  <?php} ?>										
+											  <?php } ?>										
 										<th>Add QC</th>	
 										<th class="nosort">  <input id="checkAll" type="checkbox" onclick="checkAll();"  name="chk[]"/></th>			  					  	  
 									</tr>

@@ -58,7 +58,7 @@
       <!--main content start-->
         <section id="main-content">
           <section class="wrapper">
-			<?php//include_once('../include/equick_link.php');?>
+			<?php //include_once('../include/equick_link.php');?>
     		<div class="row">
 			  <div class="col-lg-12">
 				  <!--breadcrumbs start -->
@@ -125,7 +125,7 @@
 							<input id="same_as" name="same_as" type="checkbox" class="" title="Other Name"  <?=$ck?> value="1" style="width:15px;height:25px;" onChange="consinee_change(this.checked);"> 
 							Same Consignee
 						</label>
-						<div class="col-md-5 col-xs-11" id="consignee" style="<?phpif(empty($rel['consignee_id'])){ echo "display:none;"; } ?>">
+						<div class="col-md-5 col-xs-11" id="consignee" style="<?php if(empty($rel['consignee_id'])){ echo "display:none;"; } ?>">
 							<select class="select2" name="consignee_id" id="consignee_id">
 								<?=get_custmer_consignee($dbcon,$rel['vender_id'],$rel['consignee_id'])?>
 							</select>
@@ -364,14 +364,14 @@
 							<div class="form-group">
 								<label class="col-md-6 control-label">Total *</label>
 								<div class="col-md-4 col-xs-11">
-									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="dispatch_no" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 					
 								</div>
 							</div>	
 							<div class="form-group">
 								<label class="col-md-6 control-label">Transport charges </label>
 								<div class="col-md-4 col-xs-11">
-								<input id="paking" name="paking" type="number"  min="0"  class="form-control" title="Transport" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="Transport">
+								<input id="paking" name="paking" type="number"  min="0"  class="form-control" title="Transport" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['packing'];}?>" onKeyUp="get_amount();" placeholder="Transport">
 					
 								</div>
 							</div>	
@@ -433,7 +433,7 @@
 							<div class="form-group">
 								<label class="col-md-6 control-label">Round Off</label>
 								<div class="col-md-4 col-xs-11">
-								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?phpif($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
+								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off" value="<?php if($mode=="Add"){echo 0;}else if($mode="Edit"){echo $rel['round_off'];}?>" onKeyUp="get_amount();" placeholder="Round Off">
 					
 								</div>
 							</div>
@@ -442,8 +442,8 @@
 								<label class="col-md-6 control-label">Grand Total *</label>
 								<div class="col-md-4 col-xs-11">
 								
-								<input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
-							<!--<input id="total" name="total" type="hidden" value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
+								<input id="g_total" name="g_total" type="text"  class="form-control" title="total" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $rel['g_total'];}?>" placeholder="total"readonly="readonly">
+							<!--<input id="total" name="total" type="hidden" value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;} ?>" placeholder="total"readonly="readonly">-->
 							
 								</div>
 							</div>

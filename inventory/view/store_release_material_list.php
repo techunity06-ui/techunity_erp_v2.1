@@ -77,7 +77,7 @@ if(!in_array(PRODUCTION_STORE_LIST_APPROVE,$bulkAccessArray)){
 										<th>User Name</th>
 										<?php if($_SESSION['branch_id']==0){ ?>
 											<th>Branch Name</th>
-										<?php} ?>
+										<?php } ?>
 										<th>Action</th>				  
 									</tr>
 								</thead>

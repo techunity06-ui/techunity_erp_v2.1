@@ -131,7 +131,7 @@
 				<div class="form-group">
 					<label class="col-md-3 control-label">Paid Amount*</label>
 					<div class="col-md-4 col-xs-11">
-						<input id="paid_amount" name="paid_amount" type="number" min='0' class="form-control" title="" required value="" max="<?phpecho $due; ?>" placeholder="Amount" onkeyup="copy_full_payment();">
+						<input id="paid_amount" name="paid_amount" type="number" min='0' class="form-control" title="" required value="" max="<?php echo $due; ?>" placeholder="Amount" onkeyup="copy_full_payment();">
 						
 						<br/><span class="amtbalance" style="display:none"><span class="label label-danger"  >NOTE!</span><span style="font-size:14px;padding-left:10px" id="tran_amounterr"> </span></span>
 					</div>

@@ -136,7 +136,7 @@ if($enable_assing_user==1){
 						<div class="form-group">
 							<label class="col-md-12 control-label" style="text-align:left;line-height:25px">Territory</label> 
 							<div class="col-md-12">
-								<select class="select2" id="t_id" name="t_id" <?phpecho ($mode=="view")?"disabled":""?> <?=($getpagePermission['crm_partymst_t_id'] == '0') ? '' : 'required';?>>
+								<select class="select2" id="t_id" name="t_id" <?php echo ($mode=="view")?"disabled":""?> <?=($getpagePermission['crm_partymst_t_id'] == '0') ? '' : 'required';?>>
 									<?=get_all_territory($dbcon,$rel['t_id']);?>
 								</select>
 							</div>

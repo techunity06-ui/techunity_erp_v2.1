@@ -72,7 +72,7 @@
 					<section class="panel">
 						<header class="panel-heading">
 							<h3> <?=$mode .' '.$form?></h3>
-							<?php//include_once("../include/head_menu.php") ?>
+							<?php //include_once("../include/head_menu.php") ?>
 						</header>	
 						<div class="">
 						  <ul class="breadcrumb">
@@ -97,7 +97,7 @@
 					<!--<div class="col-md-4">
 							<label class="col-md-4 control-label"> Invoice type </label>
 							<div class="col-md-6 col-xs-11">
-								<select style="padding-right: 0px;" class="form-control" name="invoicetype_id" id="invoicetype_id" onChange="load_invoiceno(this.value)" <?phpif($mode=='Edit'){?> readonly="readonly"<?php}?> >
+								<select style="padding-right: 0px;" class="form-control" name="invoicetype_id" id="invoicetype_id" onChange="load_invoiceno(this.value)" <?php if($mode=='Edit'){?> readonly="readonly"<?php }?> >
 									<?php //=getinvoicetype($dbcon,$load_inv_type);?>
 								</select>
 							</div>
@@ -276,7 +276,7 @@
 							<div class="form-group" style="<?=$ttl_display?>">
 								<label class="col-md-5 control-label">Total *</label>
 								<div class="col-md-5 col-xs-11">
-									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?phpif($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
+									<input id="total" name="total" type="text" readonly="readonly" class="form-control" title="Grand Total" max="0"  value="<?php if($mode=="Add"){echo '0';}else if($mode=='Edit'){ echo $e_total;}?>" placeholder="total">
 					
 								</div>
 							</div>	
@@ -284,18 +284,18 @@
 							<!--<div class="form-group">
 								<label class="col-md-5 control-label">Discount </label>
 								<div class="col-md-2 col-xs-11">
-									<input id="discount_per" name="discount_per" type="number" class="form-control col-md-6" title="in % Max 100" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['discount_per'];}?>" placeholder="in %" onKeyUp="add_discount('per');" max="100" style="width: 80px;" >
+									<input id="discount_per" name="discount_per" type="number" class="form-control col-md-6" title="in % Max 100" min="0"  value="<?php if($mode=='Edit'){ echo $rel['discount_per'];}?>" placeholder="in %" onKeyUp="add_discount('per');" max="100" style="width: 80px;" >
 									
 								</div>
 								<div class="col-md-3 col-xs-11">
-									<input id="discount_amt" name="discount_amt" type="number" class="form-control col-md-6" title="in Rs." min="0"  value="<?phpif($mode=='Edit'){ echo $rel['discount'];}?>" placeholder="in Rs." onKeyUp="add_discount('amt');" >
+									<input id="discount_amt" name="discount_amt" type="number" class="form-control col-md-6" title="in Rs." min="0"  value="<?php if($mode=='Edit'){ echo $rel['discount'];}?>" placeholder="in Rs." onKeyUp="add_discount('amt');" >
 								</div>
 							</div>-->
 							<!--
 							<div class="form-group">
 								<label class="col-md-5 control-label">Freight </label>
 								<div class="col-md-5 col-xs-11">
-								<input id="freight" name="freight" type="number" class="form-control" title="Transport" min="0"  value="<?phpif($mode=='Edit'){ echo $rel['freight'];}?>" placeholder="Freight" onKeyUp="add_freight();" >
+								<input id="freight" name="freight" type="number" class="form-control" title="Transport" min="0"  value="<?php if($mode=='Edit'){ echo $rel['freight'];}?>" placeholder="Freight" onKeyUp="add_freight();" >
 					
 								</div>
 							</div>-->
@@ -352,7 +352,7 @@
 							<!-- <div class="form-group">
 								<label class="col-md-5 control-label">Round Off</label>
 								<div class="col-md-5 col-xs-11">
-								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off"  value="<?phpif($mode=='Edit'){ echo $rel['round_off'];}else{ echo "0";}?>" placeholder="Round Off" onKeyUp="add_freight();" >
+								<input id="round_off" name="round_off" type="number" class="form-control" title="Round Off"  value="<?php if($mode=='Edit'){ echo $rel['round_off'];}else{ echo "0";}?>" placeholder="Round Off" onKeyUp="add_freight();" >
 					
 								</div>
 							</div>	-->

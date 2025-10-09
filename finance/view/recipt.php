@@ -164,7 +164,7 @@
 					<div class="form-group">
 						<label class="col-md-5 control-label">Paid Amount* <span class="currency_icon"></label></label>
 						<div class="col-md-5 col-xs-11">
-							<input id="paid_amount" name="paid_amount" type="text" min='0' class="form-control numbersOnly" title="" required value="<?= $paid_amount; ?>" max="<?phpecho $due; ?>" placeholder="Amount" onkeyup="" tabindex="5">
+							<input id="paid_amount" name="paid_amount" type="text" min='0' class="form-control numbersOnly" title="" required value="<?= $paid_amount; ?>" max="<?php echo $due; ?>" placeholder="Amount" onkeyup="" tabindex="5">
 							
 							<!-- <br/><span class="amtbalance" style="display:none"><span class="label label-danger"  >NOTE!</span><span style="font-size:14px;padding-left:10px" id="tran_amounterr"> </span></span> -->
 						</div>

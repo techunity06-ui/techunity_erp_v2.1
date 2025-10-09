@@ -68,7 +68,7 @@
 								</div>
                              </div>						 
 							<div class="form-group">
-							<?php$sel='';$sel1='';$sel2='';
+							<?php $sel='';$sel1='';$sel2='';
 							if($rel['invoice_format']=="0")
 							{
 								$sel='selected="selected"';

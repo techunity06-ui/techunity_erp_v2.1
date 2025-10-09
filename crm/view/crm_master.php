@@ -72,8 +72,8 @@ $form="CRM Masters";
 														</li> 
 													</ul>
 												</div>
-											<?php} ?>	
-										<?php}} ?>	
+											<?php } ?>	
+										<?php }} ?>	
 									</div>						
 								</div>	
 								

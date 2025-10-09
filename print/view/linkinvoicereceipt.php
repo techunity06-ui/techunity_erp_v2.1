@@ -249,9 +249,9 @@ if($rel_disc['discount'] > 0){
 																				<?=$rel['m_address']?>
 																				<br/>
 																				<?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-																				<?phpif(!empty($rel['cust_pincode'])){	?>
+																				<?php if(!empty($rel['cust_pincode'])){	?>
 																					-  <?=$rel['cust_pincode']?>
-																				<?php} ?>
+																				<?php } ?>
 																			</span>
 																			<br>
 																			<?php if($company_config['enable_hypothication']==1 && $rel['check_hypothication']!=0)
@@ -264,7 +264,7 @@ if($rel_disc['discount'] > 0){
 																			Mobile no : <?=$rel['cust_mobile']
 																			?>
 																		</td>
-																		<?phpif($rel['enable_consignee']==1) { ?>
+																		<?php if($rel['enable_consignee']==1) { ?>
 																			<td colspan="2"  style="border-right:1px solid">
 																				<b>Shipped to Party : </b><br>
 																				<strong><?=$rel['l_name']?></strong><br>
@@ -272,9 +272,9 @@ if($rel_disc['discount'] > 0){
 																					<?=$rel['m_address']?>
 																					<br/>
 																					<?=$rel['city_name']?>, <?=$rel['state_name']?>, <?=$rel['country_name']?>
-																					<?phpif(!empty($rel['cust_pincode'])){?>
+																					<?php if(!empty($rel['cust_pincode'])){?>
 																						-  <?=$rel['cust_pincode']?>
-																					<?php} ?>
+																					<?php } ?>
 																				</span>
 																				<br>
 																				<?php if($company_config['enable_hypothication']==1 && $rel['check_hypothication']!=0)
@@ -286,7 +286,7 @@ if($rel_disc['discount'] > 0){
 																				<?php } ?><br>
 																				Mobile no : <?=$rel['cust_mobile']?>
 																			</td>
-																		<?php} else
+																		<?php } else
 																		{?>
 																			<td colspan="2"  style="border-right:1px solid">
 																				<b>Consignee : </b><br>
@@ -295,16 +295,16 @@ if($rel_disc['discount'] > 0){
 																					<?=$cons_data['m_address']?>
 																					<br/>
 																					<?=$cons_data['city_name']?>, <?=$cons_data['state_name']?>, <?=$cons_data['country_name']?>
-																					<?phpif(!empty($cons_data['cust_pincode'])){?>
+																					<?php if(!empty($cons_data['cust_pincode'])){?>
 																						-  <?=$cons_data['cust_pincode']?>
-																					<?php} ?>
+																					<?php } ?>
 																				</span>
 																				<br>
 																				Mobile no : <?=$cons_data['cust_mobile']?>
 																			</td>
-																		<?php}?>
+																		<?php }?>
 																	</tr>
-																	<?phpif($rel['enable_consignee']==1) { ?>
+																	<?php if($rel['enable_consignee']==1) { ?>
 																	<tr id="rawnone">
 																		<td colspan="4" style="border-right:1px solid;border-left:1px solid;"><strong>GSTIN: <?=$rel['gst_no']?> <br>PAN No. : <?=$rel['m_pan'];?></strong></td>
 																		<td colspan="2" style="border-right:1px solid; vertical-align: top;"><strong>GSTIN:  <?=$rel['gst_no']?>
@@ -348,11 +348,11 @@ if($rel_disc['discount'] > 0){
 														<th width="7%" style="text-align:center  !important;border:1px solid;border-top: none;">
 															<strong>Rate</strong>
 														</th>
-														<?phpif($rel_disc['discount'] > 0){ ?>
+														<?php if($rel_disc['discount'] > 0){ ?>
 															<th width="6%" style="text-align:center  !important;border:1px solid;border-top: none;">
 																<strong>Less:<br/>Disc.</strong>
 															</th>
-															<?php} ?>
+															<?php } ?>
 															<th width="9%" style="text-align:center  !important;border:1px solid;border-top: none;">
 																<strong>Taxable<br/>Value</strong>
 															</th>
@@ -405,9 +405,9 @@ if($rel_disc['discount'] > 0){
 															}?>
 															<tr style="height:25px">
 																<td class="borderleftadd" style="text-align:center !important; vertical-align:top;border-right:1px solid;border-left:1px solid;">
-																	<?phpif($row['product_type']!='3'){ echo $i;}?>
+																	<?php if($row['product_type']!='3'){ echo $i;}?>
 																</td>
-																<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
+																<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?php if($row['product_type']=='3'){ echo 'text-align:right !important;padding-top:5px;vertical-align:top;';}?>" >
 																	<strong><?=stripcslashes($row['product_name'])?></strong>
 																	<br/><?=nl2br(stripcslashes($row['description']));?>
 																</td>
@@ -415,16 +415,16 @@ if($rel_disc['discount'] > 0){
 																	<?=stripcslashes($row['product_hsn_code'])?>
 																</td>
 																<td style="text-align:center  !important; vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;white-space:nowrap;" >
-																	<?phpif($row['product_type']!='3'){ ?>
+																	<?php if($row['product_type']!='3'){ ?>
 																		<?=$row['product_qty'].' '.$row['unit_name']?>
-																	<?php}else{
+																	<?php }else{
 																		$charges_qty+=$row['product_qty'];
 																	} ?>	
 																</td>
 																<td style="text-align:right  !important;vertical-align:top;border-bottom-color:#FFFFFF; border-right:1px solid;" >
 																	<?=number_format($row['product_rate'],2,".","")?>
 																</td>
-																<?phpif($rel_disc['discount'] > 0){?>
+																<?php if($rel_disc['discount'] > 0){?>
 																	<td style="text-align:right  !important; vertical-align:top;border-bottom-color:#FFFFFF;border-right:1px solid;">
 																		<?=number_format($row['discount_per'],2,".","").'%'?>
 																	</td>
@@ -461,11 +461,11 @@ if($rel_disc['discount'] > 0){
 																<tr style="height:35px">
 																	<td class="borderleftadd" style="text-align:center !important; vertical-align:top;border-right:1px solid;border-left:1px solid;">
 																	</td>
-																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?phpif($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;vertical-align:top;';}?>" >
+																	<td style="border-bottom-color:#FFFFFF; border-right:1px solid;vertical-align:top;<?php if($row['product_type']=='3'){ echo 'text-align:right;padding-top:5px;vertical-align:top;';}?>" >
 																	</td>
-																	<?phpif($rel_disc['discount'] > 0){?>
+																	<?php if($rel_disc['discount'] > 0){?>
 																		<td style="border-right:1px solid;"></td>
-																	<?php} ?>
+																	<?php } ?>
 																	<!--<td style="border-right:1px solid;"></td>-->
 																	<td style="border-right:1px solid;"></td>
 																	<td style="border-right:1px solid;"></td>
@@ -477,7 +477,7 @@ if($rel_disc['discount'] > 0){
 																	<td style="border-right:1px solid;"></td>
 																<?php } ?>
 																</tr>
-															<?php} ?>
+															<?php } ?>
 															<tr style="height:20px">
 																<td class="borderleftadd" style="border-top:1px solid;border-right:1px solid;border-left:1px solid; text-align:right  !important;" colspan="3">
 																	<strong>Total</strong>
@@ -485,9 +485,9 @@ if($rel_disc['discount'] > 0){
 																<td style="text-align:center  !important;border-top:1px solid;border-right:1px solid;">
 																	<strong><?=number_format($totalqty,2,".","")?></strong>
 																</td>
-																<?phpif($rel_disc['discount'] > 0){?>
+																<?php if($rel_disc['discount'] > 0){?>
 																	<td style="border-top:1px solid;border-right:1px solid;"></td>
-																<?php} ?>
+																<?php } ?>
 																<td style="border-top:1px solid;border-right:1px solid;"></td>
 																<td style="border-top:1px solid;border-right:1px solid;text-align:right  !important;">
 																	<strong><?=number_format($totaltaxable,2,".","")?></strong>
@@ -508,12 +508,12 @@ if($rel_disc['discount'] > 0){
 																	<table class="footer-table" width="100%">
 																		<tr height="20px">
 																			<td width="61.6%" style="border-right:1px solid;font-size:10px;" colspan="<?=$colspan?>">
-																				<?phpif(!empty($set_head['bank_name'])){?>
+																				<?php if(!empty($set_head['bank_name'])){?>
 																					<strong>Bank Name:</strong> <?=$set_head['bank_name']?>, 
-																				<?php} ?>
-																				<?phpif(!empty($set_head['ac_no'])){?>
+																				<?php } ?>
+																				<?php if(!empty($set_head['ac_no'])){?>
 																					<strong>A/c No:</strong> <?=$set_head['ac_no']?>	 
-																				<?php} ?>
+																				<?php } ?>
 																			</td>
 																			<td colspan="3" width="28.7%" style="border-right:1px solid;font-size:10px;text-align:left  !important">
 																				Taxable Amount
@@ -522,12 +522,12 @@ if($rel_disc['discount'] > 0){
 																		</tr>
 																		<tr  height="20px">
 																			<td  style="border-right:1px solid;border-top:1px solid; font-size:10px;" colspan="<?=$colspan?>">
-																				<?phpif(!empty($set_head['ifcs'])){ ?>
+																				<?php if(!empty($set_head['ifcs'])){ ?>
 																					<strong>IFSC:</strong><?=$set_head['ifcs']?>,
-																				<?php} ?>	
-																				<?phpif(!empty($set_head['branch_name'])){ ?>
+																				<?php } ?>	
+																				<?php if(!empty($set_head['branch_name'])){ ?>
 																					<strong>Branch :</strong> <?=$set_head['branch_name']?>
-																				<?php} ?>
+																				<?php } ?>
 																			</td>
 																			<td colspan="3" style="border-top:1px solid;border-right:1px solid;font-size:10px;text-align:left  !important" ></td>
 																			<td colspan="2" style="text-align:right  !important; border-top:1px solid;font-size:10px;border-left:1px solid; "></td>
@@ -636,7 +636,7 @@ if($rel_disc['discount'] > 0){
 																			<td  style="border-right:1px solid;border-top:1px solid; font-size:10px;" colspan="<?=$colspan?>">
 																			</td>
 																			<td colspan="3" style="border-top:1px solid;border-right:1px solid;font-size:10px;text-align:left  !important">Add : 
-																				<?php$strt=$tax_name[1];
+																				<?php $strt=$tax_name[1];
 																				$position = strpos($strt, "TCS", 0);
 																				if ($position == true){ 
 																					echo $tax_name[1];
@@ -647,7 +647,7 @@ if($rel_disc['discount'] > 0){
 																			</td>
 																			<td colspan="2" style="text-align:right  !important; border-top:1px solid;font-size:10px;border-left:1px solid; "><?=number_format($totaltax2,2,".","")?></td>
 																		</tr>
-																	<?php} $totaltax=$totaltax1+$totaltax2;?>
+																	<?php } $totaltax=$totaltax1+$totaltax2;?>
 																	<?php 
 																	$total=($total)+$rel['packing']; 
 																	$r=round($total)-$total; ?>
@@ -877,9 +877,9 @@ if($rel_disc['discount'] > 0){
 																	<td colspan="<?=$colspan?>" style="vertical-align:top;border:1px solid;
 																	border-right:none;border-left:none;border-bottom:none;font-size:10px;text-align:left  !important"  class="con">
 
-																	<?phpif(!empty($set_head['conditions'])){ ?>
+																	<?php if(!empty($set_head['conditions'])){ ?>
 																		<strong>Terms and Conditions:</strong><br> <?=$set_head['conditions']?>
-																		<?php} ?>	<br/><br/>
+																		<?php } ?>	<br/><br/>
 																		<!--<span style="vertical-align:bottom;">E & O.E.</span>-->
 
 																	</td>

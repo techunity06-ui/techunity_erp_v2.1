@@ -168,9 +168,9 @@ if($rel['approve_status']==0){
 													<?=$city_name?>,
 													<?=$state_name?>,
 													<?=$country_name?>
-													<?phpif(!empty($cust_pincode)){	?>
+													<?php if(!empty($cust_pincode)){	?>
 														-  <?=$cust_pincode?>
-													<?php} ?>
+													<?php } ?>
 												</span>
 												<br> <strong> GSTIN : <?=$gst_no?></strong>
 											</div>
@@ -279,7 +279,7 @@ if($rel['approve_status']==0){
 									<br><strong><u><?php //=get_product_name($dbcon,$row['die_product_id'])?></u></strong>
 								<?php } ?> -->
 								<br/><?=nl2br(stripcslashes($row['description']));?>
-							<?php}else{ ?>
+							<?php }else{ ?>
 								<strong><?=stripcslashes($row['product_name'])?></strong>
 								<!-- <?php if(!empty($row['die_product_id'])){ ?>
 									<br><strong><u><?php //=get_product_name($dbcon,$row['die_product_id'])?></u></strong>
@@ -329,7 +329,7 @@ if($rel['approve_status']==0){
 							<td style="border-right:1px solid;"></td>
 							<td style="border-right:1px solid;"></td>
 						</tr>
-					<?php} ?>
+					<?php } ?>
 					<tr height="24px">
 						<td colspan="2" style="border-top:1px solid;border-bottom:1px solid;border-right:1px solid;border-left:1px solid;font-size:14px;text-align:right !important;"><strong>TOTAL</strong></td>
 						<td style="text-align:center;border-bottom:1px solid; border-top:1px solid;font-size:14px;border-right:1px solid; "><strong><?=number_format($totalqty,2,".","")?></strong></td>
@@ -358,7 +358,7 @@ if($rel['approve_status']==0){
 						<td colspan="2" style="border-top:1px solid;">
 						<?php if(!empty($set_head['vatno'])){ ?>
 							<strong>COMPANY GST No. : <?=$set_head['vatno']?> 
-						<?php} ?>
+						<?php } ?>
 						</td>
 						<td style="border-top:1px solid;">
 							<span style="font-size:12px;float:right;">For, <strong><?=$set_head['company_name']?></strong></span>
@@ -367,9 +367,9 @@ if($rel['approve_status']==0){
 					
 					<tr height="50px" style="border-bottom:none;">
 					<td colspan="2"  style="">
-							<?phpif(!empty($set_head['challan_condition'])){ ?>
+							<?php if(!empty($set_head['challan_condition'])){ ?>
 								<strong>Terms and Conditions:</strong><br> <?=$set_head['challan_condition']?>
-							<?php} ?><br/>
+							<?php } ?><br/>
 					</td>
 					<td style="vertical-align:top;text-align:left;border-right:1px solid;">
 					
@@ -504,7 +504,7 @@ function PrintMe(DivID) {
   docprint.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"');
   docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
   docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
-  docprint.document.write('<head><title><?phpecho TITLE;?></title>');
+  docprint.document.write('<head><title><?php echo TITLE;?></title>');
 //  docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/style.css" media="all"/>');
 docprint.document.write('<link rel="stylesheet" href="<?php echo ROOT;?>css/bootstrap.min.css" media="all"/>');
 docprint.document.write('<style type="text/css">');

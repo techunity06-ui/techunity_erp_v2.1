@@ -16,6 +16,6 @@ $qrCodeData = implode("\n", $qrCode);
     <title></title>
 </head>
 <body>
-    <?phpecho $qrCodeData ?>
+    <?php echo $qrCodeData ?>
 </body>
 </html>
