@@ -371,9 +371,15 @@ else {
 				$row_data[] = $row['approve_qty']." ".$row['unit_name'];
 				$row_data[] = $row['user_name'];
 
-				$query="select IFNULL(sum(used_qty),0) as used_qty from tbl_purchaseorder_req_trn where purchaseordertrn_req_status=0 and req_id in (".$row['purchaseordertrn_id'].")";
-				$q = $dbcon->query($query);
-				$r = mysqli_fetch_array($q);
+				$query = "SELECT IFNULL(SUM(used_qty), 0) AS used_qty FROM tbl_purchaseorder_req_trn WHERE purchaseordertrn_req_status=0";
+
+					if (!empty($row['purchaseordertrn_id'])) {
+						$query .= " AND req_id IN (" . $row['purchaseordertrn_id'] . ")";
+					}
+
+					$q = $dbcon->query($query);
+					$r = mysqli_fetch_array($q);
+
 				$unapproved='';
 				if($r['used_qty']==0){
 					$unapproved = '<button type="button" class="btn btn-sm btn-primary" data-original-title="Unapproved" data-toggle="tooltip" data-placement="top" onClick="un_approve_indent('.$row['rp_id'].','.$row['purchaseordertrn_id'].')"><i class="fa fa-reply"></i> Unapproved</button>';

@@ -1,3 +1,4 @@
+
 //var datatable;
 $(document).ready(function() {
 	pendingQuotationDetail();	
@@ -139,7 +140,7 @@ function check_box_limit_item_req12(cid){
 function updateCounter() {
     var numberOfChecked = $('input[name="che_box[]"]:checked').length;
 	$('#chk_sel_count').html(numberOfChecked);
-	if(numberOfChecked != ""){
+	if(numberOfChecked !== ""){
 		$("#save").show();
 	}else{
 		$("#save").hide();
@@ -153,6 +154,34 @@ function check_box_limit(cid){
 		$('#'+cid).attr('checked', false);
 	}
 }
+
+// function po_quotation_create(){
+//     var check = $('#chk_sel_count').text();
+//     if(check == '0' || check === ''){
+//         toastr.warning("SELECT PRODUCT FIRST ", "ERROR");
+//     }
+// 	var	approove_id = $("input[name='che_box[]']:checked").map(function(){return $(this).val();}).get();
+
+// 	$.ajax({
+// 		type: "POST",
+// 		url: root_domain+purchase_domain+'app/po_quotation_list_new/',
+// 		data: { mode : "add_new_quotation_ref", approove_id:approove_id,check:check},
+// 		success: function(responce){
+// 			var arr = jQuery.parseJSON(responce);
+// 			if(arr.msg == '1') {
+//     				// toastr.success("Indent Approve SuccessFully", "SUCCESS");
+//     				window.location=root_domain+purchase_domain+'purchase_quotation/'+arr.insert_id;
+// 			}
+// 			else if(arr.msg == '0') {
+// 				toastr.warning("SOMETHING WRONG", "ERROR");
+// 			}
+// 		},
+// 		error: function(jqXHR, textStatus, errorThrown) {
+// 			console.log(textStatus, errorThrown);
+// 		}
+// 	});	
+// }
+
 
 function po_quotation_create() {
     var check = $('#chk_sel_count').text();
@@ -189,6 +218,8 @@ function po_quotation_create() {
     });
 }
 
+
+
 function load_req_quotation(){
 	var quotation_ref_id = $("#quotation_ref_id").val();
 	$.ajax({
@@ -201,21 +232,6 @@ function load_req_quotation(){
 		}
 	});
 }
-
-function load_party_quotation_product(){
-	var vender_id = $("#vender_id").val();
-	var quotation_ref_id = $("#quotation_ref_id").val();
-	$.ajax({
-		type: "POST",
-		url: root_domain+purchase_domain+'app/po_quotation_list_new/',
-		data: { mode : "load_supplier_quotation",vender_id:vender_id,quotation_ref_id:quotation_ref_id},
-		success: function(responce){
-			$('#supplier_quotation').html(responce);
-			load_quotation_comparision();
-		}
-	});
-}
-
 
 function mode_change_req_quot(){
 	var quotation_ref_id = $("#quotation_ref_id").val();
@@ -302,6 +318,11 @@ function supplier_quotation_data(){
 	var vender_id 		= $("#vender_id").val();
 	var quotation_no 	= $("#quotation_no").val();
 	var quotation_date 	= $("#quotation_date").val();
+	var delivery_priode 	= $("#delivery_priode").val();
+	var payment_terms 	= $("#payment_terms").val();
+	var ex_delivery 	= $("#ex_delivery").val();
+	var discount 	= $("#discount").val();
+	var total = parseFloat($('.grand_total').text()) || 0;
 	//var delivery_date 	= $("#delivery_date").val();
 	//var payment_days	= $("#payment_days").val();
 	//,delivery_date:delivery_date,payment_days:payment_days
@@ -310,7 +331,7 @@ function supplier_quotation_data(){
 	$.ajax({
 		type: "POST",
 		url: root_domain+purchase_domain+'app/po_quotation_list_new/',
-		data: { mode : "supplier_quotation_data",req_quot_id:req_quot_id,quotation_ref_id:quotation_ref_id,vender_id:vender_id,quotation_no:quotation_no,quotation_date:quotation_date,supplier_detail_id:supplier_detail_id},
+		data: { mode : "supplier_quotation_data",req_quot_id:req_quot_id,quotation_ref_id:quotation_ref_id,vender_id:vender_id,quotation_no:quotation_no,quotation_date:quotation_date,supplier_detail_id:supplier_detail_id,delivery_priode:delivery_priode,ex_delivery:ex_delivery,discount:discount,amount:total,payment_terms:payment_terms},
 		success: function(responce){
 			var obj = jQuery.parseJSON(responce);
 			if(obj.msg == 1){
@@ -349,7 +370,12 @@ function load_supplier_detail(){
 			$("#quotation_date").val(obj.quotation_date);
 			$("#delivery_date").val(obj.delivery_date);
 			$("#payment_days").val(obj.payment_days);
+			$("#delivery_priode").val(obj.delivery_priode);
+			$("#payment_terms").val(obj.payment_terms);
+			$("#ex_delivery").val(obj.ex_delivery);
+			$("#discount").val(obj.discount).trigger('change');
 			$("#supplier_detail_id").val(obj.supplier_detail_id);
+			get_all_bill_sundry(obj.supplier_detail_id);
 		}
 	});
 }
@@ -431,6 +457,9 @@ function add_temp_edit_product(tbl_name,checked_id,ref_name){
 		}
 	});
 }
+// edited
+// edited
+// edited
 
 function edit_modal_data_preview(id,ref_name){
 	$.ajax({
@@ -524,6 +553,7 @@ function quotation_comparision_add(){
 			var obj = jQuery.parseJSON(responce);
 			if(obj.msg==1){
 				toastr.success("QUOTATION COMPARE SUCCESSFULLY", "SUCCESS");
+				window.location=root_domain+purchase_domain+'po_quotation_list_new';
 			}else{
 				toastr.warning("SOMETHING WENT WRONG", "WARNING");
 			}
@@ -579,9 +609,332 @@ function approve_quotation(id){
 			if(obj.msg==1){
 				toastr.success("QUOTATION APPROVED SUCCESSFULLY", "SUCCESS");
 				load_po_quotation_datatable();
+				
 			}else{
 				toastr.warning("SOMETHING WENT WRONG", "WARNING");
 			}
+		}
+	});
+}
+function get_sundry_label(sundry_id) {
+	//alert(sundry_id);
+	$.ajax({
+
+		type: 'POST',
+		url: root_domain + finance_root_domain + 'app/salereturn/',
+		data: { mode: "get_bill_sundry_label", sundry_id: sundry_id },
+		success: function (data) {
+			//alert(data);
+			if (data == 1) {
+				$('#bill_sundry_amount').attr("placeholder", "Amount");
+			}
+			else {
+				$('#bill_sundry_amount').attr("placeholder", "%");
+			}
+		}
+	})
+
+}
+
+function load_party_quotation_product(){
+    var vender_id = $("#vender_id").val();
+    var quotation_ref_id = $("#quotation_ref_id").val();
+	
+    $.ajax({
+        type: "POST",
+        url: root_domain + purchase_domain + 'app/po_quotation_list_new/',
+        data: { mode: "load_supplier_quotation", vender_id: vender_id, quotation_ref_id: quotation_ref_id},
+        success: function(response) {
+            $('#supplier_quotation').html(response);
+            $('.delivery-date-picker').datepicker({
+				format: 'dd-mm-yyyy',
+				autoclose: true
+			});
+            update_gtotal();
+            load_quotation_comparision();
+        }
+    });
+}
+
+function update_gtotal() {
+    // Get the base total and other values
+    var total = parseFloat($('#total').val()) || 0;  // base total (before charges)
+    var g_total = parseFloat($('#g_total').val()) || 0;  // current grand total
+    var discount = parseFloat($('#discount').val()) || 0;  // discount percentage
+
+    // Calculate the discount amount
+    var discountAmount = (discount / 100) * g_total;
+
+    // Calculate the new total after applying the discount
+    var new_total = g_total - discountAmount;
+
+    // Update the fields
+    $('#g_total').val(new_total);
+    $('.grand_total').text(new_total.toFixed(2));
+    $('.sub_total').text(total.toFixed(2));
+
+    // Update the discount row
+    $('.discount_row').each(function() {
+        $(this).find('td:eq(1)').text(discountAmount.toFixed(2));
+        $(this).find('td:eq(0)').html('<b>Discount(' + discount + '%)</b>');
+    });
+
+    // Update the totals after modifying the grand total
+    updateTotals();
+}
+
+var rowIdx = 0;
+
+function addBillSundry() {
+    Loading(true); // Show loading indicator
+
+    var taxableamount = 0;
+    var totalsundryexist = 0;
+    var basic_amount = $("#total").val();
+    var netamount = $("#g_total").val();
+
+    $(".gst").each(function () {
+        var gstVal = $(this).val();
+        taxableamount = Number(taxableamount) + Number(gstVal);
+    });
+
+    $(".billsundryclass").each(function () {
+        var billsundryclass = $(this).val();
+        totalsundryexist = Number(totalsundryexist) + Number(billsundryclass);
+    });
+
+    var eid = $("#supplier_detail_id").val();
+    var bill_sundry_value = $("#bill_sundry").val();
+    var bill_sundry = $("#bill_sundry option:selected").text();
+    var bill_sundry_amount = $('#bill_sundry_amount').val();
+
+    var currency_enable = $('#currency_enable').val();
+    var currency_id = $('#currency_id').val();
+    var currency_rate = $('#currency_rate').val();
+    var gst_type = $('#gst_type').val();
+    var user_id = $('#user_id').val();
+
+    if (bill_sundry_value == 0) {
+        toastr.warning("Please Select Bill Sundry", "ERROR");
+        $("#bill_sundry").focus();
+        return false;
+    } else if (bill_sundry_amount == '') {
+        toastr.warning("Please insert Bill Sundry Amount", "ERROR");
+        $("#bill_sundry_amount").focus();
+        return false;
+    } else {
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: root_domain + purchase_domain + 'app/po_quotation_list_new/',
+            data: {
+                mode: "get_bill_sundry_details",
+                sundry_ledger_id: bill_sundry_value,
+                totalsundryexist: totalsundryexist,
+                taxableamount: taxableamount,
+                basic_amount: basic_amount,
+                netamount: netamount,
+                gst_type: gst_type,
+                default_amount: bill_sundry_amount,
+                invoice_id: eid,
+                currency_enable: currency_enable,
+                currency_id: currency_id,
+                currency_rate: currency_rate,
+                invoice_date: $('#invoice_date').val(),
+                user_id: user_id
+            },
+            success: function(response) {
+                var arr1 = JSON.parse(response);
+                var arr = arr1.split(",");
+
+                if (arr[3]) {
+                    get_all_bill_sundry(eid);
+                } else {
+                    if (arr[0]) {
+                        if (arr[4] != 0) {
+                            var rowHtml = `<tr class="charge_row">
+                                <input id="sundry_name" name="bill_sundry_addon[${bill_sundry_value}]" type="hidden" value="${arr[1]}">
+                                <input class="addontax" name="bill_sundry_addon_tax[${bill_sundry_value}]" type="hidden" value="${arr[4]}-${arr[5]}-${arr[1]}" >
+                                <td class="text-center"><b>${bill_sundry} ${arr[2]}</b></td>
+                                <td class="text-center amount-column">${arr[1]}</td>
+                                <td class="text-center">
+                                    <button style="margin-top: 5px;" class="btn btn-round btn-danger btn-xs" 
+                                            title="remove" 
+                                            type="button" 
+                                            onclick="removeCharge(this,${bill_sundry_value})">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>`;
+                        }else{
+                            var rowHtml = `<tr class="charge_row">
+                                <input id="sundry_name" name="bill_sundry_addon[${bill_sundry_value}]" type="hidden" value="${arr[1]}">
+                                <td class="text-center"><b>${bill_sundry} ${arr[2]}</b></td>
+                                <td class="text-center amount-column">${arr[1]}</td>
+                                <td class="text-center">
+                                    <button style="margin-top: 5px;" class="btn btn-round btn-danger btn-xs" 
+                                            title="remove" 
+                                            type="button" 
+                                            onclick="removeCharge(this,${bill_sundry_value})">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>`;
+                        }
+                        $(".charges_table_body .grand_total_row").before(rowHtml);
+
+                        $('#bill_sundry').val('0');
+                        $('#bill_sundry_amount').val('');
+
+                        // After adding the charge, recalculate totals
+                        updateTotals();
+                    }
+                }
+            }
+        });
+    }
+    Unloading(); // Hide loading indicator
+}
+
+function get_all_bill_sundry(invoice_id) {
+	$.ajax({
+		type: 'POST',
+		url: root_domain + purchase_domain + 'app/po_quotation_list_new/',
+		data: { mode: 'get_all_bill_sundry', invoice_id: invoice_id },
+		success: function (response) {
+			// console.log(response);
+			$(".charges_table_body .charge_row").remove();
+			$(".charges_table_body .grand_total_row").before(response);
+			updateTotals();
+		}
+	});
+}
+
+// Function to update the Sub Total, Discount, and Grand Total
+function updateTotals() {
+    var subTotal = parseFloat($('.sub_total').text()) || 0;  // Start with the base sub total (no charges included yet)
+    var totalAmount = subTotal;
+
+    // Sum up amounts from the charge rows (charges will be added after discount is applied)
+    $(".charges_table_body .charge_row").each(function () {
+        var amount = parseFloat($(this).find(".amount-column").text()) || 0;
+        totalAmount += amount;  // Add charges to the totalAmount
+    });
+
+    // Get the discount value (if any)
+    var discount = parseFloat($('#discount').val()) || 0;
+
+    // Calculate discount on the base sub total (not on the totalAmount which includes charges)
+    var discountAmount = (discount / 100) * subTotal;  // Apply discount only to the subTotal
+    var grandTotal = totalAmount - discountAmount;  // Subtract discount from the total after charges are added
+
+    // Update the Sub Total, Discount, and Grand Total in the table
+    $(".sub_total").text(subTotal.toFixed(2));  // Display the base sub total
+    $(".discount").text(discountAmount.toFixed(2));  // Display the discount
+    $(".grand_total").text(grandTotal.toFixed(2));  // Display the grand total after discount
+}
+
+// Function to remove a charge row and update the totals
+// function removeCharge(button) {
+//     $(button).closest("tr").remove();
+//     updateTotals();  // Recalculate the totals after removal
+// }
+
+function removeCharge(button,ledger_id) {
+	Loading(true);
+	var edit_id = $('#quotation_ref_id').val();
+	if (edit_id != '' || edit_id != '0') {
+        $.ajax({
+			type: 'post',
+			url: root_domain + purchase_domain + 'app/po_quotation_list_new/',
+			data: { mode: 'remove_sundry', edit_id: edit_id, ledger_id: ledger_id },
+			success: function (result) {
+				toastr.success("SUNDRY REMOVE SUCCESSFULLY", "SUCCESS");
+			}
+		})
+	}
+	$(button).closest("tr").remove();
+    updateTotals();
+	Unloading();
+}
+
+function product_edit(po_quotationtrn_id){
+	$("#p_rate_"+po_quotationtrn_id).removeAttr("readonly");
+	$("#d_date_"+po_quotationtrn_id).removeAttr("readonly");
+	$("#remark_"+po_quotationtrn_id).removeAttr("readonly");
+	$("#product_update_btn_"+po_quotationtrn_id).show();
+	$("#product_edit_btn_"+po_quotationtrn_id).hide();
+	$("#product_delete_btn_"+po_quotationtrn_id).hide();
+}
+
+function product_delete(po_quotationtrn_id){
+	var product_id = $("product_id").val();
+	var ref_name = $("#ref_name").val();
+	// var po_quotationtrn_id = $("#ref_trn").val();
+	var r= confirm(" Are you want to delete ?");
+	
+	if(r) {
+		Loading();
+		$.ajax({
+			type: "POST",
+			url: root_domain+purchase_domain+'app/po_quotation_list_new/',
+			data: { mode : "delete_product", product_id:product_id, ref_name:ref_name,po_quotationtrn_id:po_quotationtrn_id },
+			success: function(response)
+			{
+				var data=jQuery.parseJSON(response)
+				var response=data.res;
+				if(response == "1") {
+					toastr.success("DATA DELETE SUCCESSFULLY", "SUCCESS");
+					load_quotation_comparision();
+					Unloading();
+				}
+				else if(response == "0") {
+					toastr.warning("SOMETHING WRONG", "WARNING");
+				}							
+			}
+		});	
+	}
+}
+
+
+function product_update(po_quotationtrn_id){
+	var product_id = $("product_id").val();
+	var quotation_ref_id = $("#quotation_ref_id").val();
+	var ref_name = $("#ref_name").val();
+	// var po_quotationtrn_id = $("#ref_trn").val();
+	
+	
+	var product_desc = '';var delivery_date ='';var payment_days='';var product_rate='';
+	if(ref_name == 'supplier_quotation'){
+		product_desc = $("#remark_"+po_quotationtrn_id).val();
+		delivery_date = $("#d_date_"+po_quotationtrn_id).val(); 
+		payment_days  = $("#payment_days").val();
+		product_rate  = $("#p_rate_"+po_quotationtrn_id).val();
+	}
+	
+	$.ajax({
+		type: "POST",
+		url: root_domain+purchase_domain+'app/po_quotation_list_new/',
+		data: { mode : "product_update" ,product_id:product_id ,quotation_ref_id:quotation_ref_id,delivery_date:delivery_date,payment_days:payment_days,po_quotationtrn_id:po_quotationtrn_id,ref_name:ref_name,product_desc:product_desc,product_rate:product_rate},
+		success: function(responce){
+			
+			var obj = jQuery.parseJSON(responce);
+			
+				if(obj.msg==1){
+					$("#p_rate_"+po_quotationtrn_id).attr('readonly', true);
+					$("#d_date_"+po_quotationtrn_id).attr('readonly', true);
+					$("#remark_"+po_quotationtrn_id).attr('readonly', true);
+					$("#product_update_btn_"+po_quotationtrn_id).hide();
+					$("#product_edit_btn_"+po_quotationtrn_id).show();
+					$("#product_delete_btn_"+po_quotationtrn_id).show();
+					toastr.success("ITEM UPDATE SUCCESSFULLY", "SUCCESS");
+					// $('#quotation_item_detail').modal('hide');
+					load_req_quotation();
+					load_party_quotation_product();
+				}else{
+					toastr.warning("SOMETHING WENT WRONG", "WARNING");
+				}
+			
 		}
 	});
 }
