@@ -5,9 +5,9 @@ $form = "Request For Quotation";
 $company_config = getCompanyConfiguration($dbcon);
  error_reporting(E_ALL);
 if (strpos($_SERVER['REQUEST_URI'], "purchase_quotation") !== false) {
-    $quotation_ref_id = $dbcon->real_escape_string($_REQUEST['id']);
+	$quotation_ref_id = $dbcon->real_escape_string($_REQUEST['id']);
     $query = "SELECT * FROM po_quotation_ref WHERE quotation_ref_id = " . $quotation_ref_id;
-    $result = $dbcon->query($query);
+	$result = $dbcon->query($query);
 
     if ($result && $row = brp_mysqli_fetch_array($result)) {
         if (!empty($row['vender_id'])) {
@@ -15,8 +15,8 @@ if (strpos($_SERVER['REQUEST_URI'], "purchase_quotation") !== false) {
                 SELECT GROUP_CONCAT(l_name) AS suppliers 
                 FROM tbl_ledger 
                 WHERE l_id IN (" . $row['vender_id'] . ")";
-            $supplier_result = $dbcon->query($suppliers_detail);
-            $supplier_data = brp_mysqli_fetch_array($supplier_result);
+	$supplier_result = $dbcon->query($suppliers_detail);
+	$supplier_data = brp_mysqli_fetch_array($supplier_result);
         } else {
             // No vendor IDs
             $supplier_data['suppliers'] = '';
@@ -94,12 +94,12 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 					<div class="col-lg-12">
 						<section class="panel">
 							<header class="panel-heading">
-								<h3> <?= $form . ' ' . $mode ?></h3>
+								<h3> <?php echo $form . ' ' . $mode ?></h3>
 							</header>
 							<div class="">
 								<ul class="breadcrumb">
-									<li><a href="<?= ROOT . 'dashboard' ?>"><i class="fa fa-home"></i> Home</a></li>
-									<li><a href="<?= ROOT . PURCHASE_ROOT . 'po_quotation_list_new' ?>"><?= $form ?> List</a></li>
+									<li><a href="<?php echo ROOT . 'dashboard' ?>"><i class="fa fa-home"></i> Home</a></li>
+									<li><a href="<?php echo ROOT . PURCHASE_ROOT . 'po_quotation_list_new' ?>"><?php echo $form ?> List</a></li>
 								</ul>
 							</div>
 						</section>
@@ -138,7 +138,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<div class="form-group">
 																	<label class="col-md-4 control-label">Ref. Quotation No</label>
 																	<div class="col-md-8 col-xs-11">
-																		<strong><?= $row['ref_quotation_no'] ?></strong>
+																		<strong><?= $ref_quotation_no ?></strong>
 																	</div>
 																</div>
 															</div>
@@ -205,7 +205,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<div class="form-group">
 																	<label class="col-md-4 control-label">Ref. Quotation No</label>
 																	<div class="col-md-8 col-xs-11">
-																		<strong><?= $row['ref_quotation_no'] ?></strong>
+																		<strong><?= $ref_quotation_no ?></strong>
 																	</div>
 																</div>
 															</div>
@@ -248,41 +248,123 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																	</div>
 																</div>
 															</div>
-															<!-- <div class="col-md-6 clearfix">
-																<div class="form-group">
-																	<label class="col-md-4 control-label">Delivery Date *</label>
-																	<div class="col-md-8 col-xs-11">
-																		<input type="text" name="delivery_date" id="delivery_date" class="form-control default-date-picker" placeholder="Delivery Date" title="Delivery Date">
-																	</div>
-																</div>
-															</div> -->
-														</div>
-
-														<!-- <div class="col-md-12">
 															<div class="col-md-6 clearfix">
 																<div class="form-group">
-																	<label class="col-md-4 control-label">Payment Days *</label>
+																	<label class="col-md-4 control-label">Delivery Priode (in Days)</label>
 																	<div class="col-md-8 col-xs-11">
-																		<input type="number" class="form-control" name="payment_days" id="payment_days" placeholder="Payment Days" title="Payment Days" value="">
+																		<input type="number" class="form-control" name="delivery_priode" id="delivery_priode" placeholder="Delivery Priode" title="Delivery Priode" value="">
 																	</div>
 																</div>
 															</div>
-														</div> -->
+														</div>
+
+														<div class="col-md-12">
+															<div class="col-md-6 clearfix">
+																<div class="form-group">
+																	<label class="col-md-4 control-label">Ex-Delivery</label>
+																	<div class="col-md-8 col-xs-11">
+																		<input type="text" class="form-control" name="ex_delivery" id="ex_delivery" placeholder="Ex-Delivery" title="Ex-Delivery" value="">
+																	</div>
+																</div>
+															</div>
+														</div> 
+														
 													</fieldset>
 
-													<fieldset>
+													<fieldset style="margin-top: 10px;">
 														<legend>Item Details :</legend>
 														<div class="row">
-															<div class="col-md-12 ">
+															<!-- <div class="col-md-12 ">
 																<ul class="nav navbar-nav navbar-right" style="padding-right: 15px;">
 																	<li><button class="btn btn-warning" onclick="quotation_item_edit('po_quotationtrn_ref','chk_box_item_req12','supplier_quotation')"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>&nbsp;</li>
 																	<li><button class="btn btn-danger" onclick="quotation_item_delete('po_quotationtrn_ref','chk_box_item_req12','supplier_quotation')"><i class="fa fa-trash-o" aria-hidden="true"></i></button>&nbsp;</li>
 																</ul>
-															</div>
+															</div> -->
 														</div>
 														<div id="supplier_quotation">
 
 														</div>
+													</fieldset>
+													
+													<fieldset style="margin-top: 10px;">
+														<legend>Other Details :</legend>
+														<div class="col-md-6 clearfix">
+															<div class="form-group">
+																<label class="col-md-4 control-label">Discount (in %)</label>
+																<div class="col-md-8 col-xs-11">
+																	<input type="number" name="discount" id="discount" class="form-control" placeholder="Discount" title="Discount" value="0" onChange="update_gtotal();">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6 clearfix">
+															<div class="form-group">
+																<label class="col-md-4 control-label">Payment Terms</label>
+																<div class="col-md-8 col-xs-11">
+																	<textarea name="payment_terms" id="payment_terms" class="form-control" placeholder="Payment Terms" title="Payment Terms"></textarea>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-12" style="align-items: center;display: flex;">
+														    <div class="col-md-2 col-xs-11" style="text-align: right;">
+        													    <label class="control-label">Select Bill Sundry</label>
+        													</div>
+        													<div class="col-md-4 col-xs-11">
+        														<?php $get_bill_sundry = get_bill_sundry_ledger($dbcon, 0); ?>
+        														<select class="form-control" name="bill_sundry" id="bill_sundry" onchange="get_sundry_label(this.value)">
+        															<option value="0">Select</option>
+        															<?php foreach ($get_bill_sundry as $sundry) {
+        
+        															?>
+        																<option value="<?php echo $sundry['l_id'] ?>"><?php echo $sundry['l_name']; ?></option>
+        
+        															<?php } ?>
+        														</select>
+        													</div>
+        													<div class="col-md-2 col-xs-11">
+        														<input id="bill_sundry_amount" name="bill_sundry_amount" type="text" class="form-control numbersOnly" placeholder="Amount" title="Amount" value="<?= $rel['amount'] ?>" placeholder="">
+        													</div>
+        													<div class="col-md-2 col-xs-11">
+        														<button style="" class="btn btn-round btn-info" type="button" value="R1" onclick="addBillSundry()"><i class="fa fa-plus"></i></button>
+        													</div>
+        												</div>
+        												
+        												<div class="all_charges">
+                                                            <table class="display table table-bordered table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="text-center" style="width:50%">Title</th>
+                                                                        <th class="text-center" style="width:25%">Amount</th>
+                                                                        <th class="text-center" style="width:25%">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="charges_table_body">
+                                                                    <!-- Fixed Sub Total row -->
+                                                                    <tr class="sub_total_row">
+                                                                        <td class="text-center"><b>Sub Total</b></td>
+                                                                        <td class="text-center sub_total">0.00</td>
+                                                                        <td class="text-center"></td>
+                                                                    </tr>
+                                                                    
+                                                                    <!-- Fixed Discount row -->
+                                                                    <tr class="discount_row">
+                                                                        <td class="text-center"><b>Discount</b></td>
+                                                                        <td class="text-center discount">0.00</td>
+                                                                        <td class="text-center"></td>
+                                                                    </tr>
+                                                                    
+                                                                    <!-- Dynamic charge rows will be inserted here -->
+                                                                    
+                                                                    <!-- Fixed Grand Total row -->
+                                                                    
+                                                                    <tr class="grand_total_row">
+                                                                        <td class="text-center"><b>Grand Total</b></td>
+                                                                        <td class="text-center grand_total">0.00</td>
+                                                                        <td class="text-center"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
 													</fieldset>
 													<input type="hidden" name="supplier_detail_id" id="supplier_detail_id">
 													<input type="hidden" name="sup_mode" id="sup_mode" value="add">
@@ -321,6 +403,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 										</div>
 									</div>
 									<input type="hidden" name="quotation_ref_id" id="quotation_ref_id" value="<?= $quotation_ref_id ?>">
+									<input type="hidden" name="supplier_detail_id" id="supplier_detail_id">
 								</form>
 							</div>
 						</section>
@@ -337,6 +420,10 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 
 	<script>
 		$(".select2").select2({
+			width: '100%'
+		});
+		
+		$("#bill_sundry").select2({
 			width: '100%'
 		});
 

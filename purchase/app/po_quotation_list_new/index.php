@@ -297,64 +297,64 @@ else {
     
     $str = '';
     $str .= '<table class="display table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th class="text-center editmode1"><input type="checkbox" id="all_chk_box12" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_all_item_req12();"></th>
-            <th class="text-center">Approve No</th>
-            <th class="text-center">Approve Date</th>
-            <th class="text-center">Indent No</th>
-            <th class="text-center">Indent Date</th>
-            <th class="text-center">Product Name</th>
-            <th class="text-center">Product Qty</th>
-            <th class="text-center">Product Rate</th>
-            <th class="text-center">Delivery Date</th>
-            <th class="text-center">Payment Days</th>
-            <th class="text-center">Product Remark</th>
-        </tr>
-    </thead>
-    <tbody>';
+			<thead>
+				<tr>
+					<th class="text-center editmode1"><input type="checkbox" id="all_chk_box12" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_all_item_req12();"></th>
+					<th class="text-center">Approve No</th>
+					<th class="text-center">Approve Date</th>
+					<th class="text-center">Indent No</th>
+					<th class="text-center">Indent Date</th>
+					<th class="text-center">Product Name</th>
+					<th class="text-center">Product Qty</th>
+					<th class="text-center">Product Rate</th>
+					<th class="text-center">Delivery Date</th>
+					<th class="text-center">Payment Days</th>
+					<th class="text-center">Product Remark</th>
+				</tr>
+			</thead>
+			<tbody>';
     
-    $result = $dbcon->query($query);
+			$result = $dbcon->query($query);
     $i = 1;
     
     if($result && brp_mysqli_num_rows($result) > 0){
-        while($row = brp_mysqli_fetch_array($result)){
+				while($row = brp_mysqli_fetch_array($result)){
             if($row['unit_id'] != $row['conv_unit_id']){
                 $product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span><br><span style="color:orange">'.$row['product_conv_qty'].' '.$row['conv_unit'].'</span>';
             } else {
-                $product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span>';
-            }
+						$product_qty = '<span style="color:green">'.$row['product_qty'].' '.$row['base_unit'].'</span>';
+					}
             
-            $delivery_date = ''; 
+					$delivery_date = ''; 
             if($row['delivery_date'] != '0000-00-00' && $row['delivery_date'] != '' && $row['delivery_date'] != '1970-01-01'){
                 $delivery_date = date('d-m-Y', strtotime($row['delivery_date']));
-            }
+					}
 
             $str .= '<tr>
-                <td class="editmode1"><input type="checkbox" name="chk_box_item_req12[]" class="chk_box_item_req12" id="chk_box_item_req12'.$i.'" value="'.$row['po_quotationtrn_id'].'" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_box_limit_item_req12(this.id);"></td>
-                <td>'.$row['approve_no'].'</td>
+						<td class="editmode1"><input type="checkbox" name="chk_box_item_req12[]" class="chk_box_item_req12" id="chk_box_item_req12'.$i.'" value="'.$row['po_quotationtrn_id'].'" style="width: 23px;height: 23px;margin-top: 0px;" onchange="check_box_limit_item_req12(this.id);"></td>
+						<td>'.$row['approve_no'].'</td>
                 <td>'.date('d-m-Y', strtotime($row['approve_date'])).'</td>
-                <td>'.$row['indent_no'].'</td>
+						<td>'.$row['indent_no'].'</td>
                 <td>'.date('d-m-Y', strtotime($row['indent_date'])).'</td>
-                <td>'.$row['product_name'].'</td>
-                <td>'.$product_qty.'</td>
-                <td>'.$row['product_rate'].'</td>
-                <td>'.$delivery_date.'</td>
-                <td>'.$row['payment_days'].'</td>
-                <td>'.$row['remark'].'</td>
-            </tr>';
-            $i++;
-        }
+						<td>'.$row['product_name'].'</td>
+						<td>'.$product_qty.'</td>
+						<td>'.$row['product_rate'].'</td>
+						<td>'.$delivery_date.'</td>
+						<td>'.$row['payment_days'].'</td>
+						<td>'.$row['remark'].'</td>
+					</tr>';
+					$i++;
+				}
     } else {
         $str .= '<tr>
-            <td colspan="11" class="text-center">No Data Yet...!!</td>
-        </tr>';
-    }
-    
-    $str .= '</tbody>
-    </table>';
-    echo $str;
-}
+					<td colspan="11" class="text-center">No Data Yet...!!</td>
+				</tr>';
+			}
+			
+			$str.='</tbody>
+			</table>';
+			echo $str;
+		}
 		else if(strtolower($POST['mode']) == "request_quotation_data"){
 			$supplier_id = array_filter($_POST['supplier_id']);
 			$vender_id = trim(implode(",", @$POST['supplier_id']),","); 
@@ -418,18 +418,26 @@ else {
 			
 			echo json_encode($arr);
 		}
-		else if(strtolower($POST['mode']) == "load_supplier_quotation_vender"){
-			$query = "select sdet.*,led.l_name from tbl_supplier_quotation_detail as sdet
-			left join tbl_ledger as led on led.l_id = sdet.vender_id
-			where supplier_status=0 and quotation_ref_id=".$POST['quotation_ref_id'];
-			$result = $dbcon->query($query);
-			$str = '';
-			$str.='<option value="">Choose Vendor</option>';
-			while($row = brp_mysqli_fetch_array($result)){
-				$str .='<option value="'.$row['vender_id'].'">'.$row['l_name'].'</option>';
-			}
-			echo $str;
-		}
+		else if(strtolower($_POST['mode']) == "load_supplier_quotation_vender"){
+    // Sanitize the input
+    $quotation_ref_id = isset($_POST['quotation_ref_id']) ? $dbcon->real_escape_string($_POST['quotation_ref_id']) : '';
+
+    // Build the query with proper quotes
+    $query = "SELECT sdet.*, led.l_name
+              FROM tbl_supplier_quotation_detail AS sdet
+              LEFT JOIN tbl_ledger AS led ON led.l_id = sdet.vender_id
+              WHERE supplier_status = 0
+              AND quotation_ref_id = '$quotation_ref_id'";
+
+    $result = $dbcon->query($query);
+    $str = '';
+    $str .= '<option value="">Choose Vendor</option>';
+    while($row = brp_mysqli_fetch_array($result)){
+        $str .= '<option value="' . $row['vender_id'] . '">' . htmlspecialchars($row['l_name']) . '</option>';
+    }
+    echo $str;
+}
+
 		else if(strtolower($POST['mode']) == "load_supplier_detail"){
 			$query = 'select * from tbl_supplier_quotation_detail where quotation_ref_id ='.$POST['quotation_ref_id'].' and vender_id='.$POST['vender_id'];
 			$result = $dbcon->query($query);

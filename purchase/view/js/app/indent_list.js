@@ -223,6 +223,8 @@ function load_indent_hist_datatable(){
 }
 function un_approve_indent(rp_id,purchaseordertrn_id){
 	Loading(true);
+	
+
 	$.ajax({
 		type: "POST",
 		url: root_domain+purchase_domain+'app/indent_list/',

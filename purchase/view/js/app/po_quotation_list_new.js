@@ -154,26 +154,39 @@ function check_box_limit(cid){
 	}
 }
 
-function po_quotation_create(){
-	var	approove_id = $("input[name='che_box[]']:Checked").map(function(){return $(this).val();}).get();
-	$.ajax({
-		type: "POST",
-		url: root_domain+purchase_domain+'app/po_quotation_list_new/',
-		data: { mode : "add_new_quotation_ref", approove_id:approove_id},
-		success: function(responce){
-			var arr = jQuery.parseJSON(responce);
-			if(arr.msg == '1') {
-				// toastr.success("Indent Approve SuccessFully", "SUCCESS");
-				window.location=root_domain+purchase_domain+'purchase_quotation/'+arr.insert_id;
-			}
-			else if(arr.msg == '0') {
-				toastr.warning("SOMETHING WRONG", "ERROR")
-			}
-		},
-		error: function(jqXHR, textStatus, errorThrown) {
-			console.log(textStatus, errorThrown);
-		}
-	});	
+function po_quotation_create() {
+    var check = $('#chk_sel_count').text();
+    if (check == '0' || check === '') {
+        toastr.warning("SELECT PRODUCT FIRST", "ERROR");
+        return; // Exit early if no product is selected
+    }
+
+    var approove_id = $("input[name='che_box[]']:checked").map(function() {
+        return $(this).val();
+    }).get();
+
+    // Add this check
+    if (approove_id.length === 0) {
+        toastr.warning("SELECT AT LEAST ONE ITEM FOR APPROVAL", "ERROR");
+        return; // Exit early if no approval ID is selected
+    }
+
+    $.ajax({
+        type: "POST",
+        url: root_domain + purchase_domain + 'app/po_quotation_list_new/',
+        data: { mode: "add_new_quotation_ref", approove_id: approove_id, check: check },
+        success: function(responce) {
+            var arr = jQuery.parseJSON(responce);
+            if (arr.msg == '1') {
+                window.location = root_domain + purchase_domain + 'purchase_quotation/' + arr.insert_id;
+            } else if (arr.msg == '0') {
+                toastr.warning("SOMETHING WRONG", "ERROR");
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
 }
 
 function load_req_quotation(){
