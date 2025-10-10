@@ -5,7 +5,10 @@
  * and open the template in the editor.
  */
 define('COMMON_FUNCTION_OUTER_PATH','../include/common_functions/');
-define('COMMON_FUNCTION_PATH','../../include/common_functions/');
+
+if (!defined('COMMON_FUNCTION_PATH')) {
+    define('COMMON_FUNCTION_PATH', '/some/path/');
+}
 define('COMMON_FUNCTION_INNER_PATH','../../../include/common_functions/');
 
 define("PRINT_ROOT","print/");

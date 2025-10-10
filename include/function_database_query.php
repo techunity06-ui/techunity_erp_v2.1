@@ -65,38 +65,36 @@ function bulk_add_record($table, $values, $fields, $db, $branch_id = '')
 }
 
 
-function update_record($table, $data, $where, $db, $branch_id = '')
-{	
-	if($branch_id) {
-		$data['branch_id'] = $branch_id;
-	}
+function update_record($table, $data, $where, $db, $branch_id = '') {
+    if ($branch_id) {
+        $data['branch_id'] = $branch_id;
+    }
+    if (empty($where)) {
+        throw new Exception("WHERE clause cannot be empty.");
+    }
+    if (!is_array($data) || empty($data)) {
+        throw new Exception("Data array cannot be empty.");
+    }
 
-	foreach(array_keys($data) as $field_name){
-		$data[$field_name] = brp_sc_mysql_escape($data[$field_name],$db);
-		if (!isset($field_string)) {
-			$field_string = " ".$field_name.""; 
-			$value_string = "'$data[$field_name]'";
-			$querystring=" set ".$field_string."=".$value_string;
-		} else {
-			$field_string = ",".$field_name."";
-			$value_string = "'$data[$field_name]'";
-			$querystring.=$field_string."=".$value_string;
-		}
-	}
-	$dbQuery = "update ".$table.$querystring." Where ".$where;	
+    $setClauses = [];
+    foreach ($data as $field_name => $value) {
+        $value = brp_sc_mysql_escape($value, $db);
+        $setClauses[] = "$field_name='$value'";
+    }
+    $querystring = " SET " . implode(", ", $setClauses);
 
-	// echo $dbQuery;echo "</br></br>"; 
+    $dbQuery = "UPDATE $table $querystring WHERE $where";
+    // echo $dbQuery; exit; // Uncomment for debugging
 
- 	//exit; 
-	$db->query($dbQuery);
-	//echo $dbQuery;exit;	
-	$update_id=brp_mysqli_affected_rows($db);
-	if(isset($update_id))
-	{
-		$_SESSION['msg']='Record Updated Successfully';
-	}
-	return $update_id;//return record number of the record just added, in case we need it
+    $db->query($dbQuery);
+    $update_id = brp_mysqli_affected_rows($db);
+
+    if (isset($update_id)) {
+        $_SESSION['msg'] = 'Record Updated Successfully';
+    }
+    return $update_id;
 }
+
 function delete_record($table, $where, $db)
 {
 	$dbQuery = "delete from ".$table." Where ".$where;	

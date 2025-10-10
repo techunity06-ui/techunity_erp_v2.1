@@ -62,19 +62,23 @@ if(strtolower($POST['mode']) == "product_load") {
         }
     }
 
-    if($search=='crm_pro_search'){
-        $pro_search=explode(",", $crm_pro_search);
-    } else if($search=='purchase_pro_search'){
-        $pro_search=explode(",", $purchase_pro_search);
-    } else if($search=='sales_pro_search'){
-        $pro_search=explode(",", $sales_pro_search);
-    } else if($search=='bom_pro_search'){
-        $pro_search=explode(",", $bom_pro_search);
-    } else if($search == 'production_pro_search'){
-        $pro_search=explode(",", $production_pro_search);
-    } else if($search == 'rejection_pro_search'){
-        $pro_search=explode(",", $rejection_pro_type);
-    }
+  if($search=='crm_pro_search'){
+    $pro_search=explode(",", $crm_pro_search);
+} else if($search=='purchase_pro_search'){
+    $pro_search=explode(",", $purchase_pro_search);
+} else if($search=='sales_pro_search'){
+    $pro_search=explode(",", $sales_pro_search);
+} else if($search=='bom_pro_search'){
+    $pro_search=explode(",", $bom_pro_search);
+} else if($search == 'production_pro_search'){
+    $pro_search=explode(",", $production_pro_search);
+} else if($search == 'rejection_pro_search'){
+    $pro_search=explode(",", $rejection_pro_type);
+} else {
+    // Default: empty array
+    $pro_search = [];
+}
+
 
     
     /*var_dump($POST['product_category']);*/
@@ -146,7 +150,8 @@ if(strtolower($POST['mode']) == "product_load") {
         }
         $row1[0][]=$row['product_id'];
         $row1[1][]=$row['product_name'].' '.$item_code.' '.$drawing_number.' '.$alias;
-        $row1[2][]=$row['quot_trn_id'];
+        $row1[2][] = $row['quot_trn_id'] ?? '';
+
     }
 	//$row=mysqli_fetch_array($result);		
     // print_r($POST);

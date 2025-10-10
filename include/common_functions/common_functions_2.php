@@ -11691,95 +11691,109 @@ function count_so_stock_allocation($dbcon, $user_id)
         $str .= '</table>';
         return $str;
     }
-    function get_asper_indent_poqty($dbcon, $temptrn_ref_id)
-    {
-        $query = "select sum(used_qty) as po_qty,un.unit_name from tbl_purchaseorder_req_trn as req 
-        left join tbl_request_product as re on re.rp_id = req.rp_id
-        left join unit_mst as un on un.unitid = re.purchase_unit
-        where purchaseordertrn_req_status=0 and req.req_id=" . $temptrn_ref_id;
-        $result = $dbcon->query($query);
-        $row = brp_mysqli_fetch_array($result);
-        return $row['po_qty'] . " " . $row['unit_name'];
-        //return $query;
-
+  function get_asper_indent_poqty($dbcon, $temptrn_ref_id) {
+    // Check if $temptrn_ref_id is empty or not a valid integer
+    if (empty($temptrn_ref_id) || !is_numeric($temptrn_ref_id)) {
+        return "0 "; // Return a default value if $temptrn_ref_id is invalid
     }
-    function get_asper_indent_podetail($dbcon, $temptrn_ref_id)
-    {
-        $query = "select re.*,po.purchaseorder_id,po.purchaseorder_no,po.purchaseorder_date,led.l_name,un.unit_name,us.user_name,po.cdate,req.purchase_unit from tbl_purchaseorder_req_trn as re
-        left join tbl_purchaseordertrn as ptr on ptr.purchaseordertrn_id=re.purchaseordertrn_id
-        left join tbl_purchaseorder as po on po.purchaseorder_id = ptr.purchaseorder_id
-        left join tbl_ledger as led on led.l_id = po.vender_id
-        left join tbl_request_product as req on re.rp_id = req.rp_id
-        left join unit_mst as un on un.unitid = req.purchase_unit
-        left join users as us on us.user_id = po.userid
-        where purchaseordertrn_req_status=0 and re.req_id=" . $temptrn_ref_id;
-        $result = $dbcon->query($query);
-        $cnt = brp_mysqli_num_rows($result);
-        $str = '';
-        $str .= '<table class="table table-bordered" style="width:100%">
-        <tr>
+
+    // Proceed with the query only if $temptrn_ref_id is valid
+    $query = "SELECT sum(used_qty) as po_qty, un.unit_name
+              FROM tbl_purchaseorder_req_trn as req
+              LEFT JOIN tbl_request_product as re ON re.rp_id = req.rp_id
+              LEFT JOIN unit_mst as un ON un.unitid = re.purchase_unit
+              WHERE purchaseordertrn_req_status=0 AND req.req_id=" . $temptrn_ref_id;
+
+    $result = $dbcon->query($query);
+    $row = brp_mysqli_fetch_array($result);
+
+    // Check if the result is valid
+    if (!$row) {
+        return "0 "; // Return a default value if no rows are found
+    }
+
+    return $row['po_qty'] . " " . $row['unit_name'];
+}
+
+   function get_asper_indent_podetail($dbcon, $temptrn_ref_id) {
+    // Check if $temptrn_ref_id is empty or not a valid integer
+    if (empty($temptrn_ref_id) || !is_numeric($temptrn_ref_id)) {
+        return '<table class="table table-bordered" style="width:100%">
+            <tr>
+                <td colspan="6" style="text-align:center">No Data Yet...!!</td>
+            </tr>
+        </table>';
+    }
+
+    // Proceed with the query only if $temptrn_ref_id is valid
+    $query = "SELECT re.*, po.purchaseorder_id, po.purchaseorder_no, po.purchaseorder_date, led.l_name, un.unit_name, us.user_name, po.cdate, req.purchase_unit
+              FROM tbl_purchaseorder_req_trn as re
+              LEFT JOIN tbl_purchaseordertrn as ptr ON ptr.purchaseordertrn_id = re.purchaseordertrn_id
+              LEFT JOIN tbl_purchaseorder as po ON po.purchaseorder_id = ptr.purchaseorder_id
+              LEFT JOIN tbl_ledger as led ON led.l_id = po.vender_id
+              LEFT JOIN tbl_request_product as req ON re.rp_id = req.rp_id
+              LEFT JOIN unit_mst as un ON un.unitid = req.purchase_unit
+              LEFT JOIN users as us ON us.user_id = po.userid
+              WHERE purchaseordertrn_req_status=0 AND re.req_id=" . $temptrn_ref_id;
+
+    $result = $dbcon->query($query);
+    $cnt = brp_mysqli_num_rows($result);
+    $str = '';
+    $str .= '<table class="table table-bordered" style="width:100%">
+    <tr>
         <td>PO No.</td>
         <td>PO Date</td>
         <td>Vendor Name</td>
         <td>Qty</td>
         <td>Entry Date Time</td>
         <td>User Name</td>
-        </tr>';
-        if ($cnt > 0)
-        {
-            while ($row = brp_mysqli_fetch_array($result))
-            {
-                $str .= '<tr>
-                <td>' . $row['purchaseorder_no'] . '</td>
-                <td>' . date('d-m-Y', strtotime($row['purchaseorder_date'])) . '</td>
-                <td>' . $row['l_name'] . '</td>
-                <td>' . $row['used_qty'] . ' ' . $row['unit_name'] . '</td>
-                <td>' . $row['cdate'] . '</td>
-                <td>' . $row['user_name'] . '</td>
-                </tr>
+    </tr>';
 
-                <tr>
+    if ($cnt > 0) {
+        while ($row = brp_mysqli_fetch_array($result)) {
+            $str .= '<tr>
+            <td>' . $row['purchaseorder_no'] . '</td>
+            <td>' . date('d-m-Y', strtotime($row['purchaseorder_date'])) . '</td>
+            <td>' . $row['l_name'] . '</td>
+            <td>' . $row['used_qty'] . ' ' . $row['unit_name'] . '</td>
+            <td>' . $row['cdate'] . '</td>
+            <td>' . $row['user_name'] . '</td>
+            </tr>
+            <tr>
                 <td colspan="6" style="text-align:center;background-color: lavender;">Po Approve Detail</td>
-                </tr>
-
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="6" style="height: 40px;">' . get_po_approved_detail($dbcon, $row['purchaseorder_id']) . '</td>
-                </tr>
-
-
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="6" style="text-align:center;background-color: lavender;">Po Finance Approve Detail</td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="6" style="height: 40px;">' . get_pofinance_approved_detail($dbcon, $row['purchaseorder_id']) . '</td>
-                </tr>
-
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="6" style="text-align:center;height:25px"></td>
-                </tr>
-
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="3">Grn Qty</td>
                 <td colspan="3">' . get_poagainst_grn($dbcon, $row['purchaseordertrn_id'], $row['rp_id']) . '</td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="6" style="text-align: center;background-color: lavender;">Grn Detail</td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <td colspan="6" style="height: 40px;">' . get_poagainst_grn_detail($dbcon, $row['purchaseordertrn_id'], $row['rp_id']) . '</td>
-                </tr>';
-            }
-        }
-        else
-        {
-            $str .= '<tr>
-            <td colspan="5" style="text-align:center">No Data Yet...!!</td>
             </tr>';
         }
-
-        $str .= '</table>';
-        return $str;
+    } else {
+        $str .= '<tr>
+        <td colspan="6" style="text-align:center">No Data Yet...!!</td>
+        </tr>';
     }
+    $str .= '</table>';
+    return $str;
+}
+
 
     function get_po_approved_detail($dbcon, $purchaseordderid)
     {

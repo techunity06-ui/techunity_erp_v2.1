@@ -595,13 +595,26 @@ else if(strtolower($POST['mode']) == "pass_session") {
 
 			 $today_inwarde=mysqli_num_rows($dbcon->query($today_inward));
 
+				$where = ""; // initialize in case no additional conditions
 
-			 $pooverduepending="SELECT COUNT(trn.purchaseordertrn_id) as po_overdue_pending FROM `tbl_purchaseordertrn` as trn
-				left join product_mst as pro on pro.product_id=trn.product_id
-				left join tbl_purchaseorder as po on po.purchaseorder_id=trn.purchaseorder_id
-				WHERE  trn.used_status=0 and trn.purchaseordertrn_status=0 and trn.purchaseorder_id!=0 and po_approval_status=1 and po.po_type = 0".$where;
-			
-             $po_overdue_pending=mysqli_fetch_assoc($dbcon->query($pooverduepending));
+				// Example of adding extra conditions dynamically
+				if (!empty($_POST['branch_id'])) {
+					$where .= " AND po.branch_id = " . intval($_POST['branch_id']);
+				}
+
+				$pooverduepending = "SELECT COUNT(trn.purchaseordertrn_id) as po_overdue_pending
+					FROM `tbl_purchaseordertrn` as trn
+					LEFT JOIN product_mst as pro ON pro.product_id=trn.product_id
+					LEFT JOIN tbl_purchaseorder as po ON po.purchaseorder_id=trn.purchaseorder_id
+					WHERE trn.used_status=0 
+					AND trn.purchaseordertrn_status=0 
+					AND trn.purchaseorder_id!=0 
+					AND po_approval_status=1 
+					AND po.po_type = 0"
+					. $where;
+
+				$po_overdue_pending = mysqli_fetch_assoc($dbcon->query($pooverduepending));
+
 
 			/*$today_date = date('Y-m-d');
 

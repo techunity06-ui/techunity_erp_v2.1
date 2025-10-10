@@ -48,14 +48,15 @@
 						}
 						else
 						{
-							if(strtolower(end(explode("/",$_SERVER['REQUEST_URI'])))!="create_company" && empty($_SESSION))
-							{
-						//		echo '<script>create_com()</script>';
-							}
-							else
-							{
-								echo '<script>open_company_modal(2)</script>';
-							}
+						$uri_parts = explode("/", $_SERVER['REQUEST_URI']);
+						$last_part = strtolower(end($uri_parts));
+
+						if ($last_part != "create_company" && empty($_SESSION)) {
+							// echo '<script>create_com()</script>';
+						} else {
+							echo '<script>open_company_modal(2)</script>';
+						}
+
 						}
 						?>
 					</table>
