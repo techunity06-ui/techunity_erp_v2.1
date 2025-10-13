@@ -9,7 +9,11 @@
 	include_once(COMMON_FUNCTION_INNER_PATH."common_functions.php");	
 	include_once(COMMON_FUNCTION_INNER_PATH."common_sub_functions.php");
 	include_once(COMMON_FUNCTION_INNER_PATH."common_production_functions.php");
-	include_once(COMMON_FUNCTION_PATH."common_production_store_wise_function.php");
+	error_log("COMMON_FUNCTION_PATH: " . COMMON_FUNCTION_PATH);
+	error_log("Full path: " . COMMON_FUNCTION_PATH . "common_production_store_wise_function.php");
+
+	// Use the absolute path
+	include_once(COMMON_FUNCTION_PATH . "common_production_store_wise_function.php");
 	include_once(COMMON_FUNCTION_INNER_PATH."finance_common_functions.php");
 	include_once(COMMON_FUNCTION_INNER_PATH."crm_common_functions.php");
 

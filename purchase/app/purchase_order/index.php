@@ -2,7 +2,7 @@
 session_start();
 $AJAX = true;
 
-include('../../include/urlfileinner.php');
+	include('../../include/urlfileinner.php');
 // error_reporting(E_ALL);
 /*var_dump($_POST);*/
 //if(@isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') 
@@ -17,7 +17,15 @@ include('../../include/urlfileinner.php');
 
 		if (strtolower($POST['mode']) == "fetch") {
 			$bulkAccessArray = canCheckPermissionAccess($dbcon, [
-				PO_LIST_VIEW, PO_LIST_ADD, PO_LIST_READ, PO_LIST_UPDATE, PO_LIST_DELETE, PO_LIST_APPROVE, DASHBOARD_PO_REQUEST_LIST_APPROVE, PURCHASE_ORDER_FINANCE_APPROVAL, PURCHASE_ORDER_APPROVAL
+				PO_LIST_VIEW,
+				PO_LIST_ADD,
+				PO_LIST_READ,
+				PO_LIST_UPDATE,
+				PO_LIST_DELETE,
+				PO_LIST_APPROVE,
+				DASHBOARD_PO_REQUEST_LIST_APPROVE,
+				PURCHASE_ORDER_FINANCE_APPROVAL,
+				PURCHASE_ORDER_APPROVAL
 			]);
 			$s_date = explode(' - ', $POST['date']);
 			$_SESSION['start'] = $s_date[0];
@@ -28,10 +36,11 @@ include('../../include/urlfileinner.php');
 
 			$branch_id = ($_SESSION['user_type'] == '2' && isset($POST['branch_id']) && $POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];
 			// $where_db = check_branch('po', $branch_id);
-			if(!empty($POST['branch_id']) && $POST['branch_id'] > 0){
-                $where_db = " and po.branch_id = " . $POST['branch_id'];
-            }
-			else{$where_db = "";}
+			if (!empty($POST['branch_id']) && $POST['branch_id'] > 0) {
+				$where_db = " and po.branch_id = " . $POST['branch_id'];
+			} else {
+				$where_db = "";
+			}
 			$where .= " $where_db ";
 
 			$where_company = check_company('po');
@@ -41,31 +50,31 @@ include('../../include/urlfileinner.php');
 			$vender_id = "";
 			$filt_status = $POST['filt_status'];
 
-			if(!empty($POST['vender_id']) && $POST['vender_id'] > 0){
+			if (!empty($POST['vender_id']) && $POST['vender_id'] > 0) {
 				$where .= " and po.vender_id = " . $POST['vender_id'];
 			}
 
-			if($filt_status != "" && $filt_status > 0){
- 
-				if($filt_status == 1){
+			if ($filt_status != "" && $filt_status > 0) {
+
+				if ($filt_status == 1) {
 					$where .= " and po_approval_status = 0";
 				}
 
-				if($filt_status == 2){
+				if ($filt_status == 2) {
 					$where .= " and po_approval_status = 1";
 				}
 
-				if($filt_status == 3){
+				if ($filt_status == 3) {
 					$where .= " and po_approval_status = 1 and po_aproove_finance = 0";
 				}
 
-				if($filt_status == 4){
+				if ($filt_status == 4) {
 					$where .= " and po_approval_status = 1 and revise_status = 1";
 				}
-				if($filt_status == 5){
+				if ($filt_status == 5) {
 					$where .= " and aproove_status = 0";
 				}
-				if($filt_status == 6){
+				if ($filt_status == 6) {
 					$where .= " and short_close_status=0 and aproove_status=1";
 				}
 			}
@@ -73,21 +82,21 @@ include('../../include/urlfileinner.php');
 			$getapprovalsetting = get_userwise_approval_setting($dbcon, 4, $_SESSION['user_id']);
 			$getapprovalsettinges = get_userwise_approval_setting($dbcon, 5, $_SESSION['user_id']);
 			$company_special = getspecialConfiguration($dbcon);
-			$getspecialConfiguration=getspecialConfiguration($dbcon);
+			$getspecialConfiguration = getspecialConfiguration($dbcon);
 			//$where.=" $where_user";
 			/*switch($POST['po_type_status']){
 			case "1":
 			$where.="  and po_type_status=1";
 			break;
-			
+
 			case "2":
 			$where.="  and po_type_status=2";
 			break;
-			
+
 			case "3":
 			$where.="  and po_type_status=3";
 			break;
-			
+
 			default:
 			$where.="";
 		}*/
@@ -100,19 +109,22 @@ include('../../include/urlfileinner.php');
 			$where .= "  and purchaseorder_date >= '" . date('Y-m-d', strtotime($s_date[0])) . "' AND purchaseorder_date <= '" . date('Y-m-d', strtotime($s_date[1])) . "'";
 			$appData = array();
 			$i = 1;
-			$aColumns = array('po.purchaseorder_id','lpsc.short_close_status','lpsc.aproove_status', 'purchaseorder_no', 'l.l_name', 'city.city_name', 'bms.branch_name', 'purchaseorder_date', 'g_total', 'paid_amount', 'status', 'purchase_status', 'quot_type', 'po.cdate', 'po.userid', 'po.po_type_status', 'po.po_req_status', 'po_approval_status', 'po.branch_id', 'po.revise_status', 'us.user_name');
+			$aColumns = array('po.purchaseorder_id', 'lpsc.short_close_status', 'lpsc.aproove_status', 'purchaseorder_no', 'l.l_name', 'city.city_name', 'bms.branch_name', 'purchaseorder_date', 'g_total', 'paid_amount', 'status', 'purchase_status', 'quot_type', 'po.cdate', 'po.userid', 'po.po_type_status', 'po.po_req_status', 'po_approval_status', 'po.branch_id', 'po.revise_status', 'us.user_name');
 			$sIndexColumn = "po.purchaseorder_id";
 			$isWhere = array("status = 0" . $where);
 			$sTable = "tbl_purchaseorder as po";
-			$isJOIN = array('left join tbl_ledger as l on po.vender_id=l.l_id', 
-			'left join  tbl_log_po_short_close as lpsc on lpsc.po_id=po.purchaseorder_id', 
-			'left join  city_mst city on l.cityid=city.cityid', 
-			'left join branch_mst as bms on bms.branch_id=po.branch_id', 'left join users as us on us.user_id=po.userid');
+			$isJOIN = array(
+				'left join tbl_ledger as l on po.vender_id=l.l_id',
+				'left join  tbl_log_po_short_close as lpsc on lpsc.po_id=po.purchaseorder_id',
+				'left join  city_mst city on l.cityid=city.cityid',
+				'left join branch_mst as bms on bms.branch_id=po.branch_id',
+				'left join users as us on us.user_id=po.userid'
+			);
 			$hOrder = "po.purchaseorder_id desc";
-			$having_clause  = '';
+			$having_clause = '';
 			include($include . 'pagging.php');
 			$appData = array();
-			
+
 			$id = 1;
 			foreach ($sqlReturn as $row) {
 				$row_data = array();
@@ -177,8 +189,8 @@ include('../../include/urlfileinner.php');
 				$view_attach_doc = '<button class="btn btn-xs btn-info" data-original-title="View Attached Document" data-toggle="tooltip" data-placement="top" onClick="view_attach_document(' . $row['purchaseorder_id'] . ',\'' . $row['purchaseorder_no'] . '\')"><i class="fa fa-eye"></i></button>';
 
 				$check_inward = "select count(grn_id) as in_cnt from tbl_grn where grn_status=0 and purchaseorder_id=" . $row['purchaseorder_id'];
-				$inwad_exe 	= $dbcon->query($check_inward);
-				$check_in 	= brp_mysqli_fetch_array($inwad_exe);
+				$inwad_exe = $dbcon->query($check_inward);
+				$check_in = brp_mysqli_fetch_array($inwad_exe);
 
 				$query = "select * from tbl_purchaseordertrn where purchaseordertrn_status=0 and used_status=0 and purchaseorder_id=" . $row['purchaseorder_id'];
 				$query_exe = $dbcon->query($query);
@@ -315,7 +327,7 @@ include('../../include/urlfileinner.php');
 
 				$menusql = $dbcon->query("SELECT * FROM `print_permission` WHERE `status` = '0' AND `company_id`='" . $_SESSION['company_id'] . "'");
 				$rels = mysqli_fetch_assoc($menusql);
-				$menu_show_permissions = explode(",", $rels['print_permission']);
+				$menu_show_permissions = ($rels && $rels['print_permission']) ? explode(",", $rels['print_permission']) : [];
 				$sql = $dbcon->query("SELECT * FROM print_setup_mst WHERE print_type = 4 AND approve_status = 1 AND status = 0 ORDER BY priority");
 				while ($res = mysqli_fetch_assoc($sql)) {
 					if (in_array($res['id'], $menu_show_permissions)) {
@@ -328,7 +340,7 @@ include('../../include/urlfileinner.php');
 						} else {
 							$poprint .= '<a class="btn btn-xs btn-primary" data-original-title="' . $res['print_name'] . '" data-toggle="tooltip" data-placement="top" target="_blank"  href="' . ROOT . PRINT_ROOT . $res['page_path'] . '/' . $row['purchaseorder_id'] . '?' . time() . '" style="background: ' . $res['icon_color'] . '; border-color: ' . $res['icon_color'] . ';"><i class="' . $res['fa_icon'] . '"></i></a>';
 
-							if($getspecialConfiguration['flowjet_permission']==1){
+							if ($getspecialConfiguration['flowjet_permission'] == 1) {
 								if ($row['po_approval_status'] == '1' || $row['po_approval_status'] == '4') {
 									$send_email_page_path = $res['page_path'];
 									$sent_po_mail = '<button class="btn btn-xs btn-primary" data-original-title="Send Mail" data-toggle="tooltip" data-placement="top" onClick="open_mail_dir_modal(' . $row['purchaseorder_id'] . ',\'' . $row['cust_email'] . '\',\'' . $send_email_page_path . '\')"><i class="fa fa-envelope"></i></button>';
@@ -348,7 +360,7 @@ include('../../include/urlfileinner.php');
 					}
 				}*/
 
-				
+
 				if ($row['po_approval_status'] == '2' || $row['po_approval_status'] == '4') {
 					$poprint = '';
 					$send_whatsapp = '';
@@ -370,94 +382,94 @@ include('../../include/urlfileinner.php');
 			if ($POST['revise_status']) { //Get Revise Count No
 				$get_rev_cnt = "select count(purchaseorder_id) as ttl_cnt,(select purchaseorder_no from tbl_purchaseorder where purchaseorder_id=" . $POST['start_purchaseorder_id'] . ") as qt_no from tbl_purchaseorder where purchase_status=0 and start_purchaseorder_id=" . $POST['start_purchaseorder_id'];
 				$rev_cnt = mysqli_fetch_assoc($dbcon->query($get_rev_cnt));
-				$info['purchaseorder_no'] 			= $rev_cnt['qt_no'] . "/R-" . $rev_cnt['ttl_cnt'];
-				$info['start_purchaseorder_id']		= $POST['start_purchaseorder_id'];
-				$info['prev_purchaseorder_id']		= $POST['prev_purchaseorder_id'];
+				$info['purchaseorder_no'] = $rev_cnt['qt_no'] . "/R-" . $rev_cnt['ttl_cnt'];
+				$info['start_purchaseorder_id'] = $POST['start_purchaseorder_id'];
+				$info['prev_purchaseorder_id'] = $POST['prev_purchaseorder_id'];
 				$upd_prev_qt_sts = $dbcon->query("UPDATE tbl_purchaseorder set revise_status=1 where purchaseorder_id=" . $POST['prev_purchaseorder_id']);
 			} else {
 				// $info['quotation_no']		= load_quotation_no($dbcon);
 				// Update Start series of No
-				$info['purchaseorder_no']	= load_common_no($dbcon, PURCHASE_ORDER_SERIES);
+				$info['purchaseorder_no'] = load_common_no($dbcon, PURCHASE_ORDER_SERIES);
 				update_common_no($dbcon, PURCHASE_ORDER_SERIES);
 			}
 			/*if(isset($POST['currency_enable'])){*/
-			$curncy_trn['currency_id'] 		= $POST['currency_id'];
-			$curncy_trn['currency_rate'] 	= $POST['currency_rate'];
+			$curncy_trn['currency_id'] = $POST['currency_id'];
+			$curncy_trn['currency_rate'] = $POST['currency_rate'];
 			/*}else{
 				$basecurrency = getbasecurrency($dbcon);
 				$curncy_trn['currency_id'] = $basecurrency['currency_id'];
 				$curncy_trn['currency_rate'] = 1;
 			}*/
-			$info['po_type_status']		= 1;
-			$info['invoicetype_id']		= $POST['invoicetype_id'];
-			$info['vender_id']			= $POST['vender_id'];
-			$info['consignee_id']		= $POST['consignee_id'];
-			$info['purchaseorder_date']	= date('Y-m-d', strtotime($POST['purchaseorder_date']));
-			$info['purchaseorder_due_date']	= date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
-			$info['mode_of_dispatch']	= $POST['dispatch_doc_no'];
-			$info['payment_terms']		= $POST['payment_terms'];
-			$info['round_off']			= $POST['round_off'];
-			$info['packing']			= $POST['paking'];
-			$info['remark']				= $POST['remark'];
+			$info['po_type_status'] = 1;
+			$info['invoicetype_id'] = $POST['invoicetype_id'];
+			$info['vender_id'] = $POST['vender_id'];
+			$info['consignee_id'] = $POST['consignee_id'];
+			$info['purchaseorder_date'] = date('Y-m-d', strtotime($POST['purchaseorder_date']));
+			$info['purchaseorder_due_date'] = date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
+			$info['mode_of_dispatch'] = $POST['dispatch_doc_no'];
+			$info['payment_terms'] = $POST['payment_terms'];
+			$info['round_off'] = $POST['round_off'];
+			$info['packing'] = $POST['paking'];
+			$info['remark'] = $POST['remark'];
 
 			if ($POST['currency_id'] == $_SESSION['currency_id']) {
-				$info['g_total']			= $POST['g_total'];
-				$info['round_of']			= $POST['round_of'];
-				$info['g_total_conv']		= $POST['g_total'] * $POST['currency_rate'];
-				$info['round_of_conv']		= $POST['round_of'] * $POST['currency_rate'];
+				$info['g_total'] = $POST['g_total'];
+				$info['round_of'] = $POST['round_of'];
+				$info['g_total_conv'] = $POST['g_total'] * $POST['currency_rate'];
+				$info['round_of_conv'] = $POST['round_of'] * $POST['currency_rate'];
 			} else {
-				$info['g_total']			= $POST['g_total'] * $POST['currency_rate'];
-				$info['round_of']			= $POST['round_of'] * $POST['currency_rate'];
-				$info['g_total_conv']		= $POST['g_total'];
-				$info['round_of_conv']		= $POST['round_of'];
+				$info['g_total'] = $POST['g_total'] * $POST['currency_rate'];
+				$info['round_of'] = $POST['round_of'] * $POST['currency_rate'];
+				$info['g_total_conv'] = $POST['g_total'];
+				$info['round_of_conv'] = $POST['round_of'];
 			}
 
-			$info['po_ref_id']			= $POST['po_ref_id'];
-			$info['po_condition']		= $_POST['po_condition'];
-			$info['currency_id']		= $_POST['currency_id'];
-			$info['godown_id']			= $POST['godown_id'];
-			$info['conversion_rate']	= $_POST['conversion_rate'];
-			$info['vendor_reference']	= $_POST['vendor_reference'];
-			$info['quotation_no']		= $_POST['quotation_no'];
-			$info['quotation_date']		= date('Y-m-d', strtotime($POST['quotation_date']));
-			$info['po_valid_date']		= date('Y-m-d', strtotime($POST['po_valid_date']));
-			$info['supply_type']		= $_POST['supply_type'];
-			$info['gst_type']			= $_POST['gst_type'];
-			$info['formulaid']      	= $POST['formula_id']; //added by : Dimple
-			$info['delivery_type'] 	 	= $POST['delivery_type']; //added by : pathik 
-			$info['po_type']      		= $POST['po_type']; //added by : Maulik
-			$info['tc_format'] 			= $POST['tc_format'];
-			$info['sales_type']			= $POST['sales_type'];
+			$info['po_ref_id'] = $POST['po_ref_id'];
+			$info['po_condition'] = $_POST['po_condition'];
+			$info['currency_id'] = $_POST['currency_id'];
+			$info['godown_id'] = $POST['godown_id'];
+			$info['conversion_rate'] = $_POST['conversion_rate'];
+			$info['vendor_reference'] = $_POST['vendor_reference'];
+			$info['quotation_no'] = $_POST['quotation_no'];
+			$info['quotation_date'] = date('Y-m-d', strtotime($POST['quotation_date']));
+			$info['po_valid_date'] = date('Y-m-d', strtotime($POST['po_valid_date']));
+			$info['supply_type'] = $_POST['supply_type'];
+			$info['gst_type'] = $_POST['gst_type'];
+			$info['formulaid'] = $POST['formula_id']; //added by : Dimple
+			$info['delivery_type'] = $POST['delivery_type']; //added by : pathik 
+			$info['po_type'] = $POST['po_type']; //added by : Maulik
+			$info['tc_format'] = $POST['tc_format'];
+			$info['sales_type'] = $POST['sales_type'];
 
-			$info['currency_enable'] 	= $POST['currency_enable']; //Added new by Maulik    
-			$info['currency_id']		= (isset($POST['currency_enable'])) ? $POST['currency_id'] : 0; //Added new by Maulik
-			$info['currency_rate']		= (isset($POST['currency_enable'])) ? $POST['currency_rate'] : 1; //Added new by Maulik
-			$info['financial_year_id']	= $POST['financial_year'];
-			$info['terms']				= isset($_POST['terms']) ? $_POST['terms'] : ''; //added by hardi
-			$info['shipped_via']		= isset($_POST['shipped_via']) ? $_POST['shipped_via'] : ''; //added by hardi
-			$info['fob']				= isset($_POST['fob']) ? $_POST['fob'] : ''; //added by hardi
+			$info['currency_enable'] = $POST['currency_enable']; //Added new by Maulik    
+			$info['currency_id'] = (isset($POST['currency_enable'])) ? $POST['currency_id'] : 0; //Added new by Maulik
+			$info['currency_rate'] = (isset($POST['currency_enable'])) ? $POST['currency_rate'] : 1; //Added new by Maulik
+			$info['financial_year_id'] = $POST['financial_year'];
+			$info['terms'] = isset($_POST['terms']) ? $_POST['terms'] : ''; //added by hardi
+			$info['shipped_via'] = isset($_POST['shipped_via']) ? $_POST['shipped_via'] : ''; //added by hardi
+			$info['fob'] = isset($_POST['fob']) ? $_POST['fob'] : ''; //added by hardi
 
-			$info['con_type']			= $POST['con_type'];
-			$info['con_vender_id']		= $POST['con_vender_id'];
-			$info['con_branch']			= $POST['con_branch'];
-			$info['con_address']		= $POST['con_address'];
-			$info['cons_same_as']		= $POST['same_as'];
+			$info['con_type'] = $POST['con_type'];
+			$info['con_vender_id'] = $POST['con_vender_id'];
+			$info['con_branch'] = $POST['con_branch'];
+			$info['con_address'] = $POST['con_address'];
+			$info['cons_same_as'] = $POST['same_as'];
 
-			$info['kind_attn']		= $POST['kind_attn'];
-			$info['po_sub']		= $POST['po_sub'];
-			$info['quot_type']		= $POST['quot_type'];
-			$info['terms_type']		= $POST['terms_type'];
+			$info['kind_attn'] = $POST['kind_attn'];
+			$info['po_sub'] = $POST['po_sub'];
+			$info['quot_type'] = $POST['quot_type'];
+			$info['terms_type'] = $POST['terms_type'];
 
 			if (isset($POST['save_print'])) {
-				$info['print_status']	= $POST['print_status'];
+				$info['print_status'] = $POST['print_status'];
 			}
-			$info['cdate']				= date("Y-m-d H:i:s");
+			$info['cdate'] = date("Y-m-d H:i:s");
 
-			$info['userid']			= $_SESSION['user_id'];
-			$info['company_id']		= $_SESSION['company_id'];
+			$info['userid'] = $_SESSION['user_id'];
+			$info['company_id'] = $_SESSION['company_id'];
 
 			if (isset($POST['currency_total'])) {
-				$info['currency_total']	= $POST['currency_total'];
+				$info['currency_total'] = $POST['currency_total'];
 			}
 
 
@@ -493,17 +505,17 @@ include('../../include/urlfileinner.php');
 			if ($inserpoid) {
 
 				foreach ($POST['tc_id'] as $key => $name) {
-					$infotrm['tc_id']			= $POST['tc_id'][$key];
-					$infotrm['ref_tc_id']		= $POST['ref_tc_id'][$key];
-					$infotrm['tc_priority']		= $POST['tc_priority'][$key];
-					$infotrm['tc_details']		= $_POST['tc_details'][$key];
+					$infotrm['tc_id'] = $POST['tc_id'][$key];
+					$infotrm['ref_tc_id'] = $POST['ref_tc_id'][$key];
+					$infotrm['tc_priority'] = $POST['tc_priority'][$key];
+					$infotrm['tc_details'] = $_POST['tc_details'][$key];
 					$infotrm['purchaseorder_id'] = $inserpoid;
-					$infotrm['cdate']			= date("Y-m-d H:i:s");
-					$infotrm['user_id']			= $_SESSION['user_id'];
-					$infotrm['company_id']		= $_SESSION['company_id'];
+					$infotrm['cdate'] = date("Y-m-d H:i:s");
+					$infotrm['user_id'] = $_SESSION['user_id'];
+					$infotrm['company_id'] = $_SESSION['company_id'];
 
 
-					if (in_array($POST['tc_id'][$key], $POST['disp_term_flag'])) {
+					if (!empty($POST['disp_term_flag']) && in_array($POST['tc_id'][$key], (array) $POST['disp_term_flag'])) {
 						$insertrmid = add_record('tbl_purchaseorder_terms_trn', $infotrm, $dbcon, $branch_id);
 					}
 				}
@@ -515,9 +527,9 @@ include('../../include/urlfileinner.php');
 					$info_sundry_tax['sundry_voucher_id'] = $inserpoid;
 					$info_sundry_tax['sundry_voucher_type'] = PO_VOUCHER;
 					$info_sundry_tax['sundry_voucher_table'] = 'tbl_purchaseorder';
-					$info_sundry_tax['cdate']	= date("Y-m-d H:i:s");
-					$info_sundry_tax['user_id']	= $_SESSION['user_id'];
-					$info_sundry_tax['company_id']	= $_SESSION['company_id'];
+					$info_sundry_tax['cdate'] = date("Y-m-d H:i:s");
+					$info_sundry_tax['user_id'] = $_SESSION['user_id'];
+					$info_sundry_tax['company_id'] = $_SESSION['company_id'];
 
 					if ($POST['currency_id'] == $_SESSION['currency_id']) {
 						$info_sundry_tax['sundry_amount'] = $bill_sundry_tax_amount;
@@ -537,9 +549,9 @@ include('../../include/urlfileinner.php');
 					$info_sundry_addon['sundry_voucher_id'] = $inserpoid;
 					$info_sundry_addon['sundry_voucher_type'] = PO_VOUCHER;
 					$info_sundry_addon['sundry_voucher_table'] = 'tbl_purchaseorder';
-					$info_sundry_addon['cdate']	= date("Y-m-d H:i:s");
-					$info_sundry_addon['user_id']	= $_SESSION['user_id'];
-					$info_sundry_addon['company_id']	= $_SESSION['company_id'];
+					$info_sundry_addon['cdate'] = date("Y-m-d H:i:s");
+					$info_sundry_addon['user_id'] = $_SESSION['user_id'];
+					$info_sundry_addon['company_id'] = $_SESSION['company_id'];
 
 					if ($POST['currency_id'] == $_SESSION['currency_id']) {
 						$info_sundry_addon['sundry_amount'] = $bill_sundry_addon_amount;
@@ -591,25 +603,25 @@ include('../../include/urlfileinner.php');
 						} else {
 							$sqty = $sel_pro_rate_rel['product_conv_qty'];
 						}
-						$infodeli['purchaseordertrn_id'] 	= $sel_pro_rate_rel['purchaseordertrn_id'];
-						$infodeli['delivery_date'] 			= date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
-						$infodeli['product_qty'] 			= $sqty;
-						$infodeli['unit_id'] 				= $sel_pro_rate_rel['rate_unit'];
+						$infodeli['purchaseordertrn_id'] = $sel_pro_rate_rel['purchaseordertrn_id'];
+						$infodeli['delivery_date'] = date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
+						$infodeli['product_qty'] = $sqty;
+						$infodeli['unit_id'] = $sel_pro_rate_rel['rate_unit'];
 
-						$infodeli['user_id']				= $_SESSION['user_id'];
-						$infodeli['cdate']					= date("Y-m-d h:i:s");
-						$infodeli['company_id']				= $_SESSION['company_id'];
+						$infodeli['user_id'] = $_SESSION['user_id'];
+						$infodeli['cdate'] = date("Y-m-d h:i:s");
+						$infodeli['company_id'] = $_SESSION['company_id'];
 
 						$inser_del = add_record('tbl_purchaseorder_delivery_date', $infodeli, $dbcon, $branch_id);
 
 						$po_follow_up['po_delivery_date_id'] = $inser_del;
-						$po_follow_up['purchaseorder_id']	 = $inserpoid;
-						$po_follow_up['folloup_date']	     = date("Y-m-d h:i:s");
-						$po_follow_up['follow_date']	     = date("Y-m-d");
-						$po_follow_up['followup_status']	 = 1;
-						$po_follow_up['cdate']				 = date("Y-m-d h:i:s");
-						$po_follow_up['user_id']			 = $_SESSION['user_id'];
-						$po_follow_up['company_id']			 = $_SESSION['company_id'];
+						$po_follow_up['purchaseorder_id'] = $inserpoid;
+						$po_follow_up['folloup_date'] = date("Y-m-d h:i:s");
+						$po_follow_up['follow_date'] = date("Y-m-d");
+						$po_follow_up['followup_status'] = 1;
+						$po_follow_up['cdate'] = date("Y-m-d h:i:s");
+						$po_follow_up['user_id'] = $_SESSION['user_id'];
+						$po_follow_up['company_id'] = $_SESSION['company_id'];
 
 						$inser_followup = add_record('tbl_purchaseorder_followup', $po_follow_up, $dbcon, $branch_id);
 
@@ -623,7 +635,7 @@ include('../../include/urlfileinner.php');
 
 			/*$qry ='INSERT INTO tbl_purchaseordertrn (product_type,product_id, description,product_hsn_code,product_qty,product_rate,unit_id,product_disc,product_amount,product_discount,discount_per,formulaid,tax_name1,tax_amount1,tax_name2,tax_amount2,tax_name3,tax_amount3,total,user_id,purchaseorder_id)
 SELECT product_type,product_id,description,product_hsn_code,product_qty, product_rate,unit_id,product_disc,product_amount,product_discount,discount_per,formulaid,tax_name1,tax_amount1,tax_name2,tax_amount2,tax_name3,tax_amount3,total,user_id,'.$inserpoid.' FROM tbl_purchasetrntemp where po_trn_req_status=1 and user_id='.$_SESSION['user_id'];
-			
+
 $dbcon->query($qry);*/
 			//$deleteid=delete_record('tbl_purchasetrntemp',"user_id=".$_SESSION['user_id']." and po_trn_req_status=1", $dbcon);		
 			//Change Status of Temp to Requested
@@ -639,7 +651,7 @@ $dbcon->query($qry);*/
 			//$appr_btn_per=check_permission($_SESSION['page'],$_SESSION['user_id'],'aprv',$dbcon);
 			//if($appr_btn_per){
 			if ($POST['po_ref_id']) {
-				$infopo['po_req_status']	= 1; //Change Status to Done
+				$infopo['po_req_status'] = 1; //Change Status to Done
 				$updateid = update_record('tbl_purchaseorder', $infopo, "purchaseorder_id=" . $POST['po_ref_id'], $dbcon);
 			}
 			$getapprovalsetting = get_userwise_approval_setting($dbcon, 4, $_SESSION['user_id']);
@@ -671,7 +683,7 @@ $dbcon->query($qry);*/
 						$infopo1['adate']				= date("Y-m-d H:i:s");
 						$infopo1['po_approval_status']	= 1;//Change Status to Done
 						$updateid12=update_record('tbl_purchaseorder', $infopo1,"purchaseorder_id=".$POST['eid'] , $dbcon);
-					
+
 				}else{ 
 						$infopo1['po_approval_status']			= 0;//Change Status to Done
 						$updateid12=update_record('tbl_purchaseorder', $infopo1,"purchaseorder_id=".$POST['eid'] , $dbcon);
@@ -721,93 +733,98 @@ $dbcon->query($qry);*/
 				$curncy_trn['currency_rate'] = 1;
 			}*/
 
-			$info['po_type_status']		= 1;
+			$info['po_type_status'] = 1;
 			/*$info['invoicetype_id']		= $POST['invoicetype_id'];*/
-			$info['purchaseorder_no']	= $POST['purchaseorder_no'];
-			$info['vender_id']			= $POST['vender_id'];
-			$info['consignee_id']		= $POST['consignee_id'];
-			$info['purchaseorder_date']	= date('Y-m-d', strtotime($POST['purchaseorder_date']));
-			$info['purchaseorder_due_date']	= date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
-			$info['mode_of_dispatch']	= $POST['dispatch_doc_no'];
-			$info['payment_terms']		= $POST['payment_terms'];
-			$info['round_off']			= $POST['round_off'];
-			$info['packing']			= $POST['paking'];
-			$info['remark']				= $POST['remark'];
+			$info['purchaseorder_no'] = $POST['purchaseorder_no'];
+			$info['vender_id'] = $POST['vender_id'];
+			$info['consignee_id'] = $POST['consignee_id'];
+			$info['purchaseorder_date'] = date('Y-m-d', strtotime($POST['purchaseorder_date']));
+			$info['purchaseorder_due_date'] = date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
+			$info['mode_of_dispatch'] = $POST['dispatch_doc_no'];
+			$info['payment_terms'] = $POST['payment_terms'];
+			$info['round_off'] = $POST['round_off'];
+			$info['packing'] = $POST['paking'];
+			$info['remark'] = $POST['remark'];
 
 			if ($POST['currency_id'] == $_SESSION['currency_id']) {
-				$info['round_off']			= $POST['round_of'];
-				$info['g_total']			= $POST['g_total'];
-				$info['round_of']			= $POST['round_of'];
-				$info['g_total_conv']		= $POST['g_total'] * $POST['currency_rate'];
-				$info['round_of_conv']		= $POST['round_of'] * $POST['currency_rate'];
+				$info['round_off'] = $POST['round_of'];
+				$info['g_total'] = $POST['g_total'];
+				$info['round_of'] = $POST['round_of'];
+				$info['g_total_conv'] = $POST['g_total'] * $POST['currency_rate'];
+				$info['round_of_conv'] = $POST['round_of'] * $POST['currency_rate'];
 			} else {
-				$info['round_off']			= $POST['round_of'] * $POST['currency_rate'];
-				$info['g_total']			= $POST['g_total'] * $POST['currency_rate'];
-				$info['round_of']			= $POST['round_of'] * $POST['currency_rate'];
-				$info['g_total_conv']		= $POST['g_total'];
-				$info['round_of_conv']		= $POST['round_of'];
+				$info['round_off'] = $POST['round_of'] * $POST['currency_rate'];
+				$info['g_total'] = $POST['g_total'] * $POST['currency_rate'];
+				$info['round_of'] = $POST['round_of'] * $POST['currency_rate'];
+				$info['g_total_conv'] = $POST['g_total'];
+				$info['round_of_conv'] = $POST['round_of'];
 			}
 
-			$info['po_condition']		= $_POST['po_condition'];
-			$info['currency_id']	    = $_POST['currency_id'];
-			$info['godown_id']			= $POST['godown_id'];
-			$info['conversion_rate']	= $_POST['conversion_rate'];
-			$info['vendor_reference']	= $_POST['vendor_reference'];
-			$info['quotation_no']	    = $_POST['quotation_no'];
-			$info['quotation_date']		= date('Y-m-d', strtotime($POST['quotation_date']));
-			$info['po_valid_date']		= date('Y-m-d', strtotime($POST['po_valid_date']));
-			$info['supply_type']		= $_POST['supply_type'];
-			$info['gst_type']			= $_POST['gst_type'];
-			$info['formulaid']      	= $POST['formula_id']; //added by : Dimple
-			$info['delivery_type']      = $POST['delivery_type']; //added by : pathik
-			$info['po_type']     		= $POST['po_type']; //added by : Maulik
-			$info['tc_format'] 			= $POST['tc_format']; //added by : Maulik
-			$info['sales_type']			= $POST['sales_type']; //added by : Maulik
+			$info['po_condition'] = $_POST['po_condition'];
+			$info['currency_id'] = $_POST['currency_id'];
+			$info['godown_id'] = $POST['godown_id'];
+			$info['conversion_rate'] = $_POST['conversion_rate'];
+			$info['vendor_reference'] = $_POST['vendor_reference'];
+			$info['quotation_no'] = $_POST['quotation_no'];
+			$info['quotation_date'] = date('Y-m-d', strtotime($POST['quotation_date']));
+			$info['po_valid_date'] = date('Y-m-d', strtotime($POST['po_valid_date']));
+			$info['supply_type'] = $_POST['supply_type'];
+			$info['gst_type'] = $_POST['gst_type'];
+			$info['formulaid'] = $POST['formula_id']; //added by : Dimple
+			$info['delivery_type'] = $POST['delivery_type']; //added by : pathik
+			$info['po_type'] = $POST['po_type']; //added by : Maulik
+			$info['tc_format'] = $POST['tc_format']; //added by : Maulik
+			$info['sales_type'] = $POST['sales_type']; //added by : Maulik
 
 			$info['currency_enable'] = $POST['currency_enable']; //Added new by Maulik    
-			$info['currency_id']	= (isset($POST['currency_enable'])) ? $POST['currency_id'] : 0; //Added new by Maulik
-			$info['currency_rate']	= (isset($POST['currency_enable'])) ? $POST['currency_rate'] : 1; //Added new by Maulik
-			$info['terms']	= isset($_POST['terms']) ? $_POST['terms'] : ''; //added by hardi
-			$info['shipped_via']	= isset($_POST['shipped_via']) ? $_POST['shipped_via'] : ''; //added by hardi
-			$info['fob']	= isset($_POST['fob']) ? $_POST['fob'] : ''; //added by hardi
+			$info['currency_id'] = (isset($POST['currency_enable'])) ? $POST['currency_id'] : 0; //Added new by Maulik
+			$info['currency_rate'] = (isset($POST['currency_enable'])) ? $POST['currency_rate'] : 1; //Added new by Maulik
+			$info['terms'] = isset($_POST['terms']) ? $_POST['terms'] : ''; //added by hardi
+			$info['shipped_via'] = isset($_POST['shipped_via']) ? $_POST['shipped_via'] : ''; //added by hardi
+			$info['fob'] = isset($_POST['fob']) ? $_POST['fob'] : ''; //added by hardi
 
 			//start by maulik Kapatel
-			$info['con_type']			= $POST['con_type'];
-			$info['con_vender_id']		= $POST['con_vender_id'];
-			$info['con_branch']			= $POST['con_branch'];
-			$info['con_address']		= $POST['con_address'];
-			$info['cons_same_as']		= $POST['same_as'];
+			$info['con_type'] = $POST['con_type'];
+			$info['con_vender_id'] = $POST['con_vender_id'];
+			$info['con_branch'] = $POST['con_branch'];
+			$info['con_address'] = $POST['con_address'];
+			$info['cons_same_as'] = $POST['same_as'];
 			//end By Maulik Kapatel
 
-			$info['po_sub']		= $POST['po_sub'];
-			$info['kind_attn']		= $POST['kind_attn'];
-			$info['quot_type']		= $POST['quot_type'];
-			$info['mdate']		= date("Y-m-d H:i:s");
-			$info['company_id']		= $_SESSION['company_id'];
+			$info['po_sub'] = $POST['po_sub'];
+			$info['kind_attn'] = $POST['kind_attn'];
+			$info['quot_type'] = $POST['quot_type'];
+			$info['mdate'] = date("Y-m-d H:i:s");
+			$info['company_id'] = $_SESSION['company_id'];
 			if (isset($POST['save_print'])) {
-				$info['print_status']	= $POST['print_status'];
+				$info['print_status'] = $POST['print_status'];
 			}
 			//$info['cdate']				= 	date("Y-m-d H:i:s");
-			$info['muserid']				= $_SESSION['user_id'];
+			$info['muserid'] = $_SESSION['user_id'];
 
 
 			$updateid1 = update_record('tbl_purchaseorder', array_merge($info, $curncy_trn), "purchaseorder_id=" . $POST['eid'], $dbcon);
 
 			$deltrmid = delete_record('tbl_purchaseorder_terms_trn', "purchaseorder_id=" . $POST['eid'], $dbcon, $branch_id);
+// Ensure $disp_term_flag is an array
+			$disp_term_flag = isset($_POST['disp_term_flag']) ? $_POST['disp_term_flag'] : [];
 
-			foreach ($POST['tc_id'] as $key => $name) {
-				$infotrm['tc_id']			= $POST['tc_id'][$key];
-				$infotrm['ref_tc_id']		= $POST['ref_tc_id'][$key];
-				$infotrm['tc_priority']		= $POST['tc_priority'][$key];
-				$infotrm['tc_details']		= $POST['tc_details'][$key];
-				$infotrm['purchaseorder_id'] = $POST['eid'];
-				$infotrm['cdate']			= date("Y-m-d H:i:s");
-				$infotrm['user_id']			= $_SESSION['user_id'];
-				$infotrm['company_id']		= $_SESSION['company_id'];
-				if (in_array($POST['tc_id'][$key], $POST['disp_term_flag'])) {
+			foreach ($_POST['tc_id'] as $key => $name) {
+				$infotrm['tc_id'] = $_POST['tc_id'][$key];
+				$infotrm['ref_tc_id'] = $_POST['ref_tc_id'][$key];
+				$infotrm['tc_priority'] = $_POST['tc_priority'][$key];
+				$infotrm['tc_details'] = $_POST['tc_details'][$key];
+				$infotrm['purchaseorder_id'] = $_POST['eid'];
+				$infotrm['cdate'] = date("Y-m-d H:i:s");
+				$infotrm['user_id'] = $_SESSION['user_id'];
+				$infotrm['company_id'] = $_SESSION['company_id'];
+
+				// Check if the current tc_id is in the disp_term_flag array
+				if (in_array($_POST['tc_id'][$key], $disp_term_flag)) {
 					$insertrmid = add_record('tbl_purchaseorder_terms_trn', $infotrm, $dbcon, $branch_id);
 				}
 			}
+
 
 			if (strtolower($POST['delivery_type']) == "po_wise") {
 				$sel_pro_rate = "select * from tbl_purchaseordertrn where purchaseordertrn_status=0 and purchaseorder_id=" . $POST['eid'];
@@ -826,24 +843,24 @@ $dbcon->query($qry);*/
 						} else {
 							$sqty = $sel_pro_rate_rel['product_conv_qty'];
 						}
-						$infodeli['purchaseordertrn_id'] 	= $sel_pro_rate_rel['purchaseordertrn_id'];
-						$infodeli['delivery_date'] 			= date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
-						$infodeli['product_qty'] 			= $sqty;
-						$infodeli['unit_id'] 				= $sel_pro_rate_rel['rate_unit'];
+						$infodeli['purchaseordertrn_id'] = $sel_pro_rate_rel['purchaseordertrn_id'];
+						$infodeli['delivery_date'] = date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
+						$infodeli['product_qty'] = $sqty;
+						$infodeli['unit_id'] = $sel_pro_rate_rel['rate_unit'];
 
-						$infodeli['user_id']				= $_SESSION['user_id'];
-						$infodeli['cdate']					= date("Y-m-d h:i:s");
-						$infodeli['company_id']				= $_SESSION['company_id'];
+						$infodeli['user_id'] = $_SESSION['user_id'];
+						$infodeli['cdate'] = date("Y-m-d h:i:s");
+						$infodeli['company_id'] = $_SESSION['company_id'];
 
 						$inser_del = add_record('tbl_purchaseorder_delivery_date', $infodeli, $dbcon, $branch_id);
 
 						$po_follow_up['po_delivery_date_id'] = $inser_del;
-						$po_follow_up['purchaseorder_id']	 = $POST['eid'];
-						$po_follow_up['folloup_date']	     = date("Y-m-d h:i:s");
-						$po_follow_up['followup_status']	 = 1;
-						$po_follow_up['cdate']				 = date("Y-m-d h:i:s");
-						$po_follow_up['user_id']			 = $_SESSION['user_id'];
-						$po_follow_up['company_id']			 = $_SESSION['company_id'];
+						$po_follow_up['purchaseorder_id'] = $POST['eid'];
+						$po_follow_up['folloup_date'] = date("Y-m-d h:i:s");
+						$po_follow_up['followup_status'] = 1;
+						$po_follow_up['cdate'] = date("Y-m-d h:i:s");
+						$po_follow_up['user_id'] = $_SESSION['user_id'];
+						$po_follow_up['company_id'] = $_SESSION['company_id'];
 
 						$inser_followup = add_record('tbl_purchaseorder_followup', $po_follow_up, $dbcon, $branch_id);
 
@@ -863,8 +880,8 @@ $dbcon->query($qry);*/
 					$infopo['adate']			   = date("Y-m-d H:i:s");					
 					$infopo['po_approval_status']  = 1;//Change Status to Done
 					$updateid12=update_record('tbl_purchaseorder', $infopo,"purchaseorder_id=".$POST['eid'] , $dbcon);
-				
-				
+
+
 			}else{ 
 					$infopo['po_approval_status']			= 0;//Change Status to Done
 					$updateid12=update_record('tbl_purchaseorder', $infopo,"purchaseorder_id=".$POST['eid'] , $dbcon);
@@ -893,8 +910,8 @@ $dbcon->query($qry);*/
 			}
 			echo json_encode($arr);
 		} else if (strtolower($POST['mode']) == "delete") {
-			$info['status']		= 2;
-			$info1['purchaseordertrn_status']		= 2;
+			$info['status'] = 2;
+			$info1['purchaseordertrn_status'] = 2;
 
 			$que_po = "select * from tbl_purchaseordertrn where temptrn_ref_id!='' and purchaseorder_id=" . $POST['eid'];
 			$resi = $dbcon->query($que_po);
@@ -918,33 +935,74 @@ $dbcon->query($qry);*/
 			$arr = get_gst_statecode($dbcon, $POST['cust_id']);
 			echo $arr;
 		} else if (strtolower($POST['mode']) == "get_hsn_code") {
-			$qry = "SELECT hc.hsn_code FROM `product_mst` as pm
-				join mst_hsn_code as hc on pm.product_hsn=hc.hsn_id and hc.hsn_status=0
-				where pm.product_id=" . $POST['product_id'] . " and pm.company_id=" . $_SESSION['company_id'] . "";
-			$row = brp_mysqli_fetch_assoc($dbcon->query($qry));
-			print_r($row['hsn_code']);
-		} else if (strtolower($POST['mode']) == "load_productdata") {
-			//$qry="select popro.*, from tbl_purchaseproduct as porpo left join tbl_company as com on com.company_id=".$_SESSION['company_id']." where product_id=".$POST['eid'];
-			$qry = "select popro.*,com.stateid as com_stateid,ven.stateid as ven_stateid from `product_mst` as popro 
-				left join `tbl_company` as com on com.company_id=" . $_SESSION['company_id'] . " 
-				left join tbl_ledger as ven on ven.l_id=" . $POST['vender_id'] . " where product_id=" . $POST['eid'];
-			$result = $dbcon->query($qry);
 
+			// Sanitize and validate inputs
+			$product_id = isset($POST['product_id']) ? (int) $POST['product_id'] : 0;
+			$company_id = isset($_SESSION['company_id']) ? (int) $_SESSION['company_id'] : 0;
+
+			// Only run query if product_id is valid (non-zero)
+			if ($product_id > 0) {
+
+				$qry = "
+            SELECT hc.hsn_code 
+            FROM product_mst AS pm
+            JOIN mst_hsn_code AS hc 
+                ON pm.product_hsn = hc.hsn_id 
+            WHERE pm.product_id = $product_id 
+              AND pm.company_id = $company_id
+        ";
+
+				$result = $dbcon->query($qry);
+				$row = brp_mysqli_fetch_assoc($result);
+
+				echo isset($row['hsn_code']) ? $row['hsn_code'] : '';
+			} else {
+				// Product ID missing or invalid — don’t query
+				echo ''; // or you can echo '0' or a custom message if needed
+			}
+		} else if (strtolower($POST['mode']) == "load_productdata") {
+
+			$eid = isset($POST['eid']) ? (int) $POST['eid'] : 0;
+			$vender_id = isset($POST['vender_id']) ? (int) $POST['vender_id'] : 0;
+			$company_id = isset($_SESSION['company_id']) ? (int) $_SESSION['company_id'] : 0;
+
+			if (!$eid || !$vender_id || !$company_id) {
+				die(json_encode(['error' => 'Missing required parameters']));
+			}
+
+			$qry = "
+        SELECT popro.*, com.stateid AS com_stateid, ven.stateid AS ven_stateid 
+        FROM product_mst AS popro
+        LEFT JOIN tbl_company AS com ON com.company_id = $company_id
+        LEFT JOIN tbl_ledger AS ven ON ven.l_id = $vender_id
+        WHERE product_id = $eid
+    ";
+			$result = $dbcon->query($qry);
 			$row = brp_mysqli_fetch_assoc($result);
 
 			$today_date = date('Y-m-d');
-			$qry_purchase_card_rate = "select cardtrn.price from tbl_purchasecardtrn as cardtrn 
-				left join tbl_product_party_purchase as pcard on pcard.party_purchase_id=cardtrn.party_purchase_id
-				where pcard.card_status=0 and cardtrn.purchasecardtrn_status=0 and pcard.valid_date>='$today_date' and pcard.effective_date<='$today_date' and pcard.is_aproove=1 and pcard.is_active=0 and cardtrn.product_id=" . $POST['eid'] . " and cardtrn.vendor_id=" . $POST['vender_id'] . "  ORDER BY cardtrn.`purchasecardtrn_id` DESC LIMIT 1";
-			/*$qry_purchase_card_rate="select party_rate from `tbl_product_party_purchase` as popro 
-				where product_party_purchase_status=0 and company_id=".$_SESSION['company_id']." and party_product=".$POST['eid']." and party_id=".$POST['vender_id'];*/
+			$qry_purchase_card_rate = "
+        SELECT cardtrn.price
+        FROM tbl_purchasecardtrn AS cardtrn
+        LEFT JOIN tbl_product_party_purchase AS pcard 
+            ON pcard.party_purchase_id = cardtrn.party_purchase_id
+        WHERE pcard.card_status = 0 
+            AND cardtrn.purchasecardtrn_status = 0 
+            AND pcard.valid_date >= '$today_date'
+            AND pcard.effective_date <= '$today_date'
+            AND pcard.is_aproove = 1
+            AND pcard.is_active = 0
+            AND cardtrn.product_id = $eid
+            AND cardtrn.vendor_id = $vender_id
+        ORDER BY cardtrn.purchasecardtrn_id DESC 
+        LIMIT 1
+    ";
 			$result_purchase_card_rate = $dbcon->query($qry_purchase_card_rate);
 			$row_purchase_card_rate = brp_mysqli_fetch_assoc($result_purchase_card_rate);
-			if (!empty($row_purchase_card_rate['price'])) {
-				$row['prate'] = $row_purchase_card_rate['price'];
-			} else {
-				$row['prate'] = $row['product_purchase_rate'];
-			}
+
+			$row['prate'] = !empty($row_purchase_card_rate['price'])
+				? $row_purchase_card_rate['price']
+				: $row['product_purchase_rate'];
 
 			echo json_encode($row);
 		} else if (strtolower($POST['mode']) == "get_series_no") {
@@ -1169,41 +1227,41 @@ $dbcon->query($qry);*/
 					$curncy_trn['currency_rate'] = 1;
 				}*/
 
-			$info1['product_type']			= $POST['product_type'];
+			$info1['product_type'] = $POST['product_type'];
 			if ($companyConfiguration['direct_po_create'] == 0) {
 				if (empty($POST['edit_id'])) {
-					$info1['product_id']			= $POST['product_id'];
+					$info1['product_id'] = $POST['product_id'];
 				}
 			} else {
-				$info1['product_id']			= $POST['product_id'];
+				$info1['product_id'] = $POST['product_id'];
 			}
-			$info1['cat_id']				= $POST['cat_id'];
-			$info1['description']			= $_POST['product_des'];
+			$info1['cat_id'] = $POST['cat_id'];
+			$info1['description'] = $_POST['product_des'];
 
-			$info1['product_des']			= $_POST['pro_des'];
-			$info1['pro_spe']				= $_POST['pro_spe'];
+			$info1['product_des'] = $_POST['pro_des'];
+			$info1['pro_spe'] = $_POST['pro_spe'];
 
-			$info1['product_hsn_code']		= trim($_POST['product_hsn_code']);
-			$info1['product_qty']			= $POST['product_qty'];
-			$info1['product_conv_qty']		= $POST['product_conv_qty'];
-			$info1['process_id']			= $POST['process_id'];
+			$info1['product_hsn_code'] = trim($_POST['product_hsn_code']);
+			$info1['product_qty'] = $POST['product_qty'];
+			$info1['product_conv_qty'] = $POST['product_conv_qty'];
+			$info1['process_id'] = $POST['process_id'];
 			//$info1['sqr_ft']				= $POST['sqr_ft'];
-			$info1['unit_id']				= $POST['unit_id'];
-			$info1['conv_unit_id']			= $POST['conv_unitid'];
-			$info1['rate_unit']				= $POST['rate_unitid'];
-			$info1['unit_wise']				= $POST['unit_wise'];
-			$info1['product_rate']			= $POST['product_rate'];
-			$info1['product_discount']		= $POST['product_discount'];
-			$info1['discount_per']			= $POST['discount_per'];
-			$info1['formulaid']				= $POST['formulaid'];
-			$info1['product_amount']		= $POST['taxable_value'];
-			$info1['sel_tax']				= $POST['sel_tax'];
-			$info1['formula_tax_id']		= $POST['formula_tax_id'];
-			$info1['total']					= $POST['product_amount'];
-			$info1['purchasecardtrn_id']	= $POST['purchasecardtrn_id'];
-			$info1['product_amount_tax']	= $POST['product_amount_tax'];
-			$info1['user_id']				= $_SESSION['user_id'];
-			$info1['cdate']					= date("Y-m-d h:i:s");
+			$info1['unit_id'] = $POST['unit_id'];
+			$info1['conv_unit_id'] = $POST['conv_unitid'];
+			$info1['rate_unit'] = $POST['rate_unitid'];
+			$info1['unit_wise'] = $POST['unit_wise'];
+			$info1['product_rate'] = $POST['product_rate'];
+			$info1['product_discount'] = $POST['product_discount'];
+			$info1['discount_per'] = $POST['discount_per'];
+			$info1['formulaid'] = $POST['formulaid'];
+			$info1['product_amount'] = $POST['taxable_value'];
+			$info1['sel_tax'] = $POST['sel_tax'];
+			$info1['formula_tax_id'] = $POST['formula_tax_id'];
+			$info1['total'] = $POST['product_amount'];
+			$info1['purchasecardtrn_id'] = $POST['purchasecardtrn_id'];
+			$info1['product_amount_tax'] = $POST['product_amount_tax'];
+			$info1['user_id'] = $_SESSION['user_id'];
+			$info1['cdate'] = date("Y-m-d h:i:s");
 
 			/*Code By Umair:*/
 			/* $info1['currency_id']			= $POST['currency_id'];
@@ -1214,7 +1272,7 @@ $dbcon->query($qry);*/
 				$info1['currency_total']		= sprintf('%0.2f', $currency_total); */
 
 			/*if($POST['vendor_id']!=''){
-					
+
 				}*/
 			//finance texasion update
 			$info1['cgst_tax_per'] = isset($cgst_tax_per) ? $cgst_tax_per : 0;
@@ -1227,38 +1285,38 @@ $dbcon->query($qry);*/
 			$info1['product_tax_cat'] = $sale_gst['tax_cat_id'];
 
 			if ($POST['currency_id'] == $company_state['currency_id']) {
-				$info1['product_amount']		= $POST['taxable_value'];
-				$info1['product_rate']			= $POST['product_rate'];
-				$info1['product_discount']		= $POST['product_discount'];
-				$info1['total']					= $POST['product_amount'];
-				$info1['product_amount_tax']	= $cgst_tax_rate + $sgst_tax_rate + $igst_tax_rate;
+				$info1['product_amount'] = $POST['taxable_value'];
+				$info1['product_rate'] = $POST['product_rate'];
+				$info1['product_discount'] = $POST['product_discount'];
+				$info1['total'] = $POST['product_amount'];
+				$info1['product_amount_tax'] = $cgst_tax_rate + $sgst_tax_rate + $igst_tax_rate;
 				$info1['cgst_tax_rate'] = isset($cgst_tax_rate) ? $cgst_tax_rate : 0;
 				$info1['sgst_tax_rate'] = isset($sgst_tax_rate) ? $sgst_tax_rate : 0;
 				$info1['igst_tax_rate'] = isset($igst_tax_rate) ? $igst_tax_rate : 0;
 
 				$info1['product_currency_rate'] = $POST['product_rate'] * $POST['currency_rate'];
 				$info1['product_currency_amount'] = $POST['taxable_value'] * $POST['currency_rate'];
-				$info1['product_discount_conv']	= $POST['product_discount'] * $POST['currency_rate'];
-				$info1['currency_total']		= $POST['product_amount'] * $POST['currency_rate'];
-				$info1['product_currency_amount_tax']	= $cgst_tax_rate_conv + $sgst_tax_rate_conv + $igst_tax_rate_conv;
+				$info1['product_discount_conv'] = $POST['product_discount'] * $POST['currency_rate'];
+				$info1['currency_total'] = $POST['product_amount'] * $POST['currency_rate'];
+				$info1['product_currency_amount_tax'] = $cgst_tax_rate_conv + $sgst_tax_rate_conv + $igst_tax_rate_conv;
 				$info1['cgst_tax_rate_conv'] = isset($cgst_tax_rate_conv) ? $cgst_tax_rate_conv : 0;
 				$info1['sgst_tax_rate_conv'] = isset($sgst_tax_rate_conv) ? $sgst_tax_rate_conv : 0;
 				$info1['igst_tax_rate_conv'] = isset($igst_tax_rate_conv) ? $igst_tax_rate_conv : 0;
 			} else {
-				$info1['product_rate']			= $POST['product_rate'] * $POST['currency_rate'];
-				$info1['product_discount']		= $POST['product_discount'] * $POST['currency_rate'];
-				$info1['total']					= $POST['product_amount'] * $POST['currency_rate'];
-				$info1['product_amount']		= $POST['taxable_value'] * $POST['currency_rate'];
-				$info1['product_amount_tax']	= $cgst_tax_rate_conv + $sgst_tax_rate_conv + $igst_tax_rate_conv;
+				$info1['product_rate'] = $POST['product_rate'] * $POST['currency_rate'];
+				$info1['product_discount'] = $POST['product_discount'] * $POST['currency_rate'];
+				$info1['total'] = $POST['product_amount'] * $POST['currency_rate'];
+				$info1['product_amount'] = $POST['taxable_value'] * $POST['currency_rate'];
+				$info1['product_amount_tax'] = $cgst_tax_rate_conv + $sgst_tax_rate_conv + $igst_tax_rate_conv;
 				$info1['cgst_tax_rate'] = isset($cgst_tax_rate_conv) ? $cgst_tax_rate_conv : 0;
 				$info1['sgst_tax_rate'] = isset($sgst_tax_rate_conv) ? $sgst_tax_rate_conv : 0;
 				$info1['igst_tax_rate'] = isset($igst_tax_rate_conv) ? $igst_tax_rate_conv : 0;
 
 				$info1['product_currency_rate'] = $POST['product_rate'];
 				$info1['product_currency_amount'] = $POST['taxable_value'];
-				$info1['product_discount_conv']	= $POST['product_discount'];
-				$info1['currency_total']		= $POST['product_amount'];
-				$info1['product_currency_amount_tax']	= $cgst_tax_rate + $sgst_tax_rate + $igst_tax_rate;
+				$info1['product_discount_conv'] = $POST['product_discount'];
+				$info1['currency_total'] = $POST['product_amount'];
+				$info1['product_currency_amount_tax'] = $cgst_tax_rate + $sgst_tax_rate + $igst_tax_rate;
 				$info1['cgst_tax_rate_conv'] = isset($cgst_tax_rate) ? $cgst_tax_rate : 0;
 				$info1['sgst_tax_rate_conv'] = isset($sgst_tax_rate) ? $sgst_tax_rate : 0;
 				$info1['igst_tax_rate_conv'] = isset($igst_tax_rate) ? $igst_tax_rate : 0;
@@ -1281,10 +1339,10 @@ $dbcon->query($qry);*/
 					$table = 'tbl_purchaseordertrn';
 					$tableid = 'purchaseordertrn_id';
 				} else {
-					$info1['purchaseordertrn_status']	= 3;
+					$info1['purchaseordertrn_status'] = 3;
 				}
 			} else {
-				$info1['purchaseordertrn_status']	= 3;
+				$info1['purchaseordertrn_status'] = 3;
 			}
 			//var_dump(array_merge($info1,$curncy_trn));
 			if (empty($POST['edit_id'])) {
@@ -1293,7 +1351,7 @@ $dbcon->query($qry);*/
 				$tax_trn_id = $inserid;
 				//$tx_tran_type_id=$POST['purchaseorder_id'];
 			} else {
-				 $updateid = update_record($table, array_merge($info1, $curncy_trn), $tableid . "=" . $POST['edit_id'], $dbcon, $branch_id);
+				$updateid = update_record($table, array_merge($info1, $curncy_trn), $tableid . "=" . $POST['edit_id'], $dbcon, $branch_id);
 				$updateid = $POST['edit_id'];
 				$tax_trn_id = $POST['edit_id'];
 				//$tx_tran_type_id='0';
@@ -1331,13 +1389,13 @@ $dbcon->query($qry);*/
 			$count_add_tax = get_check_addition_tax($dbcon, $sale_gst['tax_cat_id'], $POST['product_amount'], $inserid, $POST['product_id'], $POST['edit_id'], $POST['branch_id'], 'tbl_purchaseordertrn', $POST['currency_id'], $POST['currency_rate'], $pro_amt);
 
 			/* $formula_tax_id=explode(",",$POST['formula_tax_id']);
-				
+
 				foreach($formula_tax_id as $f)
 				{
 					$tax_value=get_tax_field_tax_id($dbcon,$f,'tax_value');
 					$taxable_value=($info1['product_amount']*$tax_value)/100;
-					
-					
+
+
 					$infot['tx_tax_id']=$f;
 					$infot['tx_tax_value']=$tax_value;
 					$infot['tx_taxable_value']=$taxable_value;
@@ -1348,11 +1406,11 @@ $dbcon->query($qry);*/
 					$infot['user_id']	= $_SESSION['user_id'];
 					$infot['cdate']= date("Y-m-d H:i:s");
 					$infot['company_id']=$_SESSION['company_id'];
-					
+
 					$table1='tbl_tax_trn';$tableid1='tx_id';
-					
+
 					$inserid1=add_record($table1, $infot, $dbcon, $branch_id);
-					
+
 					echo $taxable_value."<br>";
 				} */
 
@@ -1362,14 +1420,14 @@ $dbcon->query($qry);*/
 				$delivery_date = $POST['delivery_date'];
 				$arry_edit = $POST['arry_edit'];
 				for ($i = 0; $i < count($total_delivery_qty); $i++) {
-					$info_dil['purchaseordertrn_id']	= $tax_trn_id;
-					$info_dil['delivery_date']			= date('Y-m-d', strtotime($delivery_date[$i]));
-					$info_dil['product_qty']			= $total_delivery_qty[$i];
-					$info_dil['unit_id']				= $POST['unit_wise'];
+					$info_dil['purchaseordertrn_id'] = $tax_trn_id;
+					$info_dil['delivery_date'] = date('Y-m-d', strtotime($delivery_date[$i]));
+					$info_dil['product_qty'] = $total_delivery_qty[$i];
+					$info_dil['unit_id'] = $POST['unit_wise'];
 
-					$info_dil['user_id']		= $_SESSION['user_id'];
-					$info_dil['cdate']			= date("Y-m-d h:i:s");
-					$info_dil['company_id']		= $_SESSION['company_id'];
+					$info_dil['user_id'] = $_SESSION['user_id'];
+					$info_dil['cdate'] = date("Y-m-d h:i:s");
+					$info_dil['company_id'] = $_SESSION['company_id'];
 					//$info_dil['branch_id']		=$_SESSION['company_id'];
 					//var_dump($info);
 
@@ -1385,12 +1443,12 @@ $dbcon->query($qry);*/
 
 						$po_follow_up['po_delivery_date_id'] = $inserid_k;
 						//$po_follow_up['purchaseorder_id']	 = $POST['eid'];
-						$po_follow_up['folloup_date']	     = date("Y-m-d h:i:s");
-						$po_follow_up['follow_date']			= date('Y-m-d');
-						$po_follow_up['followup_status']	 = 1;
-						$po_follow_up['cdate']				 = date("Y-m-d h:i:s");
-						$po_follow_up['user_id']			 = $_SESSION['user_id'];
-						$po_follow_up['company_id']			 = $_SESSION['company_id'];
+						$po_follow_up['folloup_date'] = date("Y-m-d h:i:s");
+						$po_follow_up['follow_date'] = date('Y-m-d');
+						$po_follow_up['followup_status'] = 1;
+						$po_follow_up['cdate'] = date("Y-m-d h:i:s");
+						$po_follow_up['user_id'] = $_SESSION['user_id'];
+						$po_follow_up['company_id'] = $_SESSION['company_id'];
 
 						$inser_followup = add_record('tbl_purchaseorder_followup', $po_follow_up, $dbcon, $branch_id);
 
@@ -1409,14 +1467,14 @@ $dbcon->query($qry);*/
 				} else {
 					$sqty = $info1['product_conv_qty'];
 				}
-				$info_dil['purchaseordertrn_id']	= $tax_trn_id;
-				$info_dil['delivery_date']			= date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
-				$info_dil['product_qty']			= $sqty;
-				$info_dil['unit_id']				= $info1['rate_unit'];
+				$info_dil['purchaseordertrn_id'] = $tax_trn_id;
+				$info_dil['delivery_date'] = date('Y-m-d', strtotime($POST['purchaseorder_due_date']));
+				$info_dil['product_qty'] = $sqty;
+				$info_dil['unit_id'] = $info1['rate_unit'];
 
-				$info_dil['user_id']		= $_SESSION['user_id'];
-				$info_dil['cdate']			= date("Y-m-d h:i:s");
-				$info_dil['company_id']		= $_SESSION['company_id'];
+				$info_dil['user_id'] = $_SESSION['user_id'];
+				$info_dil['cdate'] = date("Y-m-d h:i:s");
+				$info_dil['company_id'] = $_SESSION['company_id'];
 				//$info_dil['branch_id']		=$_SESSION['company_id'];
 				//var_dump($info);
 				$table_k = 'tbl_purchaseorder_delivery_date';
@@ -1431,12 +1489,12 @@ $dbcon->query($qry);*/
 
 					$po_follow_up['po_delivery_date_id'] = $inserid_k;
 					//$po_follow_up['purchaseorder_id']	 = $POST['eid'];
-					$po_follow_up['folloup_date']	     = date("Y-m-d h:i:s");
-					$po_follow_up['follow_date']		 = date('Y-m-d');
-					$po_follow_up['followup_status']	 = 1;
-					$po_follow_up['cdate']				 = date("Y-m-d h:i:s");
-					$po_follow_up['user_id']			 = $_SESSION['user_id'];
-					$po_follow_up['company_id']			 = $_SESSION['company_id'];
+					$po_follow_up['folloup_date'] = date("Y-m-d h:i:s");
+					$po_follow_up['follow_date'] = date('Y-m-d');
+					$po_follow_up['followup_status'] = 1;
+					$po_follow_up['cdate'] = date("Y-m-d h:i:s");
+					$po_follow_up['user_id'] = $_SESSION['user_id'];
+					$po_follow_up['company_id'] = $_SESSION['company_id'];
 
 					$inser_followup = add_record('tbl_purchaseorder_followup', $po_follow_up, $dbcon, $branch_id);
 
@@ -1571,10 +1629,10 @@ $dbcon->query($qry);*/
 						if ($vrel['currency_id'] != $_SESSION['currency_id']) {
 							echo '<input type="hidden" id="currency_type_response" value="' . $vrel['currency_code'] . '">';
 							// 			$rate_label .= $vrel['currency_symbol'].' :' .$rel['product_rate']."<br>";
-							$rate_label .=  $vrel['currency_symbol'] . ' ' . $rel['product_currency_rate'];
+							$rate_label .= $vrel['currency_symbol'] . ' ' . $rel['product_currency_rate'];
 
 							// $product_amount_label .= $vrel['currency_symbol'].' ' .$rel['product_amount']."<br>";
-							$product_amount_label .=  $vrel['currency_symbol'] . ' ' . $rel['product_currency_amount'];
+							$product_amount_label .= $vrel['currency_symbol'] . ' ' . $rel['product_currency_amount'];
 
 							$product_total_label .= $vrel['currency_symbol'] . ' ' . $rel['currency_total'] . "<br>";
 							//$product_total_label .=  $vrel['currency_symbol'].' ' .$rel['currency_total'];
@@ -1604,14 +1662,16 @@ $dbcon->query($qry);*/
 					if ($rel['unit_id'] != $rel['conv_unit_id']) {
 						$qty_lb = '<strong style="color:green;">Base Qty</strong> :' . number_format($rel['product_qty'], 4, '.', '') . ' ' . $rel['base_unit'] . '<br><strong style="color:green;">Conv. Qty</strong> :' . number_format($rel['product_conv_qty'], 4, '.', '') . ' ' . $rel['conv_unit'];
 					} else {
-						$qty_lb = '<strong style="color:green;">Base Qty</strong> :' . number_format($rel['product_qty'], 4, '.', '') . ' ' . $rel['base_unit'];
+							$qty_lb = '<strong style="color:green;">Base Qty</strong> : ' 
+									. number_format(is_numeric($rel['product_qty']) ? (float)$rel['product_qty'] : 0, 4, '.', '') 
+									. ' ' . htmlspecialchars($rel['base_unit']);
 					}
 
 					$over_tol = '';
 					if ($rel['price'] != '') {
 						if ($rel['product_rate'] > $rel['price']) {
 							$tole_rate = ($rel['price'] * $rel['rate_tolerance']) / 100;
-							$tol_rate  = $rel['price'] + $tole_rate;
+							$tol_rate = $rel['price'] + $tole_rate;
 							if ($rel['product_rate'] > $tol_rate) {
 								$over_tol .= "<strong><span style='color:red'>Over Tolerance Rate</span></strong>";
 							}
@@ -1642,7 +1702,7 @@ $dbcon->query($qry);*/
 					}
 
 					echo '<tr id="fieldtr' . $i . '">
-					<td style="vertical-align:top;"> '.$i.'</td>
+					<td style="vertical-align:top;"> ' . $i . '</td>
 					<td style="vertical-align:top;">
 					' . get_pro_type_name_dynamic($dbcon, $rel['product_type_mst']) . '
 					</td>
@@ -1660,7 +1720,7 @@ $dbcon->query($qry);*/
 					' . $rel['product_hsn_code'] . '
 					</td>
 					<td style="vertical-align:top;" class="text-left">
-					<strong style="color:green">Rate Qty</strong> :' . number_format($sqty, 4, '.', '') . ' ' . $rel['rat_unit'] . '<br>' . $qty_lb . '
+					<strong style="color:green">Rate Qty</strong> :' . number_format((float)$sqty, 4, '.', '') . ' ' . $rel['rat_unit'] . '<br>' . $qty_lb . '
 					</td>					
 					<td style="vertical-align:top;" class="text-left">
 					' . $rate_label . ' <br> ' . $over_tol . '
@@ -1764,9 +1824,9 @@ $dbcon->query($qry);*/
 			//var_dump($r['producthtml']);
 			$r['product_qty_show'] = number_format($r['product_qty'], 4, ".", "");
 			if ($r['pen_qty'] != "") {
-				$r['pending_qty']	= number_format($r['pen_qty'], 4, ".", "");
+				$r['pending_qty'] = number_format($r['pen_qty'], 4, ".", "");
 			} else {
-				$r['pending_qty']	= number_format($r['product_conv_qty'], 4, ".", "");
+				$r['pending_qty'] = number_format($r['product_conv_qty'], 4, ".", "");
 			}
 			$r['product_conv_qty_show'] = number_format($r['product_conv_qty'], 4, ".", "");
 			$r['direct_po_create'] = $companyConfiguration['direct_po_create'];
@@ -1834,12 +1894,12 @@ $dbcon->query($qry);*/
 		{
 			$purchaseorder_id=$POST['purchaseorder_id'];
 			$deleteid=delete_record('tbl_purchasetrntemp',"user_id=".$_SESSION['user_id'], $dbcon);		
-			
+
 			$qry ='INSERT INTO tbl_purchasetrntemp (product_type,product_id, description,product_hsn_code,product_qty,product_rate,unit_id,product_disc,product_amount,product_discount,discount_per,formulaid,tax_name1,tax_amount1,tax_name2,tax_amount2,tax_name3,tax_amount3,total,user_id)
 SELECT product_type,product_id,description,product_hsn_code,product_qty, product_rate,unit_id,product_disc,product_amount,product_discount,discount_per,formulaid,tax_name1,tax_amount1,tax_name2,tax_amount2,tax_name3,tax_amount3,total,user_id FROM tbl_purchaseordertrn where purchaseordertrn_status=0 and purchaseorder_id='.$purchaseorder_id;
-			
+
 			$dbcon->query($qry);
-			
+
 		}*/ else if (strtolower($POST['mode']) == "cancel_po_status") {
 			$row = array();
 			$info['po_type_status'] = $POST['po_status'];
@@ -2061,7 +2121,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				if ($row['price'] != '') {
 					if ($row['product_rate'] > $row['price']) {
 						$tole_rate = ($row['price'] * $row['rate_tolerance']) / 100;
-						$tol_rate  = $row['price'] + $tole_rate;
+						$tol_rate = $row['price'] + $tole_rate;
 						if ($row['product_rate'] > $tol_rate) {
 							$over_tol .= "<strong><span style='color:red'>Over Tolerance Rate</span></strong>";
 						}
@@ -2151,12 +2211,12 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			echo json_encode($output);
 		} else if (strtolower($POST['mode']) == "add_po_apprv_hist") {
 			$companyConfiguration = getCompanyConfiguration($dbcon);
-			$info1['approve_remark']	= $POST['approve_remark'];
-			$info1['approve_status']	= $POST['approve_status'];
-			$info1['purchaseorder_id']	= $POST['purchase_order_id'];
-			$info1['user_id']			= $_SESSION['user_id'];
-			$info1['company_id']		= $_SESSION['company_id'];
-			$info1['cdate']				= date('Y-m-d H:i:s');
+			$info1['approve_remark'] = $POST['approve_remark'];
+			$info1['approve_status'] = $POST['approve_status'];
+			$info1['purchaseorder_id'] = $POST['purchase_order_id'];
+			$info1['user_id'] = $_SESSION['user_id'];
+			$info1['company_id'] = $_SESSION['company_id'];
+			$info1['cdate'] = date('Y-m-d H:i:s');
 
 			$inserid = add_record("tbl_purchaseorder_aprv_log", $info1, $dbcon);
 
@@ -2271,8 +2331,8 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			$rate = get_po_card_rate($dbcon, $_POST['product_id'], $_POST['vender_id'], $_POST['unit_id']);
 
 			$row['rate'] = $rate['price'];
-			$row['purchasecardtrn_id']   = $rate['purchasecardtrn_id'];
-			$row['discount_percentage']  = $rate['discount_percentage'];
+			$row['purchasecardtrn_id'] = $rate['purchasecardtrn_id'];
+			$row['discount_percentage'] = $rate['discount_percentage'];
 			//var_dump($row);
 			echo json_encode($row);
 		}
@@ -2414,7 +2474,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 						$item_code = '';
 					}
 					$done_qty = $rel['done_qty'];
-					$due_qty  = $rel['product_qty'] - $rel['done_qty'];
+					$due_qty = $rel['product_qty'] - $rel['done_qty'];
 					$str .= '
 					<tr>
 					<td><input type="checkbox" name="po_trn_id[]" value="' . $rel['purchaseordertrn_id'] . '"></td>
@@ -2454,27 +2514,27 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 
 			while ($row = mysqli_fetch_array($que_e)) {
 				$due_qty = $row['product_qty'] - $row['done_qty'];
-				$info['short_close_qty'] 	= $due_qty;
+				$info['short_close_qty'] = $due_qty;
 
 				$info['short_close_reason'] = $_POST['close_reson'];
-				$info['shortclose_status']	= 1;
-				$info['cdate']				= date("Y-m-d H:i:s");
-				$info['user_id']			= $_SESSION['user_id'];
-				$info['company_id']			= $_SESSION['company_id'];
+				$info['shortclose_status'] = 1;
+				$info['cdate'] = date("Y-m-d H:i:s");
+				$info['user_id'] = $_SESSION['user_id'];
+				$info['company_id'] = $_SESSION['company_id'];
 				$updateid = update_record("tbl_purchaseordertrn", $info, "purchaseordertrn_id=" . $row['purchaseordertrn_id'], $dbcon);
 
-				$log_entry['po_no'] 			= $row['purchaseorder_no'];
-				$log_entry['po_id'] 			= $row['purchaseorder_id'];
-				$log_entry['po_trn_id'] 		= $row['purchaseordertrn_id'];
-				$log_entry['product_id']		= $row['product_id'];
-				$log_entry['short_close_qty']	= $due_qty;
-				$log_entry['unit_id']			= $row['unit_id'];
+				$log_entry['po_no'] = $row['purchaseorder_no'];
+				$log_entry['po_id'] = $row['purchaseorder_id'];
+				$log_entry['po_trn_id'] = $row['purchaseordertrn_id'];
+				$log_entry['product_id'] = $row['product_id'];
+				$log_entry['short_close_qty'] = $due_qty;
+				$log_entry['unit_id'] = $row['unit_id'];
 				$log_entry['short_close_reason'] = $_POST['close_reson'];
-				$log_entry['date'] 				= date("Y-m-d");
-				$log_entry['cdate'] 			= date("Y-m-d H:i:s");
-				$log_entry['user_id']			= $_SESSION['user_id'];
-				$log_entry['company_id']		= $_SESSION['company_id'];
-				$log_entry['branch_id']			= $row['branch_id'];
+				$log_entry['date'] = date("Y-m-d");
+				$log_entry['cdate'] = date("Y-m-d H:i:s");
+				$log_entry['user_id'] = $_SESSION['user_id'];
+				$log_entry['company_id'] = $_SESSION['company_id'];
+				$log_entry['branch_id'] = $row['branch_id'];
 
 				$inserid = add_record("tbl_log_po_short_close", $log_entry, $dbcon);
 
@@ -2498,26 +2558,26 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 
 			while ($row = mysqli_fetch_array($que_e)) {
 				$due_qty = $row['product_qty'] - $row['done_qty'];
-				$info['short_close_qty'] 	= $due_qty;
+				$info['short_close_qty'] = $due_qty;
 				$info['short_close_reason'] = $_POST['close_reson'];
-				$info['shortclose_status']	= 1;
-				$info['cdate']				= date("Y-m-d H:i:s");
-				$info['user_id']			= $_SESSION['user_id'];
-				$info['company_id']			= $_SESSION['company_id'];
+				$info['shortclose_status'] = 1;
+				$info['cdate'] = date("Y-m-d H:i:s");
+				$info['user_id'] = $_SESSION['user_id'];
+				$info['company_id'] = $_SESSION['company_id'];
 				$updateid = update_record("tbl_purchaseordertrn", $info, "purchaseordertrn_id=" . $row['purchaseordertrn_id'], $dbcon);
 
-				$log_entry['po_no'] 			= $row['purchaseorder_no'];
-				$log_entry['po_id'] 			= $row['purchaseorder_id'];
-				$log_entry['po_trn_id'] 		= $row['purchaseordertrn_id'];
-				$log_entry['product_id']		= $row['product_id'];
-				$log_entry['short_close_qty']	= $due_qty;
-				$log_entry['unit_id']			= $row['unit_id'];
+				$log_entry['po_no'] = $row['purchaseorder_no'];
+				$log_entry['po_id'] = $row['purchaseorder_id'];
+				$log_entry['po_trn_id'] = $row['purchaseordertrn_id'];
+				$log_entry['product_id'] = $row['product_id'];
+				$log_entry['short_close_qty'] = $due_qty;
+				$log_entry['unit_id'] = $row['unit_id'];
 				$log_entry['short_close_reason'] = $_POST['close_reson'];
-				$log_entry['date'] 				= date("Y-m-d");
-				$log_entry['cdate'] 			= date("Y-m-d H:i:s");
-				$log_entry['user_id']			= $_SESSION['user_id'];
-				$log_entry['company_id']		= $_SESSION['company_id'];
-				$log_entry['branch_id'] 		= $row['branch_id'];
+				$log_entry['date'] = date("Y-m-d");
+				$log_entry['cdate'] = date("Y-m-d H:i:s");
+				$log_entry['user_id'] = $_SESSION['user_id'];
+				$log_entry['company_id'] = $_SESSION['company_id'];
+				$log_entry['branch_id'] = $row['branch_id'];
 
 				$inserid = add_record("tbl_log_po_short_close", $log_entry, $dbcon);
 
@@ -2803,28 +2863,28 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 					$curncy_trn['currency_rate'] = 1;
 				}*/
 
-				$info1['product_type']			= $row['product_type'];
-				$info1['product_id']			= $row['product_id'];
-				$info1['cat_id']				= $row['cat_id'];
-				$info1['po_ref_id']				= $row['po_ref'];
-				$info1['temptrn_ref_id']		= $row['temptrn_ref_id'];
-				$info1['description']			= $row['product_des'];
-				$info1['product_des']			= $row['product_des'];
-				$info1['pro_spe']				= $row['pro_spe'];
-				$info1['product_hsn_code']		= $row['product_hsn_code'];
-				$info1['product_qty']			= $row['product_qty'];
-				$info1['product_conv_qty']		= $row['product_conv_qty'];
-				$info1['sqr_ft']				= $row['sqr_ft'];
-				$info1['unit_id']				= $row['unit_id'];
-				$info1['conv_unit_id']			= $row['conv_unit_id'];
-				$info1['rate_unit']				= $row['rate_unit'];
-				$info1['discount_per']			= $row['discount_per'];
-				$info1['formulaid']				= $row['formulaid'];
-				$info1['sel_tax']				= $row['sel_tax'];
-				$info1['formula_tax_id']		= $row['formula_tax_id'];
-				$info1['purchasecardtrn_id']	= $row['purchasecardtrn_id'];
-				$info1['user_id']				= $_SESSION['user_id'];
-				$info1['company_id']			= $_SESSION['company_id'];
+				$info1['product_type'] = $row['product_type'];
+				$info1['product_id'] = $row['product_id'];
+				$info1['cat_id'] = $row['cat_id'];
+				$info1['po_ref_id'] = $row['po_ref'];
+				$info1['temptrn_ref_id'] = $row['temptrn_ref_id'];
+				$info1['description'] = $row['product_des'];
+				$info1['product_des'] = $row['product_des'];
+				$info1['pro_spe'] = $row['pro_spe'];
+				$info1['product_hsn_code'] = $row['product_hsn_code'];
+				$info1['product_qty'] = $row['product_qty'];
+				$info1['product_conv_qty'] = $row['product_conv_qty'];
+				$info1['sqr_ft'] = $row['sqr_ft'];
+				$info1['unit_id'] = $row['unit_id'];
+				$info1['conv_unit_id'] = $row['conv_unit_id'];
+				$info1['rate_unit'] = $row['rate_unit'];
+				$info1['discount_per'] = $row['discount_per'];
+				$info1['formulaid'] = $row['formulaid'];
+				$info1['sel_tax'] = $row['sel_tax'];
+				$info1['formula_tax_id'] = $row['formula_tax_id'];
+				$info1['purchasecardtrn_id'] = $row['purchasecardtrn_id'];
+				$info1['user_id'] = $_SESSION['user_id'];
+				$info1['company_id'] = $_SESSION['company_id'];
 
 				//comment by maulik 
 				/* $info1['currency_id']			= $row['currency_id'];
@@ -2843,21 +2903,21 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				$info1['sgst_tax_rate'] = isset($sgst_tax_rate) ? $sgst_tax_rate : 0;
 				$info1['igst_tax_rate'] = isset($igst_tax_rate) ? $igst_tax_rate : 0;
 
-				$info1['sgst_tax_rate_conv']	= isset($cgst_tax_rate_conv) ? $cgst_tax_rate_conv : 0;
-				$info1['cgst_tax_rate_conv']	= isset($sgst_tax_rate_conv) ? $sgst_tax_rate_conv : 0;
-				$info1['igst_tax_rate_conv']	= isset($igst_tax_rate_conv) ? $igst_tax_rate_conv : 0;
+				$info1['sgst_tax_rate_conv'] = isset($cgst_tax_rate_conv) ? $cgst_tax_rate_conv : 0;
+				$info1['cgst_tax_rate_conv'] = isset($sgst_tax_rate_conv) ? $sgst_tax_rate_conv : 0;
+				$info1['igst_tax_rate_conv'] = isset($igst_tax_rate_conv) ? $igst_tax_rate_conv : 0;
 
-				$info1['product_amount_tax']	= $row['product_amount_tax'];
-				$info1['product_rate']			= $row['product_rate'];
-				$info1['product_discount']		= $row['product_discount'];
-				$info1['product_amount']		= $row['product_amount'];
-				$info1['total']					= $row['total'];
+				$info1['product_amount_tax'] = $row['product_amount_tax'];
+				$info1['product_rate'] = $row['product_rate'];
+				$info1['product_discount'] = $row['product_discount'];
+				$info1['product_amount'] = $row['product_amount'];
+				$info1['total'] = $row['total'];
 
-				$info1['product_currency_rate']	= $row['product_currency_rate'];
+				$info1['product_currency_rate'] = $row['product_currency_rate'];
 				$info1['product_currency_amount'] = $row['product_currency_amount'];
 				$info1['product_currency_amount_tax'] = $row['product_currency_amount_tax'];
-				$info1['product_discount_conv']	= $row['product_discount_conv'];
-				$info1['currency_total']		= $row['cutotal'];
+				$info1['product_discount_conv'] = $row['product_discount_conv'];
+				$info1['currency_total'] = $row['cutotal'];
 
 
 				$info1['product_tax_cat'] = $sale_gst['tax_cat_id'];
@@ -3119,91 +3179,86 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			$row['resp'] = $resp;
 
 			echo json_encode($row);
-		} else if (strtolower($POST['mode']) == "update_total") {
-
-
-			//update total , net total , general books entry at edit time start - dhaval 
-			$bill_sundry_tax = array_combine($POST['bill_sundry_tax'], $POST['bill_sundry_tax1']);
-			/*var_dump($POST['invoice_id']);
-			var_dump($POST['currency_id']);
-			var_dump($POST['currency_rate']);
-			var_dump($_SESSION['currency_id']);
-			var_dump($POST['bill_sundry_tax']);*/
-			if ($POST['invoice_id'] > 0) {
-				if ($POST['currency_id'] == $_SESSION['currency_id']) {
-					$update_invoice['g_total'] = $POST['g_total'];
-					// $update_invoice['basic_total'] = $POST['basic_total'];
-					$update_invoice['g_total_conv'] = $POST['g_total'] * $POST['currency_rate'];
-					// $update_invoice['basic_total_conv'] = $POST['basic_total']*$POST['currency_rate'];
-				} else {
-					$update_invoice['g_total'] = $POST['g_total'] * $POST['currency_rate'];
-					// $update_invoice['basic_total'] = $POST['basic_total']*$POST['currency_rate'];
-					$update_invoice['g_total_conv'] = $POST['g_total'];
-					// $update_invoice['basic_total_conv'] = $POST['basic_total'];
-				}
-				/*var_dump($update_invoice);*/
-				update_record("tbl_purchaseorder", $update_invoice, " purchaseorder_id=" . $POST['invoice_id'], $dbcon);
-
-				//update bill sundry in bill sundry table and general table 
-				/*var_dump($bill_sundry_tax);*/
-				foreach ($bill_sundry_tax as $bill_sundry_tax_id => $bill_sundry_tax_amount) {
-
-					if ($POST['currency_id'] == $_SESSION['currency_id']) {
-						$info_sundry_tax['sundry_amount'] = $bill_sundry_tax_amount;
-						$info_sundry_tax['sundry_amount_conv'] = $bill_sundry_tax_amount * $POST['currency_rate'];
-					} else {
-						$info_sundry_tax['sundry_amount'] = $bill_sundry_tax_amount * $POST['currency_rate'];
-						$info_sundry_tax['sundry_amount_conv'] = $bill_sundry_tax_amount;
-					};
-					$info_sundry_tax['cdate']	= date("Y-m-d H:i:s");
-					$info_sundry_tax['user_id']	= $_SESSION['user_id'];
-					$info_sundry_tax['company_id']	= $_SESSION['company_id'];
-
-					update_record("tbl_bill_sundry_transaction", $info_sundry_tax, " sundry_ledger_id=" . $bill_sundry_tax_id . " and sundry_voucher_table='tbl_purchaseorder' and sundry_voucher_id='$POST[invoice_id]'", $dbcon);
-
-					/* $info_general_sundry['amount'] = $bill_sundry_tax_amount;
-					$info_general_sundry['cdate']	= date("Y-m-d H:i:s");
-			        $info_general_sundry['user_id']	= $_SESSION['user_id'];
-			        $info_general_sundry['company_id']	= $_SESSION['company_id'];
-					
-			        update_record("tbl_general_book",$info_general_sundry," ledger_id=".$bill_sundry_tax_id." and table_name='tbl_bill_sundry_transaction'" ,$dbcon); */
-					//add_general_book_entry($dbcon,"tbl_bill_sundry_transaction",$sundry_tax_insert,1,$bill_sundry_tax_id,$bill_sundry_tax_amount,'',$POST['invoice_date'],'',$curncy_trn);
-
-					//echo $bill_sundry_tax_id.'-'.$bill_sundry_tax_amount."<br>";
-				}
-
-				/* $dsun = $dbcon->query("select * from tbl_bill_sundry_transaction where sundry_voucher_id='$POST[invoice_id]' and isdelete='0'");
-			    while($r=brp_mysqli_fetch_array($dsun))
-				{
-					
-					$sundry_id = $r['sundry_id'];
-					
-					$sundry['sundry_amount'] = $r['sundry_amount'];
-					$sundry['cdate']			= date("Y-m-d H:i:s A");
-					$sundry['user_id']			= $_SESSION['user_id'];
-					$sundry['company_id']		= $_SESSION['company_id'];					
-					
-					update_record("tbl_bill_sundry_transaction",$sundry," sundry_id=".$sundry_id." and sundry_voucher_table='tbl_invoice'" ,$dbcon);
-									
-					$sundry_general['amount'] = $r['sundry_amount'];
-					$sundry_general['entry_type'] = 1;
-					
-					$sundry_general['branch_id'] = $POST['branch_id'];
-					$sundry_general['cdate']			= date("Y-m-d H:i:s A");
-					$sundry_general['user_id']			= $_SESSION['user_id'];
-					$sundry_general['company_id']		= $_SESSION['company_id'];
-					
-					
-					update_record("tbl_general_book", $sundry_general," table_id=".$sundry_id." and table_name='tbl_bill_sundry_transaction'" ,$dbcon);
-					
-				
-				} */
+		} else if (strtolower($_POST['mode']) == "update_total") {
+			// Ensure required fields exist and are valid
+			if (
+				!isset($_POST['invoice_id'], $_POST['currency_id'], $_POST['currency_rate'], $_POST['g_total']) ||
+				!is_numeric($_POST['invoice_id']) ||
+				!is_numeric($_POST['currency_id']) ||
+				!is_numeric($_POST['currency_rate']) ||
+				!is_numeric($_POST['g_total'])
+			) {
+				echo json_encode(["error" => "Invalid or missing input data"]);
+				exit;
 			}
-			//update total , net total , general books entry at edit time end - dhaval 
 
-			//print_r($bill_sundry_tax);
-			//print_r($bill_sundry_addon);
+			// Initialize $bill_sundry_tax safely
+			$bill_sundry_tax = [];
+			if (isset($_POST['bill_sundry_tax']) && isset($_POST['bill_sundry_tax1'])) {
+				$bill_sundry_tax = array_combine($_POST['bill_sundry_tax'], $_POST['bill_sundry_tax1']);
+			}
 
+			// Update invoice totals
+			if ($_POST['invoice_id'] > 0) {
+				$update_invoice = [];
+
+				if ($_POST['currency_id'] == $_SESSION['currency_id']) {
+					$update_invoice['g_total'] = $_POST['g_total'];
+					$update_invoice['g_total_conv'] = $_POST['g_total'] * $_POST['currency_rate'];
+				} else {
+					$update_invoice['g_total'] = $_POST['g_total'] * $_POST['currency_rate'];
+					$update_invoice['g_total_conv'] = $_POST['g_total'];
+				}
+
+				// Update the invoice record
+				$update_result = update_record(
+					"tbl_purchaseorder",
+					$update_invoice,
+					"purchaseorder_id=" . (int) $_POST['invoice_id'],
+					$dbcon
+				);
+
+				if (!$update_result) {
+					echo json_encode(["error" => "Failed to update invoice"]);
+					exit;
+				}
+
+				// Update bill sundry transactions
+				foreach ($bill_sundry_tax as $bill_sundry_tax_id => $bill_sundry_tax_amount) {
+					$info_sundry_tax = [];
+
+					if ($_POST['currency_id'] == $_SESSION['currency_id']) {
+						$info_sundry_tax['sundry_amount'] = $bill_sundry_tax_amount;
+						$info_sundry_tax['sundry_amount_conv'] = $bill_sundry_tax_amount * $_POST['currency_rate'];
+					} else {
+						$info_sundry_tax['sundry_amount'] = $bill_sundry_tax_amount * $_POST['currency_rate'];
+						$info_sundry_tax['sundry_amount_conv'] = $bill_sundry_tax_amount;
+					}
+
+					$info_sundry_tax['cdate'] = date("Y-m-d H:i:s");
+					$info_sundry_tax['user_id'] = $_SESSION['user_id'];
+					$info_sundry_tax['company_id'] = $_SESSION['company_id'];
+
+					// Update the sundry transaction record
+					$sundry_update_result = update_record(
+						"tbl_bill_sundry_transaction",
+						$info_sundry_tax,
+						"sundry_ledger_id=" . (int) $bill_sundry_tax_id .
+						" AND sundry_voucher_table='tbl_purchaseorder' " .
+						"AND sundry_voucher_id='" . (int) $_POST['invoice_id'] . "'",
+						$dbcon
+					);
+
+					if (!$sundry_update_result) {
+						error_log("Failed to update sundry transaction for ID: $bill_sundry_tax_id");
+					}
+				}
+			} else {
+				echo json_encode(["error" => "Invalid invoice ID"]);
+				exit;
+			}
+
+			echo json_encode(["success" => true]);
 		} else if (strtolower($POST['mode']) == "get_ledger_details") {
 			$ledger_id = $POST['ledger_id'];
 
@@ -3229,9 +3284,9 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			$q_tax = $dbcon->query("select tax_gst from tbl_tax_category where tax_cat_id=" . $resp['sundry_gst'] . " ");
 			$resp_tax = $q_tax->fetch_assoc();
 
-			$basic_total 	= $POST['basic_amount'];
-			$netamount 		= $POST['netamount'];
-			$taxableamount 	= $POST['taxableamount'];
+			$basic_total = $POST['basic_amount'];
+			$netamount = $POST['netamount'];
+			$taxableamount = $POST['taxableamount'];
 
 			$default_amount = $POST['default_amount'];
 
@@ -3266,13 +3321,13 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				if ($resp['sundry_amount_of'] == 1) {
 					if ($resp['sundry_calculate_on'] == 1) {
 						$finalNetAmount = $netamount + $default_amount;
-						$pervalue =  $default_amount;
+						$pervalue = $default_amount;
 					} else if ($resp['sundry_calculate_on'] == 2) {
 						$finalNetAmount = $basic_total + $default_amount;
-						$pervalue =  $default_amount;
+						$pervalue = $default_amount;
 					} else if ($resp['sundry_calculate_on'] == 3) {
 						$finalNetAmount = $basic_total + $default_amount;
-						$pervalue =  $default_amount;
+						$pervalue = $default_amount;
 					}
 					//$finalNetAmount = $netamount + $default_amount;
 
@@ -3294,28 +3349,28 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				if ($resp['sundry_amount_of'] == 1) {
 					if ($resp['sundry_calculate_on'] == 1) {
 						$finalNetAmount = $netamount - $default_amount;
-						$pervalue =  -$default_amount;
+						$pervalue = -$default_amount;
 					} else if ($resp['sundry_calculate_on'] == 2) {
 						$finalNetAmount = $basic_total - $default_amount;
-						$pervalue =  -$default_amount;
+						$pervalue = -$default_amount;
 					} else if ($resp['sundry_calculate_on'] == 3) {
 						//$finalNetAmount = (($basic_total + $taxableamount) - $default_amount) + $totalsundryexist;
 						$finalNetAmount = $basic_total - $default_amount;
-						$pervalue =  -$default_amount;
+						$pervalue = -$default_amount;
 					}
 					//$finalNetAmount = $netamount - $default_amount;
 				} else if ($resp['sundry_amount_of'] == 2) {
 					if ($resp['sundry_calculate_on'] == 1) {
 						$finalNetAmount = $netamount - (($netamount * $default_amount) / 100);
-						$pervalue = - ($netamount * $default_amount) / 100;
+						$pervalue = -($netamount * $default_amount) / 100;
 					} else if ($resp['sundry_calculate_on'] == 2) {
 						//$finalNetAmount = (($basic_total + $taxableamount) - (($basic_total * $default_amount)/100)) + $totalsundryexist;
 						$finalNetAmount = $basic_total - (($basic_total * $default_amount) / 100);
-						$pervalue = - ($basic_total * $default_amount) / 100;
+						$pervalue = -($basic_total * $default_amount) / 100;
 					} else if ($resp['sundry_calculate_on'] == 3) {
 						//$finalNetAmount = (($basic_total + $taxableamount) + ((($basic_total + $taxableamount) * $default_amount)/100)) + $totalsundryexist;
 						$finalNetAmount = $basic_total - (($basic_total * $default_amount) / 100);
-						$pervalue = - ($basic_total * $default_amount) / 100;
+						$pervalue = -($basic_total * $default_amount) / 100;
 					}
 					//$finalNetAmount = $netamount - (($netamount * $default_amount)/100);
 				}
@@ -3329,12 +3384,12 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				$info_sundry_addon['sundry_voucher_id'] = $invoice_id;
 				$info_sundry_addon['sundry_voucher_type'] = PO_VOUCHER;
 				$info_sundry_addon['sundry_voucher_table'] = 'tbl_purchaseorder';
-				$info_sundry_addon['cdate']	= date("Y-m-d H:i:s");
-				$info_sundry_addon['user_id']	= $_SESSION['user_id'];
-				$info_sundry_addon['company_id']	= $_SESSION['company_id'];
+				$info_sundry_addon['cdate'] = date("Y-m-d H:i:s");
+				$info_sundry_addon['user_id'] = $_SESSION['user_id'];
+				$info_sundry_addon['company_id'] = $_SESSION['company_id'];
 
 				//print_r(array_merge($info_sundry_addon,$curncy_trn));
-				$info_sundry_addon['sundry_gst_per']	= $taxgst;
+				$info_sundry_addon['sundry_gst_per'] = $taxgst;
 				//$info_sundry_addon['sundry_gst_amount']	= $taxvl;
 
 				if (isset($POST['currency_enable'])) {
@@ -3348,12 +3403,12 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 
 				if ($POST['currency_id'] == $_SESSION['currency_id']) {
 					$info_sundry_addon['sundry_amount'] = $pervalue;
-					$info_sundry_addon['sundry_gst_amount']	= $taxvl;
+					$info_sundry_addon['sundry_gst_amount'] = $taxvl;
 					$info_sundry_addon['sundry_amount_conv'] = $pervalue * $POST['currency_rate'];
 					$info_sundry_addon['sundry_gst_amount_conv'] = $taxvl * $POST['currency_rate'];
 				} else {
 					$info_sundry_addon['sundry_amount'] = $pervalue * $POST['currency_rate'];
-					$info_sundry_addon['sundry_gst_amount']	= $taxvl * $POST['currency_rate'];
+					$info_sundry_addon['sundry_gst_amount'] = $taxvl * $POST['currency_rate'];
 					$info_sundry_addon['sundry_amount_conv'] = $pervalue;
 					$info_sundry_addon['sundry_gst_amount_conv'] = $taxvl;
 				}
@@ -3361,7 +3416,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				$sundry_addon_insert = add_record('tbl_bill_sundry_transaction', array_merge($info_sundry_addon, $curncy_trn), $dbcon);
 
 				/* //general bbok entry 
-				
+
 				$info_general_addon['ledger_id']=$POST['sundry_ledger_id'];
 				$info_general_addon['amount']=$pervalue;
 				$info_general_addon['table_id']=$sundry_addon_insert;
@@ -3371,7 +3426,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 				$info_general_addon['cdate']	= date("Y-m-d H:i:s");
 				$info_general_addon['user_id']	= $_SESSION['user_id'];
 				$info_general_addon['company_id']	= $_SESSION['company_id'];
-				
+
 				add_record('tbl_general_book',array_merge($info_general_addon,$curncy_trn), $dbcon); */
 			}
 			//if invoice is edit time insert data in database end - dhaval
@@ -3477,11 +3532,11 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			$product = "select pro.product_name from tbl_purchaseordertrn as trn 
         	left join product_mst as pro on pro.product_id=trn.product_id
         	where trn.purchaseordertrn_id=" . $POST['po_trn_id'];
-			$pro_e   = $dbcon->query($product);
-			$pro_r   = mysqli_fetch_array($pro_e);
+			$pro_e = $dbcon->query($product);
+			$pro_r = mysqli_fetch_array($pro_e);
 
 			$delivery = "select * from tbl_purchaseorder_delivery_date where po_delivery_date_status=0 and purchaseordertrn_id=" . $POST['po_trn_id'];
-			$delivery_e   = $dbcon->query($delivery);
+			$delivery_e = $dbcon->query($delivery);
 			$str = '';
 			$str .= '<table cellspacing="10" style="border-spacing:10px;" class="display table table12 table-bordered table-striped">
         	<tr>
@@ -3491,7 +3546,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
         	</tr>';
 			$i = 1;
 			if (mysqli_num_rows($delivery_e) > 0) {
-				while ($delivery_r   = mysqli_fetch_array($delivery_e)) {
+				while ($delivery_r = mysqli_fetch_array($delivery_e)) {
 					$str .= '<tr>
         			<td>' . $i . '</td>
         			<td>' . date('d-m-Y', strtotime($delivery_r['delivery_date'])) . '</td>
@@ -3516,21 +3571,40 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			$resp = getpaymentterms($dbcon, $rel1['pay_terms']);
 			$row['resp_html'] = $resp;
 			echo json_encode($row);
-		} else if (strtolower($POST['mode']) == "load_transportation") {
+		} else if (strtolower($_POST['mode']) == "load_transportation") {
 			$vendor_id = $_POST['vendor_id'];
 			$id = $_POST['trans_id'];
-			$q = "select trp.id,trp.transportation_name from tbl_cust_tranportation as trn 
-		    left join transportation_details as trp on trp.id=trn.transportation_id
-		    where cust_transportation_status='0' and cust_id=" . $vendor_id . " order by cust_transportation_id";
-			$r = $dbcon->query($q);
-			$cnt = brp_mysqli_num_rows($r);
+
+			// Prepare the SQL query using a prepared statement
+			$q = "SELECT trp.id, trp.transportation_name
+          FROM tbl_cust_tranportation AS trn
+          LEFT JOIN transportation_details AS trp ON trp.id = trn.transportation_id
+          WHERE cust_transportation_status = '0' AND cust_id = ?
+          ORDER BY cust_transportation_id";
+
+			// Prepare the statement
+			$stmt = $dbcon->prepare($q);
+			if (!$stmt) {
+				die("Prepare failed: " . $dbcon->error);
+			}
+
+			// Bind parameters and execute
+			$stmt->bind_param("i", $vendor_id);
+			$stmt->execute();
+			$r = $stmt->get_result();
+			$cnt = $r->num_rows;
+
 			if ($vendor_id != '' && $cnt > 0) {
 				$resp = get_trasports_by_cust($dbcon, $vendor_id, $id);
 			} else {
 				$resp = get_trasports($dbcon, $id);
 			}
+
 			$row['resp_html'] = $resp;
 			echo json_encode($row);
+
+			// Close the statement
+			$stmt->close();
 		} else if (strtolower($POST['mode']) == "vender_address") {
 			$vendor_id = $_POST['vender'];
 			$query = "select m_address,ci.city_name,st.state_name,con.country_name from tbl_ledger as l
@@ -3550,10 +3624,10 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 		} else if (strtolower($POST['mode']) == "delete_po_approval") {
 			$companyConfiguration = getCompanyConfiguration($dbcon);
 			$aprv_id = $POST['aprv_id'];
-			$tbl     = strtolower($POST['tbl']);
-			$tbl_id  = strtolower($POST['tbl_id']);
-			$status  = strtolower($POST['status']);
-			$info[$status]  = 2;
+			$tbl = strtolower($POST['tbl']);
+			$tbl_id = strtolower($POST['tbl_id']);
+			$status = strtolower($POST['status']);
+			$info[$status] = 2;
 
 			$updateid = update_record($tbl, $info, "$tbl_id=" . $aprv_id, $dbcon);
 
@@ -3608,10 +3682,10 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			var_dump(123);
 			//var_dump($_FILES);
 			var_dump($POST);
-			$info1['attach_doc_name']	= $POST['doc_name'];
-			$info1['attach_file']		= upload_attch_file($_FILES);
-			$info1['user_id']			= $_SESSION['user_id'];
-			$info1['company_id']		= $_SESSION['company_id'];
+			$info1['attach_doc_name'] = $POST['doc_name'];
+			$info1['attach_file'] = upload_attch_file($_FILES);
+			$info1['user_id'] = $_SESSION['user_id'];
+			$info1['company_id'] = $_SESSION['company_id'];
 
 			$table = 'tbl_po_attch';
 			$tableid = 'so_attach_id';
@@ -3687,7 +3761,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			echo json_encode($row);
 		} else if (brp_strtolower($POST['mode'] == 'get_terms_detail')) {
 			$query = 'select * from tbl_terms_condition where tc_id=' . $POST['tc_id'];
-			$result  = $dbcon->query($query);
+			$result = $dbcon->query($query);
 			$row = brp_mysqli_fetch_array($result);
 
 			if (empty($row['tc_details'])) {
@@ -3695,7 +3769,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 			}
 			echo json_encode($row);
 		} else if (brp_strtolower($POST['mode'] == 'send_mail_po')) {
-			
+
 			$email_page_path = $_POST['email_page_path'];
 			include('../../../print/view/' . $email_page_path . '.php');
 
@@ -3707,10 +3781,10 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 
 			$po_id = $_POST['email_po_id'];
 			$purchaseorder_id = $dbcon->real_escape_string($po_id);
-			
+
 			$query = "select po.* from tbl_purchaseorder as po where po.purchaseorder_id=$purchaseorder_id";
 			$rel = mysqli_fetch_assoc($dbcon->query($query));
-			
+
 
 			$content = '<!DOCTYPE html>
 			<html lang="en">
@@ -3783,7 +3857,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 
 			$save_file = 'Yes';
 			$file_name = po_print($dbcon, $po_id, $save_file);
-			$attachment_path  = DOMAIN . 'upload/mail_attach/po/' . $file_name;
+			$attachment_path = DOMAIN . 'upload/mail_attach/po/' . $file_name;
 			$res = common_print_send_email($to, $user, $quot_subject, $quot_header, $attachment_path, $file_name, $ccemails, $bccemail);
 			unlink($attachment_path);
 
@@ -3804,7 +3878,7 @@ function upload_attch_file($FILES)
 		$tmp_name = $FILES["doc_attach"]["tmp_name"];
 		move_uploaded_file($tmp_name, PO_ATTACH_UPING . $File);
 
-		return  $File;
+		return $File;
 	}
 }
 
@@ -3828,13 +3902,13 @@ function get_purchaseorder($dbcon, $purchaseorder_id)
 		$order_date = date('d-m-Y', strtotime($rel['order_date']));
 	}
 
-	$cons_company_name	= $rel['company_name'];
-	$cons_cust_address	= $rel['cust_address'];
-	$cons_gst_no		= $rel['gst_no'];
-	$cons_state_name	= $rel['state_name'];
+	$cons_company_name = $rel['company_name'];
+	$cons_cust_address = $rel['cust_address'];
+	$cons_gst_no = $rel['gst_no'];
+	$cons_state_name = $rel['state_name'];
 	$cons_gst_state_code = $rel['gst_state_code'];
-	$cons_city_name		= $rel['city_name'];
-	$cons_country_name	= $rel['country_name'];
+	$cons_city_name = $rel['city_name'];
+	$cons_country_name = $rel['country_name'];
 
 	if (!empty($rel['consignee_id'])) {
 		$consignee = "select * from tbl_custmer_consignee as cust 
@@ -4055,7 +4129,8 @@ function get_purchaseorder($dbcon, $purchaseorder_id)
 		$i++;
 		$totalqty = $totalqty + $row['product_qty'] - $charges_qty;
 		$totalsqr = $totalsqr + $row['sqr_ft'] - $charges_qty;
-		$total_product_amount = 0; $totaltaxable =0;
+		$total_product_amount = 0;
+		$totaltaxable = 0;
 		$total_product_amount += $row['product_amount'];
 		$totaltaxable += $taxable_amt;
 		$total += $row['total'];
@@ -4192,7 +4267,13 @@ function get_purchaseorder($dbcon, $purchaseorder_id)
 }
 function get_product_tax($dbcon, $product_amount, $formulaid)
 {
-	$qry = "SELECT formula.*,tax.*,formula.tax_id as ftax FROM `formula_mst` as formula inner join tbl_tax as tax on find_in_set(tax.tax_id,formula.tax_id) WHERE formulaid=" . $formulaid . " order by tax_value desc";
+	$formulaid = isset($formulaid) ? (int)$formulaid : 0;
+
+	$qry = "SELECT formula.*, tax.*, formula.tax_id as ftax
+        FROM `formula_mst` as formula
+        INNER JOIN tbl_tax as tax ON find_in_set(tax.tax_id, formula.tax_id)
+        WHERE formulaid=" . $formulaid . "
+        ORDER BY tax_value DESC";
 	$row = $dbcon->query($qry);
 	$rate_total = $total = $product_amount;
 	$i = 1;
@@ -4237,10 +4318,10 @@ function check_po_rates_status($dbcon, $purchaseorder_id)
 				$que_po="select * from tbl_purchaseordertrn where temptrn_ref_id!=0 and purchaseorder_id=".$inserpoid;
 				$resi=$dbcon->query($que_po);
 				while($re_po=brp_mysqli_fetch_assoc($resi)){
-					
+
 					$query_p="select sum(product_qty) as used_qty from tbl_purchaseordertrn where purchaseordertrn_status=0 and temptrn_ref_id=".$re_po['temptrn_ref_id'];
 					$rels=brp_mysqli_fetch_assoc($dbcon->query($query_p));
-					
+
 					$query_s="select product_qty from tbl_purchasetrntemp where purchaseordertrn_status=0 and purchaseordertrn_id=".$re_po['temptrn_ref_id'];
 					$relp=brp_mysqli_fetch_assoc($dbcon->query($query_s));
 					$pending_qty=$relp['product_qty']-$rels['used_qty'];
@@ -4256,7 +4337,7 @@ function check_po_rates_status($dbcon, $purchaseorder_id)
  */
 /*function get_so_no_po_ref($dbcon,$rp_id) {
 
-				
+
 				$so = "select rp_id,perent_id,sales_order_trn_id from tbl_request_product where rp_id=".$rp_id;	
 				var_dump($so);
 				$so_e=$dbcon->query($so);

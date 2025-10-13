@@ -1315,19 +1315,24 @@ if (strtolower($POST['mode']) == "fetch") {
 	}
 
 	echo "1";
-} else if (strtolower($POST['mode']) == "load_bank_detail") {
+} else if (strtolower($_POST['mode']) == "load_bank_detail") {
+   if (strtolower($_POST['form_mode']) == "edit") {
+    $query = "SELECT mst.*, b.bank_name
+              FROM tbl_customer_bank AS mst
+              LEFT JOIN bank_mst AS b ON b.bankid = mst.b_name
+              WHERE mst.b_cust = " . (int)$_POST['cust_id'] . "
+              ORDER BY mst.b_id DESC";
+} else {
+    $query = "SELECT mst.*, b.bank_name
+              FROM tbl_customer_bank AS mst
+              LEFT JOIN bank_mst AS b ON b.bankid = mst.b_name
+              WHERE mst.b_cust = '0'
+              ORDER BY mst.b_id DESC";
+}
+$result = $dbcon->query($query);
 
-	if (strtolower($POST['form_mode']) == "edit") {
-		$query = "select mst.*,b.bank_name from tbl_customer_bank as mst 
-				left join bank_mst as b on b.bankid=mst.b_name
-				where mst.b_cust=" . $_POST['cust_id'] . " order by b_id Desc";
-	} else {
-		$query = "select mst.*,b.bank_name from tbl_customer_bank as mst 
-				left join bank_mst as b on b.bankid=mst.b_name
-				where mst.b_cust='0' order by b_id Desc";
-	}
 
-	$result = $dbcon->query($query);
+
 	echo '<div class="clearfix"></div>
 					
 					<div class="col-md-12 col-xs-12" style="overflow-x: scroll;">

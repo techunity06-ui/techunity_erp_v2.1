@@ -7138,24 +7138,52 @@ function total_multibranch($dbcon, $ledger_id)
 }
 
 //Added by dhruv for TDS Tax category
-function get_tds_tax_payee($dbcon, $temp_id, $text, $edit_id = '')
-{
-    $qry = "SELECT ttc.tds_cat_detail_id, cm.common_mst_name, ttc.tds_thresold_limit,ttc.tds_with_pan,ttc.tds_without_pan,ttc.tds_surcharge FROM tbl_tds_tax_category_detail ttc join tbl_common_mst as cm on cm.common_mst_id=ttc.tds_payee where ttc.isdelete=0 and ttc.tds_cat_id=$temp_id";
+function get_tds_tax_payee($dbcon, $temp_id, $text, $edit_id = '') {
+    // Prepare the SQL query
+    $qry = "SELECT
+                ttc.tds_cat_detail_id,
+                cm.common_mst_name,
+                ttc.tds_thresold_limit,
+                ttc.tds_with_pan,
+                ttc.tds_without_pan,
+                ttc.tds_surcharge
+            FROM
+                tbl_tds_tax_category_detail ttc
+            JOIN
+                tbl_common_mst as cm ON cm.common_mst_id = ttc.tds_payee
+            WHERE
+                ttc.isdelete = 0 AND ttc.tds_cat_id = ?";
 
-    $template_name = $dbcon->query($qry);
-    $template_record = '<option value="">SELECT ' . $text . '</option>';
-
-    while ($row = brp_mysqli_fetch_assoc($template_name))
-    {
-        $sel = '';
-        if ($row['tds_cat_detail_id'] == $edit_id)
-        {
-            $sel = 'selected="selected"';
-        }
-        $template_record .= '<option ' . $sel . ' data-catid="' . $row['tds_cat_detail_id'] . '" value="' . $row['tds_cat_detail_id'] . '" >' . $row['common_mst_name'] . '</option>';
+    // Prepare the statement
+    $stmt = $dbcon->prepare($qry);
+    if (!$stmt) {
+        die("Prepare failed: " . $dbcon->error);
     }
+
+    // Bind the parameter and execute
+    $stmt->bind_param("i", $temp_id);
+    $stmt->execute();
+    $template_name = $stmt->get_result();
+
+    // Build the dropdown options
+    $template_record = '<option value="">SELECT ' . htmlspecialchars($text) . '</option>';
+    while ($row = $template_name->fetch_assoc()) {
+        $sel = ($row['tds_cat_detail_id'] == $edit_id) ? 'selected="selected"' : '';
+        $template_record .= sprintf(
+            '<option %s data-catid="%s" value="%s">%s</option>',
+            $sel,
+            htmlspecialchars($row['tds_cat_detail_id']),
+            htmlspecialchars($row['tds_cat_detail_id']),
+            htmlspecialchars($row['common_mst_name'])
+        );
+    }
+
+    // Close the statement
+    $stmt->close();
+
     return $template_record;
 }
+
 
 function get_common_category($dbcon, $temp_id, $text, $edit_id = '')
 {
@@ -8511,50 +8539,59 @@ function count_grn_apporve($dbcon)
             return $total;
         }
     }
-    function tbl_transcation_entry($dbcon, $type, $transaction_no, $transaction_id, $description, $amount)
+   function tbl_transcation_entry($dbcon, $type, $transaction_no, $transaction_id, $description, $amount)
+{
+    $info = array();
+    $branch_id = $_SESSION['branch_id'];
+
+    $info['type'] = $type;
+    $info['transaction_no'] = $transaction_no;
+    $info['transaction_id'] = $transaction_id;
+    $info['description'] = $description;
+    $info['amount'] = $amount;
+    $info['branch_id'] = $branch_id;
+    $info['user_id'] = $_SESSION['user_id'];
+    $info['company_id'] = $_SESSION['company_id'];
+    $info['cdate'] = date("Y-m-d H:i:s");
+    $info['show_date'] = date('Y-m-d');
+
+    $tran_dashboard_id = add_record('tbl_trnsaction_dashbord', $info, $dbcon, $branch_id);
+
+    if ($tran_dashboard_id)
     {
-        $info = array();
-        $branch_id = $_SESSION['branch_id'];
+        $companyConfiguration = getCompanyConfiguration($dbcon);
+        $user_type_list = trim($companyConfiguration['trans_dash_user_type']);
 
-        $info['type'] = $type;
-        $info['transaction_no'] = $transaction_no;
-        $info['transaction_id'] = $transaction_id;
-        $info['description'] = $description;
-        $info['amount'] = $amount;
-        $info['branch_id'] = $branch_id;
-        $info['user_id'] = $_SESSION['user_id'];
-        $info['company_id'] = $_SESSION['company_id'];
-        $info['cdate'] = date("Y-m-d H:i:s");
-        $info['show_date'] = date('Y-m-d');
+        if (!empty($user_type_list)) {
 
-        $tran_dashboard_id = add_record('tbl_trnsaction_dashbord', $info, $dbcon, $branch_id);
-    // $tran_dashboard_id="11";
-        if ($tran_dashboard_id)
-        {
-            $companyConfiguration = getCompanyConfiguration($dbcon);
-            $q = $dbcon->query("select GROUP_CONCAT(user_id separator ',') as user_ids from users where active = 0 AND company_id = " . $_SESSION['company_id'] . " AND user_type IN (" . $companyConfiguration['trans_dash_user_type'] . ")");
-            /*echo "select GROUP_CONCAT(user_id separator ',') as user_ids from users where active = 0 AND company_id = " . $_SESSION['company_id'] . " AND user_type IN (" . $companyConfiguration['trans_dash_user_type'] . ")";exit;*/
+            $q = $dbcon->query("
+                SELECT GROUP_CONCAT(user_id SEPARATOR ',') AS user_ids 
+                FROM users 
+                WHERE active = 0 
+                  AND company_id = " . (int)$_SESSION['company_id'] . " 
+                  AND user_type IN ($user_type_list)
+            ");
+
             $res = brp_mysqli_fetch_assoc($q);
-            $users = $res['user_ids']; //show_user_ids($dbcon,$_SESSION['user_id']);
-            $user_ids = explode(",", $users);
-            foreach ($user_ids as $user)
-            {
-                $infotrn['user_id'] = $_SESSION['user_id'];
-                $infotrn['trn_dashbord_id'] = $tran_dashboard_id;
-                $infotrn['company_id'] = $_SESSION['company_id'];
-                $tran_user_id = add_record('tbl_trnsaction_dashbord_user', $infotrn, $dbcon);
-                // var_dump($infotrn);
-                
-            }
-        // echo "1";
-        
-    }
-    else
-    {
-        // echo "0";
+            $users = $res['user_ids'] ?? '';
+            $user_ids = !empty($users) ? explode(',', $users) : [];
 
+            foreach ($user_ids as $user) {
+                $infotrn = [
+                    'user_id'        => $_SESSION['user_id'],
+                    'trn_dashbord_id'=> $tran_dashboard_id,
+                    'company_id'     => $_SESSION['company_id']
+                ];
+                add_record('tbl_trnsaction_dashbord_user', $infotrn, $dbcon);
+            }
+
+        } else {
+            // log or handle missing configuration
+            error_log("tbl_transcation_entry skipped user mapping — empty trans_dash_user_type\n", 3, __DIR__ . "/query_debug.log");
+        }
     }
 }
+
 function get_all_so_for_grn($dbcon, $vender_id, $mode, $potype)
 {
     $ven = '';
@@ -9267,6 +9304,7 @@ function quotation_print_with_bom($dbcon, $bom_id, $qty, $num, $call, $space)
 
 function quotation_print_with_bom_for_gew_divya($dbcon, $bom_id, $qty, $num, $call, $space)
 {
+     $html = '';
     $query_m = "select * from tbl_bom as bom where bom_status=0 and bom_id=" . $bom_id;
     $result_m = $dbcon->query($query_m);
     $rel_m = mysqli_fetch_assoc($result_m);
@@ -12611,9 +12649,11 @@ function wip_stock_po_stock_add($dbcon,$poid){
     $result = $dbcon->query($query);
     while($row = brp_mysqli_fetch_array($result)){
         
-        $query1 = "select purchaseordertrn_req__id,IFNULL(used_qty,0) as usedqty from tbl_purchaseorder_req_trn as hsn
-            left join tbl_request_product as req on req.rp_id=hsn.rp_id
-        where purchaseordertrn_req_status=0 and req.pre_trn_id=0 and purchaseordertrn_id=".$row['purchaseordertrn_id'];
+        $query1 = "select purchaseordertrn_req__id, IFNULL(used_qty,0) as usedqty
+        from tbl_purchaseorder_req_trn as hsn
+        left join tbl_request_product as req on req.rp_id=hsn.rp_id
+        where purchaseordertrn_req_status=0 and req.pre_trn_id=0 and hsn.purchaseordertrn_id=".$row['purchaseordertrn_id']
+        ;
          $result1 = $dbcon->query($query1);
         $row1 = brp_mysqli_fetch_array($result1);
         $conv_stock = $row['product_conv_qty'] - $row1['usedqty'];
