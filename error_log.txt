@@ -1,8 +1,0 @@
-[2025-10-10 18:55:06] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_list.php on line 143
-[2025-10-10 18:55:06] Error [2]: include_once(../../include/preview_attached_doc.php): Failed to open stream: No such file or directory in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_list.php on line 306
-[2025-10-10 18:55:06] Error [2]: include_once(): Failed opening '../../include/preview_attached_doc.php' for inclusion (include_path='.;C:\php\pear') in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_list.php on line 306
-[2025-10-10 18:55:06] Error [2]: include_once(../../include/view_delivery_detail.php): Failed to open stream: No such file or directory in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_list.php on line 310
-[2025-10-10 18:55:06] Error [2]: include_once(): Failed opening '../../include/view_delivery_detail.php' for inclusion (include_path='.;C:\php\pear') in E:\MAMP\htdocs\techunity_erp_v2\purchase\view\po_list.php on line 310
-[2025-10-10 18:55:06] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
-[2025-10-10 18:55:06] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2\config\constants.php on line 8
-[2025-10-10 18:55:06] Error [2]: Undefined array key "purchaseorder_id" in E:\MAMP\htdocs\techunity_erp_v2\purchase\app\purchase_order\index.php on line 3627
