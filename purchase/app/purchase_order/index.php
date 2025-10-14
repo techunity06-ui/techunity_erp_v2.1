@@ -2011,7 +2011,7 @@ SELECT product_type,product_id,description,product_hsn_code,product_qty, product
 
 					//$sales_order_trn_id=get_so_no_po_ref($dbcon,$rel['perent_id']);
 
-					$q = "select sales_order_trn_id from tbl_request_product where sp_id=" . $rel['sp_id'] . " and main_request=1 group by sp_id";
+					$q = "SELECT sales_order_trn_id FROM tbl_request_product WHERE sp_id='" . $rel['sp_id'] . "' AND main_request=1 GROUP BY sp_id";
 					$e = $dbcon->query($q);
 					$r = brp_mysqli_fetch_array($e);
 
