@@ -1,0 +1,1 @@
+[2025-10-14 12:04:42] Fatal Error [1]: Trait "Mpdf\Strict" not found in E:\MAMP\htdocs\techunity_erp_v2.1\view\export\mpdf\mpdf.php on line 29

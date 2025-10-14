@@ -152,6 +152,9 @@ RewriteRule ^ambesh_poprint/([^/]*)$ ambesh_poprint.php?id=$1 [L]
 RewriteRule ^filter_concept_poprint/([^/]*)$ filter_concept_poprint.php?id=$1 [L]
 RewriteRule ^smpl_poprint/([^/]*)$ smpl_poprint.php?id=$1 [L]
 RewriteRule ^robologic_poprint/([^/]*)$ robologic_poprint.php?id=$1 [L]
+
+RewriteRule ^aero_poprint_pvtltd/([^/]*)$ aero_poprint_pvtltd.php?id=$1 [L]
+
 RewriteRule ^nimarit_poprint/([^/]*)$ nimarit_poprint.php?id=$1 [L]
 RewriteRule ^domestic_poprint_aeon/([^/]*)$ domestic_poprint_aeon.php?id=$1 [L]
 RewriteRule ^import_poprint_aeon/([^/]*)$ import_poprint_aeon.php?id=$1 [L]
