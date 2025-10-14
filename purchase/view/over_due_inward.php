@@ -88,7 +88,7 @@
 													<th>Branch Name</th>
 													<th>Product Qty</th>
 													<th>Pending Qty</th>
-													<th>Unit</th>
+													<!-- <th>Unit</th> -->
 													<th>Delivery Date</th>
 													<th>User Name</th>
 													<th class="hidden-phone">Action</th>

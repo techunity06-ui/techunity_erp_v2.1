@@ -219,8 +219,7 @@
 									<select class="select2" name="branch_id" id="branch_id" tabindex="2">
 										<option value="">--Please Select Branch--</option>
 										<?php $branch = isset($branchId) ? $branchId : '1000'; ?>
-										<?=getBranchBox_new($dbcon,$branch);?>
-									</select>
+								</select>
 								</div>
                             </div>
 

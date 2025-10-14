@@ -2187,3 +2187,685 @@
 [2025-10-14 14:20:31] Error [2]: include_once(../include/jobwork_wise_grn.php): Failed to open stream: No such file or directory in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\grn_add_new.php on line 680
 [2025-10-14 14:20:31] Error [2]: include_once(): Failed opening '../include/jobwork_wise_grn.php' for inclusion (include_path='.;C:\php\pear') in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\grn_add_new.php on line 680
 [2025-10-14 14:20:31] Error [2]: Undefined variable $pmode in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\grn_add_new.php on line 711
+[2025-10-14 15:34:42] Error [2]: Undefined array key "complaint_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 550
+[2025-10-14 15:34:42] Error [2]: Undefined array key "comp_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 538
+[2025-10-14 15:34:42] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9457
+[2025-10-14 15:34:42] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9470
+[2025-10-14 15:34:42] Error [2]: Undefined array key "comp_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 538
+[2025-10-14 15:34:42] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9457
+[2025-10-14 15:34:42] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9470
+[2025-10-14 15:34:43] Error [2]: Undefined array key "complaint_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 550
+[2025-10-14 15:34:43] Error [2]: Undefined array key "comp_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 538
+[2025-10-14 15:34:43] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9457
+[2025-10-14 15:34:43] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9470
+[2025-10-14 15:34:47] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\overdue_po_pro_list.php on line 45
+[2025-10-14 15:34:47] Error [2]: Undefined variable $vender_id in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\overdue_po_pro_list.php on line 98
+[2025-10-14 15:34:48] Error [2]: include_once(../../include/common_functions/common_production_store_wise_function.php): Failed to open stream: No such file or directory in E:\MAMP\htdocs\techunity_erp_v2.1\crm\include\urlfileinner.php on line 16
+[2025-10-14 15:34:48] Error [2]: include_once(): Failed opening '../../include/common_functions/common_production_store_wise_function.php' for inclusion (include_path='.;C:\php\pear') in E:\MAMP\htdocs\techunity_erp_v2.1\crm\include\urlfileinner.php on line 16
+[2025-10-14 15:34:48] Error [2]: Undefined array key "product_category" in E:\MAMP\htdocs\techunity_erp_v2.1\crm\app\product_load\index.php on line 34
+[2025-10-14 15:34:48] Error [2]: Undefined array key "quotaion_id" in E:\MAMP\htdocs\techunity_erp_v2.1\crm\app\product_load\index.php on line 35
+[2025-10-14 15:34:48] Error [2]: Undefined array key "po_type" in E:\MAMP\htdocs\techunity_erp_v2.1\crm\app\product_load\index.php on line 102
+[2025-10-14 15:34:54] Error [2]: Undefined variable $pera in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\app\overdue_po_pro_list\index.php on line 69
+[2025-10-14 15:34:54] Error [2]: Undefined variable $left in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\app\overdue_po_pro_list\index.php on line 83
+[2025-10-14 15:35:29] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\overdue_po_pro_list.php on line 45
+[2025-10-14 15:35:29] Error [2]: Undefined variable $vender_id in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\view\overdue_po_pro_list.php on line 98
+[2025-10-14 15:35:30] Error [2]: include_once(../../include/common_functions/common_production_store_wise_function.php): Failed to open stream: No such file or directory in E:\MAMP\htdocs\techunity_erp_v2.1\crm\include\urlfileinner.php on line 16
+[2025-10-14 15:35:30] Error [2]: include_once(): Failed opening '../../include/common_functions/common_production_store_wise_function.php' for inclusion (include_path='.;C:\php\pear') in E:\MAMP\htdocs\techunity_erp_v2.1\crm\include\urlfileinner.php on line 16
+[2025-10-14 15:35:30] Error [2]: Undefined array key "product_category" in E:\MAMP\htdocs\techunity_erp_v2.1\crm\app\product_load\index.php on line 34
+[2025-10-14 15:35:30] Error [2]: Undefined array key "quotaion_id" in E:\MAMP\htdocs\techunity_erp_v2.1\crm\app\product_load\index.php on line 35
+[2025-10-14 15:35:30] Error [2]: Undefined array key "po_type" in E:\MAMP\htdocs\techunity_erp_v2.1\crm\app\product_load\index.php on line 102
+[2025-10-14 15:35:35] Error [2]: Undefined variable $pera in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\app\overdue_po_pro_list\index.php on line 69
+[2025-10-14 15:35:35] Error [2]: Undefined variable $left in E:\MAMP\htdocs\techunity_erp_v2.1\inventory\app\overdue_po_pro_list\index.php on line 83
+[2025-10-14 15:35:36] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:35:36] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:35:37] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:35:37] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:35:37] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:36:41] Uncaught Exception: number_format(): Argument #1 ($num) must be of type float, string given in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 67
+[2025-10-14 15:36:55] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:36:56] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:36:56] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:36:56] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:38:30] Uncaught Exception: number_format(): Argument #1 ($num) must be of type float, string given in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 67
+[2025-10-14 15:38:37] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:38:38] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:38:38] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:38:38] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:38:38] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:39:49] Fatal Error [1]: Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php:67
+Stack trace:
+#0 E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php(67): number_format('', 4, '.', '')
+#1 {main}
+  thrown in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 67
+[2025-10-14 15:39:49] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:39:49] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:39:49] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:39:49] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:39:49] Fatal Error [1]: Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php:67
+Stack trace:
+#0 E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php(67): number_format('', 4, '.', '')
+#1 {main}
+  thrown in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 67
+[2025-10-14 15:40:13] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:40:13] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:40:13] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:40:13] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:40:13] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:40:13] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:40:13] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:40:13] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:40:13] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:40:23] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:40:23] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:40:23] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:40:23] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:40:23] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:40:23] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:40:23] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:40:23] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:40:23] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:40:38] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:40:39] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:40:39] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:40:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:40:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:40:39] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:40:39] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:40:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:40:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:43:43] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:43:44] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:43:44] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:43:44] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:43:44] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:43:44] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:43:44] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:43:44] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:43:44] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:43:59] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:44:00] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:44:00] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:44:00] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:44:00] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:44:00] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:44:00] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:44:00] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:44:00] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:46:24] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:46:25] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:46:25] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:46:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:46:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:46:25] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:46:25] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:46:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:46:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:48:02] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:48:02] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:48:02] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:48:02] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:48:02] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:48:02] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:48:02] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:48:02] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:48:02] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:50:27] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:50:27] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:50:27] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:50:27] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:50:27] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:50:27] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:50:28] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:50:28] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:50:28] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:50:34] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:50:36] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:50:36] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:50:36] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:50:36] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:50:36] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:50:36] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:50:36] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:50:36] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:53:50] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:53:50] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:53:50] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:53:50] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:53:50] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:53:50] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:53:51] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:53:51] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:53:51] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:56:36] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 15:56:37] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:56:37] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:56:37] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:56:37] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 15:56:37] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 15:56:37] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 15:56:37] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 15:56:37] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:19:05] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:19:06] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:19:06] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:19:06] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:19:06] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:19:06] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:19:06] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:19:06] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:19:06] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:19:19] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:19:20] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:19:20] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:19:20] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:19:20] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:19:20] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:19:20] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:19:20] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:19:20] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:20:20] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:20:20] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:20:20] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:20:20] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:20:20] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:20:20] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:20:21] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:20:21] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:20:21] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:20:47] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:20:48] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:20:48] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:20:48] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:20:48] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:20:48] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:20:48] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:20:48] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:20:48] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:21:01] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:21:01] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:21:01] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:21:01] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:21:01] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:21:01] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:21:01] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:21:01] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:21:01] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:25:45] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:25:45] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:25:45] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:25:45] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:25:45] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:25:45] Error [2]: Undefined array key "sEcho" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 200
+[2025-10-14 16:25:45] Error [2]: Undefined array key "iDisplayStart" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 207
+[2025-10-14 16:25:45] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:25:45] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:25:45] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:25:45] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:25:45] Error [2]: Undefined array key "sEcho" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 200
+[2025-10-14 16:25:45] Error [2]: Undefined array key "iDisplayStart" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 207
+[2025-10-14 16:27:38] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:27:39] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:27:39] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:27:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:27:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:27:39] Error [2]: Undefined array key "sEcho" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 200
+[2025-10-14 16:27:39] Error [2]: Undefined array key "iDisplayStart" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 207
+[2025-10-14 16:27:39] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:27:39] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:27:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:27:39] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:27:39] Error [2]: Undefined array key "sEcho" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 200
+[2025-10-14 16:27:39] Error [2]: Undefined array key "iDisplayStart" in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 207
+[2025-10-14 16:27:49] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:27:49] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:27:50] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:27:50] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:27:50] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:27:50] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:27:50] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:27:50] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:27:50] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:29:07] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:29:08] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:29:08] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:29:08] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:29:08] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:29:08] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:29:08] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:29:08] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:29:08] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:29:57] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:29:58] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:29:58] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:29:58] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:29:58] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:29:58] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:29:58] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:29:58] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:29:58] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:31:12] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:31:12] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:31:12] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:31:12] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:31:12] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:31:12] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:31:12] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:31:12] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:31:12] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:31:43] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:22] Fatal Error [1]: Uncaught TypeError: Unsupported operand types: string * string in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php:146
+Stack trace:
+#0 {main}
+  thrown in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 146
+[2025-10-14 16:32:22] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:23] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:23] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:32:25] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:32:25] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:25] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:32:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:32:25] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:25] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:32:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:25] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:32:26] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:26] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:26] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:32:26] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:37] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:38] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:38] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:38] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:32:54] Error [2]: Undefined array key "comp_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 538
+[2025-10-14 16:32:54] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9457
+[2025-10-14 16:32:54] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9470
+[2025-10-14 16:32:54] Error [2]: Undefined array key "complaint_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 550
+[2025-10-14 16:32:54] Error [2]: Undefined array key "complaint_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 550
+[2025-10-14 16:32:54] Error [2]: Undefined array key "comp_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 538
+[2025-10-14 16:32:54] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9457
+[2025-10-14 16:32:54] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9470
+[2025-10-14 16:32:55] Error [2]: Undefined array key "comp_id" in E:\MAMP\htdocs\techunity_erp_v2.1\app\complaint\index.php on line 538
+[2025-10-14 16:32:55] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9457
+[2025-10-14 16:32:55] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 9470
+[2025-10-14 16:32:58] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\over_due_inward.php on line 43
+[2025-10-14 16:32:59] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:59] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:32:59] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:59] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:32:59] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:32:59] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\over_due_inward\index.php on line 30
+[2025-10-14 16:32:59] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:32:59] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:33:06] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\today_inward.php on line 43
+[2025-10-14 16:33:06] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:33:06] Error [2]: Undefined array key "date" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\today_inward\index.php on line 22
+[2025-10-14 16:33:06] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\today_inward\index.php on line 22
+[2025-10-14 16:33:06] Error [2]: Undefined array key 1 in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\today_inward\index.php on line 24
+[2025-10-14 16:33:06] Error [2]: Undefined variable $where in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\app\today_inward\index.php on line 29
+[2025-10-14 16:33:06] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:33:06] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:33:10] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_bill_pending_list.php on line 37
+[2025-10-14 16:33:10] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:33:10] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:33:10] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:33:11] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:33:15] Error [2]: Undefined array key "purchase_bill_rate" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 20
+[2025-10-14 16:33:15] Error [2]: Undefined array key "order_no" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 69
+[2025-10-14 16:34:36] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 222
+[2025-10-14 16:34:47] Error [2]: Undefined array key "purchase_bill_rate" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 20
+[2025-10-14 16:34:47] Error [2]: Undefined array key "order_no" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 69
+[2025-10-14 16:34:47] Error [2]: Undefined array key "invoicetype_id" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 256
+[2025-10-14 16:34:47] Error [2]: Undefined array key "po_no" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 266
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 382
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 383
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 384
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 385
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 386
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 387
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 388
+[2025-10-14 16:34:47] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 389
+[2025-10-14 16:34:47] Error [2]: Undefined array key "round_of" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 538
+[2025-10-14 16:34:47] Error [2]: Undefined array key "g_total" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 549
+[2025-10-14 16:34:47] Error [2]: Undefined array key "amount" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 571
+[2025-10-14 16:34:47] Error [2]: Undefined array key "g_total" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 717
+[2025-10-14 16:34:47] Error [2]: Undefined variable $so_trn_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 720
+[2025-10-14 16:34:47] Error [2]: Undefined variable $sales_order_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 721
+[2025-10-14 16:34:47] Error [2]: Undefined variable $quotation_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 722
+[2025-10-14 16:34:47] Error [2]: Undefined variable $complaint_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 723
+[2025-10-14 16:34:47] Error [2]: Undefined variable $bill_type in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 772
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 32
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 32
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 32
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 35
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 35
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 35
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 38
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 38
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 38
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 64
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 64
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 64
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 67
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 67
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 67
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 70
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 70
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 70
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 73
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 73
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 73
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 97
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 97
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 97
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 100
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 100
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 100
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 103
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 103
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 103
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 106
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 106
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 106
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 109
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 109
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 109
+[2025-10-14 16:34:47] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 123
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 123
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 123
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 39
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 39
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 39
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 48
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 48
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 48
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 55
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 55
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 55
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 67
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 67
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 67
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 75
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 75
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 75
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 86
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 86
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 86
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 93
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 93
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 93
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 100
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 100
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 100
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 111
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 111
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 111
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 118
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 118
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 118
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 160
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 160
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 160
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 169
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 169
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 169
+[2025-10-14 16:34:47] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 181
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 181
+[2025-10-14 16:34:47] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 181
+[2025-10-14 16:34:47] Error [2]: Undefined array key "ledger_opening_balance_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 150
+[2025-10-14 16:34:47] Error [2]: Undefined array key "ledger_opening_balance_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 151
+[2025-10-14 16:34:47] Error [2]: Undefined array key "ledger_opening_balance_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 152
+[2025-10-14 16:34:47] Error [2]: Undefined array key "enable_multi_currency_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 168
+[2025-10-14 16:34:47] Error [2]: Undefined array key "enable_multi_currency_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 169
+[2025-10-14 16:34:47] Error [2]: Undefined array key "enable_branch_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 182
+[2025-10-14 16:34:47] Error [2]: Undefined array key "enable_branch_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 183
+[2025-10-14 16:34:47] Error [2]: Undefined variable $isd_id in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 623
+[2025-10-14 16:34:50] Error [2]: Undefined variable $user_type in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1018
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:34:50] Error [2]: Undefined variable $user_id in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1029
+[2025-10-14 16:34:50] Error [2]: Undefined variable $user_type in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1029
+[2025-10-14 16:34:50] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 6692
+[2025-10-14 16:34:50] Error [2]: Undefined variable $str in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions_2.php on line 8255
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_cost_center" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1198
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_cost_center" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1199
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_tds" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1211
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_tds" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1212
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_tcs" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1226
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_tcs" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1227
+[2025-10-14 16:34:50] Error [2]: Undefined array key "tdstax_cat" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1238
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_depreciation" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1277
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_depreciation" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1278
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_Tax_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1290
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_monthly_budget" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1302
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_monthly_budget" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1303
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_cheque_deposit" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1316
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_cheque_deposit" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1317
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_gst_applicable" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1329
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_gst_applicable" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1330
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_tax_category" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1346
+[2025-10-14 16:34:50] Error [2]: Undefined variable $str in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions_2.php on line 8232
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_hsn" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1356
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_itc" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1366
+[2025-10-14 16:34:50] Error [2]: Undefined array key "ledger_rcm" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1378
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_bill_sunfry" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1394
+[2025-10-14 16:34:50] Error [2]: Undefined array key "enable_bill_sunfry" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1395
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:34:50] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:35:59] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_branch.php on line 26
+[2025-10-14 16:36:00] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_bill_pending_list.php on line 37
+[2025-10-14 16:36:01] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:36:01] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:36:02] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:36:02] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:36:12] Error [2]: Undefined array key "purchase_bill_rate" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 20
+[2025-10-14 16:36:12] Error [2]: Undefined array key "order_no" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 69
+[2025-10-14 16:36:12] Error [2]: Undefined array key "invoicetype_id" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 256
+[2025-10-14 16:36:12] Error [2]: Undefined array key "po_no" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 266
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 382
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 383
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 384
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 385
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 386
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 387
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 388
+[2025-10-14 16:36:12] Error [2]: Undefined array key "sales_type" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 389
+[2025-10-14 16:36:12] Error [2]: Undefined array key "round_of" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 538
+[2025-10-14 16:36:12] Error [2]: Undefined array key "g_total" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 549
+[2025-10-14 16:36:12] Error [2]: Undefined array key "amount" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 571
+[2025-10-14 16:36:12] Error [2]: Undefined array key "g_total" in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 717
+[2025-10-14 16:36:12] Error [2]: Undefined variable $so_trn_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 720
+[2025-10-14 16:36:12] Error [2]: Undefined variable $sales_order_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 721
+[2025-10-14 16:36:12] Error [2]: Undefined variable $quotation_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 722
+[2025-10-14 16:36:12] Error [2]: Undefined variable $complaint_id in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 723
+[2025-10-14 16:36:12] Error [2]: Undefined variable $bill_type in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_add.php on line 772
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 32
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 32
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 32
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 35
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 35
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 35
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 38
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 38
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 38
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 64
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 64
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 64
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 67
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 67
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 67
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 70
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 70
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 70
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 73
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 73
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 73
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 97
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 97
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 97
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 100
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 100
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 100
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 103
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 103
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 103
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 106
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 106
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 106
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 109
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 109
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 109
+[2025-10-14 16:36:12] Error [2]: Undefined variable $tcsDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 123
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 123
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_tcs_details.php on line 123
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 39
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 39
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 39
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 48
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 48
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 48
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 55
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 55
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 55
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 67
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 67
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 67
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 75
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 75
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 75
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 86
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 86
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 86
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 93
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 93
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 93
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 100
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 100
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 100
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 111
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 111
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 111
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 118
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 118
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 118
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 160
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 160
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 160
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 169
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 169
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 169
+[2025-10-14 16:36:12] Error [2]: Undefined variable $ewayDetail in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 181
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 181
+[2025-10-14 16:36:12] Error [2]: Trying to access array offset on value of type null in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_eway_bill.php on line 181
+[2025-10-14 16:36:12] Error [2]: Undefined array key "ledger_opening_balance_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 150
+[2025-10-14 16:36:12] Error [2]: Undefined array key "ledger_opening_balance_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 151
+[2025-10-14 16:36:12] Error [2]: Undefined array key "ledger_opening_balance_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 152
+[2025-10-14 16:36:12] Error [2]: Undefined array key "enable_multi_currency_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 168
+[2025-10-14 16:36:12] Error [2]: Undefined array key "enable_multi_currency_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 169
+[2025-10-14 16:36:12] Error [2]: Undefined array key "enable_branch_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 182
+[2025-10-14 16:36:12] Error [2]: Undefined array key "enable_branch_opening" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 183
+[2025-10-14 16:36:12] Error [2]: Undefined variable $isd_id in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 623
+[2025-10-14 16:36:15] Error [2]: Undefined variable $user_type in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1018
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 7373
+[2025-10-14 16:36:15] Error [2]: Undefined variable $user_id in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1029
+[2025-10-14 16:36:15] Error [2]: Undefined variable $user_type in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1029
+[2025-10-14 16:36:15] Error [8192]: explode(): Passing null to parameter #2 ($string) of type string is deprecated in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions.php on line 6692
+[2025-10-14 16:36:15] Error [2]: Undefined variable $str in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions_2.php on line 8255
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_cost_center" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1198
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_cost_center" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1199
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_tds" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1211
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_tds" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1212
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_tcs" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1226
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_tcs" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1227
+[2025-10-14 16:36:15] Error [2]: Undefined array key "tdstax_cat" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1238
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_depreciation" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1277
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_depreciation" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1278
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_Tax_type" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1290
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_monthly_budget" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1302
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_monthly_budget" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1303
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_cheque_deposit" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1316
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_cheque_deposit" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1317
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_gst_applicable" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1329
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_gst_applicable" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1330
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_tax_category" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1346
+[2025-10-14 16:36:15] Error [2]: Undefined variable $str in E:\MAMP\htdocs\techunity_erp_v2.1\include\common_functions\common_functions_2.php on line 8232
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_hsn" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1356
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_itc" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1366
+[2025-10-14 16:36:15] Error [2]: Undefined array key "ledger_rcm" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1378
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_bill_sunfry" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1394
+[2025-10-14 16:36:15] Error [2]: Undefined array key "enable_bill_sunfry" in E:\MAMP\htdocs\techunity_erp_v2.1\finance\include\add_ledger.php on line 1395
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:15] Error [2]: Undefined variable $sel in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_currency.php on line 35
+[2025-10-14 16:36:18] Uncaught Exception: Call to undefined function getBranchBox_new() in E:\MAMP\htdocs\techunity_erp_v2.1\administration\include\add_multi_branch.php on line 26
+[2025-10-14 16:36:32] Error [2]: Undefined variable $mode in E:\MAMP\htdocs\techunity_erp_v2.1\purchase\view\purchase_bill_pending_list.php on line 37
+[2025-10-14 16:36:32] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8
+[2025-10-14 16:36:33] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 144
+[2025-10-14 16:36:33] Error [2]: Undefined variable $having_clause in E:\MAMP\htdocs\techunity_erp_v2.1\include\pagging.php on line 169
+[2025-10-14 16:36:34] Error [2]: Constant COMMON_FUNCTION_PATH already defined in E:\MAMP\htdocs\techunity_erp_v2.1\config\constants.php on line 8

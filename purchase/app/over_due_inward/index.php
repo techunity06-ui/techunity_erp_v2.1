@@ -64,9 +64,8 @@ else {
 				$row_data[] = $row['product_name']." ".$drawing_number." ".$item_code." ".$alias;
 				$row_data[] = ($row['cat_name']!=null) ? $row['cat_name'] : 'PRIMARY';
 				$row_data[] = $row['branch_name'];
-				$row_data[] = number_format($row['product_qty'],4,".","");
-				$row_data[] = number_format($row['pending_qty'],4,".","");
-				$row_data[] = $row['unit_name'];
+				$row_data[] = is_numeric($row['product_qty']) ? number_format((float)$row['product_qty'], 4, ".", "") : "0.0000";
+				$row_data[] = is_numeric($row['pending_qty']) ? number_format((float)$row['pending_qty'], 4, ".", "") : "0.0000";
 				$row_data[] = date('d M, Y',strtotime($row['delivery_date']));
 				$row_data[] = $row['user_name'];
 				
@@ -144,8 +143,7 @@ else {
 		
 		$pro_dtl=brp_mysqli_fetch_assoc($dbcon->query($pro_dt));
 		
-		$pro_amt = $pro_dtl['product_rate'] * $pro_dtl['product_qty'];
-		//Party PO Details Table View
+		$pro_amt = (float)$pro_dtl['product_rate'] * (float)$pro_dtl['product_qty'];		//Party PO Details Table View
 		$str='';
 		$str.='<div class="form-group">
 				<table class="display table table-bordered table-striped">

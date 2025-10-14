@@ -1,51 +1,66 @@
 //var datatable;
 $(document).ready(function() {
 	load_po_req_datatable();
+
+	
 });
 function reload_data()
 {
 	load_po_req_datatable();
 }	
-function load_po_req_datatable()
-{
-	//var po_type_status=$('input[name=po_type_status]:Checked').val();
-	var date=$('#rep_date').val();
-	var branch_id = $('#branch_id').val();
-	
-	//alert(po_type_status);
-	datatable = $("#over-inward-table").dataTable({
-			"bAutoWidth" : false,
-			"bFilter" : true,
-			"bSort" : true,
-			"bProcessing": true,
-			"bDestroy": true,
-			"bServerSide" : true,
-			"oLanguage": {
-					"sLengthMenu": "_MENU_",
-					"sProcessing": "<img src='"+root_domain+"img/loading.gif'/> Loading ...",
-					"sEmptyTable": "NO DATA ADDED YET !",
-			},
-			"aLengthMenu": [[10, 20, 30, 50], [10, 20, 30, 50]],
-			"iDisplayLength": 10,
-			"sAjaxSource": root_domain+purchase_domain+'app/over_due_inward/',
-			"fnServerParams": function ( aoData ) {
-				aoData.push( 
-					{ "name": "mode", "value": "fetch" },
-					//{ "name": "po_type_status", "value": po_type_status },
-					{ "name": "date", "value": date },
-					{ "name": "branch_id", "value": branch_id }
-				);
-			},
-			"fnDrawCallback": function( oSettings ) {
-				//alert(oSettings);
-				$('.ttip, [data-toggle="tooltip"]').tooltip();
-			}
-		}).fnSetFilteringDelay();
 
-		//Search input style
-		$('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
-		$('.dataTables_length select').addClass('form-control');
+function load_po_req_datatable() {
+    var date = $('#rep_date').val();
+    var branch_id = $('#branch_id').val();
+
+    datatable = $("#over-inward-table").dataTable({
+        "bAutoWidth": false,
+        "bFilter": true,
+        "bSort": true,
+        "bProcessing": true,
+        "bDestroy": true,
+        "bServerSide": true,
+        "oLanguage": {
+            "sLengthMenu": "_MENU_",
+            "sProcessing": "<img src='" + root_domain + "img/loading.gif'/> Loading ...",
+            "sEmptyTable": "NO DATA ADDED YET !",
+        },
+        "aLengthMenu": [[10, 20, 30, 50], [10, 20, 30, 50]],
+        "iDisplayLength": 10,
+        "sAjaxSource": root_domain + purchase_domain + 'app/over_due_inward/',
+        "fnServerParams": function(aoData) {
+            aoData.push(
+                { "name": "mode", "value": "fetch" },
+                { "name": "date", "value": date },
+                { "name": "branch_id", "value": branch_id }
+            );
+        },
+        "aoColumns": [
+            { "mData": 0 },   // #
+            { "mData": 1 },   // PO No
+            { "mData": 2 },   // PO Date
+            { "mData": 3 },   // Vendor Name
+            { "mData": 4 },   // Product Name
+            { "mData": 5 },   // Product Category
+            { "mData": 6 },   // Branch Name
+            { "mData": 7 },   // Product Qty
+            { "mData": 8 },   // Pending Qty
+            { "mData": 9 },   // Unit
+            { "mData": 10 },  // Delivery Date
+            { "mData": 11 }
+		],
+        "fnDrawCallback": function(oSettings) {
+            $('.ttip, [data-toggle="tooltip"]').tooltip();
+        }
+    }).fnSetFilteringDelay();
+
+    // Search input style
+    $('.dataTables_filter input').addClass('form-control').attr('placeholder', 'Search');
+    $('.dataTables_length select').addClass('form-control');
 }
+
+
+
 function open_followup(id,pono,deliver_id){
 	$('#over_due_followup').modal('show');
 	$('#po_no').html(pono);
