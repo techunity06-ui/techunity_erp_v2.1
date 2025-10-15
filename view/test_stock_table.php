@@ -75,7 +75,8 @@ while($rel_red=brp_mysqli_fetch_assoc($result_red)){
 		res_sowise($dbcon,$rel_red['sales_ordertrn_id']);
 	}
 
-	if(!empty($rel_red['rp_id']){
+	if(!empty($rel_red['rp_id']))
+	{
 		res_rpid_wise($dbcon,$rel_red['rp_id']);
 
 	}

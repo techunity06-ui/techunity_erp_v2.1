@@ -1248,15 +1248,13 @@ if(brp_strtolower($POST['mode']) == "fetch") {
 		/* START :: Code By : Sanat  ::   29-07-2021*/
 	  //added bom version series no  
 		else if(brp_strtolower($POST['mode']) == "load_bom_version_datatable") {
-			$whr = "";
-			if($POST['bom_type'] != ""){
-				$whr = " and bom_type =" . $POST['bom_type'];
-			}
+			else if(brp_strtolower($POST['mode']) == "load_bom_version_datatable") {
+    $whr = "";
+    if($POST['bom_type'] != ""){
+        $whr = " and bom_type = '" . $dbcon->real_escape_string($POST['bom_type']) . "'";
+    }
 
-			$query="Select tbv.bom_version_id,bom.bom_id,tbv.version_name,tbv.bom_no,revision_number,tbv.bom_type,tbv.product_id,is_default_bom,tbv.bom_unit_qty,tbv.bom_conv_qty,bunit.unit_name as base_unit_name,cunit.unit_name as conv_unit_name from pro_ms_bom_version as tbv left join product_mst as product on product.product_id=tbv.product_id left join tbl_bom as bom on bom.bom_version_id=tbv.bom_version_id left join tbl_revision as rev on rev.revision_id=tbv.revision_id left join unit_mst as bunit on bunit.unitid=tbv.bom_unit left join unit_mst as cunit on cunit.unitid=tbv.bom_conv_unit where tbv.bom_version_status = 0 and tbv.product_id = ".$POST['sel_product_id'] . $whr;
-			// echo $query;
-		//exit;
-			
+    $query="Select tbv.bom_version_id,bom.bom_id,tbv.version_name,tbv.bom_no,revision_number,tbv.bom_type,tbv.product_id,is_default_bom,tbv.bom_unit_qty,tbv.bom_conv_qty,bunit.unit_name as base_unit_name,cunit.unit_name as conv_unit_name from pro_ms_bom_version as tbv left join product_mst as product on product.product_id=tbv.product_id left join tbl_bom as bom on bom.bom_version_id=tbv.bom_version_id left join tbl_revision as rev on rev.revision_id=tbv.revision_id left join unit_mst as bunit on bunit.unitid=tbv.bom_unit left join unit_mst as cunit on cunit.unitid=tbv.bom_conv_unit where tbv.bom_version_status = 0 and tbv.product_id = ".$dbcon->real_escape_string($POST['sel_product_id']) . $whr;
 
 			$result=$dbcon->query($query);
 

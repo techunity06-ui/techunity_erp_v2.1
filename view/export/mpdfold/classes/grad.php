@@ -378,7 +378,8 @@ function Gradient($x, $y, $w, $h, $type, $stops=array(), $colorspace='RGB', $coo
 		}
 		if (!isset($stops[$i]['opacity'])) { $stops[$i]['opacity'] = 1; } 
 		else if ($stops[$i]['opacity'] > 1 || $stops[$i]['opacity'] < 0) { $stops[$i]['opacity'] = 1; } 
-		else if ($stops[$i]['opacity'] < 1) { 
+		else if ($stops[$i]['opacity'] < 1)
+	{ 
 			$trans = true; 
 		}
 		$this->mpdf->gradients[$n]['stops'][$i]['opacity'] = $stops[$i]['opacity'];

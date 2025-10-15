@@ -170,44 +170,50 @@ else {
 			echo json_encode($arr);	
 			
 		}
-		else if(strtolower($POST['mode']) == "load_tempoutward") {
-				if($POST['pro_type']==1){
-					$ord= "order by mst.product_rate ASC";
-				}else if($POST['pro_type']==2){
-					$ord= "order by mst.payment_days DESC";
-				}else if($POST['pro_type']==3){
-					$ord= "order by mst.delivery_date ASC";
-				}
-				$query="select mst.*,cat.l_name,ai.rp_id from po_quotation as mst
+	if (strtolower($POST['mode']) == "load_tempoutward") {
+    // START: Added code to handle 'eid' being null/unset
+    if (!isset($POST['eid']) || is_null($POST['eid'])) {
+        $POST['eid'] = 0;
+    }
+    // END: Added code to handle 'eid' being null/unset
+
+    if ($POST['pro_type'] == 1) {
+        $ord = "order by mst.product_rate ASC";
+    } else if ($POST['pro_type'] == 2) {
+        $ord = "order by mst.payment_days DESC";
+    } else if ($POST['pro_type'] == 3) {
+        $ord = "order by mst.delivery_date ASC";
+    }
+    $query = "select mst.*,cat.l_name,ai.rp_id from po_quotation as mst
 					left join tbl_ledger as cat on cat.l_id=mst.vender_id 
 					left join approve_indent as ai on mst.approve_indent_id=ai.approve_indent_id 
-					where mst.po_quotation_status!=2 and mst.approve_indent_id=".$POST['eid']." ".$ord;
+					where mst.po_quotation_status!=2 and mst.approve_indent_id=" . $POST['eid'] . " " . $ord;
 
-				/*
-				Code By Umair: 08/12/2020
-				Comment: Get the approve quotation count
-				*/
+    /*
+    Code By Umair: 08/12/2020
+    Comment: Get the approve quotation count
+    */
 
-				$approve_query="select mst.*,cat.l_name,ai.rp_id from po_quotation as mst
+    $approve_query = "select mst.*,cat.l_name,ai.rp_id from po_quotation as mst
 					left join tbl_ledger as cat on cat.l_id=mst.vender_id 
 					left join approve_indent as ai on mst.approve_indent_id=ai.approve_indent_id 
-					where mst.po_quotation_status=1 and mst.approve_indent_id=".$POST['eid']." ".$ord;	
-				$approve_result=$dbcon->query($approve_query);
-				$approve_count = mysqli_num_rows($approve_result);
-				$approve_rel=mysqli_fetch_assoc($approve_result);
-				
-				/*
-				Code By Umair: 08/12/2020
-				Comment: Check quotation created or not
-				*/
-				
-				$check_quo_sql = "select * from  tbl_purchaseordertrn where po_ref_id='".$approve_rel['rp_id']."'";
-				$quo_result=$dbcon->query($check_quo_sql);
-				$quo_count = mysqli_num_rows($quo_result);
+					where mst.po_quotation_status=1 and mst.approve_indent_id=" . $POST['eid'] . " " . $ord;
+    $approve_result = $dbcon->query($approve_query);
+    $approve_count = mysqli_num_rows($approve_result);
+    $approve_rel = mysqli_fetch_assoc($approve_result);
 
-			
-				$result=$dbcon->query($query);
-			echo ' <div class="form-group">
+    /*
+    Code By Umair: 08/12/2020
+    Comment: Check quotation created or not
+    */
+
+    $check_quo_sql = "select * from  tbl_purchaseordertrn where po_ref_id='" . $approve_rel['rp_id'] . "'";
+    $quo_result = $dbcon->query($check_quo_sql);
+    $quo_count = mysqli_num_rows($quo_result);
+
+
+    $result = $dbcon->query($query);
+    echo ' <div class="form-group">
 						<div class="col-md-12 col-xs-11">
 						<table cellspacing="10" style="border-spacing:10px;" class="display table table-bordered table-striped">
 						<tr id="field">
@@ -220,60 +226,57 @@ else {
 							<th class="text-center"width="8%">Rate</th>
 							<th class="text-center"width="10%">Action</th>
 						</tr>';
-		if(mysqli_num_rows($result)>0)
-		{
-			$i=1;
-			while($rel=mysqli_fetch_assoc($result))
-			{
-				
-			 echo '<tr  >
-					<td>'.$i.'</td>
+    if (mysqli_num_rows($result) > 0) {
+        $i = 1;
+        while ($rel = mysqli_fetch_assoc($result)) {
+
+            echo '<tr  >
+					<td>' . $i . '</td>
 					<td style="vertical-align:top;">
-						<b>'.$rel['l_name'].'</b>
+						<b>' . $rel['l_name'] . '</b>
 					</td>
 					
 					<td style="vertical-align:top;" class="text-center">
-						'.$rel['quotation_no'].'
+						' . $rel['quotation_no'] . '
 					</td>
 					<td style="vertical-align:top;" class="text-center">
-						'.date('d M, Y',strtotime($rel['quotation_date'])).'
+						' . date('d M, Y', strtotime($rel['quotation_date'])) . '
 					</td>
 					<td style="vertical-align:top;" class="text-center">
-						'.$rel['delivery_date'].'
+						' . $rel['delivery_date'] . '
 					</td>
 					<td style="vertical-align:top;" class="text-center">
-						'.$rel['payment_days'].'
+						' . $rel['payment_days'] . '
 					</td>
 					<td style="vertical-align:top;" class="text-center">
-						'.$rel['product_rate'].'
+						' . $rel['product_rate'] . '
 					</td>';
-					if($rel['po_quotation_status']==1){
-						echo '<td>
+            if ($rel['po_quotation_status'] == 1) {
+                echo '<td>
 						<button type="button" class="btn btn-xs btn-success" data-original-title="Approve Quotation Done" data-toggle="tooltip" data-placement="top" ><i class="fa fa-check"></i>Approve Done</button>';
 
-						if($quo_count<=0){
-							echo '<button type="button" class="btn btn-xs btn-info" data-original-title="Disapprove" data-toggle="tooltip" data-placement="top" onclick="disapprove_po_status('.$rel['po_quotation_id'].',2)"><i class="fa fa-check"></i>Disapprove</button>
+                if ($quo_count <= 0) {
+                    echo '<button type="button" class="btn btn-xs btn-info" data-original-title="Disapprove" data-toggle="tooltip" data-placement="top" onclick="disapprove_po_status(' . $rel['po_quotation_id'] . ',2)"><i class="fa fa-check"></i>Disapprove</button>
 							</td>';
-						}
-					}else{
-						if($approve_count<=0){
-							echo '<td>
-							<button type="button" class="btn btn-xs btn-info" data-original-title="Approve Quotation" data-toggle="tooltip" data-placement="top" onclick="cancel_po_status('.$rel['po_quotation_id'].',2)"><i class="fa fa-check"></i>Approve</button>
+                }
+            } else {
+                if ($approve_count <= 0) {
+                    echo '<td>
+							<button type="button" class="btn btn-xs btn-info" data-original-title="Approve Quotation" data-toggle="tooltip" data-placement="top" onclick="cancel_po_status(' . $rel['po_quotation_id'] . ',2)"><i class="fa fa-check"></i>Approve</button>
 							</td>';
-						}
-					}
-					
-				echo '</tr>';
-				$i++;
-			}
-		}
-		else{
-			echo '<tr><td colspan="11" class="text-center">NO DATA FOUND</td></tr>';
-		}
-		
-			echo '</table>			 
+                }
+            }
+
+            echo '</tr>';
+            $i++;
+        }
+    } else {
+        echo '<tr><td colspan="11" class="text-center">NO DATA FOUND</td></tr>';
+    }
+
+    echo '</table>			 
 					</div></div>';
-		}
+}
 		else if(strtolower($POST['mode']) == "app_quo") {
 			
 			$branch_id = ($_SESSION['user_type'] == '2' && isset($POST['branch_id']) && $POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];

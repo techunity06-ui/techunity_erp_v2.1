@@ -9219,6 +9219,24 @@ function get_product_name($dbcon, $id)
     return $rel['product_name'];
 }
 
+function getBranchBox_new($dbcon,$branch='') {
+    
+	$q="select * from branch_mst where branch_status='0' order by branch_name";
+	$r=$dbcon->query($q);
+	
+	$str="";
+	$str.= '<option value="">Choose Branch</option>';
+	while($rel=brp_mysqli_fetch_assoc($r))
+	{
+		$sel=''; 
+		if($rel['branch_id']==$branch)
+		{$sel ="selected='selected'";}
+		$str.= '<option  value="'.$rel['branch_id'].'" '.$sel.'>'.$rel['branch_name'].'</option>';
+	}
+	return $str;
+	
+}
+
 function in_po_sales_order_no($dbcon, $purchaseorder_id)
 {
     $sales_order_no = "select trn.purchaseordertrn_id, trn.po_ref_id, req.sp_id from tbl_purchaseordertrn as trn
@@ -12622,10 +12640,24 @@ function get_invoice_type_list($dbcon,$type_id,$invoicetype_id){
 
     return $str;
 }
-function getcurrencydetail($dbcon,$id)
+function getcurrencydetail($dbcon, $id)
 {
-    $query = "SELECT * from tbl_currency where currency_status=0 and currency_id=".$id;
-    $rel = brp_mysqli_fetch_assoc($dbcon->query($query));
+    // Sanitize the input by ensuring it is an integer
+    $safe_id = (int)$id; 
+
+    // If safe_id is 0, the query is still valid but will likely return no results,
+    // which is better than a fatal syntax error.
+    $query = "SELECT * from tbl_currency where currency_status=0 and currency_id=" . $safe_id;
+    
+    // Check for query failure before trying to fetch
+    $q_result = $dbcon->query($query);
+    if (!$q_result) {
+        // Handle query error, e.g., log it or return null
+        error_log("SQL Error in getcurrencydetail: " . $dbcon->error . " Query: " . $query);
+        return null;
+    }
+    
+    $rel = brp_mysqli_fetch_assoc($q_result);
     return $rel;
 }
 

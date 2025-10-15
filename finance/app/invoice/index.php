@@ -3408,12 +3408,20 @@ else if (strtolower($POST['mode']) == "get_tax_on_total") {
 	}
 
 	echo json_encode($resp);
-} else if (strtolower($POST['mode']) == "get_hsn_code") {
-	$qry = "SELECT hc.hsn_code FROM `product_mst` as pm
-		join mst_hsn_code as hc on pm.product_hsn=hc.hsn_id and hc.hsn_status=0
-		where pm.product_id=" . $POST['product_id'] . " ";
-	$row = brp_mysqli_fetch_assoc($dbcon->query($qry));
-	print_r($row['hsn_code']);
+} else if (strtolower($_POST['mode']) == "get_hsn_code") {
+    // Assuming $dbcon is your mysqli connection object
+    $stmt = $dbcon->prepare("SELECT hc.hsn_code FROM `product_mst` AS pm
+                             JOIN mst_hsn_code AS hc ON pm.product_hsn = hc.hsn_id AND hc.hsn_status = 0
+                             WHERE pm.product_id = ?");
+
+    $stmt->bind_param("i", $_POST['product_id']); // 'i' for integer
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+        print_r($row['hsn_code']);
+    }
+    $stmt->close();
 } else if (strtolower($POST['mode']) == "add_sales_order") {
 	$company_state = get_company_data($dbcon, $_SESSION['company_id']);
 	$custLedgerDetails = get_cust_data_arr($dbcon, $POST['cust_id']);

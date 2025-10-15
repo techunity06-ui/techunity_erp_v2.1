@@ -199,7 +199,7 @@ $("#purchaseorder_req_add").on('submit',function(e) {
 	
 	var purchaseorder_id=$('#eid').val();
 	var vender_id=$('#vender_id').val();
-	var branch_id=$('#branch_id').val();
+	var branch_id = $('[name="branch_id"]').val() || $('[name="branchid"]').val() || 0;
 
 	if(vender_id==""){
 		vender_id=0;

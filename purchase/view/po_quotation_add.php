@@ -9,7 +9,7 @@
             PO_QUOTATION_ADD, PO_QUOTATION_UPDATE
 	]);
 	$branch_id = $_SESSION['branch_id'];
-	if(strpos($_SERVER[REQUEST_URI], "po_quotation_add")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "po_quotation_add")==true)
 	{
 	    if(!in_array(PO_QUOTATION_ADD,$bulkAccessArray)){
 	        header("Location: ".DOMAIN."permission_access");
@@ -34,7 +34,7 @@
 		$cat_name = ($rel['cat_name']!=null) ? $rel['cat_name'] : 'PRIMARY';
 		
 	}
-	if(strpos($_SERVER[REQUEST_URI], "po_quotation_edit")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "po_quotation_edit")==true)
 	{
 	    if(!in_array(PO_QUOTATION_UPDATE,$bulkAccessArray)){
 	        header("Location: ".DOMAIN."permission_access");

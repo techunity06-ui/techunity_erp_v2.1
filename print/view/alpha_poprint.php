@@ -322,8 +322,7 @@ if(strtolower($type) == 'pdf') {
 			}
 
 			$taxable_amt=$row['tot']-$row['product_amount'];
-			$disc_rate = ($row['product_rate'] * $row['discount_per'])/100;
-			$product_rate = $row['product_rate'] - $disc_rate;
+			$disc_rate = ((float)$row['product_rate'] * (float)$row['discount_per']) / 100;			$product_rate = $row['product_rate'] - $disc_rate;
 			$html.='<tr style="border:none;border-left:1px solid;border-right:1px solid;">
 			<td style="text-align:center;border:1px solid;vertical-align:top;">'.$i.'</td>
 			<td style="text-align:left;border:1px solid;vertical-align:top;">
@@ -361,8 +360,8 @@ if(strtolower($type) == 'pdf') {
 			</tr>';
 
 
-			$totalqty=$totalqty+$row['sh_qty']-$charges_qty;$totalsqr=$totalsqr+$row['sqr_ft']-$charges_qty1;
-			$total_product_amount+=$row['product_amount'];
+$totalqty = $totalqty + (float)($row['sh_qty'] ?: 0) - (float)($charges_qty ?: 0);
+$totalsqr = $totalsqr + (float)($row['sqr_ft'] ?: 0) - (float)($charges_qty1 ?: 0);			$total_product_amount+=$row['product_amount'];
 			$totaltaxable+=$gst_rate;
 			$total+=$row['total'];
 			$cols = ($get_disc['discount'] > 0) ?  3 : 3;

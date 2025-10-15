@@ -1638,7 +1638,7 @@ $dbcon->query($qry);*/
 							//$product_total_label .=  $vrel['currency_symbol'].' ' .$rel['currency_total'];
 
 						} else {
-							$rate_label .= $vrel['currency_symbol'] . ' ' . number_format($rel['product_rate'], 2, '.', '');
+							$rate_label .= $vrel['currency_symbol'] . ' ' . number_format((float)$rel['product_rate'], 2, '.', '');
 							$product_amount_label .= $vrel['currency_symbol'] . ' ' . $rel['product_amount'];
 							$product_total_label .= $vrel['currency_symbol'] . ' ' . $rel['total'];
 						}

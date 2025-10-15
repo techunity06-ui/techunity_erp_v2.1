@@ -69,31 +69,50 @@ function update_record($table, $data, $where, $db, $branch_id = '') {
     if ($branch_id) {
         $data['branch_id'] = $branch_id;
     }
-    if (empty($where)) {
-        throw new Exception("WHERE clause cannot be empty.");
-    }
+
+    // Validate WHERE clause
+    if (empty($where) || preg_match('/=\s*$/', trim($where))) {
+    echo "<b>❌ Invalid WHERE:</b> '$where'<br>";
+    debug_print_backtrace();
+    exit;
+}
+
+
+    // Validate data array
     if (!is_array($data) || empty($data)) {
-        throw new Exception("Data array cannot be empty.");
+        throw new Exception("❌ Data array cannot be empty.");
     }
 
+    // Build SET part safely
     $setClauses = [];
     foreach ($data as $field_name => $value) {
         $value = brp_sc_mysql_escape($value, $db);
-        $setClauses[] = "$field_name='$value'";
+        $setClauses[] = "`$field_name` = '$value'";
     }
-    $querystring = " SET " . implode(", ", $setClauses);
+    $querystring = "SET " . implode(", ", $setClauses);
 
-    $dbQuery = "UPDATE $table $querystring WHERE $where";
-    // echo $dbQuery; exit; // Uncomment for debugging
+    // Build the final query
+    $dbQuery = "UPDATE `$table` $querystring WHERE $where";
 
-    $db->query($dbQuery);
-    $update_id = brp_mysqli_affected_rows($db);
+    // Debug mode (optional)
+    // echo "<pre>$dbQuery</pre>"; exit;
 
-    if (isset($update_id)) {
-        $_SESSION['msg'] = 'Record Updated Successfully';
+    try {
+        $db->query($dbQuery);
+        $update_id = brp_mysqli_affected_rows($db);
+    } catch (mysqli_sql_exception $e) {
+        throw new Exception("MySQL Error: " . $e->getMessage() . " | Query: " . $dbQuery);
     }
+
+    if ($update_id) {
+        $_SESSION['msg'] = '✅ Record Updated Successfully';
+    } else {
+        $_SESSION['msg'] = '⚠️ No rows were updated.';
+    }	
+
     return $update_id;
 }
+
 
 function delete_record($table, $where, $db)
 {

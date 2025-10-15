@@ -386,7 +386,8 @@ else {
 					}*/
 					
 					
-					$que_product_desc="select * from tbl_purchasetrntemp where purchaseordertrn_id=".$purchaseordertrn_id."<br>";
+					$que_product_desc = "SELECT * FROM tbl_purchasetrntemp WHERE purchaseordertrn_id = " . $purchaseordertrn_id;
+
 					
 					$rs_di_product_desc=$dbcon->query($que_product_desc);
 					$re_product_desc=brp_mysqli_fetch_assoc($rs_di_product_desc);
@@ -430,8 +431,13 @@ else {
 					$sale_gst = get_tax_cat_by_hsn($dbcon,$re['hcode']);
 					
 					$custLedgerDetails = get_cust_data_arr($dbcon,$POST['vender_id']);
-					$ven_s = "select stateid from tbl_ledger where l_id=".$POST['vender_id'];
-					$ves=$dbcon->query($ven_s);
+					// Always validate and sanitize incoming POST values
+$vender_id = isset($_POST['vender_id']) && !empty($_POST['vender_id']) ? intval($_POST['vender_id']) : 0;
+
+// Now your query will never fail even if vendor_id is missing
+$ven_s = "SELECT stateid FROM tbl_ledger WHERE l_id = " . $vender_id;
+
+$ves = $dbcon->query($ven_s);
 					$vers = mysqli_fetch_array($ves); 
 					
 

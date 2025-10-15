@@ -10,7 +10,7 @@
 	include_once(COMMON_FUNCTION_PATH."common_functions.php");
 	$form="PO Quotation Approve";
 	
-	if(strpos($_SERVER[REQUEST_URI], "po_quotation_approve")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "po_quotation_approve")==true)
 	{
 		$bulkAccessArray = canCheckPermissionAccess($dbcon, [
             PO_QUOTATION_APPROVE

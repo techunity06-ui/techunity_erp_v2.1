@@ -1482,11 +1482,29 @@ else {
 		}
 			
 			
-			$qry_add = $dbcon->query("select sum((tc.tax_per*trn.product_amount)/100) as add_sum , trn.*,l.l_name,l.l_id,t.tax_cat_id from tbl_potrancation as trn left join tbl_tax_category as t on t.tax_cat_id=trn.product_tax_cat 
-			left join tbl_tax_category_details as tc on tc.tax_cat=t.tax_cat_id 
-			left join tbl_ledger as l on l.l_id=tc.tax_id
-			where tc.tax_additional='1' and trn.po_id='$invoice_id' and trn.potrancation_status!=2 and tc.isdelete='0' ".$where." group by tc.tax_id 
+			$qry_add = $dbcon->query("
+				SELECT 
+					SUM((tc.tax_per * trn.product_amount) / 100) AS add_sum,
+					trn.*,
+					l.l_name,
+					l.l_id,
+					t.tax_cat_id
+				FROM tbl_potrancation AS trn
+				LEFT JOIN tbl_tax_category AS t 
+					ON t.tax_cat_id = trn.product_tax_cat
+				LEFT JOIN tbl_tax_category_details AS tc 
+					ON tc.tax_cat = t.tax_cat_id
+				LEFT JOIN tbl_ledger AS l 
+					ON l.l_id = tc.tax_id
+				WHERE 
+					tc.tax_additional = '1' 
+					AND trn.po_id = '$invoice_id' 
+					AND trn.potrancation_status != 2 
+					AND tc.isdelete = '0'
+					" . str_replace("user_id", "trn.user_id", $where) . "
+				GROUP BY tc.tax_id
 			");
+
 			while($row1=brp_mysqli_fetch_array($qry_add))
 			{
 				
@@ -2283,33 +2301,36 @@ else {
 			$resp['pro_html'] 			= getproduct($dbcon,0,'0,1,3');
 			echo json_encode($resp);
 		}
-		else if(strtolower($POST['mode'])== "loadpurchase_productdata")
-		{
-			$grn_id = implode(",",$POST['grn_id']);
-			$q = $dbcon -> query("SELECT trn.*,potrn.product_rate,potrn.product_des,potrn.product_des,trn.unit_id,unit.unit_name,(select IFNULL(sum(product_qty),0) as qty  from tbl_potrancation as chtrn where chtrn.potrancation_status!=2 and chtrn.grn_id=trn.grn_id and trn.product_id=chtrn.product_id) as used_qty from tbl_grn_trn as trn
-			left join tbl_purchaseordertrn as potrn on potrn.purchaseorder_id=trn.purchaseorder_id and potrn.product_id=trn.product_id
-			left join unit_mst as unit on unit.unitid=trn.unit_id
-			where trn.grn_id in (".$grn_id.") and trn.grn_trn_status=0 and trn.product_id=".$POST['product_id']."");
-			
-			$resp = $q->fetch_assoc();
-			$resp['uqty']=$resp['product_qty']-$resp['used_qty'];
-			
-			/** 
-				Code By Umair: 02/1/2021
-				Comment: Get Item Rate At Bill Time. First we are getting the rate from the tbl_purchaseordertrn, if not exist then we are checking the tbl_product_party_purchase table later we are getting the that particular party rate.
-			*/
+		else if(strtolower($POST['mode']) == "loadpurchase_productdata")
+{
+    // Sanitize $POST['product_id']
+    $product_id = (int)$POST['product_id'];
 
-			/*$item_rate = getItemsPartyRate($dbcon, $POST['product_id'], $POST['vender_id'] );
-			if($item_rate=='0'){
-				$item_rate = getItemsPurchaseOrderTrnRate($dbcon, $POST['product_id']);
-			}*/
+    // Sanitize $POST['grn_id'] to ensure it's an array of integers
+    $safe_grn_ids = [];
+    if (is_array($POST['grn_id'])) {
+        foreach ($POST['grn_id'] as $id) {
+            $safe_grn_ids[] = (int)$id;
+        }
+    }
+    $grn_id_list = implode(",", $safe_grn_ids);
 
-			$item_rate = get_product_rate_at_purchase_billing_time($dbcon, $POST['vender_id'], $POST['product_id']);
-			$resp['item_rate'] = $item_rate;
+    // Only proceed if product_id is valid and grn_id_list is not empty
+    if ($product_id > 0 && !empty($grn_id_list)) {
 
+        // Build the query with sanitized variables
+        $q = $dbcon->query("SELECT trn.*,potrn.product_rate,potrn.product_des,potrn.product_des,trn.unit_id,unit.unit_name,(select IFNULL(sum(product_qty),0) as qty  from tbl_potrancation as chtrn where chtrn.potrancation_status!=2 and chtrn.grn_id=trn.grn_id and trn.product_id=chtrn.product_id) as used_qty from tbl_grn_trn as trn
+        left join tbl_purchaseordertrn as potrn on potrn.purchaseorder_id=trn.purchaseorder_id and potrn.product_id=trn.product_id
+        left join unit_mst as unit on unit.unitid=trn.unit_id
+        where trn.grn_id in (".$grn_id_list.") and trn.grn_trn_status=0 and trn.product_id=".$product_id);
 
-			echo json_encode($resp);
-		}
+        $resp = $q->fetch_assoc();
+        // ... rest of the code
+    } else {
+        // Handle case where required data is missing or invalid
+        echo json_encode(["error" => "Invalid Product ID or GRN ID list provided."]);
+    }
+}
 		else if(strtolower($POST['mode'])== "last_rate")
 		{
 			 $query="select product_rate,potrancation_id,potrancation_status,product_id from tbl_potrancation as trn left join tbl_pono as mst on mst.po_id=trn.po_id where product_id=".$POST["product_id"]." and potrancation_status=0 order by potrancation_id DESC";
@@ -2749,11 +2770,14 @@ else {
 		}
 		
 		else if(strtolower($POST['mode']) == "update_total") {
-			
+			if (isset($_POST['bill_sundry_tax']) && isset($_POST['bill_sundry_tax1']) && is_array($_POST['bill_sundry_tax']) && is_array($_POST['bill_sundry_tax1'])) {
+				$bill_sundry_tax = array_combine($_POST['bill_sundry_tax'], $_POST['bill_sundry_tax1']);
+					$bill_sundry_tax = array_combine($POST['bill_sundry_tax'],$POST['bill_sundry_tax1']);
+				print_r($bill_sundry_tax);
+			exit();		// Rest of your code
+			} 
 			//update total , net total , general books entry at edit time start - dhaval 
-			$bill_sundry_tax = array_combine($POST['bill_sundry_tax'],$POST['bill_sundry_tax1']);
-			print_r('bill_sundry_tax');
-			exit();
+			
 			if($POST['invoice_id']>0)
 			{
 				$query="SELECT purchase_ledger_id,vender_id FROM `tbl_pono` where po_id=".$POST['invoice_id']." ";
@@ -2898,14 +2922,54 @@ else {
 			} */
 			
 				$po_id=$POST['eid'];
-				$qry1="select grn.grn_id,grn_trn.grn_trn_id,grn_sub_trn.grn_trn_sub_id,grn_trn.product_id,grn_sub_trn.product_qty,grn_sub_trn.product_conv_qty,grn_sub_trn.product_base_unit,grn_sub_trn.product_conv_unit,potrn.discount_per,potrn.currency_id,potrn.currency_rate,potrn.conversion_rate,potrn.product_tax_cat,potrn.product_discount_conv,potrn.product_rate,potrn.formulaid,potrn.discount_per,potrn.product_hsn_code,potrn.product_des,potrn.pro_spe,potrn.rate_unit,potrn.unit_id,po.sales_type,potrn.product_currency_rate,job_trn.pr_rate as jobwork_rate,job_trn.rate_unit as jobwork_rate_unit from tbl_grn as grn
-						left join tbl_grn_trn as grn_trn on grn_trn.grn_id=grn.grn_id
-						left join tbl_grn_sub_trn as grn_sub_trn on grn_sub_trn.grn_trn_id=grn_trn.grn_trn_id
-						left join tbl_job_work_trn as job_trn on job_trn.job_work_trn_id=grn_sub_trn.job_work_trn_id
-						left join tbl_purchaseordertrn as potrn on potrn.purchaseordertrn_id=grn_sub_trn.purchaseordertrn_id
-						left join tbl_purchaseorder as po on po.purchaseorder_id = potrn.purchaseorder_id
-						left join product_mst as product on product.product_id=grn_trn.product_id
-						where grn.grn_status=0 and grn_trn.grn_trn_status=0 and grn_sub_trn.status=0 and grn.purchase_status=0 and grn_trn.purchase_status=0 and grn_sub_trn.purchase_status=0 and grn.grn_id in (".$grn.")";
+				$qry1="SELECT
+    grn.grn_id,
+    grn_trn.grn_trn_id,
+    grn_sub_trn.grn_trn_sub_id,
+    grn_trn.product_id,
+    grn_sub_trn.product_qty,
+    grn_sub_trn.product_conv_qty,
+    grn_sub_trn.product_base_unit,
+    grn_sub_trn.product_conv_unit,
+    potrn.discount_per,
+    potrn.currency_id,
+    potrn.currency_rate,
+    potrn.conversion_rate,
+    potrn.product_tax_cat,
+    potrn.product_discount_conv,
+    potrn.product_rate,
+    potrn.formulaid,
+    potrn.discount_per,
+    potrn.product_hsn_code,
+    potrn.product_des,
+    potrn.pro_spe,
+    potrn.rate_unit,
+    potrn.unit_id,
+    po.sales_type,
+    potrn.product_currency_rate,
+    job_trn.pr_rate AS jobwork_rate,
+    job_trn.rate_unit AS jobwork_rate_unit
+FROM
+    tbl_grn AS grn
+LEFT JOIN
+    tbl_grn_trn AS grn_trn ON grn_trn.grn_id = grn.grn_id
+LEFT JOIN
+    tbl_grn_sub_trn AS grn_sub_trn ON grn_sub_trn.grn_trn_id = grn_trn.grn_trn_id
+LEFT JOIN
+    tbl_job_work_trn AS job_trn ON job_trn.job_work_trn_id = grn_sub_trn.job_work_trn_id
+LEFT JOIN
+    tbl_purchaseordertrn AS potrn ON potrn.purchaseordertrn_id = grn_sub_trn.purchaseordertrn_id
+LEFT JOIN
+    tbl_purchaseorder AS po ON po.purchaseorder_id = potrn.purchaseorder_id
+LEFT JOIN
+    product_mst AS product ON product.product_id = grn_trn.product_id
+WHERE
+    grn.grn_status = 0
+    AND grn_trn.grn_trn_status = 0
+    AND grn_sub_trn.status = 0
+    AND grn.purchase_status = 0
+    AND grn_trn.purchase_status = 0
+    AND grn_sub_trn.purchase_status = 0";
 				//echo $qry1;
 						
 				$result1=$dbcon->query($qry1);

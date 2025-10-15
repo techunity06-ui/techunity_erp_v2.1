@@ -564,19 +564,77 @@ include('../../include/urlfileinner.php');
 			echo json_encode($row);
 		}
 		else if(strtolower($POST['mode'])== "load_product_unit")
-		{
-			$query = "select * from tbl_purchasecardtrn where purchasecardtrn_id=".$POST['edit_id'];
-			$rs_type=$dbcon->query($query);
-			$row=brp_mysqli_fetch_assoc($rs_type);
-			$query1="SELECT promst.product_base_unit,promst.product_conv_unit,conv_mst.unit_name as convert_unit_name,umst.unit_name as base_unit_name FROM product_mst as promst
-				left join unit_mst as umst on umst.unitid=promst.product_base_unit
-				left join unit_mst as conv_mst on conv_mst.unitid=promst.product_conv_unit
-			WHERE product_id=".$POST['product_id'];
-			
-			$rs_type1=$dbcon->query($query1);
-			$row1=brp_mysqli_fetch_assoc($rs_type1);
-			
-			if($row1['product_base_unit']!=$row1['product_conv_unit']){
+{
+    // --- Validation and Sanitization ---
+    
+    // 1. Sanitize edit_id
+    $edit_id = isset($POST['edit_id']) ? (int)$POST['edit_id'] : 0;
+    
+    // 2. Sanitize product_id
+    $product_id = isset($POST['product_id']) ? (int)$POST['product_id'] : 0;
+    
+    // Check if critical IDs are present
+    if ($edit_id === 0 || $product_id === 0) {
+        // Log an error or return a structured failure message
+        echo json_encode(['error' => 'Missing or invalid edit_id or product_id.']);
+        return; // Stop execution
+    }
+
+    // --- First Query ---
+    $query = "select * from tbl_purchasecardtrn where purchasecardtrn_id=" . $edit_id;
+    $rs_type = $dbcon->query($query);
+    $row = brp_mysqli_fetch_assoc($rs_type);
+    
+    // --- Second Query ---
+    $query1="SELECT promst.product_base_unit,promst.product_conv_unit,conv_mst.unit_name as convert_unit_name,umst.unit_name as base_unit_name FROM product_mst as promst
+        left join unit_mst as umst on umst.unitid=promst.product_base_unit
+        left join join unit_mst as conv_mst on conv_mst.unitid=promst.product_conv_unit
+        WHERE product_id=" . $product_id;
+    
+    $rs_type1 = $dbcon->query($query1);
+    $row1 = brp_mysqli_fetch_assoc($rs_type1);
+    
+    // ... rest of the logic
+}
+3. Best Practice: Using Prepared Statements
+For a robust application, both queries should use prepared statements. This requires two separate prepared statement blocks:
+
+PHP
+
+else if(strtolower($POST['mode'])== "load_product_unit")
+{
+    // Sanitize and validate inputs
+    $edit_id = isset($POST['edit_id']) ? (int)$POST['edit_id'] : 0;
+    $product_id = isset($POST['product_id']) ? (int)$POST['product_id'] : 0;
+    
+    if ($edit_id === 0 || $product_id === 0) {
+        echo json_encode(['error' => 'Missing required IDs.']);
+        return;
+    }
+
+    // --- First Query (tbl_purchasecardtrn) ---
+    $stmt1 = $dbcon->prepare("SELECT * FROM tbl_purchasecardtrn WHERE purchasecardtrn_id = ?");
+    $stmt1->bind_param("i", $edit_id);
+    $stmt1->execute();
+    $result1 = $stmt1->get_result();
+    $row = $result1->fetch_assoc();
+    $stmt1->close(); // Assuming you can replace brp_mysqli_fetch_assoc with fetch_assoc
+
+    // --- Second Query (product_mst) ---
+    $stmt2 = $dbcon->prepare("SELECT promst.product_base_unit, promst.product_conv_unit, conv_mst.unit_name AS convert_unit_name, umst.unit_name AS base_unit_name 
+                              FROM product_mst AS promst
+                              LEFT JOIN unit_mst AS umst ON umst.unitid = promst.product_base_unit
+                              LEFT JOIN unit_mst AS conv_mst ON conv_mst.unitid = promst.product_conv_unit
+                              WHERE product_id = ?");
+    $stmt2->bind_param("i", $product_id);
+    $stmt2->execute();
+    $result2 = $stmt2->get_result();
+    $row1 = $result2->fetch_assoc();
+    $stmt2->close();
+
+    // ... continue with your logic using $row and $row1
+    
+    if($row1['product_base_unit']!=$row1['product_conv_unit']){
     			$row1['unit_status']="1";
     			$base='';$conv='';
     			
