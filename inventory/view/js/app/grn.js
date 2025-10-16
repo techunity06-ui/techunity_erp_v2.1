@@ -173,9 +173,11 @@ var errorlog=0;
 				window.location=root_domain+inventory_domain+'grn_list';
 			}
 			$('#grn_add').trigger('reset');
+			Unloading();
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 			console.log(textStatus, errorThrown);
+			Unloading();
 		}
 	});
 	

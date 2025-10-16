@@ -558,16 +558,31 @@ $totalsqr = $totalsqr + (float)($row['sqr_ft'] ?: 0) - (float)($charges_qty1 ?: 
 		</html>';
 		//echo $html;exit;
 		ob_end_clean();
-		include("../../view/export/mpdf/mpdf.php");
-		$mpdf=new mPDF('','A4','0','calibri','10','10','25','10','1','1');
-		$mpdf->defaultheaderfontsize = 10; /* in pts */
-		$mpdf->defaultheaderfontstyle = B; /* blank, B, I, or BI */
-		$mpdf->defaultheaderline = 1; /* 1 to include line below header/above footer */
-		$mpdf->defaultfooterfontsize = 10; /* in pts */
-		$mpdf->defaultfooterfontstyle = B; /* blank, B, I, or BI */
-		$mpdf->defaultfooterline = 1; /* 1 to include line below header/above footer */
+
+		// Load mPDF via Composer autoload	
+		require_once __DIR__ . '/../../vendor/autoload.php';
+
+		// Initialize mPDF
+		$mpdf = new \Mpdf\Mpdf([
+			'format' => 'A4',
+			'default_font' => 'calibri',
+			'margin_top' => 35,
+			'margin_bottom' => 15,
+			'margin_left' => 5,
+			'margin_right' => 5,
+		]);
+
+		// Header and footer settings
+		$mpdf->defaultheaderfontsize = 10; // in pts
+		$mpdf->defaultheaderfontstyle = 'B'; // blank, B, I, or BI
+		$mpdf->defaultheaderline = 1;
+		$mpdf->defaultfooterfontsize = 10; // in pts
+		$mpdf->defaultfooterfontstyle = 'B'; // blank, B, I, or BI
+		$mpdf->defaultfooterline = 1;
+
 		$mpdf->SetHTMLHeader($header);
-		//$mpdf->SetHTMLFooter($footer);
+		// $mpdf->SetHTMLFooter($footer);
+
 
 		//Show page number
 		$mpdf->pagenumPrefix = ' ';

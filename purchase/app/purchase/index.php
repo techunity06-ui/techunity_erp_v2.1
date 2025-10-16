@@ -173,9 +173,8 @@ else {
 			{
 				$info['print_status']	= $POST['print_status'];
 			}
-			$info['grn_id']				= implode(",",$POST['grn_id']);
-			$info['service_id']			= implode(",",$POST['service_id']);
-			$info['financial_year_id']	= $POST['financial_year'];
+$grn_ids = is_array($_POST['grn_id']) ? $_POST['grn_id'] : [$_POST['grn_id']];
+$info['grn_id'] = implode(",", $grn_ids);			$info['financial_year_id']	= $POST['financial_year'];
 			$info['cdate']				= date("Y-m-d H:i:s");
 			$info['mdate']				= date("Y-m-d H:i:s");
 			$info['userid']				= $_SESSION['user_id'];
@@ -190,10 +189,9 @@ else {
 				$info['total']		= $POST['total'];
 				$info['g_total']	= $POST['g_total'];
 				$info['round_of']	= $POST['round_of'];
-				$info['tds_amount_conv'] = $POST['tds_amount']*$POST['currency_rate'];
-				$info['total_conv']		= $POST['total']*$POST['currency_rate'];
-				$info['g_total_conv']	= $POST['g_total']*$POST['currency_rate'];
-				$info['round_of_conv']	= $POST['round_of']*$POST['currency_rate'];
+$info['tds_amount_conv'] = (float)($_POST['tds_amount'] ?? 0) * (float)$_POST['currency_rate'];				$info['total_conv']		= $POST['total']*$POST['currency_rate'];
+				$info['g_total_conv'] = (float)$_POST['g_total'] * (float)$_POST['currency_rate'];
+				$info['round_of_conv'] = (float)$_POST['round_of'] * (float)$_POST['currency_rate'];
 			}else{
 				$info['tds_amount'] = $POST['tds_amount']*$POST['currency_rate'];
 				$info['total']		= $POST['total']*$POST['currency_rate'];
@@ -248,8 +246,7 @@ else {
 				}
 				else
 				{
-					add_general_book_entry($dbcon,"tbl_pono",$inserpoid,1,98777,abs($info['round_of']),'',$POST['invoice_date'],'',$curncy_trn,$module_name,$module_id); 
-				}
+add_general_book_entry($dbcon,"tbl_pono",$inserpoid,1,98777,abs((float)$info['round_of']),'',$_POST['invoice_date'],'',$curncy_trn,$module_name,$module_id);				}
 				
 				
           	
@@ -275,20 +272,19 @@ else {
 
 			        if($POST['currency_id']==$_SESSION['currency_id']){
 						$info_sundry_tax['sundry_amount']=$bill_sundry_tax_amount;
-						$info_sundry_tax['sundry_amount_conv']=$bill_sundry_tax_amount*$POST['currency_rate'];
-					}else{
+$info_sundry_tax['sundry_amount_conv'] = (float)$bill_sundry_tax_amount * (float)$_POST['currency_rate'];					}else{
 						$info_sundry_tax['sundry_amount']=$bill_sundry_tax_amount*$POST['currency_rate'];
 						$info_sundry_tax['sundry_amount_conv']=$bill_sundry_tax_amount;
 					}
 
 					$sundry_tax_insert=add_record('tbl_bill_sundry_transaction', array_merge($info_sundry_tax,$curncy_trn), $dbcon);
 
-            		add_general_book_entry($dbcon,"tbl_bill_sundry_transaction",$sundry_tax_insert,$cr_dr,$bill_sundry_tax_id,abs($info_sundry_tax['sundry_amount']),'',$POST['po_date'],'',$curncy_trn,$module_name,$module_id);
-
+add_general_book_entry($dbcon,"tbl_bill_sundry_transaction",$sundry_tax_insert,$cr_dr,$bill_sundry_tax_id,abs((float)$info_sundry_tax['sundry_amount']),'',$_POST['po_date'],'',$curncy_trn,$module_name,$module_id);
             		if($bill_sundry_tax_id == 9870){
             			if($POST['currency_id']==$_SESSION['currency_id']){
 							$infogsttax['cgst'] = $bill_sundry_tax_amount;
-							$infogsttax['cgst_conv'] = $bill_sundry_tax_amount*$POST['currency_rate'];
+							// Use the existing helper function if you've defined it
+$infogsttax['cgst_conv'] = (float)$bill_sundry_tax_amount * (float)$_POST['currency_rate'];
 						}else{
 							$infogsttax['cgst'] = $bill_sundry_tax_amount*$POST['currency_rate'];
 							$infogsttax['cgst_conv'] = $bill_sundry_tax_amount;
@@ -297,8 +293,7 @@ else {
             		}else if($bill_sundry_tax_id == 9880){
         				if($POST['currency_id']==$_SESSION['currency_id']){
 							$infogsttax['sgst'] = $bill_sundry_tax_amount;
-							$infogsttax['sgst_conv'] = $bill_sundry_tax_amount*$POST['currency_rate'];
-						}else{
+$infogsttax['sgst_conv'] = (float)$bill_sundry_tax_amount * (float)$_POST['currency_rate'];						}else{
 							$infogsttax['sgst'] = $bill_sundry_tax_amount*$POST['currency_rate'];
 							$infogsttax['sgst_conv'] = $bill_sundry_tax_amount;
 						}
@@ -883,25 +878,30 @@ else {
 			
 			//tax transaction
 			
-			$sel_itrn = $dbcon->query("select * from  tbl_potrancation where po_id='$POST[eid]' and potrancation_status='2'");
-			while($r_itrn=brp_mysqli_fetch_array($sel_itrn))
-			{
-				$info_tax_trn['tx_status']=2;
-				update_record("tbl_tax_trn", $info_tax_trn,"tx_transaction_id='$r_itrn[potrancation_id]' and tx_transaction_type='tbl_potrancation'" ,$dbcon);
+						$sel_itrn = $dbcon->query("SELECT * FROM tbl_potrancation WHERE po_id='$POST[eid]' AND potrancation_status='2'");
+			while ($r_itrn = brp_mysqli_fetch_array($sel_itrn)) {
+				$info_tax_trn['tx_status'] = 2;
+				update_record("tbl_tax_trn", $info_tax_trn, "tx_transaction_id='{$r_itrn['potrancation_id']}' AND tx_transaction_type='tbl_potrancation'", $dbcon);
 
 				$info_general['genral_book_status'] = 2;
-				update_record('tbl_general_book', $info_general,"table_name='tbl_potrancation' and table_id=".$r_itrn['potrancation_id'] , $dbcon);
+				update_record('tbl_general_book', $info_general, "table_name='tbl_potrancation' AND table_id=" . intval($r_itrn['potrancation_id']), $dbcon);
 
-				
 				$info_grn['purchase_status'] = 0;
-				$updateid=update_record('tbl_grn', $info_grn, "grn_id=".$r_itrn['grn_id'] , $dbcon);
-				$updateid=update_record('tbl_grn_trn', $info_grn, "grn_trn_id=".$r_itrn['grn_trn_id'] , $dbcon);
-				$updateid=update_record('tbl_grn_sub_trn', $info_grn, "grn_trn_sub_id=".$r_itrn['grn_sub_trn_id'] , $dbcon);
 
-				$info_used['po_grn_used_status'] =2;
-	    		
-	    		$updateid=update_record('tbl_po_grn_used', $info_used, "potrancation_id=".$r_itrn['potrancation_id'] , $dbcon);
+				if (!empty($r_itrn['grn_id']) && is_numeric($r_itrn['grn_id'])) {
+					update_record('tbl_grn', $info_grn, "grn_id=" . intval($r_itrn['grn_id']), $dbcon);
+				}
+				if (!empty($r_itrn['grn_trn_id']) && is_numeric($r_itrn['grn_trn_id'])) {
+					update_record('tbl_grn_trn', $info_grn, "grn_trn_id=" . intval($r_itrn['grn_trn_id']), $dbcon);
+				}
+				if (!empty($r_itrn['grn_sub_trn_id']) && is_numeric($r_itrn['grn_sub_trn_id'])) {
+					update_record('tbl_grn_sub_trn', $info_grn, "grn_trn_sub_id=" . intval($r_itrn['grn_sub_trn_id']), $dbcon);
+				}
+
+				$info_used['po_grn_used_status'] = 2;
+				update_record('tbl_po_grn_used', $info_used, "potrancation_id=" . intval($r_itrn['potrancation_id']), $dbcon);
 			}
+
 			
 			//Eway Bill Transaction
 			
@@ -948,11 +948,19 @@ else {
 			else
 				echo "0";			
 		}
+		else if(strtolower($POST['mode'])== "get_hsn_code")
+		{
+			$qry="SELECT hc.hsn_code FROM `product_mst` as pm
+				join mst_hsn_code as hc on pm.product_hsn=hc.hsn_id
+				where pm.product_id=".$POST['product_id']." and pm.company_id=".$_SESSION['company_id']."";
+			$row=brp_mysqli_fetch_assoc($dbcon->query($qry));
+			print_r($row['hsn_code']);
+		}
 		else if(strtolower($POST['mode'])== "load_productdata")
 		{
 			//$qry="select popro.*, from tbl_purchaseproduct as porpo left join tbl_company as com on com.company_id=".$_SESSION['company_id']." where product_id=".$POST['eid'];
 			$qry="select popro.*,com.stateid as com_stateid,ven.stateid as ven_stateid,u.unit_name from `product_mst` as popro left join `tbl_company` as com on com.company_id=".$_SESSION['company_id']." left join tbl_ledger as ven on ven.l_id=".$POST['vender_id']." left join unit_mst as u on u.unitid=popro.product_base_unit where product_id=".$POST['eid'];
-			$result=$dbcon->query($qry);
+				$result=$dbcon->query($qry);
 			$row=mysqli_fetch_assoc($result);
 
 			// /** 
@@ -1787,9 +1795,7 @@ else {
 				$cgst_tax_rate = ($gst*$POST['product_amount'])/100;
 				$sgst_tax_per = $gst;
 				$sgst_tax_rate = ($gst*$POST['product_amount'])/100;
-				$cgst_tax_rate_conv = ($POST['currency_rate'] * $gst*$POST['product_amount'])/100;
-				$sgst_tax_rate_conv = ($POST['currency_rate'] * $gst*$POST['product_amount'])/100;
-			}else{
+$sgst_tax_rate_conv = ((float)$_POST['currency_rate'] * (float)$gst * (float)$_POST['product_amount']) / 100;			}else{
 				$igst_tax_per = $sale_gst['tax_gst'];
 				$igst_tax_rate = ($sale_gst['tax_gst']*$POST['product_amount'])/100;
 				$igst_tax_rate_conv = ($POST['currency_rate'] * $sale_gst['tax_gst']*$POST['product_amount'])/100;
@@ -1836,10 +1842,8 @@ else {
 				$info1['igst_tax_rate']		= isset($igst_tax_rate) ? $igst_tax_rate : 0 ;
 				$info1['taxable_value']		= $cgst_tax_rate + $sgst_tax_rate + $igst_tax_rate;
 				$info1['total'] = $cgst_tax_rate + $sgst_tax_rate + $igst_tax_rate + $POST['product_amount'];
-				$info1['product_rate_conv']			= $POST['product_rate']*$POST['currency_rate'];
-				$info1['product_discount_conv']		= $POST['product_discount']*$POST['currency_rate'];
-				$info1['product_amount_conv']		= $POST['product_amount']*$POST['currency_rate'];
-				$info1['cgst_tax_rate_conv']		= isset($cgst_tax_rate_conv) ? $cgst_tax_rate_conv : 0 ;
+$info1['product_rate_conv'] = (float)$_POST['product_rate'] * (float)$_POST['currency_rate'];				$info1['product_discount_conv'] = (float)$POST['product_discount'] * (float)$POST['currency_rate'];
+$info1['product_amount_conv'] = (float)$_POST['product_amount'] * (float)$_POST['currency_rate'];				$info1['cgst_tax_rate_conv']		= isset($cgst_tax_rate_conv) ? $cgst_tax_rate_conv : 0 ;
 				$info1['sgst_tax_rate_conv']		= isset($sgst_tax_rate_conv) ? $sgst_tax_rate_conv : 0 ;
 				$info1['igst_tax_rate_conv']		= isset($igst_tax_rate_conv) ? $igst_tax_rate_conv : 0 ;
 				$info1['taxable_value_conv']		= $cgst_tax_rate_conv + $sgst_tax_rate_conv + $igst_tax_rate_conv;

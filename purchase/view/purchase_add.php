@@ -426,6 +426,7 @@
 												   <td style="vertical-align:top;max-width:300px">
 												     <div class="col-md-8">
 													 	<input id="product_id" name="product_id" style="width:100%;" placeholder="Select product" onChange=" get_hsn(this.value);load_productdetail(this.value);job_work_process(this.value);" />
+														
 														  <strong class="hsncode" style="display:none;color:blue">HSN Code : <span id="hsncode"></span></strong>
 														  <br/><br/>
 														  <textarea id="product_des" name="product_des" tabindex="15" class="form-control" ></textarea>

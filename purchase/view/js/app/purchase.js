@@ -208,7 +208,7 @@ function delete_purchase(id)
 			data: { mode : "delete",  eid : id },
 			success: function(response)
 			{
-				//console.log(response)
+				console.log(response)
 				if(response.trim() == "1") {
 					toastr.success("PO DELETE SUCCESSFULLY", "SUCCESS");
 					load_datatable();
@@ -582,11 +582,11 @@ function get_product_price(product_id="") {
 }
 
 function get_hsn(product_id){
-	//alert(product_id);
+	
 	$.ajax({
         type: "POST",
         async: false,
-        url: root_domain + finance_root_domain +'app/invoice/',
+        url: root_domain + purchase_domain +'app/purchase/',
         data: { mode : "get_hsn_code",product_id:product_id},
         success: function(response)
         {

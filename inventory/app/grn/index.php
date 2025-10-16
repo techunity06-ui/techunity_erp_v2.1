@@ -389,8 +389,13 @@ if(brp_strtolower($POST['mode']) == "fetch") {
 									//echo "helllo"; die;
 									/* jayesh for setting store approve or not */
 
-									$query_res="select * from tbl_request_product as req where rp_id in (".$info2s['po_ref_id'].")";
-									$result_res=$dbcon->query($query_res);
+									if (!empty($info2s['po_ref_id'])) {
+										$query_res = "SELECT * FROM tbl_request_product AS req WHERE rp_id IN (" . $info2s['po_ref_id'] . ")";
+										$result_res = $dbcon->query($query_res);
+									} else {
+										$result_res = [];
+									}
+
 									$resqty1=$POST['grn_qty'][$k];
 									while($row_res=brp_mysqli_fetch_assoc($result_res)){
 

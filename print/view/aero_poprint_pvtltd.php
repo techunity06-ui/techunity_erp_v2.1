@@ -114,8 +114,8 @@ if(strtolower($type) == 'pdf') {
 	$quotation_date=($rel['quotation_date']) ? date('d-M-Y', strtotime($rel['quotation_date'])) : '';
 	
 //$header ='<div style="text-align:right;"><img src="'.DOMAIN_F.LOGO.'Hermettic_Equipments.png" style="width:8.27in;padding-top:20px;" /></div>';  
-$header ='<img src="'.DOMAIN_F.LOGO.'aero_pvt_logo.jpg'.'" style="width:8.27in;" />'; 
-$footer ='<img src="'.DOMAIN_F.LOGO.'aero_pvt_footer.jpg'.'" style="width:8.27in;" />'; 
+$header ='<img src="'.DOMAIN_F.LOGO.$set_head['logo'].'" style="width: 100%" />';
+$footer ='<img src="'.DOMAIN_F.LOGO.$set_foot['logo'].'" style="width:8.27in;" />'; 
 	$approve_status='';
 	if($rel['approve_status']=='0'){
 		$approve_status=' (DRAFT)';
@@ -622,16 +622,32 @@ $footer ='<img src="'.DOMAIN_F.LOGO.'aero_pvt_footer.jpg'.'" style="width:8.27in
 		</html>';
 		//echo $html;exit;
 		ob_end_clean();
-		include("../../view/export/mpdf/mpdf.php");
-		$mpdf=new mPDF('','A4','0','calibri','0','0','35','15','0','0');
-		$mpdf->defaultheaderfontsize = 10; /* in pts */
-		$mpdf->defaultheaderfontstyle = B; /* blank, B, I, or BI */
-		$mpdf->defaultheaderline = 1; /* 1 to include line below header/above footer */
-		$mpdf->defaultfooterfontsize = 10; /* in pts */
-		$mpdf->defaultfooterfontstyle = B; /* blank, B, I, or BI */
-		$mpdf->defaultfooterline = 1; /* 1 to include line below header/above footer */
-		$mpdf->SetHTMLHeader($header);
-    	$mpdf->SetHTMLFooter($footer);
+
+// Load mPDF via Composer autoload
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+// Initialize mPDF
+$mpdf = new \Mpdf\Mpdf([
+    'format' => 'A4',
+    'default_font' => 'calibri',
+    'margin_top' => 35,
+    'margin_bottom' => 15,
+    'margin_left' => 0,
+    'margin_right' => 0,
+]);
+
+// Header and footer settings
+$mpdf->defaultheaderfontsize = 10; // in pts
+$mpdf->defaultheaderfontstyle = 'B'; // blank, B, I, or BI
+$mpdf->defaultheaderline = 1;
+$mpdf->defaultfooterfontsize = 10; // in pts
+$mpdf->defaultfooterfontstyle = 'B'; // blank, B, I, or BI
+$mpdf->defaultfooterline = 1;
+
+$mpdf->SetHTMLHeader($header);
+$mpdf->SetHTMLFooter($footer);
+
+
 
 		//Show page number
 // 		$mpdf->pagenumPrefix = ' ';

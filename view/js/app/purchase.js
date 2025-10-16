@@ -419,6 +419,7 @@ function get_gtotal(eid)
 	//calculate_grate();
 }
 function load_productdetail(pro_id) {
+	alert(pro_id);
 	var vender_id = $('#vender_id').val();
 	if(vender_id==''){
 		toastr.warning("Please Select Vender First","ERROR");
@@ -456,6 +457,7 @@ function load_productdetail(pro_id) {
 		});
 	}
 	else{
+		alert(eid);
 		$.ajax({
 			type: "POST",
 			url: root_domain+'app/purchase/',

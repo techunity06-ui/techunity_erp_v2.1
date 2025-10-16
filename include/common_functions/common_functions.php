@@ -7354,7 +7354,7 @@ function getquestion($dbcon, $id, $cond)
     return $q;
 }
 
-function getusertype($dbcon, $sid, $con)
+function getusertype($dbcon, $sid, $con='')
 {
 
     $usertype = '';

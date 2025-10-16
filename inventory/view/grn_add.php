@@ -50,6 +50,11 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 		if($rel['gir_date'] != ""){
 			$gir_date   = date('d-m-Y h:i A',strtotime($rel['gir_date']));	
 		}
+		
+    	$invoice_date='';
+		if($rel['invoice_date']!="1970-01-01" && $rel['invoice_date']!="0000-00-00" && $rel['invoice_date']!=""){
+			$invoice_date=date('d-m-Y',strtotime($rel['invoice_date']));
+		}
 		$ref_date='';
 		if($rel['ref_date']!="1970-01-01" && $rel['ref_date']!="0000-00-00" && $rel['ref_date']!=""){
 			$ref_date=date('d-m-Y',strtotime($rel['ref_date']));
@@ -143,7 +148,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 		$vender_id=$rel2['vender_id'];
 		$readonly = "readonly";
 	}
-	else if(strpos($_SERVER['REQUEST_URI'], "grn_stock_transfer")==true){
+	else if(strpos($_SERVER[REQUEST_URI], "grn_stock_transfer")==true){
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select mst.* from tbl_stock_transfer as mst
@@ -166,7 +171,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 		$vender_id='';
 		$readonly = "readonly";
 	}
-	else if(strpos($_SERVER['REQUEST_URI'], "grn_add_returnable")==true){
+	else if(strpos($_SERVER[REQUEST_URI], "grn_add_returnable")==true){
 		$returnable_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select grn.*,chn.channal_id,chn.branch_id,led.l_name,chn.cust_id from tbl_returnable_channal_item as grn 
@@ -214,6 +219,10 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
    }
 
     $inventory_party_show = $set_conr['inventory_party_show'];
+
+
+    $nilkanth = $getspecialConfiguration['nilkanth_permission'];
+    
 ?>
 
 <!DOCTYPE html>
@@ -314,7 +323,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 			<?php include_once($include.'left_menu.php');?>
 			<section id="main-content">
 				<section class="wrapper">
-					<?php //include_once('../include/equick_link.php');?>
+					<? //include_once('../include/equick_link.php');?>
 					<div class="row">
 						<div class="col-lg-12">
 							<section class="panel">
@@ -366,6 +375,14 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 												</div>
 											</div>
 											<div class="col-md-12">
+											    <div class="col-md-4">
+													<div class="form-group">
+														<label class="col-md-4 control-label">Invoice Date *</label>
+														<div class="col-md-6 col-xs-11">
+															<input type="text" id="invoice_date" name="invoice_date" class="form-control default-date-picker" title="Invoice Date." value="<?=$invoice_date?>" placeholder="Invoice Date">
+														</div>
+													</div>
+												</div>
 												<div class="col-md-4">
 													<div class="form-group">
 														<label class="col-md-4 control-label">Challan No *</label>
@@ -374,7 +391,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														</div>
 													</div>
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-4" style="display:none;">
 													<div class="form-group">
 														<label class="col-md-4 control-label" style="">GIR No.</label>
 														<div class="col-md-8" style="padding-left: 9px;">
@@ -382,7 +399,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														</div>  
 													</div>
 												</div>
-												<div class="col-md-4">
+												<div class="col-md-4" style="display:none;">
 			                                        <div class="form-group">
 			                                            <label class="col-md-4 control-label">GRI Date</label>
 			                                            <div class="col-md-8">
@@ -422,6 +439,17 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 													</div>
 												</div>
 											</div>
+											
+											<div class="col-md-12" style="display:none;">
+												<div class="col-md-4">
+													<div class="form-group">
+														<label class="col-md-4 control-label" style="">Heat Number</label>
+														<div class="col-md-8" style="padding-left: 9px;">
+															<input type="text" class="form-control"  name="heat_number" id="heat_number" placeholder="Heat Number" value="<?=$rel['heat_number']?>"  />
+														</div>
+													</div>
+												</div>
+											</div>
 
 											<?php  if(strpos($_SERVER['REQUEST_URI'], "grn_add_returnable")==true){ ?>
 												<div class="col-md-12">
@@ -434,7 +462,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 													</div>
 												</div>
 											</div>
-										<?php 	}
+										<?	}
 
 											 ?>
 											<div class="col-md-12">  <hr> </div>
@@ -458,23 +486,23 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 												<div class="col-md-4">
 													<label class="col-md-4 control-label" style="white-space:nowrap;">Choose Order No *</label>
 													<div class="col-md-8">
-														<?php if($mode=='Add'){?>
-															<?php if($pmode=="padd"){ ?>
+														<?if($mode=='Add'){?>
+															<?if($pmode=="padd"){ ?>
 																<input type="text" class="form-control" value="<?=$ref_no?>" readonly>
 																
 																<input type="hidden" name="purchaseorder_id" id="purchaseorder_id" value="<?=$purchaseorder_id?>" />
-															<?php }else{ ?>
+															<? }else{ ?>
 															
 															<select class="select2" name="purchaseorder_id" id="purchaseorder_id" onChange="load_purhcase_order_data(this.value)">
 																<option value="">Choose Order No</option>
 															</select>
 															
 															
-															<?php } ?>
-														<?php }else{?>
+															<? } ?>
+														<?}else{?>
 															<input type="text" class="form-control" value="<?=$pono?>" readonly>
 															<input type="hidden" name="purchaseorder_id" id="purchaseorder_id" value="<?=$rel['purchaseorder_id']?>" />
-														<?php }?>
+														<?}?>
 													</div>
 												</div>
 												<div class="col-md-4">
@@ -563,6 +591,8 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 																</select> -->
 																<input id="ourside_so_product_id" name="ourside_so_product_id" style="width:100%;" placeholder="Select product" onchange="load_product_detail(this.value);load_product_unit(this.value)"/>
 																<br/><br/>
+																<textarea class="form-control" name="product_desc" id="product_desc" rows="3" placeholder="Enter Product Description"><?=$mode=='Edit'?$rel['product_desc']:''?></textarea>
+																<br/><br/>
 																<div id="get_spec_div" style="display:none">
 																	<!--Width : <input type="text" class="form-control" name="product_width" id="product_width" value="<?=$mode=='Edit'?$rel['product_width']:0?>" onkeyup="get_ms_kg()" />
 																	Height : <input type="text" class="form-control" name="product_height" id="product_height" value="<?=$mode=='Edit'?$rel['product_height']:0?>" onkeyup="get_ms_kg()" />
@@ -584,7 +614,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 																<td style="vertical-align:top;" class="hide_act_add">
 															<!--<select class="form-control" id="product_base_unit" name="product_base_unit" >
 																	<option value="">--select Unit--</option>
-																	<?php //=getunit($dbcon);?>
+																	<?//=getunit($dbcon);?>
 																</select>-->
 																<input class="form-control" type="text" name="product_base_unit_name" id="product_base_unit_name" value="" readonly />
 																<input type="hidden" name="product_base_unit" id="product_base_unit"value="" />	
@@ -599,7 +629,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 															<td style="vertical-align:top;" class="hide_act_add">
 																<!--<select class="form-control" id="product_uom" name="product_uom" >
 																	<option value="">--select UOM--</option>
-																	<?php //=getunit($dbcon);?>
+																	<?//=getunit($dbcon);?>
 																</select>-->
 																<input class="form-control" type="text" id="product_conv_unit_name" name="product_conv_unit_name" value="" readonly />
 
@@ -647,6 +677,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 													<div class="col-md-12 col-xs-11">
 														<table cellspacing="10" style=" border-spacing:10px;" class="display table table-bordered table-striped">
 															<tr id="field">
+															    <th width="5%" class="text-center">Sr. No.</th>
 																<th width="10%" class="text-center">Product Type</th>
 																<th width="30%" class="text-center">Product Name</th>
 																<th width="5%" class="text-center">Product Category</th>
@@ -654,7 +685,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 																<th width="10%" class="text-center">Pending Qty</th>
 																<th width="10%" class="text-center">Quantity</th>
 																<!--<th width="10%" class="text-center">Unit</th>-->
-																<th width="15%" class="text-center" id="godow" style="<?php if($rel['ref_type']=='3'){ echo "display:none"; }else{ echo "display:block";}?>" >Godown</th>
+																<th width="15%" class="text-center" id="godow" style="<?if($rel['ref_type']=='3'){ echo "display:none"; }else{ echo "display:block";}?>" >Godown</th>
 																<th width="15%" class="text-center">Action</th>
 															</tr>
 															<tbody id="field1" style="text-align:center">
@@ -670,7 +701,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 														</div>
 													</div> 
 												</div>
-												<?php if($mode=="Add" && $set_conr['upload_reciept'] == "Yes"){ 
+												<?if($mode=="Add" && $set_conr['upload_reciept'] == "Yes"){ 
 													$ttrt="required";
 												}else{
 													$ttrt="";
@@ -683,7 +714,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 															<input type="file" class="form-control" id="grn_file" name="grn_file[]" multiple="multiple" <?=$ttrt?> />
 														</div>
 														<div class="col-md-2">
-														<?php if($mode=='Edit'){
+														<? if($mode=='Edit'){
 															 $get_attch_qry="select * from tbl_grn_attch where grn_attch_status=0 and grn_id=".$rel['grn_id'];
 															$attch_rs=$dbcon->query($get_attch_qry);
 															while($attch_rel=mysqli_fetch_assoc($attch_rs)){
@@ -691,13 +722,13 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 															<a href="<?=ROOT.RECEIPT_FILE_VWING.$attch_rel['grn_file']?>" class="btn btn-xs btn-primary" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-eye"></i>  </a> 
 															<button type="button" onClick="delete_attch(<?=$attch_rel['grn_attch_id']?>)" class="btn btn-xs btn-danger" target="_blank" style="margin-bottom: 2px;"><i class="fa fa-trash-o"></i></button>
 															<br/>
-														<?php } }?>
+														<?} }?>
 														</div>
 													</div> 
 												</div>
 												<div class="clearfix"></div>	
 											</div>
-										<?php if($getspecialConfiguration['hermattic_permission']=="1") { ?>
+										<? if($getspecialConfiguration['hermattic_permission']=="1") { ?>
 											<div class="col-md-12">
 												<div class="clearfix"></div>
 												<div class="col-md-4">
@@ -781,15 +812,15 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 												</div>
 
 											</div>
-										<?php } ?>
+										<? } ?>
 											<input type='hidden' name='mode' id='mode' value='<?=$mode?>' />
 											<input type='hidden' name='eid' id='eid' value='<?=$rel['grn_id']?>' />
+											<input type='hidden' name='nilkanth_permission' id='nilkanth_permission' value='<?=$nilkanth_permission?>' />
 											<!-- <input type='hidden' name='j_alloc_process_id[]' id='j_alloc_process_id' value='<?=$rel2['j_alloc_process_id']?>' /> -->
 											<input type='hidden' name='back' id='back' value='<?=$back?>' />
 											<input type='hidden' name='pmode' id='pmode' value='<?=$pmode?>' />
 											<input type='hidden' name='supplier_tc_no' id='supplier_tc_no' value='<?=$supplier_tc_no?>' />
-											<input type="hidden" name="job_work_po_trn_id" id="job_work_po_trn_id" value="<?=
-											?>">
+											<input type="hidden" name="job_work_po_trn_id" id="job_work_po_trn_id" value="<?=$job_work_po_trn_id?>">
 											<div class="clearfix"></div>	
 											<button type="submit" class="btn btn-success" id="save" name="save">Submit</button>
 											<a href="<?=ROOT.INVENTORY_ROOT.'grn_list'?>" type="button" class="btn btn-danger">Cancel</a>
@@ -826,21 +857,21 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 				todayBtn: true,
 				pickerPosition: "bottom-left"
 			});  
-			<?php if($mode=='Edit'){?>
+			<?if($mode=='Edit'){?>
 			$('#vender_id').select2('readonly',true);
 			$('#branch_id').select2('readonly',true);
 			$('#purchaseorder_id').select2('readonly',true);
 			$('#grn_against').select2('readonly',true);
 			load_purhcase_order_data(<?=$rel['purchaseorder_id']?>);
-			<?php }?>
-			<?php if($mode=='Add'){?>
+			<?}?>
+			<?if($mode=='Add'){?>
 			load_grn_no();
-			<?php }?>
-			<?php if($pmode=="padd"){?>
+			<?}?>
+			<?if($pmode=="padd"){?>
 				//load_grn_no();
 				$('#grn_against').select2('readonly',true);
 				load_purhcase_order_data(<?=$purchaseorder_id?>);
-			<?php }?>
+			<?}?>
 
 			$(function() {
 	var $icon = $(".toggle_icon");
@@ -910,7 +941,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 			setTimeout(function(){
 				$(".auto_conversation_hide").hide();
 			},800);
-<?php } else { ?>
+<? } else { ?>
 	console.log('noo')
 	$no.prop("checked", "checked");
 			$sad.addClass("selected");
@@ -928,7 +959,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 				$(".auto_conversation_hide").show();
 			},800);
 			
-<?php } ?>	
+<? } ?>	
 
 		});
 	

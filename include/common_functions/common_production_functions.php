@@ -3782,8 +3782,7 @@ PURPOSE : checking process enable in prodcuct type wise */
 								}
 								$conv_stock=$conv_stock-$used_qty;
 							}
-							$info2['used_qty'] = $row['used_qty']+$used_qty;
-
+$info2['used_qty'] = (float)$row['used_qty'] + (float)$used_qty;	
 							if($info2['used_qty'] == $row['product_qty']){
 								$info2['grn_status'] = 1;
 								$today_date = date('Y-m-d');

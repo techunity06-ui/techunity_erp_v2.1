@@ -538,7 +538,8 @@ function vender_product_price_detail() {
 		}
 	});
 }
-function load_productdetail(val, i = "") {
+function load_productdetail(val) {
+	alert(val);
 	if (val != 0) {
 		$('#addproduct').hide();
 	}
@@ -555,7 +556,7 @@ function load_productdetail(val, i = "") {
 		return false;
 	}
 
-	get_hsn(val);
+	
 	/* if(currency_id==''){
 		toastr.warning("Please Select Currency","ERROR");
 		$('#currency_id').select2('focus');
@@ -566,14 +567,14 @@ function load_productdetail(val, i = "") {
 		$('#conversion_rate').select2('focus');
 		return false;
 	} */
-
+	alert(vendor_id);
 	$.ajax({
 		type: "POST",
 		url: root_domain + purchase_domain + 'app/purchase_order/',
-		data: { mode: "load_productdata", eid: val, vender_id: vender_id },
+		data: { mode: "load_productdata", eid: val, vender_id: vender_id,  },
 		success: function (response) {
 			//console.log(response);
-			//Unloading();
+			
 			var obj = jQuery.parseJSON(response)
 			//$('#product_des').val(obj.product_desc);				
 			$('#product_hsn_code').val(obj.product_hsn);
@@ -2038,6 +2039,8 @@ function po_type_product_load(po_type) {
 	load_products(po_type);
 }
 function job_work_process(prod_id = '', proc = '') {
+		alert(po_type);
+
 	po_type = $('#po_type').val();
 	if (po_type == 2) {
 		//$('#process_id').select2('display','block');
@@ -2081,6 +2084,8 @@ function get_statecode(cust_id) {
 	}
 }
 function get_hsn(product_id) {
+	// alert(product_id);
+	alert(product_id);
 	$.ajax({
 		type: "POST",
 		async: false,

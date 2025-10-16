@@ -1761,8 +1761,14 @@ if (strtolower($POST['mode']) == "fetch") {
 } else if (strtolower($POST['mode']) == "update_total") {
 
 	//update total , net total , general books entry at edit time start - dhaval 
-	$bill_sundry_tax = array_combine($POST['bill_sundry_tax'], $POST['bill_sundry_tax1']);
-
+  // Make sure both keys and values exist and are arrays
+    if (!empty($_POST['bill_sundry_tax']) && !empty($_POST['bill_sundry_tax1']) 
+        && is_array($_POST['bill_sundry_tax']) && is_array($_POST['bill_sundry_tax1'])) {
+        
+        $bill_sundry_tax = array_combine($_POST['bill_sundry_tax'], $_POST['bill_sundry_tax1']);
+    } else {
+        $bill_sundry_tax = []; // default empty array
+    }
 	if ($POST['invoice_id'] > 0) {
 		$query = "select sales_ledger_id,cust_id from tbl_invoice where invoice_id=" . $POST['invoice_id'] . " ";
 		$rel = brp_mysqli_fetch_assoc($dbcon->query($query));

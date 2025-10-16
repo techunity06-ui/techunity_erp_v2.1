@@ -6729,12 +6729,16 @@ function count_general_pen_tsk($dbcon, $user_id, $isTeamPending = true)
     //echo $sales_order_trn_id; 
     }
 
-    function update_grn_sub_trn_to_purchase_status($dbcon, $grn_sub_trn_id)
-    {
-        $query = "select product_qty,grn_trn_id from tbl_grn_sub_trn as res
-        where grn_trn_sub_id=" . $grn_sub_trn_id;
+        function update_grn_sub_trn_to_purchase_status($dbcon, $grn_sub_trn_id)
+        {
+              if (empty($grn_sub_trn_id) || !is_numeric($grn_sub_trn_id)) {
+                return null;                
+                }
+    
+            $query = "select product_qty,grn_trn_id from tbl_grn_sub_trn as res
+            where grn_trn_sub_id=" . $grn_sub_trn_id;
 
-        $result = $dbcon->query($query);
+            $result = $dbcon->query($query);
         $row = brp_mysqli_fetch_assoc($result);
 
         $query_used = "select sum(used_qty) as used_qty from tbl_po_grn_used as res
