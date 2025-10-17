@@ -196,31 +196,44 @@ function add_hsn_invoice(){
 	$("#hsn_name").focus();
 }
 
-function delete_purchase(id) 
-{
-	var r= confirm(" Are you want to delete ?");
-	
-	if(r) {
-		Loading(true);
-		$.ajax({
-			type: "POST",
-			url: root_domain+purchase_domain+'app/purchase/',
-			data: { mode : "delete",  eid : id },
-			success: function(response)
-			{
-				console.log(response)
-				if(response.trim() == "1") {
-					toastr.success("PO DELETE SUCCESSFULLY", "SUCCESS");
-					load_datatable();
-					Unloading();
-				}
-				else if(response.trim() == "0") {
-					toastr.warning("SOMETHING WRONG", "WARNING");
-				}							
-			}
-		});	
-	}
-	
+function delete_purchase(id) {
+    var r = confirm("Are you sure you want to delete?");
+    
+    if(r) {
+        Loading(true);
+        
+        $.ajax({
+            type: "POST",
+            url: root_domain + purchase_domain + 'app/purchase/',
+            data: { 
+                mode: "delete",  
+                eid: id 
+            },
+            success: function(response) {
+                console.log("Response:", response);
+                
+                // Ensure loading stops regardless of response
+                Unloading();
+                
+                // Handle response
+                if(response && response.trim() === "1") {
+                    toastr.success("DELETED SUCCESSFULLY", "SUCCESS");
+                    load_datatable();
+                } else {
+                    toastr.error("FAILED TO DELETE . PLEASE TRY AGAIN.", "ERROR");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error:", error);
+                Unloading();
+                toastr.error("NETWORK ERROR: PLEASE CHECK YOUR CONNECTION", "ERROR");
+            },
+            complete: function() {
+                // Ensure loading stops in case of complete
+                Unloading();
+            }
+        });
+    }
 }
 function get_discount(type)
 {
