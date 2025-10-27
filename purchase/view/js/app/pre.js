@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	show_data();
 	load_po_req_datatable();
-	product_load();
+	// product_load();
 	load_products();
 	$("#pre_add").validate({
 	rules: {
@@ -212,11 +212,12 @@ function add_field(){
 		return false;
 	}
 	
-	if(!$("#product_qty").val()){		
-		toastr.warning("Enter Qty", "ERROR");
-		$("#product_qty").focus();
+	if(!$("#product_qty").val() || $("#product_qty").val() <= 0){
+	toastr.warning("Enter a valid Quantity", "ERROR");
+	$("#product_qty").focus();
 		return false;
 	}
+
 	
 	/*if(!$("#rate").val()){		
 		toastr.warning("Enter Rate", "ERROR");
@@ -375,11 +376,12 @@ function delete_data(id) {
 		Loading();
 		$.ajax({
 			type: "POST",
-			url: root_domain + 'app/pre/',
+			url:  root_domain+purchase_domain+'app/pre/',
 			data: { mode:"delete_data", id:id },
 			success: function(response)
 			{
-				//console.log(response);
+				
+				console.log(response);
 				var data=jQuery.parseJSON(response);
 				var response=data.res;
 				if(response.trim() == "1") {
@@ -521,35 +523,35 @@ function product_load(po_type=''){
 
 	return testData;
 }
-function load_products($po_type = '')
-{
-	$('#product_id').select2({
-		data: product_load($po_type),
-		placeholder: 'search',
-		multiple: false,
-		// query with pagination
-		query: function(q) {
-			var pageSize,
-			results,
-			that = this;
-		  pageSize = 20; // or whatever pagesize
-		  results = [];
-		  if (q.term && q.term !== '') {
-			// HEADS UP; for the _.filter function i use underscore (actually lo-dash) here
-			results = _.filter(that.data, function(e) {
-				return e.text.toUpperCase().indexOf(q.term.toUpperCase()) >= 0;
+	function load_products($po_type = '')
+	{
+		$('#product_id').select2({
+			data: product_load($po_type),
+			placeholder: 'search',
+			multiple: false,
+			// query with pagination
+			query: function(q) {
+				var pageSize,
+				results,
+				that = this;
+			pageSize = 20; // or whatever pagesize
+			results = [];
+			if (q.term && q.term !== '') {
+				// HEADS UP; for the _.filter function i use underscore (actually lo-dash) here
+				results = _.filter(that.data, function(e) {
+					return e.text.toUpperCase().indexOf(q.term.toUpperCase()) >= 0;
+				});
+			} else if (q.term === '') {
+				results = that.data;
+			}
+			q.callback({
+				results: results.slice((q.page - 1) * pageSize, q.page * pageSize),
+				more: results.length >= q.page * pageSize,
 			});
-		} else if (q.term === '') {
-			results = that.data;
-		}
-		q.callback({
-			results: results.slice((q.page - 1) * pageSize, q.page * pageSize),
-			more: results.length >= q.page * pageSize,
+			//$("#product_id").select2('data', { id:1, title: "UPS 3200B"});
+			},
 		});
-		  //$("#product_id").select2('data', { id:1, title: "UPS 3200B"});
-		},
-	});
-}
+	}
 function showproduct(){
 	
 	//$.fn.modal.Constructor.prototype.enforceFocus = function() {};

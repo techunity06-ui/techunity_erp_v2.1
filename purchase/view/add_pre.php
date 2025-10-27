@@ -243,7 +243,7 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 		<?php include_once($path.'administration/include/add_product.php');?>
 		<?php include_once($path.'administration/include/add_hsn_in_popup.php');?>
 		<script src="<?=ROOT.PURCHASE_ROOT?>js/app/pre.js?<?=time()?>"></script>
-		<script src="<?=ROOT.ADMINISTRATION_ROOT?>js/app/product_mst.js?<?=time()?>"></script>
+		<!-- <script src="<?=ROOT.ADMINISTRATION_ROOT?>js/app/product_mst.js?<?=time()?>"></script> -->
 		<script src="<?=ROOT.ADMINISTRATION_ROOT?>js/app/hsn_master.js?<?php echo time(); ?>"></script>
 		<script>
 			$(".select2").select2({

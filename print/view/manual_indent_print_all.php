@@ -32,14 +32,14 @@ $getpre_id = "select pre_id from tbl_pre_trn where pre_trn_id=$rel[pre_trn_id]";
 $pre_id = mysqli_fetch_assoc($dbcon->query($getpre_id));
 
 
-$getallproduct = "SELECT * FROM tbl_pre_trn WHERE pre_id = " . $invoiceid;
+$getallproduct = "SELECT * FROM tbl_pre_trn WHERE pre_id = " . $pre_id['pre_id'];
 $result = $dbcon->query($getallproduct);
 $allprod = []; // array to store all products
 while ($row = mysqli_fetch_assoc($result)) {
 	$allprod[] = $row;
 }
 
-$getpre_no = "select pre_no,pre_date from tbl_pre where pre_id=$invoiceid";
+$getpre_no = "select pre_no,pre_date from tbl_pre where pre_id=$pre_id[pre_id]";
 $pre_no_pre_date = mysqli_fetch_assoc($dbcon->query($getpre_no));
 
 // var_dump($query);
@@ -297,7 +297,7 @@ $getspecialConfiguration = getspecialConfiguration($dbcon);
 													LEFT JOIN tbl_set_main_process AS wor ON wor.sp_id = trn.sp_id
 													LEFT JOIN tbl_ledger AS led ON led.l_id = trn.vender_id
 													WHERE trn.pre_trn_status = 0 
-													AND trn.pre_id = {$invoiceid}
+													AND trn.pre_id = {$pre_id['pre_id']}
 													ORDER BY trn.pre_trn_id ASC";
 
 												$result = $dbcon->query($qry);

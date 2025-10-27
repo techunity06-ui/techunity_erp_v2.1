@@ -3442,6 +3442,35 @@ function load_common_no($dbcon, $type_id)
     //echo json_encode($row);
     return $invoiceno;
 }
+
+
+function load_common_no_for_manual_indent($dbcon, $type_id,$invoicetype_id)
+{
+    $row = array();
+    $quer = "select invoicetype_id from  tbl_invoicetype where status=0 and type_id=" . $type_id . " and company_id= " . $_SESSION['company_id'] . " AND financial_year_id = " . $_SESSION['financial_year_id'];
+    $ro = mysqli_fetch_assoc($dbcon->query($quer));
+
+    $query1 = "select * from  tbl_invoicetype where invoicetype_id='" . $invoicetype_id. "'";
+    $rows = mysqli_fetch_assoc($dbcon->query($query1));
+    $id = $rows['taxinvoice_start'];
+    $id = $id + 1;
+
+    //$start=(date('m')<'04') ? date('y',strtotime(date('y').'-1 year')) : date('y');
+    //$end = $start+1;
+    if ($rows['invoice_format'] == '2') {
+        $invoiceno = str_pad($id, 4, "0", STR_PAD_LEFT) . $rows['format_value'];
+    } else if ($rows['invoice_format'] == '1') {
+        $invoiceno = $rows['format_value'] . str_pad($id, 3, "0", STR_PAD_LEFT);
+    } else if ($rows['invoice_format'] == '3') {
+        $invoiceno = $rows['format_value'] . str_pad($id, 3, "0", STR_PAD_LEFT) . $rows['end_format_value'];
+    } else {
+        $invoiceno = str_pad($id, 3, "0", STR_PAD_LEFT);
+    }
+    //$row['challanno'] = str_pad($id,3,"0",STR_PAD_LEFT);
+    //echo json_encode($row);
+    return $invoiceno;
+}
+
 function get_user_report($dbcon, $user_id, $defaul_all = false)
 {
     $query = "select user_id,user_name from users where user_id in (" . $user_id . ")";

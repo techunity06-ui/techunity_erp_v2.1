@@ -217,7 +217,7 @@ else {
 			}
 			
 			if(empty($POST['edit_id'])) {
-				$inserid = add_record($table, $info1, $dbcon, $branch_id);
+					$inserid = add_record($table, $info1, $dbcon, $branch_id);
 				if(!empty($POST['pre_id'])) {
 					$prod_p = "select product_conv_unit,product_base_unit from product_mst where product_id=".$POST['product_id'];
 					$prod_e = $dbcon->query($prod_p);
@@ -419,7 +419,8 @@ else {
 					if($row['unitid']!=$row['conv_unitid']){
 						$show_qty="<strong style='color:green'>".number_format($row['product_qty'], 4, '.', '')." ".$row['unit_name']."</strong> </br> <strong style='color:orange'>".number_format($row['product_conv_qty'], 4, '.', '')." ".$row['conv_unit_name']."</strong>";
 					}else{
-						$show_qty="<strong style='color:green'>".number_format($row['product_qty'], 4, '.', '')." ".$row['unit_name']."</strong>";
+$qty = is_numeric($row['product_qty']) ? (float)$row['product_qty'] : 0;
+$show_qty = "<strong style='color:green'>" . number_format($qty, 4, '.', '') . " " . $row['unit_name'] . "</strong>";
 					}
 					
 					$over_tol = '';
@@ -495,20 +496,35 @@ else {
 			//var_dump($row);
 			echo json_encode($row);
 		}
-		else if(strtolower($POST['mode'])== "delete_data") {
-			$row=array();
-			$info['pre_trn_status']=2; 
-			$info3['status']=2;
-			
-			$updateid=update_record('tbl_pre_trn', $info, "pre_trn_id=".$POST['id'] , $dbcon);
-			$updateid2=update_record('tbl_request_product', $info3, "pre_trn_id=".$row['pre_trn_id'] , $dbcon);
-			
-			if($updateid)
-				$row['res']="1";
+		else if (strtolower($POST['mode']) == "delete_data") {
+			$row = array();
+			$info['pre_trn_status'] = 2; 
+			$info3['status'] = 2;
+
+			// Update main table first
+			$updateid = update_record('tbl_pre_trn', $info, "pre_trn_id=" . $POST['id'], $dbcon);
+
+			// Check if related record exists in tbl_request_product
+			$chk_sql = "SELECT pre_trn_id FROM tbl_request_product WHERE pre_trn_id = " . intval($POST['id']);
+			$chk_qry = $dbcon->query($chk_sql);
+
+			if ($chk_qry && $chk_qry->num_rows > 0) {
+				// Only update if record exists
+				$updateid2 = update_record('tbl_request_product', $info3, "pre_trn_id=" . $POST['id'], $dbcon);
+			} else {
+				$updateid2 = true; // Consider true since there's nothing to update
+			}
+
+			// Return result
+			if ($updateid && $updateid2)
+				$row['res'] = "1";
 			else
-				$row['res']="0";
+				$row['res'] = "0";
+
 			echo json_encode($row);
 		}
+
+
 		else if(strtolower($POST['mode'])== "add") {
 			$branch_id = ($_SESSION['user_type'] == '2' && isset($POST['branch_id']) && $POST['branch_id']) ? $POST['branch_id'] : $_SESSION['branch_id'];
 			$products = get_pre_product($dbcon,'');
@@ -856,10 +872,9 @@ else {
 			$row = brp_mysqli_fetch_assoc($result);
 			echo $row['invoicetype_id'];
 		} else if (strtolower($POST['mode']) == "load_invoiceno") {
-		    $typeid = $POST['typeid'];
+		    $invoicetype_id = $POST['typeid'];
 			$row = array();
-			$purchase_order_no = load_common_no($dbcon, MANUAL_INDENT_SERIES,$typeid);
-			$row['invoiceno'] = $purchase_order_no;
+			$row['invoiceno'] = load_common_no_for_manual_indent($dbcon, MANUAL_INDENT_SERIES,$invoicetype_id);
 			echo json_encode($row);
 		}
 	

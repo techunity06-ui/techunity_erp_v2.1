@@ -54,50 +54,57 @@ $companyConfiguration=getCompanyConfiguration($dbcon);
 				<div class="row">			
 					<div class="col-sm-12">
 						<section class="panel">
-							<header class="panel-heading">
-								<div class='col-md-6'>
-									<div class="form-group">
-										<label class="control-label col-lg-4 col-md-4 col-xs-3">Choose Date</label>
-										<div class=" col-lg-8 col-md-8 col-xs-9">
-											<div class="input-group date form_datetime-component">
-												<input type="hidden" id="from_date" value="<?=$start?>">
-												<input type="hidden" id="to_date" value="<?=$end?>">
-												<input type="text" id="rep_date" onChange="reload_data();;" class="form-control datepikerdemo" value="">
-												<span class="input-group-btn">
-													<button type="button" class="btn btn-danger date-set"><i class="fa fa-calendar"></i></button>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>	
-								<div class="col-md-6">
-									<div class="col-md-2" style="display:none">
-										<label for="po_type_status1" class="external-event label label-primary ui-draggable" style="position: relative;cursor:pointer;">All</label>
-										<input id="po_type_status1" name="po_type_status" type="radio" onClick="reload_data();" class="" title="All" value="1,3">
-									</div>
-									<div class="col-md-3">
-										<label for="po_type_status3" class="external-event label label-warning ui-draggable" style="position: relative;cursor:pointer;">Pending</label>
-										<input id="po_type_status3" name="po_type_status" checked onClick="reload_data();" type="radio" class="" title="Pending" value="1" />
-									</div>
-									<div class="col-md-3">
-										<label for="po_type_status2" class="external-event label label-success ui-draggable" style="position: relative;cursor:pointer;">Done</label>
-										<input id="po_type_status2" name="po_type_status" onClick="reload_data();" type="radio" class="" title="Done" value="3" />
-									</div>
-								</div>
-								<div class="col-md-24"></div>
-								<?php if($companyConfiguration['branch_wise_manage']==1) { ?>
-									<div class="col-md-6">
-										
-										<?php echo getBranchBox($dbcon, $branch_id, '', false, true, 'reload_data(this.value)','4','8'); ?>	
-									
-									</div>
-								<?php } ?>
-								<div class="col-md-6">	
-									<span class="tools pull-right">
-										<a href="<?=ROOT.PURCHASE_ROOT.'multiple_approove_indent'?>" ><button class="btn btn-success btn-flat" >Multiple <?=$form?></button></a>
-									</span>
-								</div>	 
-							</header>	
+			<header class="panel-heading">
+    <!-- First Row: Date Picker and Status Buttons -->
+    <div class="row">
+        <!-- Date Picker -->
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <label class="control-label col-xs-12 col-md-4">Choose Date</label>
+                <div class="col-xs-12 col-md-8">
+                    <div class="input-group date form_datetime-component">
+                        <input type="hidden" id="from_date" value="<?=$start?>">
+                        <input type="hidden" id="to_date" value="<?=$end?>">
+                        <input type="text" id="rep_date" onChange="reload_data();" class="form-control datepikerdemo" value="">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger date-set"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Buttons -->
+        <div class="col-xs-12 col-md-6">
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <label for="po_type_status3" class="external-event label label-warning" style="cursor:pointer;">Pending</label>
+                    <input id="po_type_status3" name="po_type_status" checked onClick="reload_data();" type="radio" class="" title="Pending" value="1" />
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <label for="po_type_status2" class="external-event label label-success" style="cursor:pointer;">Done</label>
+                    <input id="po_type_status2" name="po_type_status" onClick="reload_data();" type="radio" class="" title="Done" value="3" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row: Branch and Button -->
+    <div class="row">
+        <?php if($companyConfiguration['branch_wise_manage']==1) { ?>
+            <div class="col-xs-12 col-md-6">
+                <?php echo getBranchBox($dbcon, $branch_id, '', false, true, 'reload_data(this.value)','4','8'); ?>
+            </div>
+        <?php } ?>
+        <div class="col-xs-12 col-md-6 text-right">
+            <a href="<?=ROOT.PURCHASE_ROOT.'multiple_approove_indent'?>">
+                <button class="btn btn-success btn-flat">Multiple <?=$form?></button>
+            </a>
+        </div>
+    </div>
+</header>
+
+
 							<div class="panel-body">
 								<div class="adv-table">
 									<table class="display table table-bordered table-striped" id="po-req-table">

@@ -110,6 +110,7 @@ RewriteRule ^stock_general_print/([^/]*)$ stock_general_print.php?id=$1 [L]
 RewriteRule ^libra_workorder_print/([^/]*)$ libra_workorder_print.php?id=$1 [L]
 
 # Manual Indent
+RewriteRule ^manual_indent_print_all/([^/]*)$ manual_indent_print_all.php?id=$1 [L]
 RewriteRule ^manual_indent_print/([^/]*)$ manual_indent_print.php?id=$1 [L]
 RewriteRule ^manual_indent_print_new/([^/]*)$ manual_indent_print_new.php?id=$1 [L]
 RewriteRule ^manual_indent_print_single/([^/]*)$ manual_indent_print_new.php?id=$1 [L]

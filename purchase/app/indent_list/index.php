@@ -136,7 +136,7 @@ else {
 					$sql=$dbcon->query("SELECT * FROM print_setup_mst WHERE print_type = 18 AND approve_status = 1 AND status = 0 ORDER BY priority");
 					while($res = mysqli_fetch_assoc($sql)){
 						if(in_array($res['id'],$menu_show_permissions)) {
-							$indent_view.='<a class="btn btn-xs btn-primary" data-original-title="'.$res['print_name'].'" data-toggle="tooltip" data-placement="top" target="_blank"  href="'.ROOT.PRINT_ROOT.$res['page_path'].'/'.$row['rp_id'].'?'.time().'" style="background: '.$res['icon_color'].'; border-color: '.$res['icon_color'].';"><i class="'.$res['fa_icon'].'"></i></a>';
+							$indent_view.='<a class="btn btn-xs btn-primary" data-original-title="'.$res['print_name'].'" data-toggle="tooltip" data-placement="top" target="_blank"  href="'.ROOT.PRINT_ROOT.'manual_indent_print_all'.'/'.$row['rp_id'].'?'.time().'" style="background: '.$res['icon_color'].'; border-color: '.$res['icon_color'].';"><i class="'.$res['fa_icon'].'"></i></a>';
 						}
 					}
 				}else{
@@ -146,7 +146,7 @@ else {
 					$sql=$dbcon->query("SELECT * FROM print_setup_mst WHERE print_type = 17 AND approve_status = 1 AND status = 0 ORDER BY priority");
 					while($res = mysqli_fetch_assoc($sql)){
 						if(in_array($res['id'],$menu_show_permissions)) {
-							$indent_view.='<a class="btn btn-xs btn-primary" data-original-title="'.$res['print_name'].'" data-toggle="tooltip" data-placement="top" target="_blank"  href="'.ROOT.PRINT_ROOT.$res['page_path'].'/'.$row['rp_id'].'?'.time().'" style="background: '.$res['icon_color'].'; border-color: '.$res['icon_color'].';"><i class="'.$res['fa_icon'].'"></i></a>';
+							$indent_view.='<a class="btn btn-xs btn-primary" data-original-title="'.$res['print_name'].'" data-toggle="tooltip" data-placement="top" target="_blank"  href="'.ROOT.PRINT_ROOT.'manual_indent_print_all'.'/'.$row['rp_id'].'?'.time().'" style="background: '.$res['icon_color'].'; border-color: '.$res['icon_color'].';"><i class="'.$res['fa_icon'].'"></i></a>';
 						}
 					}
 				}

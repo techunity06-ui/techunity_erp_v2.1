@@ -457,7 +457,7 @@ function load_value() {
 			//var data = JSON.parse(response);
 			//alert(data.purchse_order_pending);
 		Unloading();
-			// load_purchase_order_data();
+			load_purchase_order_data();
 			}
 		});
 	}

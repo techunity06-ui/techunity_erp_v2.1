@@ -411,7 +411,7 @@ function load_typeswise_terms(quotation_id)
 		$("#cust_id").focus();
 		return false;
 	}
-
+	alert(2323);
 	if(quot_type || quot_type==0) {
 		Loading(true);
 		$.ajax({
@@ -420,6 +420,7 @@ function load_typeswise_terms(quotation_id)
 			data: { mode : "load_typeswise_terms", quot_type:quot_type, quotation_id:quotation_id,terms_type:terms_type,cust_id:cust_id },
 			success: function(response)
 			{
+				alert(2323);
 				var resp=JSON.parse(response);
 				$('#quot_terms_cond_div').html(resp.resp_html);
 				Unloading();
