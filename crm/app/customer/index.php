@@ -2103,7 +2103,9 @@ else {
 	}
 	else if(strtolower($POST['mode'])== "show_led_attach_data") {
 	    $chkmode=$POST['modee'];
-	    $delete_btn_per = in_array(CUSTOMER_PARTY_MASTER_SLUG_DELETE,$bulkAccessArray);
+		$bulkAccessArray = is_array($bulkAccessArray) ? $bulkAccessArray : [];
+		$delete_btn_per = in_array(CUSTOMER_PARTY_MASTER_SLUG_DELETE, $bulkAccessArray);
+
 	    if($POST['l_id']){
 	        $query="select mst.* from tbl_ledger_attach_doc as mst 
 	        where mst.led_attach_status=0 and mst.cust_id=".$POST['l_id'];

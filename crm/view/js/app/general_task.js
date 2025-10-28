@@ -101,6 +101,7 @@ $("#task_add").on('submit',function(e) {
 	});
 	
 });
+
 function load_task_datatable(){
 	var task_status=$('input[name=task_status]:Checked').val();
 	var date=$('#rep_date').val();

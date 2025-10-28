@@ -18,6 +18,11 @@
 <head>
 <title>LOGIN</title>
 <?php include_once('../include/include_css_file.php');?>
+<style>
+    .modal-backdrop {
+        background-color: inherit;
+    }
+</style>
 </head>
  <body class="login-body">	
     

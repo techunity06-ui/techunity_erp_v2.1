@@ -248,11 +248,15 @@ if (strtolower($POST['mode']) == "fetch") {
         $info['stage_prob'] = $POST['stage_prob'];
     }
     
-    $prev_task_id = get_previous_taskid($dbcon,$POST['inquiry_id']);
-    if($POST['task_type_id']=='21' || $POST['task_type_id']=='20'){
-        $info['quotation_id'] = $prev_task_id['quotation_id'];
-    }
+   if (!empty($POST['inquiry_id']) && $POST['inquiry_id'] != 0) {
 
+    $prev_task_id = get_previous_taskid($dbcon, $POST['inquiry_id']);
+
+        
+    }
+    if ($POST['task_type_id'] == '21' || $POST['task_type_id'] == '20') {
+                $info['quotation_id'] = $prev_task_id['quotation_id'];
+            }
 
     $info['show_user_ids'] = $show_user_ids;
     $info['task_type_id'] = $POST['task_type_id'];

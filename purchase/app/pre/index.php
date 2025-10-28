@@ -532,7 +532,9 @@ $show_qty = "<strong style='color:green'>" . number_format($qty, 4, '.', '') . "
 			if(empty($products)){
 				$arr['msg'] = "2";
 			} else {
-			    $pre_no	= load_common_no($dbcon, MANUAL_INDENT_SERIES, $POST['invoicetype_id']);
+				$arr['msg'] = "1";
+				$arr['products'] = $products;
+	    $pre_no	=  $POST['pre_no'];
 				update_common_no($dbcon, MANUAL_INDENT_SERIES, $POST['invoicetype_id']);
 				$info['pre_no']		= $pre_no;
 				$info['pre_date']	= date('Y-m-d',strtotime($POST['pre_date']));

@@ -405,13 +405,23 @@ $("#pre_add").on('submit',function(e) {
 	if (!$("#pre_add").valid()) {
 		return false;
 	}
-	
+	    var pre_no = $('#pre_no').val().trim();
+
+    // Validate pre_no
+    if (pre_no === '' || pre_no === null || pre_no === '001') {
+        toastr.warning("Pre No cannot be empty or '001'.");
+        $('#pre_no').focus();
+        return false;
+    }
         
 	form.submitted = true;	
 	Loading();	
 	$(this).attr("disabled","disabled");		
 	var form_data=new FormData(this);
 	
+	
+
+
 	$.ajax({
 		cache:false,
 		url: root_domain+purchase_domain+'app/pre/',

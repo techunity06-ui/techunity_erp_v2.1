@@ -3938,7 +3938,20 @@ function total_reserve_stock($dbcon, $product_id, $unit_id, $reserve_id, $reques
     //return $j;
 
 }
-function reserve_stock($dbcon, $product_id, $unit_id, $reserve_id, $request_id, $complaint_id, $sales_order_trn_id, $branch_id, $is_store_approval, $p_id, $godown_id, $batch_id, $customer_id = "", $without_store_release = "")
+// function reserve_stock($dbcon, $product_id, $unit_id, $reserve_id, $request_id, $complaint_id, $sales_order_trn_id, $branch_id, $is_store_approval, $p_id, $godown_id, $batch_id, $customer_id = "", $without_store_release = "")
+function reserve_stock(
+    $dbcon,
+    $product_id,
+    $unit_id,
+    $reserve_id = 0,
+    $request_id = 0,
+    $complaint_id = 0,
+    $sales_ordertrn_id = 0,
+    $branch_id = 0,
+    $user_id = 0,
+    $date = '',
+    $mode = '',
+    $remarks = '')
 {
     // $rwhser=""; $rwhser1=""; $rwhser2=""; $rwhser23=""; $where_branch=""; $where_godown=""; $where_batch=""; $rwhser22="";
     if (!empty($reserve_id)) {
