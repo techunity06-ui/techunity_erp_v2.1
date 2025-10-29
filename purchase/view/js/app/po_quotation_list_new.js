@@ -222,12 +222,12 @@ function po_quotation_create() {
 
 function load_req_quotation(){
 	var quotation_ref_id = $("#quotation_ref_id").val();
+   
 	$.ajax({
 		type: "POST",
 		url: root_domain+purchase_domain+'app/po_quotation_list_new/',
 		data: { mode : "load_req_quotation",quotation_ref_id:quotation_ref_id},
 		success: function(responce){
-			// console.log(responce);
 			$('#request_for_quotation').html(responce);
 		}
 	});
@@ -938,3 +938,4 @@ function product_update(po_quotationtrn_id){
 		}
 	});
 }
+

@@ -5,18 +5,19 @@ $form = "Request For Quotation";
 $company_config = getCompanyConfiguration($dbcon);
  error_reporting(E_ALL);
 if (strpos($_SERVER['REQUEST_URI'], "purchase_quotation") !== false) {
-	$quotation_ref_id = $dbcon->real_escape_string($_REQUEST['id']);
+	$quotation_ref_id = $dbcon->real_escape_string(string: $_REQUEST['id']);
     $query = "SELECT * FROM po_quotation_ref WHERE quotation_ref_id = " . $quotation_ref_id;
 	$result = $dbcon->query($query);
 
     if ($result && $row = brp_mysqli_fetch_array($result)) {
+		 $ref_quotation_no = $row['ref_quotation_no']; 
         if (!empty($row['vender_id'])) {
             $suppliers_detail = "
                 SELECT GROUP_CONCAT(l_name) AS suppliers 
                 FROM tbl_ledger 
                 WHERE l_id IN (" . $row['vender_id'] . ")";
-	$supplier_result = $dbcon->query($suppliers_detail);
-	$supplier_data = brp_mysqli_fetch_array($supplier_result);
+			$supplier_result = $dbcon->query($suppliers_detail);
+			$supplier_data = brp_mysqli_fetch_array($supplier_result);
         } else {
             // No vendor IDs
             $supplier_data['suppliers'] = '';
@@ -125,6 +126,14 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 												<div class="row" style="margin-top: 30px;">
 													<div class="col-md-12">
 														<ul class="nav navbar-nav navbar-right">
+														<li>
+    <button type="button"
+            class="btn btn-success"
+            onclick="window.open('<?php echo ROOT; ?>print/request_quo_print/<?php echo $_REQUEST['id']; ?>', '_blank')">
+        <i class="fa fa-print"></i>&nbsp;Print
+    </button>&nbsp;
+</li>
+
 															<li><button class="btn btn-primary addmode" onclick="mode_change_req_quot()">Edit</button>&nbsp;</li>
 															<li><button class="btn btn-success editmode1" onclick="request_quotation_data()">Submit</button>&nbsp;</li>
 														</ul>
@@ -138,7 +147,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<div class="form-group">
 																	<label class="col-md-4 control-label">Ref. Quotation No</label>
 																	<div class="col-md-8 col-xs-11">
-																		<strong><?= $ref_quotation_no ?></strong>
+																		<strong><?php echo $ref_quotation_no ?></strong>
 																	</div>
 																</div>
 															</div>
@@ -146,7 +155,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<div class="form-group">
 																	<label class="col-md-4 control-label">Ref. Quotation Date</label>
 																	<div class="col-md-8 col-xs-11">
-																		<strong><?= date('d-m-Y', strtotime($row['ref_quotation_date'])) ?></strong>
+																		<strong><?php echo date('d-m-Y', strtotime($row['ref_quotation_date'])) ?></strong>
 																	</div>
 																</div>
 															</div>
@@ -157,11 +166,11 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																	<label class="col-md-4 control-label">Suppliers</label>
 																	<div class="col-md-8 col-xs-11">
 																		<div class="addmode">
-																			<strong id="suppliers"><?= $supplier_data['suppliers'] ?></strong>
+																			<strong id="suppliers"><?php echo $supplier_data['suppliers'] ?></strong>
 																		</div>
 																		<div class="editmode1">
 																			<select class="select2" name="supplier_id" id="supplier_id" multiple>
-																				<?= getcust($dbcon, $vender_id, $purchase_party_show); ?>
+																				<?php echo getcust($dbcon, $vender_id, $purchase_party_show); ?>
 																			</select>
 																		</div>
 																	</div>
@@ -205,7 +214,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<div class="form-group">
 																	<label class="col-md-4 control-label">Ref. Quotation No</label>
 																	<div class="col-md-8 col-xs-11">
-																		<strong><?= $ref_quotation_no ?></strong>
+																		<strong><?php echo $ref_quotation_no ?></strong>
 																	</div>
 																</div>
 															</div>
@@ -213,7 +222,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 																<div class="form-group">
 																	<label class="col-md-4 control-label">Ref. Quotation Date</label>
 																	<div class="col-md-8 col-xs-11">
-																		<strong><?= date('d-m-Y', strtotime($row['ref_quotation_date'])) ?></strong>
+																		<strong><?php echo date('d-m-Y', strtotime($row['ref_quotation_date'])) ?></strong>
 																	</div>
 																</div>
 															</div>
@@ -321,7 +330,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
         														</select>
         													</div>
         													<div class="col-md-2 col-xs-11">
-        														<input id="bill_sundry_amount" name="bill_sundry_amount" type="text" class="form-control numbersOnly" placeholder="Amount" title="Amount" value="<?= $rel['amount'] ?>" placeholder="">
+        														<input id="bill_sundry_amount" name="bill_sundry_amount" type="text" class="form-control numbersOnly" placeholder="Amount" title="Amount" value="<?php echo $rel['amount'] ?>" placeholder="">
         													</div>
         													<div class="col-md-2 col-xs-11">
         														<button style="" class="btn btn-round btn-info" type="button" value="R1" onclick="addBillSundry()"><i class="fa fa-plus"></i></button>
@@ -395,14 +404,14 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 														</div>
 														<center>
 															<button class="btn btn-success" onclick="quotation_comparision_add()">Submit</button>
-															<a href="<?=ROOT.PURCHASE_ROOT.'po_quotation_list_new'?>" class="btn btn-danger">Cancel</a>
+															<a href="<?php echo ROOT.PURCHASE_ROOT.'po_quotation_list_new'?>" class="btn btn-danger">Cancel</a>
 														</center>
 													</div>
 												</section>
 											</div>
 										</div>
 									</div>
-									<input type="hidden" name="quotation_ref_id" id="quotation_ref_id" value="<?= $quotation_ref_id ?>">
+									<input type="hidden" name="quotation_ref_id" id="quotation_ref_id" value="<?php echo $quotation_ref_id ?>">
 									<input type="hidden" name="supplier_detail_id" id="supplier_detail_id">
 								</form>
 							</div>
@@ -415,7 +424,7 @@ $purchase_party_show = $companyConfiguration['purchase_party_show'];
 		<?php include_once($include . '/footer.php'); ?>
 	</section>
 	<?php include_once($include . '/include_js_file.php'); ?>
-	<script src="<?= ROOT . PURCHASE_ROOT ?>js/app/po_quotation_list_new.js?<?= time() ?>"></script>
+	<script src="<?php echo ROOT . PURCHASE_ROOT ?>js/app/po_quotation_list_new.js?<?php echo time() ?>"></script>
 
 
 	<script>

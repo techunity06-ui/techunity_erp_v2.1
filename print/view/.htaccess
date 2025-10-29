@@ -117,6 +117,7 @@ RewriteRule ^manual_indent_print_single/([^/]*)$ manual_indent_print_new.php?id=
 
 # Purchase Order
 RewriteRule ^poprint/([^/]*)$ poprint.php?id=$1 [L]
+RewriteRule ^request_quo_print/([^/]*)$ request_quo_print.php?id=$1 [L]
 RewriteRule ^adk_poprint/([^/]*)$ adk_poprint.php?id=$1 [L]
 RewriteRule ^uniter_quotation_print/([^/]*)$ uniter_quotation_print.php?id=$1 [L]
 RewriteRule ^uniter_poprint/([^/]*)$ uniter_poprint.php?id=$1 [L]
