@@ -3101,6 +3101,7 @@ $("#send_email_add_po").on('submit',function(e) {
 });
 
 function exportCsv() {
+	
 	var po_type_status = $('input[name=po_type_status]:Checked').val();
 	var date = $('#rep_date').val();
 	var branch_id = $('#branch_id').val();

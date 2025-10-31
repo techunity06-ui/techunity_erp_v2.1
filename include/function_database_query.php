@@ -591,6 +591,7 @@ function add_store_receive($dbcon,$product_id,$unit_id,$stock_date,$ref_name,$re
 }
 function round_up($number, $precision = 5)
 {
+	    $number = (float)$number;
     $fig = pow(10, $precision);
     $val = (ceil($number * $fig) / $fig);
     return number_format($number,5,".","");
