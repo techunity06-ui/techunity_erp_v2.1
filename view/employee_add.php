@@ -4,7 +4,7 @@
 	include_once("../config/session.php");
 	include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 	$form="Employee";
-	if(strpos($_SERVER[REQUEST_URI], "employee_edit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "employee_edit")==false) {
 		$mode="Add";
 		$countryid="101";
 		$stateid="1";

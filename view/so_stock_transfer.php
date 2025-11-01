@@ -16,7 +16,7 @@
 	$countryid='101';
 	$stateid='1';
 	$cityid='1';
-	if(strpos($_SERVER[REQUEST_URI], "so_stock_transfer_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "so_stock_transfer_edit")==true){
 		$mode="Edit";
 		$grn_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select * from tbl_work_order_stock_transfer as mst

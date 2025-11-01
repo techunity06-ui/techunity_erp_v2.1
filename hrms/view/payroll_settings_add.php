@@ -11,7 +11,7 @@ $form = "Payroll Settings List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "payroll_settings_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "payroll_settings_edit")==true) {
 	$mode="Edit";
 	$payrollsettingsId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from payroll_settings where id=$payrollsettingsId and company_id = $companyID and user_id = $userID";

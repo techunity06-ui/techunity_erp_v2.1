@@ -9,7 +9,7 @@
 	//echo $ver; 
 	$branch_id = $_SESSION['branch_id'];
 	
-	if(strpos($_SERVER[REQUEST_URI], "jobcardedit")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "jobcardedit")==true)
 	{
 		$mode="Edit";$direct_add='1';$request=1;$smode="";	
 		$id=$dbcon->real_escape_string($_REQUEST['id']);	
@@ -298,7 +298,7 @@
 													</div>	
 												</div>
 											
-											<div class="col-md-4"  <?php if(strpos($_SERVER[REQUEST_URI], "edit_workorder")==true){ ?> style="display: block;"<?php }?>>
+											<div class="col-md-4"  <?php if(strpos($_SERVER['REQUEST_URI'], "edit_workorder")==true){ ?> style="display: block;"<?php }?>>
 												<div class="form-group">  	
 													<div class="col-md-4 col-xs-11">
 														<button type="button" id="add_wo_prd" onclick="add_work_order_product('<?php echo $id;?>','<?=$total?>');" class="btn btn-success" >Add Product</button>

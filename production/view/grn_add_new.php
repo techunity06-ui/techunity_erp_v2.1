@@ -6,7 +6,7 @@
 	$stateid='1';
 	$cityid='1';
 	$branch_id = $_SESSION['branch_id'];
-	if(strpos($_SERVER[REQUEST_URI], "grn_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "grn_edit")==true){
 		$mode="Edit";
 		$grn_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select mst.*,po.purchaseorder_no,ledger.l_name,jo.jobwork_no from tbl_grn as mst
@@ -28,7 +28,7 @@
 		}
 		$back="grn_list";
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "grn_add_job")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "grn_add_job")==true){
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select * from tbl_jobwork as mst
@@ -43,7 +43,7 @@
 		//$ref_no=$rel2['jobwork_no'];
 		$back="pending_job_card";
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "grn_add_po")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "grn_add_po")==true){
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select * from tbl_purchaseorder as mst

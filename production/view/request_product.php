@@ -1669,7 +1669,7 @@ else if(strpos($_SERVER['REQUEST_URI'], "direct_workorder")==true)
 				}
 			}
 		</script>
-		<?php /* if(strpos($_SERVER[REQUEST_URI], "sorequesproduct")==true)
+		<?php /* if(strpos($_SERVER['REQUEST_URI'], "sorequesproduct")==true)
 			{
 				if($is_added == 0){
 					echo "<script>set_main_process_request_qty();</script>";

@@ -12,7 +12,7 @@ $old_jobwork_chalan_no = "";
 $old_vendor_id = "";
 $vendor_name = "";
 
-if (strpos($_SERVER[REQUEST_URI], "create_reprocess_jobwork") == true) {
+if (strpos($_SERVER['REQUEST_URI'], "create_reprocess_jobwork") == true) {
    $mode = "Add";
    $old_job_work_id = $dbcon->real_escape_string($_REQUEST['job_work_id']);
    $p_id = $dbcon->real_escape_string($_REQUEST['p_id']);
@@ -30,7 +30,7 @@ if (strpos($_SERVER[REQUEST_URI], "create_reprocess_jobwork") == true) {
    $edit_branch_id = $job_rw['branch_id'];
    $vendor_id  = $job_rw["vender_id"];
    $vendor_name  = $job_rw["vendor_name"];
-} else if (strpos($_SERVER[REQUEST_URI], "reprocess_jobwork_edit") == true) {
+} else if (strpos($_SERVER['REQUEST_URI'], "reprocess_jobwork_edit") == true) {
    $mode = "edit";
    $job_work_id = $dbcon->real_escape_string($_REQUEST['job_work_id']);
    $vendor_id = $dbcon->real_escape_string($_REQUEST['vendor_id']);

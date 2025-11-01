@@ -12,7 +12,7 @@
         ADMINISTRATOR_PRODUCT_CLONE
     ]);
     $branch_id = $_SESSION['branch_id'];
-    $actual_link = $_SERVER[REQUEST_URI];
+    $actual_link = $_SERVER['REQUEST_URI'];
     $urls = explode("/", $actual_link);
 
     $readonly = '';
@@ -21,7 +21,7 @@
     $readonly_unit = "";
     $com = "select * from tbl_company where company_id=" . $_SESSION['company_id'];
     $comty = brp_mysqli_fetch_assoc($dbcon->query($com));
-    if (strpos($_SERVER[REQUEST_URI], "product_edit_ip") == false) {
+    if (strpos($_SERVER['REQUEST_URI'], "product_edit_ip") == false) {
         $mode = "Add";
         if (!in_array(ADMINISTRATOR_PRODUCT_CREATE, $bulkAccessArray)) {
             header("Location: " . DOMAIN . "permission_access");
@@ -206,7 +206,7 @@ die;*/
                     </div>
                     <div class="row">
                         <div class="col-md-12 margin_row">
-                            <?php if (strpos($_SERVER[REQUEST_URI], "product_edit") == true) {
+                            <?php if (strpos($_SERVER['REQUEST_URI'], "product_edit") == true) {
                                 if ($prev_id > $min_id) { ?>
                                     <div class="col-sm-4">
                                         <a href="<?= ROOT . ADMINISTRATION_ROOT . 'product_edit/' . $prev_id; ?>"><button class="btn btn-shadow btn-success">Previous</button></a>

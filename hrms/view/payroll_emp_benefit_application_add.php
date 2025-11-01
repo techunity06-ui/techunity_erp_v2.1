@@ -9,7 +9,7 @@
 	$form="Payroll Employee Benefit Application";
 	$companyID = $_SESSION['company_id'];
 	$usertype=$_SESSION['user_type'];
-	if(strpos($_SERVER[REQUEST_URI], "payroll_emp_benefit_application_edit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "payroll_emp_benefit_application_edit")==false)
 	{
 		$mode="Add";
 		$set="select * from tbl_company where company_id=".$_SESSION['company_id'];

@@ -10,7 +10,7 @@ $form = "Leave Type List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "leave_type_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "leave_type_edit")==true) {
 	$mode="Edit";
 	$leaveTypeId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_leave_type where id=$leaveTypeId and company_id = $companyID and user_id = $userID";

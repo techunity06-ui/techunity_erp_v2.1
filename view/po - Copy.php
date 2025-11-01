@@ -8,7 +8,7 @@
 	$countryid='101';
 	$stateid='1';
 	$cityid='1';
-	if(strpos($_SERVER[REQUEST_URI], "poedit")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "poedit")==true)
 	{
 		$mode="Edit";$direct_add='0';
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -17,7 +17,7 @@
 		$purchaseorder_date = date('d-m-Y',strtotime($rel['purchaseorder_date']));
 		$po_type_status=$rel['po_type_status'];
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "direct_po_add")==true)
+	else if(strpos($_SERVER['REQUEST_URI'], "direct_po_add")==true)
 	{
 		$mode="Add";$direct_add='1';
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -26,7 +26,7 @@
 		$purchaseorder_date = date('d-m-Y',strtotime($rel['purchaseorder_date']));
 		$po_type_status='1';
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "po_req_add")==true)
+	else if(strpos($_SERVER['REQUEST_URI'], "po_req_add")==true)
 	{
 		$mode="Edit";$direct_add='2';
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);

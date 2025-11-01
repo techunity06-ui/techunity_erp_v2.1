@@ -1047,9 +1047,9 @@
 [19-Feb-2022 18:42:22 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [19-Feb-2022 18:42:22 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [19-Feb-2022 18:42:22 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 9
-[19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 31
-[19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 46
+[19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 9
+[19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 31
+[19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 46
 [19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -1206,9 +1206,9 @@
 [19-Feb-2022 18:42:25 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [19-Feb-2022 18:42:25 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [19-Feb-2022 18:42:25 Asia/Kolkata] PHP Notice:  Undefined variable: pmode in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 675
-[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -1311,7 +1311,7 @@
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [21-Feb-2022 12:29:31 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -1748,9 +1748,9 @@
 [21-Feb-2022 14:24:56 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [21-Feb-2022 14:24:56 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [21-Feb-2022 14:24:56 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 9
-[21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 31
-[21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 46
+[21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 9
+[21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 31
+[21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 46
 [21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [21-Feb-2022 14:25:00 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -28757,9 +28757,9 @@
 [21-Feb-2022 18:46:32 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [21-Feb-2022 18:46:32 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [21-Feb-2022 18:46:32 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -28862,7 +28862,7 @@
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -28893,9 +28893,9 @@
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [23-Feb-2022 14:00:38 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -28998,7 +28998,7 @@
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [23-Feb-2022 14:05:38 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -29130,9 +29130,9 @@
 [23-Feb-2022 14:07:41 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [23-Feb-2022 14:07:41 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [23-Feb-2022 14:07:41 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -29235,7 +29235,7 @@
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [23-Feb-2022 14:07:55 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -29470,7 +29470,7 @@
 [23-Feb-2022 14:09:18 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [23-Feb-2022 14:09:18 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [23-Feb-2022 14:09:18 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 4
+[23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 4
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -29568,15 +29568,15 @@
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Undefined variable: mode in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 51
-[23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 56
-[23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 77
+[23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 56
+[23-Feb-2022 15:41:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 77
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Warning:  include_once(../include/company_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [23-Feb-2022 15:41:58 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 4
-[23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 12
-[23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 29
+[23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 4
+[23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 12
+[23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 29
 [23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [23-Feb-2022 15:42:02 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -29673,9 +29673,9 @@
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
-[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 93
-[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 115
-[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 123
+[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 93
+[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 115
+[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 123
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: returnable_type in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 126
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 183
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: challan_type in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 191
@@ -42702,7 +42702,7 @@
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 331
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 393
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 394
-[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 398
+[23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 398
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/include/add_cust.php on line 80
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/include/add_cust.php on line 92
 [23-Feb-2022 15:42:03 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/include/add_cust.php on line 102
@@ -43311,9 +43311,9 @@
 [25-Feb-2022 21:06:35 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [25-Feb-2022 21:06:35 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [25-Feb-2022 21:06:35 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 9
-[25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 31
-[25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 46
+[25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 9
+[25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 31
+[25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add_new.php on line 46
 [25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [25-Feb-2022 21:06:53 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -43683,9 +43683,9 @@
 [01-Mar-2022 11:22:23 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [01-Mar-2022 11:22:23 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [01-Mar-2022 11:22:23 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -43788,7 +43788,7 @@
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [01-Mar-2022 13:54:30 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -44153,9 +44153,9 @@
 [02-Mar-2022 12:08:06 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:08:06 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:08:06 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -44222,7 +44222,7 @@
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:08:13 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -44318,9 +44318,9 @@
 [02-Mar-2022 12:08:26 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:08:26 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:08:26 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -44387,7 +44387,7 @@
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:08:44 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -44548,9 +44548,9 @@
 [02-Mar-2022 12:09:46 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:09:46 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:09:46 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -44617,7 +44617,7 @@
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:10:00 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -44780,7 +44780,7 @@
 [02-Mar-2022 12:14:54 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:14:54 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:14:54 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 4
+[02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 4
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -44842,15 +44842,15 @@
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Undefined variable: mode in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 51
-[02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 56
-[02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 77
+[02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 56
+[02-Mar-2022 12:19:02 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_list.php on line 77
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Warning:  include_once(../include/company_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:19:02 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 4
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 12
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 29
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 4
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 12
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 29
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -44911,9 +44911,9 @@
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 93
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 115
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 123
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 93
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 115
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 123
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 183
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: challan_type in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 191
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: challan_type in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 192
@@ -57931,7 +57931,7 @@
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 331
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 393
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 394
-[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 398
+[02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/returnable_channal_add.php on line 398
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/include/add_cust.php on line 80
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/include/add_cust.php on line 92
 [02-Mar-2022 12:19:15 Asia/Kolkata] PHP Notice:  Undefined variable: rel in /home/brperp/public_html/hermettic_sw_v12/inventory/include/add_cust.php on line 102
@@ -58070,9 +58070,9 @@
 [02-Mar-2022 12:29:30 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:29:30 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:29:30 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -58139,7 +58139,7 @@
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -58170,9 +58170,9 @@
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:29:39 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -58239,7 +58239,7 @@
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:32:24 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -58371,9 +58371,9 @@
 [02-Mar-2022 12:32:54 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:32:54 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:32:54 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:32:58 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -58476,7 +58476,7 @@
 [02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:32:59 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -58608,9 +58608,9 @@
 [02-Mar-2022 12:39:28 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:39:28 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:39:28 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -58713,7 +58713,7 @@
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -58744,9 +58744,9 @@
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:39:32 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -58813,7 +58813,7 @@
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -58844,9 +58844,9 @@
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:57:13 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -58913,7 +58913,7 @@
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -58944,9 +58944,9 @@
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 12:57:31 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -59013,7 +59013,7 @@
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 12:57:41 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -59175,9 +59175,9 @@
 [02-Mar-2022 17:42:45 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [02-Mar-2022 17:42:45 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [02-Mar-2022 17:42:45 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -59244,7 +59244,7 @@
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [02-Mar-2022 17:43:00 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -59441,9 +59441,9 @@
 [03-Mar-2022 11:25:37 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [03-Mar-2022 11:25:37 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [03-Mar-2022 11:25:37 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [03-Mar-2022 11:25:59 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -59546,7 +59546,7 @@
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -59577,9 +59577,9 @@
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [03-Mar-2022 11:26:00 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [03-Mar-2022 11:30:48 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -59682,7 +59682,7 @@
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -59713,9 +59713,9 @@
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [03-Mar-2022 11:30:49 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -59818,7 +59818,7 @@
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [03-Mar-2022 11:34:36 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -59950,9 +59950,9 @@
 [03-Mar-2022 11:36:11 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [03-Mar-2022 11:36:11 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [03-Mar-2022 11:36:11 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -60055,7 +60055,7 @@
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621
@@ -60086,9 +60086,9 @@
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/company_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 512
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Warning:  include_once(../include/companylogin_modal.php): failed to open stream: No such file or directory in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
 [04-Mar-2022 15:09:21 Asia/Kolkata] PHP Warning:  include_once(): Failed opening '../include/companylogin_modal.php' for inclusion (include_path='.:/opt/cpanel/ea-php55/root/usr/share/pear') in /home/brperp/public_html/hermettic_sw_v12/include/include_js_file.php on line 513
-[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
-[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
-[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
+[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 14
+[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 53
+[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 77
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant IMPORT_ROOT - assumed 'IMPORT_ROOT' in /home/brperp/public_html/hermettic_sw_v12/include/include_css_file.php on line 60
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined variable: support in /home/brperp/public_html/hermettic_sw_v12/include/include_top_menu.php on line 252
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Trying to get property of non-object in /home/brperp/public_html/hermettic_sw_v12/config/security.php on line 490
@@ -60191,7 +60191,7 @@
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined index: gir_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 311
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined index: vehicle_no in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 325
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined index: mode_of_dispatch in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 335
-[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed 'REQUEST_URI' in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
+[04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Use of undefined constant REQUEST_URI - assumed REQUEST_URI in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 342
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined index: remark in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 581
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 620
 [04-Mar-2022 15:09:49 Asia/Kolkata] PHP Notice:  Undefined index: material_inspected in /home/brperp/public_html/hermettic_sw_v12/inventory/view/grn_add.php on line 621

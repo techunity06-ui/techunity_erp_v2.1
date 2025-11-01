@@ -8,7 +8,7 @@
 	$form="Hrms Employee Skill Map";
 	$companyID = $_SESSION['company_id'];
 	$usertype=$_SESSION['user_type'];
-	if(strpos($_SERVER[REQUEST_URI], "hrms_employee_skill_map_edit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "hrms_employee_skill_map_edit")==false)
 	{
 		$mode="Add";
 		$set="select * from tbl_company where company_id=".$_SESSION['company_id'];

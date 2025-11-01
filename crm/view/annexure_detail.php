@@ -11,7 +11,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 ]);
 $branch_id = $_SESSION['branch_id'];
 
-if(strpos($_SERVER[REQUEST_URI], "crm/annexure_detail_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "crm/annexure_detail_edit")==true) {
 	$mode="Edit";
 	if(!in_array(CUSTOMER_ANNEXURE_SLUG_UPDATE,$bulkAccessArray)){
 		header("Location: ".DOMAIN."permission_access");

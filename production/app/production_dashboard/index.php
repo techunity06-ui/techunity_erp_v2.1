@@ -128,7 +128,8 @@ else if(strtolower($POST['mode']) == "load_work_order_status") {
 			//$date=get_sdate($POST['c_year']);
 	$query1="select count(req.rp_id) as total_work_order from tbl_request_product as req
 	where req.sp_id=".$POST['work_order_id1'];
-	$result1=$dbcon->query($query1);
+
+		$result1=$dbcon->query($query1);
 	$row1=mysqli_fetch_assoc($result1);
 	
 

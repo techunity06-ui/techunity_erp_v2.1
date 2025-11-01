@@ -12,7 +12,7 @@ $infopage = pathinfo( __FILE__ );
 $_SESSION['page'] = 'calibration/'.$infopage['filename'];
 $form = "Calibration";
 
-if(strpos($_SERVER[REQUEST_URI], "calibration_edit") == true) {
+if(strpos($_SERVER['REQUEST_URI'], "calibration_edit") == true) {
     // if(!in_array(INQUIRY_SLUG_EDIT,$bulkAccessArray)){
     //     header("Location: ".DOMAIN."permission_access");
     // }

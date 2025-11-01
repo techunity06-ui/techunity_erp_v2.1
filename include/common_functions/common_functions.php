@@ -1656,34 +1656,48 @@ function getgrncount($dbcon, $prdctcategory, $prdctid)
 }
 function getpocount($dbcon, $prdctcategory, $prdctid)
 {
-    $query_date = date('d-m-Y');
-    $firstday = date('Y-m-01', strtotime($query_date));
-    $lastday = date('Y-m-t', strtotime($query_date));
-    $query = "SELECT  group_concat(tp.purchaseorder_id) as poids
-    FROM tbl_purchaseorder as tp
-    where tp.status=0";
-    $query .= " and tp.cdate>='" . $firstday . "' and tp.cdate<='" . $lastday . "'";
-    //  $query.=" group by tp.purchaseorder_id";
-    //exit;
-    $result1 = brp_mysqli_fetch_assoc($dbcon->query($query));
-    $query = "SELECT  IFNULL(SUM(tpt.product_qty), 0) as pocount
-    FROM tbl_purchaseordertrn as tpt
-    left JOIN product_mst as p ON p.product_id=tpt.product_id where tpt.purchaseorder_id in (" . $result1['poids'] . ")";
-    //if($prdctcategory){
-    $query .= ' and p.product_category=' . $prdctcategory;
-    //}
-    if ($prdctid > 0) {
-        $query .= ' and tpt.product_id=' . $prdctid;
-    }
-    //echo $query;
-    $result1 = brp_mysqli_fetch_assoc($dbcon->query($query));
+    try {
+        $query_date = date('d-m-Y');
+        $firstday = date('Y-m-01', strtotime($query_date));
+        $lastday = date('Y-m-t', strtotime($query_date));
 
-    if (isset($result1['pocount'])) {
-        return $result1['pocount'];
-    } else {
-        return 0;
+        $query = "SELECT group_concat(tp.purchaseorder_id) as poids
+                  FROM tbl_purchaseorder as tp
+                  WHERE tp.status = 0";
+        $query .= " AND tp.cdate >= '" . $firstday . "' AND tp.cdate <= '" . $lastday . "'";
+
+        $result1 = brp_mysqli_fetch_assoc($dbcon->query($query));
+
+        // If poids is empty or null, return 0 to avoid SQL errors
+        if (empty($result1['poids'])) {
+            return 0;
+        }
+
+        $query = "SELECT IFNULL(SUM(tpt.product_qty), 0) as pocount
+                  FROM tbl_purchaseordertrn as tpt
+                  LEFT JOIN product_mst as p ON p.product_id = tpt.product_id
+                  WHERE tpt.purchaseorder_id IN (" . $result1['poids'] . ")";
+
+        $query .= ' AND p.product_category = ' . $prdctcategory;
+
+        if ($prdctid > 0) {
+            $query .= ' AND tpt.product_id = ' . $prdctid;
+        }
+
+        $result1 = brp_mysqli_fetch_assoc($dbcon->query($query));
+
+        if (isset($result1['pocount'])) {
+            return $result1['pocount'];
+        } else {
+            return 0;
+        }
+    } catch (Exception $e) {
+        // Log the error or handle it gracefully
+        error_log("Error in getpocount(): " . $e->getMessage());
+        return 0; // return default safe value
     }
 }
+
 function getmrpcount($dbcon, $prdctcategory, $prdctid)
 {
     $query_date = date('d-m-Y');

@@ -22,11 +22,11 @@ $back_link = "";
 $display = "";
 
 
-if(strpos($_SERVER[REQUEST_URI], "purchase_qc_all")==true){
+if(strpos($_SERVER['REQUEST_URI'], "purchase_qc_all")==true){
 	$display = 'display:none;';
 	$back_link = PURCHASE_ROOT.'purchase_qc_pending_list/';
 	$back_title = "Purchase QC Pending List";
-} else if(strpos($_SERVER[REQUEST_URI], "qc_all")==true){
+} else if(strpos($_SERVER['REQUEST_URI'], "qc_all")==true){
 	
 	$product_qc = 1;
 	$back_link = PRODUCTION_ROOT.'parts_qc_pending_list/';

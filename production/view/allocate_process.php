@@ -5,7 +5,7 @@
 	$countryid='101';
 	$stateid='1';
 	$cityid='1';
-	if(strpos($_SERVER[REQUEST_URI], "grn_edit")==false){
+	if(strpos($_SERVER['REQUEST_URI'], "grn_edit")==false){
 		$mode="Add";
 		$grn_date=date('d-m-Y'); 
 	}

@@ -12,7 +12,7 @@
 		FINANCE_EXPENSE_DETAIL_CREATE,
 		FINANCE_EXPENSE_DETAIL_EDIT
 	]);
-	if(strpos($_SERVER[REQUEST_URI], "expense_edit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "expense_edit")==false)
 	{
 		if(!in_array(FINANCE_EXPENSE_DETAIL_CREATE,$bulkAccessArray)){
        		header("Location: ".DOMAIN."permission_access");

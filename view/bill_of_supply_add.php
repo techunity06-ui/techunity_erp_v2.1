@@ -10,7 +10,7 @@
 	]);
 	$form="Bill of Supply";
 	
-	if(strpos($_SERVER[REQUEST_URI], "bill_of_supply_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "bill_of_supply_edit")==true){
 		if(!in_array(FINANCE_BILL_OF_SUPPLY_EDIT,$bulkAccessArray)){
        		header("Location: ".DOMAIN."permission_access");
     	}
@@ -27,7 +27,7 @@
 			$order_date=date('d-m-Y',strtotime($rel['order_date']));
 		}
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "spare_to_bos")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "spare_to_bos")==true){
 		if(!in_array(FINANCE_SPARE_TO_BOS,$bulkAccessArray)){
        		header("Location: ".DOMAIN."permission_access");
     	}

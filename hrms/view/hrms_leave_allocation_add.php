@@ -10,7 +10,7 @@ $form = "Leave Allocation List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_leave_allocation_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_leave_allocation_edit")==true) {
 	$mode="Edit";
 	$leaveAllocationID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_leave_allocation where id=$leaveAllocationID and company_id = $companyID and user_id = $userID";

@@ -3,7 +3,7 @@ session_start();
 include_once("../config/config.php");
 include_once("../config/session.php");
 include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
-if(strpos($_SERVER[REQUEST_URI], "setting")==false) {
+if(strpos($_SERVER['REQUEST_URI'], "setting")==false) {
 	$mode="Add";
 	$valid_till_start_date=date('1-m-Y');
 	$valid_till_end_date=date("d-m-Y");

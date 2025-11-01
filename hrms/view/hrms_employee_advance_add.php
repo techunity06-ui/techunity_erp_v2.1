@@ -9,7 +9,7 @@
 	$_SESSION['token'] = $token;
 	$form="Employee Advance";
 
-	if(strpos($_SERVER[REQUEST_URI], "hrms_employee_advance_edit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "hrms_employee_advance_edit")==false) {
 		$mode="Add";
 	}
 	else {

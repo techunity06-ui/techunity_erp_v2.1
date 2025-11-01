@@ -9,7 +9,7 @@
 	$cityid='1';
 
 	$branch_id = $_SESSION['branch_id'];
-	if(strpos($_SERVER[REQUEST_URI], "gir_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "gir_edit")==true){
 		$mode="Edit";
 		$gir_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select * from pro_gir where pro_gir_id=$gir_id";

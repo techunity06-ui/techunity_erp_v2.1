@@ -11,7 +11,7 @@ $form = "HR Settings List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_settings_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_settings_edit")==true) {
 	$mode="Edit";
 	$hrsettingsId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_settings where id=$hrsettingsId and company_id = $companyID and user_id = $userID";

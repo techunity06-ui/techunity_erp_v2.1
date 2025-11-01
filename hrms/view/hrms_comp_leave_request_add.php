@@ -10,7 +10,7 @@ $form = "Compensatory Leave Request List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_comp_leave_request_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_comp_leave_request_edit")==true) {
 	$mode="Edit";
 	$compLeaveId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_comp_leave_request where id=$compLeaveId and company_id = $companyID and user_id = $userID";

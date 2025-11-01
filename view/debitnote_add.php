@@ -9,7 +9,7 @@
 	$stateid='1';
 	$cityid='1';
 	
-	if(strpos($_SERVER[REQUEST_URI], "debitnote_add_qc")==true) {
+	if(strpos($_SERVER['REQUEST_URI'], "debitnote_add_qc")==true) {
 		$grn_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query_grn="select * from tbl_grn where grn_id=$grn_id";
 		$rel_grn=mysqli_fetch_assoc($dbcon->query($query_grn));
@@ -19,7 +19,7 @@
 		$deleteid=delete_record('tbl_debitnote_trn',"debitnote_trn_status=3 and user_id=".$_SESSION['user_id'], $dbcon);
 		$vender_id=$rel_grn['vender_id'];
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "debitnote_edit")==true) {
+	else if(strpos($_SERVER['REQUEST_URI'], "debitnote_edit")==true) {
 		$mode="Edit";
 		$debitnote_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select * from tbl_debitnote where debitnote_id=$debitnote_id";

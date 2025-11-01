@@ -7,7 +7,7 @@
 	$token = md5(rand(1000,9999));
 	$_SESSION['token'] = $token;
 	$form="Purchase Order";
-	if(strpos($_SERVER[REQUEST_URI], "povenderedit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "povenderedit")==false)
 	{
 		$mode="Add";
 	}

@@ -12,7 +12,7 @@ $infopage = pathinfo( __FILE__ );
 $_SESSION['page'] = 'maintenance/'.$infopage['filename'];
 $form = "Maintenance";
 
-if(strpos($_SERVER[REQUEST_URI], "maintenance_edit") == true) {
+if(strpos($_SERVER['REQUEST_URI'], "maintenance_edit") == true) {
     if(!in_array(MAINTENANCE_ADD_SLUG_UPDATE,$bulkAccessArray)){
         header("Location: ".DOMAIN."permission_access");
     }

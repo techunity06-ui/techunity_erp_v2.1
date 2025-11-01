@@ -27,8 +27,8 @@
 	$set_head=mysqli_fetch_assoc($dbcon->query($set));
 	
 	$load_inv_type='19';
-	/*var_dump($_SERVER[REQUEST_URI]);*/
-	if(strpos($_SERVER[REQUEST_URI], "debitnote_add_qc")==true) {
+	/*var_dump($_SERVER['REQUEST_URI']);*/
+	if(strpos($_SERVER['REQUEST_URI'], "debitnote_add_qc")==true) {
 		$grn_id=$dbcon->real_escape_string($_REQUEST['id']);
 
 		$query_grn="select * from tbl_grn where grn_id=$grn_id";

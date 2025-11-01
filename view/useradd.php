@@ -4,7 +4,7 @@
 	include_once("../config/session.php");
 	include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 	$form="User";
-	if(strpos($_SERVER[REQUEST_URI], "useredit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "useredit")==false) {
 		$mode="Add";
 	}
 	else {

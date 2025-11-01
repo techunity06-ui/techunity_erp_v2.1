@@ -6,7 +6,7 @@ $form="Forecast";
 $com="select * from tbl_company where company_id=".$_SESSION['company_id'];
 $comty=mysqli_fetch_assoc($dbcon->query($com));
 
-if(strpos($_SERVER[REQUEST_URI], "forecast_edit")==false) {
+if(strpos($_SERVER['REQUEST_URI'], "forecast_edit")==false) {
 	$mode="Add";
 	$f_by_id='1';
 	$f_target_period='1';

@@ -31,7 +31,7 @@ $back_link = PRODUCTION_ROOT.'work_order/';
 
 $display = "";
 
-if(strpos($_SERVER[REQUEST_URI], "workorderpackingprint")==true)
+if(strpos($_SERVER['REQUEST_URI'], "workorderpackingprint")==true)
 {
 	$work_order_id = $dbcon->real_escape_string($_REQUEST['id']);
 	$query_inward="SELECT trn.*,sp.po_req_no,p.product_name,u.unit_name FROM tbl_workorder_packing_trn as trn 

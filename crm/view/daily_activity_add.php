@@ -14,7 +14,7 @@
     ]);
 
     $branch_id = $_SESSION['branch_id'];
-	if(strpos($_SERVER[REQUEST_URI], "crm/daily_activity_edit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "crm/daily_activity_edit")==false) {
 		$mode="Add";
 		if(!in_array(CUSTOMER_DAILY_UPDATE_SLUG_CREATE,$bulkAccessArray)){
         	header("Location: ".DOMAIN."permission_access");

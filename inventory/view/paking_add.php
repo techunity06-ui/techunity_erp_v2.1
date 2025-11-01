@@ -5,7 +5,7 @@
 
 	$branch_id = $_SESSION['branch_id'];
 	$companyID = $_SESSION['company_id'];
-	if(strpos($_SERVER[REQUEST_URI], "paking_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "paking_edit")==true){
 		$mode="Edit";
 		$general_stock_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
@@ -19,7 +19,7 @@
 		}
 		$cust_id=$rel['so_paking_cust_id'];
 		$back="paking_list";
-	}else if(strpos($_SERVER[REQUEST_URI], "paking_add_sin")==true){
+	}else if(strpos($_SERVER['REQUEST_URI'], "paking_add_sin")==true){
 		$mode="Add";
 		$cust_id=$dbcon->real_escape_string($_REQUEST['cust_id']);
 		$so_id=$dbcon->real_escape_string($_REQUEST['sotrn_id']);

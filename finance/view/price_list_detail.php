@@ -30,7 +30,7 @@ $sel_bom_version_id = "";
 	// print_r($_SESSION);
 	// EXIT;
 
-if(strpos($_SERVER[REQUEST_URI], "cost_detail")==true){
+if(strpos($_SERVER['REQUEST_URI'], "cost_detail")==true){
 
 	$mode="Edit";
 	$bom_version_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -40,7 +40,7 @@ if(strpos($_SERVER[REQUEST_URI], "cost_detail")==true){
 	//echo $bom_version_id;
 	
 }
-if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true){
+if(strpos($_SERVER['REQUEST_URI'], "cost_allocate")==true){
 	
 /*	$bomtrn_id=$dbcon->real_escape_string($_REQUEST['id']);
 	
@@ -143,7 +143,7 @@ if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true){
 										
 										<li><a href="<?=ROOT.'finance/price_list'?>"> Price List</a></li>
 										
-										<?php if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true){ ?>
+										<?php if(strpos($_SERVER['REQUEST_URI'], "cost_allocate")==true){ ?>
 											
 											<li><a href="<?=ROOT.FINANCE_ROOT.'price_list_product/'.$r_p['product_id']."/".$eid; ?>">Create List</a></li>
 											
@@ -233,7 +233,7 @@ if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true){
 <?php include_once($include1.'qc_model.php');?>   
 <!-- Sanat :: Added copy bom model -->
 <script src="<?=ROOT.FINANCE_ROOT ?>js/app/price_list_detail.js?<?php echo time(); ?>"></script>
-<?php if(strpos($_SERVER[REQUEST_URI], "cost_detail")==true){ ?>
+<?php if(strpos($_SERVER['REQUEST_URI'], "cost_detail")==true){ ?>
 <script>
 	$(document).ready(function() {
 	//load_datatable();
@@ -246,7 +246,7 @@ if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true){
 	
 });
 </script>
-<?php } if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true) { ?>
+<?php } if(strpos($_SERVER['REQUEST_URI'], "cost_allocate")==true) { ?>
 <script>
 	$(document).ready(function() {
 	//alert('cost_detail_all');

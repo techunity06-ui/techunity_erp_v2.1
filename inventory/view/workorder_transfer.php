@@ -18,7 +18,7 @@
 	$stateid='1';
 	$cityid='1';
 	$branch_id = $_SESSION['branch_id'];
-	if(strpos($_SERVER[REQUEST_URI], "workorder_transfer_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "workorder_transfer_edit")==true){
 		$mode="Edit";
 		$id=$dbcon->real_escape_string($_REQUEST['id']);
 		 $query="select * from tbl_workorder_transfer as mst

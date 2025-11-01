@@ -12,7 +12,7 @@
     $opertion_name = array('V'=>'View','C'=>'Create','R'=>'Read','U'=>'Update','D'=>'Delete','A'=>'Approve','FA'=>'Final Approve','O'=>'Others','CL'=>'Clone');
     /*END JAYESH ADD CLONE PARAMETER*/
 	$userID =  $_SESSION['user_id'];
-	if(strpos($_SERVER[REQUEST_URI], "menu_master_access_edit")==true) {
+	if(strpos($_SERVER['REQUEST_URI'], "menu_master_access_edit")==true) {
 		$mode="Edit";
 		$menuMasterId = $dbcon->real_escape_string($_REQUEST['id']);
 		$query="select mainaccess.*,menumaster.id as routes_id,menumaster.access_type,menumaster.slug_name,menumaster.route_path_name from menu_master_access as mainaccess left join menu_master_access_routes as menumaster ON menumaster.access_id = mainaccess.id where mainaccess.id = $menuMasterId";

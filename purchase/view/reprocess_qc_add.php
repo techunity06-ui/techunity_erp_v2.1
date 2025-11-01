@@ -15,7 +15,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 	QC_DONE_PARTS_QC_PENDING_ADD,
 ]);
 $current_process_id = '';
-if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
+if(strpos($_SERVER['REQUEST_URI'], "qc_edit")==true){
 	if(!in_array(QC_DONE_EDIT,$bulkAccessArray)) {
 		header("Location: ".DOMAIN."permission_access");
 	}
@@ -26,7 +26,7 @@ if(strpos($_SERVER[REQUEST_URI], "qc_edit")==true){
 	$date=date('d-m-Y',strtotime($rel['qc_date']));
 	$back="qc_done_list";
 	$process_show=0;
-}else if(strpos($_SERVER[REQUEST_URI], "reprocess_qc_add")==true){
+}else if(strpos($_SERVER['REQUEST_URI'], "reprocess_qc_add")==true){
 		/* if(!in_array(QC_DONE_PARTS_QC_PENDING_ADD,$bulkAccessArray)) {
 			header("Location: ".DOMAIN."permission_access");
 		} */

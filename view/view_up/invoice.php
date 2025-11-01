@@ -7,7 +7,7 @@
 	$form="Invoice";
 	$countryid='101';$stateid='1';$cityid='1';
 	
-	if(strpos($_SERVER[REQUEST_URI], "invoiceedit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "invoiceedit")==true){
 		$mode="Edit";
 		$invoiceid=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select * from tbl_invoice where invoice_id=$invoiceid";
@@ -26,7 +26,7 @@
 		$load_inv_type=$rel['invoicetype_id'];
 		$cust_id=$rel['cust_id'];
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "quot_to_inv")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "quot_to_inv")==true){
 		$mode="Add";
 		$date=date('d-m-Y');
 		$quotation_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -35,7 +35,7 @@
 		$cust_id=$qt_rel['l_id'];
 		$load_inv_type='8';
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "spare_to_inv")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "spare_to_inv")==true){
 		$mode="Add";
 		$date=date('d-m-Y');
 		$complaint_id=$dbcon->real_escape_string($_REQUEST['id']);

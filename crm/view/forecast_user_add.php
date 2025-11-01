@@ -10,7 +10,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 	FORECAST_USER_SLUG_EDIT
 ]);
 
-if(strpos($_SERVER[REQUEST_URI], "forecast_user_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "forecast_user_edit")==true) {
 	$mode="Edit";
 	$cmode = '';
 	if(!in_array(FORECAST_USER_SLUG_EDIT,$bulkAccessArray)){
@@ -23,7 +23,7 @@ if(strpos($_SERVER[REQUEST_URI], "forecast_user_edit")==true) {
 	$forecast_date = date("d-m-Y", strtotime($rel['forecast_date']));
 	$forecast_no = $rel['forecast_no'];
 	
-}else if(strpos($_SERVER[REQUEST_URI], "forecast_user_copy")==true){
+}else if(strpos($_SERVER['REQUEST_URI'], "forecast_user_copy")==true){
 	$mode="Add";
 	$cmode = 'Add';
 	if(!in_array(FORECAST_USER_SLUG_ADD,$bulkAccessArray)){

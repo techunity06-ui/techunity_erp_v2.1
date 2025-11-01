@@ -10,7 +10,7 @@
 	$form="Hrms Daily Work Summary Group";
 	$companyID = $_SESSION['company_id'];
 	$usertype=$_SESSION['user_type'];
-	if(strpos($_SERVER[REQUEST_URI], "hrms_daily_work_summary_group_edit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "hrms_daily_work_summary_group_edit")==false)
 	{
 		$mode="Add";
 		$set="select * from tbl_company where company_id=".$_SESSION['company_id'];

@@ -15,7 +15,7 @@
    $disabled = '';
    $com="select * from tbl_company where company_id=".$_SESSION['company_id'];
    $comty=mysqli_fetch_assoc($dbcon->query($com));	
-   if(strpos($_SERVER[REQUEST_URI], "product_clone")==false) {
+   if(strpos($_SERVER['REQUEST_URI'], "product_clone")==false) {
    
       if(!in_array(ADMINISTRATOR_PRODUCT_CLONE,$bulkAccessArray)){
          header("Location: ".DOMAIN."permission_access");

@@ -23,7 +23,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
     PO_LIST_UPDATE
 ]);
 $branch_id = $_SESSION['branch_id'];
-if(strpos($_SERVER[REQUEST_URI], "poedit")==true)
+if(strpos($_SERVER['REQUEST_URI'], "poedit")==true)
 {
 
     if(!in_array(PO_LIST_UPDATE,$bulkAccessArray)){
@@ -65,7 +65,7 @@ if(strpos($_SERVER[REQUEST_URI], "poedit")==true)
 	}else{
 		$goods = 'selected="selected"';
 	}
-} else if(strpos($_SERVER[REQUEST_URI], "po_req")==true) {
+} else if(strpos($_SERVER['REQUEST_URI'], "po_req")==true) {
 //po_req_list
     $back="po_req_list";
     $mode="Add";$direct_add='1';$request=1;$viewmode="Add";
@@ -81,7 +81,7 @@ $purchaseorder_date=date('d-m-Y');
 $po_type_status='1';
 //echo $purchaseorder_id;
 $apstatus = '<span class="btn  btn-warning">Approval Pending</span>';
-} else if(strpos($_SERVER[REQUEST_URI], "poemend")==true) {
+} else if(strpos($_SERVER['REQUEST_URI'], "poemend")==true) {
     $back="po_list";
     $mode="Add";
     $viewmode="Revise";

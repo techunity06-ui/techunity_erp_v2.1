@@ -9,7 +9,7 @@
 	$countryid='101';
 	$stateid='1';
 	$cityid='1';
-	if(strpos($_SERVER[REQUEST_URI], "purchaseedit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "purchaseedit")==false) {
 		$mode="Add";
 		$date=date('d-m-Y');
 		$order_date='';

@@ -7,7 +7,7 @@
 	$infopage = pathinfo( __FILE__ );
 	$_SESSION['page']=$infopage['filename'];
 	$form="Template Access Permission";
-	if(strpos($_SERVER[REQUEST_URI], "template_access_permission_edit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "template_access_permission_edit")==false) {
 		$mode="Add";
 	}else{
 		$mode="Edit";

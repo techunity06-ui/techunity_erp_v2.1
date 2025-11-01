@@ -13,9 +13,9 @@ $infopage = pathinfo(__FILE__);
 $_SESSION['page'] = $infopage['filename'];
 $form = "Support";
 $company_id = $company_name = '';
-if (strpos($_SERVER[REQUEST_URI], "support_edit") == true) {
+if (strpos($_SERVER['REQUEST_URI'], "support_edit") == true) {
     $mode = "Edit";
-} else if (strpos($_SERVER[REQUEST_URI], "support_view") == true) {
+} else if (strpos($_SERVER['REQUEST_URI'], "support_view") == true) {
     $mode = "View";
     $id = $dbcon->real_escape_string($_REQUEST['id']);
 //    $supportData = getSupportById($dbcon, $id);

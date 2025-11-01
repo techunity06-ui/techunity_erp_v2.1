@@ -10,7 +10,7 @@
 	$form="Machine Configuration";
 	
 
-	if(strpos($_SERVER[REQUEST_URI], "machine_configuration_edit")==true) {
+	if(strpos($_SERVER['REQUEST_URI'], "machine_configuration_edit")==true) {
 		$mode="Edit";
 		$machine_confi_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select machineconf.* from tbl_machine_configuration as machineconf

@@ -4,7 +4,7 @@
 	include_once("../config/session.php");
 	include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 	$form="General Voucher";
-	if(strpos($_SERVER[REQUEST_URI], "account-voucher-update")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "account-voucher-update")==false) {
 		$mode="Add";
 		$date=date('d-m-Y');
 	}

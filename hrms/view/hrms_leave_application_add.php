@@ -10,7 +10,7 @@ $form = "Leave Application List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_leave_application_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_leave_application_edit")==true) {
 	$mode="Edit";
 	$leaveApplicationID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_leave_application where id=$leaveApplicationID and company_id = $companyID".check_user('hrmsemp');

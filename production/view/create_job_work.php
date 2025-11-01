@@ -4,7 +4,7 @@
    $form="Create Jobwork";
    
    $jobwork_date = date('d-m-Y');
-   if(strpos($_SERVER[REQUEST_URI], "create_job_work")==true)
+   if(strpos($_SERVER['REQUEST_URI'], "create_job_work")==true)
    {
    	$mode="Add";
    	$process_id=$dbcon->real_escape_string($_REQUEST['process_id']);

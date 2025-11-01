@@ -11,7 +11,7 @@
 	//$ver = (float)phpversion();
 	//echo $ver; 
 	$branch_id = $_SESSION['branch_id'];
-	if(strpos($_SERVER[REQUEST_URI], "design_department_request_product")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "design_department_request_product")==true)
 	{
 		$mode="Add";$direct_add='1';$request=1;$smode="";
 		$id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -63,7 +63,7 @@
 		$row123=mysqli_fetch_array($sel112);
 		$bom_check=$row123['bcou'];
 		// pathik end
-	}else if(strpos($_SERVER[REQUEST_URI], "sorequesproduct")==true)
+	}else if(strpos($_SERVER['REQUEST_URI'], "sorequesproduct")==true)
 	{
 		$mode="Add";$direct_add='1';$request=1;$smode="";
 		$id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -126,7 +126,7 @@
 		$bom_check=$row123['bcou'];
 		// pathik end
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "rejectrequestproduct")==true)
+	else if(strpos($_SERVER['REQUEST_URI'], "rejectrequestproduct")==true)
 	{
 		$mode="Add";$direct_add='1';$request=1;$smode="add_rej";
 		$id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -184,7 +184,7 @@
 		$row123=mysqli_fetch_array($sel112);
 		$bom_check=$row123['bcou'];
 		// pathik end
-	}else if(strpos($_SERVER[REQUEST_URI], "stock_pending_product")==true)
+	}else if(strpos($_SERVER['REQUEST_URI'], "stock_pending_product")==true)
 	{
 
 		$mode="Add";$direct_add='1';$request=1;$smode="add_all";

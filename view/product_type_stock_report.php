@@ -4,7 +4,7 @@ include_once("../config/config.php");
 include_once("../config/session.php");
 include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 
-if(strpos($_SERVER[REQUEST_URI], "pro_sub_cat")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "pro_sub_cat")==true) {
 	$parent_id =$dbcon->real_escape_string($_REQUEST['id']);
 	$mode  = 'pro_sub_cat'; 
 }else{

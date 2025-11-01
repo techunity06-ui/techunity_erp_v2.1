@@ -30,14 +30,14 @@ $sel_bom_version_id = "";
 	// print_r($_SESSION);
 	// EXIT;
 
-if(strpos($_SERVER[REQUEST_URI], "cost_detail")==true){
+if(strpos($_SERVER['REQUEST_URI'], "cost_detail")==true){
 
 	$mode="Edit";
 	$bom_version_id=$dbcon->real_escape_string($_REQUEST['id']);
 	$bom_product_id=$dbcon->real_escape_string($_REQUEST['id2']);
 
 }
-if(strpos($_SERVER[REQUEST_URI], "cost_detail_allocate")==true){
+if(strpos($_SERVER['REQUEST_URI'], "cost_detail_allocate")==true){
 	
 	$bomtrn_id=$dbcon->real_escape_string($_REQUEST['id']);
 	$query="select mst.*,product.product_name,product.product_type as ptype,product.product_desc,product.product_setting_check,product.product_id,product.product_base_unit,u.unit_name as base_unit_name,cunit.unit_name as conv_unit_name from tbl_bomtrn as mst 

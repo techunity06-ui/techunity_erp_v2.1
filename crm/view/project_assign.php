@@ -13,7 +13,7 @@ $_SESSION['token'] = $token;
 $form="Project Wise Item Assign";
 $branch_id = $_SESSION['branch_id'];
 
-if(strpos($_SERVER[REQUEST_URI], "project_assign_edit")==true)
+if(strpos($_SERVER['REQUEST_URI'], "project_assign_edit")==true)
 {
 	if(!in_array(CRM_PROJECT_ASSIGN_SLUG_UPDATE,$bulkAccessArray)){
 		header("Location: ".DOMAIN."permission_access");

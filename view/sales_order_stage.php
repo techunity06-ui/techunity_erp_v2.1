@@ -12,7 +12,7 @@ $form="Sales Order";
 $countryid='101';
 $stateid='1';
 $cityid='1';
-	// if(strpos($_SERVER[REQUEST_URI], "salesorderedit")==false)
+	// if(strpos($_SERVER['REQUEST_URI'], "salesorderedit")==false)
 	// {
 	// 	$mode="Add";
 	// 	$date=date('d-m-Y');

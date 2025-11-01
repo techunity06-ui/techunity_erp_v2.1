@@ -4,7 +4,7 @@
 	include_once("../config/session.php");
 	$token = md5(rand(1000,9999));
 	$_SESSION['token'] = $token;
-	if(strpos($_SERVER[REQUEST_URI], "invoice_numberserise")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "invoice_numberserise")==false)
 	{
 		$mode="Add";
 		

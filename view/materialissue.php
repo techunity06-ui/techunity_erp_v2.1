@@ -4,7 +4,7 @@ include_once("../config/config.php");
 include_once("../config/session.php");
 include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 $form="Material Issue";
-if(strpos($_SERVER[REQUEST_URI], "materialissueedit")==true){
+if(strpos($_SERVER['REQUEST_URI'], "materialissueedit")==true){
 	$mode="Edit";
 	$invoiceid=$dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from tbl_material_issue where material_id=$invoiceid";

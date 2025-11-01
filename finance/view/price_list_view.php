@@ -11,7 +11,7 @@ include_once(COMMON_FUNCTION_PATH."finance_common_functions.php");
 
 $form="Price List View";
 
-if(strpos($_SERVER[REQUEST_URI], "price_list_view")==true){
+if(strpos($_SERVER['REQUEST_URI'], "price_list_view")==true){
 
 	$id=$dbcon->real_escape_string($_REQUEST['id']);
 
@@ -185,7 +185,7 @@ if(strpos($_SERVER[REQUEST_URI], "price_list_view")==true){
 <!-- Sanat :: Added copy bom model -->
 <script src="<?=ROOT.FINANCE_ROOT ?>js/app/price_list_detail.js?<?php echo time(); ?>"></script>
 <script src="<?=ROOT.FINANCE_ROOT?>js/app/price_list.js?<?php echo time(); ?>"></script>
-<?php if(strpos($_SERVER[REQUEST_URI], "cost_detail")==true){ ?>
+<?php if(strpos($_SERVER['REQUEST_URI'], "cost_detail")==true){ ?>
 <script>
 	$(document).ready(function() {
 	//load_datatable();
@@ -198,7 +198,7 @@ if(strpos($_SERVER[REQUEST_URI], "price_list_view")==true){
 	
 });
 </script>
-<?php } if(strpos($_SERVER[REQUEST_URI], "cost_allocate")==true) { ?>
+<?php } if(strpos($_SERVER['REQUEST_URI'], "cost_allocate")==true) { ?>
 <script>
 	$(document).ready(function() {
 	//alert('cost_detail_all');

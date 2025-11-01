@@ -10,7 +10,7 @@ $form = "Payroll Salary Structure List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "payroll_salary_structure_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "payroll_salary_structure_edit")==true) {
 	$mode="Edit";
 	$payrollsalarystructureID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from payroll_salary_structure where id=$payrollsalarystructureID and company_id = $companyID".check_user('payrollsalarystructure');

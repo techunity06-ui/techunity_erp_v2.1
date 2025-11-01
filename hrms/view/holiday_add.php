@@ -10,7 +10,7 @@ $form = "Holiday List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "holiday_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "holiday_edit")==true) {
 	$mode="Edit";
 	$holidayid = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_holiday_list where id=$holidayid and company_id = $companyID and user_id = $userID";

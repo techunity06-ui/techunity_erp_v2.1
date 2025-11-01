@@ -21,7 +21,7 @@
    ]);
    $branch_id = $_SESSION['branch_id'];
 
-   if(strpos($_SERVER[REQUEST_URI], "drawingedit")==true){
+   if(strpos($_SERVER['REQUEST_URI'], "drawingedit")==true){
       
       $back="po_list";
       $mode="Edit";$direct_add='0';$request=0;

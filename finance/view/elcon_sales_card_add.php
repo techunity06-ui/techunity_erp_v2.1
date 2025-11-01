@@ -16,7 +16,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 	ELCON_SALES_CARD_ADD,ELCON_SALES_CARD_UPDATE
 ]);
 $branch_id = $_SESSION['branch_id'];
-if(strpos($_SERVER[REQUEST_URI], "elconsocardedit")==true){
+if(strpos($_SERVER['REQUEST_URI'], "elconsocardedit")==true){
 	if(!in_array(ELCON_SALES_CARD_UPDATE,$bulkAccessArray)){
 		header("Location: ".DOMAIN."permission_access");
 	}

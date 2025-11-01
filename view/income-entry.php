@@ -7,7 +7,7 @@
 	$token = md5(rand(1000,9999));
 	$_SESSION['token'] = $token;
 	$form="Income";
-	if(strpos($_SERVER[REQUEST_URI], "income-update")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "income-update")==false)
 	{
 		$mode="Add";
 		$date=date('d-m-Y');

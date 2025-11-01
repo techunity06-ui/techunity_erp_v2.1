@@ -4,7 +4,7 @@
 	//include_once("../config/session.php");
 	include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 	$form="Company";
-	if(strpos($_SERVER[REQUEST_URI], "companyedit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "companyedit")==false)
 	{
 		$mode="Add";
 	}

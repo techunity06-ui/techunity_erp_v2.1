@@ -17,7 +17,7 @@
    $quotation_date='d-m-Y';
 
    $disabled = 'disabled';$product_type=''; $purchase_type = '';$readonly = '';
-   if(strpos($_SERVER[REQUEST_URI], "pcedit")==true)
+   if(strpos($_SERVER['REQUEST_URI'], "pcedit")==true)
    {
     $disabled = 'disabled';
     $readonly = 'readonly';
@@ -45,7 +45,7 @@
     $_SESSION['selected_product_type'] = $rel['product_type'];
 
    }
-   else if(strpos($_SERVER[REQUEST_URI], "po_req")==true)
+   else if(strpos($_SERVER['REQUEST_URI'], "po_req")==true)
    {
    	//po_req_list
    	$back="po_req_list";

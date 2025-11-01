@@ -10,7 +10,7 @@ $stateid='1';
 $cityid='1';
 $quot_remark = ' ';
 
-if(strpos($_SERVER[REQUEST_URI], "quotation_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "quotation_edit")==true) {
 	$mode="Edit";
 	$viewmode="Edit";
 	$quotation_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -40,7 +40,7 @@ else {
 	$task_type_id=21;
 	$task_due_date=date('d-m-Y h:i A');
 	$cust_id='';$inquiry_id='';$quot_subject='';$c_con_id='';$quot_type=0;
-	if(strpos($_SERVER[REQUEST_URI], "inq_to_quot")==true) {
+	if(strpos($_SERVER['REQUEST_URI'], "inq_to_quot")==true) {
 		$inq_to_quot=true;
 		$inquiry_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$inq_qry="select inq.*,(SELECT group_concat(assign_user_ids) FROM `tbl_task` where task_status!=2 and inquiry_id=inq.inquiry_id) as assign_user_ids from tbl_inquiry as inq

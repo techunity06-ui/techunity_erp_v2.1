@@ -7,7 +7,7 @@
 	$token = md5(rand(1000,9999));
 	$_SESSION['token'] = $token;
 	$form="Expense";
-	if(strpos($_SERVER[REQUEST_URI], "expense_edit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "expense_edit")==false)
 	{
 		$mode="Add";
 		$date=date('d-m-Y');

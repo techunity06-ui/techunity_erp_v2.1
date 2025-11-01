@@ -19,7 +19,7 @@
    
 
 
-	if(strpos($_SERVER[REQUEST_URI], "salesorderedit")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "salesorderedit")==true)
 	{
 		$mode="Edit";
 		$sales_order_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -36,7 +36,7 @@
 		}
 		$quotaion_id=$rel['quotation_id'];
 		$edit_branch_id=$rel['branch_id'];
-	}else if(strpos($_SERVER[REQUEST_URI], "salesorder_quotation")==true){
+	}else if(strpos($_SERVER['REQUEST_URI'], "salesorder_quotation")==true){
 		$quotaion_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$mode="Add";
 		$smode="quotation_mode";

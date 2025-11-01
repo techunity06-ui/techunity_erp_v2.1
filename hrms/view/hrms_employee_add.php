@@ -9,7 +9,7 @@
 	$form="HRMS Employee";
 	$userID = $_SESSION['user_id'];
 	$companyID = $_SESSION['company_id'];
-	if(strpos($_SERVER[REQUEST_URI], "hrms_employee_edit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "hrms_employee_edit")==false) {
 		$mode="Add";
 		$countryid="101";
 		$stateid="1";

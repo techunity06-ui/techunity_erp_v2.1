@@ -9,7 +9,7 @@ $countryid='101';
 $stateid='1';
 $cityid='1';
 	
-	if(strpos($_SERVER[REQUEST_URI], "planning_edit")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "planning_edit")==true){
 		$mode="Edit";
 		$sales_order_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select * from tbl_planning where pl_order_id=$sales_order_id";
@@ -17,7 +17,7 @@ $cityid='1';
 		$pl_order_no=$rel['pl_order_no'];
 		$date=date('d-m-Y',strtotime($rel['pl_order_date']));
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "salesorderbom")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "salesorderbom")==true){
 		$mode="Bom";
 		$sales_order_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select * from tbl_sales_order where sales_order_id=$sales_order_id";

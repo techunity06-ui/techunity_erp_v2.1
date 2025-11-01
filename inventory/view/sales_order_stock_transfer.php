@@ -5,7 +5,7 @@ $form="Sales Order Stock Transfer";
 
 $branch_id = $_SESSION['branch_id'];
 $companyID = $_SESSION['company_id'];
-if(strpos($_SERVER[REQUEST_URI], "returnable_channal_update")==true){
+if(strpos($_SERVER['REQUEST_URI'], "returnable_channal_update")==true){
 	$mode="Edit";
 	$returnable_channal_id=$dbcon->real_escape_string($_REQUEST['id']);
 	$query="select rtn.* from tbl_returnable_channal as rtn

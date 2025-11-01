@@ -10,7 +10,7 @@ $form = "Payroll Additional Salary List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "payroll_additional_salary_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "payroll_additional_salary_edit")==true) {
 	$mode="Edit";
 	$payrolladditionalsalaryID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from payroll_additional_salary where id=$payrolladditionalsalaryID and company_id = $companyID".check_user('payrolladditionalsalary');

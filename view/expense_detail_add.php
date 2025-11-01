@@ -4,7 +4,7 @@
 	include_once("../config/session.php");
 	include_once(COMMON_FUNCTION_OUTER_PATH."common_functions.php");
 	$form="Expense Detail";
-	if(strpos($_SERVER[REQUEST_URI], "expense_edit")==false) {
+	if(strpos($_SERVER['REQUEST_URI'], "expense_edit")==false) {
 		$mode="Add";
 		
 	}

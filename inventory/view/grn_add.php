@@ -148,7 +148,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 		$vender_id=$rel2['vender_id'];
 		$readonly = "readonly";
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "grn_stock_transfer")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "grn_stock_transfer")==true){
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select mst.* from tbl_stock_transfer as mst
@@ -171,7 +171,7 @@ $bulkAccessArray = canCheckPermissionAccess($dbcon, [
 		$vender_id='';
 		$readonly = "readonly";
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "grn_add_returnable")==true){
+	else if(strpos($_SERVER['REQUEST_URI'], "grn_add_returnable")==true){
 		$returnable_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select grn.*,chn.channal_id,chn.branch_id,led.l_name,chn.cust_id from tbl_returnable_channal_item as grn 

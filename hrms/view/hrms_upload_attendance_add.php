@@ -9,7 +9,7 @@
     $_SESSION['token'] = $token;
     $form="Hrms Attendance Tools";
 
-    if(strpos($_SERVER[REQUEST_URI], "hrms_attendance_edit")==false) {
+    if(strpos($_SERVER['REQUEST_URI'], "hrms_attendance_edit")==false) {
         $mode="Add";
     }
     else {

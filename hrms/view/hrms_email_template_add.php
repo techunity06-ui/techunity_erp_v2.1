@@ -11,7 +11,7 @@ $form = "Email Template List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_email_template_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_email_template_edit")==true) {
 	$mode="Edit";
 	$emailId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_email_template where id=$emailId and company_id = $companyID and user_id = $userID";

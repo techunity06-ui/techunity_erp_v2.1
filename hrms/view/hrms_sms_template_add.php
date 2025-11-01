@@ -11,7 +11,7 @@ $form = "SMS Template List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_sms_template_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_sms_template_edit")==true) {
 	$mode="Edit";
 	$smsId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_sms_template where id=$smsId and company_id = $companyID and user_id = $userID";

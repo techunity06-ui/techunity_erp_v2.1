@@ -10,7 +10,7 @@
 	$form="Hrms Leave Block";
 	$companyID = $_SESSION['company_id'];
 	$usertype=$_SESSION['user_type'];
-	if(strpos($_SERVER[REQUEST_URI], "salesorderedit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "salesorderedit")==false)
 	{
 		$mode="Add";
 		$set="select * from tbl_company where company_id=".$_SESSION['company_id'];

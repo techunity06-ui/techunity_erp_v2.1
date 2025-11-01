@@ -9,7 +9,7 @@
    $infopage = pathinfo( __FILE__ );
    $_SESSION['page']=$infopage['filename'];
    
-   if(strpos($_SERVER[REQUEST_URI], "emailtemplateedit")==true){
+   if(strpos($_SERVER['REQUEST_URI'], "emailtemplateedit")==true){
       
       $back = "email_template_list";
       $mode = "Edit";$direct_add='0';$request=0;

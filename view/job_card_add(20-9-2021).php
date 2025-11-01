@@ -10,7 +10,7 @@
 	//$ver = (float)phpversion();
 	//echo $ver; 
 	
-	if(strpos($_SERVER[REQUEST_URI], "jobcardedit")==true)
+	if(strpos($_SERVER['REQUEST_URI'], "jobcardedit")==true)
 	{
 		$mode="Edit";
 		$id=$dbcon->real_escape_string($_REQUEST['id']);

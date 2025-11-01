@@ -10,7 +10,7 @@
 	$countryid='101';
 	$stateid='1';
 	$cityid='1';
-	if(strpos($_SERVER[REQUEST_URI], "inquiry_edit")==true) {
+	if(strpos($_SERVER['REQUEST_URI'], "inquiry_edit")==true) {
 		$mode="Edit";
 		$inquiry_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select inquiry.*,usr.user_name from tbl_inquiry as inquiry
@@ -26,7 +26,7 @@
 		$user_name=$rel['user_name'];
 		$opp_id=$rel['opp_id'];
 	}
-	else if(strpos($_SERVER[REQUEST_URI], "inquiry_ind")==true) {
+	else if(strpos($_SERVER['REQUEST_URI'], "inquiry_ind")==true) {
 		$mode="Add";
 		$inquiry_date=date('d-m-Y');
 		$closing_date='';

@@ -11,7 +11,7 @@ $mode="Add";
 $reference_document_type = '1';
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_energy_point_rule_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_energy_point_rule_edit")==true) {
 	$mode="Edit";
 	$hrmsenergypointrulesID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_energy_point_rule where id=$hrmsenergypointrulesID and company_id = $companyID".check_user('hrmsenergypointrule');

@@ -11,7 +11,7 @@
 	$id = $dbcon->real_escape_string($_REQUEST['id']);
 	$complaint_no = $date = $customer_name = '';
 
-	if(strpos($_SERVER[REQUEST_URI], "edit_internal_chalan") == true){
+	if(strpos($_SERVER['REQUEST_URI'], "edit_internal_chalan") == true){
 		$form = "Edit Internal Chalan";
 		$is_edit = true;
 		$mode = 'edit_internal_chalan';

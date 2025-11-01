@@ -7,7 +7,7 @@
 	$token = md5(rand(1000,9999));
 	$_SESSION['token'] = $token;
 	$form="Purchase Bill";
-	if(strpos($_SERVER[REQUEST_URI], "purchasebilledit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "purchasebilledit")==false)
 	{
 		$mode="Add";
 		$date=date('d-m-Y');

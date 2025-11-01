@@ -10,7 +10,7 @@
 
 	$branch_id = $_SESSION['branch_id'];
 	
-	 if(strpos($_SERVER[REQUEST_URI], "service_add_po")==true){
+	 if(strpos($_SERVER['REQUEST_URI'], "service_add_po")==true){
 		$purchaseorder_id=$dbcon->real_escape_string($_REQUEST['id']);
 		
 		$query1="select mst.*,led.l_name from tbl_purchaseorder as mst

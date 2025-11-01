@@ -9,7 +9,7 @@ $form = "Hrms Attendance List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "hrms_attendance_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "hrms_attendance_edit")==true) {
 	$mode="Edit";
 	$hrmsAttendanceId = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from hrms_attendance where id = $hrmsAttendanceId and company_id = $companyID and user_id = $userID";

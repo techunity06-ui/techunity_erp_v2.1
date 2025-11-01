@@ -9,7 +9,7 @@
 	$form="Employee Tax Exemption Declaration";
 	$companyID = $_SESSION['company_id'];
 	$usertype=$_SESSION['user_type'];
-	if(strpos($_SERVER[REQUEST_URI], "payroll_emp_tax_exemption_declaration_edit")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "payroll_emp_tax_exemption_declaration_edit")==false)
 	{
 		$mode="Add";
 		$set="select * from tbl_company where company_id=".$_SESSION['company_id'];

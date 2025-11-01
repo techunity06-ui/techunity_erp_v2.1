@@ -9,8 +9,8 @@
 	$com="select * from tbl_company where company_id=".$_SESSION['company_id'];
 	$comty=mysqli_fetch_assoc($dbcon->query($com));	
 	//echo $_SESSION['branch_id'];
-	//echo $_SERVER[REQUEST_URI];
-	if(strpos($_SERVER[REQUEST_URI], "product_edit")==false) {
+	//echo $_SERVER['REQUEST_URI'];
+	if(strpos($_SERVER['REQUEST_URI'], "product_edit")==false) {
 		$mode="Add";
 	
 	}

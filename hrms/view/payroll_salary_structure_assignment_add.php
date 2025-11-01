@@ -10,7 +10,7 @@ $form = "Payroll Salary Structure Assignment List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "payroll_salary_structure_assignment_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "payroll_salary_structure_assignment_edit")==true) {
 	$mode="Edit";
 	$payrollsalarystructureassignmentID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from payroll_salary_structure_assignment where id=$payrollsalarystructureassignmentID and company_id = $companyID".check_user('payrollsalarystructureassignment');

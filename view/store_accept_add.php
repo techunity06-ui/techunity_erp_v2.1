@@ -10,7 +10,7 @@
 	$form="Store Accept Approval";
 	
 
-	if(strpos($_SERVER[REQUEST_URI], "store_accept_edit")==true) {
+	if(strpos($_SERVER['REQUEST_URI'], "store_accept_edit")==true) {
 		$mode="Edit";
 		$machine_confi_id=$dbcon->real_escape_string($_REQUEST['id']);
 		$query="select machineconf.* from tbl_store_accept_configuration as machineconf

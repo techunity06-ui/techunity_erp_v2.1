@@ -8,7 +8,7 @@
 	{
 		echo '<meta http-equiv=refresh content=0;url=http:'.ROOT.'dashboard>';
 	}
-	if(strpos($_SERVER[REQUEST_URI], "changepassword")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "changepassword")==false)
 	{
 		$mode="Add";		
 		$event_date=date('d-m-Y');		

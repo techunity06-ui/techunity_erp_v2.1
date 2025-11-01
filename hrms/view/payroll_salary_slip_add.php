@@ -10,7 +10,7 @@ $form = "Payroll Salary Slip List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "payroll_salary_slip_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "payroll_salary_slip_edit")==true) {
 	$mode="Edit";
 	$payrollsalaryslipID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from payroll_salary_slip where id=$payrollsalaryslipID and company_id = $companyID".check_user('payrollsalaryslip');

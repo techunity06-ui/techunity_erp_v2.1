@@ -10,7 +10,7 @@ $form = "Payroll Entry List";
 $mode="Add";
 $companyID = $_SESSION['company_id'];
 $userID =  $_SESSION['user_id'];
-if(strpos($_SERVER[REQUEST_URI], "payroll_entry_edit")==true) {
+if(strpos($_SERVER['REQUEST_URI'], "payroll_entry_edit")==true) {
 	$mode="Edit";
 	$payrollentryID = $dbcon->real_escape_string($_REQUEST['id']);
 	$query="select * from payroll_entry where id=$payrollentryID and company_id = $companyID".check_user('payrollentry');

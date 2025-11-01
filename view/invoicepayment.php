@@ -6,7 +6,7 @@
 	$token = md5(rand(1000,9999));
 	$_SESSION['token'] = $token;
 	$form="Payment Received";
-	if(strpos($_SERVER[REQUEST_URI], "receipt-update")==false)
+	if(strpos($_SERVER['REQUEST_URI'], "receipt-update")==false)
 	{
 		$mode="Add";
 		$date=date('d-m-Y');

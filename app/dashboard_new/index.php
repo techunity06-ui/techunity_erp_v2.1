@@ -1284,27 +1284,29 @@ if (strtolower($POST['mode']) == "sdiv1") {
 						
 			</div>';
 	echo $htmlCode;
-} else if (strtolower($POST['mode']) == "getemployee") {
+} else if (strtolower($_POST['mode']) == "getemployee") {
+	try {
+		$date = date("Y-m-d");
+		$userid = $_SESSION['user_id'];
+		$usertype = $_SESSION['user_type'];
 
-	$date = date("Y-m-d");
-	$userid = $_SESSION['user_id'];
-	$usertype = $_SESSION['user_type'];
+		if ($usertype != '3') {
 
-	if ($usertype != '3') {
+			$p = $dbcon->query("select l_id from tbl_ledger where l_status='0' and l_form='emp_form' and company_id=" . $_SESSION['company_id']);
+			$emp_count = mysqli_num_rows($p);
 
-		$p = $dbcon->query("select l_id from tbl_ledger where l_status='0' and l_form='emp_form' and company_id=" . $_SESSION['company_id']);
-		$emp_count = mysqli_num_rows($p);
+			$q = $dbcon->query("select log_id from login_history where DATE(in_time)='$date' and attendance='yes' and company_id=" . $_SESSION['company_id'] . " group by uid");
+			$present_count = mysqli_num_rows($q);
 
-		$q = $dbcon->query("select log_id from login_history where DATE(in_time)='$date' and attendance='yes' and company_id=" . $_SESSION['company_id'] . " group by uid");
-		$present_count = mysqli_num_rows($q);
+			$count['present'] = $present_count;
+			$count['absent'] = $emp_count - $present_count;
 
-
-		$count['present'] = $present_count;
-		$count['absent'] = $emp_count - $present_count;
-
-		echo json_encode($count);
+			echo json_encode($count);
+		}
+	} catch (Exception $e) {
+		echo json_encode(['error' => $e->getMessage()]);
 	}
-} else if (strtolower($POST['mode']) == "getyear") {
+} else if (strtolower($_POST['mode']) == "getyear") {
 
 	$getspecialConfiguration = getspecialConfiguration($dbcon);
 

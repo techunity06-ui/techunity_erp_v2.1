@@ -24,7 +24,7 @@ $uniq=rand();
 	// print_r($_SESSION);
 	// EXIT;
 
-if(strpos($_SERVER[REQUEST_URI], "bom_edit")==true){
+if(strpos($_SERVER['REQUEST_URI'], "bom_edit")==true){
 
 	$mode="Edit";
 	$bom_id=$dbcon->real_escape_string($_REQUEST['id']);
@@ -42,7 +42,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_edit")==true){
 
 }
 else{
-	if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
+	if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")==true){
 
 	}else{
 		unset($_SESSION['bom_edit_id']);
@@ -54,7 +54,7 @@ else{
 	$r_bom_id=0;
 }
 
-if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
+if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")==true){
 
 	$bomtrn_id=$dbcon->real_escape_string($_REQUEST['id']);
 	$query="select mst.*,product.product_name,product.product_type as ptype,product.product_desc,product.product_setting_check,product.product_id,product.product_base_unit,u.unit_name as base_unit_name,cunit.unit_name as conv_unit_name from tbl_bomtrn as mst 
@@ -197,7 +197,7 @@ if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){
 									<form class="form-horizontal" role="form" id="bom_add" action="javascript:;" method="post" name="bom_add">
 										<div class="row">
 											<div class="col-md-12">
-												<?php if(strpos($_SERVER[REQUEST_URI], "bom_allocate")==true){ ?>
+												<?php if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")==true){ ?>
 													<div class="col-md-12">
 														<div class="form-group">
 															<label class="col-md-4 control-label"> Product *</label>

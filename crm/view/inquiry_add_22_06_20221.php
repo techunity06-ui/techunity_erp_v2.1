@@ -17,7 +17,7 @@ $stateid = '1';
 $cityid = '1';
 $email_template_id = '';
 $branch_id = $_SESSION['branch_id'];
-if(strpos($_SERVER[REQUEST_URI], "inquiry_edit") == true) {
+if(strpos($_SERVER['REQUEST_URI'], "inquiry_edit") == true) {
     if(!in_array(INQUIRY_SLUG_EDIT,$bulkAccessArray)){
         header("Location: ".DOMAIN."permission_access");
     }
