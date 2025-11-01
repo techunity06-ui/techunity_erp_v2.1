@@ -210,7 +210,7 @@ define('DOCUMENT_NO_SERIES', 55);
 define('BMR_NO_SERIES', 56);
 define('SO_DEALLOCATION_SERIES', 57);
 define('RETURNABLE_SERIES', 58);
-define('REF_QUOTATION_NO', 59);
+define('REF_QUOTATION_NO', 51);
 define('DIRECT_GRN', 61);
 define('OUT_SO_GRN', 62);
 define('RET_CHN_GRN', 63);

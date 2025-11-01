@@ -584,9 +584,9 @@ function load_value() {
 	}
 
 	function load_purchase_order_data(){
-		Loading()
+		
 		var c_year=$('#c_year').val();
-	$.ajax({
+		$.ajax({
 		type: "POST",
 		url: root_domain+'app/dashboard_new/',
 		data: { mode : "get_purchase_order_data", c_year : c_year},
@@ -614,7 +614,7 @@ function load_value() {
 		$('#purchase_bill_pending').html(data.purchase_bill_pending);
 		$('#services_purchase_bill_pending').html(data.service_purchase_bill_pending);
 		$('#jobwork_purchase_bill_pending').html(data.jobwork_purchase_bill_pending);
-		Unloading();	
+
 	}
 });
 	
