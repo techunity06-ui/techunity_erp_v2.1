@@ -291,7 +291,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")==true){
 						<div class="form-group">
 							<label class="col-md-4 control-label">BOM Date*</label>
 							<div class="col-md-8 col-xs-11">
-								<input id="bom_date" name="bom_date" type="text" class="form-control default-date-picker required valid" title="BOM Date" value="<?=$date?>" <?=($readonly=='yes') ? readonly:'';?> placeholder="BOM Date">
+								<input id="bom_date" name="bom_date" type="text" class="form-control default-date-picker required valid" title="BOM Date" value="<?=$date?>" <?=($readonly=='yes') ? 'readonly':'';?> placeholder="BOM Date">
 							</div>
 						</div>
 					</div>
@@ -369,7 +369,7 @@ if(strpos($_SERVER['REQUEST_URI'], "bom_allocate")==true){
 						<div class="form-group">
 							<label class="col-md-4 control-label">Conv Quantity*</label>
 							<div class="col-md-5 col-xs-11">
-								<input type="number"  title="Enter Qty" min="0" id="conv_qty" name="conv_qty"  class="form-control" value="<?= @$rel['product_conv_qty'] ? $rel['product_conv_qty'] : 1 ?>" onkeyup="convert_qty(2);" <?=($conversion_qty_read_only=='yes') ? readonly:'';?>  />
+								<input type="number"  title="Enter Qty" min="0" id="conv_qty" name="conv_qty"  class="form-control" value="<?= @$rel['product_conv_qty'] ? $rel['product_conv_qty'] : 1 ?>" onkeyup="convert_qty(2);" <?=($conversion_qty_read_only=='yes') ? 'readonly':'';?>  />
 							</div>
 							<div class="col-md-3 col-xs-11">
 								<input type="text"  title="Convert Unit" id="conv_unit_name" name="conv_unit_name"  class="form-control" value="<?=$rel['conv_unit_name']?>" readonly />

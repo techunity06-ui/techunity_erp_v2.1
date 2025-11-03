@@ -596,10 +596,10 @@ include('../../include/urlfileinner.php');
     
     // ... rest of the logic
 }
-3. Best Practice: Using Prepared Statements
-For a robust application, both queries should use prepared statements. This requires two separate prepared statement blocks:
+// 3. Best Practice: Using Prepared Statements
+// For a robust application, both queries should use prepared statements. This requires two separate prepared statement blocks:
 
-PHP
+// PHP
 
 else if(strtolower($POST['mode'])== "load_product_unit")
 {

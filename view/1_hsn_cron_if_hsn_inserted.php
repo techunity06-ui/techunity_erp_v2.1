@@ -1,5 +1,4 @@
 <?php 
-1
 session_start();
 ini_set('max_execution_time', 3000000);
 include_once("../config/config.php");

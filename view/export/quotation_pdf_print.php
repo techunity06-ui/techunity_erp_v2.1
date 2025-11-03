@@ -4,8 +4,8 @@ include("../../config/config.php");
 	ob_start();
 //$pdf_upload=quotation_pdf(8,"pdf",$dbcon);
 //error_reporting(E_ALL);
-/*function quotation_pdf($id,$type,$dbcon)
-{*/
+function quotation_pdf($id,$type,$dbcon)
+{
 
 	//$id = $dbcon->real_escape_string($id);
 
@@ -201,12 +201,10 @@ p {margin: 10px 0px;}
 				if($set_head["contact_no"]){
 					$html.='<br>Hardik Gohel <strong>('.$set_head["contact_no"].')</strong>';
 						}
-				$html .='<h5>';
+$html .= '<h5></h5>';
 					
-					
-	$html.='</strong>
-		</td>
-		</tr>';
+	 $html .= '</strong></td></tr>';
+
 	}
 	if($rel['print_template'] == '0'){
 		$html.='<tr id="rmvborder" >
@@ -301,7 +299,7 @@ p {margin: 10px 0px;}
 											<span style="font-weight:normal;">
 											'.$rel['cust_address'].'
 												<br>
-												'.$rel['city_name'].', .'$rel['state_name'].',  <br>'.$rel['country_name'].'';
+												'.$rel['city_name'].', '.$rel['state_name'].',  <br>'.$rel['country_name'].'';
 											if(!empty($rel['cust_pincode']))
 													{	
 													$html.='-  '.$rel['cust_pincode'].'';
@@ -322,7 +320,7 @@ p {margin: 10px 0px;}
 													
 											'.$rel['gst_no'].'</strong>
 												<br>	Contact Person :
-												'.$rel['cust_contact_person_name'].'(.'$rel['cust_contact_person_no'].')
+												'.$rel['cust_contact_person_name'].'('.$rel['cust_contact_person_no'].')
 												
 										</td>
 										
@@ -355,7 +353,7 @@ p {margin: 10px 0px;}
 														'.$rel['city_name'].', '.$rel['state_name'].',  <br>'.$rel['country_name'].'';
 														 if(!empty($rel['cust_pincode']))
 															{	
-															-  =$rel['cust_pincode']
+															$html.='- '.$rel['cust_pincode'];
 														 } $html.='</span>';
 														
 															if($rel['countryid']=='101'){
@@ -415,6 +413,6 @@ p {margin: 10px 0px;}
 		//return $file_name;
 		
 }
-//}
+}
 
 ?>

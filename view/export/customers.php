@@ -81,12 +81,18 @@
 				</tr>
 				<tr>
 					<td colspan="3" style=" border-left:none;  border-top:none;  border-bottom:none; font-size:12px; font-family:Arial;">G608, Tianium City Center, Beside Sachin Tower, Anand nagar Road, Satelite, Ahmedabad, Gujarat, India. </td>
-					"<td align="center" style=" border-left:none;  border-top:none;  border-bottom:none;  font-size:12px; font-family:Arial;"><strong>"'. if($rel["g_total"]>$rel["paid_amount"]){
-echo "UNPAID";
-}else
-{
-echo "PAID";
-}.'"</strong></td>
+				<td align="center" style="border-left:none; border-top:none; border-bottom:none; font-size:12px; font-family:Arial;">
+    <strong>
+        <?php 
+            if ($rel["g_total"] > $rel["paid_amount"]) {
+                echo "UNPAID";
+            } else {
+                echo "PAID";
+            }
+        ?>
+    </strong>
+</td>
+
 					<Td  style="border-left:none;  border-top:none;  border-bottom:none;  font-size:12px; font-family:Arial;"></Td>
 				</tr>	
 				<tr>
@@ -97,24 +103,25 @@ echo "PAID";
 					<td colspan="2"style=" border-left:none;  border-top:none;  border-bottom:none;"><strong>Tech.Support:</strong>+91-7405409098</td>
 					<td  style="  border-top:none;  border-bottom:none;"></td>
 					<td  style="  border-top:none; border-bottom:none;"></td></tr>
-			</tr>
-			<tr>
-					<td colspan="3"style=" border-left:none;  border-bottom:none;color:#00CCFF;">TO BUYER:</td>
-					<td  align="left" style=" border-right:none; border-left:none;   border-bottom:none;  margin-right:150px;"><strong>Invoice No.:</strong></td>
-					"<td style="  border-left:none;  border-bottom:none;margin-left:150px;"><strong>".$rel['invoice_no']."</strong></td>
-			</tr>
-			<tr>
-					"<td colspan="3"style=" border-left:none;  border-top:none;  border-bottom:none; height:12px; width:500px;font-size:12px; font-family:Arial;"><strong>".$rel['company_name']."</strong></td>"
-<td  align="left"style=" border-right:none; border-left:none;   border-bottom:none; border-top:none; width:100px;"><strong>Date:</strong></td>
-"<td style=" border-left:none; border-top:none;  border-bottom:none;"> <strong> "'.date('d-M-Y',strtotime($rel['invoice_date'])).'"</strong></td>
+			</tr>';
+    $html .= '<tr>
+        <td colspan="3" style="border-left:none; border-bottom:none;color:#00CCFF;">TO BUYER:</td>
+        <td align="left" style="border-right:none; border-left:none; border-bottom:none; margin-right:150px;"><strong>Invoice No.:</strong></td>
+        <td style="border-left:none; border-top:none; border-bottom:none;"><strong>' . $rel['invoice_no'] . '</strong></td>
+    </tr>
+    <tr>
+        <td colspan="3" style="border-left:none; border-top:none; border-bottom:none; height:12px; width:500px;font-size:12px; font-family:Arial;"><strong>' . $rel['company_name'] . '</strong></td>
+        <td align="left" style="border-right:none; border-left:none; border-bottom:none; border-top:none; width:100px;"><strong>Date:</strong></td>
+        <td style="border-left:none; border-top:none; border-bottom:none;"><strong>' . date('d-M-Y', strtotime($rel['invoice_date'])) . '</strong></td>
+    </tr>';$html.='    </tr>
+    <tr>
+        <td colspan="3" style="border-right:none; border-left:none; border-top:none; border-bottom:none; font-size:12px; font-family:Arial;">'.$rel['cust_address'].'</td>
+        <td align="left" rowspan="2" style="border-right:none; border-top:none; border-bottom:none; width:100px;">Sales Person:</td>
+
+<td rowspan="2" style=" border-left:none; border-top:none;  border-bottom:none;">'.ucwords($rel['cust_name']).'</td>
 </tr>
 <tr>
-<td colspan="3" style="border-right:none; border-left:none;  border-top:none;  border-bottom:none;font-size:12px; font-family:Arial;">"'.$rel['cust_address'].'"</td>
-<td  align="left"rowspan="2" style=" border-right:none; border-top:none; border-bottom:none;  width:100px; ">Sales Person:</td>
-<td rowspan="2" style=" border-left:none; border-top:none;  border-bottom:none;">"'.ucwords($rel['cust_name']).'"</td>
-</tr>
-<tr>
-<td  colspan="3" style=" border-left:none;  border-top:none;  border-bottom:none;font-size:12px; font-family:Arial;">Phone: "'.$rel['cust_mobile'].'"</td>
+<td  colspan="3" style=" border-left:none;  border-top:none;  border-bottom:none;font-size:12px; font-family:Arial;">Phone: '.$rel['cust_mobile'].'</td>
 <td style=" border-right:none; border-left:none;  border-top:none;  border-bottom:none;"></td>
 <td style="  border-right:none;border-left:none;  border-top:none;  border-bottom:none;"></td>
 </tr>
@@ -124,50 +131,47 @@ echo "PAID";
 <td align="center" style= "border-right:none; border-left:none;  border-top:none;height:30px;"><strong>Id</strong></td>
 <td  align="center"colspan="2" style="border-left:none; border-right:none;  border-top:none; height:30px;"><strong>DESCRIPTION PRODUCTS/SERVICES</strong></td>
 <td align="center"style="border-left:none; border-right:none;  border-top:none; width:100;height:30px;"><strong>NET CHARGES</strong></td>
-</tr>
-"'. 
+</tr>';
 $i=1;
-while($row=mysqli_fetch_assoc($rel1)){.'"
+while($row=mysqli_fetch_assoc($rel1)){$html.='
 <tr>
-<td  align="center" style="border-right:none; border-left:none; height:30px; border-top:none;">"'.$i.'"</td>
-<td  align="left" colspan="2" style="border-left:none; border-top:none; height:30px;">"'.$row['product_name'].'"</td>
+<td  align="center" style="border-right:none; border-left:none; height:30px; border-top:none;">'.$i.'</td>
+<td  align="left" colspan="2" style="border-left:none; border-top:none; height:30px;">'.$row['product_name'].'</td>
 
-<td align="right" style="  border-top:none;height:30px;  border-right:none;">"'.$row['product_amount'].".00"."INR".'"</td>
-</tr>
-"'.
+<td align="right" style="  border-top:none;height:30px;  border-right:none;">'.$row['product_amount'].".00"."INR".'</td>
+</tr>';
  $i++;
  }
 
  $qry2="select SUM(product_amount) from  tbl_tranction where invoice_id=".$rel['invoice_id'];
 	
 										$rows2=mysqli_fetch_assoc($dbcon->query($qry2));
-.'"
-<tr>
+$html.='<tr>
 <td style="border-right:none; border-left:none; border-top:none; border-bottom:none;"></td>
 <td  style="border-left:none; border-right:none;  border-top:none;border-bottom:none;"></td>
 <td  align="right"style="border-right:none; height:30px; ">Sub total</td>
-<td align="right"style="border-left:none;border-top:none; border-right:none;height:30px;">"'.$rows2['SUM(product_amount)'].".00"."INR".'" </td>
+<td align="right"style="border-left:none;border-top:none; border-right:none;height:30px;">'.$rows2['SUM(product_amount)'].".00"."INR".' </td>
 </tr>
 <tr>
 <td style="border-right:none; border-left:none; border-top:none;border-bottom:none;"></td>
 <td  style="border-left:none; border-right:none;  border-top:none; border-bottom:none;"></td>
 <td  align="right"style="border-right:none; height:30px;  border-top:none;">Special Discount</td>
-<td align="right"style="border-left:none; height:30px; border-top:none;border-right:none;">"'.$rel['discount'].".00"."INR".'"</td>
+<td align="right"style="border-left:none; height:30px; border-top:none;border-right:none;">'.$rel['discount'].".00"."INR".'</td>
 </tr>
 <tr>
 <td style="border-right:none; border-left:none; border-top:none;border-bottom:none;"></td>
 <td  style="border-left:none; border-right:none;  border-top:none; border-bottom:none;"></td>
 <td  align="right"style="border-right:none; height:30px;  border-top:none;">Adjustments Discount</td>
-<td align="right"style="border-left:none;height:30px; border-top:none;">"'.$rel['a_discount'].".00" ."INR".'"</td>
+<td align="right"style="border-left:none;height:30px; border-top:none;">'.$rel['a_discount'].".00" ."INR".'</td>
 </tr>
 <tr>
 <td style="border-right:none; border-left:none; border-top:none;"></td>
 <td  style="border-left:none; border-right:none;  border-top:none; "></td>
 <td  align="right"style="border-right:none; height:30px; border-top:none;">Final Total</td>
-<td align="right" style="border-left:none;height:30px; border-top:none; border-right:none;">"'.$rel['g_total'].".00"."INR".'"</td>
+<td align="right" style="border-left:none;height:30px; border-top:none; border-right:none;">'.$rel['g_total'].".00"."INR".'</td>
 </tr>
 <tr>
-<td colspan="4"  style="border-right:none; border-left:none; border-top:none;" ><strong>Rupees:"'.convert_number_to_words($rel['g_total']).'"</strong> </td></tr>
+<td colspan="4"  style="border-right:none; border-left:none; border-top:none;" ><strong>Rupees:'.convert_number_to_words($rel['g_total']).'</strong> </td></tr>
 <tr>
 <td rowspan="2" style="border-right:none; border-left:none; border-top:none;border-bottom:none;  "><strong>IMPORTANT 
 MESSAGES</strong></td>

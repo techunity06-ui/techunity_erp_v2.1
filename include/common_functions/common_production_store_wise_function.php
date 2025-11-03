@@ -43,7 +43,7 @@ function store_request_pending_count_store_wise($dbcon,$process_id,$process_type
 	while($rel=brp_mysqli_fetch_array($q))
 	{
 		if($type=="1"){
-			$working_qty=store_release_material_count_store_wise($dbcon,$rel['allocate_id'],$is_store_approval);
+			$working_qty=store_release_material_count_store_wise($dbcon,$rel['allocate_id'],$is_store_approval=null);
 		}else{
 			$working_qty=production_end_count_using_p_id($dbcon,$rel['allocate_id']);
 		}

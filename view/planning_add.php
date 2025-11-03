@@ -110,7 +110,17 @@ $cityid='1';
 													<div class="form-group">
 														<label class="col-md-4 control-label">Work Order No *</label>
 														<div class="col-md-6 col-xs-11">
-															<input id="pl_order_no" name="pl_order_no" type="text" class="form-control" title="Enter Planning No" value="<?=$pl_order_no?>" placeholder="Planning Order No" required <?=($readonly=='yes') ? readonly:'';?> >
+				<input 
+					id="pl_order_no" 
+					name="pl_order_no" 
+					type="text" 
+					class="form-control" 
+					title="Enter Planning No" 
+					value="<?= htmlspecialchars($pl_order_no) ?>" 
+					placeholder="Planning Order No" 
+					required 
+					<?= ($readonly === 'yes') ? 'readonly' : '' ?> 
+				>
 														</div>
 													</div>
 												</div>
@@ -118,7 +128,7 @@ $cityid='1';
 													<div class="form-group">
 														<label class="col-md-4  control-label">Work Order Date*</label>
 														<div class="col-md-6 col-xs-11">
-															<input id="pl_order_date" name="pl_order_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?=$date?>" placeholder="Sales Order Date" <?=($readonly=='yes') ? readonly:'';?>>
+															<input id="pl_order_date" name="pl_order_date" type="text" class="form-control default-date-picker required valid" title="Date" value="<?=$date?>" placeholder="Sales Order Date" <?=($readonly=='yes') ? 'readonly':'';?>>
 														</div>
 													</div>
 												</div>
@@ -126,7 +136,7 @@ $cityid='1';
 													<div class="form-group">
 														<label class="col-md-4 control-label">Ref No.</label>
 														<div class="col-md-6 col-xs-11">
-															<input id="ref_no" name="ref_no" type="text" class="form-control" title="Ref No." value="<?=$rel['ref_no']?>" placeholder="Ref No." <?=($readonly=='yes') ? readonly:'';?>>		
+															<input id="ref_no" name="ref_no" type="text" class="form-control" title="Ref No." value="<?=$rel['ref_no']?>" placeholder="Ref No." <?=($readonly=='yes') ? 'readonly':'';?>>		
 														</div>
 													</div>
 												</div>

@@ -43,7 +43,7 @@ while($row = brp_mysqli_fetch_array($rs_type)){
 		}else if($r1['l_group']=='1000'){
 
 		}
-		$info['']
+		
 
 		$i++;
 	}

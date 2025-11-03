@@ -606,16 +606,21 @@ function get_indent_pending_product($dbcon, $branch_id, $id = null)
 function get_pre_product($dbcon, $pre_id = 0)
 {
     if ($pre_id) {
-        $query = "select pro.product_name,ven.l_name,mst.* from tbl_pre_trn as mst 
-                                    left join product_mst as pro on pro.product_id=mst.product_id
-                                    left join tbl_ledger as ven on ven.l_id=mst.vender_id
-                                    where mst.pre_trn_status=0 and pre_id=" . $POST['pre_id'];
+        $pre_id = intval($pre_id); // sanitize input
+        $query = "SELECT pro.product_name, ven.l_name, mst.* 
+                  FROM tbl_pre_trn AS mst
+                  LEFT JOIN product_mst AS pro ON pro.product_id = mst.product_id
+                  LEFT JOIN tbl_ledger AS ven ON ven.l_id = mst.vender_id
+                  WHERE mst.pre_trn_status = 0 AND mst.pre_id = $pre_id";
     } else {
-        $query = "select pro.product_name,ven.l_name,mst.* from tbl_pre_trn as mst 
-                                    left join product_mst as pro on pro.product_id=mst.product_id
-                                    left join tbl_ledger as ven on ven.l_id=mst.vender_id
-                                    where mst.pre_trn_status=3 and mst.user_id=" . $_SESSION['user_id'];
+        $user_id = intval($_SESSION['user_id']); // sanitize session input
+        $query = "SELECT pro.product_name, ven.l_name, mst.* 
+                  FROM tbl_pre_trn AS mst
+                  LEFT JOIN product_mst AS pro ON pro.product_id = mst.product_id
+                  LEFT JOIN tbl_ledger AS ven ON ven.l_id = mst.vender_id
+                  WHERE mst.pre_trn_status = 3 AND mst.user_id = $user_id";
     }
+
     $result = brp_mysqli_query($dbcon, $query);
     $products = brp_mysqli_fetch_all($result, MYSQLI_ASSOC);
     return $products;
